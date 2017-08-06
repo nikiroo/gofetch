@@ -105,7 +105,7 @@ public class Fetcher {
 						ref = ref.substring(1);
 					}
 					writerHtml.append("<div class='site'><a href='../" + ref
-							+ "'>" + support.getDescription() + "</a></div>");
+							+ "'>" + support.getDescription() + "</a></div>\n");
 				}
 
 				writer.append(gopher.getIndexFooter());
