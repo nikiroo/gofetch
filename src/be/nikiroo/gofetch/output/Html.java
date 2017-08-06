@@ -13,16 +13,19 @@ public class Html extends Output {
 
 	@Override
 	public String getIndexHeader() {
-		String gopherUrl = "gopher://" + hostname + preselector + ":" + port;
+		String sel = preselector;
+		if (!sel.isEmpty()) {
+			sel = "/1" + sel;
+		}
+		
+		String gopherUrl = "gopher://" + hostname + sel + ":" + port;
 
 		return "<h1>News</h1>\n"//
 				+ "<p>You will find here a few pages full of news, mirroring <a href='"
 				+ gopherUrl + "'>"
 				+ gopherUrl
 				+ "</a>.</p>\n"//
-				+ "<br/>\n"//
 				+ "<p>They are simply scrapped from their associated webpage and updated a few times a day.</p>\n"//
-				+ "<br/>\n"//
 		;
 	}
 
