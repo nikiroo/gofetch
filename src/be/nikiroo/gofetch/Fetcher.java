@@ -77,8 +77,8 @@ public class Fetcher {
 		File cacheHtml = new File(cache, "index.html");
 		cache = new File(cache, ".cache");
 
-		Output gopher = new Gopher(null, hostname, port);
-		Output html = new Html(null);
+		Output gopher = new Gopher(null, hostname, preselector, port);
+		Output html = new Html(null, hostname, preselector, port);
 
 		FileWriter writer = new FileWriter(cache);
 		try {
@@ -87,17 +87,13 @@ public class Fetcher {
 				writer.append(gopher.getIndexHeader());
 				writerHtml.append(html.getIndexHeader());
 
-				Type types[];
-				if (type == null) {
-					types = Type.values();
-				} else {
-					types = new Type[] { type };
-				}
-
 				BasicSupport.setPreselector(preselector);
-				for (Type type : types) {
+				for (Type type : Type.values()) {
 					BasicSupport support = BasicSupport.getSupport(type);
-					list(support);
+
+					if (type == this.type || this.type == null) {
+						list(support);
+					}
 
 					writer.append("1" + support.getDescription()).append("\t")
 							.append("1" + support.getSelector()) //
@@ -132,8 +128,9 @@ public class Fetcher {
 	 *             in case of I/O error
 	 **/
 	private void list(BasicSupport support) throws IOException {
-		Output gopher = new Gopher(support.getType(), hostname, port);
-		Output html = new Html(support.getType());
+		Output gopher = new Gopher(support.getType(), hostname, preselector,
+				port);
+		Output html = new Html(support.getType(), hostname, preselector, port);
 
 		new File(dir, support.getSelector()).mkdirs();
 

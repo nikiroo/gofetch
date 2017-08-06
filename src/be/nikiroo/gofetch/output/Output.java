@@ -18,13 +18,37 @@ public abstract class Output {
 	protected Type type;
 
 	/**
+	 * The gopher hostname to use.
+	 */
+	protected String hostname;
+
+	/**
+	 * The sub directory and (pre-)selector to use for the resources.
+	 */
+	protected String preselector;
+
+	/**
+	 * The Gopher port to use.
+	 */
+	protected int port;
+
+	/**
 	 * Create a new {@link Output} class for the given type (which can be NULL).
 	 * 
 	 * @param type
 	 *            the type or NULL for no type
+	 * @param hostname
+	 *            the gopher hostname to use
+	 * @param preselector
+	 *            the sub directory and (pre-)selector to use for the resources
+	 * @param port
+	 *            the Gopher port to use
 	 */
-	public Output(Type type) {
+	public Output(Type type, String hostname, String preselector, int port) {
 		this.type = type;
+		this.hostname = hostname;
+		this.preselector = preselector;
+		this.port = port;
 	}
 
 	/**

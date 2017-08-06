@@ -14,6 +14,11 @@ import org.jsoup.select.Elements;
 import be.nikiroo.gofetch.data.Comment;
 import be.nikiroo.gofetch.data.Story;
 
+/**
+ * Support <a href='https://slashdot.org/'>https://slashdot.org/</a>.
+ * 
+ * @author niki
+ */
 public class Slashdot extends BasicSupport {
 	@Override
 	public String getDescription() {
@@ -33,6 +38,7 @@ public class Slashdot extends BasicSupport {
 			if (titles.size() == 0) {
 				continue;
 			}
+
 			Element title = titles.get(0);
 
 			String id = "" + title.attr("id");

@@ -52,7 +52,10 @@ public class Main {
 			System.exit(1);
 		}
 
-		// Selector base (empty is ok, DO NOT end with /)
+		// Selector base :
+		// - empty is ok
+		// - DO NOT end with /
+		// - always starts with / if not empty
 		String preselector = "";
 		if (preselectorStr != null && !preselectorStr.startsWith("/")) {
 			preselector = "/" + preselectorStr;
@@ -65,7 +68,7 @@ public class Main {
 		Type type = null;
 		if (!"ALL".equals(typeStr)) {
 			try {
-				Type.valueOf(typeStr.toUpperCase());
+				type = Type.valueOf(typeStr.toUpperCase());
 			} catch (IllegalArgumentException e) {
 				System.err.println("Invalid type: " + typeStr);
 				System.exit(1);

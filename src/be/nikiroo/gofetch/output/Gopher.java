@@ -10,19 +10,25 @@ import be.nikiroo.gofetch.support.BasicSupport.Type;
 public class Gopher extends Output {
 	static private final int LINE_SIZE = 70;
 
-	private String hostname;
-	private int port;
-
-	public Gopher(Type type, String hostname, int port) {
-		super(type);
-
-		this.hostname = hostname;
-		this.port = port;
+	public Gopher(Type type, String hostname, String preselector, int port) {
+		super(type, hostname, preselector, port);
 	}
 
 	@Override
 	public String getIndexHeader() {
-		return "iHello world!\r\niThis is my news site.\r\ni\r\n";
+		StringBuilder builder = new StringBuilder();
+
+		appendCenter(builder, "NEWS", true);
+		appendLeft(builder, "", "");
+		appendLeft(builder, "You will find here a few pages full of news.", "");
+		appendLeft(builder, "", "");
+		appendLeft(
+				builder,
+				"They are simply scrapped from their associated webpage and converted into a gopher friendly format, updated a few times a day.",
+				"");
+		appendLeft(builder, "", "");
+
+		return builder.toString();
 	}
 
 	@Override
@@ -43,8 +49,10 @@ public class Gopher extends Output {
 
 		builder.append("i\r\n");
 
-		for (Comment comment : comments) {
-			append(builder, comment, "");
+		if (comments != null) {
+			for (Comment comment : comments) {
+				append(builder, comment, "");
+			}
 		}
 
 		builder.append("i\r\n");
@@ -81,11 +89,12 @@ public class Gopher extends Output {
 		if (links) {
 			appendCenter(builder, story.getTitle(), true);
 			builder.append("i\r\n");
-			appendLeft(builder, story.getDetails(), "", "", "  ");
+			appendLeft(builder, story.getDetails(), "  ");
 			builder.append("i\r\n");
-			builder.append("i  o News link: ").append(story.getUrlInternal());
-			builder.append("i\r\n");
-			builder.append("i  o Source link: ").append(story.getUrlExternal());
+			builder.append("i  o News link: ").append(story.getUrlInternal())
+					.append("\r\n");
+			builder.append("i  o Source link: ").append(story.getUrlExternal())
+					.append("\r\n");
 			builder.append("i\r\n");
 		} else {
 			builder.append('1').append(story.getTitle()) //
@@ -93,12 +102,12 @@ public class Gopher extends Output {
 					.append('\t').append(hostname) //
 					.append('\t').append(port) //
 					.append("\r\n");
-			appendLeft(builder, story.getDetails(), "", "", "  ");
+			appendLeft(builder, story.getDetails(), "  ");
 		}
 
 		builder.append("i\r\n");
 
-		appendLeft(builder, story.getContent(), "", "", "    ");
+		appendLeft(builder, story.getContent(), "    ");
 
 		builder.append("i\r\n");
 
@@ -115,6 +124,12 @@ public class Gopher extends Output {
 		for (String line : StringJustifier.center(text, LINE_SIZE)) {
 			builder.append("i").append(line).append("\r\n");
 		}
+	}
+
+	// note: adds "i"
+	private static void appendLeft(StringBuilder builder, String text,
+			String space) {
+		appendLeft(builder, text, "", "", space);
 	}
 
 	// note: adds "i"
