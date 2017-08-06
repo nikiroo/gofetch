@@ -12,7 +12,7 @@ import be.nikiroo.gofetch.data.Story;
 
 public abstract class BasicSupport {
 	public enum Type {
-		SLASHDOT,
+		SLASHDOT, PIPEDOT,
 	}
 
 	static private String preselector;
@@ -24,7 +24,7 @@ public abstract class BasicSupport {
 	abstract public List<Comment> getComments(Story story) throws IOException;
 
 	abstract public String getDescription();
-	
+
 	public String getSelector() {
 		return getSelector(type);
 	}
@@ -52,6 +52,9 @@ public abstract class BasicSupport {
 			switch (type) {
 			case SLASHDOT:
 				support = new Slashdot();
+				break;
+			case PIPEDOT:
+				support = new Pipedot();
 				break;
 			}
 
