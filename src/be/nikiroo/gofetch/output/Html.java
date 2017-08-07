@@ -36,10 +36,14 @@ public class Html extends Output {
 	public String exportHeader(Story story) {
 		StringBuilder builder = new StringBuilder();
 
+		appendPre(builder);
+
 		builder.append("<div class='story-header'>\n");
 		appendHtml(builder, story, true);
 		builder.append("<hr/>\n");
 		builder.append("</div>\n");
+
+		appendPost(builder);
 
 		return builder.toString();
 	}
@@ -47,6 +51,7 @@ public class Html extends Output {
 	@Override
 	public String export(Story story) {
 		StringBuilder builder = new StringBuilder();
+		appendPre(builder);
 
 		builder.append("<div class='story'>\n");
 		appendHtml(builder, story, false);
@@ -60,13 +65,28 @@ public class Html extends Output {
 
 		builder.append("</div>\n");
 
+		appendPost(builder);
+
 		return builder.toString();
 	}
 
+	private void appendPre(StringBuilder builder) {
+		builder.append("<!DOCTYPE html>\n");
+		builder.append("<html>\n");
+		builder.append("<head>\n");
+		builder.append("  <meta http-equiv='content-type' content='text/html; charset=utf-8'>\n");
+		builder.append("  <meta name='viewport' content='width=device-width, initial-scale=1.0'>\n");
+		builder.append("</head>\n");
+		builder.append("<body>\n");
+	}
+
+	private void appendPost(StringBuilder builder) {
+		builder.append("</body>\n");
+	}
+
 	private void appendHtml(StringBuilder builder, Comment comment, String space) {
-		builder.append(space).append(
-				"<div class='comment' style='display: block; margin-left: "
-						+ (20 * space.length()) + "px'>");
+		builder.append(space)
+				.append("<div class='comment' style='display: block; margin-left: 80px'>\n");
 		builder.append(space).append("  <h2>").append(comment.getTitle())
 				.append("</h2>\n");
 		builder.append(space).append("  <div class='by'>")
@@ -76,7 +96,7 @@ public class Html extends Output {
 		for (Comment subComment : comment) {
 			appendHtml(builder, subComment, space + "  ");
 		}
-		builder.append(space).append("</div>");
+		builder.append(space).append("</div>\n");
 	}
 
 	private StringBuilder appendHtml(StringBuilder builder, Story story,

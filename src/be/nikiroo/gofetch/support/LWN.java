@@ -9,6 +9,7 @@ import java.util.List;
 import org.jsoup.helper.DataUtil;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
+import org.jsoup.nodes.Node;
 import org.jsoup.select.Elements;
 
 import be.nikiroo.gofetch.data.Comment;
@@ -27,8 +28,6 @@ public class LWN extends BasicSupport {
 
 	@Override
 	public List<Story> list() throws IOException {
-		// TODO: comments + do not get comment for [$] stories
-
 		List<Story> list = new ArrayList<Story>();
 
 		URL url = new URL("https://lwn.net/");
@@ -94,21 +93,45 @@ public class LWN extends BasicSupport {
 
 	@Override
 	public void fetch(Story story) throws IOException {
-		/*
-		 * URL url = new URL(story.getUrlInternal()); InputStream in =
-		 * open(url); Document doc = DataUtil.load(in, "UTF-8", url.toString());
-		 * Elements listing = doc.getElementsByTag("main"); if (listing.size() >
-		 * 0) { comments.addAll(getComments(listing.get(0))); }
-		 */
+		List<Comment> comments = new ArrayList<Comment>();
+		String fullContent = story.getContent();
+
+		// Do not try the paid-for stories...
+		if (!story.getTitle().startsWith("[$]")) {
+			URL url = new URL(story.getUrlInternal());
+			InputStream in = open(url);
+			Document doc = DataUtil.load(in, "UTF-8", url.toString());
+			Elements fullContentElements = doc
+					.getElementsByClass("ArticleText");
+			if (fullContentElements.size() > 0) {
+				// comments.addAll(getComments(listing.get(0)));
+				fullContent = fullContentElements.get(0).text();
+			}
+
+			Elements listing = doc.getElementsByClass("lwn-u-1");
+			if (listing.size() > 0) {
+				comments.addAll(getComments(listing.get(0)));
+			}
+		} else {
+			fullContent = "[$] Sorry, this article is currently available to LWN suscribers only [https://lwn.net/subscribe/].";
+		}
+
+		story.setFullContent(fullContent);
+		story.setComments(comments);
 	}
 
 	private List<Comment> getComments(Element listing) {
 		List<Comment> comments = new ArrayList<Comment>();
 		for (Element commentElement : listing.children()) {
-			if (commentElement.hasClass("comment")) {
+			if (commentElement.hasClass("CommentBox")) {
 				Comment comment = getComment(commentElement);
 				if (!comment.isEmpty()) {
 					comments.add(comment);
+				}
+			} else if (commentElement.hasClass("Comment")) {
+				if (comments.size() > 0) {
+					comments.get(comments.size() - 1).addAll(
+							getComments(commentElement));
 				}
 			}
 		}
@@ -116,25 +139,42 @@ public class LWN extends BasicSupport {
 	}
 
 	private Comment getComment(Element commentElement) {
-		String title = firstOrEmptyTag(commentElement, "h3");
-		String author = firstOrEmpty(commentElement, "h4");
-		String content = firstOrEmpty(commentElement, "comment-body");
+		String title = firstOrEmpty(commentElement, "CommentTitle");
+		String author = firstOrEmpty(commentElement, "CommentPoster");
 
 		String date = "";
-		int pos = author.lastIndexOf(" on ");
+		int pos = author.lastIndexOf(" by ");
 		if (pos >= 0) {
-			date = author.substring(pos + " on ".length()).trim();
-			author = author.substring(0, pos).trim();
+			date = author.substring(0, pos).trim();
+			author = author.substring(pos + " by ".length()).trim();
+
+			if (author.startsWith("Posted ")) {
+				author = author.substring("Posted ".length()).trim();
+			}
+		}
+
+		String content = "";
+		Elements commentBodyElements = commentElement
+				.getElementsByClass("CommentBody");
+		if (commentBodyElements.size() > 0) {
+			for (Node contentNode : commentBodyElements.get(0).childNodes()) {
+				if (contentNode instanceof Element) {
+					Element contentElement = (Element) contentNode;
+					if (!contentElement.hasClass("CommentPoster")) {
+						content = content.trim() + " "
+								+ contentElement.text().trim();
+					}
+				} else {
+					content = content.trim() + " "
+							+ contentNode.outerHtml().trim();
+				}
+
+			}
+			content = content.trim();
 		}
 
 		Comment comment = new Comment(commentElement.id(), author, title, date,
 				content);
-
-		Elements commentOutline = commentElement
-				.getElementsByClass("comment-outline");
-		if (commentOutline.size() > 0) {
-			comment.addAll(getComments(commentOutline.get(0)));
-		}
 
 		return comment;
 	}
