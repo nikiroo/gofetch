@@ -1,7 +1,5 @@
 package be.nikiroo.gofetch.output;
 
-import java.util.List;
-
 import be.nikiroo.gofetch.StringJustifier;
 import be.nikiroo.gofetch.data.Comment;
 import be.nikiroo.gofetch.data.Story;
@@ -37,20 +35,20 @@ public class Gopher extends Output {
 	}
 
 	@Override
-	public String export(Story story) {
+	public String exportHeader(Story story) {
 		return append(new StringBuilder(), story, false).append("i\r\ni\r\n")
 				.toString();
 	}
 
 	@Override
-	public String export(Story story, List<Comment> comments) {
+	public String export(Story story) {
 		StringBuilder builder = new StringBuilder();
 		append(builder, story, true);
 
 		builder.append("i\r\n");
 
-		if (comments != null) {
-			for (Comment comment : comments) {
+		if (story.getComments() != null) {
+			for (Comment comment : story.getComments()) {
 				append(builder, comment, "");
 			}
 		}
@@ -85,17 +83,22 @@ public class Gopher extends Output {
 	}
 
 	private StringBuilder append(StringBuilder builder, Story story,
-			boolean links) {
-		if (links) {
+			boolean resume) {
+		if (!resume) {
 			appendCenter(builder, story.getTitle(), true);
 			builder.append("i\r\n");
 			appendLeft(builder, story.getDetails(), "  ");
 			builder.append("i\r\n");
+
 			builder.append("i  o News link: ").append(story.getUrlInternal())
 					.append("\r\n");
 			builder.append("i  o Source link: ").append(story.getUrlExternal())
 					.append("\r\n");
 			builder.append("i\r\n");
+
+			builder.append("i\r\n");
+
+			appendLeft(builder, story.getFullContent(), "    ");
 		} else {
 			builder.append('1').append(story.getTitle()) //
 					.append('\t').append("0").append(story.getSelector()) //
@@ -103,11 +106,10 @@ public class Gopher extends Output {
 					.append('\t').append(port) //
 					.append("\r\n");
 			appendLeft(builder, story.getDetails(), "  ");
+			builder.append("i\r\n");
+
+			appendLeft(builder, story.getContent(), "    ");
 		}
-
-		builder.append("i\r\n");
-
-		appendLeft(builder, story.getContent(), "    ");
 
 		builder.append("i\r\n");
 

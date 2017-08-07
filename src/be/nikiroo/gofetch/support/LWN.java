@@ -28,8 +28,7 @@ public class LWN extends BasicSupport {
 	@Override
 	public List<Story> list() throws IOException {
 		// TODO: comments + do not get comment for [$] stories
-		// + update body on getComment (global change, also LinuxToday)
-		
+
 		List<Story> list = new ArrayList<Story>();
 
 		URL url = new URL("https://lwn.net/");
@@ -45,35 +44,33 @@ public class LWN extends BasicSupport {
 			if (listings.size() == 0) {
 				continue;
 			}
-			
+
 			Element listing = listings.get(0);
 			if (listing.children().size() < 2) {
 				continue;
 			}
-			
 
 			String title = titles.get(0).text();
 			String details = listing.children().get(0).text();
 			String body = "";
 			// All but the first and two last children
-			for (int i = 1 ; i < listing.children().size() - 2; i++) {
+			for (int i = 1; i < listing.children().size() - 2; i++) {
 				Element e = listing.children().get(i);
 				body = body.trim() + " " + e.text().trim();
 			}
 			body = body.trim();
-			
+
 			String author = "";
 			int pos = details.indexOf(" by ");
 			if (pos >= 0) {
 				author = details.substring(pos + " by ".length()).trim();
 			}
-			
+
 			String date = "";
 			pos = details.indexOf(" Posted ");
 			if (pos >= 0) {
 				date = details.substring(pos + " Posted ".length()).trim();
 			}
-			
 
 			String id = "";
 			String intUrl = "";
@@ -83,32 +80,26 @@ public class LWN extends BasicSupport {
 				intUrl = idElem.absUrl("href");
 				pos = intUrl.indexOf("#Comments");
 				if (pos >= 0) {
-					intUrl = intUrl.substring(0, pos -1);
+					intUrl = intUrl.substring(0, pos - 1);
 				}
 				id = intUrl.replaceAll("[^0-9]", "");
 			}
 
-			list.add(new Story(getType(), id, title, details, intUrl, extUrl, body));
+			list.add(new Story(getType(), id, title, details, intUrl, extUrl,
+					body));
 		}
 
 		return list;
 	}
 
 	@Override
-	public List<Comment> getComments(Story story) throws IOException {
-		List<Comment> comments = new ArrayList<Comment>();
-
+	public void fetch(Story story) throws IOException {
 		/*
-		URL url = new URL(story.getUrlInternal());
-		InputStream in = open(url);
-		Document doc = DataUtil.load(in, "UTF-8", url.toString());
-		Elements listing = doc.getElementsByTag("main");
-		if (listing.size() > 0) {
-			comments.addAll(getComments(listing.get(0)));
-		}
-		*/
-
-		return comments;
+		 * URL url = new URL(story.getUrlInternal()); InputStream in =
+		 * open(url); Document doc = DataUtil.load(in, "UTF-8", url.toString());
+		 * Elements listing = doc.getElementsByTag("main"); if (listing.size() >
+		 * 0) { comments.addAll(getComments(listing.get(0))); }
+		 */
 	}
 
 	private List<Comment> getComments(Element listing) {

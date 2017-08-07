@@ -1,7 +1,5 @@
 package be.nikiroo.gofetch.output;
 
-import java.util.List;
-
 import be.nikiroo.gofetch.data.Comment;
 import be.nikiroo.gofetch.data.Story;
 import be.nikiroo.gofetch.support.BasicSupport.Type;
@@ -17,7 +15,7 @@ public class Html extends Output {
 		if (!sel.isEmpty()) {
 			sel = "/1" + sel;
 		}
-		
+
 		String gopherUrl = "gopher://" + hostname + sel + ":" + port;
 
 		return "<h1>News</h1>\n"//
@@ -35,7 +33,7 @@ public class Html extends Output {
 	}
 
 	@Override
-	public String export(Story story) {
+	public String exportHeader(Story story) {
 		StringBuilder builder = new StringBuilder();
 
 		builder.append("<div class='story-header'>\n");
@@ -47,15 +45,15 @@ public class Html extends Output {
 	}
 
 	@Override
-	public String export(Story story, List<Comment> comments) {
+	public String export(Story story) {
 		StringBuilder builder = new StringBuilder();
 
 		builder.append("<div class='story'>\n");
 		appendHtml(builder, story, false);
 		builder.append("<hr/>\n");
 
-		if (comments != null) {
-			for (Comment comment : comments) {
+		if (story.getComments() != null) {
+			for (Comment comment : story.getComments()) {
 				appendHtml(builder, comment, "  ");
 			}
 		}
@@ -106,7 +104,11 @@ public class Html extends Output {
 		}
 
 		builder.append("	<div class='content'>\n");
-		builder.append("		" + story.getContent() + "\n");
+		if (resume) {
+			builder.append("		" + story.getContent() + "\n");
+		} else {
+			builder.append("		" + story.getFullContent() + "\n");
+		}
 		builder.append("	</div>\n");
 
 		return builder;

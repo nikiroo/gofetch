@@ -7,7 +7,6 @@ import java.net.URLConnection;
 import java.util.List;
 import java.util.zip.GZIPInputStream;
 
-import be.nikiroo.gofetch.data.Comment;
 import be.nikiroo.gofetch.data.Story;
 
 public abstract class BasicSupport {
@@ -21,7 +20,17 @@ public abstract class BasicSupport {
 
 	abstract public List<Story> list() throws IOException;
 
-	abstract public List<Comment> getComments(Story story) throws IOException;
+	/**
+	 * Fetch the full article content as well as all the comments associated to
+	 * this {@link Story}, if any (can be empty, but not NULL).
+	 * 
+	 * @param story
+	 *            the story to fetch the comments of
+	 * 
+	 * @throws IOException
+	 *             in case of I/O error
+	 */
+	abstract public void fetch(Story story) throws IOException;
 
 	abstract public String getDescription();
 

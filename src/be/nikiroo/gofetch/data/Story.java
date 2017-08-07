@@ -1,6 +1,7 @@
 package be.nikiroo.gofetch.data;
 
 import java.net.URL;
+import java.util.List;
 
 import be.nikiroo.gofetch.support.BasicSupport;
 import be.nikiroo.gofetch.support.BasicSupport.Type;
@@ -18,6 +19,9 @@ public class Story {
 	private String urlInternal;
 	private String urlExternal;
 	private String content;
+
+	private String fullContent;
+	private List<Comment> comments;
 
 	/**
 	 * Create a news story.
@@ -46,6 +50,9 @@ public class Story {
 		this.urlInternal = urlInternal;
 		this.urlExternal = urlExternal;
 		this.content = content;
+
+		// Defaults fullContent to content
+		this.fullContent = content;
 	}
 
 	public String getSelector() {
@@ -92,5 +99,35 @@ public class Story {
 	 */
 	public String getContent() {
 		return content;
+	}
+
+	/**
+	 * @return the fullContent
+	 */
+	public String getFullContent() {
+		return fullContent;
+	}
+
+	/**
+	 * @param fullContent
+	 *            the fullContent to set
+	 */
+	public void setFullContent(String fullContent) {
+		this.fullContent = fullContent;
+	}
+
+	/**
+	 * @return the comments
+	 */
+	public List<Comment> getComments() {
+		return comments;
+	}
+
+	/**
+	 * @param comments
+	 *            the comments to set
+	 */
+	public void setComments(List<Comment> comments) {
+		this.comments = comments;
 	}
 }

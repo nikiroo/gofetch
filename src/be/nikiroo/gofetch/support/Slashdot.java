@@ -76,7 +76,7 @@ public class Slashdot extends BasicSupport {
 	}
 
 	@Override
-	public List<Comment> getComments(Story story) throws IOException {
+	public void fetch(Story story) throws IOException {
 		List<Comment> comments = new ArrayList<Comment>();
 
 		URL url = new URL(story.getUrlInternal());
@@ -87,7 +87,7 @@ public class Slashdot extends BasicSupport {
 			comments.addAll(getComments(listing));
 		}
 
-		return comments;
+		story.setComments(comments);
 	}
 
 	private List<Comment> getComments(Element listing) {

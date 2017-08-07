@@ -1,8 +1,5 @@
 package be.nikiroo.gofetch.output;
 
-import java.util.List;
-
-import be.nikiroo.gofetch.data.Comment;
 import be.nikiroo.gofetch.data.Story;
 import be.nikiroo.gofetch.support.BasicSupport.Type;
 
@@ -66,24 +63,22 @@ public abstract class Output {
 	abstract public String getIndexFooter();
 
 	/**
-	 * Export a story (in resume mode).
+	 * Export the header of a story (a <i>resume</i> mode).
 	 * 
 	 * @param story
 	 *            the story
 	 * 
 	 * @return the resume
 	 */
-	abstract public String export(Story story);
+	abstract public String exportHeader(Story story);
 
 	/**
 	 * Export a full story with comments.
 	 * 
 	 * @param story
 	 *            the story
-	 * @param comments
-	 *            the comments
 	 * 
 	 * @return the story
 	 */
-	abstract public String export(Story story, List<Comment> comments);
+	abstract public String export(Story story);
 }

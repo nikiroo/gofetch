@@ -89,7 +89,7 @@ public class Pipedot extends BasicSupport {
 	}
 
 	@Override
-	public List<Comment> getComments(Story story) throws IOException {
+	public void fetch(Story story) throws IOException {
 		List<Comment> comments = new ArrayList<Comment>();
 
 		URL url = new URL(story.getUrlInternal());
@@ -100,7 +100,7 @@ public class Pipedot extends BasicSupport {
 			comments.addAll(getComments(listing.get(0)));
 		}
 
-		return comments;
+		story.setComments(comments);
 	}
 
 	private List<Comment> getComments(Element listing) {
