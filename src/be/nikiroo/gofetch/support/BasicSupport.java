@@ -12,7 +12,7 @@ import be.nikiroo.gofetch.data.Story;
 
 public abstract class BasicSupport {
 	public enum Type {
-		SLASHDOT, PIPEDOT,
+		SLASHDOT, PIPEDOT, LWN,
 	}
 
 	static private String preselector;
@@ -55,6 +55,9 @@ public abstract class BasicSupport {
 				break;
 			case PIPEDOT:
 				support = new Pipedot();
+				break;
+			case LWN:
+				support = new LWN();
 				break;
 			}
 

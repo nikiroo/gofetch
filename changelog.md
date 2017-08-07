@@ -1,12 +1,16 @@
 # Gofetch
 
-## Version 0.0.1
+## Version WIP
 
-- First version
-- Slashdot supported
+- Add Linux Weekly News support
 
 ## Version 0.1.1
 
 - Fix a few bugs
 - Add Pipedot support
+
+## Version 0.0.1
+
+- First version
+- Slashdot supported
 
