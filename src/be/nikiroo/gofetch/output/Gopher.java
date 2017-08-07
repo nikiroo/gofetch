@@ -8,7 +8,7 @@ import be.nikiroo.gofetch.data.Story;
 import be.nikiroo.gofetch.support.BasicSupport.Type;
 
 public class Gopher extends Output {
-	static private final int LINE_SIZE = 70;
+	static private final int LINE_SIZE = 67;
 
 	public Gopher(Type type, String hostname, String preselector, int port) {
 		super(type, hostname, preselector, port);

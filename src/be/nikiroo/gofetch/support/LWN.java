@@ -54,7 +54,13 @@ public class LWN extends BasicSupport {
 
 			String title = titles.get(0).text();
 			String details = listing.children().get(0).text();
-			String body = listing.children().get(1).text();
+			String body = "";
+			// All but the first and two last children
+			for (int i = 1 ; i < listing.children().size() - 2; i++) {
+				Element e = listing.children().get(i);
+				body = body.trim() + " " + e.text().trim();
+			}
+			body = body.trim();
 			
 			String author = "";
 			int pos = details.indexOf(" by ");
