@@ -85,7 +85,7 @@ public class Fetcher {
 			}
 
 			gopherBuilder.append(getLink(support.getDescription(),
-					support.getSelector(), false));
+					support.getSelector(), true, false));
 
 			String ref = support.getSelector();
 			while (ref.startsWith("/")) {
@@ -93,7 +93,8 @@ public class Fetcher {
 			}
 			ref = "../" + ref + "/index.html";
 
-			htmlBuilder.append(getLink(support.getDescription(), ref, true));
+			htmlBuilder.append(getLink(support.getDescription(), ref, false,
+					true));
 		}
 
 		File gopherCache = new File(dir, preselector);
@@ -197,9 +198,9 @@ public class Fetcher {
 			if (enoughStories || last) {
 				if (!last) {
 					gopherLines.add(getLink("More", support.getSelector()
-							+ ".cache_" + (page + 1), false));
+							+ ".cache_" + (page + 1), false, false));
 					htmlLines.add(getLink("More", "index_" + (page + 1)
-							+ ".html", true));
+							+ ".html", false, true));
 				}
 
 				write(gopherLines, varDir, ".cache", "", page);
@@ -226,10 +227,10 @@ public class Fetcher {
 		}
 	}
 
-	private String getLink(String name, String ref, boolean html) {
+	private String getLink(String name, String ref, boolean index, boolean html) {
 		if (!html) {
-			return new StringBuilder().append("1" + name).append("\t")
-					.append("1" + ref) //
+			return new StringBuilder().append((index ? "0" : "1") + name)
+					.append("\t").append("1" + ref) //
 					.append("\t").append(hostname) //
 					.append("\t").append(Integer.toString(port)) //
 					.append("\r\n").toString();
