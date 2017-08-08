@@ -36,14 +36,14 @@ public class Gopher extends Output {
 
 	@Override
 	public String exportHeader(Story story) {
-		return append(new StringBuilder(), story, false).append("i\r\ni\r\n")
+		return append(new StringBuilder(), story, true).append("i\r\ni\r\n")
 				.toString();
 	}
 
 	@Override
 	public String export(Story story) {
 		StringBuilder builder = new StringBuilder();
-		append(builder, story, true);
+		append(builder, story, false);
 
 		builder.append("i\r\n");
 
