@@ -4,7 +4,9 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.FilenameFilter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 import be.nikiroo.gofetch.data.Story;
@@ -82,18 +84,16 @@ public class Fetcher {
 				list(support);
 			}
 
-			gopherBuilder.append("1" + support.getDescription()).append("\t")
-					.append("1" + support.getSelector()) //
-					.append("\t").append(hostname) //
-					.append("\t").append(Integer.toString(port)) //
-					.append("\r\n");
+			gopherBuilder.append(getLink(support.getDescription(),
+					support.getSelector(), false));
 
 			String ref = support.getSelector();
 			while (ref.startsWith("/")) {
 				ref = ref.substring(1);
 			}
-			htmlBuilder.append("<div class='site'><a href='../" + ref + "'>"
-					+ support.getDescription() + "</a></div>\n");
+			ref = "../" + ref + "/index.html";
+
+			htmlBuilder.append(getLink(support.getDescription(), ref, true));
 		}
 
 		File gopherCache = new File(dir, preselector);
@@ -175,39 +175,68 @@ public class Fetcher {
 			}
 		});
 
-		// Finding which ones to show:
-		int from = 0;
-		int to = 0;
-		if (headers.length > 0) {
-			Arrays.sort(headers);
-			from = headers.length - 1;
-			to = headers.length - maxStories;
-			if (to < 0) {
-				to = 0;
+		// Reverse sort:
+		Arrays.sort(headers);
+		List<String> tmp = Arrays.asList(headers);
+		Collections.reverse(tmp);
+		headers = tmp.toArray(new String[] {});
+		//
+
+		// Write the index (with "MORE" links if needed)
+		int page = 0;
+		List<String> gopherLines = new ArrayList<String>();
+		List<String> htmlLines = new ArrayList<String>();
+		for (i = 0; i < headers.length; i++) {
+			gopherLines
+					.add(IOUtils.readSmallFile(new File(varDir, headers[i])));
+			htmlLines.add(IOUtils.readSmallFile(new File(varDir, headers[i]
+					+ ".html")));
+
+			boolean enoughStories = (i > 0 && i % maxStories == 0);
+			boolean last = i == headers.length - 1;
+			if (enoughStories || last) {
+				if (!last) {
+					gopherLines.add(getLink("More", "/.cache_" + (page + 1),
+							false));
+					htmlLines.add(getLink("More", "index_" + (page + 1)
+							+ ".html", true));
+				}
+
+				write(gopherLines, varDir, ".cache", "", page);
+				write(htmlLines, varDir, "index", ".html", page);
+				gopherLines = new ArrayList<String>();
+				htmlLines = new ArrayList<String>();
+				page++;
 			}
 		}
+	}
 
-		// Writing the cache/index files with the stories:
-		File gopherCache = new File(varDir, ".cache");
-		FileWriter writer = new FileWriter(gopherCache);
+	private void write(List<String> lines, File varDir, String basename,
+			String ext, int page) throws IOException {
+		File file = new File(varDir, basename + (page > 0 ? "_" + page : "")
+				+ ext);
+
+		FileWriter writer = new FileWriter(file);
 		try {
-			for (i = from; i >= to; i--) {
-				writer.append(IOUtils
-						.readSmallFile(new File(varDir, headers[i])));
+			for (String line : lines) {
+				writer.append(line).append("\r\n");
 			}
 		} finally {
 			writer.close();
 		}
+	}
 
-		File htmlIndex = new File(varDir, "index.html");
-		writer = new FileWriter(htmlIndex);
-		try {
-			for (i = from; i >= to; i--) {
-				writer.append(IOUtils.readSmallFile(new File(varDir, headers[i]
-						+ ".html")));
-			}
-		} finally {
-			writer.close();
+	private String getLink(String name, String ref, boolean html) {
+		if (!html) {
+			return new StringBuilder().append("1" + name).append("\t")
+					.append("1" + ref) //
+					.append("\t").append(hostname) //
+					.append("\t").append(Integer.toString(port)) //
+					.append("\r\n").toString();
 		}
+
+		return new StringBuilder().append(
+				"<div class='site'><a href='" + ref + "'>" + name
+						+ "</a></div>\n").toString();
 	}
 }
