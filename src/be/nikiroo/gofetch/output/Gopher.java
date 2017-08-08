@@ -87,7 +87,7 @@ public class Gopher extends Output {
 		if (!resume) {
 			appendCenter(builder, story.getTitle(), true);
 			builder.append("i\r\n");
-			appendLeft(builder, story.getDetails(), "  ");
+			appendJustified(builder, story.getDetails(), "  ");
 			builder.append("i\r\n");
 
 			builder.append("i  o News link: ").append(story.getUrlInternal())
@@ -98,17 +98,17 @@ public class Gopher extends Output {
 
 			builder.append("i\r\n");
 
-			appendLeft(builder, story.getFullContent(), "    ");
+			appendJustified(builder, story.getFullContent(), "    ");
 		} else {
 			builder.append('1').append(story.getTitle()) //
 					.append('\t').append("0").append(story.getSelector()) //
 					.append('\t').append(hostname) //
 					.append('\t').append(port) //
 					.append("\r\n");
-			appendLeft(builder, story.getDetails(), "  ");
+			appendJustified(builder, story.getDetails(), "  ");
 			builder.append("i\r\n");
 
-			appendLeft(builder, story.getContent(), "    ");
+			appendJustified(builder, story.getContent(), "    ");
 		}
 
 		builder.append("i\r\n");
@@ -124,6 +124,15 @@ public class Gopher extends Output {
 		}
 
 		for (String line : StringJustifier.center(text, LINE_SIZE)) {
+			builder.append("i").append(line).append("\r\n");
+		}
+	}
+
+	// note: adds "i"
+	private static void appendJustified(StringBuilder builder, String text,
+			String space) {
+		for (String line : StringJustifier.full(text,
+				LINE_SIZE - space.length())) {
 			builder.append("i").append(line).append("\r\n");
 		}
 	}
