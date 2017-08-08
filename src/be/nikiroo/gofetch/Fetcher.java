@@ -196,8 +196,8 @@ public class Fetcher {
 			boolean last = i == headers.length - 1;
 			if (enoughStories || last) {
 				if (!last) {
-					gopherLines.add(getLink("More", "/.cache_" + (page + 1),
-							false));
+					gopherLines.add(getLink("More", preselector + ".cache_"
+							+ (page + 1), false));
 					htmlLines.add(getLink("More", "index_" + (page + 1)
 							+ ".html", true));
 				}
