@@ -229,7 +229,7 @@ public class Fetcher {
 
 	private String getLink(String name, String ref, boolean index, boolean html) {
 		if (!html) {
-			return new StringBuilder().append((index ? "0" : "1") + name)
+			return new StringBuilder().append((index ? "1" : "0") + name)
 					.append("\t").append("1" + ref) //
 					.append("\t").append(hostname) //
 					.append("\t").append(Integer.toString(port)) //
