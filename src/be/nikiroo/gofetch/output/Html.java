@@ -17,14 +17,21 @@ public class Html extends Output {
 		}
 
 		String gopherUrl = "gopher://" + hostname + sel + ":" + port;
+		
+		StringBuilder builder = new StringBuilder();
+		appendPre(builder);
 
-		return "<h1>News</h1>\n"//
+		builder.append("<h1>News</h1>\n"//
 				+ "<p>You will find here a few pages full of news, mirroring <a href='"
 				+ gopherUrl + "'>"
 				+ gopherUrl
 				+ "</a>.</p>\n"//
 				+ "<p>They are simply scrapped from their associated webpage and updated a few times a day.</p>\n"//
-		;
+		);
+		
+		appendPost(builder);
+		
+		return builder.toString();
 	}
 
 	@Override
@@ -76,6 +83,9 @@ public class Html extends Output {
 		builder.append("<head>\n");
 		builder.append("  <meta http-equiv='content-type' content='text/html; charset=utf-8'>\n");
 		builder.append("  <meta name='viewport' content='width=device-width, initial-scale=1.0'>\n");
+		builder.append("  <style type='text/css'>\n");
+		builder.append("    body { margin: 1em 15%; }\n");
+		builder.append("  </style>\n");
 		builder.append("</head>\n");
 		builder.append("<body>\n");
 	}
@@ -123,7 +133,7 @@ public class Html extends Output {
 			builder.append("	<br/>\n");
 		}
 
-		builder.append("	<div class='content'>\n");
+		builder.append("	<div class='content' style='text-align: justify'>\n");
 		if (resume) {
 			builder.append("		" + story.getContent() + "\n");
 		} else {
