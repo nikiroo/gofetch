@@ -100,7 +100,7 @@ public class Fetcher {
 		File gopherCache = new File(dir, preselector);
 		gopherCache.mkdirs();
 		File htmlIndex = new File(gopherCache, "index.html");
-		gopherCache = new File(gopherCache, ".cache");
+		gopherCache = new File(gopherCache, "gophermap");
 
 		Output gopher = new Gopher(null, hostname, preselector, port);
 		Output html = new Html(null, hostname, preselector, port);
@@ -198,12 +198,12 @@ public class Fetcher {
 			if (enoughStories || last) {
 				if (!last) {
 					gopherLines.add(getLink("More", support.getSelector()
-							+ ".cache_" + (page + 1), false, false));
+							+ "gophermap_" + (page + 1), false, false));
 					htmlLines.add(getLink("More", "index_" + (page + 1)
 							+ ".html", false, true));
 				}
 
-				write(gopherLines, varDir, ".cache", "", page);
+				write(gopherLines, varDir, "gophermap", "", page);
 				write(htmlLines, varDir, "index", ".html", page);
 				gopherLines = new ArrayList<String>();
 				htmlLines = new ArrayList<String>();
@@ -230,7 +230,7 @@ public class Fetcher {
 	private String getLink(String name, String ref, boolean index, boolean html) {
 		if (!html) {
 			return new StringBuilder().append("1" + name).append("\t")
-					.append((index ? "1" : "0") + ref) //
+					.append(ref) //
 					.append("\t").append(hostname) //
 					.append("\t").append(Integer.toString(port)) //
 					.append("\r\n").toString();

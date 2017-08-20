@@ -101,7 +101,7 @@ public class Gopher extends Output {
 			appendJustified(builder, story.getFullContent(), "    ");
 		} else {
 			builder.append('1').append(story.getTitle()) //
-					.append('\t').append("0").append(story.getSelector()) //
+					.append('\t').append(story.getSelector()) //
 					.append('\t').append(hostname) //
 					.append('\t').append(port) //
 					.append("\r\n");
