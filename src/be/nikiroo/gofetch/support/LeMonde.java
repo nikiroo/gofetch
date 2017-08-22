@@ -37,7 +37,8 @@ public class LeMonde extends BasicSupport {
 				Elements contentElements = article.getElementsByClass("txt3");
 				if (times.size() > 0 && titleElements.size() > 0
 						&& contentElements.size() > 0) {
-					String id = times.get(0).attr("datetime").replace(":", "_");
+					String id = times.get(0).attr("datetime").replace(":", "_")
+							.replace("+", "_");
 					String title = "[" + topic + "] "
 							+ titleElements.get(0).text();
 					String content = contentElements.get(0).text();

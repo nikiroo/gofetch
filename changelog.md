@@ -2,6 +2,10 @@
 
 ## Version 1.0.0
 
+- Fix a problem in the Le Monde ids for gopher
+
+## Version 1.0.0
+
 - Add Le Monde support
 - Fix some small textual issues
 
