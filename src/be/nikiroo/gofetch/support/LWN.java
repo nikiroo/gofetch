@@ -139,8 +139,8 @@ public class LWN extends BasicSupport {
 	}
 
 	private Comment getComment(Element commentElement) {
-		String title = firstOrEmpty(commentElement, "CommentTitle");
-		String author = firstOrEmpty(commentElement, "CommentPoster");
+		String title = firstOrEmpty(commentElement, "CommentTitle").text();
+		String author = firstOrEmpty(commentElement, "CommentPoster").text();
 
 		String date = "";
 		int pos = author.lastIndexOf(" by ");
@@ -153,69 +153,54 @@ public class LWN extends BasicSupport {
 			}
 		}
 
-		String content = "";
+		Element content = null;
 		Elements commentBodyElements = commentElement
 				.getElementsByClass("CommentBody");
 		if (commentBodyElements.size() > 0) {
-			for (Node contentNode : commentBodyElements.get(0).childNodes()) {
-				if (contentNode instanceof Element) {
-					Element contentElement = (Element) contentNode;
-					if (!contentElement.hasClass("CommentPoster")) {
-						content = content.trim() + " "
-								+ contentElement.text().trim();
-					}
-				} else {
-					content = content.trim() + " "
-							+ contentNode.outerHtml().trim();
-				}
-
-			}
-			content = content.trim();
+			content = commentBodyElements.get(0);
 		}
 
 		Comment comment = new Comment(commentElement.id(), author, title, date,
-				content);
+				toLines(content));
 
 		return comment;
 	}
 
-	/**
-	 * Get the first element of the given class, or an empty {@link String} if
-	 * none found.
-	 * 
-	 * @param element
-	 *            the element to look in
-	 * @param className
-	 *            the class to look for
-	 * 
-	 * @return the value or an empty {@link String}
-	 */
-	private String firstOrEmpty(Element element, String className) {
-		Elements subElements = element.getElementsByClass(className);
-		if (subElements.size() > 0) {
-			return subElements.get(0).text();
-		}
+	private List<String> toLines(Element element) {
+		return toLines(element, new QuoteProcessor() {
+			@Override
+			public String processText(String text) {
+				while (text.startsWith(">")) { // comments
+					text = text.substring(1).trim();
+				}
 
-		return "";
-	}
+				return text;
+			}
 
-	/**
-	 * Get the first element of the given tag, or an empty {@link String} if
-	 * none found.
-	 * 
-	 * @param element
-	 *            the element to look in
-	 * @param tagName
-	 *            the tag to look for
-	 * 
-	 * @return the value or an empty {@link String}
-	 */
-	private String firstOrEmptyTag(Element element, String tagName) {
-		Elements subElements = element.getElementsByTag(tagName);
-		if (subElements.size() > 0) {
-			return subElements.get(0).text();
-		}
+			@Override
+			public boolean detectQuote(Node node) {
+				if (node instanceof Element) {
+					Element elementNode = (Element) node;
+					if (elementNode.tagName().equals("blockquote")
+							|| elementNode.hasClass("QuotedText")) {
+						return true;
+					}
+				}
 
-		return "";
+				return false;
+			}
+
+			@Override
+			public boolean ignoreNode(Node node) {
+				if (node instanceof Element) {
+					Element elementNode = (Element) node;
+					if (elementNode.hasClass("CommentPoster")) {
+						return true;
+					}
+				}
+
+				return false;
+			}
+		});
 	}
 }

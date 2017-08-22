@@ -9,6 +9,7 @@ import java.util.List;
 import org.jsoup.helper.DataUtil;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
+import org.jsoup.nodes.Node;
 import org.jsoup.select.Elements;
 
 import be.nikiroo.gofetch.data.Comment;
@@ -117,9 +118,9 @@ public class Pipedot extends BasicSupport {
 	}
 
 	private Comment getComment(Element commentElement) {
-		String title = firstOrEmptyTag(commentElement, "h3");
-		String author = firstOrEmpty(commentElement, "h4");
-		String content = firstOrEmpty(commentElement, "comment-body");
+		String title = firstOrEmptyTag(commentElement, "h3").text();
+		String author = firstOrEmpty(commentElement, "h4").text();
+		Element content = firstOrEmpty(commentElement, "comment-body");
 
 		String date = "";
 		int pos = author.lastIndexOf(" on ");
@@ -129,7 +130,7 @@ public class Pipedot extends BasicSupport {
 		}
 
 		Comment comment = new Comment(commentElement.id(), author, title, date,
-				content);
+				toLines(content));
 
 		Elements commentOutline = commentElement
 				.getElementsByClass("comment-outline");
@@ -140,43 +141,30 @@ public class Pipedot extends BasicSupport {
 		return comment;
 	}
 
-	/**
-	 * Get the first element of the given class, or an empty {@link String} if
-	 * none found.
-	 * 
-	 * @param element
-	 *            the element to look in
-	 * @param className
-	 *            the class to look for
-	 * 
-	 * @return the value or an empty {@link String}
-	 */
-	private String firstOrEmpty(Element element, String className) {
-		Elements subElements = element.getElementsByClass(className);
-		if (subElements.size() > 0) {
-			return subElements.get(0).text();
-		}
+	private List<String> toLines(Element element) {
+		return toLines(element, new QuoteProcessor() {
+			@Override
+			public String processText(String text) {
+				return text;
+			}
 
-		return "";
-	}
+			@Override
+			public boolean detectQuote(Node node) {
+				if (node instanceof Element) {
+					Element elementNode = (Element) node;
+					if (elementNode.tagName().equals("blockquote")
+							|| elementNode.hasClass("quote")) {
+						return true;
+					}
+				}
 
-	/**
-	 * Get the first element of the given tag, or an empty {@link String} if
-	 * none found.
-	 * 
-	 * @param element
-	 *            the element to look in
-	 * @param tagName
-	 *            the tag to look for
-	 * 
-	 * @return the value or an empty {@link String}
-	 */
-	private String firstOrEmptyTag(Element element, String tagName) {
-		Elements subElements = element.getElementsByTag(tagName);
-		if (subElements.size() > 0) {
-			return subElements.get(0).text();
-		}
+				return false;
+			}
 
-		return "";
+			@Override
+			public boolean ignoreNode(Node node) {
+				return false;
+			}
+		});
 	}
 }

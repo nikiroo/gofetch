@@ -9,6 +9,7 @@ import java.util.List;
 import org.jsoup.helper.DataUtil;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
+import org.jsoup.nodes.Node;
 import org.jsoup.select.Elements;
 
 import be.nikiroo.gofetch.data.Comment;
@@ -92,41 +93,82 @@ public class Slashdot extends BasicSupport {
 
 	private List<Comment> getComments(Element listing) {
 		List<Comment> comments = new ArrayList<Comment>();
+		Comment lastComment = null;
 		for (Element commentElement : listing.children()) {
 			if (commentElement.hasClass("comment")) {
-				Comment comment = getComment(commentElement);
-				if (!comment.isEmpty()) {
-					comments.add(comment);
+				if (!commentElement.hasClass("hidden")) {
+					lastComment = getComment(commentElement);
+					comments.add(lastComment);
+				}
+
+				List<Comment> subComments = new ArrayList<Comment>();
+				for (Element child : commentElement.children()) {
+					if (child.id().contains("commtree_")) {
+						subComments.addAll(getComments(child));
+					}
+				}
+
+				if (lastComment == null) {
+					comments.addAll(subComments);
+				} else {
+					lastComment.addAll(subComments);
 				}
 			}
 		}
+
 		return comments;
 	}
 
+	/**
+	 * Get a comment from the given element.
+	 * 
+	 * @param commentElement
+	 *            the element to get the comment of.
+	 * 
+	 * @return the comment, <b>NOT</b> including sub-comments
+	 */
 	private Comment getComment(Element commentElement) {
-		String title = firstOrEmpty(commentElement, "title");
-		String author = firstOrEmpty(commentElement, "by");
-		String content = firstOrEmpty(commentElement, "commentBody");
-		String date = firstOrEmpty(commentElement, "otherdetails");
+		String title = firstOrEmpty(commentElement, "title").text();
+		String author = firstOrEmpty(commentElement, "by").text();
+		String date = firstOrEmpty(commentElement, "otherdetails").text();
+		Element content = firstOrEmpty(commentElement, "commentBody");
 
-		Comment comment = new Comment(commentElement.id(), author, title, date,
-				content);
-
-		for (Element child : commentElement.children()) {
-			if (child.id().contains("commtree_")) {
-				comment.addAll(getComments(child));
-			}
-		}
-
-		return comment;
+		return new Comment(commentElement.id(), author, title, date,
+				toLines(content));
 	}
 
-	private String firstOrEmpty(Element element, String className) {
-		Elements subElements = element.getElementsByClass(className);
-		if (subElements.size() > 0) {
-			return subElements.get(0).text();
-		}
+	private List<String> toLines(Element element) {
+		return toLines(element, new QuoteProcessor() {
+			@Override
+			public String processText(String text) {
+				while (text.startsWith(">")) { // comment in one-liners
+					text = text.substring(1).trim();
+				}
 
-		return "";
+				return text;
+			}
+
+			@Override
+			public boolean detectQuote(Node node) {
+				if (node instanceof Element) {
+					Element elementNode = (Element) node;
+					if (elementNode.tagName().equals("blockquote")
+							|| elementNode.hasClass("quote")
+							|| (elementNode.tagName().equals("p")
+									&& elementNode.textNodes().size() == 1 && elementNode
+									.textNodes().get(0).getWholeText()
+									.startsWith(">"))) {
+						return true;
+					}
+				}
+
+				return false;
+			}
+
+			@Override
+			public boolean ignoreNode(Node node) {
+				return false;
+			}
+		});
 	}
 }

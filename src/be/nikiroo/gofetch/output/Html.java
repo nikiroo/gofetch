@@ -17,7 +17,7 @@ public class Html extends Output {
 		}
 
 		String gopherUrl = "gopher://" + hostname + sel + ":" + port;
-		
+
 		StringBuilder builder = new StringBuilder();
 		appendPre(builder);
 
@@ -28,9 +28,9 @@ public class Html extends Output {
 				+ "</a>.</p>\n"//
 				+ "<p>They are simply scrapped from their associated webpage and updated a few times a day.</p>\n"//
 		);
-		
+
 		appendPost(builder);
-		
+
 		return builder.toString();
 	}
 
@@ -101,8 +101,11 @@ public class Html extends Output {
 				.append("</h2>\n");
 		builder.append(space).append("  <div class='by'>")
 				.append(comment.getAuthor()).append("</div>\n");
-		builder.append(space).append("  <div class='comment_content'>")
-				.append(comment.getContent()).append("</div>\n");
+		builder.append(space).append("  <div class='comment_content'>");
+		for (String line : comment.getContentLines()) {
+			builder.append("<p>" + line + "</p>");
+		}
+		builder.append("</div>\n");
 		for (Comment subComment : comment) {
 			appendHtml(builder, subComment, space + "  ");
 		}

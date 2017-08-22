@@ -9,16 +9,16 @@ public class Comment implements Iterable<Comment> {
 	private String author;
 	private String title;
 	private String date;
-	private String content;
+	private List<String> lines;
 	private List<Comment> children;
 
 	public Comment(String id, String author, String title, String date,
-			String content) {
+			List<String> lines) {
 		this.id = id;
 		this.author = author;
 		this.title = title;
 		this.date = date;
-		this.content = content;
+		this.lines = lines;
 		this.children = new ArrayList<Comment>();
 	}
 
@@ -61,13 +61,13 @@ public class Comment implements Iterable<Comment> {
 	/**
 	 * @return the content
 	 */
-	public String getContent() {
-		return content;
+	public List<String> getContentLines() {
+		return lines;
 	}
 
 	public boolean isEmpty() {
-		return children.isEmpty()
-				&& ("" + author + title + content).trim().isEmpty();
+		return children.isEmpty() && lines.isEmpty()
+				&& ("" + author + title).trim().isEmpty();
 	}
 
 	@Override

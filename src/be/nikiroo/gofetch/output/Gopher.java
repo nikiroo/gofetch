@@ -65,13 +65,30 @@ public class Gopher extends Output {
 			space = space.substring(0, LINE_SIZE - 20);
 		}
 
-		appendLeft(builder, comment.getTitle(), ">> ", "   ", space);
+		appendLeft(builder, comment.getTitle(), "** ", "   ", space);
 		appendLeft(builder, "(" + comment.getAuthor() + ")", "   ", "   ",
 				space);
 
 		builder.append("i\r\n");
 
-		appendLeft(builder, comment.getContent(), "   ", "   ", space);
+		for (String line : comment.getContentLines()) {
+			int depth = 0;
+			while (line.length() > depth && line.charAt(depth) == '>') {
+				depth++;
+			}
+			line = line.substring(depth).trim();
+
+			String prep = "   ";
+			for (int i = 0; i < depth; i++) {
+				prep += ">";
+			}
+
+			if (depth > 0) {
+				prep += " ";
+			}
+
+			appendLeft(builder, line, prep, prep, space);
+		}
 
 		builder.append("i\r\n");
 		for (Comment subComment : comment) {
