@@ -5,6 +5,7 @@
 - Add Linux Weekly News support
 - Correctly handle BR tags
 - Supports quotes
+- .cache -> gophermap
 
 ## Version 0.1.1
 
