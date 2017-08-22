@@ -148,9 +148,11 @@ public class Gopher extends Output {
 	// note: adds "i"
 	private static void appendJustified(StringBuilder builder, String text,
 			String space) {
-		for (String line : StringJustifier.full(text,
-				LINE_SIZE - space.length())) {
-			builder.append("i").append(line).append("\r\n");
+		for (String line : text.split("\n")) {
+			for (String subline : StringJustifier.full(line,
+					LINE_SIZE - space.length())) {
+				builder.append("i").append(subline).append("\r\n");
+			}
 		}
 	}
 
@@ -164,11 +166,13 @@ public class Gopher extends Output {
 	private static void appendLeft(StringBuilder builder, String text,
 			String prependFirst, String prependOthers, String space) {
 		String prepend = prependFirst;
-		for (String line : StringJustifier.left(text,
-				LINE_SIZE - space.length())) {
-			builder.append("i").append(space).append(prepend).append(line)
-					.append("\r\n");
-			prepend = prependOthers;
+		for (String line : text.split("\n")) {
+			for (String subline : StringJustifier.left(line,
+					LINE_SIZE - space.length())) {
+				builder.append("i").append(space).append(prepend)
+						.append(subline).append("\r\n");
+				prepend = prependOthers;
+			}
 		}
 	}
 }

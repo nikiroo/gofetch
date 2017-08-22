@@ -33,9 +33,9 @@ public class Slashdot extends BasicSupport {
 		URL url = new URL("https://slashdot.org/");
 		InputStream in = open(url);
 		Document doc = DataUtil.load(in, "UTF-8", url.toString());
-		Elements stories = doc.getElementsByTag("header");
-		for (Element story : stories) {
-			Elements titles = story.getElementsByClass("story-title");
+		Elements articles = doc.getElementsByTag("header");
+		for (Element article : articles) {
+			Elements titles = article.getElementsByClass("story-title");
 			if (titles.size() == 0) {
 				continue;
 			}
@@ -58,7 +58,7 @@ public class Slashdot extends BasicSupport {
 			}
 
 			String details = "";
-			Elements detailsElements = story.getElementsByClass("details");
+			Elements detailsElements = article.getElementsByClass("details");
 			if (detailsElements.size() > 0) {
 				details = detailsElements.get(0).text();
 			}
@@ -168,6 +168,11 @@ public class Slashdot extends BasicSupport {
 			@Override
 			public boolean ignoreNode(Node node) {
 				return false;
+			}
+
+			@Override
+			public String manualProcessing(Node node) {
+				return null;
 			}
 		});
 	}

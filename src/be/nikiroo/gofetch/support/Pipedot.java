@@ -33,9 +33,9 @@ public class Pipedot extends BasicSupport {
 		URL url = new URL("https://pipedot.org/");
 		InputStream in = open(url);
 		Document doc = DataUtil.load(in, "UTF-8", url.toString());
-		Elements stories = doc.getElementsByClass("story");
-		for (Element story : stories) {
-			Elements titles = story.getElementsByTag("h1");
+		Elements articles = doc.getElementsByClass("story");
+		for (Element article : articles) {
+			Elements titles = article.getElementsByTag("h1");
 			if (titles.size() == 0) {
 				continue;
 			}
@@ -43,7 +43,7 @@ public class Pipedot extends BasicSupport {
 			Element title = titles.get(0);
 
 			String id = "";
-			for (Element idElem : story.getElementsByTag("a")) {
+			for (Element idElem : article.getElementsByTag("a")) {
 				if (idElem.attr("href").startsWith("/pipe/")) {
 					id = idElem.attr("href").substring("/pipe/".length());
 					break;
@@ -53,7 +53,7 @@ public class Pipedot extends BasicSupport {
 			String intUrl = null;
 			String extUrl = null;
 
-			Elements links = story.getElementsByTag("a");
+			Elements links = article.getElementsByTag("a");
 			if (links.size() > 0) {
 				intUrl = links.get(0).absUrl("href");
 			}
@@ -68,13 +68,13 @@ public class Pipedot extends BasicSupport {
 			}
 
 			String details = "";
-			Elements detailsElements = story.getElementsByTag("div");
+			Elements detailsElements = article.getElementsByTag("div");
 			if (detailsElements.size() > 0) {
 				details = detailsElements.get(0).text();
 			}
 
 			String body = "";
-			for (Element elem : story.children()) {
+			for (Element elem : article.children()) {
 				String tag = elem.tag().toString();
 				if (!tag.equals("header") && !tag.equals("footer")) {
 					body = elem.text();
@@ -164,6 +164,11 @@ public class Pipedot extends BasicSupport {
 			@Override
 			public boolean ignoreNode(Node node) {
 				return false;
+			}
+
+			@Override
+			public String manualProcessing(Node node) {
+				return null;
 			}
 		});
 	}

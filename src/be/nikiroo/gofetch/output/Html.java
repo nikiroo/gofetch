@@ -120,8 +120,12 @@ public class Html extends Output {
 		} else {
 			builder.append("	<h1>" + story.getTitle() + "</h1>\n");
 		}
-		builder.append("	<div class='details'>(" + story.getDetails()
-				+ ")</div>\n");
+
+		builder.append("	<div class='details'>");
+		if (story.getDetails() != null && !story.getDetails().isEmpty()) {
+			builder.append("(").append(story.getDetails()).append(")");
+		}
+		builder.append("</div>\n");
 		builder.append("	<br/>\n");
 
 		if (!resume) {
@@ -140,7 +144,10 @@ public class Html extends Output {
 		if (resume) {
 			builder.append("		" + story.getContent() + "\n");
 		} else {
-			builder.append("		" + story.getFullContent() + "\n");
+			builder.append("		"
+					+ story.getFullContent().replace("\n", "<br/>")
+							.replace("[ ", "<h2>").replace(" ]", "</h2>")
+					+ "\n");
 		}
 		builder.append("	</div>\n");
 

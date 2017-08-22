@@ -33,10 +33,10 @@ public class LWN extends BasicSupport {
 		URL url = new URL("https://lwn.net/");
 		InputStream in = open(url);
 		Document doc = DataUtil.load(in, "UTF-8", url.toString());
-		Elements stories = doc.getElementsByClass("pure-u-1");
-		for (Element story : stories) {
-			Elements titles = story.getElementsByClass("Headline");
-			Elements listings = story.getElementsByClass("BlurbListing");
+		Elements articles = doc.getElementsByClass("pure-u-1");
+		for (Element article : articles) {
+			Elements titles = article.getElementsByClass("Headline");
+			Elements listings = article.getElementsByClass("BlurbListing");
 			if (titles.size() == 0) {
 				continue;
 			}
@@ -74,7 +74,7 @@ public class LWN extends BasicSupport {
 			String id = "";
 			String intUrl = "";
 			String extUrl = "";
-			for (Element idElem : story.getElementsByTag("a")) {
+			for (Element idElem : article.getElementsByTag("a")) {
 				// Last link is the story link
 				intUrl = idElem.absUrl("href");
 				pos = intUrl.indexOf("#Comments");
@@ -200,6 +200,11 @@ public class LWN extends BasicSupport {
 				}
 
 				return false;
+			}
+
+			@Override
+			public String manualProcessing(Node node) {
+				return null;
 			}
 		});
 	}

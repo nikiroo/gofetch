@@ -1,5 +1,10 @@
 # Gofetch
 
+## Version 1.0.0
+
+- Add Le Monde support
+- Fix some small textual issues
+
 ## Version 0.2.0
 
 - Add Linux Weekly News support

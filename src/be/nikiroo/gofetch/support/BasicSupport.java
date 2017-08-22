@@ -20,7 +20,7 @@ import be.nikiroo.gofetch.data.Story;
 
 public abstract class BasicSupport {
 	public enum Type {
-		SLASHDOT, PIPEDOT, LWN,
+		SLASHDOT, PIPEDOT, LWN, LEMONDE,
 	}
 
 	public interface QuoteProcessor {
@@ -29,12 +29,33 @@ public abstract class BasicSupport {
 		public String processText(String text);
 
 		public boolean ignoreNode(Node node);
+
+		/**
+		 * Manually process this node if so desired.
+		 * 
+		 * @param node
+		 *            the node to optionally process
+		 * 
+		 * @return NULL if not processed, a {@link String} (may be empty) if we
+		 *         must not process it any further
+		 */
+		public String manualProcessing(Node node);
 	}
 
 	static private String preselector;
 
 	private Type type;
 
+	/**
+	 * List all the recent items, but only assure the ID and internal URL to
+	 * fetch it later on (until it has been fetched, the rest of the
+	 * {@link Story} is not confirmed).
+	 * 
+	 * @return the list of new stories
+	 * 
+	 * @throws IOException
+	 *             in case of I/O
+	 */
 	abstract public List<Story> list() throws IOException;
 
 	/**
@@ -84,6 +105,9 @@ public abstract class BasicSupport {
 				break;
 			case LWN:
 				support = new LWN();
+				break;
+			case LEMONDE:
+				support = new LeMonde();
 				break;
 			}
 
@@ -162,8 +186,18 @@ public abstract class BasicSupport {
 			new NodeTraversor(new NodeVisitor() {
 				@Override
 				public void head(Node node, int depth) {
-					if (quoteProcessor.ignoreNode(node)
-							|| ignoredNodes.contains(node.parentNode())) {
+					String manual = null;
+					boolean ignore = quoteProcessor.ignoreNode(node)
+							|| ignoredNodes.contains(node.parentNode());
+					if (!ignore) {
+						manual = quoteProcessor.manualProcessing(node);
+						if (manual != null) {
+							currentLine.append(manual);
+							ignore = true;
+						}
+					}
+
+					if (ignore) {
 						ignoredNodes.add(node);
 						return;
 					}
