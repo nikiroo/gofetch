@@ -227,10 +227,19 @@ public class Fetcher {
 		}
 	}
 
+	/**
+	 * 
+	 * @param name
+	 * @param ref
+	 * @param index
+	 *            this link is in an index (and link to a NON index)
+	 * @param html
+	 * @return
+	 */
 	private String getLink(String name, String ref, boolean index, boolean html) {
 		if (!html) {
-			return new StringBuilder().append("1" + name).append("\t")
-					.append(ref) //
+			return new StringBuilder().append((index ? "0" : "1") + name)
+					.append("\t").append(ref) //
 					.append("\t").append(hostname) //
 					.append("\t").append(Integer.toString(port)) //
 					.append("\r\n").toString();
