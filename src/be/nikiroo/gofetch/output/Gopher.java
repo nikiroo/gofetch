@@ -16,7 +16,7 @@ public class Gopher extends Output {
 	public String getIndexHeader() {
 		StringBuilder builder = new StringBuilder();
 
-		appendCenter(builder, true, "NEWS", true);
+		appendCenter(builder, true, "NEWS", "", true);
 		appendLeft(builder, true, "", "");
 		appendLeft(builder, true,
 				"You will find here a few pages full of news.", "");
@@ -50,7 +50,7 @@ public class Gopher extends Output {
 
 		if (story.getComments() != null) {
 			for (Comment comment : story.getComments()) {
-				append(builder, false, comment, "");
+				append(builder, false, comment, "  ");
 			}
 		}
 
@@ -91,10 +91,10 @@ public class Gopher extends Output {
 			appendLeft(builder, menu, line, prep, prep, space);
 		}
 
-		builder.append("i\r\n");
+		builder.append((menu ? "i" : "") + "\r\n");
 		for (Comment subComment : comment) {
 			append(builder, menu, subComment, space + "   ");
-			builder.append("i\r\n");
+			builder.append((menu ? "i" : "") + "\r\n");
 		}
 
 		return builder;
@@ -103,7 +103,7 @@ public class Gopher extends Output {
 	private StringBuilder append(StringBuilder builder, Story story,
 			boolean resume) {
 		if (!resume) {
-			appendCenter(builder, false, story.getTitle(), true);
+			appendCenter(builder, false, story.getTitle(), "  ", true);
 			builder.append("\r\n");
 			appendJustified(builder, false, story.getDetails(), "  ");
 			builder.append("\r\n");
@@ -129,29 +129,35 @@ public class Gopher extends Output {
 			appendJustified(builder, true, story.getContent(), "    ");
 		}
 
-		builder.append((resume ? "i" : "") + "\r\n");
+		builder.append(resume ? "i" : "").append("\r\n");
 
 		return builder;
 	}
 
 	// note: adds "i"
 	private static void appendCenter(StringBuilder builder, boolean menu,
-			String text, boolean allCaps) {
+			String text, String space, boolean allCaps) {
 		if (allCaps) {
 			text = text.toUpperCase();
 		}
-
-		for (String line : StringJustifier.center(text, LINE_SIZE)) {
-			builder.append(menu ? "i" : "").append(line).append("\r\n");
+		
+		int size = LINE_SIZE - space.length();
+		for (String line : StringJustifier.center(text, size)) {
+			builder.append(menu ? "i" : "")
+				.append(space)
+				.append(line).append("\r\n");
 		}
 	}
 
 	private static void appendJustified(StringBuilder builder, boolean menu,
 			String text, String space) {
 		for (String line : text.split("\n")) {
-			for (String subline : StringJustifier.full(line,
-					LINE_SIZE - space.length())) {
-				builder.append(menu ? "i" : "").append(subline).append("\r\n");
+			int size = LINE_SIZE - space.length();
+			for (String subline : StringJustifier.full(line, size)) {
+				builder.append(menu ? "i" : "")
+					.append(space)
+					.append(subline)
+					.append("\r\n");
 			}
 		}
 	}
