@@ -93,7 +93,7 @@ public class Fetcher {
 			}
 			ref = "../" + ref + "/index.html";
 
-			htmlBuilder.append(getLink(support.getDescription(), ref, false,
+			htmlBuilder.append(getLink(support.getDescription(), ref, true,
 					true));
 		}
 
@@ -231,14 +231,14 @@ public class Fetcher {
 	 * 
 	 * @param name
 	 * @param ref
-	 * @param index
-	 *            this link is in an index (and link to a NON index)
+	 * @param menu
+	 *            menu (gophermap, i) mode
 	 * @param html
 	 * @return
 	 */
-	private String getLink(String name, String ref, boolean index, boolean html) {
+	private String getLink(String name, String ref, boolean menu, boolean html) {
 		if (!html) {
-			return new StringBuilder().append((index ? "0" : "1") + name)
+			return new StringBuilder().append((menu ? "1" : "0") + name)
 					.append("\t").append(ref) //
 					.append("\t").append(hostname) //
 					.append("\t").append(Integer.toString(port)) //
