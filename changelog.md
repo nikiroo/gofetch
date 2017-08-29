@@ -1,5 +1,9 @@
 # Gofetch
 
+## Version 1.0.2
+
+- Fix news format (text, not gophermap)
+
 ## Version 1.0.0
 
 - Fix a problem in the Le Monde ids for gopher
