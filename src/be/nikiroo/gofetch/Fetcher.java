@@ -93,8 +93,8 @@ public class Fetcher {
 			}
 			ref = "../" + ref + "/index.html";
 
-			htmlBuilder.append(getLink(support.getDescription(), ref, true,
-					true));
+			htmlBuilder.append(getLink(support.getDescription(), 
+					ref, true, true));
 		}
 
 		File gopherCache = new File(dir, preselector);
@@ -197,10 +197,19 @@ public class Fetcher {
 			boolean last = i == headers.length - 1;
 			if (enoughStories || last) {
 				if (!last) {
-					gopherLines.add(getLink("More", support.getSelector()
-							+ "gophermap_" + (page + 1), false, false));
-					htmlLines.add(getLink("More", "index_" + (page + 1)
-							+ ".html", false, true));
+					gopherLines.add(getLink("More", 
+						support.getSelector() 
+							+ "gophermap_" 
+							+ (page + 1),
+						true, 
+						false));
+					
+					htmlLines.add(getLink("More", 
+						"index_" 
+							+ (page + 1)
+							+ ".html",
+						true, 
+						true));
 				}
 
 				write(gopherLines, varDir, "gophermap", "", page);
