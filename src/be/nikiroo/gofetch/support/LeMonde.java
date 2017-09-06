@@ -78,12 +78,7 @@ public class LeMonde extends BasicSupport {
 		Document doc = DataUtil.load(in, "UTF-8", url.toString());
 		Element article = doc.getElementById("articleBody");
 		if (article != null) {
-			for (String line : toLines(article, new QuoteProcessor() {
-				@Override
-				public String processText(String text) {
-					return text;
-				}
-
+			for (String line : toLines(article, new BasicElementProcessor() {
 				@Override
 				public boolean ignoreNode(Node node) {
 					if (node instanceof Element) {
@@ -93,11 +88,6 @@ public class LeMonde extends BasicSupport {
 						}
 					}
 
-					return false;
-				}
-
-				@Override
-				public boolean detectQuote(Node node) {
 					return false;
 				}
 

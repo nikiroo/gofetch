@@ -142,12 +142,7 @@ public class Pipedot extends BasicSupport {
 	}
 
 	private List<String> toLines(Element element) {
-		return toLines(element, new QuoteProcessor() {
-			@Override
-			public String processText(String text) {
-				return text;
-			}
-
+		return toLines(element, new BasicElementProcessor() {
 			@Override
 			public boolean detectQuote(Node node) {
 				if (node instanceof Element) {
@@ -159,16 +154,6 @@ public class Pipedot extends BasicSupport {
 				}
 
 				return false;
-			}
-
-			@Override
-			public boolean ignoreNode(Node node) {
-				return false;
-			}
-
-			@Override
-			public String manualProcessing(Node node) {
-				return null;
 			}
 		});
 	}

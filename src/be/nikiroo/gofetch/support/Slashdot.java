@@ -138,7 +138,7 @@ public class Slashdot extends BasicSupport {
 	}
 
 	private List<String> toLines(Element element) {
-		return toLines(element, new QuoteProcessor() {
+		return toLines(element, new BasicElementProcessor() {
 			@Override
 			public String processText(String text) {
 				while (text.startsWith(">")) { // comment in one-liners
@@ -163,16 +163,6 @@ public class Slashdot extends BasicSupport {
 				}
 
 				return false;
-			}
-
-			@Override
-			public boolean ignoreNode(Node node) {
-				return false;
-			}
-
-			@Override
-			public String manualProcessing(Node node) {
-				return null;
 			}
 		});
 	}

@@ -167,7 +167,7 @@ public class LWN extends BasicSupport {
 	}
 
 	private List<String> toLines(Element element) {
-		return toLines(element, new QuoteProcessor() {
+		return toLines(element, new BasicElementProcessor() {
 			@Override
 			public String processText(String text) {
 				while (text.startsWith(">")) { // comments
@@ -200,11 +200,6 @@ public class LWN extends BasicSupport {
 				}
 
 				return false;
-			}
-
-			@Override
-			public String manualProcessing(Node node) {
-				return null;
 			}
 		});
 	}
