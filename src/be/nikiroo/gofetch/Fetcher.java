@@ -42,8 +42,8 @@ public class Fetcher {
 	 *            the sub directory and (pre-)selector to use for the resources
 	 *            (<b>will</b> have an impact on the files' content)
 	 * @param type
-	 *            the type of news to get (or the special keyword ALL to get all
-	 *            of the supported sources)
+	 *            the type of news to get (or NULL to get all of the supported
+	 *            sources)
 	 * @param maxStories
 	 *            the maximum number of stories to show on the resume page
 	 * @param hostname
@@ -81,7 +81,12 @@ public class Fetcher {
 			BasicSupport support = BasicSupport.getSupport(type);
 
 			if (type == this.type || this.type == null) {
-				list(support);
+				try {
+					list(support);
+				} catch (Exception e) {
+					new Exception("Failed to process support: " + type, e)
+							.printStackTrace();
+				}
 			}
 
 			gopherBuilder.append(getLink(support.getDescription(),
