@@ -31,7 +31,7 @@ public class Pipedot extends BasicSupport {
 		List<Story> list = new ArrayList<Story>();
 
 		URL url = new URL("https://pipedot.org/");
-		InputStream in = open(url);
+		InputStream in = downloader.open(url);
 		Document doc = DataUtil.load(in, "UTF-8", url.toString());
 		Elements articles = doc.getElementsByClass("story");
 		for (Element article : articles) {
@@ -94,7 +94,7 @@ public class Pipedot extends BasicSupport {
 		List<Comment> comments = new ArrayList<Comment>();
 
 		URL url = new URL(story.getUrlInternal());
-		InputStream in = open(url);
+		InputStream in = downloader.open(url);
 		Document doc = DataUtil.load(in, "UTF-8", url.toString());
 		Elements listing = doc.getElementsByTag("main");
 		if (listing.size() > 0) {

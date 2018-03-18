@@ -28,7 +28,7 @@ public class LeMonde extends BasicSupport {
 		for (String topic : new String[] { "international", "politique",
 				"societe", "sciences" }) {
 			URL url = new URL("http://www.lemonde.fr/" + topic + "/1.html");
-			InputStream in = open(url);
+			InputStream in = downloader.open(url);
 			Document doc = DataUtil.load(in, "UTF-8", url.toString());
 			Elements articles = doc.getElementsByTag("article");
 			for (Element article : articles) {
@@ -74,7 +74,7 @@ public class LeMonde extends BasicSupport {
 		// some javascript, I need to check...)
 
 		URL url = new URL(story.getUrlInternal());
-		InputStream in = open(url);
+		InputStream in = downloader.open(url);
 		Document doc = DataUtil.load(in, "UTF-8", url.toString());
 		Element article = doc.getElementById("articleBody");
 		if (article != null) {

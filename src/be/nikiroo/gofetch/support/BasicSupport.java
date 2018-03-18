@@ -1,12 +1,8 @@
 package be.nikiroo.gofetch.support;
 
 import java.io.IOException;
-import java.io.InputStream;
-import java.net.URL;
-import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.zip.GZIPInputStream;
 
 import org.jsoup.helper.StringUtil;
 import org.jsoup.nodes.Element;
@@ -17,8 +13,11 @@ import org.jsoup.select.NodeTraversor;
 import org.jsoup.select.NodeVisitor;
 
 import be.nikiroo.gofetch.data.Story;
+import be.nikiroo.utils.Downloader;
 
 public abstract class BasicSupport {
+	protected static Downloader downloader = new Downloader("gofetcher");
+
 	public enum Type {
 		SLASHDOT, PIPEDOT, LWN, LEMONDE,
 	}
@@ -191,18 +190,6 @@ public abstract class BasicSupport {
 
 	static public String getSelector(Type type) {
 		return preselector + "/" + type + "/";
-	}
-
-	// TODO: check Downloader.java?
-	static protected InputStream open(URL url) throws IOException {
-		URLConnection conn = url.openConnection();
-		conn.connect();
-		InputStream in = conn.getInputStream();
-		if ("gzip".equals(conn.getContentEncoding())) {
-			in = new GZIPInputStream(in);
-		}
-
-		return in;
 	}
 
 	/**

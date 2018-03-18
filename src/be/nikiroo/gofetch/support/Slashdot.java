@@ -31,7 +31,7 @@ public class Slashdot extends BasicSupport {
 		List<Story> list = new ArrayList<Story>();
 
 		URL url = new URL("https://slashdot.org/");
-		InputStream in = open(url);
+		InputStream in = downloader.open(url);
 		Document doc = DataUtil.load(in, "UTF-8", url.toString());
 		Elements articles = doc.getElementsByTag("header");
 		for (Element article : articles) {
@@ -81,7 +81,7 @@ public class Slashdot extends BasicSupport {
 		List<Comment> comments = new ArrayList<Comment>();
 
 		URL url = new URL(story.getUrlInternal());
-		InputStream in = open(url);
+		InputStream in = downloader.open(url);
 		Document doc = DataUtil.load(in, "UTF-8", url.toString());
 		Element listing = doc.getElementById("commentlisting");
 		if (listing != null) {

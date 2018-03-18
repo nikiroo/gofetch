@@ -93,8 +93,8 @@ public class Fetcher {
 			}
 			ref = "../" + ref + "/index.html";
 
-			htmlBuilder.append(getLink(support.getDescription(), 
-					ref, true, true));
+			htmlBuilder.append(getLink(support.getDescription(), ref, true,
+					true));
 		}
 
 		File gopherCache = new File(dir, preselector);
@@ -188,28 +188,23 @@ public class Fetcher {
 		List<String> gopherLines = new ArrayList<String>();
 		List<String> htmlLines = new ArrayList<String>();
 		for (i = 0; i < headers.length; i++) {
-			gopherLines
-					.add(IOUtils.readSmallFile(new File(varDir, headers[i])));
-			htmlLines.add(IOUtils.readSmallFile(new File(varDir, headers[i]
-					+ ".html")));
+			File gopherFile = new File(varDir, headers[i]);
+			File htmlFile = new File(varDir, headers[i] + ".html");
+
+			if (gopherFile.exists())
+				gopherLines.add(IOUtils.readSmallFile(gopherFile));
+			if (htmlFile.exists())
+				htmlLines.add(IOUtils.readSmallFile(htmlFile));
 
 			boolean enoughStories = (i > 0 && i % maxStories == 0);
 			boolean last = i == headers.length - 1;
 			if (enoughStories || last) {
 				if (!last) {
-					gopherLines.add(getLink("More", 
-						support.getSelector() 
-							+ "gophermap_" 
-							+ (page + 1),
-						true, 
-						false));
-					
-					htmlLines.add(getLink("More", 
-						"index_" 
-							+ (page + 1)
-							+ ".html",
-						true, 
-						true));
+					gopherLines.add(getLink("More", support.getSelector()
+							+ "gophermap_" + (page + 1), true, false));
+
+					htmlLines.add(getLink("More", "index_" + (page + 1)
+							+ ".html", true, true));
 				}
 
 				write(gopherLines, varDir, "gophermap", "", page);
@@ -237,13 +232,18 @@ public class Fetcher {
 	}
 
 	/**
+	 * Create a link.
 	 * 
 	 * @param name
+	 *            the link name (what the user will see)
 	 * @param ref
+	 *            the actual link reference (the target)
 	 * @param menu
-	 *            menu (gophermap, i) mode
+	 *            menu (gophermap, i) mode -- not used in html mode
 	 * @param html
-	 * @return
+	 *            TRUE for html mode, FALSE for gopher mode
+	 * 
+	 * @return the ready-to-use link in a {@link String}
 	 */
 	private String getLink(String name, String ref, boolean menu, boolean html) {
 		if (!html) {

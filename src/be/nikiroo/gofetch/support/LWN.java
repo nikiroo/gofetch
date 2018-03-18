@@ -31,7 +31,7 @@ public class LWN extends BasicSupport {
 		List<Story> list = new ArrayList<Story>();
 
 		URL url = new URL("https://lwn.net/");
-		InputStream in = open(url);
+		InputStream in = downloader.open(url);
 		Document doc = DataUtil.load(in, "UTF-8", url.toString());
 		Elements articles = doc.getElementsByClass("pure-u-1");
 		for (Element article : articles) {
@@ -99,7 +99,7 @@ public class LWN extends BasicSupport {
 		// Do not try the paid-for stories...
 		if (!story.getTitle().startsWith("[$]")) {
 			URL url = new URL(story.getUrlInternal());
-			InputStream in = open(url);
+			InputStream in = downloader.open(url);
 			Document doc = DataUtil.load(in, "UTF-8", url.toString());
 			Elements fullContentElements = doc
 					.getElementsByClass("ArticleText");
