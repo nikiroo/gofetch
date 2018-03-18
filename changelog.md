@@ -1,5 +1,11 @@
 # Gofetch
 
+## Version 1.0.3
+
+- Do not stop at first error (especially when processing ALL)
+- Use the new Downloader
+- Do not error-out when a cached file is not present anymore (e.g., when the HTML file has been deleted but not the gopher file)
+
 ## Version 1.0.2
 
 - Fix news format (text, not gophermap)
