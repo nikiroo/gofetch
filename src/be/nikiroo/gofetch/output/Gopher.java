@@ -1,9 +1,10 @@
 package be.nikiroo.gofetch.output;
 
-import be.nikiroo.gofetch.StringJustifier;
 import be.nikiroo.gofetch.data.Comment;
 import be.nikiroo.gofetch.data.Story;
 import be.nikiroo.gofetch.support.BasicSupport.Type;
+import be.nikiroo.utils.StringUtils;
+import be.nikiroo.utils.StringUtils.Alignment;
 
 public class Gopher extends Output {
 	static private final int LINE_SIZE = 67;
@@ -140,12 +141,14 @@ public class Gopher extends Output {
 		if (allCaps) {
 			text = text.toUpperCase();
 		}
-		
+
 		int size = LINE_SIZE - space.length();
-		for (String line : StringJustifier.center(text, size)) {
-			builder.append(menu ? "i" : "")
-				.append(space)
-				.append(line).append("\r\n");
+		for (String line : StringUtils
+				.justifyText(text, size, Alignment.CENTER)) {
+			builder.append(menu ? "i" : "") //
+					.append(space) //
+					.append(line) //
+					.append("\r\n");
 		}
 	}
 
@@ -153,11 +156,12 @@ public class Gopher extends Output {
 			String text, String space) {
 		for (String line : text.split("\n")) {
 			int size = LINE_SIZE - space.length();
-			for (String subline : StringJustifier.full(line, size)) {
-				builder.append(menu ? "i" : "")
-					.append(space)
-					.append(subline)
-					.append("\r\n");
+			for (String subline : StringUtils.justifyText(line, size,
+					Alignment.JUSTIFY)) {
+				builder.append(menu ? "i" : "") //
+						.append(space) //
+						.append(subline) //
+						.append("\r\n");
 			}
 		}
 	}
@@ -171,10 +175,13 @@ public class Gopher extends Output {
 			String text, String prependFirst, String prependOthers, String space) {
 		String prepend = prependFirst;
 		for (String line : text.split("\n")) {
-			for (String subline : StringJustifier.left(line,
-					LINE_SIZE - space.length())) {
-				builder.append(menu ? "i" : "").append(space).append(prepend)
-						.append(subline).append("\r\n");
+			for (String subline : StringUtils.justifyText(line, LINE_SIZE
+					- space.length(), Alignment.LEFT)) {
+				builder.append(menu ? "i" : "") //
+						.append(space) //
+						.append(prepend) //
+						.append(subline) //
+						.append("\r\n");
 				prepend = prependOthers;
 			}
 		}
