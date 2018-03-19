@@ -118,6 +118,7 @@ public class Gopher extends Output {
 			builder.append("\r\n");
 
 			appendJustified(builder, false, story.getFullContent(), "    ");
+			builder.append("\r\n");
 		} else {
 			builder.append('0').append(story.getTitle()) //
 					.append('\t').append(story.getSelector()) //
@@ -127,10 +128,12 @@ public class Gopher extends Output {
 			appendJustified(builder, true, story.getDetails(), "  ");
 			builder.append("i\r\n");
 
-			appendJustified(builder, true, story.getContent(), "    ");
+			String content = story.getContent();
+			if (!content.isEmpty()) {
+				appendJustified(builder, true, content, "    ");
+				builder.append("i\r\n");
+			}
 		}
-
-		builder.append(resume ? "i" : "").append("\r\n");
 
 		return builder;
 	}
