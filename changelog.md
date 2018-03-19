@@ -1,5 +1,9 @@
 # Gofetch
 
+## Version WIO
+
+- Update to latest nikiroo-utils
+
 ## Version 1.1.0
 
 - New website supported: The Register (https://www.theregister.co.uk/)
