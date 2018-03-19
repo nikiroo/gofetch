@@ -19,7 +19,7 @@ public abstract class BasicSupport {
 	protected static Downloader downloader = new Downloader("gofetcher");
 
 	public enum Type {
-		SLASHDOT, PIPEDOT, LWN, LEMONDE,
+		SLASHDOT, PIPEDOT, LWN, LEMONDE, REGISTER, 
 	}
 
 	/**
@@ -177,6 +177,9 @@ public abstract class BasicSupport {
 				break;
 			case LEMONDE:
 				support = new LeMonde();
+				break;
+			case REGISTER:
+				support = new TheRegister();
 				break;
 			}
 
