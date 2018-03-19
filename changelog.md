@@ -1,5 +1,9 @@
 # Gofetch
 
+## Version 1.1.0
+
+- New website supported: The Register (https://www.theregister.co.uk/)
+
 ## Version 1.0.3
 
 - Do not stop at first error (especially when processing ALL)
