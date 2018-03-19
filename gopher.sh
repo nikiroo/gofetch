@@ -39,7 +39,7 @@ if [ ! -d "$tmpd" ]; then
 	exit 2
 fi
 
-echo "#/bin/sh
+echo "#!/bin/sh
 # PID: $$
 # PID File (this file): $PIDF
 # You can stop the service by deleting this file then making a last
@@ -77,3 +77,4 @@ while [ -e "$PIDF" ]; do
 	) > "$fifo"
 done
 rm -rf "$tmpd" 2>/dev/null
+
