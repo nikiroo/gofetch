@@ -4,6 +4,8 @@
 
 - Update to latest nikiroo-utils
 - Skip stories we fail to fetch instead of aborting the whole process
+- New website supported: TooLinux (https://www.toolinux.com/)
+- Use footnotes for URLs (which were previously not seen)
 
 ## Version 1.1.0
 
