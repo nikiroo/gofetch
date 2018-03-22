@@ -256,6 +256,7 @@ public abstract class BasicSupport {
 		final StringBuilder currentLine = new StringBuilder();
 		final List<Integer> quoted = new ArrayList<Integer>();
 		final List<Node> ignoredNodes = new ArrayList<Node>();
+		final List<String> footnotes = new ArrayList<String>();
 
 		if (element != null) {
 			new NodeTraversor(new NodeVisitor() {
@@ -313,6 +314,11 @@ public abstract class BasicSupport {
 						if (block && currentLine.length() > 0) {
 							currentLine.append("\n");
 						}
+
+						if (!element.absUrl("href").trim().isEmpty()) {
+							footnotes.add(element.absUrl("href"));
+							currentLine.append("[" + footnotes.size() + "]");
+						}
 					} else if (node instanceof TextNode) {
 						TextNode textNode = (TextNode) node;
 						String line = StringUtil.normaliseWhitespace(textNode
@@ -347,6 +353,16 @@ public abstract class BasicSupport {
 
 		for (int i = 0; i < lines.size(); i++) {
 			lines.set(i, lines.get(i).replace("  ", " ").trim());
+		}
+
+		if (footnotes.size() > 0) {
+			lines.add("");
+			lines.add("");
+			lines.add("");
+			lines.add("");
+			for (int i = 0; i < footnotes.size(); i++) {
+				lines.add("[" + (i + 1) + "] " + footnotes.get(i));
+			}
 		}
 
 		return lines;
