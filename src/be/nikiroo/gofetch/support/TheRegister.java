@@ -91,6 +91,7 @@ public class TheRegister extends BasicSupport {
 	public void fetch(Story story) throws IOException {
 		String fullContent = story.getContent();
 		List<Comment> comments = new ArrayList<Comment>();
+		story.setComments(comments);
 
 		URL url = new URL(story.getUrlInternal());
 		InputStream in = downloader.open(url);
@@ -112,6 +113,8 @@ public class TheRegister extends BasicSupport {
 						.trim();
 			}
 
+			story.setFullContent(fullContent);
+
 			// Get comments URL then parse it
 			in.close();
 			in = null;
@@ -131,6 +134,10 @@ public class TheRegister extends BasicSupport {
 					Element idE = post.getElementsByTag("a").first();
 					if (idE != null) {
 						id = idE.attr("id");
+						if (id.startsWith("c_")) {
+							id = id.substring(2);
+						}
+
 						Element dateE = idE.getElementsByTag("span").first();
 						if (dateE != null) {
 							date = date(dateE.attr("data-epoch"));
@@ -154,13 +161,16 @@ public class TheRegister extends BasicSupport {
 									@Override
 									public boolean ignoreNode(Node node) {
 										// TODO: ignore headlines/pub
+
+										// Remove the comment title (which has
+										// already been processed earlier)
 										if (node instanceof Element) {
-											Element el = (Element)node;
+											Element el = (Element) node;
 											if ("h4".equals(el.tagName())) {
 												return true;
 											}
 										}
-										
+
 										return false;
 									}
 								})) {
@@ -168,12 +178,28 @@ public class TheRegister extends BasicSupport {
 						}
 					}
 
-					comments.add(new Comment(id, author, title, date, content));
+					Comment comment = new Comment(id, author, title, date,
+							content);
+					Comment parent = null;
+
+					Element inReplyTo = post.getElementsByClass("in-reply-to")
+							.first();
+					if (inReplyTo != null) {
+						String parentId = inReplyTo.absUrl("href");
+						if (parentId != null && parentId.contains("/")) {
+							int i = parentId.lastIndexOf('/');
+							parentId = parentId.substring(i + 1);
+							parent = story.getCommentById(parentId);
+						}
+					}
+
+					if (parent == null) {
+						comments.add(comment);
+					} else {
+						parent.add(comment);
+					}
 				}
 			}
-
-			story.setFullContent(fullContent);
-			story.setComments(comments);
 		} finally {
 			if (in != null) {
 				in.close();
