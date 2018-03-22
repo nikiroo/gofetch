@@ -1,8 +1,9 @@
 # Gofetch
 
-## Version WIO
+## Version WIP
 
 - Update to latest nikiroo-utils
+- Skip stories we fail to fetch instead of aborting the whole process
 
 ## Version 1.1.0
 
