@@ -130,4 +130,25 @@ public class Story {
 	public void setComments(List<Comment> comments) {
 		this.comments = comments;
 	}
+
+	/**
+	 * Find a comment or sub-comment by its id.
+	 * 
+	 * @param id
+	 *            the id to look for F
+	 * @return this if it has the given id, or a child of this if the child have
+	 *         the given id, or NULL if not
+	 */
+	public Comment getCommentById(String id) {
+		if (id != null && comments != null) {
+			for (Comment comment : comments) {
+				Comment found = comment.getById(id);
+				if (found != null) {
+					return found;
+				}
+			}
+		}
+
+		return null;
+	}
 }

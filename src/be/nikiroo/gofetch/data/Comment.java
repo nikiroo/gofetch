@@ -65,6 +65,30 @@ public class Comment implements Iterable<Comment> {
 		return lines;
 	}
 
+	/**
+	 * Find a comment or sub-comment by its id.
+	 * 
+	 * @param id
+	 *            the id to look for F
+	 * @return this if it has the given id, or a child of this if the child have
+	 *         the given id, or NULL if not
+	 */
+	public Comment getById(String id) {
+		if (id != null) {
+			if (id.equals(this.id)) {
+				return this;
+			}
+
+			for (Comment subComment : this) {
+				if (id.equals(subComment.getId())) {
+					return subComment;
+				}
+			}
+		}
+
+		return null;
+	}
+
 	public boolean isEmpty() {
 		return children.isEmpty() && lines.isEmpty()
 				&& ("" + author + title).trim().isEmpty();
