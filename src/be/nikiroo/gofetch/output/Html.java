@@ -99,7 +99,7 @@ public class Html extends Output {
 				.append("<div class='comment' style='display: block; margin-left: 80px'>\n");
 		builder.append(space).append("  <h2>").append(comment.getTitle())
 				.append("</h2>\n");
-		builder.append(space).append("  <div class='by'>")
+		builder.append(space).append("  <div class='by' style='font-style: italic;'>")
 				.append(comment.getAuthor()).append("</div>\n");
 		builder.append(space).append("  <div class='comment_content'>");
 		for (String line : comment.getContentLines()) {
