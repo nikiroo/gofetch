@@ -147,12 +147,20 @@ public class Fetcher {
 
 		// Get comments (and update stories if needed):
 		int i = 1;
+		List<Story> fetchedStories = new ArrayList<Story>(stories.size());
 		for (Story story : stories) {
-			System.err.println(String.format("%02d/%02d", i, stories.size())
+			System.err.print(String.format("%02d/%02d", i, stories.size())
 					+ " Fetching full story " + story.getId() + "...");
-			support.fetch(story);
+			try {
+				support.fetch(story);
+				fetchedStories.add(story);
+				System.err.println();
+			} catch (IOException e) {
+				System.err.println(" Failed to get story!");
+			}
 			i++;
 		}
+		stories = fetchedStories;
 
 		Output gopher = new Gopher(support.getType(), hostname, preselector,
 				port);
