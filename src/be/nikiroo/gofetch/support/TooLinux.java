@@ -19,7 +19,7 @@ import be.nikiroo.utils.StringUtils;
 public class TooLinux extends BasicSupport {
 	@Override
 	public String getDescription() {
-		return "Premier quotidien francophone d'actualité généraliste sur Linux, les logiciels libres et l'interopérabilité, depuis mars 2000.";
+		return "TooLinux: Premier quotidien francophone d'actualité généraliste sur Linux, les logiciels libres et l'interopérabilité, depuis mars 2000.";
 	}
 
 	@Override
