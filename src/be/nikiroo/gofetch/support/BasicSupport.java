@@ -45,6 +45,8 @@ public abstract class BasicSupport {
 		REGISTER,
 		/** FR: Linux */
 		TOO_LINUX,
+		/** FR: IT */
+		ERE_NUMERIQUE,
 	}
 
 	/**
@@ -237,6 +239,9 @@ public abstract class BasicSupport {
 				break;
 			case TOO_LINUX:
 				support = new TooLinux();
+				break;
+			case ERE_NUMERIQUE:
+				support = new EreNumerique();
 				break;
 			}
 
