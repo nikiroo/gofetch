@@ -102,7 +102,7 @@ public class Story {
 		if (this.details != null && !this.details.trim().isEmpty())
 			details += "\n" + this.details;
 
-		return details;
+		return details.trim();
 	}
 
 	/**
