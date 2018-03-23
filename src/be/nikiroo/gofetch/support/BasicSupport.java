@@ -1,7 +1,10 @@
 package be.nikiroo.gofetch.support;
 
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.jsoup.helper.StringUtil;
@@ -15,11 +18,33 @@ import org.jsoup.select.NodeVisitor;
 import be.nikiroo.gofetch.data.Story;
 import be.nikiroo.utils.Downloader;
 
+/**
+ * Base class for website support.
+ * 
+ * @author niki
+ */
 public abstract class BasicSupport {
+	/** The downloader to use for all websites. */
 	protected static Downloader downloader = new Downloader("gofetcher");
 
+	/**
+	 * The support type (each website we support has a single type).
+	 * 
+	 * @author niki
+	 */
 	public enum Type {
-		SLASHDOT, PIPEDOT, LWN, LEMONDE, REGISTER, TOOLINUX,
+		/** EN: Any, but mostly IT/Sci */
+		SLASHDOT,
+		/** EN: Clone of Slashdot, mostly abandoned */
+		PIPEDOT,
+		/** EN: Linux */
+		LWN,
+		/** FR: Any */
+		LEMONDE,
+		/** EN: IT */
+		REGISTER,
+		/** FR: Linux */
+		TOO_LINUX,
 	}
 
 	/**
@@ -43,7 +68,8 @@ public abstract class BasicSupport {
 		 * 
 		 * @param text
 		 *            the text to process
-		 * @return
+		 * 
+		 * @return the resulting text
 		 */
 		public String processText(String text);
 
@@ -130,21 +156,49 @@ public abstract class BasicSupport {
 	 */
 	abstract public void fetch(Story story) throws IOException;
 
+	/**
+	 * The website textual description, to add in the dispatcher page.
+	 * <p>
+	 * Should be short.
+	 * 
+	 * @return the description
+	 */
 	abstract public String getDescription();
 
+	/**
+	 * The gopher "selector" to use for output.
+	 * <p>
+	 * A kind of "URL path", like "/news/" or "/misc/news/" or...
+	 * 
+	 * @return the selector
+	 */
 	public String getSelector() {
 		return getSelector(type);
 	}
 
+	/**
+	 * The support type.
+	 * 
+	 * @return the type
+	 */
 	public Type getType() {
 		return type;
 	}
 
+	/**
+	 * The support type.
+	 * 
+	 * @param type
+	 *            the new type
+	 */
 	protected void setType(Type type) {
 		this.type = type;
 	}
 
 	/**
+	 * The {@link String} to append to the selector (the selector will be
+	 * constructed as "this string" then "/type/".
+	 * 
 	 * @param preselector
 	 *            the preselector to set
 	 */
@@ -181,7 +235,7 @@ public abstract class BasicSupport {
 			case REGISTER:
 				support = new TheRegister();
 				break;
-			case TOOLINUX:
+			case TOO_LINUX:
 				support = new TooLinux();
 				break;
 			}
@@ -194,6 +248,17 @@ public abstract class BasicSupport {
 		return support;
 	}
 
+	/**
+	 * The gopher "selector" to use for output for this type, using the
+	 * preselector.
+	 * <p>
+	 * A kind of "URL path", like "/news/" or "/misc/news/" or...
+	 * 
+	 * @param type
+	 *            the type to get the selector of
+	 * 
+	 * @return the selector
+	 */
 	static public String getSelector(Type type) {
 		return preselector + "/" + type + "/";
 	}
@@ -256,7 +321,6 @@ public abstract class BasicSupport {
 		final StringBuilder currentLine = new StringBuilder();
 		final List<Integer> quoted = new ArrayList<Integer>();
 		final List<Node> ignoredNodes = new ArrayList<Node>();
-		final List<String> footnotes = new ArrayList<String>();
 
 		if (element != null) {
 			new NodeTraversor(new NodeVisitor() {
@@ -314,11 +378,6 @@ public abstract class BasicSupport {
 						if (block && currentLine.length() > 0) {
 							currentLine.append("\n");
 						}
-
-						if (!element.absUrl("href").trim().isEmpty()) {
-							footnotes.add(element.absUrl("href"));
-							currentLine.append("[" + footnotes.size() + "]");
-						}
 					} else if (node instanceof TextNode) {
 						TextNode textNode = (TextNode) node;
 						String line = StringUtil.normaliseWhitespace(textNode
@@ -355,16 +414,37 @@ public abstract class BasicSupport {
 			lines.set(i, lines.get(i).replace("  ", " ").trim());
 		}
 
-		if (footnotes.size() > 0) {
-			lines.add("");
-			lines.add("");
-			lines.add("");
-			lines.add("");
-			for (int i = 0; i < footnotes.size(); i++) {
-				lines.add("[" + (i + 1) + "] " + footnotes.get(i));
-			}
+		return lines;
+	}
+
+	/**
+	 * Reformat the date if possible.
+	 * 
+	 * @param date
+	 *            the input date
+	 * 
+	 * @return the reformated date, or the same value if it was not parsable
+	 */
+	static protected String date(String date) {
+		SimpleDateFormat out = new SimpleDateFormat("yyyy/MM/dd");
+
+		long epoch = 0;
+		try {
+			epoch = Long.parseLong(date);
+		} catch (Exception e) {
+			epoch = 0;
 		}
 
-		return lines;
+		if (epoch > 0) {
+			return out.format(new Date(1000 * epoch));
+		}
+
+		try {
+			Date dat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX")
+					.parse(date.trim());
+			return out.format(dat);
+		} catch (ParseException e) {
+			return date;
+		}
 	}
 }

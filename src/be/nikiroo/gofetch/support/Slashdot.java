@@ -14,6 +14,7 @@ import org.jsoup.select.Elements;
 
 import be.nikiroo.gofetch.data.Comment;
 import be.nikiroo.gofetch.data.Story;
+import be.nikiroo.utils.StringUtils;
 
 /**
  * Support <a href='https://slashdot.org/'>https://slashdot.org/</a>.
@@ -63,14 +64,38 @@ public class Slashdot extends BasicSupport {
 				details = detailsElements.get(0).text();
 			}
 
+			// details:
+			// "Posted by AUTHOR on DATE from the further-crackdown dept."
+			String author = "";
+			int pos = details.indexOf(" on ");
+			if (details.startsWith("Posted by ") && pos >= 0) {
+				author = details.substring("Posted by ".length(), pos).trim();
+			}
+			pos = details.indexOf(" from the ");
+			if (pos >= 0) {
+				details = details.substring(pos).trim();
+			}
+
 			String body = "";
 			Element bodyElement = doc.getElementById("text-" + id);
 			if (bodyElement != null) {
 				body = bodyElement.text();
 			}
 
-			list.add(new Story(getType(), id, title.text(), details, intUrl,
-					extUrl, body));
+			String categ = "";
+			Element categElement = doc.getElementsByClass("topic").first();
+			if (categElement != null) {
+				categ = StringUtils.unhtml(categElement.text()).trim();
+			}
+
+			String date = "";
+			Element dateElement = doc.getElementsByTag("time").first();
+			if (dateElement != null) {
+				date = StringUtils.unhtml(dateElement.text()).trim();
+			}
+
+			list.add(new Story(getType(), id, title.text(), author, date,
+					categ, details, intUrl, extUrl, body));
 		}
 
 		return list;

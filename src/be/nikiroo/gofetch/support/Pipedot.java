@@ -82,8 +82,8 @@ public class Pipedot extends BasicSupport {
 				}
 			}
 
-			list.add(new Story(getType(), id, title.text(), details, intUrl,
-					extUrl, body));
+			list.add(new Story(getType(), id, title.text(), "", "", "",
+					details, intUrl, extUrl, body));
 		}
 
 		return list;

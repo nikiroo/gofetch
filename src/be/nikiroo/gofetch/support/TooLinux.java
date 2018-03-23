@@ -16,10 +16,15 @@ import be.nikiroo.gofetch.data.Comment;
 import be.nikiroo.gofetch.data.Story;
 import be.nikiroo.utils.StringUtils;
 
+/**
+ * Support <a href="https://www.toolinux.com/">https://www.toolinux.com/</a>.
+ * 
+ * @author niki
+ */
 public class TooLinux extends BasicSupport {
 	@Override
 	public String getDescription() {
-		return "TooLinux: Premier quotidien francophone d'actualité généraliste sur Linux, les logiciels libres et l'interopérabilité, depuis mars 2000.";
+		return "TooLinux: Actualité généraliste sur Linux et les logiciels libres";
 	}
 
 	@Override
@@ -38,6 +43,8 @@ public class TooLinux extends BasicSupport {
 			String date = "";
 			String details = "";
 			String body = "";
+			String author = ""; // nope
+			String categ = ""; // nope
 
 			Element urlElement = article.getElementsByTag("a").first();
 			if (urlElement != null) {
@@ -64,13 +71,12 @@ public class TooLinux extends BasicSupport {
 
 			Element detailsElement = article.getElementsByClass("introduction")
 					.first();
-			details = "(" + date + ") ";
 			if (detailsElement != null) {
 				details += StringUtils.unhtml(detailsElement.text()).trim();
 			}
 
-			list.add(new Story(getType(), id, title, details, intUrl, extUrl,
-					body));
+			list.add(new Story(getType(), id, title, author, date, categ,
+					details, intUrl, extUrl, body));
 		}
 
 		return list;

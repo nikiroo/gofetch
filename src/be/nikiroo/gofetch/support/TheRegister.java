@@ -3,9 +3,7 @@ package be.nikiroo.gofetch.support;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import org.jsoup.helper.DataUtil;
@@ -18,6 +16,12 @@ import be.nikiroo.gofetch.data.Comment;
 import be.nikiroo.gofetch.data.Story;
 import be.nikiroo.utils.StringUtils;
 
+/**
+ * Support <a
+ * href="https://www.theregister.co.uk/">https://www.theregister.co.uk/</a>.
+ * 
+ * @author niki
+ */
 public class TheRegister extends BasicSupport {
 	@Override
 	public String getDescription() {
@@ -46,17 +50,18 @@ public class TheRegister extends BasicSupport {
 			String date = "";
 			String details = "";
 			String body = "";
+			String categ = "";
+			String author = ""; // nope
 
-			String topic = "";
-			Element topicElement = article.previousElementSibling();
-			if (topicElement != null) {
-				topic = "[" + topicElement.text().trim() + "] ";
+			Element categElement = article.previousElementSibling();
+			if (categElement != null) {
+				categ = categElement.text().trim();
 			}
+
 			Element titleElement = article.getElementsByTag("h4").first();
 			if (titleElement != null) {
 				title = StringUtils.unhtml(titleElement.text()).trim();
 			}
-			title = topic + title;
 
 			Element dateElement = article.getElementsByClass("time_stamp")
 					.first();
@@ -80,8 +85,8 @@ public class TheRegister extends BasicSupport {
 				details += StringUtils.unhtml(detailsElement.text()).trim();
 			}
 
-			list.add(new Story(getType(), id, title, details, intUrl, extUrl,
-					body));
+			list.add(new Story(getType(), id, title, author, date, categ,
+					details, intUrl, extUrl, body));
 		}
 
 		return list;
@@ -205,22 +210,5 @@ public class TheRegister extends BasicSupport {
 				in.close();
 			}
 		}
-	}
-
-	// Return display date from epoch String, or "" if error
-	private static String date(String epochString) {
-		long epoch = 0;
-		try {
-			epoch = Long.parseLong(epochString);
-		} catch (Exception e) {
-			epoch = 0;
-		}
-
-		if (epoch > 0) {
-			return new SimpleDateFormat("dd MMM YYYY").format(new Date(
-					1000 * epoch));
-		}
-
-		return "";
 	}
 }

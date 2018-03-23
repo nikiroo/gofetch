@@ -15,6 +15,11 @@ import org.jsoup.select.Elements;
 import be.nikiroo.gofetch.data.Comment;
 import be.nikiroo.gofetch.data.Story;
 
+/**
+ * Support <a href="http://www.lemonde.fr/">http://www.lemonde.fr/</a>.
+ * 
+ * @author niki
+ */
 public class LeMonde extends BasicSupport {
 	@Override
 	public String getDescription() {
@@ -39,24 +44,25 @@ public class LeMonde extends BasicSupport {
 						&& contentElements.size() > 0) {
 					String id = times.get(0).attr("datetime").replace(":", "_")
 							.replace("+", "_");
-					String title = "[" + topic + "] "
-							+ titleElements.get(0).text();
+					String title = titleElements.get(0).text();
+					String date = date(titleElements.get(0).text());
 					String content = contentElements.get(0).text();
 					String intUrl = "";
 					String extUrl = "";
+					String author = "";
 					String details = "";
 
 					Elements detailsElements = article
 							.getElementsByClass("signature");
 					if (detailsElements.size() > 0) {
-						details = detailsElements.get(0).text();
+						author = detailsElements.get(0).text();
 					}
 
 					Elements links = titleElements.get(0).getElementsByTag("a");
 					if (links.size() > 0) {
 						intUrl = links.get(0).absUrl("href");
-						list.add(new Story(getType(), id, title, details,
-								intUrl, extUrl, content));
+						list.add(new Story(getType(), id, title, author, date,
+								topic, details, intUrl, extUrl, content));
 					}
 				}
 			}

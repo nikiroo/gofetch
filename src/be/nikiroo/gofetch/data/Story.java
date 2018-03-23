@@ -15,6 +15,9 @@ public class Story {
 	private Type type;
 	private String id;
 	private String title;
+	private String author;
+	private String date;
+	private String category;
 	private String details;
 	private String urlInternal;
 	private String urlExternal;
@@ -32,8 +35,15 @@ public class Story {
 	 *            the news ID
 	 * @param title
 	 *            the news title
+	 * @param author
+	 *            the author name for the details
+	 * @param date
+	 *            the post date for the details
+	 * @param category
+	 *            the category for the details
 	 * @param details
-	 *            some details to add to the title
+	 *            some details to add to the title (author, date and category
+	 *            will be added in the getter if available)
 	 * @param urlInternal
 	 *            the {@link URL} to get this news on the associated news site
 	 * @param urlExternal
@@ -41,11 +51,15 @@ public class Story {
 	 * @param content
 	 *            the story content
 	 */
-	public Story(Type type, String id, String title, String details,
-			String urlInternal, String urlExternal, String content) {
+	public Story(Type type, String id, String title, String author,
+			String date, String category, String details, String urlInternal,
+			String urlExternal, String content) {
 		this.type = type;
 		this.id = id;
 		this.title = title;
+		this.author = author;
+		this.date = date;
+		this.category = category;
 		this.details = details;
 		this.urlInternal = urlInternal;
 		this.urlExternal = urlExternal;
@@ -77,6 +91,17 @@ public class Story {
 	 * @return the details
 	 */
 	public String getDetails() {
+		String details = "";
+
+		if (category != null && !category.trim().isEmpty())
+			details += "[" + category + "] ";
+		if (date != null && !date.trim().isEmpty())
+			details += date + " ";
+		if (author != null && !author.trim().isEmpty())
+			details += "(" + this.author + ") ";
+		if (this.details != null && !this.details.trim().isEmpty())
+			details += "\n" + this.details;
+
 		return details;
 	}
 

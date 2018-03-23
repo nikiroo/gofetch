@@ -59,8 +59,16 @@ public class LWN extends BasicSupport {
 			}
 			body = body.trim();
 
+			int pos;
+
+			String categ = "";
+			pos = details.indexOf("]");
+			if (pos >= 0) {
+				categ = details.substring(1, pos + 1).trim();
+			}
+
 			String author = "";
-			int pos = details.indexOf(" by ");
+			pos = details.indexOf(" by ");
 			if (pos >= 0) {
 				author = details.substring(pos + " by ".length()).trim();
 			}
@@ -69,7 +77,14 @@ public class LWN extends BasicSupport {
 			pos = details.indexOf(" Posted ");
 			if (pos >= 0) {
 				date = details.substring(pos + " Posted ".length()).trim();
+				pos = details.indexOf(" by ");
+				if (pos >= 0) {
+					author = details.substring(0, pos).trim();
+				}
 			}
+
+			// We extracted everything from details so...
+			details = "";
 
 			String id = "";
 			String intUrl = "";
@@ -84,8 +99,8 @@ public class LWN extends BasicSupport {
 				id = intUrl.replaceAll("[^0-9]", "");
 			}
 
-			list.add(new Story(getType(), id, title, details, intUrl, extUrl,
-					body));
+			list.add(new Story(getType(), id, title, author, date, categ,
+					details, intUrl, extUrl, body));
 		}
 
 		return list;
