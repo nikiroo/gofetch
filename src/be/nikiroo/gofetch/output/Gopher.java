@@ -68,10 +68,13 @@ public class Gopher extends Output {
 		}
 
 		appendLeft(builder, menu, comment.getTitle(), "** ", "   ", space);
-		appendLeft(builder, menu, "(" + comment.getAuthor() + ")", "   ",
-				"   ", space);
 
-		builder.append((menu ? "i" : "") + "\r\n");
+		if (comment.getAuthor() != null
+				&& !comment.getAuthor().trim().isEmpty()) {
+			appendLeft(builder, menu, "(" + comment.getAuthor() + ")", "   ",
+					"   ", space);
+			builder.append((menu ? "i" : "") + "\r\n");
+		}
 
 		for (String line : comment.getContentLines()) {
 			int depth = 0;
