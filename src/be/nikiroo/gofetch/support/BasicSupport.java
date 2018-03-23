@@ -435,7 +435,7 @@ public abstract class BasicSupport {
 
 		long epoch = 0;
 		try {
-			epoch = Long.parseLong(date);
+			epoch = Long.parseLong(date.trim());
 		} catch (Exception e) {
 			epoch = 0;
 		}

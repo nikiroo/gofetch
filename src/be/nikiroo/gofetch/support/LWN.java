@@ -64,7 +64,7 @@ public class LWN extends BasicSupport {
 			String categ = "";
 			pos = details.indexOf("]");
 			if (pos >= 0) {
-				categ = details.substring(1, pos + 1).trim();
+				categ = details.substring(1, pos).trim();
 			}
 
 			String author = "";
@@ -77,9 +77,9 @@ public class LWN extends BasicSupport {
 			pos = details.indexOf(" Posted ");
 			if (pos >= 0) {
 				date = details.substring(pos + " Posted ".length()).trim();
-				pos = details.indexOf(" by ");
+				pos = date.indexOf(" by ");
 				if (pos >= 0) {
-					author = details.substring(0, pos).trim();
+					date = date.substring(0, pos).trim();
 				}
 			}
 

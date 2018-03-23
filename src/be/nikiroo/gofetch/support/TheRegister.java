@@ -85,6 +85,9 @@ public class TheRegister extends BasicSupport {
 				details += StringUtils.unhtml(detailsElement.text()).trim();
 			}
 
+			// We have some "details" but no content, so we switch them:
+			body = details;
+			details = "";
 			list.add(new Story(getType(), id, title, author, date, categ,
 					details, intUrl, extUrl, body));
 		}

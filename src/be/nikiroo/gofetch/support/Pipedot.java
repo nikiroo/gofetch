@@ -70,8 +70,37 @@ public class Pipedot extends BasicSupport {
 			String details = "";
 			Elements detailsElements = article.getElementsByTag("div");
 			if (detailsElements.size() > 0) {
-				details = detailsElements.get(0).text();
+				details = detailsElements.get(0).text().trim();
 			}
+
+			String author = "";
+			int pos = details.indexOf("by ");
+			if (pos >= 0) {
+				author = details.substring(pos + "by ".length()).trim();
+				pos = author.indexOf(" in ");
+				if (pos >= 0) {
+					author = author.substring(0, pos).trim();
+				}
+			}
+
+			String categ = "";
+			pos = details.indexOf(" in ");
+			if (pos >= 0) {
+				categ = details.substring(pos + " in ".length()).trim();
+				pos = categ.indexOf(" on ");
+				if (pos >= 0) {
+					categ = categ.substring(0, pos).trim();
+				}
+			}
+
+			String date = "";
+			Element dateElement = article.getElementsByTag("time").first();
+			if (dateElement != null) {
+				date = date(dateElement.attr("datetime"));
+			}
+
+			// We already have all the details (date, author, id, categ)
+			details = "";
 
 			String body = "";
 			for (Element elem : article.children()) {
@@ -82,8 +111,8 @@ public class Pipedot extends BasicSupport {
 				}
 			}
 
-			list.add(new Story(getType(), id, title.text(), "", "", "",
-					details, intUrl, extUrl, body));
+			list.add(new Story(getType(), id, title.text(), author, date,
+					categ, details, intUrl, extUrl, body));
 		}
 
 		return list;

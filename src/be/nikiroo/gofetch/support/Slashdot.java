@@ -49,8 +49,8 @@ public class Slashdot extends BasicSupport {
 			}
 
 			Elements links = title.getElementsByTag("a");
-			String intUrl = null;
-			String extUrl = null;
+			String intUrl = "";
+			String extUrl = "";
 			if (links.size() > 0) {
 				intUrl = links.get(0).absUrl("href");
 			}
@@ -92,6 +92,9 @@ public class Slashdot extends BasicSupport {
 			Element dateElement = doc.getElementsByTag("time").first();
 			if (dateElement != null) {
 				date = StringUtils.unhtml(dateElement.text()).trim();
+				if (date.startsWith("on ")) {
+					date = date.substring("on ".length());
+				}
 			}
 
 			list.add(new Story(getType(), id, title.text(), author, date,
