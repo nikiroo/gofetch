@@ -69,10 +69,10 @@ public class TooLinux extends BasicSupport {
 				id = intUrl.replace("/", "_");
 			}
 
-			Element detailsElement = article.getElementsByClass("introduction")
+			Element bodyElement = article.getElementsByClass("introduction")
 					.first();
-			if (detailsElement != null) {
-				details += StringUtils.unhtml(detailsElement.text()).trim();
+			if (bodyElement != null) {
+				body = StringUtils.unhtml(bodyElement.text()).trim();
 			}
 
 			list.add(new Story(getType(), id, title, author, date, categ,
