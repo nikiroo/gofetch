@@ -3,7 +3,7 @@ package be.nikiroo.gofetch;
 import java.io.File;
 import java.io.IOException;
 
-import be.nikiroo.gofetch.support.BasicSupport.Type;
+import be.nikiroo.gofetch.support.Type;
 
 /**
  * This class is tha main entry point of the program. It will parse the

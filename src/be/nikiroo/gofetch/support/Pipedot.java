@@ -1,19 +1,16 @@
 package be.nikiroo.gofetch.support;
 
 import java.io.IOException;
-import java.io.InputStream;
 import java.net.URL;
+import java.util.AbstractMap;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map.Entry;
 
-import org.jsoup.helper.DataUtil;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.nodes.Node;
 import org.jsoup.select.Elements;
-
-import be.nikiroo.gofetch.data.Comment;
-import be.nikiroo.gofetch.data.Story;
 
 /**
  * Support <a href='https://pipedot.org/'>https://pipedot.org/</a>.
@@ -27,151 +24,207 @@ public class Pipedot extends BasicSupport {
 	}
 
 	@Override
-	public List<Story> list() throws IOException {
-		List<Story> list = new ArrayList<Story>();
-
-		URL url = new URL("https://pipedot.org/");
-		InputStream in = downloader.open(url);
-		Document doc = DataUtil.load(in, "UTF-8", url.toString());
-		Elements articles = doc.getElementsByClass("story");
-		for (Element article : articles) {
-			Elements titles = article.getElementsByTag("h1");
-			if (titles.size() == 0) {
-				continue;
-			}
-
-			Element title = titles.get(0);
-
-			String id = "";
-			for (Element idElem : article.getElementsByTag("a")) {
-				if (idElem.attr("href").startsWith("/pipe/")) {
-					id = idElem.attr("href").substring("/pipe/".length());
-					break;
-				}
-			}
-
-			String intUrl = null;
-			String extUrl = null;
-
-			Elements links = article.getElementsByTag("a");
-			if (links.size() > 0) {
-				intUrl = links.get(0).absUrl("href");
-			}
-
-			// Take first ext URL as original source
-			for (Element link : links) {
-				String uuu = link.absUrl("href");
-				if (!uuu.isEmpty() && !uuu.contains("pipedot.org/")) {
-					extUrl = uuu;
-					break;
-				}
-			}
-
-			String details = "";
-			Elements detailsElements = article.getElementsByTag("div");
-			if (detailsElements.size() > 0) {
-				details = detailsElements.get(0).text().trim();
-			}
-
-			String author = "";
-			int pos = details.indexOf("by ");
-			if (pos >= 0) {
-				author = details.substring(pos + "by ".length()).trim();
-				pos = author.indexOf(" in ");
-				if (pos >= 0) {
-					author = author.substring(0, pos).trim();
-				}
-			}
-
-			String categ = "";
-			pos = details.indexOf(" in ");
-			if (pos >= 0) {
-				categ = details.substring(pos + " in ".length()).trim();
-				pos = categ.indexOf(" on ");
-				if (pos >= 0) {
-					categ = categ.substring(0, pos).trim();
-				}
-			}
-
-			String date = "";
-			Element dateElement = article.getElementsByTag("time").first();
-			if (dateElement != null) {
-				date = date(dateElement.attr("datetime"));
-			}
-
-			// We already have all the details (date, author, id, categ)
-			details = "";
-
-			String body = "";
-			for (Element elem : article.children()) {
-				String tag = elem.tag().toString();
-				if (!tag.equals("header") && !tag.equals("footer")) {
-					body = elem.text();
-					break;
-				}
-			}
-
-			list.add(new Story(getType(), id, title.text(), author, date,
-					categ, details, intUrl, extUrl, body));
-		}
-
-		return list;
+	protected List<Entry<URL, String>> getUrls() throws IOException {
+		List<Entry<URL, String>> urls = new ArrayList<Entry<URL, String>>();
+		urls.add(new AbstractMap.SimpleEntry<URL, String>(new URL(
+				"https://pipedot.org/"), ""));
+		return urls;
 	}
 
 	@Override
-	public void fetch(Story story) throws IOException {
-		List<Comment> comments = new ArrayList<Comment>();
-
-		URL url = new URL(story.getUrlInternal());
-		InputStream in = downloader.open(url);
-		Document doc = DataUtil.load(in, "UTF-8", url.toString());
-		Elements listing = doc.getElementsByTag("main");
-		if (listing.size() > 0) {
-			comments.addAll(getComments(listing.get(0)));
-		}
-
-		story.setComments(comments);
+	protected List<Element> getArticles(Document doc) {
+		return doc.getElementsByClass("story");
 	}
 
-	private List<Comment> getComments(Element listing) {
-		List<Comment> comments = new ArrayList<Comment>();
-		for (Element commentElement : listing.children()) {
-			if (commentElement.hasClass("comment")) {
-				Comment comment = getComment(commentElement);
-				if (!comment.isEmpty()) {
-					comments.add(comment);
-				}
+	@Override
+	protected String getArticleId(Document doc, Element article) {
+		// Don't try on bad articles
+		if (getArticleTitle(doc, article).isEmpty()) {
+			return "";
+		}
+
+		for (Element idElem : article.getElementsByTag("a")) {
+			if (idElem.attr("href").startsWith("/pipe/")) {
+				return idElem.attr("href").substring("/pipe/".length());
 			}
 		}
-		return comments;
+
+		return "";
 	}
 
-	private Comment getComment(Element commentElement) {
-		String title = firstOrEmptyTag(commentElement, "h3").text();
-		String author = firstOrEmpty(commentElement, "h4").text();
-		Element content = firstOrEmpty(commentElement, "comment-body");
+	@Override
+	protected String getArticleTitle(Document doc, Element article) {
+		Element title = article.getElementsByTag("h1").first();
+		if (title != null) {
+			return title.text();
+		}
 
-		String date = "";
-		int pos = author.lastIndexOf(" on ");
+		return "";
+	}
+
+	@Override
+	protected String getArticleAuthor(Document doc, Element article) {
+		String value = getArticleDetailsReal(article);
+		int pos = value.indexOf("by ");
 		if (pos >= 0) {
-			date = author.substring(pos + " on ".length()).trim();
-			author = author.substring(0, pos).trim();
+			value = value.substring(pos + "by ".length()).trim();
+			pos = value.indexOf(" in ");
+			if (pos >= 0) {
+				value = value.substring(0, pos).trim();
+			}
+
+			return value;
 		}
 
-		Comment comment = new Comment(commentElement.id(), author, title, date,
-				toLines(content));
-
-		Elements commentOutline = commentElement
-				.getElementsByClass("comment-outline");
-		if (commentOutline.size() > 0) {
-			comment.addAll(getComments(commentOutline.get(0)));
-		}
-
-		return comment;
+		return "";
 	}
 
-	private List<String> toLines(Element element) {
-		return toLines(element, new BasicElementProcessor() {
+	@Override
+	protected String getArticleDate(Document doc, Element article) {
+		Element dateElement = article.getElementsByTag("time").first();
+		if (dateElement != null) {
+			return dateElement.attr("datetime");
+		}
+
+		return "";
+	}
+
+	@Override
+	protected String getArticleCategory(Document doc, Element article,
+			String currentCategory) {
+		String value = getArticleDetailsReal(article);
+		int pos = value.indexOf(" in ");
+		if (pos >= 0) {
+			value = value.substring(pos + " in ".length()).trim();
+			pos = value.indexOf(" on ");
+			if (pos >= 0) {
+				value = value.substring(0, pos).trim();
+			}
+
+			return value;
+		}
+
+		return "";
+	}
+
+	@Override
+	protected String getArticleDetails(Document doc, Element article) {
+		return ""; // We alrady extracted all the info
+	}
+
+	@Override
+	protected String getArticleIntUrl(Document doc, Element article) {
+		Element link = article.getElementsByTag("a").first();
+		if (link != null) {
+			return link.absUrl("href");
+		}
+
+		return "";
+	}
+
+	@Override
+	protected String getArticleExtUrl(Document doc, Element article) {
+		Element link = article.getElementsByTag("a").first();
+		if (link != null) {
+			String possibleExtLink = link.absUrl("href").trim();
+			if (!possibleExtLink.isEmpty()
+					&& !possibleExtLink.contains("pipedot.org/")) {
+				return possibleExtLink;
+			}
+		}
+
+		return "";
+	}
+
+	@Override
+	protected String getArticleContent(Document doc, Element article) {
+		for (Element elem : article.children()) {
+			String tag = elem.tagName();
+			if (!tag.equals("header") && !tag.equals("footer")) {
+				return elem.text();
+			}
+		}
+
+		return "";
+	}
+
+	@Override
+	protected Element getFullArticle(Document doc) {
+		return null;
+	}
+
+	@Override
+	protected List<Element> getFullArticleCommentPosts(Document doc, URL intUrl) {
+		return getCommentElements(doc.getElementsByTag("main").first());
+	}
+
+	@Override
+	protected ElementProcessor getElementProcessorFullArticle() {
+		return new BasicElementProcessor();
+	}
+
+	@Override
+	protected List<Element> getCommentCommentPosts(Document doc,
+			Element container) {
+
+		if (container != null) {
+			container = container.getElementsByClass("comment-outline").first();
+		}
+
+		return getCommentElements(container);
+	}
+
+	@Override
+	protected String getCommentId(Element post) {
+		return post.id();
+	}
+
+	@Override
+	protected String getCommentAuthor(Element post) {
+		Element authorDateE = post.getElementsByTag("h3").first();
+		if (authorDateE != null) {
+			String authorDate = authorDateE.text();
+			int pos = authorDate.lastIndexOf(" on ");
+			if (pos >= 0) {
+				return authorDate.substring(0, pos).trim();
+			}
+		}
+
+		return "";
+	}
+
+	@Override
+	protected String getCommentTitle(Element post) {
+		Element title = post.getElementsByTag("h3").first();
+		if (title != null) {
+			return title.text();
+		}
+
+		return "";
+	}
+
+	@Override
+	protected String getCommentDate(Element post) {
+		Element authorDateE = post.getElementsByTag("h3").first();
+		if (authorDateE != null) {
+			String authorDate = authorDateE.text();
+			int pos = authorDate.lastIndexOf(" on ");
+			if (pos >= 0) {
+				return authorDate.substring(pos + " on ".length()).trim();
+			}
+		}
+
+		return "";
+	}
+
+	@Override
+	protected Element getCommentContentElement(Element post) {
+		return post.getElementsByClass("comment-body").first();
+	}
+
+	@Override
+	protected ElementProcessor getElementProcessorComment() {
+		return new BasicElementProcessor() {
 			@Override
 			public boolean detectQuote(Node node) {
 				if (node instanceof Element) {
@@ -184,6 +237,27 @@ public class Pipedot extends BasicSupport {
 
 				return false;
 			}
-		});
+		};
+	}
+
+	private String getArticleDetailsReal(Element article) {
+		Elements detailsElements = article.getElementsByTag("div");
+		if (detailsElements.size() > 0) {
+			return detailsElements.get(0).text().trim();
+		}
+
+		return "";
+	}
+
+	private List<Element> getCommentElements(Element container) {
+		List<Element> commentElements = new ArrayList<Element>();
+		if (container != null) {
+			for (Element commentElement : container.children()) {
+				if (commentElement.hasClass("comment")) {
+					commentElements.add(commentElement);
+				}
+			}
+		}
+		return commentElements;
 	}
 }

@@ -91,7 +91,7 @@ public class Comment implements Iterable<Comment> {
 
 	public boolean isEmpty() {
 		return children.isEmpty() && lines.isEmpty()
-				&& ("" + author + title).trim().isEmpty();
+				&& ("" + author + title).isEmpty();
 	}
 
 	@Override

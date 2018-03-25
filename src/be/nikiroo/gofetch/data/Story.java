@@ -4,7 +4,7 @@ import java.net.URL;
 import java.util.List;
 
 import be.nikiroo.gofetch.support.BasicSupport;
-import be.nikiroo.gofetch.support.BasicSupport.Type;
+import be.nikiroo.gofetch.support.Type;
 
 /**
  * A news story.

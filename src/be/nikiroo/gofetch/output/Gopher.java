@@ -2,7 +2,7 @@ package be.nikiroo.gofetch.output;
 
 import be.nikiroo.gofetch.data.Comment;
 import be.nikiroo.gofetch.data.Story;
-import be.nikiroo.gofetch.support.BasicSupport.Type;
+import be.nikiroo.gofetch.support.Type;
 import be.nikiroo.utils.StringUtils;
 import be.nikiroo.utils.StringUtils.Alignment;
 

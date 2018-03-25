@@ -14,7 +14,7 @@ import be.nikiroo.gofetch.output.Gopher;
 import be.nikiroo.gofetch.output.Html;
 import be.nikiroo.gofetch.output.Output;
 import be.nikiroo.gofetch.support.BasicSupport;
-import be.nikiroo.gofetch.support.BasicSupport.Type;
+import be.nikiroo.gofetch.support.Type;
 import be.nikiroo.utils.IOUtils;
 
 /**

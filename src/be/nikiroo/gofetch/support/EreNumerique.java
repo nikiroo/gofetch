@@ -1,20 +1,15 @@
 package be.nikiroo.gofetch.support;
 
 import java.io.IOException;
-import java.io.InputStream;
 import java.net.URL;
+import java.util.AbstractMap;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map.Entry;
 
-import org.jsoup.helper.DataUtil;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.nodes.Node;
-import org.jsoup.select.Elements;
-
-import be.nikiroo.gofetch.data.Comment;
-import be.nikiroo.gofetch.data.Story;
-import be.nikiroo.utils.StringUtils;
 
 /**
  * Support <a
@@ -29,187 +24,221 @@ public class EreNumerique extends BasicSupport {
 	}
 
 	@Override
-	public List<Story> list() throws IOException {
-		List<Story> list = new ArrayList<Story>();
-
-		for (String categ : new String[] { "informatique" }) {
-			URL url = new URL("https://www.erenumerique.fr/" + categ);
-			InputStream in = downloader.open(url);
-			Document doc = DataUtil.load(in, "UTF-8", url.toString());
-			Elements articles = doc.getElementsByClass("item-details");
-			for (Element article : articles) {
-				String id = "";
-				String intUrl = "";
-				String extUrl = ""; // nope
-				String title = "";
-				String date = "";
-				String author = "";
-				String details = "";
-				String body = "";
-
-				// MUST NOT fail:
-				Element dateElement = article //
-						.getElementsByTag("time").first();
-				if (dateElement == null) {
-					continue;
-				}
-
-				Element urlElement = article.getElementsByTag("a").first();
-				if (urlElement != null) {
-					intUrl = urlElement.absUrl("href");
-				}
-
-				id = dateElement.attr("datetime").replace(":", "_")
-						.replace("+", "_");
-				date = date(dateElement.attr("datetime"));
-
-				Element titleElement = article.getElementsByTag("h2").first();
-				if (titleElement != null) {
-					title = StringUtils.unhtml(titleElement.text()).trim();
-				}
-
-				Element authorElement = article.getElementsByClass(
-						"td-post-author-name").first();
-				if (authorElement != null) {
-					authorElement = authorElement.getElementsByTag("a").first();
-				}
-				if (authorElement != null) {
-					author = StringUtils.unhtml(authorElement.text()).trim();
-				}
-
-				Element contentElement = article.getElementsByClass(
-						"td-excerpt").first();
-				if (contentElement != null) {
-					body = StringUtils.unhtml(contentElement.text()).trim();
-				}
-
-				list.add(new Story(getType(), id, title, author, date, categ,
-						details, intUrl, extUrl, body));
-			}
+	protected List<Entry<URL, String>> getUrls() throws IOException {
+		List<Entry<URL, String>> urls = new ArrayList<Entry<URL, String>>();
+		for (String categ : new String[] { "Informatique" }) {
+			URL url = new URL("https://www.erenumerique.fr/"
+					+ categ.toLowerCase());
+			urls.add(new AbstractMap.SimpleEntry<URL, String>(url, categ));
 		}
 
-		return list;
+		return urls;
 	}
 
 	@Override
-	public void fetch(Story story) throws IOException {
-		String fullContent = story.getContent();
-
-		URL url = new URL(story.getUrlInternal());
-		InputStream in = downloader.open(url);
-		try {
-			Document doc = DataUtil.load(in, "UTF-8", url.toString());
-			Element article = doc.getElementsByTag("article").first();
-			if (article != null) {
-				article = article.getElementsByAttributeValue("itemprop",
-						"articleBody").first();
-			}
-			if (article != null) {
-				for (String line : toLines(article,
-						new BasicElementProcessor() {
-							@Override
-							public boolean ignoreNode(Node node) {
-								return node.attr("class").contains("chapo");
-							}
-
-							@Override
-							public String isSubtitle(Node node) {
-								if (node instanceof Element) {
-									Element element = (Element) node;
-									if (element.tagName().startsWith("h")
-											&& element.tagName().length() == 2) {
-										return element.text();
-									}
-								}
-								return null;
-							}
-						})) {
-					fullContent += line + "\n";
-				}
-
-				// Content is too tight with a single break per line:
-				fullContent = fullContent.replace("\n", "\n\n") //
-						.replace("\n\n\n\n", "\n\n") //
-						.replace("\n\n\n\n", "\n\n") //
-						.trim();
-			}
-
-			// Get comments URL then parse it, if possible
-			Element posts = doc.getElementsByClass("comment-list").first();
-
-			story.setFullContent(fullContent);
-			story.setComments(getComments(posts));
-		} finally {
-			if (in != null) {
-				in.close();
-			}
-		}
+	protected List<Element> getArticles(Document doc) {
+		return doc.getElementsByClass("item-details");
 	}
 
-	private List<Comment> getComments(Element posts) {
-		List<Comment> comments = new ArrayList<Comment>();
-		if (posts != null) {
-			for (Element post : posts.children()) {
-				if (!post.hasClass("comment")) {
-					continue;
-				}
+	@Override
+	protected String getArticleId(Document doc, Element article) {
+		return ""; // will use the date
+	}
 
-				String id = "";
-				String author = "";
-				String title = "";
-				String date = "";
-				List<String> content = new ArrayList<String>();
+	@Override
+	protected String getArticleTitle(Document doc, Element article) {
+		Element titleElement = article.getElementsByTag("h2").first();
+		if (titleElement != null) {
+			return titleElement.text();
+		}
 
-				Element authorE = post.getElementsByTag("footer").first();
-				if (authorE != null) {
-					authorE = authorE.getElementsByTag("cite").first();
-				}
-				if (authorE != null) {
-					author = StringUtils.unhtml(authorE.text()).trim();
-				}
+		return "";
+	}
 
-				Element idE = post.getElementsByTag("a").first();
-				if (idE != null) {
-					id = idE.attr("id");
-					Element dateE = idE.getElementsByTag("span").first();
-					if (dateE != null) {
-						date = date(dateE.attr("data-epoch"));
+	@Override
+	protected String getArticleAuthor(Document doc, Element article) {
+		Element authorElement = article.getElementsByClass(
+				"td-post-author-name").first();
+		if (authorElement != null) {
+			authorElement = authorElement.getElementsByTag("a").first();
+		}
+		if (authorElement != null) {
+			return authorElement.text();
+		}
+
+		return "";
+	}
+
+	@Override
+	protected String getArticleDate(Document doc, Element article) {
+		Element dateElement = article //
+				.getElementsByTag("time").first();
+		if (dateElement != null) {
+			return dateElement.attr("datetime");
+		}
+
+		return "";
+	}
+
+	@Override
+	protected String getArticleCategory(Document doc, Element article,
+			String currentCategory) {
+		return currentCategory;
+	}
+
+	@Override
+	protected String getArticleDetails(Document doc, Element article) {
+		return "";
+	}
+
+	@Override
+	protected String getArticleIntUrl(Document doc, Element article) {
+		Element urlElement = article.getElementsByTag("a").first();
+		if (urlElement != null) {
+			return urlElement.absUrl("href");
+		}
+
+		return "";
+	}
+
+	@Override
+	protected String getArticleExtUrl(Document doc, Element article) {
+		return "";
+	}
+
+	@Override
+	protected String getArticleContent(Document doc, Element article) {
+		Element contentElement = article.getElementsByClass("td-excerpt")
+				.first();
+		if (contentElement != null) {
+			return contentElement.text();
+		}
+
+		return "";
+	}
+
+	@Override
+	protected Element getFullArticle(Document doc) {
+		Element article = doc.getElementsByTag("article").first();
+		if (article != null) {
+			article = article.getElementsByAttributeValue("itemprop",
+					"articleBody").first();
+		}
+
+		return article;
+	}
+
+	@Override
+	protected List<Element> getFullArticleCommentPosts(Document doc, URL intUrl) {
+		return getSubCommentElements(doc.getElementsByClass("comment-list")
+				.first());
+	}
+
+	@Override
+	protected ElementProcessor getElementProcessorFullArticle() {
+		return new BasicElementProcessor() {
+			@Override
+			public boolean ignoreNode(Node node) {
+				return node.attr("class").contains("chapo");
+			}
+
+			@Override
+			public String isSubtitle(Node node) {
+				if (node instanceof Element) {
+					Element element = (Element) node;
+					if (element.tagName().startsWith("h")
+							&& element.tagName().length() == 2) {
+						return element.text();
 					}
 				}
+				return null;
+			}
+		};
+	}
 
-				Element contentE = post.getElementsByClass("comment-content")
-						.first();
-				if (contentE != null) {
-					for (String line : toLines(contentE,
-							new BasicElementProcessor() {
-								@Override
-								public boolean ignoreNode(Node node) {
-									// TODO: ignore headlines/pub
-									if (node instanceof Element) {
-										Element el = (Element) node;
-										if ("h4".equals(el.tagName())) {
-											return true;
-										}
-									}
+	@Override
+	protected List<Element> getCommentCommentPosts(Document doc,
+			Element container) {
+		return getSubCommentElements(container.getElementsByClass("children")
+				.first());
+	}
 
-									return false;
-								}
-							})) {
-						content.add(line);
-					}
-				}
+	@Override
+	protected String getCommentId(Element post) {
+		Element idE = post.getElementsByTag("a").first();
+		if (idE != null) {
+			return idE.attr("id");
+		}
 
-				// Since we have no title but still an author, let's switch:
-				title = author;
-				author = "";
-				Comment comment = new Comment(id, author, title, date, content);
-				comments.add(comment);
+		return "";
+	}
 
-				Element children = post.getElementsByClass("children").first();
-				comment.addAll(getComments(children));
+	@Override
+	protected String getCommentAuthor(Element post) {
+		// Since we have no title, we switch with author
+		return "";
+	}
+
+	@Override
+	protected String getCommentTitle(Element post) {
+		// Since we have no title, we switch with author
+		Element authorE = post.getElementsByTag("footer").first();
+		if (authorE != null) {
+			authorE = authorE.getElementsByTag("cite").first();
+		}
+		if (authorE != null) {
+			return authorE.text();
+		}
+
+		return "";
+	}
+
+	@Override
+	protected String getCommentDate(Element post) {
+		Element idE = post.getElementsByTag("a").first();
+		if (idE != null) {
+			Element dateE = idE.getElementsByTag("span").first();
+			if (dateE != null) {
+				return dateE.attr("data-epoch");
 			}
 		}
 
-		return comments;
+		return "";
+	}
+
+	@Override
+	protected Element getCommentContentElement(Element post) {
+		Element contentE = post.getElementsByClass("comment-content").first();
+		return contentE;
+	}
+
+	@Override
+	protected ElementProcessor getElementProcessorComment() {
+		return new BasicElementProcessor() {
+			@Override
+			public boolean ignoreNode(Node node) {
+				if (node instanceof Element) {
+					Element el = (Element) node;
+					if ("h4".equals(el.tagName())) {
+						return true;
+					}
+				}
+
+				return false;
+			}
+		};
+	}
+
+	private List<Element> getSubCommentElements(Element posts) {
+		List<Element> commentElements = new ArrayList<Element>();
+		if (posts != null) {
+			for (Element possibleCommentElement : posts.children()) {
+				if (possibleCommentElement.hasClass("comment")) {
+					commentElements.add(possibleCommentElement);
+				}
+			}
+		}
+
+		return commentElements;
 	}
 }

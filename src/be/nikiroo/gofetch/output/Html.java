@@ -2,7 +2,8 @@ package be.nikiroo.gofetch.output;
 
 import be.nikiroo.gofetch.data.Comment;
 import be.nikiroo.gofetch.data.Story;
-import be.nikiroo.gofetch.support.BasicSupport.Type;
+import be.nikiroo.gofetch.support.Type;
+import be.nikiroo.utils.StringUtils;
 
 public class Html extends Output {
 	public Html(Type type, String hostname, String preselector, int port) {
@@ -99,7 +100,8 @@ public class Html extends Output {
 				.append("<div class='comment' style='display: block; margin-left: 80px'>\n");
 		builder.append(space).append("  <h2>").append(comment.getTitle())
 				.append("</h2>\n");
-		builder.append(space).append("  <div class='by' style='font-style: italic;'>")
+		builder.append(space)
+				.append("  <div class='by' style='font-style: italic;'>")
 				.append(comment.getAuthor()).append("</div>\n");
 		builder.append(space).append("  <div class='comment_content'>");
 		for (String line : comment.getContentLines()) {
@@ -123,7 +125,9 @@ public class Html extends Output {
 
 		builder.append("	<div class='details'>");
 		if (story.getDetails() != null && !story.getDetails().isEmpty()) {
-			builder.append("(").append(story.getDetails()).append(")");
+			builder.append("(")
+					.append(StringUtils.xmlEscape(story.getDetails()))
+					.append(")");
 		}
 		builder.append("</div>\n");
 		builder.append("	<br/>\n");
@@ -142,12 +146,13 @@ public class Html extends Output {
 
 		builder.append("	<div class='content' style='text-align: justify'>\n");
 		if (resume) {
-			builder.append("		" + story.getContent() + "\n");
+			builder.append("		" + StringUtils.xmlEscape(story.getContent())
+					+ "\n");
 		} else {
 			builder.append("		"
-					+ story.getFullContent().replace("\n", "<br/>")
-							.replace("[ ", "<h2>").replace(" ]", "</h2>")
-					+ "\n");
+					+ StringUtils.xmlEscape(story.getFullContent())
+							.replace("\n", "<br/>").replace("[ ", "<h2>")
+							.replace(" ]", "</h2>") + "\n");
 		}
 		builder.append("	</div>\n");
 

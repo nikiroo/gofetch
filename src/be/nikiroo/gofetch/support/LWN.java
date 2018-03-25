@@ -1,16 +1,16 @@
 package be.nikiroo.gofetch.support;
 
 import java.io.IOException;
-import java.io.InputStream;
 import java.net.URL;
+import java.util.AbstractMap;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map.Entry;
 
-import org.jsoup.helper.DataUtil;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.nodes.Node;
-import org.jsoup.select.Elements;
+import org.jsoup.nodes.TextNode;
 
 import be.nikiroo.gofetch.data.Comment;
 import be.nikiroo.gofetch.data.Story;
@@ -27,162 +27,236 @@ public class LWN extends BasicSupport {
 	}
 
 	@Override
-	public List<Story> list() throws IOException {
-		List<Story> list = new ArrayList<Story>();
-
-		URL url = new URL("https://lwn.net/");
-		InputStream in = downloader.open(url);
-		Document doc = DataUtil.load(in, "UTF-8", url.toString());
-		Elements articles = doc.getElementsByClass("pure-u-1");
-		for (Element article : articles) {
-			Elements titles = article.getElementsByClass("Headline");
-			Elements listings = article.getElementsByClass("BlurbListing");
-			if (titles.size() == 0) {
-				continue;
-			}
-			if (listings.size() == 0) {
-				continue;
-			}
-
-			Element listing = listings.get(0);
-			if (listing.children().size() < 2) {
-				continue;
-			}
-
-			String title = titles.get(0).text();
-			String details = listing.children().get(0).text();
-			String body = "";
-			// All but the first and two last children
-			for (int i = 1; i < listing.children().size() - 2; i++) {
-				Element e = listing.children().get(i);
-				body = body.trim() + " " + e.text().trim();
-			}
-			body = body.trim();
-
-			int pos;
-
-			String categ = "";
-			pos = details.indexOf("]");
-			if (pos >= 0) {
-				categ = details.substring(1, pos).trim();
-			}
-
-			String author = "";
-			pos = details.indexOf(" by ");
-			if (pos >= 0) {
-				author = details.substring(pos + " by ".length()).trim();
-			}
-
-			String date = "";
-			pos = details.indexOf(" Posted ");
-			if (pos >= 0) {
-				date = details.substring(pos + " Posted ".length()).trim();
-				pos = date.indexOf(" by ");
-				if (pos >= 0) {
-					date = date.substring(0, pos).trim();
-				}
-			}
-
-			// We extracted everything from details so...
-			details = "";
-
-			String id = "";
-			String intUrl = "";
-			String extUrl = "";
-			for (Element idElem : article.getElementsByTag("a")) {
-				// Last link is the story link
-				intUrl = idElem.absUrl("href");
-				pos = intUrl.indexOf("#Comments");
-				if (pos >= 0) {
-					intUrl = intUrl.substring(0, pos - 1);
-				}
-				id = intUrl.replaceAll("[^0-9]", "");
-			}
-
-			list.add(new Story(getType(), id, title, author, date, categ,
-					details, intUrl, extUrl, body));
+	public void fetch(Story story) throws IOException {
+		// Do not try the paid-for stories...
+		if (!story.getTitle().startsWith("[$]")) {
+			super.fetch(story);
+		} else {
+			String fullContent = "[$] Sorry, this article is currently available to LWN suscribers only [https://lwn.net/subscribe/].";
+			story.setFullContent(fullContent);
+			story.setComments(new ArrayList<Comment>());
 		}
-
-		return list;
 	}
 
 	@Override
-	public void fetch(Story story) throws IOException {
-		List<Comment> comments = new ArrayList<Comment>();
-		String fullContent = story.getContent();
-
-		// Do not try the paid-for stories...
-		if (!story.getTitle().startsWith("[$]")) {
-			URL url = new URL(story.getUrlInternal());
-			InputStream in = downloader.open(url);
-			Document doc = DataUtil.load(in, "UTF-8", url.toString());
-			Elements fullContentElements = doc
-					.getElementsByClass("ArticleText");
-			if (fullContentElements.size() > 0) {
-				// comments.addAll(getComments(listing.get(0)));
-				fullContent = fullContentElements.get(0).text();
-			}
-
-			Elements listing = doc.getElementsByClass("lwn-u-1");
-			if (listing.size() > 0) {
-				comments.addAll(getComments(listing.get(0)));
-			}
-		} else {
-			fullContent = "[$] Sorry, this article is currently available to LWN suscribers only [https://lwn.net/subscribe/].";
-		}
-
-		story.setFullContent(fullContent);
-		story.setComments(comments);
+	protected List<Entry<URL, String>> getUrls() throws IOException {
+		List<Entry<URL, String>> urls = new ArrayList<Entry<URL, String>>();
+		urls.add(new AbstractMap.SimpleEntry<URL, String>(new URL(
+				"https://lwn.net/"), ""));
+		return urls;
 	}
 
-	private List<Comment> getComments(Element listing) {
-		List<Comment> comments = new ArrayList<Comment>();
-		for (Element commentElement : listing.children()) {
-			if (commentElement.hasClass("CommentBox")) {
-				Comment comment = getComment(commentElement);
-				if (!comment.isEmpty()) {
-					comments.add(comment);
-				}
-			} else if (commentElement.hasClass("Comment")) {
-				if (comments.size() > 0) {
-					comments.get(comments.size() - 1).addAll(
-							getComments(commentElement));
-				}
-			}
-		}
-		return comments;
+	@Override
+	protected List<Element> getArticles(Document doc) {
+		return doc.getElementsByClass("pure-u-1");
 	}
 
-	private Comment getComment(Element commentElement) {
-		String title = firstOrEmpty(commentElement, "CommentTitle").text();
-		String author = firstOrEmpty(commentElement, "CommentPoster").text();
+	@Override
+	protected String getArticleId(Document doc, Element article) {
+		return getArticleIntUrl(doc, article).replaceAll("[^0-9]", "");
+	}
 
-		String date = "";
-		int pos = author.lastIndexOf(" by ");
+	@Override
+	protected String getArticleTitle(Document doc, Element article) {
+		Element title = article.getElementsByClass("Headline").first();
+		if (title != null) {
+			return title.text();
+		}
+
+		return "";
+	}
+
+	@Override
+	protected String getArticleAuthor(Document doc, Element article) {
+		String author = "";
+		String details = getArticleDetailsReal(article);
+		int pos = details.indexOf(" by ");
 		if (pos >= 0) {
-			date = author.substring(0, pos).trim();
-			author = author.substring(pos + " by ".length()).trim();
+			author = details.substring(pos + " by ".length()).trim();
+		}
 
-			if (author.startsWith("Posted ")) {
-				author = author.substring("Posted ".length()).trim();
+		return author;
+	}
+
+	@Override
+	protected String getArticleDate(Document doc, Element article) {
+		String date = "";
+		String details = getArticleDetailsReal(article);
+		int pos = details.indexOf(" Posted ");
+		if (pos >= 0) {
+			date = details.substring(pos + " Posted ".length()).trim();
+			pos = date.indexOf(" by ");
+			if (pos >= 0) {
+				date = date.substring(0, pos).trim();
 			}
 		}
 
-		Element content = null;
-		Elements commentBodyElements = commentElement
-				.getElementsByClass("CommentBody");
-		if (commentBodyElements.size() > 0) {
-			content = commentBodyElements.get(0);
-		}
-
-		Comment comment = new Comment(commentElement.id(), author, title, date,
-				toLines(content));
-
-		return comment;
+		return date;
 	}
 
-	private List<String> toLines(Element element) {
-		return toLines(element, new BasicElementProcessor() {
+	@Override
+	protected String getArticleCategory(Document doc, Element article,
+			String currentCategory) {
+		String categ = "";
+		String details = getArticleDetailsReal(article);
+		int pos = details.indexOf("]");
+		if (pos >= 0) {
+			categ = details.substring(1, pos).trim();
+		}
+
+		return categ;
+	}
+
+	@Override
+	protected String getArticleDetails(Document doc, Element article) {
+		return ""; // We actually extract all the values
+	}
+
+	@Override
+	protected String getArticleIntUrl(Document doc, Element article) {
+		String intUrl = "";
+		for (Element idElem : article.getElementsByTag("a")) {
+			// Last link is the story link
+			intUrl = idElem.absUrl("href");
+			int pos = intUrl.indexOf("#Comments");
+			if (pos >= 0) {
+				intUrl = intUrl.substring(0, pos - 1);
+			}
+		}
+
+		return intUrl;
+	}
+
+	@Override
+	protected String getArticleExtUrl(Document doc, Element article) {
+		return "";
+	}
+
+	@Override
+	protected String getArticleContent(Document doc, Element article) {
+		Element listing = article.getElementsByClass("BlurbListing").first();
+		if (listing != null && listing.children().size() >= 2) {
+			String content = "";
+
+			// All but the first and two last children
+			for (int i = 1; i < listing.children().size() - 2; i++) {
+				Element e = listing.children().get(i);
+				content = content.trim() + " " + e.text().trim();
+			}
+
+			return content;
+		}
+
+		return "";
+	}
+
+	@Override
+	protected Element getFullArticle(Document doc) {
+		return doc.getElementsByClass("ArticleText").first();
+	}
+
+	@Override
+	protected List<Element> getFullArticleCommentPosts(Document doc, URL intUrl) {
+		return doc.getElementsByClass("lwn-u-1");
+	}
+
+	@Override
+	protected ElementProcessor getElementProcessorFullArticle() {
+		return new BasicElementProcessor() {
+			@Override
+			public boolean ignoreNode(Node node) {
+				if (node instanceof Element) {
+					Element el = (Element) node;
+					if ("Log in".equals(el.text().trim())) {
+						return true;
+					}
+				} else if (node instanceof TextNode) {
+					TextNode text = (TextNode) node;
+					String t = text.text().trim();
+					if (t.equals("(") || t.equals("to post comments)")) {
+						return true;
+					}
+				}
+
+				return false;
+			}
+		};
+	}
+
+	@Override
+	protected List<Element> getCommentCommentPosts(Document doc,
+			Element container) {
+		List<Element> commentElements = new ArrayList<Element>();
+		if (container != null) {
+			for (Element possibleCommentElement : container.children()) {
+				if (possibleCommentElement.hasClass("CommentBox")) {
+					commentElements.add(possibleCommentElement);
+				} else if (possibleCommentElement.hasClass("Comment")) {
+					commentElements.add(possibleCommentElement);
+				}
+			}
+		}
+
+		return commentElements;
+	}
+
+	@Override
+	protected String getCommentId(Element post) {
+		return post.id();
+	}
+
+	@Override
+	protected String getCommentAuthor(Element post) {
+		Element detailsE = post.getElementsByClass("CommentPoster").first();
+		if (detailsE != null) {
+			String details = detailsE.text();
+
+			int pos = details.lastIndexOf(" by ");
+			if (pos >= 0) {
+				details = details.substring(pos + " by ".length()).trim();
+
+				if (details.startsWith("Posted ")) {
+					return details.substring("Posted ".length()).trim();
+				}
+			}
+		}
+
+		return "";
+	}
+
+	@Override
+	protected String getCommentTitle(Element post) {
+		Element title = post.getElementsByClass("CommentTitle").first();
+		if (title != null) {
+			return title.text();
+		}
+
+		return "";
+	}
+
+	@Override
+	protected String getCommentDate(Element post) {
+		Element detailsE = post.getElementsByClass("CommentPoster").first();
+		if (detailsE != null) {
+			String details = detailsE.text();
+
+			int pos = details.lastIndexOf(" by ");
+			if (pos >= 0) {
+				return details.substring(0, pos).trim();
+			}
+		}
+
+		return "";
+	}
+
+	@Override
+	protected Element getCommentContentElement(Element post) {
+		return post.getElementsByClass("CommentBody").first();
+	}
+
+	@Override
+	protected ElementProcessor getElementProcessorComment() {
+		return new BasicElementProcessor() {
 			@Override
 			public String processText(String text) {
 				while (text.startsWith(">")) { // comments
@@ -216,6 +290,16 @@ public class LWN extends BasicSupport {
 
 				return false;
 			}
-		});
+		};
+	}
+
+	private String getArticleDetailsReal(Element article) {
+		Element listing = article.getElementsByClass("BlurbListing").first();
+		// Valid articles have 2+ listings
+		if (listing != null && listing.children().size() >= 2) {
+			return listing.children().get(0).text();
+		}
+
+		return "";
 	}
 }

@@ -1,20 +1,16 @@
 package be.nikiroo.gofetch.support;
 
 import java.io.IOException;
-import java.io.InputStream;
 import java.net.URL;
+import java.util.AbstractMap;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map.Entry;
 
-import org.jsoup.helper.DataUtil;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.nodes.Node;
 import org.jsoup.select.Elements;
-
-import be.nikiroo.gofetch.data.Comment;
-import be.nikiroo.gofetch.data.Story;
-import be.nikiroo.utils.StringUtils;
 
 /**
  * Support <a href='https://slashdot.org/'>https://slashdot.org/</a>.
@@ -28,145 +24,238 @@ public class Slashdot extends BasicSupport {
 	}
 
 	@Override
-	public List<Story> list() throws IOException {
-		List<Story> list = new ArrayList<Story>();
+	protected List<Entry<URL, String>> getUrls() throws IOException {
+		List<Entry<URL, String>> urls = new ArrayList<Entry<URL, String>>();
+		urls.add(new AbstractMap.SimpleEntry<URL, String>(new URL(
+				"https://slashdot.org/"), ""));
+		return urls;
+	}
 
-		URL url = new URL("https://slashdot.org/");
-		InputStream in = downloader.open(url);
-		Document doc = DataUtil.load(in, "UTF-8", url.toString());
-		Elements articles = doc.getElementsByTag("header");
-		for (Element article : articles) {
-			Elements titles = article.getElementsByClass("story-title");
-			if (titles.size() == 0) {
-				continue;
-			}
+	@Override
+	protected List<Element> getArticles(Document doc) {
+		return doc.getElementsByTag("header");
+	}
 
-			Element title = titles.get(0);
-
-			String id = "" + title.attr("id");
+	@Override
+	protected String getArticleId(Document doc, Element article) {
+		Element title = article.getElementsByClass("story-title").first();
+		if (title != null) {
+			String id = title.attr("id");
 			if (id.startsWith("title-")) {
 				id = id.substring("title-".length());
 			}
 
-			Elements links = title.getElementsByTag("a");
-			String intUrl = "";
-			String extUrl = "";
-			if (links.size() > 0) {
-				intUrl = links.get(0).absUrl("href");
-			}
-			if (links.size() > 1) {
-				extUrl = links.get(1).absUrl("href");
-			}
-
-			String details = "";
-			Elements detailsElements = article.getElementsByClass("details");
-			if (detailsElements.size() > 0) {
-				details = detailsElements.get(0).text();
-			}
-
-			// details:
-			// "Posted by AUTHOR on DATE from the further-crackdown dept."
-			String author = "";
-			int pos = details.indexOf(" on ");
-			if (details.startsWith("Posted by ") && pos >= 0) {
-				author = details.substring("Posted by ".length(), pos).trim();
-			}
-			pos = details.indexOf(" from the ");
-			if (pos >= 0) {
-				details = details.substring(pos).trim();
-			}
-
-			String body = "";
-			Element bodyElement = doc.getElementById("text-" + id);
-			if (bodyElement != null) {
-				body = bodyElement.text();
-			}
-
-			String categ = "";
-			Element categElement = doc.getElementsByClass("topic").first();
-			if (categElement != null) {
-				categ = StringUtils.unhtml(categElement.text()).trim();
-			}
-
-			String date = "";
-			Element dateElement = doc.getElementsByTag("time").first();
-			if (dateElement != null) {
-				date = StringUtils.unhtml(dateElement.text()).trim();
-				if (date.startsWith("on ")) {
-					date = date.substring("on ".length());
-				}
-			}
-
-			list.add(new Story(getType(), id, title.text(), author, date,
-					categ, details, intUrl, extUrl, body));
+			return id;
 		}
 
-		return list;
+		return "";
 	}
 
 	@Override
-	public void fetch(Story story) throws IOException {
-		List<Comment> comments = new ArrayList<Comment>();
-
-		URL url = new URL(story.getUrlInternal());
-		InputStream in = downloader.open(url);
-		Document doc = DataUtil.load(in, "UTF-8", url.toString());
-		Element listing = doc.getElementById("commentlisting");
-		if (listing != null) {
-			comments.addAll(getComments(listing));
+	protected String getArticleTitle(Document doc, Element article) {
+		Element title = article.getElementsByClass("story-title").first();
+		if (title != null) {
+			return title.text();
 		}
 
-		story.setComments(comments);
+		return "";
 	}
 
-	private List<Comment> getComments(Element listing) {
-		List<Comment> comments = new ArrayList<Comment>();
-		Comment lastComment = null;
-		for (Element commentElement : listing.children()) {
-			if (commentElement.hasClass("comment")) {
-				if (!commentElement.hasClass("hidden")) {
-					lastComment = getComment(commentElement);
-					comments.add(lastComment);
-				}
+	@Override
+	protected String getArticleAuthor(Document doc, Element article) {
+		// details: "Posted by AUTHOR on DATE from the further-crackdown dept."
+		String details = getArticleDetailsReal(article);
+		int pos = details.indexOf(" on ");
+		if (details.startsWith("Posted by ") && pos >= 0) {
+			return details.substring("Posted by ".length(), pos).trim();
+		}
 
-				List<Comment> subComments = new ArrayList<Comment>();
-				for (Element child : commentElement.children()) {
-					if (child.id().contains("commtree_")) {
-						subComments.addAll(getComments(child));
-					}
-				}
+		return "";
+	}
 
-				if (lastComment == null) {
-					comments.addAll(subComments);
-				} else {
-					lastComment.addAll(subComments);
+	@Override
+	protected String getArticleDate(Document doc, Element article) {
+		// Do not try bad articles
+		if (getArticleId(doc, article).isEmpty()) {
+			return "";
+		}
+
+		Element dateElement = doc.getElementsByTag("time").first();
+		if (dateElement != null) {
+			String date = dateElement.text().trim();
+			if (date.startsWith("on ")) {
+				date = date.substring("on ".length());
+			}
+
+			return date;
+		}
+
+		return "";
+	}
+
+	@Override
+	protected String getArticleCategory(Document doc, Element article,
+			String currentCategory) {
+		Element categElement = doc.getElementsByClass("topic").first();
+		if (categElement != null) {
+			return categElement.text();
+		}
+
+		return "";
+	}
+
+	@Override
+	protected String getArticleDetails(Document doc, Element article) {
+		// details: "Posted by AUTHOR on DATE from the further-crackdown dept."
+		String details = getArticleDetailsReal(article);
+		int pos = details.indexOf(" from the ");
+		if (pos >= 0) {
+			return details.substring(pos).trim();
+		}
+
+		return "";
+	}
+
+	@Override
+	protected String getArticleIntUrl(Document doc, Element article) {
+		Element title = article.getElementsByClass("story-title").first();
+		if (title != null) {
+			Elements links = title.getElementsByTag("a");
+			if (links.size() > 0) {
+				return links.get(0).absUrl("href");
+			}
+		}
+		return "";
+	}
+
+	@Override
+	protected String getArticleExtUrl(Document doc, Element article) {
+		Element title = article.getElementsByClass("story-title").first();
+		if (title != null) {
+			Elements links = title.getElementsByTag("a");
+			if (links.size() > 1) {
+				return links.get(1).absUrl("href");
+			}
+		}
+		return "";
+	}
+
+	@Override
+	protected String getArticleContent(Document doc, Element article) {
+		Element contentElement = doc //
+				.getElementById("text-" + getArticleId(doc, article));
+		if (contentElement != null) {
+			return contentElement.text();
+		}
+
+		return "";
+	}
+
+	@Override
+	protected Element getFullArticle(Document doc) {
+		return null;
+	}
+
+	@Override
+	protected List<Element> getFullArticleCommentPosts(Document doc, URL intUrl) {
+		List<Element> commentElements = new ArrayList<Element>();
+		Element listing = doc.getElementById("commentlisting");
+		if (listing != null) {
+			for (Element commentElement : listing.children()) {
+				if (commentElement.hasClass("comment")) {
+					commentElements.add(commentElement);
 				}
 			}
 		}
 
-		return comments;
+		return commentElements;
 	}
 
-	/**
-	 * Get a comment from the given element.
-	 * 
-	 * @param commentElement
-	 *            the element to get the comment of.
-	 * 
-	 * @return the comment, <b>NOT</b> including sub-comments
-	 */
-	private Comment getComment(Element commentElement) {
-		String title = firstOrEmpty(commentElement, "title").text();
-		String author = firstOrEmpty(commentElement, "by").text();
-		String date = firstOrEmpty(commentElement, "otherdetails").text();
-		Element content = firstOrEmpty(commentElement, "commentBody");
-
-		return new Comment(commentElement.id(), author, title, date,
-				toLines(content));
+	@Override
+	protected ElementProcessor getElementProcessorFullArticle() {
+		return null;
 	}
 
-	private List<String> toLines(Element element) {
-		return toLines(element, new BasicElementProcessor() {
+	@Override
+	protected List<Element> getCommentCommentPosts(Document doc,
+			Element container) {
+		List<Element> commentElements = new ArrayList<Element>();
+		for (Element child : container.children()) {
+			if (child.id().contains("commtree_")) {
+				for (Element sub : child.children()) {
+					if (sub.hasClass("comment")) {
+						commentElements.add(sub);
+					}
+				}
+			}
+		}
+
+		return commentElements;
+	}
+
+	@Override
+	protected String getCommentId(Element post) {
+		if (post.hasClass("hidden")) {
+			return "";
+		}
+
+		return post.id();
+	}
+
+	@Override
+	protected String getCommentAuthor(Element post) {
+		if (post.hasClass("hidden")) {
+			return "";
+		}
+
+		Element author = post.getElementsByClass("by").first();
+		if (author != null) {
+			return author.text();
+		}
+
+		return "";
+	}
+
+	@Override
+	protected String getCommentTitle(Element post) {
+		if (post.hasClass("hidden")) {
+			return "";
+		}
+
+		Element title = post.getElementsByClass("title").first();
+		if (title != null) {
+			return title.text();
+		}
+
+		return "";
+	}
+
+	@Override
+	protected String getCommentDate(Element post) {
+		if (post.hasClass("hidden")) {
+			return "";
+		}
+
+		Element date = post.getElementsByClass("otherdetails").first();
+		if (date != null) {
+			return date.text();
+		}
+
+		return "";
+	}
+
+	@Override
+	protected Element getCommentContentElement(Element post) {
+		if (post.hasClass("hidden")) {
+			return null;
+		}
+
+		return post.getElementsByClass("commentBody").first();
+	}
+
+	@Override
+	protected ElementProcessor getElementProcessorComment() {
+		return new BasicElementProcessor() {
 			@Override
 			public String processText(String text) {
 				while (text.startsWith(">")) { // comment in one-liners
@@ -192,6 +281,15 @@ public class Slashdot extends BasicSupport {
 
 				return false;
 			}
-		});
+		};
+	}
+
+	private String getArticleDetailsReal(Element article) {
+		Element detailsElement = article.getElementsByClass("details").first();
+		if (detailsElement != null) {
+			return detailsElement.text();
+		}
+
+		return "";
 	}
 }
