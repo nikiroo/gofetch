@@ -1,5 +1,9 @@
 # Gofetch
 
+## Version WIP
+
+- Fix subtitles and too much content in EreNumerique
+
 ## Version 1.2.0
 
 - Update to latest nikiroo-utils
