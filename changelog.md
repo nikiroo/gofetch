@@ -3,6 +3,10 @@
 ## Version WIP
 
 - Fix subtitles and too much content in EreNumerique
+- Fix content wrapping in LWN
+- Fix html output for LWN (do not allow raw text!)
+- Allow <pre> in all supports
+- Lot of other small fixes
 
 ## Version 1.2.0
 
