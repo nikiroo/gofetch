@@ -101,9 +101,28 @@ public class EreNumerique extends BasicSupport {
 			Document doc = DataUtil.load(in, "UTF-8", url.toString());
 			Element article = doc.getElementsByTag("article").first();
 			if (article != null) {
+				article = article.getElementsByAttributeValue("itemprop",
+						"articleBody").first();
+			}
+			if (article != null) {
 				for (String line : toLines(article,
 						new BasicElementProcessor() {
-							// TODO: ignore headlines/pub
+							@Override
+							public boolean ignoreNode(Node node) {
+								return node.attr("class").contains("chapo");
+							}
+
+							@Override
+							public String isSubtitle(Node node) {
+								if (node instanceof Element) {
+									Element element = (Element) node;
+									if (element.tagName().startsWith("h")
+											&& element.tagName().length() == 2) {
+										return element.text();
+									}
+								}
+								return null;
+							}
 						})) {
 					fullContent += line + "\n";
 				}

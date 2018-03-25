@@ -100,6 +100,17 @@ public abstract class BasicSupport {
 		 *         the usual automatic processing if not NULL
 		 */
 		public String manualProcessing(Node node);
+
+		/**
+		 * This {@link Node} is a subtitle and should be treated as such
+		 * (highlighted).
+		 * 
+		 * @param node
+		 *            the node to check
+		 * 
+		 * @return NULL if it is not a subtitle, the subtitle to use if it is
+		 */
+		public String isSubtitle(Node node);
 	}
 
 	/**
@@ -126,6 +137,11 @@ public abstract class BasicSupport {
 
 		@Override
 		public String manualProcessing(Node node) {
+			return null;
+		}
+
+		@Override
+		public String isSubtitle(Node node) {
 			return null;
 		}
 	}
@@ -334,10 +350,21 @@ public abstract class BasicSupport {
 					String manual = null;
 					boolean ignore = elementProcessor.ignoreNode(node)
 							|| ignoredNodes.contains(node.parentNode());
+					// Manual processing
 					if (!ignore) {
 						manual = elementProcessor.manualProcessing(node);
 						if (manual != null) {
 							currentLine.append(manual);
+							ignore = true;
+						}
+					}
+
+					// Subtitle check
+					if (!ignore) {
+						String subtitle = elementProcessor.isSubtitle(node);
+						if (subtitle != null) {
+							subtitle = subtitle.trim();
+							currentLine.append("\n[ " + subtitle + " ]\n");
 							ignore = true;
 						}
 					}

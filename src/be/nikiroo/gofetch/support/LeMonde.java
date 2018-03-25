@@ -98,11 +98,11 @@ public class LeMonde extends BasicSupport {
 				}
 
 				@Override
-				public String manualProcessing(Node node) {
+				public String isSubtitle(Node node) {
 					if (node instanceof Element) {
 						Element element = (Element) node;
 						if (element.hasClass("intertitre")) {
-							return "\n[ " + element.text() + " ]\n";
+							return element.text();
 						}
 					}
 					return null;
