@@ -526,6 +526,9 @@ public abstract class BasicSupport {
 			case ERE_NUMERIQUE:
 				support = new EreNumerique();
 				break;
+			case PHORONIX:
+				support = new Phoronix();
+				break;
 			}
 
 			if (support != null) {

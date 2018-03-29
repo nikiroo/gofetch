@@ -20,4 +20,6 @@ public enum Type {
 	TOO_LINUX,
 	/** FR: IT */
 	ERE_NUMERIQUE,
+	/** EN: IT */
+	PHORONIX,
 }
