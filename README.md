@@ -29,8 +29,12 @@ Any platform with at lest Java 1.6 on it should be ok.
 
 ## Options
 
+You can start the program via the script or directly with ```java```:
+
 - ```gofetch``` [*dir*] [*selector*] [*type*] [*max*] [*hostname*] [*port*]
 - ```java -jar gofetch.jar``` [*dir*] [*selector*] [*type*] [*max*] [*hostname*] [*port*]
+
+The options are:
 
 - *dir*: the target directory where to store the files
 - *selector*: the gopher selector to prepend (also a sub-directory in [dir])
