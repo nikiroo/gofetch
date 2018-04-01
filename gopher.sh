@@ -18,7 +18,18 @@ if [ "$SERVER" = "" ]; then
 	exit 2
 fi
 
+LINK_COLOR=2 # can be empty for no escape sequences
+
+# Start and end link tags
+SL=
+EL=
+if [ "$LINK_COLOR" != "" ]; then
+	SL="`tput setf $LINK_COLOR``tput setaf $LINK_COLOR`"
+	EL="`tput init`";
+fi
+
 # $0 [FILE]
+# Display a gopher menu for the given resource
 cat_menu() {
 	i=0
 	cat "$1" | grep '^[i0-9]' | while read ln; do
@@ -32,29 +43,20 @@ cat_menu() {
 			case "$field" in
 				0) typ='TXT';;
 				1) typ='DIR';;
-				7) typ='SRH';;
+				7) typ='(?)';;
 				8) typ='TEL';;
-				*) typ='???';;
+				*) typ='!!!';;
 			esac
-			echo "$ln" | sed "s:^.:$typ $i	:g"
+			echo "$ln" | sed "s:^.\\(.*\\):$typ $i	$SL\\1$EL:g"
 		#else
 			# Bad line
 		fi
 	done
 }
 
-# $0 [FILE]
-choices() {
-	i=0
-	cat "$1" | grep '^[0-9]' | while read choice; do
-		i=`expr $i + 1`
-		i=`printf %2.f $i`
-		
-		echo "$i --> $choice"
-	done
-}
-
 # $0 [FILE] [INDEX] [FIELD]
+# Get a field from the given-by-index link in FILE
+#
 # Fields:
 # 	1 = type/name
 # 	2 = selector
