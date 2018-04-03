@@ -66,7 +66,7 @@ getsel() {
 	cat "$1" | grep '^[0-9]' | tail -n+"$2" | head -n 1 | cut -f"$3"
 }
 
-tmp="`mktemp gofetch.current_page.XXXXX`"
+tmp="`mktemp -t gofetch.current_page.XXXXXX`"
 finish() {
   rm -rf "$tmp"
 }
