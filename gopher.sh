@@ -1,5 +1,15 @@
 #!/bin/sh
 
+# $0 [server] ([selector]) ([port]) ([mode])
+# 	server: the gopher server to dig to
+#	selector: the gopher selector (default is empty)
+#	port: the port to use (default is 70)
+#	mode: the filetype mode (default depends upon selector)
+#		0: plain text
+#		1: menu (dir-like)
+#		...
+#		download: fake mode to download the result without changes
+
 # ENV variables:
 #	LINK_COLOR: escape sequences colour (def: 2)
 #		- : means no escape sequence
@@ -36,23 +46,29 @@ if [ "$LINK_COLOR" != "-" ]; then
 	EL="`tput init`";
 fi
 
+PREFIX="[0-9h]"
+
 # $0 [FILE]
 # Display a gopher menu for the given resource
 cat_menu() {
 	i=0
-	cat "$1" | grep '^[i0-9]' | while read ln; do
+	cat "$1" | grep "^i\|^$PREFIX" | while read ln; do
 		ln="`echo "$ln" | cut -f1`"
 		if echo "$ln" | grep "^i" >/dev/null 2>&1; then
 			echo "$ln" | sed "s:^.:	:g"
-		elif echo "$ln" | grep "^[0-9]" >/dev/null 2>&1; then
+		elif echo "$ln" | grep "^$PREFIX" >/dev/null 2>&1; then
 			i=`expr $i + 1`
 			i=`printf %2.f $i`
 			field="`echo "$ln" | cut -c1`"
 			case "$field" in
 				0) typ='TXT';;
-				1) typ='DIR';;
-				7) typ='(?)';;
-				8) typ='TEL';;
+				1) typ='DIR';; # menu, actually
+				7) typ='(?)';; # query
+				8) typ='TEL';; # TELnet (not TELephone)
+				h) typ='WEB';; # HTML
+				g) typ='GIF';;
+				I) typ='IMG';;
+				+) typ='SVR';; # redundant server
 				*) typ='!!!';;
 			esac
 			echo "$ln" | sed "s:^.\\(.*\\):$typ $i	$SL\\1$EL:g"
@@ -71,7 +87,7 @@ cat_menu() {
 # 	3 = server
 # 	4 = port
 getsel() {
-	cat "$1" | grep '^[0-9]' | tail -n+"$2" | head -n 1 | cut -f"$3"
+	cat "$1" | grep "^$PREFIX" | tail -n+"$2" | head -n 1 | cut -f"$3"
 }
 
 tmp="`mktemp -t gofetch.current_page.XXXXXX`"
@@ -87,6 +103,10 @@ else
 fi
 
 case "$MODE" in
+download)
+	# Special, fake mode, only from top-level
+	cat "$tmp"
+;;
 0)
 	cat "$tmp" | less
 ;;
