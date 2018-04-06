@@ -1,5 +1,12 @@
 #!/bin/sh
 
+# ENV variables:
+#	LINK_COLOR: escape sequences colour (def: 2)
+#		- : means no escape sequence
+#		1 : means colour 1
+#		2 : means colour 2
+#		[...]
+
 SERVER="$1"
 SELECTOR="$2"
 PORT="$3"
@@ -18,12 +25,13 @@ if [ "$SERVER" = "" ]; then
 	exit 2
 fi
 
-LINK_COLOR=2 # can be empty for no escape sequences
+# can be "-" for no escape sequences
+[ "$LINK_COLOR" = ""  ] && LINK_COLOR=2
 
 # Start and end link tags
 SL=
 EL=
-if [ "$LINK_COLOR" != "" ]; then
+if [ "$LINK_COLOR" != "-" ]; then
 	SL="`tput setf $LINK_COLOR``tput setaf $LINK_COLOR`"
 	EL="`tput init`";
 fi
