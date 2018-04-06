@@ -11,6 +11,7 @@
 #		download: fake mode to download the result without changes
 
 # ENV variables:
+#	LESS: will be used with 'less' (think: "export LESS=-r")
 #	LINK_COLOR: escape sequences colour (def: 2)
 #		- : means no escape sequence
 #		1 : means colour 1
@@ -90,9 +91,10 @@ getsel() {
 	cat "$1" | grep "^$PREFIX" | tail -n+"$2" | head -n 1 | cut -f"$3"
 }
 
+# Save page content to 'tmp' file
 tmp="`mktemp -t gofetch.current_page.XXXXXX`"
 finish() {
-  rm -rf "$tmp"
+  rm -rf "$tmp" "$tmp.jpg"
 }
 trap finish EXIT
 
@@ -102,6 +104,7 @@ else
 	echo "$SELECTOR" | nc "$SERVER" "$PORT" > "$tmp"
 fi
 
+# Process page content
 case "$MODE" in
 download)
 	# Special, fake mode, only from top-level
@@ -137,6 +140,22 @@ download)
 ;;
 9)
 	echo "<BINARY FILE>" | less
+;;
+g|I)
+	if convert -h >/dev/null 2>&1; then
+		if jp2a -h >/dev/null 2>&1; then
+			convert "$tmp" "$tmp.jpg"
+			# not supported: --chars=" ░▒▓█"
+			jp2a --border --colors --chars=" .-+=o8#"\
+				--width=74 "$tmp.jpg" | less
+		else
+			echo "required program not found to view images: jp2a" \
+				| less
+		fi
+	else
+		echo "required program not found to view images: convert" \
+			| less
+	fi
 ;;
 *)
 	echo "unknwon selector mode: <$MODE>" | less
