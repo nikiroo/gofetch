@@ -47,7 +47,7 @@ if [ "$LINK_COLOR" != "-" ]; then
 	EL="`tput init`";
 fi
 
-PREFIX="[0-9h]"
+PREFIX="[0-9hIg]"
 
 # $0 [FILE]
 # Display a gopher menu for the given resource
