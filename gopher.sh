@@ -11,7 +11,6 @@
 #		download: fake mode to download the result without changes
 
 # ENV variables:
-#	LESS: will be used with 'less' (think: "export LESS=-r")
 #	LINK_COLOR: escape sequences colour (def: 2)
 #		- : means no escape sequence
 #		1 : means colour 1
@@ -44,7 +43,8 @@ SL=
 EL=
 if [ "$LINK_COLOR" != "-" ]; then
 	SL="`tput setf $LINK_COLOR``tput setaf $LINK_COLOR`"
-	EL="`tput init`";
+	EL="`tput init`"
+	LESS="${LESS}-R"
 fi
 
 PREFIX="[0-9hIg]"
@@ -54,12 +54,11 @@ PREFIX="[0-9hIg]"
 cat_menu() {
 	i=0
 	cat "$1" | grep "^i\|^$PREFIX" | while read ln; do
-		ln="`echo "$ln" | cut -f1`"
 		if echo "$ln" | grep "^i" >/dev/null 2>&1; then
-			echo "$ln" | sed "s:^.:	:g"
+			echo "$ln" | cut -f1 | sed "s:^.:	:g"
 		elif echo "$ln" | grep "^$PREFIX" >/dev/null 2>&1; then
 			i=`expr $i + 1`
-			i=`printf %2.f $i`
+			[ $i -le 9 ] && i=0$i 
 			field="`echo "$ln" | cut -c1`"
 			case "$field" in
 				0) typ='TXT';;
@@ -67,14 +66,12 @@ cat_menu() {
 				7) typ='(?)';; # query
 				8) typ='TEL';; # TELnet (not TELephone)
 				h) typ='WEB';; # HTML
-				g) typ='GIF';;
 				I) typ='IMG';;
+				g) typ='GIF';;
 				+) typ='SVR';; # redundant server
 				*) typ='!!!';;
 			esac
-			echo "$ln" | sed "s:^.\\(.*\\):$typ $i	$SL\\1$EL:g"
-		#else
-			# Bad line
+			echo "$ln" | sed "s:^.\\([^\t]*\\).*:$typ $i	$SL\\1$EL:g"
 		fi
 	done
 }
@@ -113,11 +110,12 @@ download)
 0)
 	cat "$tmp" | less
 ;;
-1)
+1|+)
 	CHOICE=start
 	while [ "$CHOICE" != "" ]; do
 		cat_menu "$tmp" | less
 		read -p "[$SELECTOR]: " CHOICE
+		[ "$CHOICE" = q ] && exit 255 # force-quit
 		index="`expr 1 \* "$CHOICE" 2>/dev/null`"
 		if [ "$index" != "" ]; then
 			goto_server="`getsel "$tmp" $index 3`"
@@ -125,6 +123,7 @@ download)
 			goto_port="`getsel "$tmp" $index 4`"
 			goto_mode="`getsel "$tmp" $index 1 | cut -c1`"
 			sh "$0" "$goto_server" "$goto_sel" "$goto_port" "$goto_mode"
+			[ $? = 255 ] && exit 255 # force-quit
 		fi
 	done
 ;;
@@ -164,3 +163,4 @@ g|I)
 	exit 3
 ;;
 esac
+
