@@ -142,21 +142,21 @@ download)
 	echo "<BINARY FILE>" | less
 ;;
 g|I)
-	if convert -h >/dev/null 2>&1; then
-		if ImageUtils.sh --help >/dev/null 2>&1; then
-			ImageUtils.sh --mode=DITHERING \
-				--width=74 "$tmp" | less
-		elif jp2a -h >/dev/null 2>&1; then
+	if img2aa --help >/dev/null 2>&1; then
+		img2aa --mode=DITHERING \
+			--width=74 "$tmp" | less
+	elif jp2a -h >/dev/null 2>&1; then
+		if convert -h >/dev/null 2>&1; then
 			convert "$tmp" "$tmp.jpg"
 			jp2a --border --chars=" .-+=o8#"\
 				--width=74 "$tmp.jpg" | less
 		else
-			echo "required program not found to view images:" \
-				jp2a or ImageUtils.sh | less
+			echo "required program not found to view images: convert" \
+				| less
 		fi
 	else
-		echo "required program not found to view images: convert" \
-			| less
+		echo "required program not found to view images:" \
+			jp2a or img2aa | less
 	fi
 ;;
 *)
