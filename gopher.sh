@@ -11,6 +11,10 @@
 #		download: fake mode to download the result without changes
 
 # ENV variables:
+# 	USE_DIALOG: force the usage of the command 'dialog'
+#		  : true if dialog is found
+#		0 : do not
+#		1 : force the use of dialog
 #	LINK_COLOR: escape sequences colour (def: 2)
 #		- : means no escape sequence
 #		1 : means colour 1
@@ -47,15 +51,28 @@ if [ "$LINK_COLOR" != "-" ]; then
 	export LESS="${LESS}-R"
 fi
 
+# 'dialog' or text
+if [ "$USE_DIALOG" = "" ]; then
+	if dialog --help >/dev/null 2>&1; then
+		USE_DIALOG=1
+	else
+		USE_DIALOG=0
+	fi
+fi
+
 PREFIX="[0-9hIg]"
 
-# $0 [FILE]
+# $0 [FILE] (dialog)
 # Display a gopher menu for the given resource
 cat_menu() {
 	i=0
 	cat "$1" | grep "^i\|^$PREFIX" | while read ln; do
 		if echo "$ln" | grep "^i" >/dev/null 2>&1; then
-			echo "$ln" | cut -f1 | sed "s:^.:	:g"
+			if [ "$2" != dialog ]; then
+				echo "$ln" | sed "s:^.\([^\t]*\).*$:	\1:g"
+			else
+				echo "$ln" | sed 's:":'"''"':g;s:^.\([^\t]*\).*$:"      " "\1":g'
+			fi
 		elif echo "$ln" | grep "^$PREFIX" >/dev/null 2>&1; then
 			i=`expr $i + 1`
 			[ $i -le 9 ] && i=0$i 
@@ -71,7 +88,11 @@ cat_menu() {
 				+) typ='SVR';; # redundant server
 				*) typ='!!!';;
 			esac
-			echo "$ln" | sed "s:^.\\([^\t]*\\).*:$typ $i	$SL\\1$EL:g"
+			if [ "$2" != dialog ]; then
+				echo "$ln" | sed "s:^.\\([^\t]*\\).*:$typ $i	$SL\\1$EL:g"
+			else
+				echo "$ln" | sed "s:"'"'":'':g;s:^.\\([^\t]*\\).*:"'"'"$typ $i"'"'" "'"\1"'":g"
+			fi
 		fi
 	done
 }
@@ -91,7 +112,7 @@ getsel() {
 # Save page content to 'tmp' file
 tmp="`mktemp -t gofetch.current_page.XXXXXX`"
 finish() {
-  rm -rf "$tmp" "$tmp.jpg"
+  rm -rf "$tmp" "$tmp.jpg" "$tmp.menu" "$tmp.choice"
 }
 trap finish EXIT
 
@@ -113,8 +134,37 @@ download)
 1|+)
 	CHOICE=start
 	while [ "$CHOICE" != "" ]; do
-		cat_menu "$tmp" | less
-		read -p "[$SELECTOR]: " CHOICE
+		if [ "$USE_DIALOG" = 1 ]; then
+			> "$tmp.menu"
+			cat_menu "$tmp" dialog | while read ln; do
+				echo -n " $ln" >> "$tmp.menu"
+			done
+			[ "$LINES"   = "" ] && LINES=`tput lines`
+			[ "$COLUMNS" = "" ] && COLUMNS=`tput cols`
+			title="$SERVER: $SELECTOR"
+			dialog	--extra-button --extra-label Back \
+				--cancel-label Exit \
+				--no-shadow \
+				--menu "$title" \
+				"$LINES" "$COLUMNS" "$LINES" \
+				--file "$tmp.menu" 2>"$tmp.choice"
+			clear
+			val=$?
+			if [ $val = 3 ]; then
+				CHOICE=""
+			elif [ $val = 1 ]; then
+				CHOICE="q"
+			else
+				CHOICE="`cat "$tmp.choice" | cut -c5-`"
+			fi
+			
+			rm "$tmp.menu"
+			rm "$tmp.choice"
+		else
+			cat_menu "$tmp" | less
+			read -p "[$SELECTOR]: " CHOICE
+		fi
+		
 		[ "$CHOICE" = q ] && exit 255 # force-quit
 		index="`expr 1 \* "$CHOICE" 2>/dev/null`"
 		if [ "$index" != "" ]; then
