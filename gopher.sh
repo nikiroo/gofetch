@@ -44,7 +44,7 @@ EL=
 if [ "$LINK_COLOR" != "-" ]; then
 	SL="`tput setf $LINK_COLOR``tput setaf $LINK_COLOR`"
 	EL="`tput init`"
-	LESS="${LESS}-R"
+	export LESS="${LESS}-R"
 fi
 
 PREFIX="[0-9hIg]"
