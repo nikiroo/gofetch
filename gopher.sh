@@ -20,6 +20,9 @@
 #		1 : means colour 1
 #		2 : means colour 2
 #		[...]
+# 	INVERT    : invert the output for image viewing (for white backgrounds)
+# 		0 : do not invert (default)
+#		1 : invert 
 
 SERVER="$1"
 SELECTOR="$2"
@@ -60,7 +63,14 @@ if [ "$USE_DIALOG" = "" ]; then
 	fi
 fi
 
-PREFIX="[0-9hIg]"
+# Invert image viewer
+if [ "$INVERT" = 1 ]; then
+	INVERT="--invert"
+else
+	INVERT=
+fi
+
+PREFIX="[0-9hIg+]"
 
 # $0 [FILE] (dialog)
 # Display a gopher menu for the given resource
@@ -148,8 +158,9 @@ download)
 				--menu "$title" \
 				"$LINES" "$COLUMNS" "$LINES" \
 				--file "$tmp.menu" 2>"$tmp.choice"
-			clear
 			val=$?
+			clear
+			
 			if [ $val = 3 ]; then
 				CHOICE=""
 			elif [ $val = 1 ]; then
@@ -193,11 +204,13 @@ download)
 g|I)
 	if img2aa --help >/dev/null 2>&1; then
 		img2aa --mode=DITHERING \
+			$INVERT \
 			--width=74 "$tmp" | less
 	elif jp2a -h >/dev/null 2>&1; then
 		if convert -h >/dev/null 2>&1; then
 			convert "$tmp" "$tmp.jpg"
 			jp2a --border --chars=" .-+=o8#"\
+				$INVERT \
 				--width=74 "$tmp.jpg" | less
 		else
 			echo "required program not found to view images: convert" \
