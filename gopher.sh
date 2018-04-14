@@ -29,12 +29,20 @@ SELECTOR="$2"
 PORT="$3"
 MODE="$4"
 
+PREFIX="[0-9hIg+]"
+
 # Defaults:
 [ "$PORT" = "" ] && PORT=70
 if [ "$MODE" = "" ]; then
 	# "" or dir-like selector? -> 1 ; if not -> 0 
 	echo "$SELECTOR" | grep "/$" >/dev/null && MODE=1 || MODE=0
 	[ "$SELECTOR" = "" ] && MODE=1
+	
+	# check explicit modes:
+	if echo "$SELECTOR" | grep "^/\($PREFIX\|download\)/" >/dev/null; then
+		MODE="`echo "$SELECTOR" | cut -f2 -d/`"
+		SELECTOR="`echo "$SELECTOR" | sed 's:^/[^/]*/::'`"
+	fi
 fi
 
 if [ "$SERVER" = "" ]; then
@@ -69,8 +77,6 @@ if [ "$INVERT" = 1 ]; then
 else
 	INVERT=
 fi
-
-PREFIX="[0-9hIg+]"
 
 # $0 [FILE] (dialog)
 # Display a gopher menu for the given resource
