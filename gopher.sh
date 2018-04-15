@@ -53,13 +53,11 @@ PORT="`echo "$PORT" | sed 's/^://'`"
 
 # Defaults:
 if [ "$PORT" = "" ];then
-	if [ "$PROTOCOL" = http ]; then
-		PORT=80
-	elif [ "$PROTOCOL" = https ]; then
-		PORT=443
-	else
-		PORT=70
-	fi
+	case "$PROTOCOL" in
+	http)  PORT=80 ;;
+	https) PORT=443;;
+	*)     PORT=70 ;;
+	esac
 fi
 
 if [ "$MODE" = "" ]; then
@@ -88,7 +86,7 @@ EL=
 if [ "$LINK_COLOR" != "-" ]; then
 	SL="`tput setf $LINK_COLOR``tput setaf $LINK_COLOR`"
 	EL="`tput init`"
-	export LESS="${LESS}-R"
+	export LESS="${LESS} -R"
 fi
 
 # 'dialog' or text
