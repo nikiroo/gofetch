@@ -10,6 +10,10 @@
 #		...
 #		download: fake mode to download the result without changes
 
+# Manual:
+# 	When asked for a number (non-dialog uses only), you can also
+#	enter 'n' or 'p' to get the next or previous item (+1 or -1)
+
 # ENV variables:
 # 	USE_DIALOG: force the usage of the command 'dialog'
 #		  : true if dialog is found
@@ -159,7 +163,7 @@ download)
 	cat "$tmp" | less
 ;;
 1|+)
-	CHOICE=start
+	CHOICE=0
 	while [ "$CHOICE" != "" ]; do
 		if [ "$USE_DIALOG" = 1 ]; then
 			> "$tmp.menu"
@@ -190,7 +194,17 @@ download)
 			rm "$tmp.choice"
 		else
 			cat_menu "$tmp" | less
-			read -p "[$SELECTOR]: " CHOICE
+			read -p "[$SELECTOR]: " NEW_CHOICE
+			if [ "$NEW_CHOICE" = p ]; then
+				CHOICE=`expr "$CHOICE" - 1 2>/dev/null`
+				if [ "$CHOICE" -lt 0 ]; then
+					CHOICE=`cat "$tmp" | grep "^$PREFIX" | wc --lines`
+				fi
+			elif [ "$NEW_CHOICE" = n ]; then
+				CHOICE=`expr "$CHOICE" + 1 2>/dev/null`
+			else
+				CHOICE="$NEW_CHOICE"
+			fi
 		fi
 		
 		[ "$CHOICE" = q ] && exit 255 # force-quit
