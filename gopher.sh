@@ -24,6 +24,13 @@
 # 		0 : do not invert (default)
 #		1 : invert 
 
+# EXIT Codes:
+#	  0: ok
+#	  1: syntax error
+#	  2: cannot contact server
+#	  3: unknown selector mode
+#	255: special exit more 'q'
+
 SERVER="$1"
 SELECTOR="$2"
 PORT="$3"
@@ -47,7 +54,7 @@ fi
 
 if [ "$SERVER" = "" ]; then
 	echo "Syntax error: $0 [SERVER] ([SELECTOR]) ([PORT]) ([MODE])" >&2
-	exit 2
+	exit 1
 fi
 
 # can be "-" for no escape sequences
@@ -132,10 +139,14 @@ finish() {
 }
 trap finish EXIT
 
+echo "$SELECTOR" | nc "$SERVER" "$PORT" > "$tmp"
+if [ $? != 0 ]; then
+	echo Cannot contact gopher server "[$SERVER]" >&2
+	exit 2
+fi
+
 if [ $MODE = 1 ]; then
-	echo "$SELECTOR" | nc "$SERVER" "$PORT" | sed 's:\r::g' > "$tmp"
-else
-	echo "$SELECTOR" | nc "$SERVER" "$PORT" > "$tmp"
+	sed --in-place 's:\r::g' "$tmp"
 fi
 
 # Process page content
