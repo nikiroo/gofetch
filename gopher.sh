@@ -1,14 +1,18 @@
 #!/bin/sh
 
-# $0 [server] ([selector]) ([port]) ([mode])
-# 	server: the gopher server to dig to
-#	selector: the gopher selector (default is empty)
-#	port: the port to use (default is 70)
-#	mode: the filetype mode (default depends upon selector)
-#		0: plain text
-#		1: menu (dir-like)
-#		...
-#		download: fake mode to download the result without changes
+# $0 [gopher uri] ([mode])
+# 	uri: the gopher URI to dig to, e.g.:
+#		- gopher://sdf.org:70/1/faq
+#		- sdf.org/faq
+#		- sdf.org/1/faq
+#		- http://gopher.nikiroo.be:80/news
+#		- ...
+#		default port is 70 for gopher, 80 for http, 443 for https
+#		default filetype depends upon selector:
+#		- 0: plain text
+#		- 1: menu (dir-like)
+#		- ...
+#		- download: fake mode to download the result without changes
 
 # Manual:
 # 	When asked for a number (non-dialog uses only), you can also
@@ -35,29 +39,43 @@
 #	  3: unknown selector mode
 #	255: special exit more 'q'
 
-SERVER="$1"
-SELECTOR="$2"
-PORT="$3"
-MODE="$4"
+URI="$1"
 
 PREFIX="[0-9hIg+]"
 
+PROTOCOL="`echo $URI | sed 's|^\([^:]*://\)\?\([^:/]*\)\(:[^/]*\)\?/\?\(.*\)\?|\1|g'`"
+SERVER="`echo $URI | sed 's|^\([^:]*://\)\?\([^:/]*\)\(:[^/]*\)\?/\?\(.*\)\?|\2|g'`"
+PORT="`echo $URI | sed 's|^\([^:]*://\)\?\([^:/]*\)\(:[^/]*\)\?/\?\(.*\)\?|\3|g'`"
+SELECTOR="`echo $URI | sed 's|^\([^:]*://\)\?\([^:/]*\)\(:[^/]*\)\?/\?\(.*\)\?|\4|g'`"
+MODE=
+
+PORT="`echo "$PORT" | sed 's/^://'`"
+
 # Defaults:
-[ "$PORT" = "" ] && PORT=70
+if [ "$PORT" = "" ];then
+	if [ "$PROTOCOL" = http ]; then
+		PORT=80
+	elif [ "$PROTOCOL" = https ]; then
+		PORT=443
+	else
+		PORT=70
+	fi
+fi
+
 if [ "$MODE" = "" ]; then
 	# "" or dir-like selector? -> 1 ; if not -> 0 
 	echo "$SELECTOR" | grep "/$" >/dev/null && MODE=1 || MODE=0
 	[ "$SELECTOR" = "" ] && MODE=1
 	
 	# check explicit modes:
-	if echo "$SELECTOR" | grep "^/\($PREFIX\|download\)/" >/dev/null; then
-		MODE="`echo "$SELECTOR" | cut -f2 -d/`"
-		SELECTOR="`echo "$SELECTOR" | sed 's:^/[^/]*/::'`"
+	if echo "$SELECTOR" | grep "^/\?\($PREFIX\|download\)/" >/dev/null; then
+		MODE="`echo "$SELECTOR" | sed 's:^/\?\([^/]*\)/\(.*\):\1:'`"
+		SELECTOR="`echo "$SELECTOR" | sed 's:^/\?\([^/]*\)/\(.*\):\2:'`"
 	fi
 fi
 
 if [ "$SERVER" = "" ]; then
-	echo "Syntax error: $0 [SERVER] ([SELECTOR]) ([PORT]) ([MODE])" >&2
+	echo "Syntax error: $0 [gopher uri]" >&2
 	exit 1
 fi
 
@@ -93,7 +111,7 @@ fi
 # Display a gopher menu for the given resource
 cat_menu() {
 	i=0
-	cat "$1" | grep "^i\|^$PREFIX" | while read ln; do
+	cat "$1" | grep "^i\|^$PREFIX" | sed 's:\\:\\\\\\\\:g' | while read ln; do
 		if echo "$ln" | grep "^i" >/dev/null 2>&1; then
 			if [ "$2" != dialog ]; then
 				echo "$ln" | sed "s:^.\([^\t]*\).*$:	\1:g"
@@ -143,14 +161,24 @@ finish() {
 }
 trap finish EXIT
 
-echo "$SELECTOR" | nc "$SERVER" "$PORT" > "$tmp"
-if [ $? != 0 ]; then
-	echo Cannot contact gopher server "[$SERVER]" >&2
+ok=true
+if [ "$PROTOCOL" = gopher:// -o "$PROTOCOL" = "" ]; then
+	echo "$SELECTOR" | nc "$SERVER" "$PORT" > "$tmp" || ok=false
+else
+	if wget -h >/dev/null 2>&1; then
+		wget "${PROTOCOL}$SERVER:$PORT/$SELECTOR" -O "$tmp" >/dev/null 2>&1
+	else
+		curl "${PROTOCOL}$SERVER:$PORT/$SELECTOR" > "$tmp" 2>/dev/null
+	fi
+fi
+
+if [ $ok = false ]; then
+	echo Cannot contact gopher uri "[$URI]" >&2
 	exit 2
 fi
 
 if [ $MODE = 1 ]; then
-	sed --in-place 's:\r::g' "$tmp"
+	sed --in-place 's:\r\n:\n:g;s:\r::g' "$tmp"
 fi
 
 # Process page content
@@ -215,7 +243,7 @@ download)
 			goto_port="`getsel "$tmp" $index 4`"
 			goto_mode="`getsel "$tmp" $index 1 | cut -c1`"
 			echo "Digging to [$goto_server:$goto_port] $index [$goto_sel]..."
-			sh "$0" "$goto_server" "$goto_sel" "$goto_port" "$goto_mode"
+			sh "$0" "$goto_server:$goto_port/$goto_mode/$goto_sel"
 			[ $? = 255 ] && exit 255 # force-quit
 		fi
 	done
