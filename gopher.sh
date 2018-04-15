@@ -214,7 +214,7 @@ download)
 			goto_sel="`getsel "$tmp" $index 2`"
 			goto_port="`getsel "$tmp" $index 4`"
 			goto_mode="`getsel "$tmp" $index 1 | cut -c1`"
-			echo "Digging to [$goto_server:$goto_port] [$goto_sel]..."
+			echo "Digging to [$goto_server:$goto_port] $index [$goto_sel]..."
 			sh "$0" "$goto_server" "$goto_sel" "$goto_port" "$goto_mode"
 			[ $? = 255 ] && exit 255 # force-quit
 		fi
