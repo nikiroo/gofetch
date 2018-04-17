@@ -50,8 +50,8 @@ PORT="`echo "$PORT" | sed 's/^://'`"
 # Defaults:
 if [ "$PORT" = "" ];then
 	case "$PROTOCOL" in
-	http)  PORT=80 ;;
-	https) PORT=443;;
+	http://)  PORT=80 ;;
+	https://) PORT=443;;
 	*)     PORT=70 ;;
 	esac
 fi
