@@ -15,14 +15,10 @@
 #		- download: fake mode to download the result without changes
 
 # Manual:
-# 	When asked for a number (non-dialog uses only), you can also
-#	enter 'n' or 'p' to get the next or previous item (+1 or -1)
+# 	When asked for a number, you can also enter 'n' or 'p' to get the 
+# 	next or previous item (+1 or -1)
 
 # ENV variables:
-# 	USE_DIALOG: force the usage of the command 'dialog'
-#		  : true if dialog is found
-#		0 : do not
-#		1 : force the use of dialog
 #	LINK_COLOR: escape sequences colour (def: 2)
 #		- : means no escape sequence
 #		1 : means colour 1
@@ -89,15 +85,6 @@ if [ "$LINK_COLOR" != "-" ]; then
 	export LESS="${LESS} -R"
 fi
 
-# 'dialog' or text
-if [ "$USE_DIALOG" = "" ]; then
-	if dialog --help >/dev/null 2>&1; then
-		USE_DIALOG=1
-	else
-		USE_DIALOG=0
-	fi
-fi
-
 # Invert image viewer
 if [ "$INVERT" = 1 ]; then
 	INVERT="--invert"
@@ -105,17 +92,13 @@ else
 	INVERT=
 fi
 
-# $0 [FILE] (dialog)
+# $0 [FILE]
 # Display a gopher menu for the given resource
 cat_menu() {
 	i=0
 	cat "$1" | grep "^i\|^$PREFIX" | sed 's:\\:\\\\\\\\:g' | while read ln; do
 		if echo "$ln" | grep "^i" >/dev/null 2>&1; then
-			if [ "$2" != dialog ]; then
-				echo "$ln" | sed "s:^.\([^\t]*\).*$:	\1:g"
-			else
-				echo "$ln" | sed 's:":'"''"':g;s:^.\([^\t]*\).*$:"      " "\1":g'
-			fi
+			echo "$ln" | sed "s:^.\([^\t]*\).*$:	\1:g"
 		elif echo "$ln" | grep "^$PREFIX" >/dev/null 2>&1; then
 			i=`expr $i + 1`
 			[ $i -le 9 ] && i=0$i 
@@ -131,11 +114,7 @@ cat_menu() {
 				+) typ='SVR';; # redundant server
 				*) typ='!!!';;
 			esac
-			if [ "$2" != dialog ]; then
-				echo "$ln" | sed "s:^.\\([^\t]*\\).*:$typ $i	$SL\\1$EL:g"
-			else
-				echo "$ln" | sed "s:"'"'":'':g;s:^.\\([^\t]*\\).*:"'"'"$typ $i"'"'" "'"\1"'":g"
-			fi
+			echo "$ln" | sed "s:^.\\([^\t]*\\).*:$typ $i	$SL\\1$EL:g"
 		fi
 	done
 }
@@ -191,46 +170,17 @@ download)
 1|+)
 	CHOICE=0
 	while [ "$CHOICE" != "" ]; do
-		if [ "$USE_DIALOG" = 1 ]; then
-			> "$tmp.menu"
-			cat_menu "$tmp" dialog | while read ln; do
-				echo -n " $ln" >> "$tmp.menu"
-			done
-			[ "$LINES"   = "" ] && LINES=`tput lines`
-			[ "$COLUMNS" = "" ] && COLUMNS=`tput cols`
-			title="$SERVER: $SELECTOR"
-			dialog	--extra-button --extra-label Back \
-				--cancel-label Exit \
-				--no-shadow \
-				--menu "$title" \
-				"$LINES" "$COLUMNS" "$LINES" \
-				--file "$tmp.menu" 2>"$tmp.choice"
-			val=$?
-			clear
-			
-			if [ $val = 3 ]; then
-				CHOICE=""
-			elif [ $val = 1 ]; then
-				CHOICE="q"
-			else
-				CHOICE="`cat "$tmp.choice" | cut -c5-`"
+		cat_menu "$tmp" | less
+		read -p "[$SELECTOR]: " NEW_CHOICE
+		if [ "$NEW_CHOICE" = p ]; then
+			CHOICE=`expr "$CHOICE" - 1 2>/dev/null`
+			if [ "$CHOICE" -lt 0 ]; then
+				CHOICE=`cat "$tmp" | grep "^$PREFIX" | wc --lines`
 			fi
-			
-			rm "$tmp.menu"
-			rm "$tmp.choice"
+		elif [ "$NEW_CHOICE" = n ]; then
+			CHOICE=`expr "$CHOICE" + 1 2>/dev/null`
 		else
-			cat_menu "$tmp" | less
-			read -p "[$SELECTOR]: " NEW_CHOICE
-			if [ "$NEW_CHOICE" = p ]; then
-				CHOICE=`expr "$CHOICE" - 1 2>/dev/null`
-				if [ "$CHOICE" -lt 0 ]; then
-					CHOICE=`cat "$tmp" | grep "^$PREFIX" | wc --lines`
-				fi
-			elif [ "$NEW_CHOICE" = n ]; then
-				CHOICE=`expr "$CHOICE" + 1 2>/dev/null`
-			else
-				CHOICE="$NEW_CHOICE"
-			fi
+			CHOICE="$NEW_CHOICE"
 		fi
 		
 		[ "$CHOICE" = q ] && exit 255 # force-quit
