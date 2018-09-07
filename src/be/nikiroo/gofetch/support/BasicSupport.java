@@ -32,7 +32,7 @@ import be.nikiroo.utils.StringUtils;
  */
 public abstract class BasicSupport {
 	/** The downloader to use for all websites. */
-	protected static Downloader downloader = new Downloader("gofetcher");
+	static protected Downloader downloader = new Downloader("gofetcher");
 
 	static private String preselector;
 
@@ -106,7 +106,11 @@ public abstract class BasicSupport {
 					continue;
 				}
 
-				if (id.isEmpty()) {
+				if (!id.isEmpty()) {
+					while (id.length() < 10) {
+						id = "0" + id;
+					}
+				} else {
 					id = date.replace(":", "_").replace("+", "_");
 				}
 

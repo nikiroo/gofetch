@@ -53,12 +53,7 @@ public class LWN extends BasicSupport {
 
 	@Override
 	protected String getArticleId(Document doc, Element article) {
-		String id = getArticleIntUrl(doc, article).replaceAll("[^0-9]", "");
-		while (id.length() < 10) {
-			id = "0" + id;
-		}
-
-		return id;
+		return getArticleIntUrl(doc, article).replaceAll("[^0-9]", "");
 	}
 
 	@Override

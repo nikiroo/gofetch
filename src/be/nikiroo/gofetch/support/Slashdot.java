@@ -45,10 +45,6 @@ public class Slashdot extends BasicSupport {
 				id = id.substring("title-".length());
 			}
 
-			while (id.length() < 10) {
-				id = "0" + id;
-			}
-
 			return id;
 		}
 
