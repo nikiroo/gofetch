@@ -45,6 +45,9 @@ class Phoronix extends BasicSupport {
 					id = id.substring(pos + 1);
 				}
 
+				while (id.length() < 10) {
+					id = "0" + id;
+				}
 				return id;
 			}
 		}

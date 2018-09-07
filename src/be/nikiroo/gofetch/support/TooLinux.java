@@ -60,7 +60,7 @@ public class TooLinux extends BasicSupport {
 	protected String getArticleDate(Document doc, Element article) {
 		Element dateElement = article.getElementsByClass("published").first();
 		if (dateElement != null) {
-			return dateElement.text();
+			return dateElement.attr("title");
 		}
 
 		return "";
