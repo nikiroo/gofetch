@@ -149,7 +149,7 @@ public class TheRegister extends BasicSupport {
 		try {
 			URL url = new URL("https://forums.theregister.co.uk/forum/1"
 					+ intUrl.getPath());
-			InputStream in = downloader.open(url);
+			InputStream in = open(url);
 			try {
 				doc = DataUtil.load(in, "UTF-8", url.toString());
 				Element posts = doc.getElementById("forum_posts");

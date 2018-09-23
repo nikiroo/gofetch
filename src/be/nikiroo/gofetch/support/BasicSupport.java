@@ -31,8 +31,10 @@ import be.nikiroo.utils.StringUtils;
  * @author niki
  */
 public abstract class BasicSupport {
-	/** The downloader to use for all websites. */
-	static protected Downloader downloader = new Downloader("gofetcher");
+	/**
+	 * The downloader to use for all websites via {@link BasicSupport#open(URL)}
+	 */
+	static private Downloader downloader = new Downloader("gofetcher");
 
 	static private String preselector;
 
@@ -55,7 +57,7 @@ public abstract class BasicSupport {
 	 * @return the selector
 	 */
 	public String getSelector() {
-		return getSelector(type);
+		return getSelector(getType());
 	}
 
 	/**
@@ -87,7 +89,7 @@ public abstract class BasicSupport {
 				defaultCateg = "";
 			}
 
-			InputStream in = downloader.open(url);
+			InputStream in = open(url);
 			Document doc = DataUtil.load(in, "UTF-8", url.toString());
 			List<Element> articles = getArticles(doc);
 			for (Element article : articles) {
@@ -273,7 +275,7 @@ public abstract class BasicSupport {
 		String fullContent = "";
 
 		URL url = new URL(story.getUrlInternal());
-		InputStream in = downloader.open(url);
+		InputStream in = open(url);
 		try {
 			Document doc = DataUtil.load(in, "UTF-8", url.toString());
 			Element article = getFullArticle(doc);
@@ -345,6 +347,23 @@ public abstract class BasicSupport {
 	 * @return the processor, or NULL
 	 */
 	abstract protected ElementProcessor getElementProcessorFullArticle();
+
+	/**
+	 * Open a network resource.
+	 * <p>
+	 * You need to close the returned {@link InputStream} when done.
+	 * 
+	 * @param url
+	 *            the source to open
+	 * 
+	 * @return the content
+	 * 
+	 * @throws IOException
+	 *             in case of I/O error
+	 */
+	protected InputStream open(URL url) throws IOException {
+		return downloader.open(url);
+	}
 
 	/**
 	 * Convert the comment elements into {@link Comment}s

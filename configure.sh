@@ -57,7 +57,7 @@ fi;
 
 echo "MAIN = be/nikiroo/gofetch/Main" > Makefile
 echo "MORE = " >> Makefile
-echo "TEST = " >> Makefile
+echo "TEST = be/nikiroo/gofetch/test/Test" >> Makefile
 echo "TEST_PARAMS = $cols $ok $ko" >> Makefile
 echo "NAME = gofetch" >> Makefile
 echo "PREFIX = $PREFIX" >> Makefile

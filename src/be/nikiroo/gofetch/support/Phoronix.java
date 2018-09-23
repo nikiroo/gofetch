@@ -146,7 +146,7 @@ class Phoronix extends BasicSupport {
 				Element a = linkToComments.getElementsByTag("a").first();
 				if (a != null) {
 					String url = a.absUrl("href");
-					InputStream in = downloader.open(new URL(url));
+					InputStream in = open(new URL(url));
 					try {
 						doc = DataUtil.load(in, "UTF-8", url.toString());
 						return doc.getElementsByClass("b-post");
