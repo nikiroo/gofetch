@@ -15,7 +15,6 @@ import be.nikiroo.gofetch.output.Output;
 import be.nikiroo.gofetch.support.BasicSupport;
 import be.nikiroo.utils.IOUtils;
 import be.nikiroo.utils.test.TestCase;
-import be.nikiroo.utils.test.TestLauncher;
 
 /**
  * Base class for {@link BasicSupport}s testing.
@@ -29,10 +28,12 @@ import be.nikiroo.utils.test.TestLauncher;
  * 
  * @author niki
  */
-abstract class TestBase extends TestLauncher {
+abstract class TestBase extends TestCase {
+	private BasicSupport support;
+
 	public TestBase(BasicSupport support, String[] args) {
-		super(support.getType().toString(), args);
-		addTest(support);
+		super(support.getType().toString());
+		this.support = support;
 	}
 
 	static protected InputStream doOpen(BasicSupport support,
@@ -48,35 +49,30 @@ abstract class TestBase extends TestLauncher {
 
 	}
 
-	private void addTest(final BasicSupport support) {
-		addTest(new TestCase("Processing example data") {
-			@Override
-			public void test() throws Exception {
-				File expected = new File("test/expected/" + support.getType());
-				File actual = new File("test/result/" + support.getType());
+	@Override
+	public void test() throws Exception {
+		File expected = new File("test/expected/" + support.getType());
+		File actual = new File("test/result/" + support.getType());
 
-				IOUtils.deltree(actual);
-				expected.mkdirs();
-				actual.mkdirs();
+		IOUtils.deltree(actual);
+		expected.mkdirs();
+		actual.mkdirs();
 
-				Output gopher = new Gopher(support.getType(), "", "", 70);
-				Output html = new Html(support.getType(), "", "", 80);
+		Output gopher = new Gopher(support.getType(), "", "", 70);
+		Output html = new Html(support.getType(), "", "", 80);
 
-				for (Story story : support.list()) {
-					support.fetch(story);
-					IOUtils.writeSmallFile(new File(actual, story.getId()
-							+ ".header"), gopher.exportHeader(story));
-					IOUtils.writeSmallFile(
-							new File(actual, story.getId() + ""),
-							gopher.export(story));
-					IOUtils.writeSmallFile(new File(actual, story.getId()
-							+ ".header.html"), html.exportHeader(story));
-					IOUtils.writeSmallFile(new File(actual, story.getId()
-							+ ".html"), html.export(story));
-				}
+		for (Story story : support.list()) {
+			support.fetch(story);
+			IOUtils.writeSmallFile(new File(actual, story.getId() + ".header"),
+					gopher.exportHeader(story));
+			IOUtils.writeSmallFile(new File(actual, story.getId() + ""),
+					gopher.export(story));
+			IOUtils.writeSmallFile(new File(actual, story.getId()
+					+ ".header.html"), html.exportHeader(story));
+			IOUtils.writeSmallFile(new File(actual, story.getId() + ".html"),
+					html.export(story));
+		}
 
-				assertEquals(expected, actual);
-			}
-		});
+		assertEquals(expected, actual);
 	}
 }

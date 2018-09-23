@@ -1,0 +1,211 @@
+    TOR BROWSER GETS A REDESIGN, SWITCHES TO NEW FIREFOX QUANTUM   
+                         ENGINE (ZDNET.COM)                        
+
+  Thursday September 06, 2018 @11:30PM (msmash)
+  from the for-the-record dept.
+
+  o News link: https://yro.slashdot.org/story/18/09/06/1651255/tor-browser-gets-a-redesign-switches-to-new-firefox-quantum-engine
+  o Source link: https://www.zdnet.com/article/tor-browser-gets-a-redesign-switches-to-new-firefox-quantum-engine/
+
+
+    The  Tor  Browser  has  rolled  out  a  new  interface with the
+    release  of  v8. From a report: The Tor Browser has always been
+    based  on  the  Firefox  codebase,  but  it lagged behind a few
+    releases.  Mozilla  rolled  out a major overhaul of the Firefox
+    codebase  in November 2017, with the release of Firefox 57, the
+    first  release  in  the Firefox Quantum series. Firefox Quantum
+    came  with  a new page rendering engine, a new add-ons API, and
+    a  new  user interface called the Photon UI. Because these were
+    major,  code-breaking  changes,  it  took  the smaller Tor team
+    some  time  to  integrate  all  of  them  into  the Tor Browser
+    codebase  and  make sure everything worked as intended. The new
+    Tor  Browser  8,  released  yesterday,  is now in sync with the
+    most  recent  version of Firefox, the Quantum release, and also
+    supports  all  of  its features. This means the Tor Browser now
+    uses  the  same  modern Photon UI that current Firefox versions
+    use,  it  supports  the  same  speed-optimized  page  rendering
+    engine  and  has  also  dropped  support  for the old XUL-based
+    add-ons  system  for  the  new WebExtensions API system used by
+    Chrome,  Opera,  Vivaldi,  Brave,  and the rest of the Chromium
+    browsers.
+
+
+  ** 
+
+     ** Re: Isn't page render speed pretty irrelevant for (Score:1)
+        (by Anonymous Coward)
+
+        
+        Not when you have the assets already cached. Most people
+        donâ(TM)t just visit a site once. I was playing with it this
+        morning. Itâ(TM)s a decent speed improvement even within the
+        restraints of tor
+        More impressively msmash posted an actual tech article not a
+        biasedpolitical article for a change. Losing too many readers
+        now I suspect
+
+
+     ** Re: (Score:3, Insightful)
+        (by Tough Love ( 215404 ))
+
+        
+        > It's not like a new page renderer is going to solve that.
+        The point is to be synced up to the current Firefox codebase.
+        Which by the way is awesome. I have all my favorite
+        extensions running, in spite of all the FUD about the new
+        Webextensions API.
+
+        ** Re: (Score:2)
+           (by Tough Love ( 215404 ))
+
+           
+           >> It's not like a new page renderer is going to solve that.
+           > The point is to be synced up to the current Firefox
+           > codebase. Which by the way is awesome. I have all my
+           > favorite extensions running, in spite of all the FUD about
+           > the new Webextensions API.
+           Why would anybody mod that comment troll?
+
+           ** 
+
+              ** Re: (Score:2)
+                 (by Tough Love ( 215404 ))
+
+                 
+                 It is FUD. Firefox's extension ecology is as vibrant
+                 as ever, but far more secure. And if somebody
+                 disagrees, they should do so instead of taking the
+                 belly slither route.
+
+                 ** 
+
+                    ** Re: (Score:2)
+                       (by theweatherelectric ( 2007596 ))
+
+                       
+                       You can use the built-in [1]Reader View
+                       [mozilla.org] for a lot of pages, but it's not
+                       available for all pages. It depends on the
+                       page structure.
+                       
+                       
+                       
+                       
+                       [1]
+                       https://support.mozilla.org/en-US/kb/firefox-r-
+                       eader-view-clutter-free-web-pages
+
+
+
+
+
+
+
+  ** Tested today (Score:1)
+     (by Anonymous Coward)
+
+     
+     First impression is I like it. Video playback seems sluggish but
+     overall positive. Hopefully any NSA addons did not make the cut.
+
+  ** Who can afford to run a tor exit node ? (Score:4, Interesting)
+     (by dargaud ( 518470 ))
+
+     
+     I really wonder that. I support tor. I've never actually used it
+     because I don't have much to hide, but I understand that other
+     do. So I ran a tor relay (not exit) as my way of supporting the
+     project for a while; from my home adsl. After a while I noticed
+     some weird stuff going on. Some websites (important ones)
+     wouldn't load properly. Emails sent would bounce or simply never
+     reach their destination. After looking at the problem I found
+     that my IP was on some minor blacklists. I stopped the relay and
+     after 2 days I was off the blacklists. Hence my question, if
+     running a simple relay gets you blacklisted, what does running
+     an exit point does to your other internet usage from that IP ?
+     Who can afford separate IPs besides institutions ? So who is
+     really really running them ? Certainly not private citizens...
+
+     ** Re: (Score:3)
+        (by ftobin ( 48814 ))
+
+        
+        You can run something like a Linode instance pretty cheaply
+        and get more IPs. I've run a highly restricted exit node in
+        the past (low bandwidth, select ports), and I've had the same
+        problems with you if I try to use my Linode as a web proxy.
+        My most recent problem has been with Shut Up and Sit Down RSS
+        feeds, which are blocking my host  :-\
+
+        ** Re:Who can afford to run a tor exit node ? (Score:4,
+           Informative)
+           (by tlhIngan ( 30335 ))
+
+           
+           > You can run something like a Linode instance pretty
+           > cheaply and get more IPs. I've run a highly restricted
+           > exit node in the past (low bandwidth, select ports), and
+           > I've had the same problems with you if I try to use my
+           > Linode as a web proxy. My most recent problem has been
+           > with Shut Up and Sit Down RSS feeds, which are blocking my
+           > host  :-\
+           And that's just because no matter how noble the cause,
+           idiots will just ruin it. You don't need a list of Tor
+           exit nodes because if you run a reasonably popular
+           website, you'll find out quite rapidly what they are and
+           auto-blacklist t hem.
+           It's why CDNs like CloudFlare block Tor - the abuse from
+           Tor exit nodes ensures that whatever trigger you use,
+           it'll be triggered and you'll end up blocking it. It's not
+           like it's done deliberately - you don't have to seek out
+           new Tor exit nodes. They just make themselves known.
+           I'd even venture to say if you want to allow Tor traffic,
+           you have to whitelist them specifically It's not that Tor
+           is bad, it's just that it's got a bunch of bad actors that
+           really do ruin it for those who need it.
+
+           ** Re: (Score:2)
+              (by ftobin ( 48814 ))
+
+              
+              > And that's just because no matter how noble the cause,
+              > idiots will just ruin it. You don't need a list of Tor
+              > exit nodes because if you run a reasonably popular
+              > website, you'll find out quite rapidly what they are
+              > and auto-blacklist t hem.
+              I should mention that I don't and never did allow
+              access on port 80 or 443, yet Shut up and Sit Down's
+              RSS feed blocks me. There is no way my host was causing
+              issues for their site, with the 20 KB/s of bandwidth I
+              allowed. Additionally, I only allowed ports like IRC,
+              DN
+
+
+
+
+     ** Re: (Score:2)
+        (by bill_mcgonigle ( 4333 ) *)
+
+        
+        Check out the Library Freedom Project.
+
+
+     ** Re: (Score:2)
+        (by AHuxley ( 892839 ))
+
+        
+        Governments.
+
+
+  ** 
+
+     ** Re: (Score:2)
+        (by AHuxley ( 892839 ))
+
+        
+        NSA, CIA, GCHQ did not worry about anonymous communication.
+        Police with lots of cash per investigation at a national
+        level don't worry about anonymous communication anymore.
+
+
+

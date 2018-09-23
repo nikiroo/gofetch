@@ -1,0 +1,597 @@
+     SOFTWARE DEVELOPERS ARE NOW MORE VALUABLE TO COMPANIES THAN   
+                    MONEY, SAYS SURVEY (CNBC.COM)                  
+
+  Thursday September 06, 2018 @11:30PM (BeauHD)
+  from the new-breed-of-corporate-leaders dept.
+
+  o News link: https://developers.slashdot.org/story/18/09/06/2024232/software-developers-are-now-more-valuable-to-companies-than-money-says-survey
+  o Source link: https://www.cnbc.com/2018/09/06/companies-worry-more-about-access-to-software-developers-than-capital.html
+
+
+    An  anonymous  reader  quotes a report from CNBC: As our global
+    economy  increasingly  comes to run on technology-enabled rails
+    and   every   company   becomes  a  tech  company,  demand  for
+    high-quality  software  engineers  is  at  an  all-time high. A
+    recent  study from Stripe and Harris Poll found that 61 percent
+    of  C-suite  executives believe access to developer talent is a
+    threat   to   the  success  of  their  business.  Perhaps  more
+    surprisingly  -- as we mark a decade after the financial crisis
+    --  this  threat was even ranked above capital constraints. And
+    yet,  despite  being many corporations' most precious resource,
+    developer  talents  are all too often squandered. Collectively,
+    companies  today lose upward of $300 billion a year paying down
+    "technical  debt,"  as  developers  pour  time into maintaining
+    legacy  systems  or  dealing  with  the  ramifications  of  bad
+    software.  This  is  especially  worrisome,  given the outsized
+    impact  developers  have  on  companies'  chances  of  success.
+    Software  developers  don't  have a monopoly on good ideas, but
+    their   skill   set  makes  them  a  uniquely  deep  source  of
+    innovation,  productivity  and  new  economic connections. When
+    deployed  correctly,  developers can be economic multipliers --
+    coefficients  that  dramatically  ratchet  up the output of the
+    teams and companies of which they're a part.
+
+
+  ** So why not treat them well? (Score:5, Insightful)
+     (by gweihir ( 88907 ))
+
+     
+     Naa, that would be un-capitalist. Developers must be cheap
+     wage-slaves that do not have a real career-path and are unable
+     to find a job once they hit 50. That will surely not have any
+     impact on whether smart people go into software writing or not,
+     right?
+
+     ** Re: So why not treat them well? (Score:1)
+        (by Dannis12345 ( 5512754 ))
+
+        
+        This is really true. As the fact that the IT leads the world.
+
+
+     ** 
+
+        ** Re: (Score:3)
+           (by ShanghaiBill ( 739463 ))
+
+           
+           > But even so, I hear these horror stories about how
+           > software developers are treated and I just have not seen
+           > it.
+           Me neither. I have worked for companies that had catered
+           meals, free soda, laundry service, sky diving bonding
+           trips, etc. I have had plenty of opportunities to travel.
+           I have worked some late nights, and done a few death
+           marches, but those only lasted a few weeks, out of a
+           career lasting decades.
+           Software developers are likely the most spoiled employees
+           in the history of the world.
+           People will alway whine.
+
+           ** Re: (Score:2)
+              (by gweihir ( 88907 ))
+
+              
+              > People will alway whine.
+              And there you are wrong. I have a pretty good career
+              myself. But I see how many coders are treated and I am
+              not surprised at all that there are by far not enough
+              good ones.
+
+              ** Re: (Score:1)
+                 (by NicknameUnavailable ( 4134147 ))
+
+                 
+                 As much as I'm for better treatment and perks for
+                 coders, the issue of "not enough good ones" isn't
+                 because of that. There's only so many smart people,
+                 dumb people and mediocre people don't make good
+                 coders. Some of the above-average ones might make
+                 the cut as maintenance coders or some incredibly
+                 soul-crushing AGILE environment where they don't
+                 actually have to think, but for the most part any
+                 programming position of note requires a 150+ IQ to
+                 do even moderately well.
+
+                 ** 
+
+                    ** Re: (Score:2)
+                       (by HornWumpus ( 783565 ))
+
+                       
+                       How many 3+ standard deviation people are we
+                       supposed to believe you know?
+                       Same crit as you gave the GP. I doubt you know
+                       even one.
+
+
+
+                 ** Re: (Score:2)
+                    (by gweihir ( 88907 ))
+
+                    
+                    The issue is very much that a lot of the few
+                    people that could be good at it, see the working
+                    conditions and career options and go somewhere
+                    else. Also, 150+IQ people basically do not exist.
+                    I gather this is some wired non-standard US
+                    scale...
+
+                    ** Re: (Score:3)
+                       (by _Sharp'r_ ( 649297 ))
+
+                       
+                       Having a measured IQ >150, I can tell you with
+                       my excellent two-minute Googling skills there
+                       are approximately 300K in the U.S. if you're
+                       using the Stanford-Binet scale. For the
+                       Wechsler scale, it's more like 140K, which is
+                       still a lot of people. Heck, the Prometheus
+                       Society's cut-off for membership is 160+. I
+                       guess to you, they basically don't exist...
+
+
+                    ** Re: (Score:2)
+                       (by ShanghaiBill ( 739463 ))
+
+                       
+                       > ... see the working conditions and career
+                       > options and go somewhere else.
+                       Where do they go?
+                       Doctors, lawyers and investment bankers work
+                       longer hours than programmers. Nearly everyone
+                       else makes less money.
+                       Maybe they become underwater welders?
+
+
+
+
+
+
+
+     ** Re:So why not treat them well? (Score:5, Interesting)
+        (by spagthorpe ( 111133 ))
+
+        
+        It won't really have any impact, because young people don't
+        think they'll ever get old. Or it will be different for them.
+        Had a 20-something at my last job make a number of comments
+        about some of the older developers there, saying they'd hate
+        to still be working at that age, and that they are probably
+        stuck doing the same work because they can't learn anything
+        new. I don't know why he was telling me this, as I was twice
+        his age at the time, but it's obvious that he doesn't think
+        he'll be in the same position.
+        They ultimately did lay off a lot of their senior engineers
+        and replace a lot of the position with 20-somethings,
+        including in project management positions. A number of those
+        projects never saw the light of day after years of re-writes
+        into new frameworks.
+
+
+  ** And yet there's agile (Score:2)
+     (by xxxJonBoyxxx ( 565205 ))
+
+     
+     And open concept offices.
+
+     ** Re:And yet there's agile (Score:5, Interesting)
+        (by Seven Spirals ( 4924941 ))
+
+        
+        I've quit one job and refused two others because of open
+        offices. The two I refused were absolutely flabbergasted by
+        my refusal. They literally could not understand why anyone
+        wouldn't want to be in an open office space surrounded on 3.8
+        sides by glass-walled manager offices, loud ugly marketing
+        girls, and a bunch of H1B dudes who couldn't be bothered to
+        wear deodorant. That place (MX Logic) had the worst looking
+        office I've ever seen. One of them offered me the job on the
+        spot after the interview and I was already shutting them down
+        and refusing it before they even got started. I told them
+        there is about a zero percent chance of getting anyone really
+        talented to take the gig, because they had this ridiculous
+        noisy slave pit thing going. I nearly left before I even
+        *did* the interview I was so disgusted with the place. The
+        hiring manager was (of course) offended, but he was also
+        clueless. About a year after that interview I had a guy come
+        up to me at the local Maker Space who was one of the
+        "technical resources" for the company during the interview
+        (quiet guy in the back of the room). He told me "My god was I
+        cheering when you refused them over the goddamn open
+        workspace idiocy. My boss was upset over that for weeks. They
+        still talk about it during the hiring process and argue about
+        it."
+
+        ** Re: (Score:1)
+           (by bkmoore ( 1910118 ))
+
+           
+           > ....One of them offered me the job on the spot after the
+           > interview and I was already shutting them down and
+           > refusing it before they even got started.....
+           It begs the question, why even apply there in the first
+           place.
+
+           ** Re: (Score:3)
+              (by Klaxton ( 609696 ))
+
+              
+              > It begs the question, why even apply there in the first
+              > place.
+              So you could see their office environment tucked away
+              behind the job description on the internet?
+
+
+
+        ** Re: (Score:2)
+           (by Ocker3 ( 1232550 ))
+
+           
+           "But I can See everyone and I know that they're working" -
+           Manager If someone doesn't know enough about their direct
+           report's job that they don't know whether they're working
+           or not without seeing them at their desk, there's a
+           problem. Not all jobs are reduced in efficiency by a
+           cubicle farm, but if your job is primarily about mental
+           focus for the time-intensive tasks, then most people will
+           benefit from having their own room. And the employer will
+           probably benefit enough that an actual room is a
+           worthwhile
+
+
+        ** Re: (Score:2)
+           (by erp_consultant ( 2614861 ))
+
+           
+           Sounds like a real horror show. Safe to say you made the
+           right move.
+
+
+
+     ** Re: (Score:3)
+        (by Klaxton ( 609696 ))
+
+        
+        I've worked in the industry for many years, usually with a
+        private office or shared with one person. Recently got a job
+        in an agile "scrum" shop, which went to an open floorplan a
+        few months later. Miserable experience on both counts. Every
+        day you get a Jira work ticket for some "the user wants to
+        see" granule of a thing that you had no part in designing.
+        Zero privacy. It is amazingly de-motivating.
+
+
+  ** 
+
+     ** Re: (Score:2)
+        (by HornWumpus ( 783565 ))
+
+        
+        Microsoft owns javascript? You have things backwards.
+
+        ** Re: (Score:2)
+           (by gweihir ( 88907 ))
+
+           
+           I was thinking the same thing. Although JavaScript, Java,
+           and the surrounding ecosystems could have come from MS, no
+           doubt.
+
+
+
+  ** Yeah, right (Score:5, Insightful)
+     (by Anonymous Coward)
+
+     
+     If they considered developers more important than money, they'd
+     pay the developers more to keep the skilled ones. Every time a
+     developer leaves a company, a hunk of business knowledge walks
+     out the door with him.
+     Companies care about that quarter's finance report, and the
+     C-level execs care only about fleecing the company for all they
+     can stuff into their own pockets. Look at what they do, not what
+     some survey says.
+
+     ** 
+
+        ** Re: (Score:3, Interesting)
+           (by Anonymous Coward)
+
+           
+           LOL. You've massively understated the ageism and the issue
+           of job qualifications.
+           First, the ageism problem is associated also with a
+           problem that people aren't allowed to take breaks. After
+           having great success even to the point of being a chief
+           architect on an 80-man program, I quit working for a while
+           and now can't find anyone who will let me start at the
+           bottom.
+           But, the job qualification thing is really ridiculous. A
+           good software engineer is a specialist at picking up new
+           domains, languages, frameworks,
+
+
+        ** Re: (Score:2)
+           (by Anonymous Brave Guy ( 457657 ))
+
+           
+           > Don't know where you live, but in most places I think
+           > developers are paid fairly well. We offer
+           > straight-out-of-school newbies $80-$90k, and still some
+           > turn us down for better offers.
+           Most places are not the Bay Area or a few big US cities.
+           In most of the world, new starter salaries in software
+           development are rarely more than 1/3 of that level, and in
+           many places they are much lower.
+
+
+        ** Re: (Score:2)
+           (by Ocker3 ( 1232550 ))
+
+           
+           Your post is probably at zero rep because it was posted
+           AC, but you make good points.
+
+
+
+  ** 
+
+     ** Re: (Score:3)
+        (by Klaxton ( 609696 ))
+
+        
+        Software developers generally have to do what they are told,
+        and work on whatever the boss thinks is important. You don't
+        get to decide whether it is going to bring in money or not.
+
+
+  ** Yeah haven't heard that one before (Score:2)
+     (by Crashmarik ( 635988 ))
+
+     
+     Maybe it just sounds too much like 40 years of businesses
+     claiming there was a shortage of engineers in the U.S. when what
+     they meant was there was a shortage of engineers that could be
+     treated really badly.
+     Or maybe it's the fact that companies only seem to be willing to
+     hire H1Bs that will do anything not to go back to their
+     shitholes, or young kids who are stupid enough to believe
+     managements promises and have no family or social life to
+     distract from putting in 80+ hour weeks ?
+
+     ** Re: (Score:2)
+        (by zlives ( 2009072 ))
+
+        
+        you misread, and i quote
+        "developer talent is a threat to the success of their
+        business" thus the hiring of no talent, spot filling h1b. and
+        if they accidentally get a talented h1b... replace and
+        repeat.
+
+
+  ** FTFY (Score:5, Funny)
+     (by thevirtualcat ( 1071504 ))
+
+     
+     Software Developers Who Are Willing To Work For Uncompetitive
+     Wages And No Benefits Are Now More Valuable To Companies Than
+     Money, Says Survey
+
+     ** Re: (Score:2)
+        (by Seven Spirals ( 4924941 ))
+
+        
+        Fucking-A right. Period.
+
+
+  ** .ORG (Score:4, Insightful)
+     (by fluffernutter ( 1411889 ))
+
+     
+     This just tells me that developers need to get organized and
+     start saying no to 80+ work weeks collectively. Otherwise it
+     will be divided they fall, forever.
+
+     ** Re: (Score:2)
+        (by Ocker3 ( 1232550 ))
+
+        
+        How do we re-invent Unions without calling them Unions and
+        avoid the very real baggage that the term has in the USA?
+        Guilds?
+
+
+  ** In other news... (Score:1)
+     (by Robobox Computer ( 5357621 ))
+
+     
+     The sun rose today.
+
+  ** Legacy systems are out of control (Score:2)
+     (by xack ( 5304745 ))
+
+     
+     Microsoft has just announced paid extended support for Windows 7
+     as too many companies are using it. There’s a lot of server 2003
+     systems out there too, with companies rather risking security
+     exploits than upgrade.
+
+     ** 
+
+        ** Re: (Score:2)
+           (by Ocker3 ( 1232550 ))
+
+           
+           A pity that new features aren't separated from security
+           patches to allow users to keep their old platform secure
+           without feature changes.
+
+
+        ** Re: (Score:2)
+           (by xvan ( 2935999 ))
+
+           
+           > Newer file browsers no longer let you edit the file path,
+           > you have to click on everything to get somewhere
+           Ctrl+L , no, you don't need to thank me.
+
+
+
+     ** Re: (Score:1)
+        (by Anonymous Coward)
+
+        
+        So I'm supposed to upgrade the single Windows 2003 system I
+        have, running as a non-networked VM, hosting a proprietary
+        application on a system we need to lookup legacy data that
+        never changes so I can pay to upgrade to a modern system,
+        figure out a way to migrate the data from one proprietary
+        application to a new and different system just so I can have
+        support I don't need on a system that can't realistically be
+        exploited in the first place?
+        OR I'm supposed to pay a premium for extended support on the
+        curren
+
+
+     ** Re: (Score:3)
+        (by gweihir ( 88907 ))
+
+        
+        That is a different problem. Their new offerings are just
+        really bad. Also, nobody sane used MS crap on server-side.
+
+
+  ** Yet us 50+ folks are unemployed (Score:4, Informative)
+     (by Snotnose ( 212196 ))
+
+     
+     Forget how long I've been out of work, it's been 2-3 years now
+     since I quit looking.
+
+     ** Re: (Score:3)
+        (by Locke2005 ( 849178 ))
+
+        
+        I'm 57 and got at least 3 calls TODAY offering to submit me
+        for contract software positions. Granted, a lot of recruiters
+        try to low-ball me on the hourly rate, but they change their
+        tune as soon as you call their bluff and tell them you're not
+        interested at that low rate.
+
+        ** Re: (Score:1)
+           (by Anonymous Coward)
+
+           
+           > I'm 57 and got at least 3 calls TODAY offering to submit
+           > me for contract software positions. Granted, a lot of
+           > recruiters try to low-ball me on the hourly rate, but they
+           > change their tune as soon as you call their bluff and tell
+           > them you're not interested at that low rate.
+           I get recruiters wanting to submit me all the time. Then
+           after a week, I follow up and the "the position is
+           closed." I think recruiters are assholes who got fired
+           from see car lots for ethics violations.
+           So, when you get a real job with health insurance, you'll
+           be an outlier.
+           Of course, that's assumimg you're not full of shit.
+
+           ** Re: (Score:2)
+              (by Locke2005 ( 849178 ))
+
+              
+              I agree; I regard recruiters as people that weren't
+              ethical enough to get jobs as used car salesmen. I
+              interviewed for a job once, didn't get any response, so
+              I started another position. A month after the initial
+              interview, the recruiter for the first position offered
+              me $1500 cash in a plain, unmarked envelope to quit the
+              job I'd just started and take the other position
+              instead! (Apparently the cash came out of his
+              commission.) So yes, recruiters know nothing, rely
+              almost entirely on keyword searching in r
+
+
+
+
+  ** So, the old adage? (Score:2)
+     (by fahrbot-bot ( 874524 ))
+
+     
+     Employees are our most valuable asset? I'm pretty sure it's
+     actually still money.
+
+  ** Nonsensical headline... (Score:2)
+     (by JoeDuncan ( 874519 ))
+
+     
+     It's like saying "gold is worth more than money!" - totally
+     meaningless.
+     One (gold, developers) is a commodity that IS exchanged, the
+     other (money) is the medium OF exchange.
+     Saying that "commodity X" is worth more than "exchange medium Y"
+     makes no sense because a commodity CANNOT be worth "more" or
+     "less" than the medium of exchange used - it can only ever be
+     worth a specified amount of Y.
+
+  ** Talk about not understanding an article / Poll (Score:2)
+     (by Harlequin80 ( 1671040 ))
+
+     
+     No where does it say that companies think developers are more
+     important than money.
+     The results state that the companies perceive the risk of not
+     being able to find skills as higher than the risks of not being
+     able to access capital.
+     This is especially true if you're a cash rich organisation.
+     In the current financial climate finding returns on your
+     investments is hard. Interest rates are at historically low
+     levels, bond returns are zero, and so that leaves higher risk
+     investments to get returns. That effecti
+
+  ** lots of employees are "worth more than money"... (Score:2)
+     (by bkmoore ( 1910118 ))
+
+     
+     What management school fails to teach young inexperienced
+     executives: If the company's future existence depends on whether
+     or not an employee does the job correctly or not, they are
+     "worth more than money".
+
+  ** Tech debt is a business decision (Score:2)
+     (by swm ( 171547 ))
+
+     
+     Incurring technical debt is a business decision.
+     And it may well be the right decision.
+     For example, in a startup, time to market typically trumps
+     software quality.
+     And there are a lot of startups in the software field...
+
+  ** Not at my compamy (Score:1)
+     (by dccase ( 56453 ))
+
+     
+     Not at my company, and certainly not at any other
+     publicly-traded company.
+     Maybe at some privately-held company until it gets bought out.
+
+  ** Employees are our Most Valuable Asset (Score:3)
+     (by R3d M3rcury ( 871886 ))
+
+     
+     Right behind [1]carbon paper. [dilbert.com]
+     
+     
+     
+     
+     [1] http://dilbert.com/strip/1993-03-03
+
+  ** And this is why we keep them chained to (Score:2)
+     (by Ranger ( 1783 ))
+
+     
+     a cubicle.
+
+

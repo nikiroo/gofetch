@@ -1,0 +1,329 @@
+    GOOGLE INVESTIGATING ISSUE WITH BLURRY FONTS ON NEW CHROME 69  
+                             (ZDNET.COM)                           
+
+  Thursday September 06, 2018 @11:30PM (msmash)
+  from the blurry-texts dept.
+
+  o News link: https://tech.slashdot.org/story/18/09/06/1839242/google-investigating-issue-with-blurry-fonts-on-new-chrome-69
+  o Source link: https://www.zdnet.com/article/google-investigating-issue-with-blurry-fonts-on-new-chrome-69/
+
+
+    Since  the release of Chrome 69 earlier this week, countless of
+    users  have  gone  on social media and Google Product Forums to
+    complain  about  "blurry" or "fuzzy" text inside Chrome. ZDNet:
+    The  blurred  font  issue  isn't  only limited to text rendered
+    inside   a  web  page,  users  said,  but  also  for  the  text
+    suggestions  displayed inside the address bar search drop-down,
+    and   Chrome's   Developer  Tools  panel.  [...]  According  to
+    reports,  the  issue  only  manifests  for  Chrome  69 users on
+    Windows.  Those  who  rolled  back  to Chrome 68 stopped having
+    problems.  Users  said  that changing Chrome, operating system,
+    or  screen DPI settings didn't help. "Our team is investigating
+    reports  of  this  behavior.  You  can find more information in
+    this  public bug report," a Google spokesperson said last night
+    after  first  user  complaints  started  surfacing online. Some
+    users  have  also  expressed  concerns  over Chrome not showing
+    "trivial  subdomains" including www and secure lock sign in the
+    address bar.
+
+
+  ** Whats the deal (Score:2)
+     (by 110010001000 ( 697113 ))
+
+     
+     Whats the deal with the new interface. Looks like we are back to
+     rounded corners again.
+
+     ** 
+
+        ** Re: (Score:1)
+           (by 110010001000 ( 697113 ))
+
+           
+           And what's the deal with decaf coffee? How do they get the
+           caffeine out of there, and then where does it go?
+
+           ** Re: (Score:1)
+              (by Anonymous Coward)
+
+              
+              Why do they put caffeine in coffee and then take it
+              back out?
+              And why if Chrome rendering fonts in the first place?
+              That's a job for the operating system.
+
+
+           ** Re: Whats the deal (Score:2)
+              (by spongman ( 182339 ))
+
+              
+              dichloromethe (or ethyl acetate) leeching.
+
+
+
+        ** Re: (Score:2)
+           (by DontBeAMoran ( 4843879 ))
+
+           
+           Score: 5, That's gold Jerry, GOLD!
+
+
+
+  ** So Chrome 69 makes you blind? (Score:4, Funny)
+     (by the_skywise ( 189793 ))
+
+     
+     The jokes write themselves...
+
+  ** Blurry Fonts... (Score:2)
+     (by Oswald McWeany ( 2428506 ))
+
+     
+     Maybe they need to put on their Google Glass so they can read
+     the fonts clearer.
+
+     ** Re: (Score:3)
+        (by Z00L00K ( 682162 ))
+
+        
+        They just started to use Cleartype and the fuzzy fonts.
+        Both cleartype and fuzzy fonts gives me a headache so I have
+        to use uBlock to revert to the browser default when I run
+        Firefox.
+
+
+  ** I bet you (Score:5, Insightful)
+     (by The MAZZTer ( 911996 ))
+
+     
+     If these are Windows users they screwed with the Compatibility
+     Mode options for DPI in order to make the window smaller or
+     bigger. It looked fine until Google did something differently
+     and now the Compatibility Mode options make it look blurry.
+     Turns out using options designed for use on legacy applications
+     only on modern applications introduces problems. Lots of Steam
+     users have similar problems.
+
+     ** Re: (Score:2)
+        (by omnichad ( 1198475 ))
+
+        
+        Wrong. I use the standard DPI settings for the whole screen
+        (1.5x on my 27" 4K screen), which only works with programs
+        that are DPI-aware. It's true that I didn't notice the blurry
+        fonts until I saw the headline, but I really just thought I
+        was that tired (I've only had 69 for about a day). At least
+        for me, it's fairly mild.
+
+        ** 
+
+           ** Re: (Score:2)
+              (by omnichad ( 1198475 ))
+
+              
+              If it looks significantly worse, it could also have
+              nothing at all to do with the bug - Chrome is DPI aware
+              and should never have that enabled. Especially since
+              the bug report doesn't have any mention of anything but
+              the system DPI setting.
+
+
+
+        ** 
+
+           ** Re: (Score:2)
+              (by omnichad ( 1198475 ))
+
+              
+              So you like the way I word it (No Giggity).
+
+
+
+
+     ** Re: (Score:3)
+        (by Solandri ( 704621 ))
+
+        
+        The problem is there are three ways to tweak the DPI.
+        Compatibility Mode, which can be set on a per-app basis.
+        Display scaling, which is set via the Windows desktop and
+        affects everything. And Advanced Scaling which Microsoft
+        introduced with the Spring Creators Update, which I haven't
+        figured out exactly how it's different from the regular
+        Display Scaling.
+        
+        Under the hood, there's also ClearType which runs on top of
+        DPI scaling, and does [1]subpixel rendering  [grc.com] (using
+        the individual red, green, and blue subp
+        
+        
+        
+        
+        [1] https://www.grc.com/ctwhat.htm
+
+        ** Re: (Score:2)
+           (by omnichad ( 1198475 ))
+
+           
+           Looking at some zoomed in screenshots, I think they're
+           scaling the subpixel rendering itself (which should never
+           happen). There is no reason to have red or blue tint on
+           anything but the outermost pixel, but looking at my
+           screenshot close up I'm seeing two side-by-side bluish or
+           reddish pixels.
+
+
+
+     ** Re: (Score:2)
+        (by Scoth ( 879800 ))
+
+        
+        Even on Chrome 69 on my multi-DPI work setup I have to turn
+        on the DPI scaling compatibility mode/override to not get
+        huge dialog boxes and widgets. It's a bit frustrating to me
+        that a currently supported, modern app would still have
+        problems with that.
+
+
+     ** Re: (Score:2)
+        (by Ingenium13 ( 162116 ))
+
+        
+        Nope, I have a Windows VM that's essentially stock that I use
+        for a couple applications. I had Chrome open in it earlier
+        today, and noticed that the fonts were blurry and were giving
+        me a headache after a few minutes of use. I thought maybe it
+        was something with RDP messing it up, but after I read this,
+        I logged in again and verified that the fuzzy fonts are only
+        in Chrome. All other applications are fine.
+
+
+     ** Re: (Score:2)
+        (by greenwow ( 3635575 ))
+
+        
+        And most Windows apps. For most of our users on Windows 10,
+        Windows apps have blurry text no matter what settings we try.
+        That really sucks for developers that need to read a lot of
+        text.
+
+
+     ** 
+
+        ** Re: I bet you (Score:2)
+           (by spongman ( 182339 ))
+
+           
+           They don't?
+
+
+
+  ** Not new (Score:2)
+     (by Tailhook ( 98486 ))
+
+     
+     Chrome has been having this problem for certain desktop users
+     for a while now. There are workaround flags and whatnot. Just
+     another chronic quality problem in Chrome that never gets
+     fixed....
+
+     ** Re: (Score:1)
+        (by MidSpeck ( 1516577 ))
+
+        
+        True. I had to disable "Accelerated 2D canvas" in order to
+        get the fuzziness to go away on mine on Chrome 68, which was
+        working just fine before that.
+
+
+  ** 
+
+     ** Re: (Score:2)
+        (by Z34107 ( 925136 ))
+
+        
+        Text wrapping is a "solved" problem, too, but you're still
+        doing it by hand for some reason.
+
+
+  ** While they're at it (Score:2)
+     (by Pedestrianwolf ( 1591767 ))
+
+     
+     ..maybe they could also roll back all rounded rectangles they
+     added in v69. Everything is so round it feels like I designed it
+     in my basement.
+
+     ** Re: (Score:3)
+        (by ArchieBunker ( 132337 ))
+
+        
+        Chrome has a major UI re-design? Firefox is going to be
+        pulling some late nights to catch up!
+
+
+  ** It's also has performance regressions (Score:2)
+     (by Suren Enfiajyan ( 4600031 ))
+
+     
+     On my Lenovo G570 the latest chrome also has very high CPU usage
+     on [1]slither.io game [slither.io] and the game turns into a
+     slideshow in places with many snakes. Firefox 61 doesn't suffer
+     from the this problem, despite the fact that its slower almost
+     in any regard. But not this time.
+     
+     
+     
+     
+     [1] http://slither.io/
+
+  ** BSOD (Score:2)
+     (by jimbrooking ( 1909170 ))
+
+     
+     After installing ALL pages I visit are pure black. No text or
+     graphics.
+
+     ** Re: (Score:2)
+        (by jimbrooking ( 1909170 ))
+
+        
+        Fix (Win 7 Home): Uninstall Chrome, delete all browsing date.
+        reinstall Chrome, be dazzled by the curviness.
+
+
+  ** Can someone summarize the linked article? (Score:4, Funny)
+     (by kaizendojo ( 956951 ))
+
+     
+     I upgraded and I can't read it.
+
+  ** See Jeff Probst ... (Score:2)
+     (by CaptainDork ( 3678879 ))
+
+     
+     ... about this.
+     I remember on Survivor®, back in the day, they had a "blurry
+     tit," problem.
+     They fixed that by disallowing exposed tits.
+     Google should remove the tits from their fonts.
+
+  ** trivial subdomain hiding (Score:2)
+     (by Zaiff Urgulbunger ( 591514 ))
+
+     
+     So this "trivial subdomain hiding" thing... it's a crap idea
+     right?
+
+  ** Here's my take as a Mac user (Score:2)
+     (by DontBeAMoran ( 4843879 ))
+
+     
+     First of all, I really hate these thin fonts. They may look neat
+     on hi-DPI displays but not everyone has one.
+     Secondly, the text on the left screen capture looks like it had
+     its pixels hammered to the nearest pixel, which is the typical
+     crappy-looking Microsoft anti-aliasing while the text on the
+     right looks like normal anti-aliased text to me.
+
+

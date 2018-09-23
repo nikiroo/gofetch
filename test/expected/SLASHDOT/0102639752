@@ -1,0 +1,226 @@
+    400,000 WEBSITES VULNERABLE THROUGH EXPOSED .GIT DIRECTORIES   
+                          (SCMAGAZINE.COM)                         
+
+  Thursday September 06, 2018 @11:30PM (msmash)
+  from the security-woes dept.
+
+  o News link: https://tech.slashdot.org/story/18/09/06/1954253/400000-websites-vulnerable-through-exposed-git-directories
+  o Source link: https://www.scmagazine.com/home/news/400000-websites-vulnerable-through-exposed-git-directories/
+
+
+    Open  .git  directories are a bigger cybersecurity problem than
+    many  might  imagine,  at  least  according to a Czech security
+    researcher  who  discovered  almost  400,000  web pages with an
+    open  .git  directory possibly exposing a wide variety of data.
+    From  a  report:  Vladimir  Smitka  began  his  .git  directory
+    odyssey  in  July  when  he  began looking at Czech websites to
+    find  how  many  were improperly configured and allow access to
+    their  .git  folders  within the file versions repository. Open
+    .git  directories  are a particularly dangerous issue, he said,
+    because   they   can   contain   a   great  deal  of  sensitive
+    information.  "Information  about  the website's structure, and
+    sometimes  you  can  get  very  sensitive data such as database
+    passwords,  API  keys,  development  IDE  settings,  and so on.
+    However,  this  data shouldn't be stored in the repository, but
+    in  previous  scans  of  various  security issues, I have found
+    many  developers  that  do  not  follow  these best practices,"
+    Smitka  wrote.  Smitka queried 230 million websites to discover
+    the  390,000  allowing  access  to  their .git directories. The
+    vast  majority of the websites with open directories had a .com
+    TLD with .net, .de, .org and uk comprising most of the others.
+
+
+  ** 
+
+     ** Re: (Score:2, Informative)
+        (by MidSpeck ( 1516577 ))
+
+        
+        ^/.*/\.git/
+        Protect git repositories in all subdirectories as well.
+
+
+     ** Re: (Score:2)
+        (by jrumney ( 197329 ))
+
+        
+        Why stop there? Are there any dot files/directories that need
+        to be served over HTTP?
+
+
+     ** Re: .htaccess (Score:3)
+        (by spongman ( 182339 ))
+
+        
+        Why doesn't Apache block all '.'-prefixed directories by
+        default?
+
+
+  ** 
+
+     ** Re:https://slashdot.org/.git (Score:4, Informative)
+        (by ls671 ( 1122017 ))
+
+        
+        Slashdot is still using CVS try [1]https://slashdot.org/CVS/
+        [slashdot.org]
+        you will see, it works!  :)
+        
+        
+        
+        
+        [1] https://slashdot.org/CVS/
+
+
+  ** Your central git repo ... (Score:1)
+     (by Qbertino ( 265505 ))
+
+     
+     ... belongs behind ssh or, at least, behind http access and SSL.
+     If I catch you doing otherwise for anything other than FOSS
+     software I'll smack you. Hard.
+
+     ** Re:Your central git repo ... (Score:4, Informative)
+        (by tlhIngan ( 30335 ))
+
+        
+        > ... belongs behind ssh or, at least, behind http access and
+        > SSL.
+        > If I catch you doing otherwise for anything other than FOSS
+        > software I'll smack you. Hard.
+        And it probably is. The thing is, the website owners are
+        using git to version control and deploy their website (not a
+        bad idea). So they develop their web site, push it to the
+        central git repo, and whenever they need to go live, they
+        just do a "git pull" on the webserver and it'll pull down the
+        latest version of the website.
+        Problem is, they forget about the hidden  .git directory git
+        makes that stores all sorts of useful information and with a
+        little persistence, allow you access to the raw source code
+        since you can access the individual git objects. (Or maybe
+        even clone it using git).
+
+        ** Re: (Score:2)
+           (by jrumney ( 197329 ))
+
+           
+           I do this, it is very convenient for deploying updates to
+           the site. But I always put the web interface into a
+           subdirectory, and only configure the web server to see
+           that so the  .git directory is not visible over HTTP. And
+           dotfiles and directories are blocked in the webserver
+           config for extra protection against accidental inclusion
+           of invisible files.
+
+
+
+  ** reheating yesterday's food (Score:3)
+     (by Tsolias ( 2813011 ))
+
+     
+     just an article from 2015 [1]https://en.internetwache.org/d...
+     [internetwache.org]
+     I can give you also next year's article about  .file
+     vulnerabilities. (spoiler alert)
+     [2]https://en.internetwache.org/s... [internetwache.org]
+     
+     
+     
+     
+     [1]
+     https://en.internetwache.org/dont-publicly-expose-git-or-how-we-
+     downloaded-your-websites-sourcecode-an-analysis-of-alexas-1m-28-
+     07-2015/
+     [2]
+     https://en.internetwache.org/scanning-the-alexa-top-1m-for-ds-st-
+     ore-files-12-03-2018/
+
+  ** 
+
+     ** KKK (Score:2)
+        (by Tsolias ( 2813011 ))
+
+        
+        > Thats what you get on hiring those bootcamp "graduates"
+        Kode w/ Karlie Kloss, like it or not.
+
+
+  ** Alternate headline: 99.8% websites are OK (Score:2)
+     (by jmichaelg ( 148257 ))
+
+     
+     230 million websites. 400k poorly configured. 4*10^5/2.3*10^8 is
+     less than 0.2% of websites surveyed screwed this up.
+     400k is a big number but it's good to know most developers
+     aren't that stupid on this issue.
+
+  ** 
+
+     ** Re: yarn dist (Score:2)
+        (by TimMD909 ( 260285 ))
+
+        
+        ... Equifax types for free security tests from 3rd parties
+        and press coverage, presumably...
+
+
+  ** So? (Score:2)
+     (by cshark ( 673578 ))
+
+     
+     An open git directory will be everything you need to reconstruct
+     the site, more often than not from the same server you're
+     targeting. Scary. Database servers are rarely open. Short of
+     some serious hacking, there isn't a lot you're going to be able
+     to do with this stuff once you've obtained the information
+     you're waving around here.
+     Until such time as I see hackers actually logging in with this
+     information and defacing github, I'm going to remain unconvinced
+     of the severity of this one.
+
+     ** Re: (Score:2)
+        (by OrangeTide ( 124937 ))
+
+        
+        My website's  .git directories are open intentionally. Makes
+        for convenient mirroring and viewing of archives without
+        having to hope and pray wayback machine picked up my obscure
+        website.
+        I'm not too worried. It's just data on the filesystem, it's
+        not executing programs. And the data is not supposed to
+        contain any secrets. If it ever does then I better rewrite my
+        git history.
+
+
+     ** Re: (Score:1)
+        (by Anonymous Coward)
+
+        
+        The most likely actual security implication is hard coded
+        keys to 3rd party APIs.
+        Not that this is an inevitable threat, itâ(TM)s just
+        something I could see being inadvertently exposed and useful
+        without much additional effort.
+
+        ** Re: (Score:1)
+           (by Orrin Bloquy ( 898571 ))
+
+           
+           > itâ(TM)s
+           Clear something up, are you typing curly
+           quotes/apostrophes on purpose or do you have your browser
+           configured to automatically do that.
+
+
+
+     ** Re: (Score:2)
+        (by jonwil ( 467024 ))
+
+        
+        What about if that  .git folder (and the website's source
+        code) included private keys for stuff. Or credentials/API
+        keys for 3rd party services. Or credentials for database and
+        other servers.
+
+
+

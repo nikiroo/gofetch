@@ -1,0 +1,22 @@
+0Google Investigating Issue With Blurry Fonts on new Chrome 69 (zdnet.com)	null/SLASHDOT/0102638976		70
+i  Thursday September 06, 2018 @11:30PM (msmash)
+i  from the blurry-texts dept.
+i
+i    Since  the release of Chrome 69 earlier this week, countless of
+i    users  have  gone  on social media and Google Product Forums to
+i    complain  about  "blurry" or "fuzzy" text inside Chrome. ZDNet:
+i    The  blurred  font  issue  isn't  only limited to text rendered
+i    inside   a  web  page,  users  said,  but  also  for  the  text
+i    suggestions  displayed inside the address bar search drop-down,
+i    and   Chrome's   Developer  Tools  panel.  [...]  According  to
+i    reports,  the  issue  only  manifests  for  Chrome  69 users on
+i    Windows.  Those  who  rolled  back  to Chrome 68 stopped having
+i    problems.  Users  said  that changing Chrome, operating system,
+i    or  screen DPI settings didn't help. "Our team is investigating
+i    reports  of  this  behavior.  You  can find more information in
+i    this  public bug report," a Google spokesperson said last night
+i    after  first  user  complaints  started  surfacing online. Some
+i    users  have  also  expressed  concerns  over Chrome not showing
+i    "trivial  subdomains" including www and secure lock sign in the
+i    address bar.
+i

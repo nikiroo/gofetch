@@ -1,0 +1,25 @@
+0Tor Browser Gets a Redesign, Switches To New Firefox Quantum Engine (zdnet.com)	null/SLASHDOT/0102637536		70
+i  Thursday September 06, 2018 @11:30PM (msmash)
+i  from the for-the-record dept.
+i
+i    The  Tor  Browser  has  rolled  out  a  new  interface with the
+i    release  of  v8. From a report: The Tor Browser has always been
+i    based  on  the  Firefox  codebase,  but  it lagged behind a few
+i    releases.  Mozilla  rolled  out a major overhaul of the Firefox
+i    codebase  in November 2017, with the release of Firefox 57, the
+i    first  release  in  the Firefox Quantum series. Firefox Quantum
+i    came  with  a new page rendering engine, a new add-ons API, and
+i    a  new  user interface called the Photon UI. Because these were
+i    major,  code-breaking  changes,  it  took  the smaller Tor team
+i    some  time  to  integrate  all  of  them  into  the Tor Browser
+i    codebase  and  make sure everything worked as intended. The new
+i    Tor  Browser  8,  released  yesterday,  is now in sync with the
+i    most  recent  version of Firefox, the Quantum release, and also
+i    supports  all  of  its features. This means the Tor Browser now
+i    uses  the  same  modern Photon UI that current Firefox versions
+i    use,  it  supports  the  same  speed-optimized  page  rendering
+i    engine  and  has  also  dropped  support  for the old XUL-based
+i    add-ons  system  for  the  new WebExtensions API system used by
+i    Chrome,  Opera,  Vivaldi,  Brave,  and the rest of the Chromium
+i    browsers.
+i
