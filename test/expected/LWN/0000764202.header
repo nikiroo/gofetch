@@ -1,0 +1,12 @@
+0Firefox 62.0 released	null/LWN/0000764202		70
+i  [Development] Sep 5, 2018 17:31 UTC (Wed) (ris)
+i
+i    Mozilla  has  released Firefox 62.0, with several new features.
+i    The  Firefox  Home (default New Tab) allows users to display up
+i    to  4  rows  of  top sites, Pocket stories, and highlights; for
+i    those  using containers there is menu option to reopen a tab in
+i    a  different  container;  Firefox  63 will remove all trust for
+i    Symantec-issued  certificates,  and  it  is optional in Firefox
+i    62;  FreeBSD  support for WebAuthn was added; and more. See the
+i    release notes for details.
+i

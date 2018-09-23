@@ -1,0 +1,502 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+        <html>
+        <head><title>Welcome to LWN.net [LWN.net]</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+        <link rel="icon" href="/images/favicon.png" type="image/png">
+        <link rel="alternate" type="application/rss+xml" title="LWN.net headlines" href="https://lwn.net/headlines/newrss">
+        <link rel="stylesheet" href="/CSS/lwn">
+<link rel="stylesheet" href="/CSS/nosub">
+<link rel="stylesheet" href="/CSS/pure-min">
+           <!--[if lte IE 8]>
+             <link rel="stylesheet" href="/CSS/grids-responsive-old-ie-min">
+           <![endif]-->
+           <!--[if gt IE 8]><!-->
+             <link rel="stylesheet" href="/CSS/grids-responsive-min">
+           <!--<![endif]-->
+           <link rel="stylesheet" href="/CSS/pure-lwn">
+           
+        
+<script type="text/javascript">var p="http",d="static";if(document.location.protocol=="https:"){p+="s";d="engine";}var z=document.createElement("script");z.type="text/javascript";z.async=true;z.src=p+"://"+d+".adzerk.net/ados.js";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(z,s);</script>
+<script type="text/javascript">
+var ados_keywords = ados_keywords || [];
+if( location.protocol=='https:' ) {
+        ados_keywords.push('T:SSL');
+} else {
+        ados_keywords.push('T:HTTP');
+}
+
+var ados = ados || {};
+ados.run = ados.run || [];
+ados.run.push(function() {
+
+ados_add_placement(4669, 20979, "azk13321_leaderboard", 4).setZone(16026);
+
+ados_add_placement(4669, 20979, "azk93271_right_zone", [5,10,6]).setZone(16027);
+
+ados_add_placement(4669, 20979, "azk31017_tracking", 20).setZone(20995);
+
+ados_keywords.push('S:Homepage');
+
+ados_setKeywords(ados_keywords.join(', ')); 
+ados_load();
+});</script>
+
+        </head>
+        <body bgcolor="#ffffff" link="Blue" VLINK="Green" alink="Green">
+        <a name="t"></a>
+<div id="menu"><a href="/"><img src="https://static.lwn.net/images/logo/barepenguin-70.png" class="logo"
+                 border="0" alt="LWN.net Logo">
+           <font class="logo">LWN<br>.net</font>
+           <font class="logobl">News from the source</font></a>
+           <a href="/"><img src="https://static.lwn.net/images/lcorner-ss.png" class="sslogo"
+                 border="0" alt="LWN"></a><div class="navmenu-container">
+           <ul class="navmenu">
+        <li><a class="navmenu" href="#t"><b>Content</b></a><ul><li><a href="/current/">Weekly Edition</a></li><li><a href="/Archives/">Archives</a></li><li><a href="/Search/">Search</a></li><li><a href="/Kernel/">Kernel</a></li><li><a href="/Security/">Security</a></li><li><a href="/Distributions/">Distributions</a></li><li><a href="/Calendar/">Events calendar</a></li><li><a href="/Comments/unread">Unread comments</a></li><li><hr></li><li><a href="/op/FAQ.lwn">LWN FAQ</a></li><li><a href="/op/AuthorGuide.lwn">Write for us</a></li></ul></li>
+</ul></div>
+</div> <!-- menu -->
+<div class="pure-g not-handset" style="margin-left: 10.5em">
+           <div class="not-print">
+             <div id="azk13321_leaderboard"></div>
+           </div>
+           </div>
+        <div class="topnav-container">
+<div class="not-handset"><form action="https://lwn.net/Login/" method="post" name="loginform"
+                 class="loginform">
+        <b>User:</b> <input type="text" name="Username" value="" size="8" /> <b>Password:</b> <input type="password" name="Password" size="8" /> <input type="hidden" name="target" value="" /> <input type="submit" name="submit" value="Log in" /></form> |
+           <form action="https://lwn.net/subscribe/" method="post" class="loginform">
+           <input type="submit" name="submit" value="Subscribe" />
+           </form> |
+           <form action="https://lwn.net/Login/newaccount" method="post" class="loginform">
+           <input type="submit" name="submit" value="Register" />
+           </form>
+        </div>
+               <div class="handset-only">
+               <a href="/subscribe/"><b>Subscribe</b></a> /
+               <a href="/Login/"><b>Log in</b></a> /
+               <a href="/Login/newaccount"><b>New account</b></a>
+               </div>
+               </div><div class="pure-grid maincolumn">
+<div class="lwn-u-1 pure-u-md-19-24">
+<div class="PageHeadline">
+<h1>Welcome to LWN.net</h1>
+</div>
+<div class="ArticleText">
+<div class="pure-u-1">
+       <blockquote style="margin-top: 0">
+       LWN.net is a reader-supported news site dedicated to producing the best
+       coverage from within the Linux and free software development communities.
+       See <a href="/op/FAQ.lwn">the LWN FAQ</a> for more information, and
+       please consider <a href="/subscribe/Info">subscribing</a> to gain full
+       access and support our activities.
+       </blockquote>
+       <p>
+       </div><div class="pure-u-1 pure-u-md-1-2 fp-feature">
+<div class="Headline"><b>[<font class="Subscription">$</font>] Writing network flow dissectors in BPF</b></div>
+        
+        <div class="BlurbListing">
+        <font size="-1">[Kernel] Posted Sep 6, 2018 15:59 UTC (Thu) by corbet</font>
+        <p>
+        Network packet headers contain a great deal of information, but the
+kernel often only needs a subset of that information to be able to perform
+filtering or associate any given packet with a flow. The piece of code that
+follows the different layers of packet encapsulation to find the important
+data is called a flow dissector. In current Linux kernels, the <a
+href="https://elixir.bootlin.com/linux/v4.18.6/source/net/core/flow_dissector.c">flow
+dissector</a>
+is written in C. A <a href="/Articles/763938/">patch set</a> has been
+proposed recently to implement it in BPF with the clear goal of improving
+security, flexibility, and maybe even performance.
+
+        <p>
+        <a href="/Articles/764200/">Full Story</a> (<a href="/Articles/764200/#Comments">comments: 1</a>)
+<p>
+</div>
+</div><div class="pure-u-1 pure-u-md-11-24">
+<div class="Headline"><b>The Hidden Benefit of Giving Back to Open Source Software (Working Knowledge)</b></div>
+        
+        <div class="BlurbListing">
+        <font size="-1">[Briefs] Posted Sep 6, 2018 16:56 UTC (Thu) by corbet</font>
+        <p>
+        The Harvard Business School's "Working Knowledge" site has <a
+href="https://hbswk.hbs.edu/item/the-hidden-benefit-of-giving-back-to-open-source-software">an
+article</a> arguing that it can pay for companies to allow their developers
+to contribute back to the projects whose software they use.
+"<span>And that presents an interesting dilemma for firms that rely heavily
+on open source. Should they allow employees on company time to make updates
+and edits to the software for community use that could be used by
+competitors? New research by Assistant Professor Frank Nagle, a member of
+the Strategy Unit at Harvard Business School, shows that paying employees
+to contribute to such software boosts the company’s productivity from using
+the software by as much as 100 percent, when compared with free-riding
+competitors.</span>"
+        <p>
+        <a href="/Articles/764321/">Comments (3 posted)</a>
+<p>
+</div>
+</div>
+<div class="pure-u-1 pure-u-md-1-2 fp-feature">
+<div class="Headline"><b>[<font class="Subscription">$</font>] LWN.net Weekly Edition for September 6, 2018</b></div>
+        
+        <font size="-1">Posted Sep 6, 2018 3:03 UTC (Thu)</font><p>
+        The LWN.net Weekly Edition for September 6, 2018 is available.
+<p>
+        <b>Inside this week's LWN.net Weekly Edition</b>
+        <ul>
+<li> <a href="/Articles/763789/">Front</a>: Life behind the tinfoil curtain; User-space Spectre protection; fs-verity; IDA; Julia part 2; GopherCon.
+            <li> <a href="/Articles/763791/">Briefs</a>: Tink; Kernel &amp; Maintainer Summit topics; LMDE 3; Firefox 62; GNOME 3.30; Quotes; ...
+            <li> <a href="/Articles/763792/">Announcements</a>: Newsletters; events; security updates; kernel patches; ...
+            </ul>
+<a href="/Articles/763789/">Read more</a>
+<p>
+
+</div><div class="pure-u-1 pure-u-md-11-24">
+<div class="Headline"><b>Security updates for Thursday</b></div>
+        
+        <div class="BlurbListing">
+        <font size="-1">[Security] Posted Sep 6, 2018 13:55 UTC (Thu) by jake</font>
+        <p>
+        Security updates have been issued by <b>Debian</b> (curl, gdm3, git-annex, lcms2, and sympa), <b>Fedora</b> (discount, dolphin-emu, gd, obs-build, osc, tcpflow, and yara), <b>openSUSE</b> (wireshark), <b>Slackware</b> (curl, firefox, ghostscript, and thunderbird), <b>SUSE</b> (apache-pdfbox, curl, dovecot22, and libvirt), and <b>Ubuntu</b> (libtirpc).
+
+        <p>
+        <a href="/Articles/764300/">Full Story</a> (<a href="/Articles/764300/#Comments">comments: none</a>)
+<p>
+</div>
+</div>
+<div class="pure-u-1 pure-u-md-1-2 fp-feature">
+<div class="Headline"><b>[<font class="Subscription">$</font>] Life behind the tinfoil curtain</b></div>
+        
+        <div class="BlurbListing">
+        <font size="-1">[Security] Posted Sep 5, 2018 22:11 UTC (Wed) by jake</font>
+        <p>
+        <p>
+Security and convenience rarely go hand-in-hand, but if your job (or life)
+requires extraordinary care against potentially targeted attacks, the
+security side of that tradeoff may win out.  If so, running a system like
+<a href="https://www.qubes-os.org/">Qubes&nbsp;OS</a> on your desktop or <a
+href="https://copperhead.co/">CopperheadOS</a> on your phone might make sense,
+which is just what Konstantin Ryabitsev, Linux Foundation (LF) director of IT
+security, has done.  He reported on the experience in a <a
+href="https://www.youtube.com/watch?v=8cU4hQg6GvU&index=6&list=PLbzoR-pLrL6rOT6m50HdJFYUHyvA9lurI&t=0s">talk
+[YouTube video]</a> entitled "Life Behind the Tinfoil Curtain" at the 2018
+<a
+href="https://events.linuxfoundation.org/events/linux-security-summit-north-america-2018/">Linux
+Security Summit North America</a>.
+
+        <p>
+        <a href="/Articles/764048/">Full Story</a> (<a href="/Articles/764048/#Comments">comments: 9</a>)
+<p>
+</div>
+</div><div class="pure-u-1 pure-u-md-11-24">
+<div class="Headline"><b>GNOME 3.30 released</b></div>
+        
+        <div class="BlurbListing">
+        <font size="-1">[Development] Posted Sep 5, 2018 21:17 UTC (Wed) by ris</font>
+        <p>
+        The GNOME Project has announced the release of GNOME 3.30
+"Almería". "<span>This release brings automatic updates in Software, more
+games, and a new Podcasts application. Improvements to core GNOME
+applications include a refined location and search bar in Files, a
+[Thunderbolt] panel in Settings, support for remoting using RDP in Boxes, and
+many more.</span>" The <a
+href="https://help.gnome.org/misc/release-notes/3.30/">release notes</a>
+contain more information.
+
+        <p>
+        <a href="/Articles/764219/">Full Story</a> (<a href="/Articles/764219/#Comments">comments: none</a>)
+<p>
+</div>
+</div>
+<div class="pure-u-1 pure-u-md-1-2 fp-feature">
+<div class="Headline"><b>[<font class="Subscription">$</font>] Strengthening user-space Spectre v2 protection</b></div>
+        
+        <div class="BlurbListing">
+        <font size="-1">[Kernel] Posted Sep 5, 2018 21:47 UTC (Wed) by corbet</font>
+        <p>
+        The Spectre variant 2 vulnerability allows the speculative execution of
+incorrect (in an attacker-controllable way) indirect branch predictions,
+resulting in 
+the ability to exfiltrate information via side channels.  The kernel has
+been reasonably well protected against this variant since shortly after its
+disclosure in January.  It is, however, possible for user-space processes
+to use Spectre v2 to attack each other; thus far, the mainline kernel has
+offered relatively little protection against such attacks.  A recent <a
+href="/ml/linux-kernel/nycvar.YFH.7.76.1809041619510.15880@cbobk.fhfr.pm/">proposal</a>
+from Jiri Kosina may change that situation, but there are still some
+disagreements around the details.
+
+        <p>
+        <a href="/Articles/764209/">Full Story</a> (<a href="/Articles/764209/#Comments">comments: 1</a>)
+<p>
+</div>
+</div><div class="pure-u-1 pure-u-md-11-24">
+<div class="Headline"><b>Firefox 62.0 released</b></div>
+        
+        <div class="BlurbListing">
+        <font size="-1">[Development] Posted Sep 5, 2018 17:31 UTC (Wed) by ris</font>
+        <p>
+        Mozilla has released Firefox 62.0, with several new features. The Firefox
+Home (default New Tab) allows users to display up to 4 rows of top sites,
+Pocket stories, and highlights; for those using containers there is menu
+option to reopen a tab in a different container; Firefox 63 will remove all
+trust for Symantec-issued certificates, and it is optional in Firefox
+62; FreeBSD support for WebAuthn was added; and more. See the <a
+href="https://www.mozilla.org/en-US/firefox/62.0/releasenotes/">release
+notes</a> for details.
+        <p>
+        <a href="/Articles/764202/">Comments (none posted)</a>
+<p>
+</div>
+</div>
+<div class="pure-u-1 pure-u-md-1-2 fp-feature">
+<div class="Headline"><b>[<font class="Subscription">$</font>] Learning about Go internals at GopherCon</b></div>
+        
+        <div class="BlurbListing">
+        <font size="-1">[Front] Posted Sep 5, 2018 19:20 UTC (Wed) by jake</font>
+        <p>
+        <p><a href="https://www.gophercon.com/">GopherCon</a> is the major
+conference for the <a href="https://golang.org/">Go language</a>, attended
+by 1600  
+dedicated "gophers", as the members of its community like to call
+themselves.  Held for the last five years in Denver, it attracts programmers,
+open-source contributors, and technical managers from all over North
+America and the world. GopherCon's highly-technical program is an intense
+mix of Go internals and programming tutorials, a few of which we will
+explore in this article.
+<p>
+Subscribers can read on for a report from GopherCon by guest author Josh
+Berkus.
+
+        <p>
+        <a href="/Articles/764131/">Full Story</a> (<a href="/Articles/764131/#Comments">comments: 10</a>)
+<p>
+</div>
+</div><div class="pure-u-1 pure-u-md-11-24">
+<div class="Headline"><b>A set of stable kernels</b></div>
+        
+        <div class="BlurbListing">
+        <font size="-1">[Kernel] Posted Sep 5, 2018 15:15 UTC (Wed) by ris</font>
+        <p>
+        Greg Kroah-Hartman has released stable kernels <a
+href="/Articles/764185/">4.18.6</a>, <a
+href="/Articles/764186/">4.14.68</a>, <a
+href="/Articles/764187/">4.9.125</a>, <a
+href="/Articles/764188/">4.4.154</a>, and <a
+href="/Articles/764189/">3.18.121</a>. They all contain important fixes and
+users should upgrade.
+        <p>
+        <a href="/Articles/764184/">Comments (none posted)</a>
+<p>
+</div>
+</div>
+<div class="pure-u-1 pure-u-md-1-2 fp-feature">
+<div class="Headline"><b>[<font class="Subscription">$</font>] An introduction to the Julia language, part 2</b></div>
+        
+        <div class="BlurbListing">
+        <font size="-1">[Development] Posted Sep 4, 2018 15:57 UTC (Tue) by jake</font>
+        <p>
+        <p><a
+href="/Articles/763626/">Part 1</a> of this series introduced 
+the <a href="http://julialang.org/">Julia</a> project's goals and
+development process, along with
+the language syntax, including the basics of control flow, data
+types, and, in more detail, how to work with arrays. In this part, 
+user-defined functions and the central 
+concept of multiple dispatch are described. It will also survey Julia's
+module and 
+package system, cover some syntax features, show how to make
+plots, and briefly dip into macros and distributed computing.
+
+        <p>
+        <a href="/Articles/764001/">Full Story</a> (<a href="/Articles/764001/#Comments">comments: 7</a>)
+<p>
+</div>
+</div><div class="pure-u-1 pure-u-md-11-24">
+<div class="Headline"><b>Security updates for Wednesday</b></div>
+        
+        <div class="BlurbListing">
+        <font size="-1">[Security] Posted Sep 5, 2018 15:01 UTC (Wed) by ris</font>
+        <p>
+        Security updates have been issued by <b>Debian</b> (lcms2), <b>openSUSE</b> (yubico-piv-tool), <b>Oracle</b> (kernel), and <b>SUSE</b> (cobbler and kvm).
+
+        <p>
+        <a href="/Articles/764182/">Full Story</a> (<a href="/Articles/764182/#Comments">comments: none</a>)
+<p>
+</div>
+</div>
+<div class="pure-u-1 pure-u-md-1-2 fp-feature">
+<div class="Headline"><b>[<font class="Subscription">$</font>] IDA: simplifying the complex task of allocating integers</b></div>
+        
+        <div class="BlurbListing">
+        <font size="-1">[Kernel] Posted Sep 4, 2018 0:15 UTC (Tue) by corbet</font>
+        <p>
+        It is common for kernel code to generate unique integers for identifiers.
+When one plugs in a flash drive, it will show up as
+<tt>/dev/sdN</tt>; that <tt>N</tt> (a letter derived from a
+number) must be generated in the
+kernel, and it should not already be in use for another drive or unpleasant
+things will happen.  One might think that generating such numbers would not
+be a difficult task, but that turns out not to be the case, especially in
+situations where many numbers must be tracked.  The IDA (for "ID
+allocator", perhaps) API exists to handle this specialized task.  In past
+kernels, it has managed to make the process of getting an unused number
+surprisingly 
+complex; the 4.19 kernel has a new IDA API that simplifies things
+considerably.
+
+        <p>
+        <a href="/Articles/764057/">Full Story</a> (<a href="/Articles/764057/#Comments">comments: 8</a>)
+<p>
+</div>
+</div><div class="pure-u-1 pure-u-md-11-24">
+<div class="Headline"><b>Security updates for Tuesday</b></div>
+        
+        <div class="BlurbListing">
+        <font size="-1">[Security] Posted Sep 4, 2018 15:14 UTC (Tue) by ris</font>
+        <p>
+        Security updates have been issued by <b>openSUSE</b> (ImageMagick, libressl, postgresql10, spice, and spice-gtk), <b>Red Hat</b> (collectd, kernel, Red Hat Gluster Storage, Red Hat Virtualization, RHGS WA, rhvm-appliance, and samba), and <b>SUSE</b> (crowbar, crowbar-core, crowbar-ha, crowbar-openstack, crowbar-ui, kernel, spice, and spice-gtk).
+
+        <p>
+        <a href="/Articles/764130/">Full Story</a> (<a href="/Articles/764130/#Comments">comments: none</a>)
+<p>
+</div>
+</div>
+<div class="pure-u-1 pure-u-md-1-2 fp-feature">
+<div class="Headline"><b>[<font class="Subscription">$</font>] Protecting files with fs-verity</b></div>
+        
+        <div class="BlurbListing">
+        <font size="-1">[Kernel] Posted Aug 30, 2018 18:50 UTC (Thu) by corbet</font>
+        <p>
+        The developers of the Android system have, among their many goals, the wish
+to better protect Android devices against persistent compromise.  It is bad
+if a device is taken over by an attacker; it's worse if it remains
+compromised even after a reboot.  Numerous mechanisms for ensuring the
+integrity of  installed system files have been proposed and implemented
+over the years.  But it seems there is always room for one more; to fill
+that space, the <a
+href="/ml/linux-fsdevel/20180824161642.1144-1-ebiggers@kernel.org/">fs-verity</a>
+mechanism is being proposed as a way to protect individual files from
+malicious modification.
+
+        <p>
+        <a href="/Articles/763729/">Full Story</a> (<a href="/Articles/763729/#Comments">comments: 6</a>)
+<p>
+</div>
+</div><div class="pure-u-1 pure-u-md-11-24">
+<div class="Headline"><b>Topics sought for the Kernel and Maintainer Summits</b></div>
+        
+        <div class="BlurbListing">
+        <font size="-1">[Kernel] Posted Sep 3, 2018 19:07 UTC (Mon) by corbet</font>
+        <p>
+        The annual Maintainer and Kernel Summits will be held in Vancouver, BC on
+November&nbsp;12 to&nbsp;15, in conjunction with the Linux Plumbers Conference.
+The program committee is looking for topics for both summits; read on for
+details on how to submit ideas and, perhaps, get an invitation to the
+Maintainer Summit.
+
+        <p>
+        <a href="/Articles/764055/">Full Story</a> (<a href="/Articles/764055/#Comments">comments: none</a>)
+<p>
+</div>
+</div>
+<div class="pure-u-1 pure-u-md-1-2 fp-feature">
+<div class="Headline"><b>LWN.net Weekly Edition for August 30, 2018</b></div>
+        
+        <font size="-1">Posted Aug 30, 2018 1:06 UTC (Thu)</font><p>
+        The LWN.net Weekly Edition for August 30, 2018 is available.
+<p>
+        <b>Inside this week's LWN.net Weekly Edition</b>
+        <ul>
+<li> <a href="/Articles/763252/">Front</a>: Julia; C considered dangerous; 4.19 Merge window; I/O controller throughput; KDE onboarding; Dat.
+            <li> <a href="/Articles/763254/">Briefs</a>: OpenSSH 7.8; 4.19-rc1; Which stable?; Netdev 0x12; Bison 3.1; Quotes; ...
+            <li> <a href="/Articles/763255/">Announcements</a>: Newsletters; events; security updates; kernel patches; ...
+            </ul>
+<a href="/Articles/763252/">Read more</a>
+<p>
+
+</div><div class="pure-u-1 pure-u-md-11-24">
+<div class="Headline"><b>Security updates for Monday</b></div>
+        
+        <div class="BlurbListing">
+        <font size="-1">[Security] Posted Sep 3, 2018 15:41 UTC (Mon) by ris</font>
+        <p>
+        Security updates have been issued by <b>Debian</b> (dojo, libtirpc, mariadb-10.0, php5, ruby-json-jwt, spice, spice-gtk, tomcat8, and trafficserver), <b>Fedora</b> (ghc-hakyll, ghc-hs-bibutils, ghostscript, mariadb, pandoc-citeproc, phpMyAdmin, and xen), <b>Mageia</b> (java-1.8.0-openjdk, libarchive, libgd, libraw, libxcursor, mariadb, mercurial, openssh, openssl, poppler, quazip, squirrelmail, and virtualbox), <b>openSUSE</b> (cobbler, libressl, wireshark, and zutils), and <b>SUSE</b> (couchdb, java-1_7_0-ibm, java-1_7_1-ibm, OpenStack, and spice).
+
+        <p>
+        <a href="/Articles/764046/">Full Story</a> (<a href="/Articles/764046/#Comments">comments: none</a>)
+<p>
+</div>
+</div>
+<div class="pure-u-1 pure-u-md-1-2 fp-feature">
+<div class="Headline"><b>[<font class="Subscription">$</font>] Measuring (and fixing) I/O-controller throughput loss</b></div>
+        
+        <div class="BlurbListing">
+        <font size="-1">[Kernel] Posted Aug 29, 2018 21:20 UTC (Wed) by corbet</font>
+        <p>
+        Many services, from web hosting and video streaming to cloud storage,
+need to move data to and from storage.  They also often require that each per-client
+I/O flow be guaranteed a non-zero amount of bandwidth and a bounded latency. An
+expensive way to provide these guarantees is to over-provision
+storage resources, keeping each resource underutilized, and thus
+have plenty of bandwidth available for the few I/O flows dispatched to
+each medium. Alternatively one can use an I/O controller.  Linux provides
+two mechanisms designed to throttle some I/O streams to allow others to
+meet their bandwidth and latency requirements.  These mechanisms work, but
+they come at a cost: a loss of as much as 80% of total available I/O
+bandwidth.  I have run some tests to demonstrate this problem; some
+upcoming improvements to the <a href="/Articles/601799/">bfq I/O
+scheduler</a> promise to improve the situation considerably.
+
+        <p>
+        <a href="/Articles/763603/">Full Story</a> (<a href="/Articles/763603/#Comments">comments: 4</a>)
+<p>
+</div>
+</div><div class="pure-u-1 pure-u-md-11-24">
+<div class="Headline"><b>Kernel prepatch 4.19-rc2</b></div>
+        
+        <div class="BlurbListing">
+        <font size="-1">[Kernel] Posted Sep 2, 2018 22:29 UTC (Sun) by corbet</font>
+        <p>
+        The <a href="/Articles/763988/">4.19-rc2</a> kernel prepatch is out for
+testing.
+"<span>As usual, the rc2 release is pretty small. People are taking a
+breather after the merge window, and it takes a bit of time for bug
+reports to start coming in and get identified.</span>"
+        <p>
+        <a href="/Articles/763987/">Comments (none posted)</a>
+<p>
+</div>
+</div>
+<p><a href="/Articles/?offset=6">--&gt; More news items</a>
+       
+</div> <!-- ArticleText -->
+</div>
+<div class="lwn-u-1 pure-u-md-1-6 not-print">
+<div id="azk93271_right_zone"></div>
+</div>
+</div> <!-- pure-grid -->
+
+        <br clear="all">
+        <center>
+        <P>
+        <font size="-2">
+        Copyright &copy; 2018, Eklektix, Inc.<BR>
+        
+        Comments and public postings are copyrighted by their creators.<br>
+        Linux  is a registered trademark of Linus Torvalds<br>
+        </font>
+        </center>
+        
+            <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+            </script>
+            <script type="text/javascript">
+            try {
+            var pageTracker = _gat._getTracker("UA-2039382-1");
+            pageTracker._trackPageview();
+            } catch(err) {}</script>
+            
+        </body></html>
+        

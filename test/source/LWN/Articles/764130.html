@@ -1,0 +1,234 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+        <html>
+        <head><title>Security updates for Tuesday [LWN.net]</title>
+        <meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@lwnnet" />
+<meta name="twitter:title" content="Security updates for Tuesday" />
+<meta name="twitter:description" content="Security updates have been issued by openSUSE (ImageMagick, libressl, postgresql10, spice, and spice-gtk), Red Hat (collectd, kernel, Red Hat Gluster Storage, Red Hat Virtualization, RHGS WA, rhvm-appliance, and samba), and SUSE (crowbar, crowbar-core, crowbar-ha, crowbar-openstack, crowbar-ui, kernel, spice, and spice-gtk).
+" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+        <link rel="icon" href="/images/favicon.png" type="image/png">
+        <link rel="alternate" type="application/rss+xml" title="LWN.net headlines" href="https://lwn.net/headlines/newrss">
+        <link rel="stylesheet" href="/CSS/lwn">
+<link rel="stylesheet" href="/CSS/nosub">
+<link rel="stylesheet" href="/CSS/pure-min">
+           <!--[if lte IE 8]>
+             <link rel="stylesheet" href="/CSS/grids-responsive-old-ie-min">
+           <![endif]-->
+           <!--[if gt IE 8]><!-->
+             <link rel="stylesheet" href="/CSS/grids-responsive-min">
+           <!--<![endif]-->
+           <link rel="stylesheet" href="/CSS/pure-lwn">
+           
+        
+<script type="text/javascript">var p="http",d="static";if(document.location.protocol=="https:"){p+="s";d="engine";}var z=document.createElement("script");z.type="text/javascript";z.async=true;z.src=p+"://"+d+".adzerk.net/ados.js";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(z,s);</script>
+<script type="text/javascript">
+var ados_keywords = ados_keywords || [];
+if( location.protocol=='https:' ) {
+        ados_keywords.push('T:SSL');
+} else {
+        ados_keywords.push('T:HTTP');
+}
+
+var ados = ados || {};
+ados.run = ados.run || [];
+ados.run.push(function() {
+
+ados_add_placement(4669, 20979, "azk13321_leaderboard", 4).setZone(16026);
+
+ados_add_placement(4669, 20979, "azk93271_right_zone", [5,10,6]).setZone(16027);
+
+ados_add_placement(4669, 20979, "azk31017_tracking", 20).setZone(20995);
+
+
+
+ados_setKeywords(ados_keywords.join(', ')); 
+ados_load();
+});</script>
+
+        </head>
+        <body bgcolor="#ffffff" link="Blue" VLINK="Green" alink="Green">
+        <a name="t"></a>
+<div id="menu"><a href="/"><img src="https://static.lwn.net/images/logo/barepenguin-70.png" class="logo"
+                 border="0" alt="LWN.net Logo">
+           <font class="logo">LWN<br>.net</font>
+           <font class="logobl">News from the source</font></a>
+           <a href="/"><img src="https://static.lwn.net/images/lcorner-ss.png" class="sslogo"
+                 border="0" alt="LWN"></a><div class="navmenu-container">
+           <ul class="navmenu">
+        <li><a class="navmenu" href="#t"><b>Content</b></a><ul><li><a href="/current/">Weekly Edition</a></li><li><a href="/Archives/">Archives</a></li><li><a href="/Search/">Search</a></li><li><a href="/Kernel/">Kernel</a></li><li><a href="/Security/">Security</a></li><li><a href="/Distributions/">Distributions</a></li><li><a href="/Calendar/">Events calendar</a></li><li><a href="/Comments/unread">Unread comments</a></li><li><hr></li><li><a href="/op/FAQ.lwn">LWN FAQ</a></li><li><a href="/op/AuthorGuide.lwn">Write for us</a></li></ul></li>
+</ul></div>
+</div> <!-- menu -->
+<div class="pure-g not-handset" style="margin-left: 10.5em">
+           <div class="not-print">
+             <div id="azk13321_leaderboard"></div>
+           </div>
+           </div>
+        <div class="topnav-container">
+<div class="not-handset"><form action="https://lwn.net/Login/" method="post" name="loginform"
+                 class="loginform">
+        <b>User:</b> <input type="text" name="Username" value="" size="8" /> <b>Password:</b> <input type="password" name="Password" size="8" /> <input type="hidden" name="target" value="/Articles/764130/" /> <input type="submit" name="submit" value="Log in" /></form> |
+           <form action="https://lwn.net/subscribe/" method="post" class="loginform">
+           <input type="submit" name="submit" value="Subscribe" />
+           </form> |
+           <form action="https://lwn.net/Login/newaccount" method="post" class="loginform">
+           <input type="submit" name="submit" value="Register" />
+           </form>
+        </div>
+               <div class="handset-only">
+               <a href="/subscribe/"><b>Subscribe</b></a> /
+               <a href="/Login/"><b>Log in</b></a> /
+               <a href="/Login/newaccount"><b>New account</b></a>
+               </div>
+               </div><div class="pure-grid maincolumn">
+<div class="lwn-u-1 pure-u-md-19-24">
+<div class="PageHeadline">
+<h1>Security updates for Tuesday</h1>
+</div>
+<div class="ArticleText">
+<table class="OddEven">
+               <tr><th align="left">Dist.</th>
+                   <th align="left">ID</th>
+                   <th align="left">Release</th>
+                   <th align="left">Package</th>
+                   <th align="left">Date</th></tr>
+<tr><td align="left">openSUSE</td>
+                       <td align="left"><a href="https://lwn.net/Articles/764119/">openSUSE-SU-2018:2600-1</a></td>
+                       <td align="left">15.0</td>
+                       <td align="left">ImageMagick</td>
+                       <td>2018-09-04</td>
+                       </tr><tr><td align="left">openSUSE</td>
+                       <td align="left"><a href="https://lwn.net/Articles/764120/">openSUSE-SU-2018:2597-1</a></td>
+                       <td align="left">42.3</td>
+                       <td align="left">libressl</td>
+                       <td>2018-09-04</td>
+                       </tr><tr><td align="left">openSUSE</td>
+                       <td align="left"><a href="https://lwn.net/Articles/764121/">openSUSE-SU-2018:2599-1</a></td>
+                       <td align="left">15.0</td>
+                       <td align="left">postgresql10</td>
+                       <td>2018-09-04</td>
+                       </tr><tr><td align="left">openSUSE</td>
+                       <td align="left"><a href="https://lwn.net/Articles/764122/">openSUSE-SU-2018:2598-1</a></td>
+                       <td align="left">15.0</td>
+                       <td align="left">spice</td>
+                       <td>2018-09-04</td>
+                       </tr><tr><td align="left">openSUSE</td>
+                       <td align="left"><a href="https://lwn.net/Articles/764123/">openSUSE-SU-2018:2602-1</a></td>
+                       <td align="left">42.3</td>
+                       <td align="left">spice</td>
+                       <td>2018-09-04</td>
+                       </tr><tr><td align="left">openSUSE</td>
+                       <td align="left"><a href="https://lwn.net/Articles/764124/">openSUSE-SU-2018:2601-1</a></td>
+                       <td align="left">42.3</td>
+                       <td align="left">spice-gtk</td>
+                       <td>2018-09-04</td>
+                       </tr><tr><td align="left">Red Hat</td>
+                       <td align="left"><a href="https://lwn.net/Articles/764115/">RHSA-2018:2616-01</a></td>
+                       <td align="left">EL7</td>
+                       <td align="left">RHGS WA</td>
+                       <td>2018-09-04</td>
+                       </tr><tr><td align="left">Red Hat</td>
+                       <td align="left"><a href="https://lwn.net/Articles/764113/">RHSA-2018:2608-01</a></td>
+                       <td align="left">EL6</td>
+                       <td align="left">Red Hat Gluster Storage</td>
+                       <td>2018-09-04</td>
+                       </tr><tr><td align="left">Red Hat</td>
+                       <td align="left"><a href="https://lwn.net/Articles/764112/">RHSA-2018:2607-01</a></td>
+                       <td align="left">EL7</td>
+                       <td align="left">Red Hat Gluster Storage</td>
+                       <td>2018-09-04</td>
+                       </tr><tr><td align="left">Red Hat</td>
+                       <td align="left"><a href="https://lwn.net/Articles/764114/">RHSA-2018:2626-01</a></td>
+                       <td align="left">EL7</td>
+                       <td align="left">Red Hat Virtualization</td>
+                       <td>2018-09-04</td>
+                       </tr><tr><td align="left">Red Hat</td>
+                       <td align="left"><a href="https://lwn.net/Articles/764110/">RHSA-2018:2615-01</a></td>
+                       <td align="left">EL7</td>
+                       <td align="left">collectd</td>
+                       <td>2018-09-04</td>
+                       </tr><tr><td align="left">Red Hat</td>
+                       <td align="left"><a href="https://lwn.net/Articles/764111/">RHSA-2018:2645-01</a></td>
+                       <td align="left">EL6.7</td>
+                       <td align="left">kernel</td>
+                       <td>2018-09-04</td>
+                       </tr><tr><td align="left">Red Hat</td>
+                       <td align="left"><a href="https://lwn.net/Articles/764116/">RHSA-2018:2643-01</a></td>
+                       <td align="left">EL7</td>
+                       <td align="left">rhvm-appliance</td>
+                       <td>2018-09-04</td>
+                       </tr><tr><td align="left">Red Hat</td>
+                       <td align="left"><a href="https://lwn.net/Articles/764117/">RHSA-2018:2612-01</a></td>
+                       <td align="left">EL6</td>
+                       <td align="left">samba</td>
+                       <td>2018-09-04</td>
+                       </tr><tr><td align="left">Red Hat</td>
+                       <td align="left"><a href="https://lwn.net/Articles/764118/">RHSA-2018:2613-01</a></td>
+                       <td align="left">EL7</td>
+                       <td align="left">samba</td>
+                       <td>2018-09-04</td>
+                       </tr><tr><td align="left">SUSE</td>
+                       <td align="left"><a href="https://lwn.net/Articles/764125/">SUSE-SU-2018:2603-1</a></td>
+                       <td align="left">OS7 </td>
+                       <td align="left">crowbar, crowbar-core, crowbar-ha, crowbar-openstack, crowbar-ui</td>
+                       <td>2018-09-04</td>
+                       </tr><tr><td align="left">SUSE</td>
+                       <td align="left"><a href="https://lwn.net/Articles/764126/">SUSE-SU-2018:2596-1</a></td>
+                       <td align="left">SLE12</td>
+                       <td align="left">kernel</td>
+                       <td>2018-09-03</td>
+                       </tr><tr><td align="left">SUSE</td>
+                       <td align="left"><a href="https://lwn.net/Articles/764127/">SUSE-SU-2018:2595-1</a></td>
+                       <td align="left">SLE12</td>
+                       <td align="left">spice</td>
+                       <td>2018-09-03</td>
+                       </tr><tr><td align="left">SUSE</td>
+                       <td align="left"><a href="https://lwn.net/Articles/764129/">SUSE-SU-2018:2594-1</a></td>
+                       <td align="left">SLE12</td>
+                       <td align="left">spice-gtk</td>
+                       <td>2018-09-03</td>
+                       </tr><tr><td align="left">SUSE</td>
+                       <td align="left"><a href="https://lwn.net/Articles/764128/">SUSE-SU-2018:2593-1</a></td>
+                       <td align="left">SLE12</td>
+                       <td align="left">spice-gtk</td>
+                       <td>2018-09-03</td>
+                       </tr></table>
+<hr width="60%" align="left">
+           (<a href="https://lwn.net/Login/?target=/Articles/764130/">Log in</a> to post comments)
+           <p>
+           
+</div> <!-- ArticleText -->
+<p><a name="Comments"></a>
+
+</div> <!-- ArticleText -->
+</div>
+<div class="lwn-u-1 pure-u-md-1-6 not-print">
+<div id="azk93271_right_zone"></div>
+</div>
+</div> <!-- pure-grid -->
+
+        <br clear="all">
+        <center>
+        <P>
+        <font size="-2">
+        Copyright &copy; 2018, Eklektix, Inc.<BR>
+        
+        Comments and public postings are copyrighted by their creators.<br>
+        Linux  is a registered trademark of Linus Torvalds<br>
+        </font>
+        </center>
+        
+            <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+            </script>
+            <script type="text/javascript">
+            try {
+            var pageTracker = _gat._getTracker("UA-2039382-1");
+            pageTracker._trackPageview();
+            } catch(err) {}</script>
+            
+        </body></html>
+        

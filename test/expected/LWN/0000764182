@@ -1,0 +1,92 @@
+                   SECURITY UPDATES FOR WEDNESDAY                  
+
+  [Security] Sep 5, 2018 15:01 UTC (Wed) (ris)
+
+  o News link: https://lwn.net/Articles/764182
+  o Source link: 
+
+
+    Dist.
+    
+    ID
+    
+    Release
+    
+    Package
+    
+    Date
+    
+    Debian
+    
+    [1]DSA-4284-1
+    
+    stable
+    
+    lcms2
+    
+    2018-09-04
+    
+    openSUSE
+    
+    [2]openSUSE-SU-2018:2623-1
+    
+    42.3
+    
+    yubico-piv-tool
+    
+    2018-09-05
+    
+    Oracle
+    
+    [3]ELSA-2018-4208
+    
+    OL6
+    
+    kernel
+    
+    2018-09-04
+    
+    Oracle
+    
+    [4]ELSA-2018-4208
+    
+    OL7
+    
+    kernel
+    
+    2018-09-04
+    
+    SUSE
+    
+    [5]SUSE-SU-2018:2608-1
+    
+    cobbler
+    
+    2018-09-04
+    
+    SUSE
+    
+    [6]SUSE-SU-2018:2615-1
+    
+    SLE11
+    
+    kvm
+    
+    2018-09-05
+    
+    
+    
+    [1] https://lwn.net/Articles/764176/
+    
+    [2] https://lwn.net/Articles/764177/
+    
+    [3] https://lwn.net/Articles/764178/
+    
+    [4] https://lwn.net/Articles/764179/
+    
+    [5] https://lwn.net/Articles/764180/
+    
+    [6] https://lwn.net/Articles/764181/
+
+
+

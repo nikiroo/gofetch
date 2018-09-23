@@ -7,6 +7,7 @@
 - Fix html output for LWN (do not allow raw text!)
 - Allow <pre> in all supports
 - Lot of other small fixes
+- New tests based upon static "example" content (not dynamic)
 
 ## Version 1.2.0
 

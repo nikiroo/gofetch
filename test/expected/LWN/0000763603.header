@@ -1,0 +1,19 @@
+0[$] Measuring (and fixing) I/O-controller throughput loss	null/LWN/0000763603		70
+i  [Kernel] Aug 29, 2018 21:20 UTC (Wed) (corbet)
+i
+i    Many  services,  from  web hosting and video streaming to cloud
+i    storage,  need  to  move  data  to  and from storage. They also
+i    often  require  that  each  per-client I/O flow be guaranteed a
+i    non-zero   amount  of  bandwidth  and  a  bounded  latency.  An
+i    expensive  way to provide these guarantees is to over-provision
+i    storage  resources,  keeping  each  resource underutilized, and
+i    thus  have  plenty of bandwidth available for the few I/O flows
+i    dispatched  to  each  medium.  Alternatively one can use an I/O
+i    controller.  Linux provides two mechanisms designed to throttle
+i    some  I/O  streams  to allow others to meet their bandwidth and
+i    latency  requirements.  These mechanisms work, but they come at
+i    a  cost:  a  loss  of  as  much  as  80% of total available I/O
+i    bandwidth.  I  have run some tests to demonstrate this problem;
+i    some  upcoming improvements to the bfq I/O scheduler promise to
+i    improve the situation considerably.
+i

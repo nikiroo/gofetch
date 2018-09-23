@@ -1,0 +1,16 @@
+0[$] IDA: simplifying the complex task of allocating integers	null/LWN/0000764057		70
+i  [Kernel] Sep 4, 2018 0:15 UTC (Tue) (corbet)
+i
+i    It  is  common  for kernel code to generate unique integers for
+i    identifiers.  When  one plugs in a flash drive, it will show up
+i    as  /dev/sdN;  that  N (a letter derived from a number) must be
+i    generated  in  the  kernel, and it should not already be in use
+i    for  another  drive or unpleasant things will happen. One might
+i    think  that  generating  such  numbers would not be a difficult
+i    task,  but  that  turns  out  not to be the case, especially in
+i    situations  where  many  numbers  must be tracked. The IDA (for
+i    "ID  allocator", perhaps) API exists to handle this specialized
+i    task.  In  past  kernels, it has managed to make the process of
+i    getting  an unused number surprisingly complex; the 4.19 kernel
+i    has a new IDA API that simplifies things considerably.
+i

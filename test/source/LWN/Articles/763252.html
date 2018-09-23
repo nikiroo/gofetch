@@ -1,0 +1,1864 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+        <html>
+        <head><title>LWN.net Weekly Edition for August 30, 2018 [LWN.net]</title>
+        <link rel="next" href="/Articles/763254/"/>
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@lwnnet" />
+<meta name="twitter:title" content="LWN.net Weekly Edition for August 30, 2018" />
+<meta name="twitter:description" content="Julia; C considered dangerous; 4.19 Merge window; I/O controller throughput; KDE onboarding; Dat." />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+        <link rel="icon" href="/images/favicon.png" type="image/png">
+        <link rel="alternate" type="application/rss+xml" title="LWN.net headlines" href="https://lwn.net/headlines/newrss">
+        <link rel="stylesheet" href="/CSS/lwn">
+<link rel="stylesheet" href="/CSS/nosub">
+<link rel="stylesheet" href="/CSS/pure-min">
+           <!--[if lte IE 8]>
+             <link rel="stylesheet" href="/CSS/grids-responsive-old-ie-min">
+           <![endif]-->
+           <!--[if gt IE 8]><!-->
+             <link rel="stylesheet" href="/CSS/grids-responsive-min">
+           <!--<![endif]-->
+           <link rel="stylesheet" href="/CSS/pure-lwn">
+           
+        
+<script type="text/javascript">var p="http",d="static";if(document.location.protocol=="https:"){p+="s";d="engine";}var z=document.createElement("script");z.type="text/javascript";z.async=true;z.src=p+"://"+d+".adzerk.net/ados.js";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(z,s);</script>
+<script type="text/javascript">
+var ados_keywords = ados_keywords || [];
+if( location.protocol=='https:' ) {
+        ados_keywords.push('T:SSL');
+} else {
+        ados_keywords.push('T:HTTP');
+}
+
+var ados = ados || {};
+ados.run = ados.run || [];
+ados.run.push(function() {
+
+ados_add_placement(4669, 20979, "azk13321_leaderboard", 4).setZone(16026);
+
+ados_add_placement(4669, 20979, "azk93271_right_zone", [5,10,6]).setZone(16027);
+
+ados_add_placement(4669, 20979, "azk31017_tracking", 20).setZone(20995);
+
+
+
+ados_setKeywords(ados_keywords.join(', ')); 
+ados_load();
+});</script>
+
+        </head>
+        <body bgcolor="#ffffff" link="Blue" VLINK="Green" alink="Green">
+        <a name="t"></a>
+<div id="menu"><a href="/"><img src="https://static.lwn.net/images/logo/barepenguin-70.png" class="logo"
+                 border="0" alt="LWN.net Logo">
+           <font class="logo">LWN<br>.net</font>
+           <font class="logobl">News from the source</font></a>
+           <a href="/"><img src="https://static.lwn.net/images/lcorner-ss.png" class="sslogo"
+                 border="0" alt="LWN"></a><div class="navmenu-container">
+           <ul class="navmenu">
+        <li><a class="navmenu" href="#t"><b>Content</b></a><ul><li><a href="/current/">Weekly Edition</a></li><li><a href="/Archives/">Archives</a></li><li><a href="/Search/">Search</a></li><li><a href="/Kernel/">Kernel</a></li><li><a href="/Security/">Security</a></li><li><a href="/Distributions/">Distributions</a></li><li><a href="/Calendar/">Events calendar</a></li><li><a href="/Comments/unread">Unread comments</a></li><li><hr></li><li><a href="/op/FAQ.lwn">LWN FAQ</a></li><li><a href="/op/AuthorGuide.lwn">Write for us</a></li></ul></li>
+<li><a class="navmenu" href="#t"><b>Edition</b></a><ul><li><a href="/Articles/763252/">⇒Front page</a></li><li><a href="/Articles/763254/">Brief items</a></li><li><a href="/Articles/763255/">Announcements</a></li><li><a href="/Articles/763252/bigpage">One big page</a></li><li><a href="/Articles/762816/">Previous week</a></li><li><a href="/Articles/763789/">Following week</a></li></ul></li>
+</ul></div>
+</div> <!-- menu -->
+<div class="pure-g not-handset" style="margin-left: 10.5em">
+           <div class="not-print">
+             <div id="azk13321_leaderboard"></div>
+           </div>
+           </div>
+        <div class="topnav-container">
+<div class="not-handset"><form action="https://lwn.net/Login/" method="post" name="loginform"
+                 class="loginform">
+        <b>User:</b> <input type="text" name="Username" value="" size="8" /> <b>Password:</b> <input type="password" name="Password" size="8" /> <input type="hidden" name="target" value="/Articles/763252/" /> <input type="submit" name="submit" value="Log in" /></form> |
+           <form action="https://lwn.net/subscribe/" method="post" class="loginform">
+           <input type="submit" name="submit" value="Subscribe" />
+           </form> |
+           <form action="https://lwn.net/Login/newaccount" method="post" class="loginform">
+           <input type="submit" name="submit" value="Register" />
+           </form>
+        </div>
+               <div class="handset-only">
+               <a href="/subscribe/"><b>Subscribe</b></a> /
+               <a href="/Login/"><b>Log in</b></a> /
+               <a href="/Login/newaccount"><b>New account</b></a>
+               </div>
+               </div><div class="pure-grid maincolumn">
+<div class="lwn-u-1 pure-u-md-19-24">
+<div class="PageHeadline">
+<h1>LWN.net Weekly Edition for August 30, 2018</h1>
+</div>
+<div class="ArticleText">
+<a name="763743"></a><h2 class="SummaryHL"><a href="/Articles/763743/">Welcome to the LWN.net Weekly Edition for August 30, 2018</a></h2>
+
+This edition contains the following feature content:
+                   <p>
+                   <ul class="spacylist">
+
+  <li> <a href="/Articles/763626/">An introduction to the Julia language,
+  part 1</a>:  Julia is a language designed for intensive numerical
+  calculations; this article gives an overview of its core features.
+
+  <li> <a href="/Articles/763641/">C considered dangerous</a>: a Linux
+  Security Summit talk on what is being done to make the use of C in the
+  kernel safer.
+
+  <li> <a href="/Articles/763106/">The second half of the 4.19 merge
+  window</a>:	the final features merged (or not merged) before the merge
+  window closed for this cycle.
+
+
+  <li> <a href="/Articles/763603/">Measuring (and fixing) I/O-controller
+  throughput loss</a>: the kernel's I/O controllers can provide useful
+  bandwidth guarantees, but at a significant cost in throughput.
+
+  <li> <a href="/Articles/763175/">KDE's onboarding initiative, one year
+  later</a>: what has gone right in KDE's effort to make it easier for
+  contributors to join the project, and what remains to be done.
+
+  <li> <a href="/Articles/763492/">Sharing and archiving data sets with
+  Dat</a>:  an innovative approach to addressing and sharing data on the
+  net. 
+
+</ul>
+
+<p>
+                       This week's edition also includes these inner pages:
+                       <p>
+                       <ul class="spacylist">
+
+<li> <a href="/Articles/763254/">Brief items</a>: Brief news items from throughout the community.
+
+<li> <a href="/Articles/763255/">Announcements</a>: Newsletters, conferences, security updates, patches, and more.
+
+</ul>
+                       <p>
+                       Please enjoy this week's edition, and, as always, thank you for
+                       supporting LWN.net.
+<p><a href="/Articles/763743/#Comments">Comments (none posted)</a>
+<p>
+<a name="763626"></a><h2 class="SummaryHL"><a href="/Articles/763626/">An introduction to the Julia language, part 1</a></h2>
+
+<div class="GAByline">
+           <p>August 28, 2018</p>
+           <p>This article was contributed by Lee Phillips</p>
+           </div>
+<p><a href="http://julialang.org/">Julia</a> is a young computer language
+aimed at serving the needs of scientists, engineers, and other
+practitioners of numerically intensive programming. It was first publicly
+released in 2012. After an intense period of language development, version
+1.0 was <a
+href="https://julialang.org/blog/2018/08/one-point-zero">released</a> on
+August&nbsp;8. The 1.0 release promises years of language
+stability; users can be confident that developments in the 1.x series will
+not break their code. 
+    This is the first part of a two-part article introducing the world of Julia.
+    This part will introduce enough of the language syntax and constructs to
+    allow you to begin to write simple programs. The following installment will
+    acquaint you with the additional pieces needed to create real projects, and to
+    make use of Julia's ecosystem.
+
+<h4>Goals and history</h4>
+
+<p>The Julia project has ambitious goals. It wants the language to perform
+about as well as Fortran or C when running numerical algorithms, while
+remaining as pleasant to program in as Python. I believe the project has
+met these goals and is poised to see increasing adoption by numerical
+researchers, especially now that an official, stable release is
+available.</p>
+
+<p>The Julia project maintains a <a
+href="https://julialang.org/benchmarks/">micro-benchmark page</a> that compares its
+numerical performance against both statically compiled languages (C,
+Fortran) and dynamically typed languages (R, Python). While it's certainly
+possible to argue about the relevance and fairness of particular
+benchmarks, the data overall supports the Julia team's contention that Julia
+has generally achieved parity with Fortran and C; the benchmark
+source code is available.</p>
+
+<p>Julia began as research in computer science at MIT; its creators are
+Alan Edelman, Stefan Karpinski, Jeff Bezanson, and Viral Shah. These four
+ remain active developers of the language. They, along with Keno Fischer,
+co-founder and CTO of <a href="https://juliacomputing.com/">Julia
+Computing</a>, were kind enough to share their thoughts with us about
+the language.  I'll be drawing
+on their comments later on; for now, let's get a taste of
+what Julia code looks like.</p>
+
+<h4>Getting started</h4>
+
+<p>To explore Julia initially, start up its standard <a
+href="https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop">read-eval-print
+loop</a> (REPL)
+by typing <code>julia</code> at the terminal, assuming that you have installed
+it. You will then be
+able to interact with what will seem to be an interpreted language — but,
+behind the scenes, those commands are being compiled by a 
+just-in-time (JIT) compiler that uses the <a href="http://llvm.org/">LLVM
+compiler framework</a>. This allows Julia to be interactive, while turning
+the code into fast, native machine instructions. However, the JIT compiler
+passes sometimes introduce noticeable delays at the REPL, especially when
+using a function for the first time.</p>
+
+<p>To run a Julia program non-interactively, execute a command like:
+<pre>
+    $ julia script.jl &lt;args&gt;
+</pre>
+ 
+<p>Julia has all the usual data structures: numbers of various types
+(including complex and rational numbers), multidimensional arrays,
+dictionaries, strings, and characters. Functions are first-class: they can
+be passed as arguments to other functions, can be members of arrays,
+and so on.</p>
+
+<p>Julia embraces Unicode. Strings, which are enclosed in double quotes,
+are arrays of Unicode characters, which are enclosed in single quotes. The
+&quot;<tt>*</tt>&quot; operator is used for string and character concatenation. Thus
+'a' and 'β' are characters, and 'aβ' is a syntax error. &quot;a&quot; and
+&quot;β&quot; are strings, as are &quot;aβ&quot;, 'a' * 'β', and
+&quot;a&quot; * &quot;β&quot; — all evaluate to the same string.
+
+<p>Variable and function names can contain non-ASCII characters. This, along
+with Julia's clever syntax that understands numbers prepended to variables
+to mean multiplication, goes a long way to allowing the numerical scientist
+to write code that more closely resembles the compact mathematical notation
+of the equations that usually lie behind it.</p>
+
+<pre>
+    julia&gt; ε₁ = 0.01
+    0.01
+
+    julia&gt; ε₂ = 0.02
+    0.02
+
+    julia&gt; 2ε₁ + 3ε₂
+    0.08
+</pre>
+
+<p>And where does Julia come down on the age-old debate of what do about
+<tt>1/2</tt>? In Fortran and Python&nbsp;2, this will get you 0, since 1 and 2 are
+integers, and the result is rounded down to the integer 0. This was deemed
+inconsistent, and confusing to some, so it was changed in Python&nbsp;3 to
+return 0.5 — which is what you 
+get in Julia, too.</p>
+
+<p>While we're on the subject of fractions, Julia can handle rational
+numbers, with a special syntax: <tt>3//5&nbsp;+&nbsp;2//3</tt> returns
+<tt>19//15</tt>, while <tt>3/5&nbsp;+&nbsp;2/3</tt> 
+gets you the floating-point answer 1.2666666666666666. Internally, Julia
+thinks of a rational number in its reduced form, so the expression
+<tt>6//8&nbsp;==&nbsp;3//4</tt> returns <code>true</code>, and <code>numerator(6//8)</code> returns
+<code>3</code>.</p>
+
+<h4>Arrays</h4>
+
+<p>Arrays are enclosed in square brackets and indexed with an iterator that
+can contain a step value:</p>
+
+<pre>
+    julia&gt; a = [1, 2, 3, 4, 5, 6]
+    6-element Array{Int64,1}:
+     1
+     2
+     3
+     4
+     5
+     6
+
+    julia&gt; a[1:2:end]
+    3-element Array{Int64,1}:          
+     1
+     3
+     5
+</pre>
+
+<p>As you can see, indexing starts at one, and the useful <code>end</code>
+index means the obvious thing. When you define a variable in the REPL,
+Julia replies with the type and value of the assigned data; you can suppress this output by ending your input line with a semicolon.</p>
+
+<p>Since arrays are such a vital part of numerical computation, and Julia
+makes them easy to work with, we'll spend a bit more time with them than the other data structures.</p>
+
+<p>To illustrate the syntax, we can start with a couple of 2D arrays, defined at the REPL:</p>
+
+<pre>
+    julia&gt; a = [1 2 3; 4 5 6]
+    2×3 Array{Int64,2}:
+     1  2  3
+     4  5  6
+
+    julia&gt; z = [-1 -2 -3; -4 -5 -6];
+</pre>
+
+<p>Indexing is as expected:</p>
+
+<pre>
+    julia&gt; a[1, 2]
+    2
+</pre>
+
+<p>You can glue arrays together horizontally:</p>
+
+<pre>
+    julia&gt; [a z]
+    2×6 Array{Int64,2}:
+     1  2  3  -1  -2  -3
+     4  5  6  -4  -5  -6
+</pre>
+
+<p>And vertically:</p>
+
+<pre>
+    julia&gt; [a; z]
+    4×3 Array{Int64,2}:
+      1   2   3
+      4   5   6
+     -1  -2  -3
+     -4  -5  -6
+</pre>
+
+<p>Julia has all the usual operators for handling arrays, and <a
+href="http://www.3blue1brown.com/essence-of-linear-algebra-page/">linear
+algebra</a> functions that work with matrices (2D arrays). The linear
+algebra functions are part of Julia's standard library, but need to be
+imported with a command like "<code>using LinearAlgebra</code>", which is a detail
+omitted from the current documentation. The functions include such things as
+determinants, matrix inverses, eigenvalues and eigenvectors, many kinds of
+matrix factorizations, etc. Julia has not reinvented the wheel here, but
+wisely uses the <a href="http://www.netlib.org/lapack/">LAPACK</a> Fortran
+library of battle-tested linear algebra routines.</p>
+
+<p>The extension of arithmetic operators to arrays is usually intuitive:</p>
+
+<pre>
+    julia&gt; a + z
+    2×3 Array{Int64,2}:
+     0  0  0
+     0  0  0
+</pre>
+
+<p>And the numerical prepending syntax works with arrays, too:</p>
+
+<pre>
+    julia&gt; 3a + 4z
+    2×3 Array{Int64,2}:
+     -1  -2  -3
+     -4  -5  -6
+</pre>
+
+<p>Putting a multiplication operator between two matrices gets you matrix
+multiplication:</p>
+
+<pre>
+    julia&gt; a * transpose(a)
+    2×2 Array{Int64,2}:
+     14  32
+     32  77
+</pre>
+
+<p>You can &quot;broadcast&quot; numbers to cover all the elements in an
+array by prepending the usual arithmetic operators with a dot:</p>
+
+<pre>
+    julia&gt; 1 .+ a
+    2×3 Array{Int64,2}:
+     2  3  4
+     5  6  7
+</pre>
+
+<p>Note that the language only actually requires the dot for some
+operators, but not for others, such as &quot;*&quot; and &quot;/&quot;. The
+reasons for this are arcane, and it probably makes sense to be consistent
+and use the dot whenever you intend broadcasting. Note also that the
+current version of the official documentation is incorrect in claiming that
+you may omit the dot from &quot;+&quot; and &quot;-&quot;; in fact, this
+now gives an error.</p>
+
+<p>You can use the dot notation to turn any function into one that operates
+on each element of an array:</p>
+
+<pre>
+    julia&gt; round.(sin.([0, π/2, π, 3π/2, 2π]))
+    5-element Array{Float64,1}:
+      0.0
+      1.0
+      0.0
+     -1.0
+     -0.0
+</pre>
+
+<p>The example above illustrates chaining two dotted functions
+together. The Julia compiler turns expressions like this into
+&quot;fused&quot; operations: instead of applying each function in turn to
+create a new array that is passed to the next function, the compiler
+combines the functions into a single compound function that is applied once
+over the array, creating a significant optimization.</p>
+
+<p>You can use this dot notation with any function, including your own, to
+turn it into a version that operates element-wise over arrays.</p>
+
+<p>Dictionaries (associative arrays) can be defined with several
+syntaxes. Here's one:</p>
+
+<pre>
+    julia&gt; d1 = Dict(&quot;A&quot;=&gt;1, &quot;B&quot;=&gt;2)
+    Dict{String,Int64} with 2 entries:
+      &quot;B&quot; =&gt; 2
+      &quot;A&quot; =&gt; 1
+</pre>
+
+<p>You may have noticed that the code snippets so far have not included any
+type declarations. Every value in Julia has a type, but the compiler will
+infer types if they are not specified. It is generally not necessary to
+declare types for performance, but type declarations sometimes serve other
+purposes, that we'll return to later. Julia has a deep and sophisticated
+type system, including user-defined types and C-like structs. Types can
+have behaviors associated with them, and can inherit behaviors from other
+types. The best thing about Julia's type system is that you can ignore it
+entirely, use just a few pieces of it, or spend weeks studying its
+design.</p>
+
+<h4>Control flow</h4>
+
+<p>Julia code is organized in blocks, which can indicate control flow,
+function definitions, and other code units. Blocks are terminated with the
+<code>end</code> keyword, and indentation is not significant. Statements
+are separated either with newlines or semicolons.</p>
+
+<p>Julia has the typical control flow constructs; here is a
+<code>while</code> block:</p>
+
+<pre>
+    julia&gt; i = 1;
+
+    julia&gt; while i &lt; 5
+	       print(i)
+	       global i = i + 1
+	   end
+    1234
+</pre>
+
+<p>Notice the <code>global</code> keyword. Most blocks in Julia introduce a
+local scope for variables; without this keyword here, we would get an error
+about an undefined variable.</p>
+
+<p>Julia has the usual <code>if</code> statements and <code>for</code>
+loops that use the same iterators that we introduced above for array
+indexing. We can also iterate over collections:</p>
+
+<pre>
+    julia&gt; for i ∈ [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]
+	       println(i)
+	   end
+    a
+    b
+    c
+</pre>
+
+<p>In place of the fancy math symbol in this <code>for</code> loop, we can
+use &quot;<tt>=</tt>&quot; or &quot;<tt>in</tt>&quot;. If you want to use
+the math symbol but 
+have no convenient way to type it, the REPL will help you: type
+&quot;<tt>\in</tt>&quot; and the TAB key, and the symbol appears; you can type many
+<a href="/Articles/657157/">LaTeX</a> expressions into the
+REPL in this way.</p>
+
+<h4>Development of Julia</h4>
+
+<p>The language is developed on GitHub, with over 700 contributors. The
+Julia team mentioned in their email to us that the decision to use GitHub
+has been particularly good for Julia, as it streamlined the process for
+many of their contributors, who are scientists or domain experts in various
+fields, rather than professional software developers.</p>
+
+<p>The creators of Julia have <a
+href="https://julialang.org/publications/julia-fresh-approach-BEKS.pdf">published
+[PDF]</a>
+a detailed “mission statement” for the language, describing their aims and
+motivations. A key issue that they wanted their language to solve is what
+they called the &quot;two-language problem.&quot; This situation is
+familiar to anyone who has used Python or another dynamic language on a
+demanding numerical problem. To get good performance, you will wind up
+rewriting the numerically intensive parts of the program in C or Fortran,
+dealing with the interface between the two languages, and may still be
+disappointed in the overhead presented by calling the foreign routines from
+your original code.
+
+<p>
+For Python, <a
+href="/Articles/738915/">NumPy and SciPy</a> wrap many
+numerical routines, written in Fortran or C, for efficient use from that
+language, but you can only take advantage of this if your calculation fits
+the pattern of an available routine; in more general cases, where you will
+have to write a loop over your data, you are stuck with Python's native
+performance, which is orders of magnitude slower. If you switch to an
+alternative, faster implementation of Python, such as <a
+href="https://pypy.org/">PyPy</a>, the numerical libraries may not be
+compatible; NumPy became available for PyPy only within about the past
+year.</p>
+
+<p>Julia solves the two-language problem by being as expressive and simple
+to program in as a dynamic scripting language, while having the native
+performance of a static, compiled language. There is no need to write
+numerical libraries in a second language, but C or Fortran library routines
+can be called using a facility that Julia has built-in. Other languages,
+such as <a href="https://github.com/JuliaPy/PyCall.jl">Python</a> or <a
+href="https://github.com/JuliaInterop/RCall.jl">R</a>, can also interoperate
+easily with Julia using external packages.</p>
+
+<h4>Documentation</h4>
+
+<p>There are many resources to turn to to learn the language. There is an
+extensive and detailed <a
+href="https://docs.julialang.org/en/stable/">manual</a> at Julia
+headquarters, and this may be a good place to start. However, although the
+first few chapters provide a gentle introduction, the material soon becomes
+dense and, at times, hard to follow, with references to concepts that are
+not explained until later chapters. Fortunately, there is a <a
+href="https://julialang.org/learning/">&quot;learning&quot; link</a> at the
+top of the Julia home page, which takes you to a long list of videos,
+tutorials, books, articles, and classes both about Julia and that use Julia
+in teaching subjects such a numerical analysis. There is also a fairly good
+ <a
+href="http://bogumilkaminski.pl/files/julia_express.pdf">cheat-sheet [PDF]</a>, which was
+just updated for v. 1.0.</p>
+
+<p>If you're coming from Python, <a
+href="https://docs.julialang.org/en/stable/manual/noteworthy-differences/#Noteworthy-differences-from-Python-1">this
+list</a> of noteworthy differences between Python and Julia syntax will
+probably be useful.</p>
+
+<p>Some of the linked tutorials are in the form of <a
+href="https://lwn.net/Articles/746386/">Jupyter notebooks</a> — indeed,
+the name "Jupyter" is formed from "Julia",
+"Python", and "R", which are the three original languages supported by
+the interface. The <a href="https://github.com/JuliaLang/IJulia.jl">Julia
+kernel for Jupyter</a> was recently upgraded to support v. 1.0. Judicious
+sampling of a variety of documentation sources, combined with liberal
+experimentation, may be the best way of learning the language. Jupyter
+makes this experimentation more inviting for those who enjoy the web-based
+interface, but the REPL that comes with Julia helps a great deal in this
+regard by providing, for instance, TAB completion and an extensive help
+system invoked by simply pressing the &quot;?&quot; key.</p>
+
+<h4>Stay tuned</h4>
+
+<p>
+    The <a href="/Articles/764001/">next installment</a> in this two-part series will explain how Julia is
+    organized around the concept of "multiple dispatch". You will learn how to
+    create functions and make elementary use of Julia's type system. We'll see how
+    to install packages and use modules, and how to make graphs. Finally, Part 2
+    will briefly survey the important topics of macros and distributed computing.
+<p><a href="/Articles/763626/#Comments">Comments (80 posted)</a>
+<p>
+<a name="763641"></a><h2 class="SummaryHL"><a href="/Articles/763641/">C considered dangerous</a></h2>
+
+<div class="FeatureByline">
+           By <b>Jake Edge</b><br>August 29, 2018
+           <hr>
+<a href="/Archives/ConferenceByYear/#2018-Linux_Security_Summit_NA">LSS NA</a>
+</div>
+<p>
+At the North America edition of the <a
+href="https://events.linuxfoundation.org/events/linux-security-summit-north-america-2018/">2018
+Linux Security Summit</a> (LSS NA), which was held in late August in Vancouver,
+Canada, Kees Cook gave a presentation on some of the dangers that come with
+programs written in C.  In particular, of course, the Linux kernel is
+mostly written in C, which means that the security of our systems rests on
+a somewhat dangerous foundation.  But there are things that can be done to
+help firm things up by "<span>Making C Less Dangerous</span>" as the title
+of his talk suggested.
+</p>
+
+<p>
+He began with a brief summary of the work that he and others are doing as
+part of the <a
+href="https://kernsec.org/wiki/index.php/Kernel_Self_Protection_Project">Kernel
+Self Protection Project</a> (KSPP).  The goal of the project is to get
+kernel protections merged into the mainline.  These protections are not
+targeted at protecting user-space processes from other (possibly rogue)
+processes, but are, instead, focused on protecting the kernel from
+user-space code.  There are around 12 organizations and ten individuals
+working on roughly 20 different technologies as part of the KSPP, he said.   The
+progress has been "slow and steady", he said, which is how he thinks it
+should go.
+</p>
+
+<a href="/Articles/763644/">
+<img src="https://static.lwn.net/images/2018/lssna-cook-sm.jpg" border=0 hspace=5 align="right"
+alt="[Kees Cook]" title="Kees Cook" width=214 height=300>
+</a>
+
+<p>
+One of the main problems is that C is treated mostly like a fancy assembler.
+The kernel developers do this because they want the kernel to be as fast
+and as small as possible.  There are other reasons, too, such as the need to do
+architecture-specific tasks that lack a C API (e.g. setting up page tables,
+switching to 64-bit mode).
+</p>
+
+<p>
+But there is lots of undefined behavior in C.  This "operational baggage"
+can lead to various problems.  In addition, C has a weak standard library
+with multiple utility functions that have various pitfalls.  In C, the content
+of uninitialized automatic variables is undefined, but in the machine code that it
+gets translated to, the value is whatever happened to be in that memory
+location before.  In C, a function pointer can be called even if the type
+of the pointer does not match the type of the function being
+called—assembly doesn't care, it just jumps to a location, he said.
+</p>
+
+<p>
+The APIs in the standard library are also bad in many cases.  He asked: why
+is there no argument to <tt>memcpy()</tt> to specify the maximum
+destination length?  He noted a recent <a
+href="https://raphlinus.github.io/programming/rust/2018/08/17/undefined-behavior.html">blog
+post</a> from Raph Levien entitled "With Undefined Behavior, Anything is
+Possible".  That obviously resonated with Cook, as he pointed out his
+T-shirt—with the title and artwork from the post.
+</p>
+
+<h4>Less danger</h4>
+
+<p>
+He then moved on to some things that kernel developers can do (and are
+doing) to get away from some of the dangers of C.  He began with
+variable-length arrays (VLAs), which can be used to overflow the stack to
+access 
+data outside of its region.  Even if the stack has a guard page, VLAs can
+be used to jump past it to write into other memory, which can then be used
+by some other kind of attack.  The C language is "perfectly fine with
+this".  It is easy to find uses of VLAs with the <tt>-Wvla</tt> flag, however.
+</p>
+
+<p>
+But it turns out that VLAs are <a href="/Articles/749064/">not just bad
+from a security perspective</a>, 
+they are also slow.  In a micro-benchmark associated with a <a
+href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=02361bc77888">patch
+removing a VLA</a>, a 13% performance boost came from using a fixed-size
+array.  He dug in a bit further and found that much more code is being
+generated to handle a VLA, which explains the speed increase.  Since Linus
+Torvalds has <a
+href="https://lore.kernel.org/lkml/CA+55aFzCG-zNmZwX4A2FQpadafLfEzK6CC=qPXydAacU1RqZWA@mail.gmail.com/T/#u">declared
+that VLAs should be removed</a> from the kernel because they cause security
+problems and also slow the kernel down; Cook said "don't use VLAs".
+</p>
+
+<p>
+Another problem area is <tt>switch</tt> statements, in particular where
+there is no <tt>break</tt> for a <tt>case</tt>.  That could mean that the
+programmer expects and wants to fall through to the next case or it could
+be that the <tt>break</tt> was simply forgotten.  There is a way to get a
+warning from the compiler for fall-throughs, but there needs to be a way to
+mark those that are truly meant to be that way.  A special fall-through
+"statement" in the form of a comment is what has been agreed on within the
+static-analysis community.  He and others have been going through each of
+the places where there is no <tt>break</tt> to add these comments (or a
+<tt>break</tt>); they 
+have "found a lot of bugs this way", he said.
+</p>
+
+<p>
+Uninitialized local variables will generate a warning, but not if the
+variable is passed in by reference.  There are some GCC plugins that will
+automatically initialize these variables, but there are also patches for
+both GCC and Clang to provide a compiler option to do so.  Neither of those
+is upstream yet, but Torvalds has praised the effort so the kernel would
+likely use the option.  An interesting side
+effect that came about while investigating this was a warning he got about
+unreachable code when he 
+enabled the auto-initialization.  There were two variables declared just
+after a <tt>switch</tt> (and outside of any <tt>case</tt>), where they
+would never be reached.
+</p>
+
+<p>
+Arithmetic overflow is another undefined behavior in C that can cause various
+ problems.  GCC can check for signed overflow, which performs well
+(the overhead is in the noise, he said), but adding warning messages for it does grow
+the kernel by 6%;  making the overflow abort, instead, only adds 0.1%.
+Clang can check for both signed and unsigned overflow; signed overflow is
+undefined, while unsigned overflow is defined, but often unexpected.
+Marking places where unsigned overflow is expected is needed; it
+would be nice to get those annotations put into the kernel, Cook said.
+</p>
+
+<p>
+Explicit bounds checking is expensive.  Doing it for
+<tt>copy_{to,from}_user()</tt> is a less than 1% performance hit, but
+adding it to the <tt>strcpy()</tt> and <tt>memcpy()</tt> families are
+around a 2% hit.  Pre-Meltdown that would have been a totally impossible
+performance regression for security, he said; post-Meltdown, since it is
+less than 5%, maybe there is a chance to add this checking.
+</p>
+
+<p>
+Better APIs would help as well.  He pointed to the evolution of
+<tt>strcpy()</tt>, through <tt>str<b>n</b>cpy()</tt> and
+<tt>str<b>l</b>cpy()</tt> (each with their own bounds flaws) to
+<tt>str<b>s</b>cpy()</tt>, which seems to be "OK so far".  He also mentioned
+<tt>memcpy()</tt> again as a poor API with respect to bounds checking.
+</p>
+
+<p>
+Hardware support for bounds checking is available in the application
+data integrity (ADI) feature for SPARC and is coming for Arm; it may also be
+available for Intel processors at some point.  These all use a form of
+"memory tagging", where allocations get a tag that is stored in the
+high-order byte of the address.   An offset from the address can be checked
+by the hardware to see if it still falls within the allocated region based
+on the tag.
+</p>
+
+<p>
+Control-flow integrity (CFI) has become more of an issue lately because
+much of what attackers had used in the past has been marked as "no execute"
+so they are turning to using existing code "gadgets" already present in the
+kernel by hijacking existing indirect function calls.  In C, you can just call
+pointers without regard to the type as it just treats them as an 
+address to jump to.  Clang has a CFI-sanitize feature that enforces the
+function prototype to restrict the calls that can be made.  It is done at
+runtime and is not perfect, in part because there are lots of functions in
+the kernel that take one unsigned long parameter and return an unsigned long.
+</p>
+
+<p>
+Attacks on CFI have both a "forward edge", which is what CFI sanitize
+tries to handle, and a "backward edge" that comes from manipulating the stack
+values, the return address in particular.  Clang has two methods available
+to prevent the stack manipulation.  The first is the "safe stack", which
+puts various important items (e.g. "safe" variables, register spills, and
+the return address) on a separate stack.  Alternatively, the "shadow stack"
+feature creates a separate stack just for return addresses.
+</p>
+
+<p>
+One problem with these other stacks is that they are still writable, so if
+an attacker can find them in memory, they can still perform their attacks.
+Hardware-based protections, like Intel's Control-Flow Enforcement
+Technology (CET), <a href="/Articles/758245/">provides a read-only shadow
+call stack</a> for return addresses.  Another hardware protection is <a
+href="/Articles/718888/">pointer authentication</a> for Arm, which adds a
+kind of encrypted tag to the return address that can be verified before it
+is used.
+</p>
+
+<h4>Status and challenges</h4>
+
+<p>
+Cook then went through the current status of handling these different
+problems in the kernel.  VLAs are almost completely gone, he said, just a
+few remain in the crypto subsystem; he hopes those VLAs will be gone by 4.20 (or
+whatever the number of the next kernel release turns out to be).  Once that
+happens, he plans to turn on <tt>-Wvla</tt> for the kernel build so that
+none creep back in.
+</p>
+
+<p>
+There has been steady progress made on marking fall-through cases in
+<tt>switch</tt> statements.  Only 745 remain to be handled of the 2311 that
+existed when this work started; each one requires scrutiny to determine
+what the author's intent is.  Auto-initialized local variables can be done
+using compiler plugins, but that is "not quite what we want", he said.
+More compiler support would be helpful there.  For arithmetic overflow, it
+would be nice to see GCC get support for the unsigned case, but memory
+allocations are now doing explicit overflow checking at this point. 
+</p>
+
+<p>
+Bounds checking has seen some "crying about performance hits", so we are
+waiting impatiently for hardware support, he said.  CFI forward-edge
+protection needs <a href="/Articles/744507/">link-time optimization</a>
+(LTO) support for Clang in the kernel, but it is currently working on
+Android.  For backward-edge mitigation, the Clang shadow call stack is
+working on Android, but we are impatiently waiting for hardware support for
+that too.
+</p>
+
+<p>
+There are a number of challenges in doing security development for the
+kernel, Cook said.  There are cultural boundaries due to conservatism
+within the kernel community; that requires patiently working and reworking
+features in order to get them upstream.  There are, of course, technical
+challenges because of the complexity of security changes;  those kinds of
+problems can be solved.  There are also resource limitations in terms of
+developers, testers, reviewers, and so on.  KSPP and the other kernel
+security developers are still making that "slow but steady" progress.
+</p>
+
+<p>
+Cook's <a href="https://outflux.net/slides/2018/lss/danger.pdf">slides
+[PDF]</a> are available for interested readers; before long, there should
+be a video available of the talk as well.
+
+<p>
+[I would like to thank LWN's travel sponsor, the Linux Foundation, for
+travel assistance to attend the Linux Security Summit in Vancouver.]
+<p><a href="/Articles/763641/#Comments">Comments (70 posted)</a>
+<p>
+<a name="763106"></a><h2 class="SummaryHL"><a href="/Articles/763106/">The second half of the 4.19 merge window</a></h2>
+
+<div class="FeatureByline">
+           By <b>Jonathan Corbet</b><br>August 26, 2018
+           </div>
+By the time Linus Torvalds <a href="/Articles/763497/">released
+4.19-rc1</a> and closed 
+the merge window for this development cycle, 12,317 non-merge
+changesets had found their way into the mainline; about 4,800 of those
+landed after <a href="/Articles/762566/">last week's summary</a> was
+written.  As tends to be the case 
+late in the merge window, many of those changes were fixes for the bigger
+patches that went in early, but there were also a number of new features
+added.  Some of the more significant changes include:
+<br clear="all">
+<p>
+
+<h4>Core kernel</h4>
+<p>
+<ul class="spacylist">
+
+<li> The full set of patches adding <a
+     href="/Articles/761118/">control-group awareness to the out-of-memory
+     killer</a> has <i>not</i> been merged due to ongoing disagreements,
+     but one piece of it has: there is a new <tt>memory.oom.group</tt>
+     control knob that will cause all processes within a control group to
+     be killed in an out-of-memory situation.
+<li> A new set of protections has been added to prevent an attacker from
+     fooling a program into writing to an existing file or FIFO.  An open
+     with the <tt>O_CREAT</tt> flag to a file or FIFO in a world-writable,
+     sticky 
+     directory (e.g. <tt>/tmp</tt>) will fail if the owner of the opening
+     process is not the owner of either the target file or the containing
+     directory.  This behavior, disabled by default, is controlled by the
+     new <tt>protected_regular</tt> and <tt>protected_fifos</tt> sysctl
+     knobs.
+
+</ul>
+
+<h4>Filesystems and block layer</h4>
+<p>
+<ul class="spacylist">
+
+<li> The dm-integrity device-mapper target can now use a separate device
+     for metadata storage.
+<li> EROFS, the "enhanced read-only filesystem", has been added to the
+     staging tree.  It is "<span>a lightweight read-only file system with
+     modern designs (eg. page-sized blocks, inline xattrs/data, etc.) for
+     scenarios which need high-performance read-only requirements,
+     eg. firmwares in mobile phone or LIVECDs</span>"
+<li> The new "metadata copy-up" feature in overlayfs will avoid copying a
+     file's contents to the upper layer on a metadata-only change.  See <a
+     href="https://git.kernel.org/linus/d5791044d2e5749ef4de84161cec5532e2111540">this
+     commit</a> for details.
+
+</ul>
+<p>
+
+<h4>Hardware support</h4>
+<p>
+<ul class="spacylist">
+
+<li> <b>Graphics</b>:
+     Qualcomm Adreno A6xx GPUs.
+
+<li> <b>Industrial I/O</b>:
+     Spreadtrum SC27xx series PMIC analog-to-digital converters,
+     Analog Devices AD5758 digital-to-analog converters,
+     Intersil ISL29501 time-of-flight sensors,
+     Silicon Labs SI1133 UV index/ambient light sensor chips, and
+     Bosch Sensortec BME680 sensors.
+
+
+<li> <b>Miscellaneous</b>:
+     Generic ADC-based resistive touchscreens,
+     Generic ASIC devices via the Google <a
+     href="/ml/linux-kernel/20180630000253.70103-1-sque@chromium.org/">Gasket
+     framework</a>,
+     Analog Devices ADGS1408/ADGS1409 multiplexers,
+     Actions Semi Owl SoCs DMA controllers,
+     MEN 16Z069 watchdog timers,
+     Rohm BU21029 touchscreen controllers,
+     Cirrus Logic CS47L35, CS47L85, CS47L90, and CS47L91 codecs,
+     Cougar 500k gaming keyboards,
+     Qualcomm GENI-based I2C controllers,
+     Actions Semiconductor Owl I2C controllers,
+     ChromeOS EC-based USBPD chargers, and
+     Analog Devices ADP5061 battery chargers.
+
+<li> <b>USB</b>:
+     Nuvoton NPCM7XX on-chip EHCI USB controllers,
+     Broadcom Stingray PCIe PHYs, and
+     Renesas R-Car generation 3 PCIe PHYs.
+
+<li> There is also a new subsystem for the abstraction of GNSS (global
+     navigation satellite systems — GPS, for example) receivers in the
+     kernel.  To date, such devices have been handled with an abundance of
+     user-space drivers; the hope is to bring some order in this area.
+     Support for u-blox and SiRFstar receivers has been added as well.
+
+</ul>
+
+
+<p>
+<h4>Kernel internal</h4>
+<p>
+<ul class="spacylist">
+
+<li> The <tt>__deprecated</tt> marker, used to mark interfaces that should
+     no longer be used, has been deprecated and removed from the kernel
+     entirely.  <a
+     href="https://git.kernel.org/linus/771c035372a036f83353eef46dbb829780330234">Torvalds
+     said</a>: "<span>They are not useful.  They annoy
+     everybody, and nobody ever does anything about them, because it's
+     always 'somebody elses problem'.  And when people start thinking that
+     warnings are normal, they stop looking at them, and the real warnings
+     that mean something go unnoticed.</span>"
+<li> The minimum version of GCC required by the kernel has been moved up to
+     4.6.
+
+</ul>
+<p>
+
+There are a couple of significant changes that failed to get in this time
+around, including the <a
+href="/Articles/745073/">XArray</a> data structure.  The patches are
+thought to be ready, but they had the bad luck to be based on a tree that
+failed to be merged for other reasons, so Torvalds <a
+href="/ml/linux-kernel/CA+55aFxFjAmrFpwQmEHCthHOzgidCKnod+cNDEE+3Spu9o1s3w@mail.gmail.com/">didn't
+even look at them</a>.  That, in turn, blocks another set of patches intended to
+enable migration of slab-allocated objects.
+<p>
+The other big deferral is the <a href="/Articles/759499/">new system-call
+API for filesystem mounting</a>.  Despite ongoing <a
+href="/Articles/762355/">concerns</a> about what happens when the same
+low-level device is mounted multiple times with conflicting options, Al
+Viro sent <a
+href="/ml/linux-fsdevel/20180823223145.GK6515@ZenIV.linux.org.uk/">a pull
+request</a> to send this work upstream.  The ensuing discussion made it
+clear that there is still not a consensus in this area, though, so it seems
+that this work has to wait for another cycle.
+<p>
+Assuming all goes well, the kernel will stabilize over the coming weeks and
+the final 4.19 release will happen in mid-October.
+<p><a href="/Articles/763106/#Comments">Comments (1 posted)</a>
+<p>
+<a name="763603"></a><h2 class="SummaryHL"><a href="/Articles/763603/">Measuring (and fixing) I/O-controller throughput loss</a></h2>
+
+<div class="GAByline">
+           <p>August 29, 2018</p>
+           <p>This article was contributed by Paolo Valente</p>
+           </div>
+<p>Many services, from web hosting and video streaming to cloud storage,
+need to move data to and from storage.  They also often require that each per-client
+I/O flow be guaranteed a non-zero amount of bandwidth and a bounded latency. An
+expensive way to provide these guarantees is to over-provision
+storage resources, keeping each resource underutilized, and thus
+have plenty of bandwidth available for the few I/O flows dispatched to
+each medium. Alternatively one can use an I/O controller.  Linux provides
+two mechanisms designed to throttle some I/O streams to allow others to
+meet their bandwidth and latency requirements.  These mechanisms work, but
+they come at a cost: a loss of as much as 80% of total available I/O
+bandwidth.  I have run some tests to demonstrate this problem; some
+upcoming improvements to the <a href="/Articles/601799/">bfq I/O
+scheduler</a> promise to improve the situation considerably.
+<p>
+
+<p>Throttling does guarantee control, even on drives that happen to be
+highly utilized but, as will be seen, it has a hard time
+actually ensuring that drives are highly utilized. Even with greedy I/O
+flows, throttling
+easily ends up utilizing as little as 20% of the available speed of a
+flash-based drive.
+
+Such a speed loss may be particularly problematic with lower-end
+storage. On the opposite end, it is also disappointing with
+high-end hardware, as the Linux block I/O stack itself has been
+<a href="/Articles/552904">redesigned from the ground up</a> to fully utilize the
+high speed of modern, fast storage.  In
+addition, throttling fails to guarantee the expected bandwidths if I/O
+contains both reads and writes, or is sporadic in nature.
+
+<p>On the bright side, there now seems to be an effective alternative for
+controlling I/O: the proportional-share policy provided by the bfq I/O
+scheduler. It enables nearly 100% storage bandwidth utilization,
+at least with some of the workloads that are problematic for
+throttling. An upcoming version of bfq may be able to
+achieve this result with almost all workloads. Finally, bfq
+guarantees bandwidths with all workloads. The current limitation of
+bfq is that its execution overhead becomes significant at speeds above
+400,000 I/O operations per second on commodity CPUs.
+
+<p>Using the bfq I/O scheduler, Linux can now guarantee
+low latency to lightweight flows containing sporadic, short I/O. No
+throughput issues arise, and no configuration is required. This
+capability benefits important, time-sensitive tasks, such as 
+video or audio streaming, as well as executing commands or starting
+applications. 
+
+Although benchmarks are not available yet, these guarantees might also be
+provided by the newly proposed <a href="/Articles/758963/">I/O latency
+controller</a>.  It allows administrators to set target latencies for I/O
+requests originating from each group of processes, and favors the
+groups with the lowest target latency.
+
+<h4>The testbed</h4>
+
+<p>I ran the tests with an ext4 filesystem mounted on a PLEXTOR
+PX-256M5S SSD, which features a peak rate of ~160MB/s with random I/O,
+and of ~500MB/s with sequential I/O. I used blk-mq, in Linux
+4.18.  The system was equipped with a 2.4GHz Intel Core i7-2760QM
+CPU and 1.3GHz DDR3 DRAM. In such a system, a single thread doing
+synchronous reads reaches a throughput of 23MB/s.
+
+<p>
+For the purposes of these tests, each process is considered to be in one of
+two groups, termed "target" and "interferers".
+A target is a single-process, I/O-bound group whose I/O is focused on. In
+particular, I measure the I/O throughput enjoyed by this group to get
+the minimum bandwidth delivered to the group.
+An interferer is single-process group whose role is to generate
+additional I/O that interferes with the I/O of the target.
+The tested workloads contain one target and multiple interferers.
+
+<p>The single process in each group either reads or writes, through
+asynchronous (buffered) operations, to one file — different from the file read
+or written by any other process — after invalidating the buffer cache
+for the file.  I define a reader or writer process as either "random" or
+"sequential", depending on whether it reads or writes its file at random
+positions or sequentially.
+Finally, an interferer is defined as being either "active" or "inactive"
+depending on whether it performs I/O during the test. When an
+interferer is mentioned, it is assumed that the interferer is active.
+
+<p>Workloads are defined so as to try to cover the combinations that, I
+believe, most influence the performance of the storage device and of
+the I/O policies. For brevity, in this article I show results for only
+two groups of workloads:
+<p>
+<ul class="spacylist">
+
+<li> <b>Static sequential</b>: four synchronous sequential readers or four
+     asynchronous sequential writers, plus five inactive interferers.
+     
+<li> <b>Static random</b>: four synchronous random readers, all with a block
+     size equal to 4k, plus five inactive interferers.
+</ul>
+
+<p>To create each workload, I considered, for each mix of
+interferers in the group, two possibilities for the target: it could be
+either a random or a sequential synchronous reader.
+
+In <a
+href="http://algogroup.unimore.it/people/paolo/pub-docs/extended-lat-bw-throughput.pdf">a
+longer version of this article [PDF]</a>, you will also find results
+for workloads with varying degrees of I/O randomness, and for
+dynamic workloads (containing sporadic I/O sources). These extra results
+confirm the losses of throughput and I/O control for throttling that
+are shown here.
+
+<h4>I/O policies</h4>
+
+<p>Linux provides two I/O-control mechanisms for guaranteeing (a minimum)
+bandwidth, or at least fairness, to long-lived flows: the throttling
+and proportional-share I/O policies.
+With throttling, one can set a maximum bandwidth limit — "max limit" for
+brevity — for the I/O of each group. Max limits can be used,
+in an indirect way, to provide the service guarantee at the focus of this
+article.  For example, to guarantee minimum bandwidths to I/O flows, a group can
+be guaranteed a minimum bandwidth by limiting the maximum bandwidth of
+all the other groups.
+
+<p>Unfortunately, max limits have two drawbacks in terms of
+throughput. First, if some groups do not use their allocated bandwidth,
+that bandwidth cannot be reclaimed by other active groups. Second,
+limits must comply with the worst-case speed of the device, namely,
+its random-I/O peak rate. Such limits will clearly leave a lot of
+throughput unused with workloads that otherwise would drive the
+device to higher throughput levels.
+
+Maximizing throughput is simply not a goal of max limits. So, for
+brevity, test results with max limits are not shown here. You can
+find these results, plus a more detailed description of the above
+drawbacks, in the long version of this article.
+
+<p>Because of these drawbacks, a new, still experimental, low limit
+has been added to the throttling policy. If a group is
+assigned a low limit, then the throttling policy automatically
+limits the I/O of the other groups in such a way to
+guarantee to the group a minimum bandwidth equal to its assigned low
+limit. This new throttling mechanism throttles no group as long as
+every group is getting at least its assigned minimum bandwidth. I tested
+this mechanism, but did not consider the interesting problem
+of guaranteeing minimum bandwidths while, at the same time, enforcing
+maximum bandwidths.
+
+<p>The other I/O policy available in Linux, proportional share,
+provides weighted fairness. Each group is assigned a weight, and should
+receive a portion of the total throughput proportional to its weight.
+This scheme guarantees minimum bandwidths in the same way that low limits do
+in throttling. In particular, it guarantees to each group a minimum
+bandwidth equal to the ratio between the weight of the group, and the
+sum of the weights of all the groups that may be active at the same
+time.
+
+<p>The actual implementation of the proportional-share policy, on a given
+drive, depends on what flavor of the block layer is in use for that
+drive. If the drive is using the legacy block interface, the policy is
+implemented by 
+the cfq I/O scheduler. Unfortunately, cfq fails to control
+bandwidths with flash-based storage, especially on drives featuring
+command queueing.  This case is not considered in these tests. With
+drives using the multiqueue interface,
+proportional share is implemented by bfq. This is the
+combination considered in the tests.
+
+<p>To benchmark both throttling (low limits) and proportional share, I
+tested, for each workload, the combinations of I/O policies and I/O
+schedulers reported in the table below.  In the end, there are three test
+cases for each workload. In addition, for some workloads, I considered two
+versions of bfq for the proportional-share policy.
+
+<blockquote>
+<table class="OddEven">
+<tr>
+<th align="left" width="14%" valign="top">Name </th>
+<th align="left" width="14%" valign="top">I/O policy </th>
+<th align="left" width="14%" valign="top">Scheduler </th>
+<th align="left" width="14%" valign="top">Parameter for target </th>
+<th align="left" width="14%" valign="top">Parameter for each
+of the four active interferers </th>
+<th align="left" width="14%" valign="top">Parameter for each of the five inactive
+interferers </th>
+<th align="left" width="14%" valign="top">Sum of parameters</th>
+</tr>
+<tr>
+<td align="left" width="14%" valign="top">low-none</td>
+<td align="left" width="14%" valign="top">Throttling with low limits</td>
+<td align="left" width="14%" valign="top">none</td>
+<td align="left" width="14%" valign="top">10MB/s</td>
+<td align="left" width="14%" valign="top">10MB/s
+(tot: 40)</td>
+<td align="left" width="14%" valign="top">20MB/s (tot: 100)</td>
+<td align="left" width="14%" valign="top">150MB/s</td>
+</tr>
+<tr>
+<td align="left" width="14%" valign="top">prop-bfq</td>
+<td align="left" width="14%" valign="top">Proportional share</td>
+<td align="left" width="14%" valign="top">bfq</td>
+<td align="left" width="14%" valign="top">300</td>
+<td align="left" width="14%" valign="top">100 (tot: 400)</td>
+<td align="left" width="14%" valign="top">200
+(tot: 1000)</td>
+<td align="left" width="14%" valign="top">1700</td>
+</tr>
+</table>
+</blockquote>
+
+
+
+
+<p>For low limits, I report results with only none as the I/O scheduler,
+because the results are the same with kyber and mq-deadline.
+
+<p>The capabilities of the storage medium and of low limits drove the policy
+configurations. In particular:
+
+<ul class="spacylist">
+
+<li> The configuration of the target and of the active interferers for
+low-none is the one for which low-none provides
+its best possible minimum-bandwidth guarantee to the target: 10MB/s,
+guaranteed if all interferers are readers.
+Results remain the same regardless of the values used for target
+latency and idle time; I set them to 100µs and
+1000µs, respectively, for every group.</li>
+
+<li> Low limits for inactive interferers are set to twice the limits for
+active interferers, to pose greater difficulties to the
+policy.</li>
+
+<li> I chose weights for prop-bfq so as to guarantee about the same
+minimum bandwidth as low-none to the target, in the same
+only-reader worst case as for low-none and to preserve, between
+the weights of active and inactive interferers, the same ratio as
+between the low limits of active and inactive interferers.</li>
+</ul>
+<p>Full details on configurations can be found in the long version of this
+article. 
+
+<p>Each workload was run ten times for each policy, plus ten times without
+any I/O control, i.e., with none as I/O scheduler and no I/O policy in
+use. For each run, I measured the I/O throughput of the target (which
+reveals the bandwidth provided to the target), the cumulative I/O
+throughput of the interferers, and the total I/O throughput. These
+quantities fluctuated very little during each run, as well as across
+different runs. Thus in the graphs I report only averages over per-run
+average throughputs. In particular, for the case of no I/O control, I
+report only the total I/O throughput, to give an idea of the throughput
+that can be reached without imposing any control.
+
+<h4>Results</h4>
+
+<p>
+This plot shows throughput results for the simplest group of
+workloads: the static-sequential set.
+
+<blockquote>
+<img src="https://static.lwn.net/images/2018/iocontrol/fig1.png" alt="[Figure 1]" class="photo">
+</blockquote>
+<p>
+
+With a random reader as
+the target against sequential readers as interferers, low-none does
+guarantee the configured low limit to the target. Yet it reaches only a
+low total throughput. The throughput of
+the random reader evidently oscillates around 10MB/s during the test.
+This implies that it is at least slightly below 10MB/s for a significant
+percentage of the time. But when this happens, the low-limit mechanism
+limits the maximum bandwidth of every active group to the low limit set
+for the group, i.e., to just 10MB/s.
+The end result is a total throughput lower than 10% of the throughput
+reached without I/O control.
+<p>
+That said, the high throughput achieved without I/O control is
+obtained by choking the random I/O of the target in favor of
+the sequential I/O of the interferers.  Thus, it
+is probably more interesting to compare low-none throughput with the
+throughput reachable while actually guaranteeing 10MB/s to the target.
+The target is a single, synchronous, random reader, which reaches 23MB/s while
+active. So, to guarantee 10MB/s to the target, it is enough to
+serve it for about half of the time, and the interferers for the other
+half. Since the device reaches ~500MB/s with the sequential I/O of the
+interferers, the resulting throughput with this service scheme would be
+(500+23)/2, or about 260MB/s. low-none thus reaches less than 20%
+of the 
+total throughput that could be reached while still preserving the target
+bandwidth.
+
+<p>prop-bfq provides the target with a slightly higher throughput than
+low-none. This makes it harder for prop-bfq to reach a high total
+throughput, because prop-bfq serves more random I/O (from the target)
+than low-none. Nevertheless, prop-bfq gets a much higher total
+throughput than low-none. According to the above estimate, this
+throughput is about 90% of the maximum throughput that could be reached,
+for this workload, without violating service guarantees. The reason for
+this good result is that bfq provides an effective implementation of
+the proportional-share service policy. At any time, each active group is
+granted a fraction of the current total throughput, and the sum of these
+fractions is equal to one; so group bandwidths naturally saturate the
+available total throughput at all times.
+
+<p>Things change with the second workload: a random reader against
+sequential writers. Now low-none reaches a much higher total
+throughput than prop-bfq.  low-none serves
+much more sequential (write) I/O than prop-bfq because writes somehow
+break the low-limit mechanisms and prevail over the reads of the target.
+Conceivably, this happens because writes tend to both starve reads in
+the OS (mainly by eating all available I/O tags) and to cheat on their
+completion time in the drive. In contrast, bfq is intentionally
+configured to privilege reads, to counter these issues.
+
+<p>In particular, low-none gets an even higher throughput than no
+I/O control at all because it penalizes the random I/O of the target even more
+than the no-controller configuration.
+
+<p>Finally, with the last two workloads, prop-bfq reaches even
+higher total throughput than with the first two. It happens
+because the target also does sequential I/O, and serving sequential
+I/O is much more beneficial for throughput than serving random I/O. With
+these two workloads, the total throughput is, respectively, close to or
+much higher than that reached without I/O control. For the last
+workload, the total throughput is much higher because, differently from
+none, bfq privileges reads over asynchronous writes, and reads yield
+a higher throughput than writes. In contrast, low-none still gets
+lower or much lower throughput than prop-bfq, because of the same
+issues that hinder low-none throughput with the first two workloads.
+
+<p>As for bandwidth guarantees, with readers as interferers (third
+workload), prop-bfq, as expected, gives the target a fraction of the
+total throughput proportional to its weight.  bfq approximates
+perfect proportional-share bandwidth distribution among groups doing I/O
+of the same type (reads or writes) and with the same locality
+(sequential or random). With the last workload, prop-bfq gives much
+more throughput to the reader than to all the interferers, because
+interferers are asynchronous writers, and bfq privileges reads.
+
+<p>The second group of workloads (static random), is the one, among all
+the workloads considered, for which prop-bfq performs worst.
+Results are shown below:
+<p>
+<blockquote>
+<img src="https://static.lwn.net/images/2018/iocontrol/fig2.png" alt="[Figure 2]" class="photo">
+</blockquote>
+<p>
+
+This chart
+reports results not only for mainline bfq, but also for an
+improved version of 
+bfq which is currently under public testing.
+As can be seen, with only random readers, prop-bfq reaches a
+much lower total throughput than low-none. This happens because of
+the Achilles heel of the bfq I/O scheduler. If the process in service
+does synchronous I/O and has a higher weight than some other process, then, to
+give strong bandwidth guarantees to that process, bfq plugs I/O
+dispatching every time the process temporarily stops issuing
+I/O requests. In this respect, processes actually have differentiated
+weights and do synchronous I/O in the workloads tested. So bfq
+systematically performs I/O plugging for them. Unfortunately, this
+plugging empties the internal queues of the drive, which kills
+throughput with random I/O. And the I/O of all processes in these
+workloads is also random.
+
+<p>The situation reverses with a sequential reader as target. Yet, the most
+interesting results come from the new version of bfq, containing
+small changes to counter exactly the above weakness. This
+version recovers most of the throughput loss with the workload made of
+only random I/O and more; with the second workload, where the target is
+a sequential reader, it reaches about 3.7 times the total throughput of
+low-none.
+<p>
+
+When the main concern is the latency of flows containing short I/O,
+Linux seems now rather high performing, thanks to the bfq I/O
+scheduler and the I/O latency controller. But if the
+requirement is to provide explicit bandwidth guarantees (or just fairness) to
+I/O flows, then one must be ready to give up much or most of the speed of
+the storage media. bfq helps with some workloads, but loses most of
+the throughput with workloads consisting of mostly random
+I/O. Fortunately, there is apparently hope for much better
+performance since an improvement, still under development, seems to
+enable bfq to reach a high throughput with all workloads tested so
+far.
+
+
+
+<p>
+[ I wish to thank Vivek Goyal for enabling me to make this article
+much more fair and sound.]<div class="MakeALink">
+               <table align="right"><tr><td>
+               <form action="/SubscriberLink/MakeLink" method="post">
+               <input type="hidden" name="articleid" value="763603">
+               <input type="submit" value="Send a free link"></form>
+               </td></tr></table>
+               </div>
+               <br clear="all">
+               
+<p><a href="/Articles/763603/#Comments">Comments (4 posted)</a>
+<p>
+<a name="763175"></a><h2 class="SummaryHL"><a href="/Articles/763175/">KDE's onboarding initiative, one year later</a></h2>
+
+<div class="GAByline">
+           <p>August 24, 2018</p>
+           <p>This article was contributed by Marta Rybczyńska</p>
+           <hr>
+<a href="/Archives/ConferenceByYear/#2018-Akademy">Akademy</a>
+</div>
+<p>In 2017, the KDE community decided on <a
+href="https://dot.kde.org/2017/11/30/kdes-goals-2018-and-beyond">three
+goals</a>
+to concentrate on for the next few years. One of them was <a
+href="https://phabricator.kde.org/T7116">streamlining the onboarding of new
+contributors</a> (the others were <a
+href="https://phabricator.kde.org/T6831">improving  
+usability</a> and <a href="https://phabricator.kde.org/T7050">privacy</a>).
+During <a href="https://akademy.kde.org/">Akademy</a>, the yearly KDE
+conference 
+that was held in Vienna in August, Neofytos Kolokotronis shared the status
+of the
+onboarding goal, the work done during the last year, and further plans.
+While it is a complicated process in a project as big and diverse as KDE,
+numerous improvements have been already made.</p>
+
+<p>Two of the three KDE community goals were proposed by relative
+newcomers. Kolokotronis was one of those, having joined the <a
+href="https://community.kde.org/Promo">KDE Promo team</a>
+not long before proposing
+the focus on onboarding. He had previously been involved with <a
+href="https://www.chakralinux.org/">Chakra  
+Linux</a>, a distribution based on KDE software. The fact that new
+members of the community proposed strategic goals was also noted in the <a
+href="https://conf.kde.org/en/Akademy2018/public/events/79">Sunday keynote
+by   Claudia Garad</a>.</p>
+
+<p>Proper onboarding adds excitement to the contribution process and
+increases retention, he explained. When we look at <a
+href="https://en.wikipedia.org/wiki/Onboarding">the definition of
+onboarding</a>,
+it is a process in which the new contributors acquire knowledge, skills, and
+behaviors so that they can contribute effectively. Kolokotronis proposed
+to see it also as socialization: integration into the project's relationships,
+culture, structure, and procedures.</p>
+
+<p>The gains from proper onboarding are many.  The project can grow by
+attracting new blood with new perspectives and solutions. The community
+maintains its health and stays vibrant. Another important advantage of
+efficient onboarding is that replacing current contributors becomes easier
+when they change interests, jobs, or leave the project for whatever reason.
+Finally, successful onboarding adds new advocates to the project.</p>
+
+<h4>Achievements so far and future plans</h4>
+
+<p>The team started with ideas for a centralized onboarding process for the
+whole of KDE. They found out quickly that this would not work because KDE
+is "very decentralized", so it is hard to provide tools and
+procedures that are going to work for the whole project. According to
+Kolokotronis, other characteristics of KDE that impact onboarding are high
+diversity, remote and online teams, and hundreds of contributors in dozens of
+projects and teams. In addition, new contributors already know in which
+area they want to take part and they prefer specific information that will
+be directly useful for them.</p>
+
+<p>So the team changed its approach; several changes have since been proposed
+and implemented. The <a href="https://community.kde.org/Get_Involved">Get
+Involved</a> page, which is expected to be one of the resources new
+contributors read first, has been rewritten. For the <a
+href="https://community.kde.org/KDE/Junior_Jobs">Junior Jobs page</a>, the
+team is
+
+<a href="/Articles/763189/"><img
+src="https://static.lwn.net/images/conf/2018/akademy/NeofytosKolokotronis-sm.jpg" alt="[Neofytos
+Kolokotronis]" title="Neofytos Kolokotronis" class="rthumb"></a>
+
+
+<a
+href="https://phabricator.kde.org/T8686">discussing</a> what the  
+generic content for KDE as a whole should be. The team simplified <a
+href="https://phabricator.kde.org/T7646">Phabricator registration</a>,
+which
+resulted in documenting the process better. Another part of the work
+includes the <a href="https://bugs.kde.org/">KDE Bugzilla</a>; it includes,
+for example initiatives to limit the number of
+states of a ticket or remove obsolete products.</p>
+
+<p>The <a href="https://www.plasma-mobile.org/index.html">Plasma Mobile</a>
+team is heavily involved in the onboarding goal.  The Plasma Mobile
+developers have simplified their 
+development environment setup and created an <a
+href="https://www.plasma-mobile.org/findyourway">interactive "Get
+Involved"</a> page. In addition, the Plasma team changed the way task
+descriptions are written; they now contain more detail, so that it is
+easier to get
+involved. The basic description should be short and clear, and it should include
+details of the problem and possible solutions. The developers try to
+share the list of skills necessary to fulfill the tasks and include clear
+links to the technical resources needed.</p>
+
+<p>Kolokotronis and team also identified a new potential source of 
+contributors for KDE: distributions using
+KDE. They have the advantage of already knowing and using the software.
+
+The next idea the team is working on is to make sure that setting up a
+development environment is easy.  The team plans to work on this during a
+dedicated sprint this autumn.</p>
+
+<h4>Searching for new contributors</h4>
+
+<p>Kolokotronis plans to search for new contributors at the periphery of the
+project, among the "skilled enthusiasts": loyal users who actually care
+about the project. They "can make wonders", he said. Those
+individuals may be also less confident or shy, have troubles making the
+first step, and need guidance. The project leaders should take that into
+account.</p>
+
+<p>In addition, newcomers are all different. Kolokotronis
+provided a long list of how contributors differ,
+including skills and knowledge, motives and
+interests, and time and dedication. His advice is to "try to find their
+superpower", the skills they have that are missing in the team. Those
+"superpowers" can then be used for the benefit of the project.</p>
+
+<p>If a project does nothing else, he said, it can start with its documentation.
+However, this does not only mean code documentation. Writing down the
+procedures or information about the internal work of the project, like who
+is working on what, is an important part of a project's documentation and helps
+newcomers. There should be also guidelines on how to start, especially
+setting up the development environment.</p>
+
+<p>The first thing the project leaders should do, according to
+Kolokotronis, is to spend time on introducing newcomers to the project.
+Ideally every new contributor should be assigned mentors &mdash; more
+experienced members who can help them when needed. The mentors and project
+leaders should find tasks that are interesting for each person. Answering
+an audience question on suggestions for shy new
+contributors, he recommended even more mentoring. It is also very helpful
+to make sure that newcomers have enough to read, but "avoid RTFM", he highlighted. It
+is also easy for a new contributor "to fly away", he said. The solution is
+to keep requesting things and be proactive.</p>
+
+<h4>What the project can do?</h4>
+
+<p>Kolokotronis suggested a number of actions for a project when it wants to
+improve its onboarding. The first step is preparation: the project
+leaders should know the team's and the project's needs. Long-term
+planning is important, too. It is not enough to wait for contributors to
+come &mdash; the project should be proactive, which means reaching out to
+candidates, suggesting appropriate tasks and, finally, making people
+available for the newcomers if they need help.</p>
+
+<p>This leads to next step: to be a mentor. Kolokotronis suggests being a
+"great host", but also trying to phase out the dependency on the mentor
+rapidly. "We have
+been all newcomers", he said. It can be intimidating to join an existing
+group. Onboarding creates a sense of belonging which, in turn, increases
+retention.</p>
+
+<p>The last step proposed was to be strategic. This includes thinking about
+the emotions you want newcomers to feel. Kolokotronis explained the
+strategic part with an example. The overall goal is (surprise!) improve
+onboarding 
+of new contributors. An intermediate objective might be to keep the
+newcomers after they have made their first commit. If your strategy is to keep them
+confident and proud, you can use different tactics like praise and
+acknowledgment of the work in public. Another useful tactic may be assigning
+simple tasks, according to the skill of the contributor.</p>
+
+<p>To summarize, the most important thing, according to Kolokotronis, is to
+respond quickly and spend time with new contributors. This time should be
+used to explain procedures, and to introduce the people and culture. It is also
+essential to guide first contributions and praise contributor's skill and
+effort.
+Increase the difficulty of tasks over time to keep contributors motivated and
+challenged. And finally, he said,
+"turn them into mentors".</p>
+
+<p>Kolokotronis acknowledges that onboarding "takes time" and "everyone
+complains" about it. However, he is convinced that it is beneficial in the
+long term
+and that it decreases developer turnover.</p>
+
+<h4>Advice to newcomers</h4>
+
+<p>Kolokotronis concluded with some suggestions for newcomers to a
+project. They should try 
+to be persistent and to not get discouraged when something goes wrong.
+Building connections from the very beginning is helpful. He suggests 
+asking questions as if you were already a member "and things will be fine".
+However, accept criticism if it happens.</p>
+
+<p>One of the next actions of the onboarding team will be to collect
+feedback from newcomers and experienced contributors to see if they agree
+on the ideas and processes introduced so far.</p>
+<p><a href="/Articles/763175/#Comments">Comments (none posted)</a>
+<p>
+<a name="763492"></a><h2 class="SummaryHL"><a href="/Articles/763492/">Sharing and archiving data sets with Dat</a></h2>
+
+<div class="GAByline">
+           <p>August 27, 2018</p>
+           <p>This article was contributed by Antoine Beaupré</p>
+           </div>
+<p><a href="https://datproject.org">Dat</a> is a new peer-to-peer protocol
+that uses some of the concepts of
+<a href="https://www.bittorrent.com/">BitTorrent</a> and Git. Dat primarily
+targets researchers and 
+open-data activists as it is a great tool for sharing, archiving, and
+cataloging large data sets. But it can also be used to implement
+decentralized web applications in a novel way.</p>
+
+<h4>Dat quick primer</h4>
+
+<p>Dat is written in JavaScript, so it can be installed with <code>npm</code>, but
+there are <a href="https://github.com/datproject/dat/releases">standalone
+binary builds</a> and 
+a <a href="https://docs.datproject.org/install">desktop application</a> (as an AppImage). An <a href="https://datbase.org/">online viewer</a> can
+be used to inspect data for those who do not want to install
+arbitrary binaries on their computers.</p>
+
+<p>The command-line application allows basic operations like downloading
+existing data sets and sharing your own.
+Dat uses a 32-byte hex string that is an <a
+href="https://ed25519.cr.yp.to/">ed25519 public key</a>, which is 
+is used to discover and find content on the net.
+For example, this will
+download some sample data:</p>
+
+<pre>
+    $ dat clone \
+      dat://778f8d955175c92e4ced5e4f5563f69bfec0c86cc6f670352c457943666fe639 \
+      ~/Downloads/dat-demo
+</pre>
+
+<p>Similarly, the <code>share</code> command is used to share content. It indexes
+the files in a given directory and creates a new unique address like
+the one above.  The <code>share</code>
+command starts a server that uses multiple discovery mechanisms (currently, the <a href="https://en.wikipedia.org/wiki/Mainline_DHT">Mainline Distributed
+Hash Table</a> (DHT), a <a href="https://github.com/mafintosh/dns-discovery">custom DNS server</a>, and
+multicast DNS) to announce the content to its peers. This is how
+another user, armed with that public key, can download that content
+with <code>dat&nbsp;clone</code> or mirror the files continuously with
+<code>dat&nbsp;sync</code>.</p> 
+
+<p>So far, this looks a lot like BitTorrent <a href="https://en.wikipedia.org/wiki/Magnet_URI_scheme">magnet links</a> updated
+with 21st century cryptography. But Dat adds revisions on top of that,
+so modifications are automatically shared through the swarm. That is
+important for public data sets as those
+are often dynamic in nature. Revisions also make it possible to use
+<a href="https://blog.datproject.org/2017/10/13/using-dat-for-automatic-file-backups/">Dat as a backup system</a> by saving the data incrementally using an
+<a href="https://github.com/mafintosh/hypercore-archiver">archiver</a>.</p>
+
+<p>While Dat is designed to work on larger data sets, processing them
+for sharing may take a while. For example, sharing the Linux
+kernel source code required about five minutes as Dat worked on
+indexing all of the files. This is comparable to the performance offered by
+<a href="https://ipfs.io/">IPFS</a> and BitTorrent. Data sets with
+more or larger files may take quite a bit more time.
+
+<p>
+One advantage that Dat has over IPFS is that it
+doesn't duplicate the data. When IPFS imports new data, it duplicates
+the files into <code>~/.ipfs</code>. For collections of small files like the
+kernel, this is not a huge problem, but for larger files like videos or
+music, it's a significant limitation. IPFS eventually implemented a
+solution to this <a href="https://github.com/ipfs/go-ipfs/issues/875">problem</a> in the form of the experimental
+<a href="https://github.com/ipfs/go-ipfs/blob/master/docs/experimental-features.md#ipfs-filestore">filestore feature</a>, but it's not enabled by default. Even with
+that feature enabled, though, changes to data sets are not automatically
+tracked. In comparison, Dat operation on dynamic data feels much
+lighter. The downside is that each set needs its own <code>dat share</code>
+process.</p>
+
+<p>Like any peer-to-peer system, Dat needs at least one peer to stay online to
+offer the content, which is impractical for mobile devices. Hosting
+providers like <a href="https://hashbase.io/">Hashbase</a> (which is a <a href="https://github.com/datprotocol/DEPs/blob/master/proposals/0003-http-pinning-service-api.md">pinning service</a> in Dat
+jargon) can help users keep content online without running their own
+<a href="https://docs.datproject.org/server">server</a>. The closest parallel in the traditional web ecosystem
+would probably be content distribution networks (CDN) although pinning
+services are not necessarily geographically distributed and a CDN does
+not necessarily retain a complete copy of a website.</p>
+
+<a href="/Articles/763544/">
+<img src="https://static.lwn.net/images/2018/dat-photoapp-sm.png" border=0 hspace=5 align="right"
+width=300 height=392 alt="[Photo app]" title="Photo app">
+</a>
+
+<p>A web browser called <a href="https://beakerbrowser.com/">Beaker</a>, based on the <a href="https://electronjs.org/">Electron</a> framework,
+can access Dat content natively without going through a pinning
+service. Furthermore, Beaker is essential to get any of the <a
+href="https://github.com/beakerbrowser/explore">Dat 
+applications</a> working, as they fundamentally rely on <code>dat://</code> URLs
+to do their magic. This means that Dat applications won't work for
+most users unless they install that special web browser. There is a
+<a href="https://addons.mozilla.org/en-US/firefox/addon/dat-p2p-protocol/">Firefox extension</a> called "<a href="https://github.com/sammacbeth/dat-fox">dat-fox</a>" for people who don't want
+to install yet another browser, but it requires installing a
+<a href="https://github.com/sammacbeth/dat-fox-helper">helper program</a>. The extension will be able to load <code>dat://</code> URLs
+but many applications will still not work. For example, the <a
+href="https://github.com/beakerbrowser/dat-photos-app">photo gallery 
+application</a> completely fails with dat-fox.</p>
+
+<p>Dat-based applications look promising from a privacy point of view.
+Because of its peer-to-peer nature, users regain control over where
+their data is stored: either on their own computer, an online server, or
+by a trusted third party. But considering the protocol is not well
+established in current web browsers, I foresee difficulties in
+adoption of that aspect of the Dat ecosystem. Beyond that, it is rather
+disappointing that Dat applications cannot run natively in a web
+browser given that JavaScript is designed exactly for that.</p>
+
+<h4>Dat privacy</h4>
+
+<p>An advantage Dat has over other peer-to-peer protocols like BitTorrent
+is end-to-end encryption. I was originally concerned by the encryption
+design when reading the <a
+href="https://github.com/datproject/docs/raw/master/papers/dat-paper.pdf">academic
+paper [PDF]</a>:</p> 
+
+<div class="BigQuote">
+  <p>It is up to client programs to make design decisions around which
+  discovery networks they trust. For example if a Dat client decides
+  to use the BitTorrent DHT to discover peers, and
+  they are searching 
+  for a publicly shared Dat key (e.g. a key cited publicly in a
+  published scientific paper) with known contents, then because of the
+  privacy design of the BitTorrent DHT it becomes public knowledge
+  what key that client is searching for.</p>
+</div>
+
+<p>So in other words, to share a secret file with another user, the
+public key is transmitted over a secure side-channel, only to then
+leak during the discovery process. Fortunately, the public Dat key
+is not directly used during discovery as it is <a
+href="https://github.com/datprotocol/DEPs/blob/653e0cf40233b5d474cddc04235577d9d55b2934/proposals/0000-peer-discovery.md#discovery-keys">hashed 
+with BLAKE2B</a>. Still, the security model of Dat assumes the public
+key is private, which is a rather counterintuitive concept that might upset
+cryptographers and confuse users who are frequently encouraged to type
+such strings in address bars and search engines as part of the Dat
+experience. There is a <a
+href="https://docs.datproject.org/security">security &amp; privacy FAQ</a>
+in the Dat 
+documentation warning about this problem:</p>
+
+<div class="BigQuote">
+  <p>One of the key elements of Dat privacy is that the public key is
+  never used in any discovery network. The public key is hashed,
+  creating the discovery key. Whenever peers attempt to connect to
+  each other, they use the discovery key.</p>
+  
+  <p>Data is encrypted using the public key, so it is important that this
+  key stays secure.</p>
+</div>
+
+<p>There are other privacy issues outlined in the
+document; it states that "<span>Dat faces similar privacy risks as
+BitTorrent</span>":</p>
+
+<div class="BigQuote">
+  <p>When you download a dataset, your IP address is exposed to the users
+  sharing that dataset. This may lead to honeypot servers collecting
+  IP addresses, as we've seen in Bittorrent. However, with dataset
+  sharing we can create a web of trust model where specific
+  institutions are trusted as primary sources for datasets,
+  diminishing the sharing of IP addresses.</p>
+</div>
+
+<p>A Dat blog post refers to this issue as <a href="https://blog.datproject.org/2016/12/12/reader-privacy-on-the-p2p-web/">reader privacy</a> and it
+is, indeed, a sensitive issue in peer-to-peer networks. It is how
+BitTorrent users are discovered and served scary verbiage from lawyers,
+after all. But Dat makes this a little better because, to join a swarm,
+you must know what you are looking for already, which means peers who
+can look at swarm activity only include users who know the secret
+public key. This works well for secret content, but for larger, public
+data sets, it is a real problem; it is why the Dat project has <a
+href="https://blog.datproject.org/2017/12/10/dont-ship/">avoided 
+creating a Wikipedia mirror</a> so far.</p>
+
+<p>I found another privacy issue that is not documented in the security FAQ
+during my review of the protocol. As mentioned earlier,
+the <a href="https://github.com/datprotocol/DEPs/pull/7">Dat discovery
+protocol</a> routinely 
+    phones home to DNS servers operated by the Dat project.
+This implies that the default discovery servers (and an
+attacker watching over their traffic) know who is publishing or seeking
+content, in essence discovering the "social network" behind Dat. This
+discovery mechanism can be disabled in clients, but a similar privacy
+issue applies to the DHT as well, although that is distributed so it
+doesn't require trust of the Dat project itself.</p>
+
+<p>Considering those aspects of the protocol, privacy-conscious users
+will probably want to use Tor or other anonymization techniques to
+work around those concerns.</p>
+
+<h4>The future of Dat</h4>
+
+<p><a href="https://blog.datproject.org/2017/06/01/dat-sleep-release/">Dat 2.0 was released in June 2017</a> with performance improvements and
+protocol changes. <a href="https://github.com/datprotocol/DEPs">Dat
+Enhancement Proposals</a> (DEPs) guide the project's
+future development;  most work is currently geared toward
+implementing the draft "<a href="https://github.com/datprotocol/DEPs/blob/master/proposals/0008-multiwriter.md">multi-writer proposal</a>" in
+<a href="https://github.com/mafintosh/hyperdb">HyperDB</a>. Without
+multi-writer support, only the 
+original publisher of a Dat can modify it. According to Joe Hand,
+co-executive-director of <a href="https://codeforscience.org/">Code for Science &amp; Society</a> (CSS) and
+Dat core developer, in an IRC chat, "supporting multiwriter is a big requirement for lots
+of folks". For example, while Dat might allow Alice to share her
+research results with Bob, he cannot modify or contribute back to those
+results. The multi-writer extension allows for Alice to assign trust
+to Bob so he can have write access to the data.
+
+<p>
+Unfortunately, the
+current proposal doesn't solve the "<span>hard problems</span>" of
+"<span>conflict merges 
+and secure key distribution</span>". The former will be worked out through
+user interface tweaks, but the latter is a classic problem that security
+projects have typically trouble finding 
+solutions for—Dat is no exception. How will Alice securely trust
+Bob? The OpenPGP web of trust? Hexadecimal fingerprints read over the
+phone? Dat doesn't provide a magic solution to this problem.</p>
+
+<p>Another thing limiting adoption is that Dat is not packaged in any
+distribution that I could find (although I <a href="https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=890565">requested it in
+Debian</a>) and, considering the speed of change of the JavaScript
+ecosystem, this is unlikely to change any time soon. A <a
+href="https://github.com/datrs">Rust 
+implementation</a> of the Dat protocol has started, however, which
+might be easier to package than the multitude of <a href="https://nodejs.org/en/">Node.js</a>
+modules. In terms of mobile device support, there is an experimental
+Android web browser with Dat support called <a href="https://bunsenbrowser.github.io/#!index.md">Bunsen</a>, which somehow
+doesn't run on my phone. Some adventurous users have successfully run Dat
+in <a href="https://termux.com/">Termux</a>. I haven't found an app
+running on iOS at this 
+point.</p>
+
+<p>Even beyond platform support, distributed protocols like Dat have a
+tough slope to climb against the virtual monopoly of more centralized
+protocols, so it remains to be seen how popular those tools will
+be. Hand says Dat is supported by multiple non-profit
+organizations. Beyond CSS, <a href="https://bluelinklabs.com/">Blue Link Labs</a> is working on the
+Beaker Browser as a self-funded startup and a grass-roots
+organization, <a href="https://www.digital-democracy.org/">Digital Democracy</a>, has contributed to the
+project. The <a href="https://archive.org">Internet Archive</a> has <a href="https://blog.archive.org/2018/06/05/internet-archive-code-for-science-and-society-and-california-digital-library-to-partner-on-a-data-sharing-and-preservation-pilot-project/">announced a collaboration</a>
+between itself, CSS, and the California Digital Library to launch a pilot
+project to see "<span>how members of a cooperative, decentralized
+network can leverage shared services to ensure data preservation while
+reducing storage costs and increasing replication counts</span>".
+
+<p>
+Hand said
+adoption in academia has been "slow but steady" and that the <a href="https://github.com/codeforscience/Dat-in-the-Lab">Dat in
+the Lab project</a> has helped identify areas that could help
+researchers adopt the project. Unfortunately, as is the case with many
+free-software projects, he said that "our team is definitely a bit
+limited on bandwidth to push for bigger adoption". Hand
+said that the project received a grant from <a
+href="https://www.mozilla.org/en-US/moss/">Mozilla Open Source 
+Support</a> to improve its documentation, which will be a big help.</p>
+
+<p>Ultimately, Dat suffers from a problem common to all peer-to-peer
+applications, which is naming. Dat addresses are not exactly
+intuitive: humans do not remember strings of 64 hexadecimal characters
+well. For this, Dat took a <a href="https://github.com/datprotocol/DEPs/blob/master/proposals/0005-dns.md">similar approach</a> to IPFS by using
+DNS <tt>TXT</tt> records and <code>/.well-known</code> URL paths to bridge existing,
+human-readable names with Dat hashes. So this sacrifices a part of the
+decentralized nature of the project in favor of usability.</p>
+
+<p>I have tested a lot of distributed protocols like Dat in the past and
+I am not sure Dat is a clear winner. It certainly has advantages over
+IPFS in terms of usability and resource usage, but the lack of
+packages on most platforms is a big limit to adoption for most
+people. This means it will be difficult to share content with my
+friends and family with Dat anytime soon, which would probably be my
+primary use case for the project. Until the protocol reaches the wider
+adoption that BitTorrent has seen in terms of platform support, I will
+probably wait before switching everything over to this
+promising project.</p>
+<p><a href="/Articles/763492/#Comments">Comments (11 posted)</a>
+<p>
+<p>
+<b>Page editor</b>: Jonathan Corbet<br>
+<h2>Inside this week's LWN.net Weekly Edition</h2>
+<ul>
+<li> <a href="/Articles/763254/">Briefs</a>: OpenSSH 7.8; 4.19-rc1; Which stable?; Netdev 0x12; Bison 3.1; Quotes; ...
+            <li> <a href="/Articles/763255/">Announcements</a>: Newsletters; events; security updates; kernel patches; ...
+            </ul>
+<b>Next page</b>:
+                  <a href="/Articles/763254/">Brief items&gt;&gt;</a><br>
+                  
+</div> <!-- ArticleText -->
+</div>
+<div class="lwn-u-1 pure-u-md-1-6 not-print">
+<div id="azk93271_right_zone"></div>
+</div>
+</div> <!-- pure-grid -->
+
+        <br clear="all">
+        <center>
+        <P>
+        <font size="-2">
+        Copyright &copy; 2018, Eklektix, Inc.<BR>
+        
+        Comments and public postings are copyrighted by their creators.<br>
+        Linux  is a registered trademark of Linus Torvalds<br>
+        </font>
+        </center>
+        
+            <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+            </script>
+            <script type="text/javascript">
+            try {
+            var pageTracker = _gat._getTracker("UA-2039382-1");
+            pageTracker._trackPageview();
+            } catch(err) {}</script>
+            
+        </body></html>
+        

@@ -1,0 +1,490 @@
+                     SECURITY UPDATES FOR MONDAY                   
+
+  [Security] Sep 3, 2018 15:41 UTC (Mon) (ris)
+
+  o News link: https://lwn.net/Articles/764046
+  o Source link: 
+
+
+    Dist.
+    
+    ID
+    
+    Release
+    
+    Package
+    
+    Date
+    
+    Debian
+    
+    [1]DLA-1492-1
+    
+    LTS
+    
+    dojo
+    
+    2018-09-03
+    
+    Debian
+    
+    [2]DLA-1487-1
+    
+    LTS
+    
+    libtirpc
+    
+    2018-08-31
+    
+    Debian
+    
+    [3]DLA-1488-1
+    
+    LTS
+    
+    mariadb-10.0
+    
+    2018-08-31
+    
+    Debian
+    
+    [4]DLA-1490-1
+    
+    LTS
+    
+    php5
+    
+    2018-09-01
+    
+    Debian
+    
+    [5]DSA-4283-1
+    
+    stable
+    
+    ruby-json-jwt
+    
+    2018-08-31
+    
+    Debian
+    
+    [6]DLA-1488-1
+    
+    LTS
+    
+    spice
+    
+    2018-08-31
+    
+    Debian
+    
+    [7]DLA-1486-1
+    
+    LTS
+    
+    spice
+    
+    2018-09-01
+    
+    Debian
+    
+    [8]DLA-1489-1
+    
+    LTS
+    
+    spice-gtk
+    
+    2018-09-01
+    
+    Debian
+    
+    [9]DLA-1491-1
+    
+    LTS
+    
+    tomcat8
+    
+    2018-09-02
+    
+    Debian
+    
+    [10]DSA-4282-1
+    
+    stable
+    
+    trafficserver
+    
+    2018-08-31
+    
+    Fedora
+    
+    [11]FEDORA-2018-33fef25ed1
+    
+    F28
+    
+    ghc-hakyll
+    
+    2018-08-31
+    
+    Fedora
+    
+    [12]FEDORA-2018-33fef25ed1
+    
+    F28
+    
+    ghc-hs-bibutils
+    
+    2018-08-31
+    
+    Fedora
+    
+    [13]FEDORA-2018-07083800ac
+    
+    F28
+    
+    ghostscript
+    
+    2018-09-02
+    
+    Fedora
+    
+    [14]FEDORA-2018-77e610115a
+    
+    F28
+    
+    mariadb
+    
+    2018-08-31
+    
+    Fedora
+    
+    [15]FEDORA-2018-33fef25ed1
+    
+    F28
+    
+    pandoc-citeproc
+    
+    2018-08-31
+    
+    Fedora
+    
+    [16]FEDORA-2018-f2b24ce26e
+    
+    F28
+    
+    phpMyAdmin
+    
+    2018-08-31
+    
+    Fedora
+    
+    [17]FEDORA-2018-915602df63
+    
+    F27
+    
+    xen
+    
+    2018-08-31
+    
+    Mageia
+    
+    [18]MGASA-2018-0366
+    
+    6
+    
+    java-1.8.0-openjdk
+    
+    2018-09-02
+    
+    Mageia
+    
+    [19]MGASA-2018-0361
+    
+    6
+    
+    libarchive
+    
+    2018-08-31
+    
+    Mageia
+    
+    [20]MGASA-2018-0367
+    
+    6
+    
+    libgd
+    
+    2018-09-02
+    
+    Mageia
+    
+    [21]MGASA-2018-0356
+    
+    6
+    
+    libraw
+    
+    2018-08-31
+    
+    Mageia
+    
+    [22]MGASA-2018-0364
+    
+    6
+    
+    libxcursor
+    
+    2018-08-31
+    
+    Mageia
+    
+    [23]MGASA-2018-0359
+    
+    5
+    
+    mariadb
+    
+    2018-08-31
+    
+    Mageia
+    
+    [24]MGASA-2018-0355
+    
+    5, 6
+    
+    mercurial
+    
+    2018-08-31
+    
+    Mageia
+    
+    [25]MGASA-2018-0363
+    
+    6
+    
+    openssh
+    
+    2018-08-31
+    
+    Mageia
+    
+    [26]MGASA-2018-0365
+    
+    6
+    
+    openssl
+    
+    2018-09-02
+    
+    Mageia
+    
+    [27]MGASA-2018-0358
+    
+    6
+    
+    poppler
+    
+    2018-08-31
+    
+    Mageia
+    
+    [28]MGASA-2018-0362
+    
+    6
+    
+    quazip
+    
+    2018-08-31
+    
+    Mageia
+    
+    [29]MGASA-2018-0357
+    
+    6
+    
+    squirrelmail
+    
+    2018-08-31
+    
+    Mageia
+    
+    [30]MGASA-2018-0360
+    
+    6
+    
+    virtualbox
+    
+    2018-08-31
+    
+    openSUSE
+    
+    [31]openSUSE-SU-2018:2590-1
+    
+    42.3
+    
+    cobbler
+    
+    2018-09-03
+    
+    openSUSE
+    
+    [32]openSUSE-SU-2018:2592-1
+    
+    15.0
+    
+    libressl
+    
+    2018-09-03
+    
+    openSUSE
+    
+    [33]openSUSE-SU-2018:2587-1
+    
+    42.3
+    
+    wireshark
+    
+    2018-09-02
+    
+    openSUSE
+    
+    [34]openSUSE-SU-2018:2591-1
+    
+    15.0 42.3
+    
+    zutils
+    
+    2018-09-03
+    
+    SUSE
+    
+    [35]SUSE-SU-2018:2576-1
+    
+    OS7
+    
+    OpenStack
+    
+    2018-08-31
+    
+    SUSE
+    
+    [36]SUSE-SU-2018:2578-1
+    
+    OS7
+    
+    couchdb
+    
+    2018-08-31
+    
+    SUSE
+    
+    [37]SUSE-SU-2018:2574-1
+    
+    SLE11
+    
+    java-1_7_0-ibm
+    
+    2018-08-31
+    
+    SUSE
+    
+    [38]SUSE-SU-2018:2583-1
+    
+    SLE11
+    
+    java-1_7_1-ibm
+    
+    2018-08-31
+    
+    SUSE
+    
+    [39]SUSE-SU-2018:2584-1
+    
+    SLE12
+    
+    spice
+    
+    2018-08-31
+    
+    
+    
+    [1] https://lwn.net/Articles/764007/
+    
+    [2] https://lwn.net/Articles/764008/
+    
+    [3] https://lwn.net/Articles/764009/
+    
+    [4] https://lwn.net/Articles/764010/
+    
+    [5] https://lwn.net/Articles/764011/
+    
+    [6] https://lwn.net/Articles/764013/
+    
+    [7] https://lwn.net/Articles/764012/
+    
+    [8] https://lwn.net/Articles/764014/
+    
+    [9] https://lwn.net/Articles/764015/
+    
+    [10] https://lwn.net/Articles/764016/
+    
+    [11] https://lwn.net/Articles/764017/
+    
+    [12] https://lwn.net/Articles/764018/
+    
+    [13] https://lwn.net/Articles/764019/
+    
+    [14] https://lwn.net/Articles/764020/
+    
+    [15] https://lwn.net/Articles/764021/
+    
+    [16] https://lwn.net/Articles/764022/
+    
+    [17] https://lwn.net/Articles/764023/
+    
+    [18] https://lwn.net/Articles/764024/
+    
+    [19] https://lwn.net/Articles/764025/
+    
+    [20] https://lwn.net/Articles/764026/
+    
+    [21] https://lwn.net/Articles/764027/
+    
+    [22] https://lwn.net/Articles/764028/
+    
+    [23] https://lwn.net/Articles/764029/
+    
+    [24] https://lwn.net/Articles/764030/
+    
+    [25] https://lwn.net/Articles/764031/
+    
+    [26] https://lwn.net/Articles/764032/
+    
+    [27] https://lwn.net/Articles/764033/
+    
+    [28] https://lwn.net/Articles/764034/
+    
+    [29] https://lwn.net/Articles/764035/
+    
+    [30] https://lwn.net/Articles/764036/
+    
+    [31] https://lwn.net/Articles/764037/
+    
+    [32] https://lwn.net/Articles/764038/
+    
+    [33] https://lwn.net/Articles/764039/
+    
+    [34] https://lwn.net/Articles/764040/
+    
+    [35] https://lwn.net/Articles/764044/
+    
+    [36] https://lwn.net/Articles/764041/
+    
+    [37] https://lwn.net/Articles/764042/
+    
+    [38] https://lwn.net/Articles/764043/
+    
+    [39] https://lwn.net/Articles/764045/
+
+
+

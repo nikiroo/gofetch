@@ -1,0 +1,13 @@
+0Security updates for Monday	null/LWN/0000764046		70
+i  [Security] Sep 3, 2018 15:41 UTC (Mon) (ris)
+i
+i    Security  updates  have  been issued by Debian (dojo, libtirpc,
+i    mariadb-10.0,  php5,  ruby-json-jwt, spice, spice-gtk, tomcat8,
+i    and   trafficserver),   Fedora   (ghc-hakyll,  ghc-hs-bibutils,
+i    ghostscript,  mariadb,  pandoc-citeproc,  phpMyAdmin, and xen),
+i    Mageia    (java-1.8.0-openjdk,   libarchive,   libgd,   libraw,
+i    libxcursor,  mariadb,  mercurial,  openssh,  openssl,  poppler,
+i    quazip,   squirrelmail,  and  virtualbox),  openSUSE  (cobbler,
+i    libressl,   wireshark,   and   zutils),   and   SUSE  (couchdb,
+i    java-1_7_0-ibm, java-1_7_1-ibm, OpenStack, and spice).
+i

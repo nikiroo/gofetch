@@ -1,0 +1,13 @@
+0[$] Life behind the tinfoil curtain	null/LWN/0000764048		70
+i  [Security] Sep 5, 2018 22:11 UTC (Wed) (jake)
+i
+i    Security  and  convenience  rarely go hand-in-hand, but if your
+i    job  (or  life) requires extraordinary care against potentially
+i    targeted  attacks,  the  security side of that tradeoff may win
+i    out.  If  so, running a system like Qubes OS on your desktop or
+i    CopperheadOS  on  your  phone  might  make sense, which is just
+i    what  Konstantin  Ryabitsev,  Linux Foundation (LF) director of
+i    IT  security, has done. He reported on the experience in a talk
+i    [YouTube  video]  entitled "Life Behind the Tinfoil Curtain" at
+i    the 2018 Linux Security Summit North America.
+i

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv='content-type' content='text/html; charset=utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <style type='text/css'>
+    body { margin: 1em 15%; }
+  </style>
+</head>
+<body>
+<div class='story-header'>
+	<h1><a href='0000764200.html'>[$] Writing network flow dissectors in BPF</a></h1>
+	<div class='details'>([Kernel] Sep 6, 2018 15:59 UTC (Thu) (corbet))</div>
+	<br/>
+	<div class='content' style='text-align: justify'>
+		Network packet headers contain a great deal of information, but the kernel often only needs a subset of that information to be able to perform filtering or associate any given packet with a flow. The piece of code that follows the different layers of packet encapsulation to find the important data is called a flow dissector. In current Linux kernels, the flow dissector is written in C. A patch set has been proposed recently to implement it in BPF with the clear goal of improving security, flexibility, and maybe even performance.
+	</div>
+<hr/>
+</div>
+</body>

@@ -1,0 +1,15 @@
+0[$] Strengthening user-space Spectre v2 protection	null/LWN/0000764209		70
+i  [Kernel] Sep 5, 2018 21:47 UTC (Wed) (corbet)
+i
+i    The  Spectre  variant  2  vulnerability  allows the speculative
+i    execution   of  incorrect  (in  an  attacker-controllable  way)
+i    indirect  branch  predictions,  resulting  in  the  ability  to
+i    exfiltrate  information  via side channels. The kernel has been
+i    reasonably  well  protected  against this variant since shortly
+i    after  its  disclosure in January. It is, however, possible for
+i    user-space  processes  to  use Spectre v2 to attack each other;
+i    thus  far,  the  mainline  kernel has offered relatively little
+i    protection  against  such  attacks. A recent proposal from Jiri
+i    Kosina  may  change  that  situation,  but there are still some
+i    disagreements around the details.
+i

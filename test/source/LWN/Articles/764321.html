@@ -1,0 +1,216 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+        <html>
+        <head><title>The Hidden Benefit of Giving Back to Open Source Software (Working Knowledge) [LWN.net]</title>
+        <meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@lwnnet" />
+<meta name="twitter:title" content="The Hidden Benefit of Giving Back to Open Source Software (Working Knowledge)" />
+<meta name="twitter:description" content="The Harvard Business School's &quot;Working Knowledge&quot; site has an
+article arguing that it can pay for companies to allow their developers
+to contribute back to the projects whose software they use.
+&quot;And that presents an interesting dilemma for firms that rely heavily
+on open source. Should they allow employees on company time to make updates
+and edits to the software for community use that could be used by
+competitors? New research by Assistant Professor Frank Nagle, a member of
+the Strategy Unit at Harvard Business School, shows that paying employees
+to contribute to such software boosts the company’s productivity from using
+the software by as much as 100 percent, when compared with free-riding
+competitors.&quot;" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+        <link rel="icon" href="/images/favicon.png" type="image/png">
+        <link rel="alternate" type="application/rss+xml" title="LWN.net headlines" href="https://lwn.net/headlines/newrss">
+<link rel="alternate" type="application/rss+xml" title="Comments posted to this article" href="https://lwn.net/headlines/764321/">
+        <link rel="stylesheet" href="/CSS/lwn">
+<link rel="stylesheet" href="/CSS/nosub">
+<link rel="stylesheet" href="/CSS/pure-min">
+           <!--[if lte IE 8]>
+             <link rel="stylesheet" href="/CSS/grids-responsive-old-ie-min">
+           <![endif]-->
+           <!--[if gt IE 8]><!-->
+             <link rel="stylesheet" href="/CSS/grids-responsive-min">
+           <!--<![endif]-->
+           <link rel="stylesheet" href="/CSS/pure-lwn">
+           
+        
+<script type="text/javascript">var p="http",d="static";if(document.location.protocol=="https:"){p+="s";d="engine";}var z=document.createElement("script");z.type="text/javascript";z.async=true;z.src=p+"://"+d+".adzerk.net/ados.js";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(z,s);</script>
+<script type="text/javascript">
+var ados_keywords = ados_keywords || [];
+if( location.protocol=='https:' ) {
+        ados_keywords.push('T:SSL');
+} else {
+        ados_keywords.push('T:HTTP');
+}
+
+var ados = ados || {};
+ados.run = ados.run || [];
+ados.run.push(function() {
+
+ados_add_placement(4669, 20979, "azk13321_leaderboard", 4).setZone(16026);
+
+ados_add_placement(4669, 20979, "azk93271_right_zone", [5,10,6]).setZone(16027);
+
+ados_add_placement(4669, 20979, "azk31017_tracking", 20).setZone(20995);
+
+
+
+ados_setKeywords(ados_keywords.join(', ')); 
+ados_load();
+});</script>
+
+        </head>
+        <body bgcolor="#ffffff" link="Blue" VLINK="Green" alink="Green">
+        <a name="t"></a>
+<div id="menu"><a href="/"><img src="https://static.lwn.net/images/logo/barepenguin-70.png" class="logo"
+                 border="0" alt="LWN.net Logo">
+           <font class="logo">LWN<br>.net</font>
+           <font class="logobl">News from the source</font></a>
+           <a href="/"><img src="https://static.lwn.net/images/lcorner-ss.png" class="sslogo"
+                 border="0" alt="LWN"></a><div class="navmenu-container">
+           <ul class="navmenu">
+        <li><a class="navmenu" href="#t"><b>Content</b></a><ul><li><a href="/current/">Weekly Edition</a></li><li><a href="/Archives/">Archives</a></li><li><a href="/Search/">Search</a></li><li><a href="/Kernel/">Kernel</a></li><li><a href="/Security/">Security</a></li><li><a href="/Distributions/">Distributions</a></li><li><a href="/Calendar/">Events calendar</a></li><li><a href="/Comments/unread">Unread comments</a></li><li><hr></li><li><a href="/op/FAQ.lwn">LWN FAQ</a></li><li><a href="/op/AuthorGuide.lwn">Write for us</a></li></ul></li>
+</ul></div>
+</div> <!-- menu -->
+<div class="pure-g not-handset" style="margin-left: 10.5em">
+           <div class="not-print">
+             <div id="azk13321_leaderboard"></div>
+           </div>
+           </div>
+        <div class="topnav-container">
+<div class="not-handset"><form action="https://lwn.net/Login/" method="post" name="loginform"
+                 class="loginform">
+        <b>User:</b> <input type="text" name="Username" value="" size="8" /> <b>Password:</b> <input type="password" name="Password" size="8" /> <input type="hidden" name="target" value="/Articles/764321/" /> <input type="submit" name="submit" value="Log in" /></form> |
+           <form action="https://lwn.net/subscribe/" method="post" class="loginform">
+           <input type="submit" name="submit" value="Subscribe" />
+           </form> |
+           <form action="https://lwn.net/Login/newaccount" method="post" class="loginform">
+           <input type="submit" name="submit" value="Register" />
+           </form>
+        </div>
+               <div class="handset-only">
+               <a href="/subscribe/"><b>Subscribe</b></a> /
+               <a href="/Login/"><b>Log in</b></a> /
+               <a href="/Login/newaccount"><b>New account</b></a>
+               </div>
+               </div><div class="pure-grid maincolumn">
+<div class="lwn-u-1 pure-u-md-19-24">
+<div class="PageHeadline">
+<h1>The Hidden Benefit of Giving Back to Open Source Software (Working Knowledge)</h1>
+<div class="Byline">[Posted September 6, 2018 by corbet]
+               <p>
+               </div>
+</div>
+<div class="ArticleText">
+The Harvard Business School's "Working Knowledge" site has <a
+href="https://hbswk.hbs.edu/item/the-hidden-benefit-of-giving-back-to-open-source-software">an
+article</a> arguing that it can pay for companies to allow their developers
+to contribute back to the projects whose software they use.
+"<span>And that presents an interesting dilemma for firms that rely heavily
+on open source. Should they allow employees on company time to make updates
+and edits to the software for community use that could be used by
+competitors? New research by Assistant Professor Frank Nagle, a member of
+the Strategy Unit at Harvard Business School, shows that paying employees
+to contribute to such software boosts the company’s productivity from using
+the software by as much as 100 percent, when compared with free-riding
+competitors.</span>"<hr width="60%" align="left">
+           (<a href="https://lwn.net/Login/?target=/Articles/764321/">Log in</a> to post comments)
+           <p>
+           
+</div> <!-- ArticleText -->
+<p><a name="Comments"></a>
+
+<a name="CommAnchor764326"></a>
+<div class="CommentBox">
+  <p class="CommentTitle">The Hidden Benefit of Giving Back to Open Source Software (Working Knowledge)</p>
+  <div class="CommentBody">
+    <p class="CommentPoster">Posted Sep 6, 2018 18:43 UTC (Thu) by <b>sjfriedl</b> (subscriber, #10111)
+       [<a href="/Articles/764326/">Link</a>]
+    </p>
+    <div class="FormattedComment">
+This is no surprise to me.  Most of the open source software improvements that might help a competitor are too general in nature to really be giving the other guys a competitive advantage.<br>
+<p>
+For instance, if Lyft contributed Linux kernel or PHP or Apache or whatever fixes, the benefit to Lyft of having that improved expertise far exceeds the general benefit to competitor Uber.<br>
+</div>
+
+  </div>
+  <p>
+  <div class="CommentReplyButton">
+    <form action="/Articles/764326/comment" method="post">
+      <input type="submit" value="Reply to this comment">
+    </form>
+  </div>
+  
+</div>
+
+<a name="CommAnchor764334"></a>
+<div class="CommentBox">
+  <p class="CommentTitle">The Hidden Benefit of Giving Back to Open Source Software (Working Knowledge)</p>
+  <div class="CommentBody">
+    <p class="CommentPoster">Posted Sep 6, 2018 21:42 UTC (Thu) by <b>k8to</b> (subscriber, #15413)
+       [<a href="/Articles/764334/">Link</a>]
+    </p>
+    <div class="FormattedComment">
+Even having to debate it seems so farcical.  If you're worried about people who "do the same thing", the software they use is not the main differentiator.  How your company is organized, how you treat your people and your customers, how you organized projects etc are huge, and software is ultimately minor.  Fixes and changes to software? Incredibly minor.<br>
+</div>
+
+  </div>
+  <p>
+  <div class="CommentReplyButton">
+    <form action="/Articles/764334/comment" method="post">
+      <input type="submit" value="Reply to this comment">
+    </form>
+  </div>
+  
+</div>
+<div class="Comment">
+
+<a name="CommAnchor764337"></a>
+<div class="CommentBox">
+  <p class="CommentTitle">The Hidden Benefit of Giving Back to Open Source Software (Working Knowledge)</p>
+  <div class="CommentBody">
+    <p class="CommentPoster">Posted Sep 6, 2018 21:56 UTC (Thu) by <b>k8to</b> (subscriber, #15413)
+       [<a href="/Articles/764337/">Link</a>]
+    </p>
+    <div class="FormattedComment">
+Perhaps this is too dismissive, as there is the part about letting your programmers do their job to the best of their ability.  That seems pretty big.<br>
+</div>
+
+  </div>
+  <p>
+  <div class="CommentReplyButton">
+    <form action="/Articles/764337/comment" method="post">
+      <input type="submit" value="Reply to this comment">
+    </form>
+  </div>
+  
+</div>
+</div>
+</div>
+<div class="lwn-u-1 pure-u-md-1-6 not-print">
+<div id="azk93271_right_zone"></div>
+</div>
+</div> <!-- pure-grid -->
+
+        <br clear="all">
+        <center>
+        <P>
+        <font size="-2">
+        Copyright &copy; 2018, Eklektix, Inc.<BR>
+        
+        Comments and public postings are copyrighted by their creators.<br>
+        Linux  is a registered trademark of Linus Torvalds<br>
+        </font>
+        </center>
+        
+            <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+            </script>
+            <script type="text/javascript">
+            try {
+            var pageTracker = _gat._getTracker("UA-2039382-1");
+            pageTracker._trackPageview();
+            } catch(err) {}</script>
+            
+        </body></html>
+        

@@ -1,0 +1,13 @@
+0[$] Writing network flow dissectors in BPF	null/LWN/0000764200		70
+i  [Kernel] Sep 6, 2018 15:59 UTC (Thu) (corbet)
+i
+i    Network  packet  headers  contain  a great deal of information,
+i    but  the  kernel  often only needs a subset of that information
+i    to  be  able to perform filtering or associate any given packet
+i    with  a  flow.  The  piece  of  code that follows the different
+i    layers  of  packet  encapsulation to find the important data is
+i    called  a  flow  dissector.  In current Linux kernels, the flow
+i    dissector  is  written  in  C.  A  patch  set has been proposed
+i    recently  to  implement  it  in  BPF  with  the  clear  goal of
+i    improving security, flexibility, and maybe even performance.
+i

@@ -1,0 +1,13 @@
+0[$] Protecting files with fs-verity	null/LWN/0000763729		70
+i  [Kernel] Aug 30, 2018 18:50 UTC (Thu) (corbet)
+i
+i    The  developers  of  the  Android system have, among their many
+i    goals,  the  wish  to  better  protect  Android devices against
+i    persistent  compromise.  It is bad if a device is taken over by
+i    an  attacker; it's worse if it remains compromised even after a
+i    reboot.  Numerous  mechanisms  for  ensuring  the  integrity of
+i    installed  system files have been proposed and implemented over
+i    the  years.  But it seems there is always room for one more; to
+i    fill  that  space, the fs-verity mechanism is being proposed as
+i    a way to protect individual files from malicious modification.
+i

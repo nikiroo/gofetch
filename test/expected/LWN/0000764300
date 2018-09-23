@@ -1,0 +1,312 @@
+                    SECURITY UPDATES FOR THURSDAY                  
+
+  [Security] Sep 6, 2018 13:55 UTC (Thu) (jake)
+
+  o News link: https://lwn.net/Articles/764300
+  o Source link: 
+
+
+    Dist.
+    
+    ID
+    
+    Release
+    
+    Package
+    
+    Date
+    
+    Debian
+    
+    [1]DSA-4286-1
+    
+    stable
+    
+    curl
+    
+    2018-09-05
+    
+    Debian
+    
+    [2]DLA-1494-1
+    
+    LTS
+    
+    gdm3
+    
+    2018-09-05
+    
+    Debian
+    
+    [3]DLA-1495-1
+    
+    LTS
+    
+    git-annex
+    
+    2018-09-05
+    
+    Debian
+    
+    [4]DLA-1496-1
+    
+    LTS
+    
+    lcms2
+    
+    2018-09-06
+    
+    Debian
+    
+    [5]DSA-4285-1
+    
+    stable
+    
+    sympa
+    
+    2018-09-05
+    
+    Fedora
+    
+    [6]FEDORA-2018-38bdbafa96
+    
+    F28
+    
+    discount
+    
+    2018-09-06
+    
+    Fedora
+    
+    [7]FEDORA-2018-fe437a98d6
+    
+    F27
+    
+    dolphin-emu
+    
+    2018-09-06
+    
+    Fedora
+    
+    [8]FEDORA-2018-5bf744beee
+    
+    F28
+    
+    gd
+    
+    2018-09-06
+    
+    Fedora
+    
+    [9]FEDORA-2018-fac5420dd1
+    
+    F27
+    
+    obs-build
+    
+    2018-09-06
+    
+    Fedora
+    
+    [10]FEDORA-2018-fac5420dd1
+    
+    F27
+    
+    osc
+    
+    2018-09-06
+    
+    Fedora
+    
+    [11]FEDORA-2018-4f0b7d1251
+    
+    F27
+    
+    tcpflow
+    
+    2018-09-06
+    
+    Fedora
+    
+    [12]FEDORA-2018-5ad77cc979
+    
+    F28
+    
+    tcpflow
+    
+    2018-09-06
+    
+    Fedora
+    
+    [13]FEDORA-2018-7626df1731
+    
+    F27
+    
+    yara
+    
+    2018-09-06
+    
+    Fedora
+    
+    [14]FEDORA-2018-8344cb89ac
+    
+    F28
+    
+    yara
+    
+    2018-09-06
+    
+    openSUSE
+    
+    [15]openSUSE-SU-2018:2628-1
+    
+    15.0
+    
+    wireshark
+    
+    2018-09-05
+    
+    Slackware
+    
+    [16]SSA:2018-249-01
+    
+    curl
+    
+    2018-09-06
+    
+    Slackware
+    
+    [17]SSA:2018-249-03
+    
+    firefox
+    
+    2018-09-06
+    
+    Slackware
+    
+    [18]SSA:2018-249-02
+    
+    ghostscript
+    
+    2018-09-06
+    
+    Slackware
+    
+    [19]SSA:2018-249-04
+    
+    thunderbird
+    
+    2018-09-06
+    
+    SUSE
+    
+    [20]SUSE-SU-2018:2630-1
+    
+    SLE15
+    
+    apache-pdfbox
+    
+    2018-09-06
+    
+    SUSE
+    
+    [21]SUSE-SU-2018:2629-1
+    
+    curl
+    
+    2018-09-05
+    
+    SUSE
+    
+    [22]SUSE-SU-2018:2632-1
+    
+    OS7 SLE12
+    
+    dovecot22
+    
+    2018-09-06
+    
+    SUSE
+    
+    [23]SUSE-SU-2018:2631-1
+    
+    OS7 SLE12
+    
+    libvirt
+    
+    2018-09-06
+    
+    Ubuntu
+    
+    [24]USN-3759-2
+    
+    12.04
+    
+    libtirpc
+    
+    2018-09-05
+    
+    Ubuntu
+    
+    [25]USN-3759-1
+    
+    14.04 16.04 18.04
+    
+    libtirpc
+    
+    2018-09-05
+    
+    
+    
+    [1] https://lwn.net/Articles/764275/
+    
+    [2] https://lwn.net/Articles/764276/
+    
+    [3] https://lwn.net/Articles/764277/
+    
+    [4] https://lwn.net/Articles/764278/
+    
+    [5] https://lwn.net/Articles/764279/
+    
+    [6] https://lwn.net/Articles/764280/
+    
+    [7] https://lwn.net/Articles/764281/
+    
+    [8] https://lwn.net/Articles/764282/
+    
+    [9] https://lwn.net/Articles/764283/
+    
+    [10] https://lwn.net/Articles/764284/
+    
+    [11] https://lwn.net/Articles/764285/
+    
+    [12] https://lwn.net/Articles/764286/
+    
+    [13] https://lwn.net/Articles/764287/
+    
+    [14] https://lwn.net/Articles/764288/
+    
+    [15] https://lwn.net/Articles/764289/
+    
+    [16] https://lwn.net/Articles/764290/
+    
+    [17] https://lwn.net/Articles/764292/
+    
+    [18] https://lwn.net/Articles/764291/
+    
+    [19] https://lwn.net/Articles/764293/
+    
+    [20] https://lwn.net/Articles/764294/
+    
+    [21] https://lwn.net/Articles/764295/
+    
+    [22] https://lwn.net/Articles/764296/
+    
+    [23] https://lwn.net/Articles/764297/
+    
+    [24] https://lwn.net/Articles/764298/
+    
+    [25] https://lwn.net/Articles/764299/
+
+
+

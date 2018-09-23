@@ -1,0 +1,10 @@
+0Security updates for Thursday	null/LWN/0000764300		70
+i  [Security] Sep 6, 2018 13:55 UTC (Thu) (jake)
+i
+i    Security  updates  have  been  issued  by  Debian  (curl, gdm3,
+i    git-annex,  lcms2,  and  sympa), Fedora (discount, dolphin-emu,
+i    gd,  obs-build,  osc, tcpflow, and yara), openSUSE (wireshark),
+i    Slackware  (curl,  firefox, ghostscript, and thunderbird), SUSE
+i    (apache-pdfbox,  curl,  dovecot22,  and  libvirt),  and  Ubuntu
+i    (libtirpc).
+i

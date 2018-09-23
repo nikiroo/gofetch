@@ -1,0 +1,12 @@
+0[$] An introduction to the Julia language, part 2	null/LWN/0000764001		70
+i  [Development] Sep 4, 2018 15:57 UTC (Tue) (jake)
+i
+i    Part  1 of this series introduced the Julia project's goals and
+i    development  process, along with the language syntax, including
+i    the  basics  of  control flow, data types, and, in more detail,
+i    how  to  work with arrays. In this part, user-defined functions
+i    and  the central concept of multiple dispatch are described. It
+i    will  also survey Julia's module and package system, cover some
+i    syntax  features,  show how to make plots, and briefly dip into
+i    macros and distributed computing.
+i

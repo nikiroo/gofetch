@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv='content-type' content='text/html; charset=utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <style type='text/css'>
+    body { margin: 1em 15%; }
+  </style>
+</head>
+<body>
+<div class='story-header'>
+	<h1><a href='0000764057.html'>[$] IDA: simplifying the complex task of allocating integers</a></h1>
+	<div class='details'>([Kernel] Sep 4, 2018 0:15 UTC (Tue) (corbet))</div>
+	<br/>
+	<div class='content' style='text-align: justify'>
+		It is common for kernel code to generate unique integers for identifiers. When one plugs in a flash drive, it will show up as /dev/sdN; that N (a letter derived from a number) must be generated in the kernel, and it should not already be in use for another drive or unpleasant things will happen. One might think that generating such numbers would not be a difficult task, but that turns out not to be the case, especially in situations where many numbers must be tracked. The IDA (for &quot;ID allocator&quot;, perhaps) API exists to handle this specialized task. In past kernels, it has managed to make the process of getting an unused number surprisingly complex; the 4.19 kernel has a new IDA API that simplifies things considerably.
+	</div>
+<hr/>
+</div>
+</body>

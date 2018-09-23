@@ -1,0 +1,161 @@
+                         GNOME 3.30 RELEASED                       
+
+  [Development] Sep 5, 2018 21:17 UTC (Wed) (ris)
+
+  o News link: https://lwn.net/Articles/764219
+  o Source link: 
+
+
+    The  GNOME  Project  has  announced  the  release of GNOME 3.30
+    "Almería".   "   This   release  brings  automatic  updates  in
+    Software,   more   games,   and  a  new  Podcasts  application.
+    Improvements  to  core  GNOME  applications  include  a refined
+    location  and  search  bar  in  Files, a [Thunderbolt] panel in
+    Settings,  support  for  remoting  using RDP in Boxes, and many
+    more. " The [1]release notes contain more information.
+    
+    From :
+    
+    Matthias         Clasen         via         devel-announce-list
+    <devel-announce-list-AT-gnome.org>
+    
+    To :
+    
+    gnome-announce-list-AT-gnome.org, devel-announce-list-AT-gnome-
+    .org
+    
+    Subject :
+    
+    GNOME 3.30 released
+    
+    Date :
+    
+    Wed, 5 Sep 2018 16:41:54 -0400
+    
+    Message-ID :
+    
+    <CAFwd_vCdnMhopZsZMq2M-N7DfQbUheTCfDb--Lgn6rrAXPyfdQ@mail.gmai-
+    l.com>
+    
+    Cc :
+    
+    Matthias Clasen <matthias.clasen-AT-gmail.com>
+    
+    Archive-link :
+    
+    [2]Article
+    
+    The  GNOME  Project  is  proud to announce the release of GNOME
+    3.30, “Almería”
+    
+    This  release brings automatic updates in Software, more games,
+    and a new
+    
+    Podcasts application.
+    
+    Improvements  to  core  GNOME  applications  include  a refined
+    location and
+    
+    search
+    
+    bar  in  Files,  a  Thunderbold  panel in Settings, support for
+    remoting using
+    
+    RDP
+    
+    in Boxes, and many more.
+    
+    More  information  about the changes in GNOME 3.30 can be found
+    in the
+    
+    release notes:
+    
+    https://help.gnome.org/misc/release-notes/3.30/
+    
+    For  the  release  team,  this release is particularly exciting
+    because it is
+    
+    the
+    
+    first  one  that has been produced and verified with our new CI
+    infrastructure
+    
+    in gitlab.gnome.org.
+    
+    GNOME  3.30 will be available shortly in many distributions. If
+    you want to
+    
+    try it
+    
+    today,  you  can  use  the soon-to-be-released Fedora 29 or the
+    openSUSE nightly
+    
+    live images which will both include GNOME 3.30 very soon.
+    
+    https://www.gnome.org/getting-gnome/
+    
+    http://download.opensuse.org/repositories/GNOME:/Medias/i...
+    
+    To  try the very latest developments in GNOME, you can also use
+    Fedora
+    
+    Silverblue,
+    
+    whose rawhide branch always includes the latest GNOME packages.
+    
+    https://kojipkgs.fedoraproject.org/compose/rawhide/latest...
+    
+    If  you are interested in building applications for GNOME 3.30,
+    look for the
+    
+    GNOME  3.30  Flatpak  SDK,  which  will  be  available  in  the
+    sdk.gnome.org
+    
+    repository
+    
+    soon.
+    
+    This  six-month  effort wouldn't have been possible without the
+    whole
+    
+    GNOME  community,  made  of  contributors  and friends from all
+    around the
+    
+    world:  developers, designers, documentation writers, usability
+    and
+    
+    accessibility  specialists, translators, maintainers, students,
+    system
+    
+    administrators,  companies,  artists, testers and last, but not
+    least, our
+    
+    users.
+    
+    GNOME  would  not  exist  without  all  of  you.  Thank  you to
+    everyone!
+    
+    Our  next release, GNOME 3.32, is planned for March 2019. Until
+    then,
+    
+    enjoy GNOME 3.30!
+    
+    The GNOME Release Team
+    
+    --
+    
+    devel-announce-list mailing list
+    
+    devel-announce-list@gnome.org
+    
+    https://mail.gnome.org/mailman/listinfo/devel-announce-list
+    
+    
+    
+    [1] https://help.gnome.org/misc/release-notes/3.30/
+    
+    [2] http://www.mail-archive.com/search?l=mid&q=CAFwd_vCdnMhopZ-
+    sZMq2M-N7DfQbUheTCfDb--Lgn6rrAXPyfdQ%40mail.gmail.com
+
+
+
