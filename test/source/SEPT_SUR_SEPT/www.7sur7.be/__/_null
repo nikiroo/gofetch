@@ -1,0 +1,2931 @@
+<!DOCTYPE html>
+<html data-placeholder-focus="false" lang="fr">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# persgroepseptprod: http://ogp.me/ns/fb/persgroepseptprod#">
+<title>
+7SUR7.be Info, sport et showbiz, 24/24, 7/7, plus de 350 mises à jour quotidiennes
+</title>
+<meta name="pe-cached" content="Wed Sep 26 20:01:11 MEST 2018" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="cache-control" content="no-cache"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="expires" content="-1"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="googlebot" content="noarchive" />
+<meta name="googlebot" content="noodp" />
+<meta name="ROBOTS" content="NOARCHIVE" />
+<meta name="twitter:widgets:csp" content="on">
+<script type="text/javascript">
+var outbrainSettings = {};
+try{
+/*
+write only valid javascript code in this file!
+*/
+outbrainSettings = {
+'twoBlockFormat': {
+'navigations': [1502,1503,1505,1506,1508,1517,1526,1529,1535,1540,2625,3408,1504,8012]
+}
+};
+}catch(e){
+console.log('Error in outbrainSettings');
+}
+</script>
+<meta property="fb:app_id" content="150469331736779" />
+<script>window._privacy = window._privacy || [];</script>
+<script src="//myprivacy.persgroep.net/api.js"></script>
+<script src="https://static0.7sur7.be/7s7/js/7s7-www.head.top.min.js?8.3.0.20180528.5"></script>
+<script type="text/javascript">
+try {
+document.domain = (function() {
+var urlParts = window.location.hostname.split('.');
+urlParts.reverse();
+return urlParts[1] + '.' + urlParts[0];
+})();
+} catch (e) {}
+</script>
+<script src="https://stats.persgroep.be/statistics.js?publ=7s7&type=navigatie&id=1481"></script>
+<meta name="keywords" content="Sport, infos, international, national, politique, showbiz et stars, Internet et jeux, voyages, planet watch, météo" />
+<meta name="description" content="Restez informé des toutes dernières infos 24/24, 7/7, grâce à nos rédactions à Bruxelles, Los Angeles et Sydney." />
+<script type="text/javascript">
+var md = new MobileDetect(window.navigator.userAgent);
+if (false === isNaN(md.version('IE'))) {
+document.onreadystatechange = function () {
+if (document.readyState == 'complete') {
+document.getElementsByTagName('html')[0].className += (' js-ie-' + md.version('IE'));
+}
+}
+}
+if (null !== md.tablet()) {
+document.onreadystatechange = function () {
+if (document.readyState == 'complete') {
+document.getElementsByTagName('html')[0].className += ' js-tablet';
+}
+}
+}
+</script>
+<link rel="alternate" media="only screen and (max-width: 640px)" href="https://m.7s7.be/7s7/m/fr/1481/Home/index.dhtml" />
+<script type="text/javascript">
+if (null !== md.phone()) {
+window.location.href = 'https://m.7s7.be/7s7/m/fr/1481/Home/index.dhtml';
+}
+</script>
+<meta property="og:type" content="persgroepseptprod:website" />
+<meta property="og:url" content="http://www.7sur7.be" />
+<meta property="og:title" content="7SUR7.be Info, sport et showbiz, 24/24, 7/7, plus de 350 mises à jour quotidiennes" />
+<meta property="og:image" content="https://www.7sur7.be/7s7/images/logos/7s7_fb_logo.png" />
+<script type="text/javascript">
+/* NEW */
+PE.setValue('measureZone', 'home');
+PE.setValue('site', '7s7');
+PE.setValue('language', 'FR');
+PE.setValue('integration', false);
+if (PE.getValue('integration') === true) {
+PE.setValue('pageType', 'integratie');
+} else {
+PE.setValue('pageType', 'navigatie');
+}
+PE.addValue('navPathKeys', 'hln-hpfr');
+PE.addValue('navPathIDs', '1481');
+PE.addValue('navPathTypes', 'default');
+PE.setValue('navType', 'default');
+/* end NEW */
+var pe_canonicalUrl = '/7s7/fr/1481/home/index.dhtml';
+var pe_userModus = 'web';
+var measureZone = 'home';
+var pe_site = '7s7';
+var pe_language = 'FR';
+var pe_integration = false;
+var pe_pageType = 'navigatie';
+var pe_navPathKeys = new Array(
+'hln-hpfr'
+);
+var pe_navPathIDs = new Array(
+'1481'
+);
+var pe_navPathTypes = new Array(
+'default'
+);
+var pe_navType =
+'default'
+;
+var pe_compId = pe_navPathIDs[pe_navPathIDs.length-1];
+var pe_nodeId = null;
+var pe_nodeDescription = '';
+var ua_assetType = '';
+var pe_compFullTitle = '';
+var pe_compDescription = '';
+var pe_compType = '';
+var pe_staticUrl = "https://static1.7sur7.be";
+var pe_fingerPrint = "8.3.0.20180528.5";
+var serverPortIfLocalhost ="";
+</script>
+<script type="text/javascript">
+var options = {brandId : '1014'};
+options.pageType = 'homepage';
+if (typeof pe_nodeId === 'undefined' || pe_nodeId === null || pe_nodeId === '') {
+options.navigation = pe_navPathKeys[pe_navPathKeys.length - 1].toString();
+options.navigationID = pe_navPathIDs[pe_navPathIDs.length - 1].toString();
+options.navigationPath = pe_navPathKeys.join('|').toString();
+} else {
+options.navigation = pe_nodeDescription;
+options.navigationID = pe_nodeId;
+options.navigationPath = pe_navPathKeys.join('|').toString() + '|' + pe_nodeDescription;
+}
+options.contentAccess = 'FREE';
+var pe_numberOfFreeHtml = null;
+options.numberOfFreeHtml = pe_numberOfFreeHtml;
+var pe_articleType = null;
+if(pe_articleType !== null) {
+switch (pe_articleType) {
+case 'DEFAULT':
+options.articleType = 'REGULAR ARTICLE';
+break;
+case 'OPINION':
+options.articleType = 'OPINION ARTICLE';
+break;
+case 'COLUMN':
+options.articleType = 'COLUMN ARTICLE';
+break;
+case 'REVIEW':
+options.articleType = 'REVIEW ARTICLE';
+break;
+case 'LIVE':
+options.articleType = 'LIVE ARTICLE';
+break;
+default:
+options.articleType = pe_articleType;
+break;
+}
+}
+if (typeof window.Krux !== 'undefined' && typeof window.Krux.user !== 'undefined') {
+options.kruxUser = window.Krux.user;
+}
+</script>
+<script type="text/javascript">
+//empty functions as prescribed by google
+analyticsEvent = function() {}; 
+analyticsVPV = function() {};
+analyticsClearVPV = function() {};
+analyticsForm = function() {};
+//creating and setting the dataLayer
+var peAnalytics = App.get('analytics');
+peAnalytics.init(options);
+</script>
+<!-- Google Tag Manager -->
+<noscript>
+<iframe src="//www.googletagmanager.com/ns.html?id=GTM-5BWDPN" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<script>
+var triggerGTM = true;
+if (typeof QueryString !== 'undefined'){
+if(typeof QueryString.getValue !== 'undefined') {
+triggerGTM = QueryString.getValue('gtm', true);
+} else if(typeof QueryString.gtm !== 'undefined') {
+triggerGTM = QueryString.gtm;
+}
+}
+if(triggerGTM === true) {
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push(
+{'gtm.start': new Date().getTime(),event:'gtm.js'}
+);var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5BWDPN');
+}
+</script>
+<!-- End Google Tag Manager -->
+</script>
+<!--Shortcut icon-->
+<link rel="shortcut icon" href="https://static0.7sur7.be/favicon.ico?8.3.0.20180528.5" type="image/x-icon" />
+<!--[if lt IE 9]>
+<link rel="stylesheet" href="https://static3.7sur7.be/7s7/css/site-ie-min.css?8.3.0.20180528.5" type="text/css" />
+<![endif]-->
+<link rel="stylesheet" href="https://static3.7sur7.be/7s7/css/site-min.css?8.3.0.20180528.5" type="text/css" />
+<link rel="stylesheet" href="https://static3.7sur7.be/7s7/css/7s7-www.min.css?8.3.0.20180528.5" type="text/css" />
+<script>
+WebFontConfig = {
+custom: {
+families: ['BebasNeueRegular','Ubuntu-R-webfont'],
+urls : ['/css/font.css', '/css/font_you.css']
+}
+};
+(function() {
+var wf = document.createElement('script');
+wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+'://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+wf.type = 'text/javascript';
+wf.async = 'true';
+var s = document.getElementsByTagName('script')[0];
+s.parentNode.insertBefore(wf, s);
+})();
+</script>
+<!--[if lt IE 9]>
+<script src="https://static3.7sur7.be/7s7/js/ie-fix-min.js?8.3.0.20180528.5"></script>
+<![endif]-->
+<script src="https://static1.7sur7.be/7s7/js/7s7-www.head.bottom.min.js?8.3.0.20180528.5"></script>
+<!-- social media scripts -->
+<script data-privacy-category="socialmedia" data-privacy-src="https://platform.twitter.com/widgets.js?8.3.0.20180528.5" type="text/javascript"></script>
+<script type="text/javascript">
+var pinterestEnabled = false;
+</script>
+<!-- ADV scripts -->
+<script type="text/javascript">
+document.domain = (function() {
+var urlParts = window.location.hostname.split('.');
+urlParts.reverse();
+return urlParts[1] + '.' + urlParts[0];
+})();
+</script>
+<script type="text/javascript" src="https://static0.7sur7.be/static/nmc/adv/js/integration_new.js"></script>
+<script type="text/javascript">
+if ('undefined' === typeof showTextlinks) {
+function showTextlinks() {}
+}
+var dart = App.get('dart');
+dart.addSlot(new DartSlot('leader1', [[728, 90], [840, 150], [840, 250]]));
+dart.addSlot(new DartSlot('leader2', [[840, 150], [840,250]]));
+dart.addSlot(new DartSlot('sky1', [[120, 600], [160, 600], [300, 250], [300, 600]]));
+dart.addSlot(new DartSlot('sky2', [[120, 600], [160, 600], [300, 250], [300, 600]]));
+dart.addSlot(new DartSlot('sky3', [[120, 600], [160, 600], [300, 250], [300, 600]]));
+dart.addSlot(new DartSlot('imu1', [[300, 250], [336, 280], [468, 400], [468, 60]]));
+dart.addSlot(new DartSlot('imu2', [[300, 250], [336, 280], [468, 400]]));
+dart.addSlot(new DartSlot('imu3', [[300, 250], [336, 280], [468, 400]]));
+dart.addSlot(new DartSlot('box1', [[300, 150], [300, 250]]));
+dart.addSlot(new DartSlot('native1', [[250, 330]], {nativeKey: '2ejnPEvvk11zy6Bq8QN6yMsS'}));
+dart.addSlot(new DartSlot('native2', [[250, 330]], {nativeKey: 'miE5B2kaC4bU7nSKtFhAX9HA'}));
+dart.addSlot(new DartSlot('outofpage1', [], { outOfPage : true }));
+dart.createGoogleTags();
+</script>
+<!-- end ADV scripts -->
+<link rel="stylesheet" href="/static/nmc/nmc/head/autodeploy.css?20150630.1" type="text/css" />
+<script type='text/javascript'>
+var _sf_startpt=(new Date()).getTime();
+var _sf_async_config = _sf_async_config || {};
+_sf_async_config.uid = 46966;
+_sf_async_config.domain = '7sur7.be';
+_sf_async_config.useCanonical = true;
+</script>
+<link rel="apple-touch-icon-precomposed" href="https://static0.7sur7.be/images/logos/add2home_logo_icon.png"/> <!-- 57x57 -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://static3.7sur7.be/images/logos/add2home_logo_icon_iPad.png"/> <!-- 72x72 -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://static0.7sur7.be/images/logos/add2home_logo_icon_retina.png"/> <!-- 114x114 -->
+<meta name="apple-mobile-web-app-capable" content="yes" /> <!-- message is not displayed when shortcut is already installed -->
+</head>
+<body  >
+<!-- nieuwe CIM-tag -->
+<!-- CIM-tag 2014 -->
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var
+pp_gemius_identifier = 'zDg6u.AI74TRXv9QVXxdnPU57H9d.vgsiNRrj8ofhnn.07',
+pp_gemius_extraparameters = new Array('lan=FR', 'key=7sur7home', 'subs=website/1481/home', 'free=hln-hpfr')
+;
+// lines below shouldn't be edited
+(function(d,t) {try {var gt=d.createElement(t),s=d.getElementsByTagName(t)[0],l='http'+((location.protocol=='https:')?'s':''); gt.setAttribute('async','async');gt.setAttribute('defer','defer'); gt.src=l+'://gabe.hit.gemius.pl/xgemius.js'; s.parentNode.insertBefore(gt,s);} catch (e) {}})(document,'script');
+//--><!]]>
+</script>
+<div id="fb-root"></div>
+<script>
+window.fbAsyncInit = function() {
+FB.init({
+appId      : '150469331736779', // App ID
+// channelUrl : '//WWW.YOUR_DOMAIN.COM/channel.html', // Channel File
+status     : true, // check login status
+cookie     : true, // enable cookies to allow the server to access the session
+xfbml      : true,  // parse XFBML
+version    : 'v2.0'
+});
+};
+window._privacy.push([
+'socialmedia',
+function() {
+var js, id = 'facebook-jssdk', ref = document.getElementsByTagName('script')[0];
+if (document.getElementById(id)) {return;}
+js = document.createElement('script'); js.id = id; js.async = true;
+js.src = "//connect.facebook.net/fr_FR/sdk.js";
+ref.parentNode.insertBefore(js, ref);
+}
+]);
+</script>
+<div class="overlay overlaySSO">
+<div class="modal modal--general" data-modal="general-modal">
+<div class="modal__wrapper modal__wrapper--general" >
+<div class="modal__header">
+<div class="modal__close">fermer</div>
+</div>
+<div class="modal__body"></div>
+</div>
+</div>
+<div class="modal modal--login" data-modal="login-modal">
+<div class="modal__wrapper modal__wrapper--login" >
+<div class="modal__header">
+<div class="modal__close">fermer</div>
+<h3>Se connecter ou s'enregistrer</h3>
+</div>
+<div class="modal__body" id="ssoiframe"></div>
+</div>
+</div>
+<div class="modal modal--profile" data-modal="profile-modal">
+<div class="modal__wrapper modal__wrapper--profile" >
+<div class="modal__header">
+<div class="modal__close">fermer</div>
+<h3>Compte</h3>
+</div>
+<div class="modal__body">
+<div id="profilecontainer">
+</div>
+</div>
+</div>
+</div>
+<div class="modal modal--logout" data-modal="logout-modal">
+<div class="modal__wrapper modal__wrapper--logout" >
+<div class="modal__header">
+<h3>Déconnecter</h3>
+</div>
+<div class="modal__body" id="ssologout"></div>
+</div>
+</div>
+</div>
+<div class="autodeploy__container autodeploy__container--adv" data-autodeploy-info="name:interstitial;folder:adv">
+<div id="siteOverlayer" onClick="hideOverlayer(this.id)">
+</div>
+</div>
+<script type="text/javascript">
+var capsUserMail = 'null';
+</script>
+<a id="adv_bg_clickurl" href="#" target="_blank"><div id="adv_bg_clickbox"></div></a>
+<div id="str_cntr1">
+<!-- body content -->
+<div id="str_cntr2" class="hln-hpfr nav_hln-hpfr clearfix ">
+<div id="adv_leaderboard" class="autodeploy__container autodeploy__container--adv" data-autodeploy-info="name:leaderboard;folder:adv">
+<!-- Top Text Links -->
+<div id="adv_toptextlinks">
+<div id="adv_textlink" class="l_home clearfix">
+<div class="left"></div>
+<div class="right"></div>
+<div class="clear"></div>
+</div>
+</div>
+<!-- DART ad tag -->
+<div id="ad_leaderboard"  style="height: auto">
+<script type="text/javascript">
+// document.write(schrijfXFP_bodyTag("leader1"));
+gptSiteSlot('ad_leaderboard', 'leader1');
+</script>
+</div>
+</div>
+<div id="adv_sky" style="top:8px;left:858px" class="autodeploy__container autodeploy__container--adv" data-autodeploy-info="name:skyScraper;folder:adv">
+<!-- DFP ad tag -->
+<div id="ad_tbooster">
+<script type="text/javascript">
+//document.write(schrijfXFP_bodyTag("booster1"));
+</script>
+</div>
+<!-- DFP ad tag -->
+<div id="ad_skyscraper1" style="padding-top: 12px">
+<script type="text/javascript">
+// document.write(schrijfXFP_bodyTag("sky1"));
+gptSiteSlot('ad_skyscraper1', 'sky1');
+</script>
+</div>
+<!-- DFP ad tag / 2nd supersky -->
+<div id="ad_skyscraper2" style="padding-top: 12px">
+<script type="text/javascript">
+// document.write(schrijfXFP_bodyTag("sky2"));
+gptSiteSlot('ad_skyscraper2', 'sky2');
+</script>
+</div>
+<!-- DFP ad tag / 3rd HalfPage -->
+<div id="ad_skyscraper3" class="sticky_halfpage" style="position: absolute; top: auto; padding-top: 12px;">
+<script type="text/javascript">
+// document.write(schrijfXFP_bodyTag("sky3"));
+gptSiteSlot('ad_skyscraper3', 'sky3');
+</script>
+</div>
+<!-- sticky placement -->
+<!-- <script type="text/javascript">
+var StickyTopPosition = document.getElementById('ad_skyscraper3').offsetTop;
+window.onscroll = function()
+{
+if(window.XMLHttpRequest) {
+if (document.documentElement.scrollTop > StickyTopPosition || document.body.scrollTop > StickyTopPosition) {
+document.getElementById('ad_skyscraper3').style.position = 'fixed';
+document.getElementById('ad_skyscraper3').style.top = '0';
+} else {
+document.getElementById('ad_skyscraper3').style.position = 'absolute';
+document.getElementById('ad_skyscraper3').style.top = 'auto';
+}
+}
+}
+</script> -->
+<!-- <script type="text/javascript">frd_positionSkyscraper_NEW();</script> -->
+</div>
+<header id="header" class="hdr_hln-hpfr_bg clearfix">
+<section id="hdr_bar" class="clear clearfix">
+<div id="hdr_logintime">
+<span id="clock_date"></span> - <span id="clock_time" class="clock_time"></span>
+<script type="text/javascript">clock('FR', 'long');</script>
+<div class="modal__bloc modal__block--login ">
+<ul>
+<li id="clipcount" style="visibility: hidden;">
+<span></span>
+<a href="/7s7/fr/1481/clipBoard.dhtml" title="Saved articles" data-gtm-zones="header|savedarticles|text">
+articles sauvegardés
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="autodeploy__container autodeploy__container--prm" data-autodeploy-info="name:prmTopnav;folder:prm">
+</div>
+<div class="autodeploy__container autodeploy__container--nmc" data-autodeploy-info="name:topnav;folder:nmc">
+</div>
+<div class="hdr_srch right">
+<div class="header__social">
+<div class="fb-like__container">
+<a href="https://www.facebook.com/7sur7.be"
+data-gtm-zones="navigatie/facebook/button"
+target="_blank">
+<svg width="63" height="20" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g fill="none" fill-rule="evenodd"><rect fill="#3B5998" width="63" height="20" rx="2"/><rect fill="#FFF" opacity=".15" x="20" width="1" height="20" rx=".5"/><text font-family="arial" font-size="11" font-weight="400" fill="#FFF"><tspan x="24.984" y="13">J&apos;aime</tspan></text><image x="4" y="3" width="13" height="13" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACcAAAAnCAYAAACMo1E1AAABG2lDQ1BJQ0MgUHJvZmlsZQAAKJFjYGBSSCwoyGESYGDIzSspCnJ3UoiIjFJgf8TAzCDCwMegwmCcmFxc4BgQ4MMABDAaCTAyMHy7BiIZGC7rgsxiIA1wpaQWJwPpP0CcnVxQVAI0MgPIVi4vKQCxe4BskaRsMHsBiF0EdCCQvQXEToewT4DVQNh3wGpCgpyB7A9ANl8SmM0EsosvHcIWALGh9oKAoGNKflKqAsj3GoaWlhaaJPqBIChJrSgB0c75BZVFmekZJQqOwJBKVfDMS9bTUTAyMLRgYACFO0T150BweDKKnUGIIQBCbI4EA4P/UgYGlj8IMZNeBoYFOgwM/FMRYmqGDAwC+gwM++YklxaVQY1hZDJmYCDEBwBdJEp4ZjRnRwAAAmtJREFUWAnNmD9IVVEcx98zScUhI8GhLVp0iWgSxCVzECfHEIKCFEFqzRwjcFFwaRCHIILAzUkRHByMbGoIHYJwEgotKyW1Xp+v9OR6n+eec+85V+4Pvu+++/ud3/d8z597zzm3XKlUSp7WQv5dMASWwEvwAfibxHmin/yo7XHzDNQBL+46/+aV/sY4mrh/CsZj/tS3IcTtG2p9gv+GIebkDiHut6GmRvwPDTEndyhxpqeqBxUa5kwWStwfQ+1X8bcZYlZ3CHF6lVww1FSPv8EQs7pDiHtALWVrTRkK+Irrpc7BDPU6pfiIu0QNU0BDZ7KfBLZNQZs/idiWq5dsh6XQDvGLoNVSTmE9VN/AyZNf1hKTwbrIWQK2yX5IGQl0sSMKfQIz4BXItPY106D3IE8bhryUZc6N0KpbIE97DHmjhrWTPwMJNX0hNgnU7dfAO3AF5GnfIW/XlmbUMj6bxBuAys5YyoYKf4SoScOqSZtk0V3H9aSCgWK78IyBfYlL83Y3raGBdB3TrPE7r39pxR1n5/xzG/5ZUC9xRbR7iLojcZnewufQoptF7Tm1/W1RxU0gbtln4c9jZD9DOgwWQaVoc+4yor5KGMi0tiovL9Me8VGVvIhz7kdRxW0hbLpo4rR+L4A+sFEVV5Sn9Q2C7oNTC4LLnDuVUG1V4Gs3fM1xThdx8Zw87nUor+kEF3HRLVUNQSClc/D8inO5iIvm6JgX2lYgfH4WadoHQkQ6KKexeM/rY6N82riughdAZ4YacxEXHcrxGoYcHRpWTcYksx2ck3K9Yuq5dfAaVL/tqqcOgF6M8u39v3I5X/sHp9b5GXL7DbQAAAAASUVORK5CYII="/></g></svg>
+</a>
+</div>
+<div class="twitter-follow__container">
+<a href="https://twitter.com/7sur7"
+data-gtm-zones="navigatie/twitter/button"
+target="_blank">
+<svg width="63" height="20" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g fill="none" fill-rule="evenodd"><rect fill="#00ACED" width="63" height="20" rx="2"/><rect fill="#FFF" opacity=".15" x="20" width="1" height="20" rx=".5"/><text font-family="arial" font-size="11" font-weight="400" fill="#FFF"><tspan x="26.154" y="13">Suivre</tspan></text><image x="3" y="3" width="14" height="14" xlink:href="data:image/png;base64,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"/></g></svg>
+</a>
+</div>
+</div>
+</div>
+</section>
+<section class="clear">
+<div id="hdr_logo">
+<a href="http://www.7sur7.be"  data-gtm-zones="navigatie|logo|image" ><img src="https://static3.7sur7.be/images/logos/7s7_logo.png?8.3.0.20180528.5" alt="7s7" width="169" height="80"></a>
+</div>
+<nav>
+<ul class="nav">
+<li >
+<a href="https://www.7sur7.be/7s7/fr/1502/Belgique/index.dhtml" class=""  data-gtm-zones="navigatie|Belgique|text" >Belgique</a>
+</li>
+<li >
+<a href="https://www.7sur7.be/7s7/fr/1505/Monde/index.dhtml" class=""  data-gtm-zones="navigatie|Monde|text" >Monde</a>
+</li>
+<li >
+<a href="https://www.7sur7.be/7s7/fr/1508/Sports/index.dhtml" class=""  data-gtm-zones="navigatie|Sports|text" >Sports</a>
+</li>
+<li >
+<a href="https://www.7sur7.be/7s7/fr/1526/Showbiz/index.dhtml" class=""  data-gtm-zones="navigatie|Showbiz|text" >Showbiz</a>
+</li>
+<li class="nav--search">
+<a class="nav--search--button" href="#">
+<span class="nav--search--button--icon">
+<span class="hidden">
+Cherchez sur 7sur7.be
+</span>
+</span>
+</a>
+</li>
+</ul>
+<ul class="nav_extra weerTeaser">
+<li>
+<a data-gtm-zones="navigatie|weatherApplication|text" href="/7s7/fr/1534/weather/application.dhtml">
+<img src="https://static1.7sur7.be/images/weather/weathertype/weather_weathertype01.png?8.3.0.20180528.5" />
+17&deg;
+</a>
+<ul style="display: none;" class="subnav">
+<li>
+<span class="weerTeaserTitle">Min</span>
+<span class="weerTeaserValue">6&deg;</span>
+</li>
+<li>
+<span class="weerTeaserTitle">Max</span>
+<span class="weerTeaserValue">19&deg;</span>
+</li>
+<li>
+<span class="weerTeaserTitle">Vent</span>
+<span class="weerTeaserValue">7 km/u</span>
+</li>
+<li>
+<span class="weerTeaserTitle">Pluie</span>
+<span class="weerTeaserValue">0.0 mm</span>
+</li>
+<li class="weerTeaserLink"><a data-gtm-zones="navigatie|10daagseVoorspelling|text" href="/7s7/fr/1534/weather/application.dhtml">Météo pour 10 jours</a></li>
+</ul>
+</li>
+</ul>
+<div class="autodeploy__container autodeploy__container--prm" data-autodeploy-info="name:prmNavigation;folder:prm">
+</div>
+<div class="autodeploy__container autodeploy__container--nmc" data-autodeploy-info="name:extranav;folder:nmc">
+</div>
+<ul class="actua_nav">
+<li id="actua_arrow"><a href="#"><span>plus 7s7</span></a></li>
+<li class=" select"><a href="https://www.7sur7.be/7s7/fr/1504/Insolite/index.dhtml" class=""  data-gtm-zones="navigatie|Insolite|text" >Insolite</a></li>
+<li class=""><a href="https://www.7sur7.be/7s7/fr/1529/Musique/index.dhtml" class=""  data-gtm-zones="navigatie|Musique|text" >Musique</a></li>
+<li class=""><a href="https://www.7sur7.be/7s7/fr/1540/TV/index.dhtml" class=""  data-gtm-zones="navigatie|TV|text" >TV</a></li>
+<li class=""><a href="https://www.7sur7.be/7s7/fr/1517/You/index.dhtml" class=""  data-gtm-zones="navigatie|You|text" >You</a></li>
+<li class=""><a href="https://www.7sur7.be/7s7/fr/1506/Sciences/index.dhtml" class=""  data-gtm-zones="navigatie|Sciences|text" >Sciences</a></li>
+<li class=""><a href="https://www.7sur7.be/7s7/fr/1535/Finance/index.dhtml" class=""  data-gtm-zones="navigatie|Finance|text" >Finance</a></li>
+<li class="i"><a href="https://www.7sur7.be/7s7/fr/1503/i7SUR7/index.dhtml" class=""  data-gtm-zones="navigatie|i7SUR7|text" >7SUR7</a></li>
+<li class=""><a href="https://www.7sur7.be/7s7/fr/2625/Planete/index.dhtml" class=""  data-gtm-zones="navigatie|Planète|text" >Planète</a></li>
+<li class=""><a href="https://www.7sur7.be/7s7/fr/3408/video/index.dhtml" class=""  data-gtm-zones="navigatie|vidéo|text" >vidéo</a></li>
+<li class=""><a href="https://www.7sur7.be/7s7/fr/8012/photo/index.dhtml" class=""  data-gtm-zones="navigatie|photo|text" >photo</a></li>
+</ul>
+</nav>
+</section>
+<div class="interactive-search-box" style="display: none; ">
+<div class="interactive-search-box__input-fields">
+<form class="interactive-search-box__form" id="zoekForm" action="/7s7/fr/1481/article/search.dhtml" method="get" data-onsubmit-error="Votre requ&ecirc;te doit contenir au moins 3 caract&egrave;res."/>
+<input class="interactive-search-box__input-field--text" id="searchfield" type="text" name="searchValue" value="" placeholder="Cherchez sur 7sur7.be"/>
+<input class="interactive-search-box__button--submit-form" type="submit" name="submit" value="Trouver"/>
+</form>
+</div>
+<a href="/7s7/fr/1481/archief/integration/nmc/frameset/archive/archiveYear.dhtml?archiveYear=2018" class="interactive-search-box__archive-link">Consulter l'archive</a>
+<a href="#" class="interactive-search-box__close-button" data-close-search="true"><span class="hidden">fermer</span></a>
+</div>
+</header>
+<div id="adv_leaderboard2" class="autodeploy__container autodeploy__container--adv" data-autodeploy-info="name:leaderboard2;folder:adv">
+<!-- DART ad tag -->
+<div id="ad_leaderboard" style="height:auto; margin-top:5px;">
+<script type="text/javascript">
+// document.write(schrijfXFP_bodyTag("leader2"));
+gptSiteSlot('ad_leaderboard', 'leader2');
+</script>
+</div>
+</div>
+<div class="autodeploy__container autodeploy__container--nmc" data-autodeploy-info="name:nmcTop;folder:nmc">
+<style>
+.bn_right li h4 {font-size:12px;line-height:17px;padding:4px 5px 6px 5px}
+</style>
+</div>
+<!-- start content-->
+<div id="ticker" class="clear clearfix">
+<ul class="items">
+<li >
+<h3>
+<a href="/7s7/fr/1512/Cyclisme/article/detail/3480000/2018/09/26/L-ex-star-du-cyclisme-Jan-Ullrich-encore-soupconne-d-agression.dhtml"  data-gtm-zones="ticker|1|title" title="L'ex-star du cyclisme Jan Ullrich encore soupçonné d'agression">
+L'ex-star du cyclisme Jan Ullrich encore soup&ccedil;onn&eacute; d'agression
+</a>
+</h3>
+</li>
+<li style="display:none">
+<h3>
+<a href="/7s7/fr/1505/Monde/article/detail/3480015/2018/09/26/Un-membre-des-Pussy-Riot-convaincu-d-avoir-ete-empoisonne-par-la-Russie.dhtml"  data-gtm-zones="ticker|2|title" title="Un membre des Pussy Riot convaincu d'avoir été &quot;empoisonné&quot; par la Russie">
+Un membre des Pussy Riot convaincu d'avoir &eacute;t&eacute; "empoisonn&eacute;" par la Russie
+</a>
+</h3>
+</li>
+<li style="display:none">
+<h3>
+<a href="/7s7/fr/1530/Tetes-Couronnees/article/detail/3480017/2018/09/26/La-reine-Paola-a-ete-rapatriee.dhtml"  data-gtm-zones="ticker|3|title" title="La reine Paola a été rapatriée">
+<span class="label l_update">MISE &Agrave; JOUR</span>
+La reine Paola a &eacute;t&eacute; rapatri&eacute;e
+</a>
+</h3>
+</li>
+<li style="display:none">
+<h3>
+<a href="/7s7/fr/1505/Monde/article/detail/3480004/2018/09/26/Armes-a-feu-cuirs-une-marque-Benalla-a-ete-deposee-en-France.dhtml"  data-gtm-zones="ticker|4|title" title="Armes à feu, cuirs: une marque &quot;Benalla&quot; a été déposée en France">
+Armes &agrave; feu, cuirs: une marque "Benalla" a &eacute;t&eacute; d&eacute;pos&eacute;e en France
+</a>
+</h3>
+</li>
+<li style="display:none">
+<h3>
+<a href="/7s7/fr/1505/Monde/article/detail/3480021/2018/09/26/Une-nouvelle-femme-decrit-des-abus-sexuels-de-Brett-Kavanaugh.dhtml"  data-gtm-zones="ticker|5|title" title="Une nouvelle femme décrit des abus sexuels de Brett Kavanaugh">
+Une nouvelle femme d&eacute;crit des abus sexuels de Brett Kavanaugh
+</a>
+</h3>
+</li>
+</ul>
+<ul class="controls">
+<li class="play"><a href="#"></a></li>
+<li class="next"><a href="#"></a></li>
+<li class="prev"><a href="#"></a></li>
+</ul>
+</div>
+<script>
+PESCORE.bnteaser.initLiveArticleTeasers();
+</script>
+<section class="str_article_cntr clear">
+<div class="autodeploy__container autodeploy__container--adv" data-autodeploy-info="name:advBanner;folder:adv">
+</div>
+<div class="autodeploy__container autodeploy__container--nmc" data-autodeploy-info="name:nmcMid1;folder:nmc">
+<!--<div id="mid1" class="mar10">
+<a href="
+https://11dor.7sur7.be/j2ee_g11/index.action?utm_source=7s7.be&utm_medium=bannerhome&utm_campaign=11dor2014&utm_content=banner" target="_blank">
+<img src="https://static1.7sur7.be/static/nmc/nmc/mid/11dor_wave2_bannerhome.jpg" alt="Vous êtes un entraineur du top?" width="510" height="66" style="margin:0;float:none;padding:0;border:0;" />
+</a></div>-->
+<!--<div id="mid1" class="mar10">
+<a href="
+https://classiquesdor.7sur7.be/j2ee_gkl/index.action?utm_source=7s7.be&utm_medium=bannerhome&utm_campaign=classiquesdor2015&utm_content=banner" target="_blank">
+<img src="https://static1.7sur7.be/static/nmc/nmc/mid/2015_CLD_banner_homepage1.jpg" alt="Réglez sur le cyclisme" width="510" height="60" style="margin:0;float:none;padding:0;border:0;" />
+</a></div>-->
+</div>
+<section class="articleblock_1 "  data-vr-zone="zone 1">
+<article class="article artlarge " data-vr-contentbox="1.1 groot">
+<h1><a href="/7s7/fr/1530/Tetes-Couronnees/article/detail/3480017/2018/09/26/La-reine-Paola-a-ete-rapatriee.dhtml"   data-gtm-zones="article|1|title">La reine Paola a été rapatriée</a></h1>
+<a href="/7s7/fr/1530/Tetes-Couronnees/article/detail/3480017/2018/09/26/La-reine-Paola-a-ete-rapatriee.dhtml"   data-gtm-zones="article|1|image" >
+<img width="510" height="287" src="https://static2.7sur7.be/static/photo/2018/15/13/5/20180926181206/media_xll_10606670.jpg" alt="La reine Paola a été rapatriée" />
+</a>
+<ul class="art_extra clear">
+<li>
+<a data-gtm-zones="article|1|navigationLink" href="/7s7/fr/1530/tetes-couronnees/index.dhtml">Têtes Couronnées</a>
+</li>
+<li class="art_save">
+<a href="http://s.7s7.be/3480017" class="clip" id="clip2919345"  data-gtm-zones="article|1|clipboard" data-title="La reine Paola a été rapatriée"
+data-img="https://static2.7sur7.be/static/photo/2018/15/13/5/20180926181206/media_l_10606670.jpg"
+data-intro="
+L%27avion transportant la reine Paola s%27est pos&eacute; mercredi vers 17h15 &agrave; l%27a&eacute;roport militaire de Melsbroek. L%27&eacute;pouse d%27Albert II a ensuite ...
+"
+data-date="26-09-2018 18:14"></a>
+</li>
+</ul>
+<p>
+<a href="/7s7/fr/1530/Tetes-Couronnees/article/detail/3480017/2018/09/26/La-reine-Paola-a-ete-rapatriee.dhtml"   data-gtm-zones="article|1|text">
+<span class="label l_update">MISE &Agrave; JOUR</span>
+<span class="time">18h14</span>
+L'avion transportant la reine Paola s'est pos&eacute; mercredi vers 17h15 &agrave; l'a&eacute;roport militaire de Melsbroek. L'&eacute;pouse d'Albert II a ensuite &eacute;t&eacute; ...
+</a>
+</p>
+</article>
+<div class="autodeploy__container autodeploy__container--prm" data-autodeploy-info="name:prmBanner1;folder:prm">
+<!--
+<div style="z-index:1; margin-top:5px;" class="mar10"> 
+<a href="http://ims.7sur7.be/optiext/optiextension.dll?ID=q_ttxet4oZ1LSjay1IPUsqNz8URFJmPjpX9fGj&utm_source=7s7&utm_medium=banner&utm_campaign=ereaders&utm_content=topbanner" target="_blank"><img style="border:1px solid #000" src="http://static1.7sur7.be/static/nmc/prm/banner/topbanner_7s7.jpg" alt="Gagne chaque jours 1000 lecteurs" width="510" height="70" border="0" /></a>
+</div>-->
+</div>
+<div class="autodeploy__container autodeploy__container--adv" data-autodeploy-info="name:imu0;folder:adv">
+<!-- DART ad tag-->
+<div id="ad_imu1">
+<script type="text/javascript">
+var breakingNews = $('.bn_default').length;
+if(breakingNews != 0) {
+// document.write(schrijfXFP_bodyTag("imu1"));
+gptSiteSlot('ad_imu1', 'imu1');
+}
+</script>
+</div>
+<div class="gen_clear"></div>
+</div>
+<div class="autodeploy__container autodeploy__container--adv" data-autodeploy-info="name:advCarrouselOLD;position:imu0;folder:adv">
+</div>
+<div class="article_list left">
+<article class="article" data-vr-contentbox="1.2">
+<h3><a href="/7s7/fr/14836/Elections-2018/article/detail/3479993/2018/09/26/18-Temps-le-slam-etonnant-d-Andre-Flahaut.dhtml"   data-gtm-zones="article|2|title">&quot;18 Temps&quot;: le slam étonnant d'André Flahaut</a></h3>
+<a href="/7s7/fr/14836/Elections-2018/article/detail/3479993/2018/09/26/18-Temps-le-slam-etonnant-d-Andre-Flahaut.dhtml"  class="tn_list_h_video_button_container"  data-gtm-zones="article|2|image">
+<img width="40" height="40" alt="Play" class="tn_list_h_video_button" src="https://static2.7sur7.be/images/general/bt_play.png?8.3.0.20180528.5">
+<img width="250" src="https://static0.7sur7.be/static/photo/2018/14/11/13/20180926154308/media_l_10606498.png" alt="&amp;quot;18 Temps&amp;quot;: le slam étonnant d&#039;André Flahaut" />
+</a>
+<ul class="art_extra clearfix">
+<li>
+<a data-gtm-zones="article|2|navigationLink" href="/7s7/fr/14836/elections-2012/index.dhtml">Elections 2018</a>
+</li>
+<li class="art_save">
+<a href="http://s.7s7.be/3479993" class="clip" id="clip2919293" data-gtm-zones="article|2|clipboard" data-title="&quot;18 Temps&quot;: le slam étonnant d%27André Flahaut"
+data-img="https://static0.7sur7.be/static/photo/2018/14/11/13/20180926154308/media_l_10606498.png"
+data-intro="
+%2718 temps%27, un %27slam citoyen et engag&eacute;%27 d&eacute;di&eacute; %27aux jeunes (d%27abord) et aux moins jeunes (aussi)%27, &eacute;crit Andr&eacute; Flahaut en guise de ...
+"
+data-date="26-09-2018 15:50"></a>
+</li>
+</ul>
+<p>
+<a href="/7s7/fr/14836/Elections-2018/article/detail/3479993/2018/09/26/18-Temps-le-slam-etonnant-d-Andre-Flahaut.dhtml"   data-gtm-zones="article|2|text">
+<span class="label l_video">vid&eacute;o</span>
+<span class="time">15h50</span>
+"18 temps", un "slam citoyen et engag&eacute;" d&eacute;di&eacute; "aux jeunes (d'abord) et aux moins jeunes (aussi)", &eacute;crit Andr&eacute; Flahaut en guise de pr&eacute;sentation. ...
+</a>
+</p>
+</article>
+<hr class="r1">
+<article class="article" data-vr-contentbox="1.3">
+<h3><a href="/7s7/fr/1502/Belgique/article/detail/3479986/2018/09/26/Le-steward-belge-n-a-pas-ete-licencie-pour-avoir-donne-une-interview-a-la-TV.dhtml"   data-gtm-zones="article|3|title">&quot;Le steward belge n'a pas été licencié pour avoir donné une interview à la TV&quot;</a></h3>
+<a href="/7s7/fr/1502/Belgique/article/detail/3479986/2018/09/26/Le-steward-belge-n-a-pas-ete-licencie-pour-avoir-donne-une-interview-a-la-TV.dhtml"    data-gtm-zones="article|3|image">
+<img width="250" src="https://static2.7sur7.be/static/photo/2018/16/8/9/20180926170149/media_l_10606614.jpg" alt="&amp;quot;Le steward belge n&#039;a pas été licencié pour avoir donné une interview à la TV&amp;quot;" />
+</a>
+<ul class="art_extra clearfix">
+<li>
+<a data-gtm-zones="article|3|navigationLink" href="/7s7/fr/1502/belgique/index.dhtml">Belgique</a>
+</li>
+<li class="art_save">
+<a href="http://s.7s7.be/3479986" class="clip" id="clip2919314" data-gtm-zones="article|3|clipboard" data-title="&quot;Le steward belge n%27a pas été licencié pour avoir donné une interview à la TV&quot;"
+data-img="https://static2.7sur7.be/static/photo/2018/16/8/9/20180926170149/media_l_10606614.jpg"
+data-intro="
+Le steward belge dont le licenciement est contest&eacute; par la CNE devant le tribunal du travail de Bruxelles n%27a pas &eacute;t&eacute; &eacute;cart&eacute; pour avoir donn&eacute; ...
+"
+data-date="26-09-2018 17:04"></a>
+</li>
+</ul>
+<p>
+<a href="/7s7/fr/1502/Belgique/article/detail/3479986/2018/09/26/Le-steward-belge-n-a-pas-ete-licencie-pour-avoir-donne-une-interview-a-la-TV.dhtml"   data-gtm-zones="article|3|text">
+<span class="time">17h04</span>
+Le steward belge dont le licenciement est contest&eacute; par la CNE devant le tribunal du travail de Bruxelles n'a pas &eacute;t&eacute; &eacute;cart&eacute; pour avoir donn&eacute; une ...
+</a>
+</p>
+</article>
+</div>
+<div class="article_list right">
+<article class="article branded_news ">
+<h2 class="branded_news_"></h2>
+<ul>
+<li>
+<div class="l_sports"></div>
+<h3>
+<a href="/7s7/fr/1510/Football-Etranger/article/detail/3479996/2018/09/26/Rien-n-a-ete-convenu-Courtois-evoque-la-concurrence-avec-Navas.dhtml" >&quot;Rien n'a été convenu&quot;: Courtois évoque la concurrence avec Navas</a>
+</h3>
+</li>
+</ul>
+</article>
+<article class="article" data-vr-contentbox="1.4">
+<h3><a href="/7s7/fr/1502/Belgique/article/detail/3479998/2018/09/26/L-Office-des-etrangers-n-execute-pas-une-injonction-de-l-ONU-de-liberer-la-famille-serbe.dhtml"   data-gtm-zones="article|4|title">L'Office des étrangers n'exécute pas une injonction de l'ONU de libérer la famille serbe</a></h3>
+<a href="/7s7/fr/1502/Belgique/article/detail/3479998/2018/09/26/L-Office-des-etrangers-n-execute-pas-une-injonction-de-l-ONU-de-liberer-la-famille-serbe.dhtml"    data-gtm-zones="article|4|image">
+<img width="250" src="https://static0.7sur7.be/static/photo/2018/16/4/1/20180926165729/media_l_10606576.jpg" alt="L&#039;Office des étrangers n&#039;exécute pas une injonction de l&#039;ONU de libérer la famille serbe" />
+</a>
+<ul class="art_extra clearfix">
+<li>
+<a data-gtm-zones="article|4|navigationLink" href="/7s7/fr/1502/belgique/index.dhtml">Belgique</a>
+</li>
+<li class="art_save">
+<a href="http://s.7s7.be/3479998" class="clip" id="clip2919318" data-gtm-zones="article|4|clipboard" data-title="L%27Office des étrangers n%27exécute pas une injonction de l%27ONU de libérer la famille serbe"
+data-img="https://static0.7sur7.be/static/photo/2018/16/4/1/20180926165729/media_l_10606576.jpg"
+data-intro="
+L%27Office des &eacute;trangers a re&ccedil;u une ordonnance du Comit&eacute; des droits de l%27enfant de l%27Onu pour lib&eacute;rer la famille serbe enferm&eacute;e depuis le 14 ...
+"
+data-date="26-09-2018 17:00"></a>
+</li>
+</ul>
+<p>
+<a href="/7s7/fr/1502/Belgique/article/detail/3479998/2018/09/26/L-Office-des-etrangers-n-execute-pas-une-injonction-de-l-ONU-de-liberer-la-famille-serbe.dhtml"   data-gtm-zones="article|4|text">
+<span class="label l_belgique">FAMILLE SERBE</span>
+<span class="time">17h00</span>
+L'Office des &eacute;trangers a re&ccedil;u une ordonnance du Comit&eacute; des droits de l'enfant de l'Onu pour lib&eacute;rer la famille serbe enferm&eacute;e depuis le 14 ao&ucirc;t ...
+</a>
+</p>
+</article>
+</div>
+</section>
+<script type="text/javascript">
+var hpTopNativeName = 'hp-top';
+Arbiter.publish('/dart/slot/native/register', hpTopNativeName);
+Arbiter.publish('/dart/slot/native/register', hpTopNativeName);
+function validateHpTopNativeAds(slot) {
+var eventData = {};
+eventData.slotEvent = slot;
+eventData.nativeName = hpTopNativeName;
+Arbiter.publish('/dart/slot/native/rendered', eventData);
+}
+</script>
+<div data-native="hp-top" class="native-ads fjs-native-ad-position">
+<article id="native_ad_1" class="native-ad article native-ad--first">
+<script type="text/javascript">
+gptSiteSlot('native_ad_1', 'native1', validateHpTopNativeAds);
+</script>
+</article>
+<article id="native_ad_2" class="native-ad article native-ad--second">
+<script type="text/javascript">
+gptSiteSlot('native_ad_2', 'native2', validateHpTopNativeAds);
+</script>
+</article>
+</div>
+<div class="autodeploy__container autodeploy__container--adv" data-autodeploy-info="name:imu1;folder:adv">
+<!-- DART ad tag -->
+<div id="ad_imu1">
+<script type="text/javascript">
+if(typeof breakingNews == 'undefined') {
+var breakingNews = 0;
+}
+if(breakingNews == 0) {
+// document.write(schrijfXFP_bodyTag("imu1"));
+gptSiteSlot('ad_imu1', 'imu1');
+}
+</script>
+</div>
+<div class="gen_clear"></div>
+</div>
+</section>
+<section class="str_aside_cntr">
+<div class="autodeploy__container autodeploy__container--adv" data-autodeploy-info="name:advOortje;folder:adv">
+</div>
+<div class="autodeploy__container autodeploy__container--nmc" data-autodeploy-info="name:nmcBoxright0;folder:nmc">
+</div>
+<div class="autodeploy__container autodeploy__container--prm" data-autodeploy-info="name:prmBoxright0;folder:prm">
+</div>
+<section class="teas_article_306 mar10 clear hln-hpfr_bg clearfix">
+<ul class="teas_article_306_nav clearfix" id="hdr_hvdn_nav">
+<li id="hdr_hvdn_recent" class="teas_current"><a href="#"  data-gtm-zones="htfn|nieuw|tab">Nouveau</a></li>
+<li id="hdr_hvdn_top"><a href="#"  data-gtm-zones="htfn|top5|tab">Top 5</a></li>
+<li id="hdr_hvdn_nieuws"><a data-gtm-zones="htfn|24 nieuws|tab" href="http://www.7sur7.be/7s7/fr/1481/home/actua/index.dhtml">24H</a></li>
+</ul>
+<ul id="hdr_hvdn" class="fjs-hftn-teaser-container hftn-teaser--container is-waiting teas_article_306_hvdn clearfix" data-url="/7s7/article/teaserListHFTN.do?navigationItemId=1481&numberOfArticles=10&layoutStyle=hvdn&limitChars=true&delaySeconds=120&visualRevenueZone=4"  data-vr-zone="zone 4" data-hftn-url="/7s7/article/teaserListHFTN.do?navigationItemId=1481&numberOfArticles=10&layoutStyle=hvdn&limitChars=true&delaySeconds=120&visualRevenueZone=4">
+</ul>
+<ul id="hdr_hvdn_top_list" class="teas_article_306_hvdn" style="display:none;">
+<li>
+<a href="/7s7/fr/1530/Tetes-Couronnees/article/detail/3479617/2018/09/26/Le-geste-banal-de-Meghan-Markle-mais-tres-rare-dans-la-monarchie.dhtml"  data-gtm-zones="hftn|top5|1">
+Le geste banal de Meghan Markle mais très rare dans la monarchie
+</a>
+</li>
+<li>
+<a href="/7s7/fr/1530/Tetes-Couronnees/article/detail/3479905/2018/09/26/La-reine-Paola-victime-d-un-AVC.dhtml"  data-gtm-zones="hftn|top5|2">
+La reine Paola victime d'un AVC
+</a>
+</li>
+<li>
+<a href="/7s7/fr/1505/Monde/article/detail/3479927/2018/09/26/Elle-verse-de-l-eau-de-Javel-sur-les-hommes-qui-prennent-trop-de-place.dhtml"  data-gtm-zones="hftn|top5|3">
+Elle verse de l'eau de Javel sur les hommes qui prennent trop de place
+</a>
+</li>
+<li>
+<a href="/7s7/fr/1502/Belgique/article/detail/3479923/2018/09/26/Une-peine-de-travail-pour-le-fils-de-Laurette-Onkelinx.dhtml"  data-gtm-zones="hftn|top5|4">
+Une peine de travail pour le fils de Laurette Onkelinx?
+</a>
+</li>
+<li>
+<a href="/7s7/fr/1536/Economie/article/detail/3479906/2018/09/26/Quand-Engie-voulait-se-debarrasser-du-nid-a-emmerdes.dhtml"  data-gtm-zones="hftn|top5|5">
+Quand Engie voulait se débarrasser du &quot;nid à emmerdes&quot;
+</a>
+</li>
+</ul>
+</section>
+<div class="autodeploy__container autodeploy__container--nmc" data-autodeploy-info="name:nmcBoxrightHftn;folder:nmc">
+</div>
+<div class="autodeploy__container autodeploy__container--nmc" data-autodeploy-info="name:nmcBoxright;folder:nmc">
+</div>
+<div class="autodeploy__container autodeploy__container--adv" data-autodeploy-info="name:advBoxright;folder:adv">
+<!-- DART ad tag -->
+<div id="ad_promobox"> 
+<script type="text/javascript">
+// document.write(schrijfXFP_bodyTag("box1"));
+gptSiteSlot('ad_promobox', 'box1', function() {
+var promobox = document.getElementById('ad_promobox');
+if (null !== promobox && promobox.offsetHeight > 20){
+promobox.style.marginLeft = '3px';
+promobox.style.marginRight = '3px';
+promobox.style.marginBottom = '10px';
+}
+});
+</script>
+</div>
+</div>
+<!-- check if label VIDEO -->
+<section data-vr-zone="zone 6" class=' b1 invert mar10   clear'>
+<a data-vr-contentbox="6.1 groot" href="/7s7/fr/1536/Economie/article/detail/3479956/2018/09/26/Pourquoi-Washington-n-a-aucun-interet-a-declarer-la-guerre-commerciale.dhtml"  data-gtm-zones="bakskes|1|image" >
+<img src="https://static0.7sur7.be/static/photo/2018/0/4/2/20180926182228/teaser_2_2_10606712.jpg" width="306" height="169" />
+<h3 data-gtm-zones="bakskes|1|title">Pourquoi Washington n'a aucun intérêt à déclarer la guerre commerciale</h3>
+</a>
+</section>
+<!-- check if label VIDEO -->
+<section data-vr-zone="zone 6">
+<ul class="b2 mar5 clearfix">
+<li class=" ">
+<a data-vr-contentbox="6.2" href="/7s7/fr/1505/Monde/article/detail/3479942/2018/09/26/Les-quatre-Belges-recherches-en-Suede-retrouves-vivants.dhtml"  data-gtm-zones="bakskes|2|image" >
+<img src="https://static0.7sur7.be/static/photo/2018/16/16/10/20180926182259/teaser_2_2_10606690.jpg" width="150" height="83" />
+<h3 data-gtm-zones="bakskes|2|title">Les quatre Belges recherchés en Suède retrouvés vivants</h3>
+</a>
+</li>
+<!-- check if label VIDEO -->
+<li class=" ">
+<a data-vr-contentbox="6.3" href="/7s7/fr/1527/People/article/detail/3479941/2018/09/26/Eric-Zemmour-ne-viendra-plus-dans-l-emission-On-n-est-pas-couche.dhtml"  data-gtm-zones="bakskes|3|image" >
+<img src="https://static3.7sur7.be/static/photo/2018/0/2/13/20180926182438/teaser_2_2_10606693.jpg" width="150" height="83" />
+<h3 data-gtm-zones="bakskes|3|title">Éric Zemmour ne viendra plus dans l'émission On n'est pas couché</h3>
+</a>
+</li>
+<!-- check if label VIDEO -->
+<li class=" article_video150">
+<a data-vr-contentbox="6.4" href="/7s7/fr/1505/Monde/article/detail/3479927/2018/09/26/Elle-verse-de-l-eau-de-Javel-sur-les-hommes-qui-prennent-trop-de-place.dhtml"  data-gtm-zones="bakskes|4|image" >
+<img class="video_button" width="30" height="30" src="https://static0.7sur7.be/images/general/bt_play_small.png?8.3.0.20180528.5" />
+<img src="https://static3.7sur7.be/static/photo/2018/1/5/3/20180926182405/teaser_2_2_10606713.jpg" width="150" height="83" />
+<h3 data-gtm-zones="bakskes|4|title">Elle verse de l'eau de Javel sur les hommes qui prennent trop de place</h3>
+</a>
+</li>
+<!-- check if label VIDEO -->
+<li class=" ">
+<a data-vr-contentbox="6.5" href="/7s7/fr/1536/Economie/article/detail/3479954/2018/09/26/Les-investissements-louches-des-banques-actives-en-Belgique.dhtml"  data-gtm-zones="bakskes|5|image" >
+<img src="https://static3.7sur7.be/static/photo/2018/2/4/0/20180926182831/teaser_2_2_10606695.jpg" width="150" height="83" />
+<h3 data-gtm-zones="bakskes|5|title">Les investissements louches des banques actives en Belgique</h3>
+</a>
+</li>
+<!-- check if label VIDEO -->
+<li class=" ">
+<a data-vr-contentbox="6.6" href="/7s7/fr/1531/Culture/article/detail/3479905/2018/09/26/La-reine-Paola-victime-d-un-AVC.dhtml"  data-gtm-zones="bakskes|6|image" >
+<img src="https://static0.7sur7.be/static/photo/2018/0/7/4/20180926170547/teaser_2_2_10606579.jpg" width="150" height="83" />
+<span class="label l_update">MISE &Agrave; JOUR</span>
+<h3 data-gtm-zones="bakskes|6|title">La reine Paola victime d'un AVC</h3>
+</a>
+</li>
+</ul>
+</section>
+<div class="autodeploy__container autodeploy__container--adv" data-autodeploy-info="name:advBoxrightExtra;folder:adv">
+</div>
+<section class="s1 tn_weer clearfix">
+<h3><b>weer</b></h3>
+<ul class="clearfix">
+<li>
+<a href="/7s7/fr/weather/forecast/1534/203205/La-meteo-a-Uccle/2018/09/26.dhtml" data-gtm-zones="weerTeaser|onder|weerBelgie">
+<b>
+à présent
+</b>
+<span class="max">19&deg;</span>
+<span class="min">6&deg;</span>
+<img alt="CLEAR_SKY" src="https://static1.7sur7.be/images/weather/weathertype/weather_weathertype01.png" />
+</a>
+</li>
+<li>
+<a href="/7s7/fr/weather/forecast/1534/203205/La-meteo-a-Uccle/2018/09/27.dhtml" data-gtm-zones="weerTeaser|onder|weerBelgie">
+<b>
+demain
+</b>
+<span class="max">20&deg;</span>
+<span class="min">10&deg;</span>
+<img alt="CLEAR_SKY" src="https://static2.7sur7.be/images/weather/weathertype/weather_weathertype01.png" />
+</a>
+</li>
+<li>
+<a href="/7s7/fr/weather/forecast/1534/203205/La-meteo-a-Uccle/2018/09/28.dhtml" data-gtm-zones="weerTeaser|onder|weerBelgie">
+<b>
+ven. 28/09
+</b>
+<span class="max">15&deg;</span>
+<span class="min">11&deg;</span>
+<img alt="PARTLY_CLOUDY" src="https://static3.7sur7.be/images/weather/weathertype/weather_weathertype02.png" />
+</a>
+</li>
+</ul>
+<form class="clearfix" accept-charset="ISO-8859-1" action="/7s7/weather/search/searchResult.do" method="get" onsubmit="return searchDestination_checkSearchForm()" id="searchDestinationForm2">
+<a href="/7s7/fr/1534/weather/application.dhtml" data-gtm-zones="weerTeaser|onder|weerBelgie">Météo pour 10 jours</a>
+<input type="hidden" name="language" value="fr" />
+<input type="hidden" name="navigationItemId" value="1534" />
+<input type="hidden" name="navigation" value="Météo" />
+<input type="text" name="searchTerm" id="searchTerm" class="hdr_search_field" value="Cherchez par code postal, commune, pays ou destination" onclick="if (this.value=='Cherchez par code postal, commune, pays ou destination') this.value='';" />
+<input type="submit" class="hdr_search_button" value="chercher" align="absmiddle" />
+</form>
+</section>
+<div>
+<div class="recentArticlesSpecificNavigation" data-fetch-from-url="/references/export/7sur7_2?language=fr&navigationItemId=1535"></div>
+</div>
+<div class="autodeploy__container autodeploy__container--nmc" data-autodeploy-info="name:nmcRp;folder:nmc">
+</div>
+<section class="tn_webnieuws mar10 clearfix">
+<div class="teaser66-header">
+<img src="https://static3.7sur7.be/images/beste-web.jpg?8.3.0.20180528.5" />
+</div>
+<ul class="clearfix">
+<li class="teaser66-item">
+<a href="/7s7/fr/1505/Monde/article/detail/3480004/2018/09/26/Armes-a-feu-cuirs-une-marque-Benalla-a-ete-deposee-en-France.dhtml"  data-gtm-zones="leukste-web|1|image">
+<img src="https://static2.7sur7.be/static/photo/2018/5/7/3/media_m_10606698.jpg" class="teaser66-img" width="150" height="83" />
+<h3 class="teaser66-description" data-gtm-zones="leukste-web|1|title">
+Armes à feu, cuirs: une marque &quot;Benalla&quot;  a été déposée en France
+</h3>
+</a>
+</li>
+<li class="teaser66-item">
+<a href="/7s7/fr/14836/Elections-2018/article/detail/3479993/2018/09/26/18-Temps-le-slam-etonnant-d-Andre-Flahaut.dhtml"  data-gtm-zones="leukste-web|2|image">
+<img src="https://static0.7sur7.be/static/photo/2018/14/11/13/media_m_10606498.png" class="teaser66-img" width="150" height="83" />
+<h3 class="teaser66-description" data-gtm-zones="leukste-web|2|title">
+&quot;18 Temps&quot;: le slam étonnant d'André Flahaut
+</h3>
+</a>
+</li>
+<div class="autodeploy__container autodeploy__container--nmc" data-autodeploy-info="name:autodeploy;folder:nmc">
+<li class="teaser66-item teaser66-item-autodeploy">
+<script type="text/javascript" charset="utf-8">
+var adh_slot_code = "_7sur7_-pave";
+var adh_clickurl = "";
+</script>
+<script data-privacy-category="targetedadvertising" data-privacy-src="https://pool-colruytgroup.adhese.com/tag/script.js" type="text/javascript" charset="utf-8"></script>
+</li>
+</div>
+<li class="teaser66-item">
+<a href="/7s7/fr/1505/Monde/article/detail/3479927/2018/09/26/Elle-verse-de-l-eau-de-Javel-sur-les-hommes-qui-prennent-trop-de-place.dhtml"  data-gtm-zones="leukste-web|3|image">
+<img src="https://static2.7sur7.be/static/photo/2018/7/4/13/media_m_10606168.jpg" class="teaser66-img" width="150" height="83" />
+<h3 class="teaser66-description" data-gtm-zones="leukste-web|3|title">
+Elle verse de l'eau de Javel sur les hommes qui prennent trop de place
+</h3>
+</a>
+</li>
+<li class="teaser66-item">
+<a href="/7s7/fr/31482/Le-meilleur-du-web/article/detail/3479074/2018/09/24/Jetee-au-c-ur-de-l-Atlantique-par-une-ado-cette-bouteille-a-ete-retrouvee-aux-Etats-Unis.dhtml"  data-gtm-zones="leukste-web|4|image">
+<img src="https://static2.7sur7.be/static/photo/2018/14/12/14/media_m_10603439.jpg" class="teaser66-img" width="150" height="83" />
+<h3 class="teaser66-description" data-gtm-zones="leukste-web|4|title">
+Jetée au cœur de l'Atlantique par une ado, cette bouteille a été retrouvée aux États-Unis
+</h3>
+</a>
+</li>
+<li class="teaser66-item">
+<a href="/7s7/fr/31482/Le-meilleur-du-web/article/detail/3479057/2018/09/24/Banni-d-un-resto-a-volonte-parce-qu-il-mangeait-trop.dhtml"  data-gtm-zones="leukste-web|5|image">
+<img src="https://static3.7sur7.be/static/photo/2018/3/16/14/media_m_10603409.jpg" class="teaser66-img" width="150" height="83" />
+<h3 class="teaser66-description" data-gtm-zones="leukste-web|5|title">
+Banni d'un resto à volonté parce qu'il mangeait trop
+</h3>
+</a>
+</li>
+</ul>
+<div class="teaser66-footer">
+<a href="/7s7/fr/31482/Le-meilleur-du-web/index.dhtml" data-gtm-zones="leukste-web|meer|link">Plus d'articles "Le meilleur du web"</a>
+</div>
+</section>
+<div class="autodeploy__container autodeploy__container--prm" data-autodeploy-info="name:prmBoxright;folder:prm">
+</div>
+<div class="autodeploy__container autodeploy__container--nmc" data-autodeploy-info="name:nmcBoxright;folder:nmc">
+</div>
+<div class="autodeploy__container autodeploy__container--adv" data-autodeploy-info="name:advBoxright;folder:adv">
+<!-- ADV partners & integraties -->
+<!-- ADV booster1 dossierbox -->
+<div id="booster1"></div>
+<script type="text/javascript">
+// showIntegration('booster1','dossier');
+</script>
+</div>
+<!-- check if label VIDEO -->
+<section data-vr-zone="zone 6" class=' b1 invert mar10   clear'>
+<a data-vr-contentbox="6.7 groot" href="/7s7/fr/1536/Economie/article/detail/3479947/2018/09/26/Voici-les-six-vols-Ryanair-annules-vendredi.dhtml"  data-gtm-zones="bakskes|7|image" >
+<img src="https://static2.7sur7.be/static/photo/2018/1/12/13/20180926171123/teaser_2_2_10606618.jpg" width="306" height="169" />
+<span class="label l_update">MISE &Agrave; JOUR</span>
+<h3 data-gtm-zones="bakskes|7|title">Voici les six vols Ryanair annulés vendredi</h3>
+</a>
+</section>
+<!-- check if label VIDEO -->
+<section data-vr-zone="zone 6">
+<ul class="b2 mar5 clearfix">
+<li class=" ">
+<a data-vr-contentbox="6.8" href="/7s7/fr/1527/People/article/detail/3479911/2018/09/26/Kev-Adams-et-Jamel-Debbouze-troublent-le-plateau-de-RTL-Info.dhtml"  data-gtm-zones="bakskes|8|image" >
+<img src="https://static3.7sur7.be/static/photo/2018/16/6/5/20180926163611/teaser_2_2_10606595.jpg" width="150" height="83" />
+<h3 data-gtm-zones="bakskes|8|title">Kev Adams et Jamel Debbouze troublent le plateau de RTL Info</h3>
+</a>
+</li>
+<!-- check if label VIDEO -->
+<li class=" ">
+<a data-vr-contentbox="6.9" href="/7s7/fr/1524/Cuisine/article/detail/3479058/2018/09/26/CONCOURS-des-box-repas-bio-et-belges-a-gagner.dhtml"  data-gtm-zones="bakskes|9|image" >
+<img src="https://static3.7sur7.be/static/photo/2018/15/7/0/20180926122354/teaser_2_2_10606290.jpg" width="150" height="83" />
+<h3 data-gtm-zones="bakskes|9|title">CONCOURS: des box repas bio et belges à gagner</h3>
+</a>
+</li>
+<!-- check if label VIDEO -->
+<li class=" ">
+<a data-vr-contentbox="6.10" href="/7s7/fr/1513/tennis/article/detail/3479944/2018/09/26/La-Belgique-ira-au-Bresil-en-qualification-de-la-Coupe-Davis.dhtml"  data-gtm-zones="bakskes|10|image" >
+<img src="https://static1.7sur7.be/static/photo/2018/15/7/8/20180926170127/teaser_2_2_10606613.jpg" width="150" height="83" />
+<span class="label l_update">MISE &Agrave; JOUR</span>
+<h3 data-gtm-zones="bakskes|10|title">La Belgique au Brésil en qualification de la Coupe Davis</h3>
+</a>
+</li>
+<!-- check if label VIDEO -->
+<li class=" article_video150">
+<a data-vr-contentbox="6.11" href="/7s7/fr/1540/TV/article/detail/3479933/2018/09/26/Non-mais-on-est-ou-la-une-chroniqueuse-confond-Canteloup-et-Valls.dhtml"  data-gtm-zones="bakskes|11|image" >
+<img class="video_button" width="30" height="30" src="https://static1.7sur7.be/images/general/bt_play_small.png?8.3.0.20180528.5" />
+<img src="https://static1.7sur7.be/static/photo/2018/17/9/10/20180926170258/teaser_2_2_10606615.jpg" width="150" height="83" />
+<h3 data-gtm-zones="bakskes|11|title">&quot;Non mais on est où là?&quot;: une chroniqueuse confond Canteloup et Valls</h3>
+</a>
+</li>
+<!-- check if label VIDEO -->
+<li class=" article_video150">
+<a data-vr-contentbox="6.12" href="/7s7/fr/1516/Omnisports/article/detail/3479919/2018/09/26/La-fin-de-match-epique-des-Belgian-Cats-face-a-l-Espagne-Une-victoire-historique.dhtml"  data-gtm-zones="bakskes|12|image" >
+<img class="video_button" width="30" height="30" src="https://static0.7sur7.be/images/general/bt_play_small.png?8.3.0.20180528.5" />
+<img src="https://static2.7sur7.be/static/photo/2018/17/7/6/20180926163651/teaser_2_2_10606596.jpg" width="150" height="83" />
+<h3 data-gtm-zones="bakskes|12|title">Fin de match épique des Belgian Cats face à l'Espagne: &quot;Une victoire historique&quot;</h3>
+</a>
+</li>
+</ul>
+</section>
+<div>
+</div>
+<div class="autodeploy__container autodeploy__container--nmc" data-autodeploy-info="name:nmcRp;folder:nmc">
+</div>
+<!-- TeaserTypeMisMatch: COMPONENT -->
+<!-- TeaserTypeMisMatch: COMPONENT -->
+<!-- TeaserTypeMisMatch: COMPONENT -->
+<!-- TeaserTypeMisMatch: COMPONENT -->
+<!-- TeaserTypeMisMatch: COMPONENT -->
+<div class="autodeploy__container autodeploy__container--prm" data-autodeploy-info="name:prmBoxright;folder:prm">
+</div>
+<div class="autodeploy__container autodeploy__container--nmc" data-autodeploy-info="name:nmcBoxright;folder:nmc">
+</div>
+<div class="autodeploy__container autodeploy__container--adv" data-autodeploy-info="name:advBoxright;folder:adv">
+<!-- ADV partners & integraties -->
+<!-- ADV booster3 integratiebooster -->
+<div id="booster3"></div>
+<script type="text/javascript">
+// showIntegration('booster3','integratie');
+</script>
+<script type="text/javascript">
+var promobox = document.getElementById('booster3');
+if (null !== promobox && promobox.offsetHeight > 20){
+document.getElementById('booster3').style.marginLeft = "3px";
+document.getElementById('booster3').style.marginRight = "3px";
+document.getElementById('booster3').style.marginBottom = "10px";
+}	
+</script>
+</div>
+<!-- check if label VIDEO -->
+<section data-vr-zone="zone 6" class=' b1 invert mar10   clear'>
+<a data-vr-contentbox="6.13 groot" href="/7s7/fr/1510/Football-Etranger/article/detail/3479908/2018/09/26/Fantomatique-2-10-Monacoule-Tielemans-flingue-par-L-Equipe.dhtml"  data-gtm-zones="bakskes|13|image" >
+<img src="https://static2.7sur7.be/static/photo/2018/17/13/3/20180926173019/teaser_2_2_10606653.jpg" width="306" height="169" />
+<h3 data-gtm-zones="bakskes|13|title">&quot;Fantomatique&quot;, &quot;2/10&quot;, &quot;Monacoule&quot;: Tielemans flingué par L'Equipe</h3>
+</a>
+</section>
+<!-- check if label VIDEO -->
+<section data-vr-zone="zone 6">
+<ul class="b2 mar5 clearfix">
+<li class=" ">
+<a data-vr-contentbox="6.14" href="/7s7/fr/1502/Belgique/article/detail/3479910/2018/09/26/Ne-plus-changer-d-heure-aurait-un-impact-positif-sur-la-securite-routiere.dhtml"  data-gtm-zones="bakskes|14|image" >
+<img src="https://static3.7sur7.be/static/photo/2018/15/5/4/20180926163428/teaser_2_2_10606594.jpg" width="150" height="83" />
+<h3 data-gtm-zones="bakskes|14|title">&quot;Ne plus changer d'heure aurait un impact positif sur la sécurité routière&quot;</h3>
+</a>
+</li>
+<!-- check if label VIDEO -->
+<li class=" ">
+<a data-vr-contentbox="6.15" href="/7s7/fr/1745/Standard/article/detail/3479958/2018/09/26/Preud-homme-s-en-prend-aux-medias-Maintenant-je-m-en-tiendrai-au-strict-minimum.dhtml"  data-gtm-zones="bakskes|15|image" >
+<img src="https://static1.7sur7.be/static/photo/2018/12/10/2/20180926175418/teaser_2_2_10606667.jpg" width="150" height="83" />
+<h3 data-gtm-zones="bakskes|15|title">Preud'homme s'en prend aux médias: &quot;Maintenant, je m'en tiendrai au strict minimum&quot;</h3>
+</a>
+</li>
+<!-- check if label VIDEO -->
+<li class=" ">
+<a data-vr-contentbox="6.16" href="/7s7/fr/1536/Economie/article/detail/3479906/2018/09/26/Quand-Engie-voulait-se-debarrasser-du-nid-a-emmerdes.dhtml"  data-gtm-zones="bakskes|16|image" >
+<img src="https://static0.7sur7.be/static/photo/2018/8/8/9/20180926140735/teaser_2_2_10606359.jpg" width="150" height="83" />
+<h3 data-gtm-zones="bakskes|16|title">Quand Engie voulait se débarrasser du &quot;nid à emmerdes&quot;</h3>
+</a>
+</li>
+<!-- check if label VIDEO -->
+<li class=" ">
+<a data-vr-contentbox="6.17" href="/7s7/fr/1502/Belgique/article/detail/3479940/2018/09/26/Meurtre-de-Kitty-rassemblements-policiers-contre-le-tueur-de-flic.dhtml"  data-gtm-zones="bakskes|17|image" >
+<img src="https://static3.7sur7.be/static/photo/2018/14/4/3/20180926163352/teaser_2_2_10606593.jpg" width="150" height="83" />
+<span class="label l_update">MISE &Agrave; JOUR</span>
+<h3 data-gtm-zones="bakskes|17|title">Kitty: rassemblements policiers contre le &quot;tueur de flic&quot;</h3>
+</a>
+</li>
+<!-- check if label VIDEO -->
+<li class=" ">
+<a data-vr-contentbox="6.18" href="/7s7/fr/1536/Economie/article/detail/3479915/2018/09/26/Pourquoi-ces-familles-font-tout-pour-eviter-le-registre-des-riches.dhtml"  data-gtm-zones="bakskes|18|image" >
+<img src="https://static2.7sur7.be/static/photo/2018/7/7/8/20180926140651/teaser_2_2_10606358.jpg" width="150" height="83" />
+<h3 data-gtm-zones="bakskes|18|title">Pourquoi ces familles font tout pour éviter le &quot;registre des riches&quot;</h3>
+</a>
+</li>
+</ul>
+</section>
+<div>
+</div>
+<div class="autodeploy__container autodeploy__container--nmc" data-autodeploy-info="name:nmcRp;folder:nmc">
+<!-- <section id="launcher_nrj" style="height:150px;width:306px;margin-bottom:10px;">
+<a onclick="measureClick('NRJ_integration');javascript:window.open('https://www.nrj.be/player/player.php?utm_source=7sur7&utm_medium=Bannering&utm_campaign=Player%2Bsur%2B7sur7', 'nrjplayer', 'directories=0,status=0,scrollbars=0,toolbar=0,location=0,menubar=0,resizable=1,width=802,height=610');" style="cursor:pointer">
+<img src="/static/nmc/nmc/rp/nav/NRJ_7sur7_verticala.jpg" alt="NRJ" height="150" width="306" />
+</a>
+</section> -->
+</div>
+<div class="autodeploy__container autodeploy__container--prm" data-autodeploy-info="name:prmBoxright;folder:prm">
+<!-- /7s7/fr/prm/box/7s7_fr_4this_stop_1481_boxright3.html -->
+<div style="z-index:1;" class="mar10">
+<!-- registratie newsletter -->
+<iframe id="iframeNewsletter" src="https://static1.7sur7.be/static/nmc/prm/newsletter/registration/newsletter_registratie_promoblok_7s7.html?6.1.0.201605104" frameborder="0" width="306" scrolling="no" ></iframe>
+<!-- END registratie newsletter -->
+</div>
+</div>
+</section>
+<section class="str_article_cntr">
+<div class="autodeploy__container autodeploy__container--nmc" data-autodeploy-info="name:nmcMid2;folder:nmc">
+</div>
+<section class="articleblock_2 "  data-vr-zone="zone 1">
+<article class="article artlarge" data-vr-contentbox="1.5 groot">
+<h3><a href="/7s7/fr/1536/Economie/article/detail/3480024/2018/09/26/La-directrice-generale-d-Engie-dement-tout-projet-de-cession-du-nucleaire-belge.dhtml"   data-gtm-zones="article|5|title">La directrice générale d'Engie dément tout projet de cession du nucléaire belge</a></h3>
+<a href="/7s7/fr/1536/Economie/article/detail/3480024/2018/09/26/La-directrice-generale-d-Engie-dement-tout-projet-de-cession-du-nucleaire-belge.dhtml"   data-gtm-zones="article|5|image" >
+<img width="510" height="287" src="https://static1.7sur7.be/static/photo/2018/5/11/11/20180926192523/media_xll_10606736.jpg" alt="La directrice générale d&#039;Engie dément tout projet de cession du nucléaire belge" />
+</a>
+<ul class="art_extra clear">
+<li>
+<a data-gtm-zones="article|5|navigationLink" href="/7s7/fr/1536/economie/index.dhtml">Economie</a>
+</li>
+<li class="art_save">
+<a href="http://s.7s7.be/3480024" class="clip" id="clip2919352"  data-gtm-zones="article|5|clipboard" data-title="La directrice générale d%27Engie dément tout projet de cession du nucléaire belge"
+data-img="https://static3.7sur7.be/static/photo/2018/5/11/11/20180926192523/media_l_10606736.jpg"
+data-intro="
+La directrice g&eacute;n&eacute;rale d%27Engie Isabelle Kocher a d&eacute;menti mercredi tout projet de vendre &agrave; EDF son parc de sept r&eacute;acteurs nucl&eacute;aires en ...
+"
+data-date="26-09-2018 19:27"></a>
+</li>
+</ul>
+<p>
+<a href="/7s7/fr/1536/Economie/article/detail/3480024/2018/09/26/La-directrice-generale-d-Engie-dement-tout-projet-de-cession-du-nucleaire-belge.dhtml"   data-gtm-zones="article|5|text">
+<span class="time">19h27</span>
+La directrice g&eacute;n&eacute;rale d'Engie Isabelle Kocher a d&eacute;menti mercredi tout projet de vendre &agrave; EDF son parc de sept r&eacute;acteurs nucl&eacute;aires en Belgique, ...
+</a>
+</p>
+</article>
+<div class="autodeploy__container autodeploy__container--adv" data-autodeploy-info="name:tekstad1;folder:adv">
+</div>
+<div class="article_list left">
+<article class="article" data-vr-contentbox="1.6">
+<h3><a href="/7s7/fr/1502/Belgique/article/detail/3480006/2018/09/26/Les-eleveurs-de-la-zone-infectee-dispenses-de-cotisations-sociales.dhtml"   data-gtm-zones="article|6|title">Les éleveurs de la zone infectée dispensés de cotisations sociales</a></h3>
+<a href="/7s7/fr/1502/Belgique/article/detail/3480006/2018/09/26/Les-eleveurs-de-la-zone-infectee-dispenses-de-cotisations-sociales.dhtml"    data-gtm-zones="article|6|image">
+<img width="250" src="https://static0.7sur7.be/static/photo/2018/8/10/6/20180926191202/media_l_10606701.jpg" alt="Les éleveurs de la zone infectée dispensés de cotisations sociales" />
+</a>
+<ul class="art_extra clearfix">
+<li>
+<a data-gtm-zones="article|6|navigationLink" href="/7s7/fr/1502/belgique/index.dhtml">Belgique</a>
+</li>
+<li class="art_save">
+<a href="http://s.7s7.be/3480006" class="clip" id="clip2919326" data-gtm-zones="article|6|clipboard" data-title="Les éleveurs de la zone infectée dispensés de cotisations sociales"
+data-img="https://static0.7sur7.be/static/photo/2018/8/10/6/20180926191202/media_l_10606701.jpg"
+data-intro="
+Les exploitants porcins qui se trouvent dans la zone de s&eacute;curit&eacute; d&eacute;limit&eacute;e apr&egrave;s l%27apparition, &agrave; la mi-septembre, du virus de la peste porcine ...
+"
+data-date="26-09-2018 19:16"></a>
+</li>
+</ul>
+<p>
+<a href="/7s7/fr/1502/Belgique/article/detail/3480006/2018/09/26/Les-eleveurs-de-la-zone-infectee-dispenses-de-cotisations-sociales.dhtml"   data-gtm-zones="article|6|text">
+<span class="label l_belgique">peste porcine</span>
+<span class="time">19h16</span>
+Les exploitants porcins qui se trouvent dans la zone de s&eacute;curit&eacute; d&eacute;limit&eacute;e apr&egrave;s l'apparition, &agrave; la mi-septembre, du virus de la peste porcine ...
+</a>
+</p>
+</article>
+<hr class="r1">
+<article class="article" data-vr-contentbox="1.8">
+<h3><a href="/7s7/fr/1505/Monde/article/detail/3480021/2018/09/26/Une-nouvelle-femme-decrit-des-abus-sexuels-de-Brett-Kavanaugh.dhtml"   data-gtm-zones="article|8|title">Une nouvelle femme décrit des abus sexuels de Brett Kavanaugh</a></h3>
+<a href="/7s7/fr/1505/Monde/article/detail/3480021/2018/09/26/Une-nouvelle-femme-decrit-des-abus-sexuels-de-Brett-Kavanaugh.dhtml"    data-gtm-zones="article|8|image">
+<img width="250" src="https://static0.7sur7.be/static/photo/2018/1/3/14/20180926182847/media_l_10606694.jpg" alt="Une nouvelle femme décrit des abus sexuels de Brett Kavanaugh" />
+</a>
+<ul class="art_extra clearfix">
+<li>
+<a data-gtm-zones="article|8|navigationLink" href="/7s7/fr/1505/monde/index.dhtml">Monde</a>
+</li>
+<li class="art_save">
+<a href="http://s.7s7.be/3480021" class="clip" id="clip2919349" data-gtm-zones="article|8|clipboard" data-title="Une nouvelle femme décrit des abus sexuels de Brett Kavanaugh"
+data-img="https://static0.7sur7.be/static/photo/2018/1/3/14/20180926182847/media_l_10606694.jpg"
+data-intro="
+Une femme a accus&eacute; mercredi le candidat de Donald Trump &agrave; la Cour supr&ecirc;me d%27avoir fait partie dans sa jeunesse d%27un groupe de gar&ccedil;ons qui ...
+"
+data-date="26-09-2018 18:30"></a>
+</li>
+</ul>
+<p>
+<a href="/7s7/fr/1505/Monde/article/detail/3480021/2018/09/26/Une-nouvelle-femme-decrit-des-abus-sexuels-de-Brett-Kavanaugh.dhtml"   data-gtm-zones="article|8|text">
+<span class="time">18h30</span>
+Une femme a accus&eacute; mercredi le candidat de Donald Trump &agrave; la Cour supr&ecirc;me d'avoir fait partie dans sa jeunesse d'un groupe de gar&ccedil;ons qui ...
+</a>
+</p>
+</article>
+<hr class="r1">
+<article class="article" data-vr-contentbox="1.10">
+<h3><a href="/7s7/fr/1512/Cyclisme/article/detail/3480000/2018/09/26/L-ex-star-du-cyclisme-Jan-Ullrich-encore-soupconne-d-agression.dhtml"   data-gtm-zones="article|10|title">L'ex-star du cyclisme Jan Ullrich encore soupçonné d'agression</a></h3>
+<a href="/7s7/fr/1512/Cyclisme/article/detail/3480000/2018/09/26/L-ex-star-du-cyclisme-Jan-Ullrich-encore-soupconne-d-agression.dhtml"    data-gtm-zones="article|10|image">
+<img width="250" src="https://static1.7sur7.be/static/photo/2018/18/12/0/20180926172356/media_l_10606635.jpg" alt="L&#039;ex-star du cyclisme Jan Ullrich encore soupçonné d&#039;agression" />
+</a>
+<ul class="art_extra clearfix">
+<li>
+<a data-gtm-zones="article|10|navigationLink" href="/7s7/fr/1512/cyclisme/index.dhtml">Cyclisme</a>
+</li>
+<li class="art_save">
+<a href="http://s.7s7.be/3480000" class="clip" id="clip2919320" data-gtm-zones="article|10|clipboard" data-title="L%27ex-star du cyclisme Jan Ullrich encore soupçonné d%27agression"
+data-img="https://static1.7sur7.be/static/photo/2018/18/12/0/20180926172356/media_l_10606635.jpg"
+data-intro="
+L%27ex-champion cycliste allemand Jan Ullrich, d&eacute;j&agrave; impliqu&eacute; dans plusieurs affaires de violences ces derniers mois, est accus&eacute; d%27avoir agress&eacute; ...
+"
+data-date="26-09-2018 17:34"></a>
+</li>
+</ul>
+<p>
+<a href="/7s7/fr/1512/Cyclisme/article/detail/3480000/2018/09/26/L-ex-star-du-cyclisme-Jan-Ullrich-encore-soupconne-d-agression.dhtml"   data-gtm-zones="article|10|text">
+<span class="time">17h34</span>
+L'ex-champion cycliste allemand Jan Ullrich, d&eacute;j&agrave; impliqu&eacute; dans plusieurs affaires de violences ces derniers mois, est accus&eacute; d'avoir agress&eacute; ...
+</a>
+</p>
+</article>
+</div>
+<div class="article_list right">
+<article class="article" data-vr-contentbox="1.7">
+<h3><a href="/7s7/fr/1502/Belgique/article/detail/3480023/2018/09/26/Quatre-communes-a-facilites-ont-envoye-leurs-convocations-apres-celle-du-gouverneur.dhtml"   data-gtm-zones="article|7|title">Quatre communes à facilités ont envoyé leurs convocations après celle du gouverneur</a></h3>
+<a href="/7s7/fr/1502/Belgique/article/detail/3480023/2018/09/26/Quatre-communes-a-facilites-ont-envoye-leurs-convocations-apres-celle-du-gouverneur.dhtml"    data-gtm-zones="article|7|image">
+<img width="250" src="https://static3.7sur7.be/static/photo/2018/6/8/4/20180926190553/media_l_10606699.jpg" alt="Quatre communes à facilités ont envoyé leurs convocations après celle du gouverneur" />
+</a>
+<ul class="art_extra clearfix">
+<li>
+<a data-gtm-zones="article|7|navigationLink" href="/7s7/fr/1502/belgique/index.dhtml">Belgique</a>
+</li>
+<li class="art_save">
+<a href="http://s.7s7.be/3480023" class="clip" id="clip2919351" data-gtm-zones="article|7|clipboard" data-title="Quatre communes à facilités ont envoyé leurs convocations après celle du gouverneur"
+data-img="https://static3.7sur7.be/static/photo/2018/6/8/4/20180926190553/media_l_10606699.jpg"
+data-intro="
+Les communes &agrave; facilit&eacute;s de Linkebeek, Craainhem, Drogenbos et Wezembeek-Oppem ont envoy&eacute; leurs propres convocations &eacute;lectorales en vue du ...
+"
+data-date="26-09-2018 19:07"></a>
+</li>
+</ul>
+<p>
+<a href="/7s7/fr/1502/Belgique/article/detail/3480023/2018/09/26/Quatre-communes-a-facilites-ont-envoye-leurs-convocations-apres-celle-du-gouverneur.dhtml"   data-gtm-zones="article|7|text">
+<span class="time">19h07</span>
+Les communes &agrave; facilit&eacute;s de Linkebeek, Craainhem, Drogenbos et Wezembeek-Oppem ont envoy&eacute; leurs propres convocations &eacute;lectorales en vue du ...
+</a>
+</p>
+</article>
+<hr class="r1">
+<article class="article" data-vr-contentbox="1.9">
+<h3><a href="/7s7/fr/1527/People/article/detail/3480012/2018/09/26/L-enfance-epouvantable-de-Joaquin-Phoenix.dhtml"   data-gtm-zones="article|9|title">L'enfance épouvantable de Joaquin Phoenix</a></h3>
+<a href="/7s7/fr/1527/People/article/detail/3480012/2018/09/26/L-enfance-epouvantable-de-Joaquin-Phoenix.dhtml"    data-gtm-zones="article|9|image">
+<img width="250" src="https://static2.7sur7.be/static/photo/2018/16/14/6/20180926181309/media_l_10606671.jpg" alt="L&#039;enfance épouvantable de Joaquin Phoenix" />
+</a>
+<ul class="art_extra clearfix">
+<li>
+<a data-gtm-zones="article|9|navigationLink" href="/7s7/fr/1527/people/index.dhtml">People</a>
+</li>
+<li class="art_save">
+<a href="http://s.7s7.be/3480012" class="clip" id="clip2919340" data-gtm-zones="article|9|clipboard" data-title="L%27enfance épouvantable de Joaquin Phoenix"
+data-img="https://static2.7sur7.be/static/photo/2018/16/14/6/20180926181309/media_l_10606671.jpg"
+data-intro="
+L%27acteur pourrait presque envier celle du Joker, son nouveau personnage. Les fans connaissent l%27acteur par ses remarquables interpr&eacute;tations ...
+"
+data-date="26-09-2018 18:21"></a>
+</li>
+</ul>
+<p>
+<a href="/7s7/fr/1527/People/article/detail/3480012/2018/09/26/L-enfance-epouvantable-de-Joaquin-Phoenix.dhtml"   data-gtm-zones="article|9|text">
+<span class="time">18h21</span>
+L'acteur pourrait presque envier celle du Joker, son nouveau personnage. Les fans connaissent l'acteur par ses remarquables interpr&eacute;tations de ...
+</a>
+</p>
+</article>
+<hr class="r1">
+<article class="article" data-vr-contentbox="1.11">
+<h3><a href="/7s7/fr/1529/Musique/article/detail/3479987/2018/09/26/Un-rappeur-francais-appelle-a-pendre-les-Blancs.dhtml"   data-gtm-zones="article|11|title">Un rappeur français appelle à &quot;pendre les Blancs&quot;</a></h3>
+<a href="/7s7/fr/1529/Musique/article/detail/3479987/2018/09/26/Un-rappeur-francais-appelle-a-pendre-les-Blancs.dhtml"  class="tn_list_h_video_button_container"  data-gtm-zones="article|11|image">
+<img width="40" height="40" alt="Play" class="tn_list_h_video_button" src="https://static3.7sur7.be/images/general/bt_play.png?8.3.0.20180528.5">
+<img width="250" src="https://static3.7sur7.be/static/photo/2018/1/8/5/20180926171125/media_l_10606580.png" alt="Un rappeur français appelle à &amp;quot;pendre les Blancs&amp;quot;" />
+</a>
+<ul class="art_extra clearfix">
+<li>
+<a data-gtm-zones="article|11|navigationLink" href="/7s7/fr/1529/musique/index.dhtml">Musique</a>
+</li>
+<li class="art_save">
+<a href="http://s.7s7.be/3479987" class="clip" id="clip2919315" data-gtm-zones="article|11|clipboard" data-title="Un rappeur français appelle à &quot;pendre les Blancs&quot;"
+data-img="https://static3.7sur7.be/static/photo/2018/1/8/5/20180926171125/media_l_10606580.png"
+data-intro="
+La justice fran&ccedil;aise a ouvert mercredi une enqu&ecirc;te pour %27provocation publique &agrave; la commission d%27un crime ou d%27un d&eacute;lit%27 apr&egrave;s la ...
+"
+data-date="26-09-2018 17:13"></a>
+</li>
+</ul>
+<p>
+<a href="/7s7/fr/1529/Musique/article/detail/3479987/2018/09/26/Un-rappeur-francais-appelle-a-pendre-les-Blancs.dhtml"   data-gtm-zones="article|11|text">
+<span class="label l_video">vid&eacute;o</span>
+<span class="time">17h13</span>
+La justice fran&ccedil;aise a ouvert mercredi une enqu&ecirc;te pour "provocation publique &agrave; la commission d'un crime ou d'un d&eacute;lit" apr&egrave;s la diffusion du ...
+</a>
+</p>
+</article>
+</div>
+</section>
+<div class="autodeploy__container autodeploy__container--adv" data-autodeploy-info="name:imu2;folder:adv">
+<!-- DART ad tag -->
+<div id="ad_imu2">
+<script type="text/javascript">
+// document.write(schrijfXFP_bodyTag("imu2"));
+gptSiteSlot('ad_imu2', 'imu2');
+</script>
+</div>
+<div class="gen_clear"></div>
+</div>
+<!-- BEGIN TOP TEASER FIFTEEN - FOTOREEKS -->
+<section class="tn_fotoreeks clearfix">
+<h2>La Minute belge</h2>
+<div class="bn_large_img">
+<a href="/7s7/fr/8012/photo/photoalbum/detail/3472246/1611515/0/La-Minute-belge.dhtml" data-gtm-zones="fotoreeks|1|image">
+<img src="https://static1.7sur7.be/static/photo/2018/5/14/12/20180926070748/album_large_10605957.jpg" style="width:490px" />
+</a>
+</div>
+<ul class="bn_list_thumb clearfix">
+<li>
+<a href="/7s7/fr/8012/photo/photoalbum/detail/3472246/1611397/1/La-Minute-belge.dhtml" data-gtm-zones="fotoreeks|2|image"><img src="https://static1.7sur7.be/static/photo/2018/16/7/3/20180919080906/album_small_10596753.jpg" class="overflow" height="100" width="100" alt="La Minute belge"/></a>
+</li>
+<li>
+<a href="/7s7/fr/8012/photo/photoalbum/detail/3472246/1611288/2/La-Minute-belge.dhtml" data-gtm-zones="fotoreeks|3|image"><img src="https://static0.7sur7.be/static/photo/2018/11/12/4/20180912072456/album_small_10587799.jpg" class="overflow" height="100" width="100" alt="La Minute belge"/></a>
+</li>
+<li>
+<a href="/7s7/fr/8012/photo/photoalbum/detail/3472246/1611220/3/La-Minute-belge.dhtml" data-gtm-zones="fotoreeks|4|image"><img src="https://static2.7sur7.be/static/photo/2018/2/0/9/20180912072418/album_small_10578879.jpg" class="overflow" height="100" width="100" alt="La Minute belge"/></a>
+</li>
+<li>
+<a href="/7s7/fr/8012/photo/photoalbum/detail/3472246/1611220/3/La-Minute-belge.dhtml">
+<img src="https://static0.7sur7.be/images/general/thumb_fotoreeks.gif">
+</a>
+</li>
+</ul>
+</section>
+<!-- END TOP TEASER FIFTEEN - FOTOREEKS -->
+<!-- REGIO WAITING TILE -->
+<!-- END REGIO WAITING TILE -->
+<div class="autodeploy__container autodeploy__container--nmc" data-autodeploy-info="name:nmcMid3;folder:nmc">
+<!--In deze div moet de code komen. Let op! Nooit id veranderen-->
+<div id="mid3">
+<!--<div style="z-index:-1; height:65px; width:468px;">
+<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="https://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="468" height="65">
+<param name="movie" value="https://www.7sur7.be/static/nmc/nmc/mid/7S7_GK_bnr.swf?clickTag=https://classiquesdor.7sur7.be/gkl_j2ee/pag/gkl_index.jsp?p_language=FR" />
+<param name="quality" value="high" />
+<param name="wmode" value="opaque" />
+<embed src="https://www.7sur7.be/static/nmc/nmc/mid/7S7_GK_bnr.swf?clickTag=https://classiquesdor.7sur7.be/gkl_j2ee/pag/gkl_index.jsp?p_language=FR" quality="high" pluginspage="https://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="468" height="65" wmode="opaque"></embed>
+</object>
+</div>-->
+</div>
+<!--Deze JavaScript nooit wegsmijten, zorgt voor de juiste posities bij Breaking Newsbox-->
+<script type="text/javascript">
+var breakingNews = document.getElementById('breakingNews');
+if(breakingNews == null) {
+document.getElementById('mid3').style.display="block";
+}
+else {
+document.getElementById('mid3').style.display="none";
+}
+</script>
+</div>
+<section class="articleblock_3 "  data-vr-zone="zone 1">
+<article class="article artlarge" data-vr-contentbox="1.12 groot">
+<hr class="r1" />
+<h3><a href="/7s7/fr/1502/Belgique/article/detail/3479988/2018/09/26/Une-personne-decede-lors-de-l-incendie-de-quatre-maisons-a-Couillet.dhtml"   data-gtm-zones="article|12|title">Une personne décède lors de l'incendie de quatre maisons à Couillet</a></h3>
+<a href="/7s7/fr/1502/Belgique/article/detail/3479988/2018/09/26/Une-personne-decede-lors-de-l-incendie-de-quatre-maisons-a-Couillet.dhtml"   data-gtm-zones="article|12|image" >
+<img width="510" height="287" src="https://static0.7sur7.be/static/photo/2018/0/11/12/20180926170807/media_xll_10606617.jpg" alt="Une personne décède lors de l&#039;incendie de quatre maisons à Couillet" />
+</a>
+<ul class="art_extra clear">
+<li>
+<a data-gtm-zones="article|12|navigationLink" href="/7s7/fr/1502/belgique/index.dhtml">Belgique</a>
+</li>
+<li class="art_save">
+<a href="http://s.7s7.be/3479988" class="clip" id="clip2919316"  data-gtm-zones="article|12|clipboard" data-title="Une personne décède lors de l%27incendie de quatre maisons à Couillet"
+data-img="https://static1.7sur7.be/static/photo/2018/0/11/12/20180926170807/media_l_10606617.jpg"
+data-intro="
+Un incendie s%27est d&eacute;clar&eacute; dans une habitation de Couillet (Charleroi) mercredi apr&egrave;s-midi. Le feu s%27est communiqu&eacute; &agrave; trois habitations ...
+"
+data-date="26-09-2018 17:09"></a>
+</li>
+</ul>
+<p>
+<a href="/7s7/fr/1502/Belgique/article/detail/3479988/2018/09/26/Une-personne-decede-lors-de-l-incendie-de-quatre-maisons-a-Couillet.dhtml"   data-gtm-zones="article|12|text">
+<span class="time">17h09</span>
+Un incendie s'est d&eacute;clar&eacute; dans une habitation de Couillet (Charleroi) mercredi apr&egrave;s-midi. Le feu s'est communiqu&eacute; &agrave; trois habitations voisines. ...
+</a>
+</p>
+</article>
+<div class="article_list left">
+<article class="article" data-vr-contentbox="1.13">
+<h3><a href="/7s7/fr/15516/L-exil-de-Depardieu/article/detail/3479983/2018/09/26/Macron-est-comme-Poutine.dhtml"   data-gtm-zones="article|13|title">&quot;Macron est comme Poutine&quot;</a></h3>
+<a href="/7s7/fr/15516/L-exil-de-Depardieu/article/detail/3479983/2018/09/26/Macron-est-comme-Poutine.dhtml"    data-gtm-zones="article|13|image">
+<img width="250" src="https://static0.7sur7.be/static/photo/2018/11/3/4/20180926165754/media_l_10606609.jpg" alt="&amp;quot;Macron est comme Poutine&amp;quot;" />
+</a>
+<ul class="art_extra clearfix">
+<li>
+<a data-gtm-zones="article|13|navigationLink" href="/7s7/fr/15516/lexil-de-depardieu/index.dhtml">L&#039;exil de Depardieu</a>
+</li>
+<li class="art_save">
+<a href="http://s.7s7.be/3479983" class="clip" id="clip2919311" data-gtm-zones="article|13|clipboard" data-title="&quot;Macron est comme Poutine&quot;"
+data-img="https://static0.7sur7.be/static/photo/2018/11/3/4/20180926165754/media_l_10606609.jpg"
+data-intro="
+Pour G&eacute;rard Depardieu, la Russie n%27est plus la m&ecirc;me depuis la chute de l%27URSS. %27Il faut arr&ecirc;ter de dire des conneries. Poutine, il est ce ...
+"
+data-date="26-09-2018 17:04"></a>
+</li>
+</ul>
+<p>
+<a href="/7s7/fr/15516/L-exil-de-Depardieu/article/detail/3479983/2018/09/26/Macron-est-comme-Poutine.dhtml"   data-gtm-zones="article|13|text">
+<span class="time">17h04</span>
+Pour G&eacute;rard Depardieu, la Russie n'est plus la m&ecirc;me depuis la chute de l'URSS. "Il faut arr&ecirc;ter de dire des conneries. Poutine, il est ce qu'il ...
+</a>
+</p>
+</article>
+<hr class="r1">
+<article class="article" data-vr-contentbox="1.15">
+<h3><a href="/7s7/fr/1735/Israel-Palestine/article/detail/3479984/2018/09/26/Pour-la-premiere-fois-Trump-se-montre-favorable-a-une-solution-a-deux-Etats.dhtml"   data-gtm-zones="article|15|title">Pour la première fois, Trump se montre favorable à une solution à deux Etats</a></h3>
+<a href="/7s7/fr/1735/Israel-Palestine/article/detail/3479984/2018/09/26/Pour-la-premiere-fois-Trump-se-montre-favorable-a-une-solution-a-deux-Etats.dhtml"    data-gtm-zones="article|15|image">
+<img width="250" src="https://static1.7sur7.be/static/photo/2018/18/8/7/20180926164433/media_l_10606597.jpg" alt="Pour la première fois, Trump se montre favorable à une solution à deux Etats" />
+</a>
+<ul class="art_extra clearfix">
+<li>
+<a data-gtm-zones="article|15|navigationLink" href="/7s7/fr/1735/israel-palestine/index.dhtml">Israel-Palestine</a>
+</li>
+<li class="art_save">
+<a href="http://s.7s7.be/3479984" class="clip" id="clip2919312" data-gtm-zones="article|15|clipboard" data-title="Pour la première fois, Trump se montre favorable à une solution à deux Etats"
+data-img="https://static1.7sur7.be/static/photo/2018/18/8/7/20180926164433/media_l_10606597.jpg"
+data-intro="
+Le pr&eacute;sident am&eacute;ricain Donald Trump s%27est d&eacute;clar&eacute; mercredi favorable pour la premi&egrave;re fois &agrave; une solution &agrave; deux Etats dans le conflit ...
+"
+data-date="26-09-2018 16:46"></a>
+</li>
+</ul>
+<p>
+<a href="/7s7/fr/1735/Israel-Palestine/article/detail/3479984/2018/09/26/Pour-la-premiere-fois-Trump-se-montre-favorable-a-une-solution-a-deux-Etats.dhtml"   data-gtm-zones="article|15|text">
+<span class="label l_monde">ISRAËL/PALESTINE</span>
+<span class="time">16h46</span>
+Le pr&eacute;sident am&eacute;ricain Donald Trump s'est d&eacute;clar&eacute; mercredi favorable pour la premi&egrave;re fois &agrave; une solution &agrave; deux Etats dans le conflit ...
+</a>
+</p>
+</article>
+<hr class="r1">
+<article class="article" data-vr-contentbox="1.17">
+<h3><a href="/7s7/fr/1527/People/article/detail/3479962/2018/09/26/Surpris-avec-une-autre-femme-Shia-LaBeouf-demande-le-divorce.dhtml"   data-gtm-zones="article|17|title">Surpris avec une autre femme, Shia LaBeouf demande le divorce</a></h3>
+<a href="/7s7/fr/1527/People/article/detail/3479962/2018/09/26/Surpris-avec-une-autre-femme-Shia-LaBeouf-demande-le-divorce.dhtml"    data-gtm-zones="article|17|image">
+<img width="250" src="https://static0.7sur7.be/static/photo/2018/15/9/4/20180926131024/media_l_10606309.jpg" alt="Surpris avec une autre femme, Shia LaBeouf demande le divorce" />
+</a>
+<ul class="art_extra clearfix">
+<li>
+<a data-gtm-zones="article|17|navigationLink" href="/7s7/fr/1527/people/index.dhtml">People</a>
+</li>
+<li class="art_save">
+<a href="http://s.7s7.be/3479962" class="clip" id="clip2919270" data-gtm-zones="article|17|clipboard" data-title="Surpris avec une autre femme, Shia LaBeouf demande le divorce"
+data-img="https://static0.7sur7.be/static/photo/2018/15/9/4/20180926131024/media_l_10606309.jpg"
+data-intro="
+FKA twigs est l%27ancienne fianc&eacute;e de l%27acteur Robert Pattinson, la star de %27Twilight%27. La nouvelle a &eacute;t&eacute; rendue publique par le manager de ...
+"
+data-date="26-09-2018 13:27"></a>
+</li>
+</ul>
+<p>
+<a href="/7s7/fr/1527/People/article/detail/3479962/2018/09/26/Surpris-avec-une-autre-femme-Shia-LaBeouf-demande-le-divorce.dhtml"   data-gtm-zones="article|17|text">
+<span class="time">13h27</span>
+FKA twigs est l'ancienne fianc&eacute;e de l'acteur Robert Pattinson, la star de "Twilight". La nouvelle a &eacute;t&eacute; rendue publique par le manager de la ...
+</a>
+</p>
+</article>
+</div>
+<div class="article_list right">
+<article class="article" data-vr-contentbox="1.14">
+<h3><a href="/7s7/fr/1512/Cyclisme/article/detail/3479999/2018/09/26/Campenaerts-offre-le-bronze-a-la-Belgique-sur-le-chrono.dhtml"   data-gtm-zones="article|14|title">Campenaerts offre le bronze à la Belgique sur le chrono</a></h3>
+<a href="/7s7/fr/1512/Cyclisme/article/detail/3479999/2018/09/26/Campenaerts-offre-le-bronze-a-la-Belgique-sur-le-chrono.dhtml"    data-gtm-zones="article|14|image">
+<img width="250" src="https://static1.7sur7.be/static/photo/2018/18/6/3/20180926170134/media_l_10606578.jpg" alt="Campenaerts offre le bronze à la Belgique sur le chrono" />
+</a>
+<ul class="art_extra clearfix">
+<li>
+<a data-gtm-zones="article|14|navigationLink" href="/7s7/fr/1512/cyclisme/index.dhtml">Cyclisme</a>
+</li>
+<li class="art_save">
+<a href="http://s.7s7.be/3479999" class="clip" id="clip2919319" data-gtm-zones="article|14|clipboard" data-title="Campenaerts offre le bronze à la Belgique sur le chrono"
+data-img="https://static1.7sur7.be/static/photo/2018/18/6/3/20180926170134/media_l_10606578.jpg"
+data-intro="
+Victor Campenaerts a d&eacute;croch&eacute; la m&eacute;daille de bronze du contre-la-montre individuel des Mondiaux de cyclisme &agrave; Innsbruck, mercredi, en Autriche. ...
+"
+data-date="26-09-2018 17:03"></a>
+</li>
+</ul>
+<p>
+<a href="/7s7/fr/1512/Cyclisme/article/detail/3479999/2018/09/26/Campenaerts-offre-le-bronze-a-la-Belgique-sur-le-chrono.dhtml"   data-gtm-zones="article|14|text">
+<span class="time">17h03</span>
+Victor Campenaerts a d&eacute;croch&eacute; la m&eacute;daille de bronze du contre-la-montre individuel des Mondiaux de cyclisme &agrave; Innsbruck, mercredi, en Autriche. ...
+</a>
+</p>
+</article>
+<hr class="r1">
+<article class="article" data-vr-contentbox="1.16">
+<h3><a href="/7s7/fr/1505/Monde/article/detail/3479969/2018/09/26/Proces-du-sous-marin-danois-Peter-Madsen-condamne-a-perpetuite.dhtml"   data-gtm-zones="article|16|title">Procès du sous-marin danois: Peter Madsen condamné à perpétuité</a></h3>
+<a href="/7s7/fr/1505/Monde/article/detail/3479969/2018/09/26/Proces-du-sous-marin-danois-Peter-Madsen-condamne-a-perpetuite.dhtml"    data-gtm-zones="article|16|image">
+<img width="250" src="https://static0.7sur7.be/static/photo/2018/3/13/9/20180926144445/media_l_10606449.jpg" alt="Procès du sous-marin danois: Peter Madsen condamné à perpétuité" />
+</a>
+<ul class="art_extra clearfix">
+<li>
+<a data-gtm-zones="article|16|navigationLink" href="/7s7/fr/1505/monde/index.dhtml">Monde</a>
+</li>
+<li class="art_save">
+<a href="http://s.7s7.be/3479969" class="clip" id="clip2919297" data-gtm-zones="article|16|clipboard" data-title="Procès du sous-marin danois: Peter Madsen condamné à perpétuité"
+data-img="https://static0.7sur7.be/static/photo/2018/3/13/9/20180926144445/media_l_10606449.jpg"
+data-intro="
+La Haute cour de Copenhague a confirm&eacute; mercredi en appel la condamnation de l%27inventeur danois Peter Madsen &agrave; la r&eacute;clusion &agrave; perp&eacute;tuit&eacute; pour ...
+"
+data-date="26-09-2018 14:37"></a>
+</li>
+</ul>
+<p>
+<a href="/7s7/fr/1505/Monde/article/detail/3479969/2018/09/26/Proces-du-sous-marin-danois-Peter-Madsen-condamne-a-perpetuite.dhtml"   data-gtm-zones="article|16|text">
+<span class="label l_update">MISE &Agrave; JOUR</span>
+<span class="time">14h37</span>
+La Haute cour de Copenhague a confirm&eacute; mercredi en appel la condamnation de l'inventeur danois Peter Madsen &agrave; la r&eacute;clusion &agrave; perp&eacute;tuit&eacute; pour ...
+</a>
+</p>
+</article>
+<hr class="r1">
+<article class="article" data-vr-contentbox="1.18">
+<h3><a href="/7s7/fr/2668/Especes-Menacees/article/detail/3479964/2018/09/26/Un-beluga-apercu-dans-la-Tamise-a-50km-de-Londres.dhtml"   data-gtm-zones="article|18|title">Un béluga aperçu dans la Tamise, à 50km de Londres</a></h3>
+<a href="/7s7/fr/2668/Especes-Menacees/article/detail/3479964/2018/09/26/Un-beluga-apercu-dans-la-Tamise-a-50km-de-Londres.dhtml"  class="tn_list_h_video_button_container"  data-gtm-zones="article|18|image">
+<img width="40" height="40" alt="Play" class="tn_list_h_video_button" src="https://static0.7sur7.be/images/general/bt_play.png?8.3.0.20180528.5">
+<img width="250" src="https://static0.7sur7.be/static/photo/2018/2/15/10/20180926132124/media_l_10606315.jpg" alt="Un béluga aperçu dans la Tamise, à 50km de Londres" />
+</a>
+<ul class="art_extra clearfix">
+<li>
+<a data-gtm-zones="article|18|navigationLink" href="/7s7/fr/2668/especes-menacees/index.dhtml">Espèces Menacées</a>
+</li>
+<li class="art_save">
+<a href="http://s.7s7.be/3479964" class="clip" id="clip2919272" data-gtm-zones="article|18|clipboard" data-title="Un béluga aperçu dans la Tamise, à 50km de Londres"
+data-img="https://static0.7sur7.be/static/photo/2018/2/15/10/20180926132124/media_l_10606315.jpg"
+data-intro="
+Un b&eacute;luga, c&eacute;tac&eacute; habituellement observ&eacute; dans l%27oc&eacute;an Arctique, a &eacute;t&eacute; aper&ccedil;u dans la Tamise, provoquant l%27inqui&eacute;tude des d&eacute;fenseurs de ...
+"
+data-date="26-09-2018 13:15"></a>
+</li>
+</ul>
+<p>
+<a href="/7s7/fr/2668/Especes-Menacees/article/detail/3479964/2018/09/26/Un-beluga-apercu-dans-la-Tamise-a-50km-de-Londres.dhtml"   data-gtm-zones="article|18|text">
+<span class="label l_video">vid&eacute;o</span>
+<span class="time">13h15</span>
+Un b&eacute;luga, c&eacute;tac&eacute; habituellement observ&eacute; dans l'oc&eacute;an Arctique, a &eacute;t&eacute; aper&ccedil;u dans la Tamise, provoquant l'inqui&eacute;tude des d&eacute;fenseurs de ...
+</a>
+</p>
+</article>
+</div>
+</section>
+<section class="tn_you empty clear clearfix" data-vr-zone="zone 0">
+<h2>lifestyle &amp; fashion</h2>
+<ul class="tn_list_h clearfix">
+<li data-vr-contentbox="0.1">
+<a href="/7s7/fr/1523/Famille/article/detail/3479490/2018/09/25/Le-beau-geste-de-ce-grand-pere-de-81-ans.dhtml"  data-gtm-zones="WoW|1|image"  onclick="">
+<img src="https://static2.7sur7.be/static/photo/2018/1/5/2/20180926084151/teaser_2_11_10606067.jpg" alt="Le beau geste de ce grand-père de 81 ans" />
+</a>
+<h3>
+<a href="/7s7/fr/1523/Famille/article/detail/3479490/2018/09/25/Le-beau-geste-de-ce-grand-pere-de-81-ans.dhtml"  data-gtm-zones="WoW|1|text"  onclick="">
+Le beau geste de ce grand-père de 81 ans
+</a>
+</h3>
+</li>
+<li data-vr-contentbox="0.2">
+<a href="/7s7/fr/1520/Sexe-Relations/article/detail/3479578/2018/09/25/Oui-les-preservatifs-peuvent-etre-rembourses.dhtml"  data-gtm-zones="WoW|2|image"  onclick="">
+<img src="https://static0.7sur7.be/static/photo/2018/6/10/7/20180926084305/teaser_2_11_10606072.jpg" alt="Oui, les préservatifs peuvent être remboursés" />
+</a>
+<h3>
+<a href="/7s7/fr/1520/Sexe-Relations/article/detail/3479578/2018/09/25/Oui-les-preservatifs-peuvent-etre-rembourses.dhtml"  data-gtm-zones="WoW|2|text"  onclick="">
+Oui, les préservatifs peuvent être remboursés
+</a>
+</h3>
+</li>
+</ul>
+<ul class="tn_list_h clearfix">
+<li data-vr-contentbox="0.3">
+<a href="/7s7/fr/1518/Sante/article/detail/3479522/2018/09/25/Ce-qui-vous-empeche-d-atteindre-votre-objectif-sportif.dhtml"  data-gtm-zones="WoW|3|image"  onclick="">
+<img src="https://static1.7sur7.be/static/photo/2018/5/9/6/20180926084224/teaser_2_11_10606071.jpg" alt="Ce qui vous empêche d&#039;atteindre votre objectif sportif" />
+</a>
+<h3>
+<a href="/7s7/fr/1518/Sante/article/detail/3479522/2018/09/25/Ce-qui-vous-empeche-d-atteindre-votre-objectif-sportif.dhtml"  data-gtm-zones="WoW|3|text"  onclick="">
+Ce qui vous empêche d'atteindre votre objectif sportif
+</a>
+</h3>
+</li>
+<li data-vr-contentbox="0.4">
+<a href="/7s7/fr/40842/Cuisiner-pour-tout-le-monde/article/detail/3479520/2018/09/25/Pourquoi-la-fatigue-vous-surprend-apres-le-repas.dhtml"  data-gtm-zones="WoW|4|image"  onclick="">
+<img src="https://static0.7sur7.be/static/photo/2018/16/1/13/20180926084352/teaser_2_11_10606063.jpg" alt="Pourquoi la fatigue vous surprend après le repas" />
+</a>
+<h3>
+<a href="/7s7/fr/40842/Cuisiner-pour-tout-le-monde/article/detail/3479520/2018/09/25/Pourquoi-la-fatigue-vous-surprend-apres-le-repas.dhtml"  data-gtm-zones="WoW|4|text"  onclick="">
+Pourquoi la fatigue vous surprend après le repas
+</a>
+</h3>
+</li>
+</ul>
+<p>santé, beauté & bien-être, sexe et relations, carrière, société</p>
+</section>
+<div class="autodeploy__container autodeploy__container--adv" data-autodeploy-info="name:imu3;folder:adv">
+<!-- DART ad tag -->
+<div id="ad_imu3">
+<script type="text/javascript">
+// document.write(schrijfXFP_bodyTag("imu3"));
+gptSiteSlot('ad_imu3', 'imu3');
+</script>
+</div>
+<div class="gen_clear"></div>
+</div>
+<div class="autodeploy__container autodeploy__container--nmc" data-autodeploy-info="name:nmcMid4;folder:nmc">
+<!--empty-->
+</div>
+<section class="articleblock_4 "  data-vr-zone="zone 1">
+<article class="article artlarge" data-vr-contentbox="1.19 groot">
+<hr class="r1" />
+<h3><a href="/7s7/fr/3007/Bruxelles/article/detail/3479943/2018/09/26/Peine-reduite-pour-la-mere-condamnee-pour-triple-infanticide.dhtml"   data-gtm-zones="article|19|title">Peine réduite pour la mère condamnée pour triple infanticide?</a></h3>
+<a href="/7s7/fr/3007/Bruxelles/article/detail/3479943/2018/09/26/Peine-reduite-pour-la-mere-condamnee-pour-triple-infanticide.dhtml"   data-gtm-zones="article|19|image" >
+<img width="510" height="287" src="https://static3.7sur7.be/static/photo/2018/9/3/13/20180926125251/media_xll_10606303.jpg" alt="Peine réduite pour la mère condamnée pour triple infanticide?" />
+</a>
+<ul class="art_extra clear">
+<li>
+<a data-gtm-zones="article|19|navigationLink" href="/7s7/fr/3007/bruxelles/index.dhtml">Bruxelles</a>
+</li>
+<li class="art_save">
+<a href="http://s.7s7.be/3479943" class="clip" id="clip2919283"  data-gtm-zones="article|19|clipboard" data-title="Peine réduite pour la mère condamnée pour triple infanticide?"
+data-img="https://static0.7sur7.be/static/photo/2018/9/3/13/20180926125251/media_l_10606303.jpg"
+data-intro="
+Le proc&egrave;s en appel de Sonja T.M. d&eacute;butera jeudi &agrave; la 12e chambre de la cour d%27appel de Bruxelles. En premi&egrave;re instance, cette femme &acirc;g&eacute;e de 38 ...
+"
+data-date="26-09-2018 12:56"></a>
+</li>
+</ul>
+<p>
+<a href="/7s7/fr/3007/Bruxelles/article/detail/3479943/2018/09/26/Peine-reduite-pour-la-mere-condamnee-pour-triple-infanticide.dhtml"   data-gtm-zones="article|19|text">
+<span class="label l_belgique">Infanticide à Lennik</span>
+<span class="time">12h56</span>
+Le proc&egrave;s en appel de Sonja T.M. d&eacute;butera jeudi &agrave; la 12e chambre de la cour d'appel de Bruxelles. En premi&egrave;re instance, cette femme &acirc;g&eacute;e de 38 ...
+</a>
+</p>
+</article>
+<div class="article_list left">
+<article class="article" data-vr-contentbox="1.20">
+<h3><a href="/7s7/fr/1505/Monde/article/detail/3480004/2018/09/26/Armes-a-feu-cuirs-une-marque-Benalla-a-ete-deposee-en-France.dhtml"   data-gtm-zones="article|20|title">Armes à feu, cuirs: une marque &quot;Benalla&quot;  a été déposée en France</a></h3>
+<a href="/7s7/fr/1505/Monde/article/detail/3480004/2018/09/26/Armes-a-feu-cuirs-une-marque-Benalla-a-ete-deposee-en-France.dhtml"    data-gtm-zones="article|20|image">
+<img width="250" src="https://static0.7sur7.be/static/photo/2018/5/7/3/20180926185717/media_l_10606698.jpg" alt="Armes à feu, cuirs: une marque &amp;quot;Benalla&amp;quot;  a été déposée en France" />
+</a>
+<ul class="art_extra clearfix">
+<li>
+<a data-gtm-zones="article|20|navigationLink" href="/7s7/fr/1505/monde/index.dhtml">Monde</a>
+</li>
+<li class="art_save">
+<a href="http://s.7s7.be/3480004" class="clip" id="clip2919324" data-gtm-zones="article|20|clipboard" data-title="Armes à feu, cuirs: une marque &quot;Benalla&quot;  a été déposée en France"
+data-img="https://static0.7sur7.be/static/photo/2018/5/7/3/20180926185717/media_l_10606698.jpg"
+data-intro="
+Une avocate parisienne a d&eacute;pos&eacute; la marque %27Benalla%27 pour faire valoir ses droits sur d%27&eacute;ventuelles armes &agrave; feu ou serviettes en papier au ...
+"
+data-date="26-09-2018 19:02"></a>
+</li>
+</ul>
+<p>
+<a href="/7s7/fr/1505/Monde/article/detail/3480004/2018/09/26/Armes-a-feu-cuirs-une-marque-Benalla-a-ete-deposee-en-France.dhtml"   data-gtm-zones="article|20|text">
+<span class="time">19h02</span>
+Une avocate parisienne a d&eacute;pos&eacute; la marque "Benalla" pour faire valoir ses droits sur d'&eacute;ventuelles armes &agrave; feu ou serviettes en papier au nom de ...
+</a>
+</p>
+</article>
+<hr class="r1">
+<article class="article" data-vr-contentbox="1.22">
+<h3><a href="/7s7/fr/1505/Monde/article/detail/3480015/2018/09/26/Un-membre-des-Pussy-Riot-convaincu-d-avoir-ete-empoisonne-par-la-Russie.dhtml"   data-gtm-zones="article|22|title">Un membre des Pussy Riot convaincu d'avoir été &quot;empoisonné&quot; par la Russie</a></h3>
+<a href="/7s7/fr/1505/Monde/article/detail/3480015/2018/09/26/Un-membre-des-Pussy-Riot-convaincu-d-avoir-ete-empoisonne-par-la-Russie.dhtml"    data-gtm-zones="article|22|image">
+<img width="250" src="https://static1.7sur7.be/static/photo/2018/8/6/13/20180926174830/media_l_10606663.jpg" alt="Un membre des Pussy Riot convaincu d&#039;avoir été &amp;quot;empoisonné&amp;quot; par la Russie" />
+</a>
+<ul class="art_extra clearfix">
+<li>
+<a data-gtm-zones="article|22|navigationLink" href="/7s7/fr/1505/monde/index.dhtml">Monde</a>
+</li>
+<li class="art_save">
+<a href="http://s.7s7.be/3480015" class="clip" id="clip2919343" data-gtm-zones="article|22|clipboard" data-title="Un membre des Pussy Riot convaincu d%27avoir été &quot;empoisonné&quot; par la Russie"
+data-img="https://static1.7sur7.be/static/photo/2018/8/6/13/20180926174830/media_l_10606663.jpg"
+data-intro="
+Le militant du groupe contestataire Pussy Riot hospitalis&eacute; &agrave; Berlin, Piotr Verzilov, %27croit fermement%27 avoir &eacute;t&eacute; empoisonn&eacute; par la Russie, ...
+"
+data-date="26-09-2018 17:49"></a>
+</li>
+</ul>
+<p>
+<a href="/7s7/fr/1505/Monde/article/detail/3480015/2018/09/26/Un-membre-des-Pussy-Riot-convaincu-d-avoir-ete-empoisonne-par-la-Russie.dhtml"   data-gtm-zones="article|22|text">
+<span class="time">17h49</span>
+Le militant du groupe contestataire Pussy Riot hospitalis&eacute; &agrave; Berlin, Piotr Verzilov, "croit fermement" avoir &eacute;t&eacute; empoisonn&eacute; par la Russie, ...
+</a>
+</p>
+</article>
+<hr class="r1">
+<article class="article" data-vr-contentbox="1.24">
+<h3><a href="/7s7/fr/1505/Monde/article/detail/3479982/2018/09/26/Arrete-apres-avoir-perdu-un-portefeuille-rempli-de-faux-billets.dhtml"   data-gtm-zones="article|24|title">Arrêté après avoir perdu un portefeuille rempli de faux billets</a></h3>
+<a href="/7s7/fr/1505/Monde/article/detail/3479982/2018/09/26/Arrete-apres-avoir-perdu-un-portefeuille-rempli-de-faux-billets.dhtml"    data-gtm-zones="article|24|image">
+<img width="250" src="https://static2.7sur7.be/static/photo/2018/13/3/2/20180926163104/media_l_10606592.jpg" alt="Arrêté après avoir perdu un portefeuille rempli de faux billets" />
+</a>
+<ul class="art_extra clearfix">
+<li>
+<a data-gtm-zones="article|24|navigationLink" href="/7s7/fr/1505/monde/index.dhtml">Monde</a>
+</li>
+<li class="art_save">
+<a href="http://s.7s7.be/3479982" class="clip" id="clip2919310" data-gtm-zones="article|24|clipboard" data-title="Arrêté après avoir perdu un portefeuille rempli de faux billets"
+data-img="https://static2.7sur7.be/static/photo/2018/13/3/2/20180926163104/media_l_10606592.jpg"
+data-intro="
+Un homme de 22 ans a &eacute;t&eacute; interpell&eacute; en Autriche apr&egrave;s avoir perdu son portefeuille dans lequel se trouvaient plusieurs faux billets de 50 euros, ...
+"
+data-date="26-09-2018 16:32"></a>
+</li>
+</ul>
+<p>
+<a href="/7s7/fr/1505/Monde/article/detail/3479982/2018/09/26/Arrete-apres-avoir-perdu-un-portefeuille-rempli-de-faux-billets.dhtml"   data-gtm-zones="article|24|text">
+<span class="time">16h32</span>
+Un homme de 22 ans a &eacute;t&eacute; interpell&eacute; en Autriche apr&egrave;s avoir perdu son portefeuille dans lequel se trouvaient plusieurs faux billets de 50 euros, ...
+</a>
+</p>
+</article>
+</div>
+<div class="article_list right">
+<article class="article" data-vr-contentbox="1.21">
+<h3><a href="/7s7/fr/1505/Monde/article/detail/3480016/2018/09/26/Greve-annulee-chez-Eurostar.dhtml"   data-gtm-zones="article|21|title">Grève annulée chez Eurostar</a></h3>
+<a href="/7s7/fr/1505/Monde/article/detail/3480016/2018/09/26/Greve-annulee-chez-Eurostar.dhtml"    data-gtm-zones="article|21|image">
+<img width="250" src="https://static0.7sur7.be/static/photo/2018/2/15/3/20180926175941/media_l_10606638.jpg" alt="Grève annulée chez Eurostar" />
+</a>
+<ul class="art_extra clearfix">
+<li>
+<a data-gtm-zones="article|21|navigationLink" href="/7s7/fr/1505/monde/index.dhtml">Monde</a>
+</li>
+<li class="art_save">
+<a href="http://s.7s7.be/3480016" class="clip" id="clip2919344" data-gtm-zones="article|21|clipboard" data-title="Grève annulée chez Eurostar"
+data-img="https://static0.7sur7.be/static/photo/2018/2/15/3/20180926175941/media_l_10606638.jpg"
+data-intro="
+La gr&egrave;ve pr&eacute;vue au sein du personnel d%27Eurostar &agrave; Londres le 30 septembre et le 1er octobre n%27aura finalement pas lieu, a-t-on appris ...
+"
+data-date="26-09-2018 18:00"></a>
+</li>
+</ul>
+<p>
+<a href="/7s7/fr/1505/Monde/article/detail/3480016/2018/09/26/Greve-annulee-chez-Eurostar.dhtml"   data-gtm-zones="article|21|text">
+<span class="time">18h00</span>
+La gr&egrave;ve pr&eacute;vue au sein du personnel d'Eurostar &agrave; Londres le 30 septembre et le 1er octobre n'aura finalement pas lieu, a-t-on appris mercredi ...
+</a>
+</p>
+</article>
+<hr class="r1">
+<article class="article" data-vr-contentbox="1.23">
+<h3><a href="/7s7/fr/1510/Football-Etranger/article/detail/3479996/2018/09/26/Rien-n-a-ete-convenu-Courtois-evoque-la-concurrence-avec-Navas.dhtml"   data-gtm-zones="article|23|title">&quot;Rien n'a été convenu&quot;: Courtois évoque la concurrence avec Navas</a></h3>
+<a href="/7s7/fr/1510/Football-Etranger/article/detail/3479996/2018/09/26/Rien-n-a-ete-convenu-Courtois-evoque-la-concurrence-avec-Navas.dhtml"    data-gtm-zones="article|23|image">
+<img width="250" src="https://static2.7sur7.be/static/photo/2018/9/12/5/20180926161211/media_l_10606550.jpg" alt="&amp;quot;Rien n&#039;a été convenu&amp;quot;: Courtois évoque la concurrence avec Navas" />
+</a>
+<ul class="art_extra clearfix">
+<li>
+<a data-gtm-zones="article|23|navigationLink" href="/7s7/fr/1510/football-etranger/index.dhtml">Football Etranger</a>
+</li>
+<li class="art_save">
+<a href="http://s.7s7.be/3479996" class="clip" id="clip2919296" data-gtm-zones="article|23|clipboard" data-title="&quot;Rien n%27a été convenu&quot;: Courtois évoque la concurrence avec Navas"
+data-img="https://static2.7sur7.be/static/photo/2018/9/12/5/20180926161211/media_l_10606550.jpg"
+data-intro="
+Thibaut Courtois doit faire face &agrave; la f&eacute;roce concurrence de Keylor Navas depuis son arriv&eacute;e au Real Madrid. Comme l%27a confirm&eacute; le Diable, Julen ...
+"
+data-date="26-09-2018 16:49"></a>
+</li>
+</ul>
+<p>
+<a href="/7s7/fr/1510/Football-Etranger/article/detail/3479996/2018/09/26/Rien-n-a-ete-convenu-Courtois-evoque-la-concurrence-avec-Navas.dhtml"   data-gtm-zones="article|23|text">
+<span class="time">16h49</span>
+Thibaut Courtois doit faire face &agrave; la f&eacute;roce concurrence de Keylor Navas depuis son arriv&eacute;e au Real Madrid. Comme l'a confirm&eacute; le Diable, Julen ...
+</a>
+</p>
+</article>
+<hr class="r1">
+<article class="article" data-vr-contentbox="1.25">
+<h3><a href="/7s7/fr/2668/Especes-Menacees/article/detail/3479976/2018/09/26/Le-Titan-de-Vorombe-le-plus-gros-oiseau-que-l-Homme-ait-connu.dhtml"   data-gtm-zones="article|25|title">Le Titan de Vorombe, le plus gros oiseau que l'Homme ait connu</a></h3>
+<a href="/7s7/fr/2668/Especes-Menacees/article/detail/3479976/2018/09/26/Le-Titan-de-Vorombe-le-plus-gros-oiseau-que-l-Homme-ait-connu.dhtml"    data-gtm-zones="article|25|image">
+<img width="250" src="https://static2.7sur7.be/static/photo/2018/11/6/6/20180926152251/media_l_10606476.jpg" alt="Le Titan de Vorombe, le plus gros oiseau que l&#039;Homme ait connu" />
+</a>
+<ul class="art_extra clearfix">
+<li>
+<a data-gtm-zones="article|25|navigationLink" href="/7s7/fr/2668/especes-menacees/index.dhtml">Espèces Menacées</a>
+</li>
+<li class="art_save">
+<a href="http://s.7s7.be/3479976" class="clip" id="clip2919304" data-gtm-zones="article|25|clipboard" data-title="Le Titan de Vorombe, le plus gros oiseau que l%27Homme ait connu"
+data-img="https://static2.7sur7.be/static/photo/2018/11/6/6/20180926152251/media_l_10606476.jpg"
+data-intro="
+Le plus gros oiseau du monde serait bien un oiseaux-&eacute;l&eacute;phant mais pas celui qu%27on croyait: apr&egrave;s plus d%27un si&egrave;cle de pi&egrave;ces contradictoires ...
+"
+data-date="26-09-2018 16:08"></a>
+</li>
+</ul>
+<p>
+<a href="/7s7/fr/2668/Especes-Menacees/article/detail/3479976/2018/09/26/Le-Titan-de-Vorombe-le-plus-gros-oiseau-que-l-Homme-ait-connu.dhtml"   data-gtm-zones="article|25|text">
+<span class="time">16h08</span>
+Le plus gros oiseau du monde serait bien un oiseaux-&eacute;l&eacute;phant mais pas celui qu'on croyait: apr&egrave;s plus d'un si&egrave;cle de pi&egrave;ces contradictoires et de ...
+</a>
+</p>
+</article>
+</div>
+</section>
+<section class="tn_hln clear clearfix" data-vr-zone="zone 0">
+<h2>7sur7 à Hollywood</h2>
+<ul class="tn_list_h clearfix">
+<li data-vr-contentbox="0.1">
+<a href="/7s7/fr/8024/Stars/photoalbum/detail/85121/1611511/0/Showbiz-en-images.dhtml"  data-gtm-zones="exclusief|1|image"  onclick="">
+<img src="https://static3.7sur7.be/static/photo/2018/6/5/1/20180926111618/teaser_2_9_10606186.jpg" style="width:240px;height:138px" alt="Showbiz en images" />
+</a>
+<h3>
+<a href="/7s7/fr/8024/Stars/photoalbum/detail/85121/1611511/0/Showbiz-en-images.dhtml"  data-gtm-zones="exclusief|1|titel"  onclick="">
+Showbiz en images
+</a>
+</h3>
+</li>
+<li data-vr-contentbox="0.2">
+<a href="/7s7/fr/8032/you/photoalbum/detail/1569318/1611518/0/Le-flop-mode-du-jour.dhtml"  data-gtm-zones="exclusief|2|image"  onclick="">
+<img src="https://static3.7sur7.be/static/photo/2018/10/11/2/20180926155503/teaser_2_9_10606532.jpg" style="width:240px;height:138px" alt="Le flop mode du jour" />
+</a>
+<h3>
+<a href="/7s7/fr/8032/you/photoalbum/detail/1569318/1611518/0/Le-flop-mode-du-jour.dhtml"  data-gtm-zones="exclusief|2|titel"  onclick="">
+Le flop mode du jour
+</a>
+</h3>
+</li>
+</ul>
+</section>
+<div class="autodeploy__container autodeploy__container--nmc" data-autodeploy-info="name:nmcMid5;folder:nmc">
+</div>
+<!-- TOPICS LOADING FRAME -->
+<!-- END TOPICS LOADING FRAME -->
+<!-- BEGIN BOTTOM TEASER FIFTEEN - FOTOREEKS -->
+<!-- END BOTTOM TEASER FIFTEEN - FOTOREEKS -->
+<section class="articleblock_5 "  data-vr-zone="zone 1">
+<article class="article artlarge"  data-vr-contentbox="1.26 groot">
+<hr class="r1" />
+<h3><a href="/7s7/fr/1502/Belgique/article/detail/3479973/2018/09/26/La-course-folle-d-un-fossoyeur-liegeois-ivre-et-en-defaut-de-permis.dhtml"   data-gtm-zones="article|26|title">La course folle d'un fossoyeur liégeois ivre et en défaut de permis</a></h3>
+<a href="/7s7/fr/1502/Belgique/article/detail/3479973/2018/09/26/La-course-folle-d-un-fossoyeur-liegeois-ivre-et-en-defaut-de-permis.dhtml"   data-gtm-zones="article|26|image" >
+<img width="510" height="287" src="https://static1.7sur7.be/static/photo/2018/6/15/14/20180926165410/media_xll_10606604.jpg" alt="La course folle d&#039;un fossoyeur liégeois ivre et en défaut de permis" />
+</a>
+<ul class="art_extra clear">
+<li>
+<a data-gtm-zones="article|26|navigationLink" href="/7s7/fr/1502/belgique/index.dhtml">Belgique</a>
+</li>
+<li class="art_save">
+<a href="http://s.7s7.be/3479973" class="clip" id="clip2919301"  data-gtm-zones="article|26|clipboard" data-title="La course folle d%27un fossoyeur liégeois ivre et en défaut de permis"
+data-img="https://static3.7sur7.be/static/photo/2018/6/15/14/20180926165410/media_l_10606604.jpg"
+data-intro="
+Un quadrag&eacute;naire, &agrave; qui on venait de retirer son permis &agrave; cause d%27un accident de la route, a tent&eacute; d%27&eacute;chapper mardi soir &agrave; la police en ...
+"
+data-date="26-09-2018 15:55"></a>
+</li>
+</ul>
+<p>
+<a href="/7s7/fr/1502/Belgique/article/detail/3479973/2018/09/26/La-course-folle-d-un-fossoyeur-liegeois-ivre-et-en-defaut-de-permis.dhtml"   data-gtm-zones="article|26|text">
+<span class="time">15h55</span>
+Un quadrag&eacute;naire, &agrave; qui on venait de retirer son permis &agrave; cause d'un accident de la route, a tent&eacute; d'&eacute;chapper mardi soir &agrave; la police en prenant ...
+</a>
+</p>
+</article>
+<div class="article_list left">
+<article class="article" data-vr-contentbox="1.27">
+<h3><a href="/7s7/fr/1502/Belgique/article/detail/3479977/2018/09/26/Condamne-a-cause-de-la-taille-de-son-nez-il-conteste.dhtml"   data-gtm-zones="article|27|title">Condamné à cause de la taille de son nez, il conteste</a></h3>
+<a href="/7s7/fr/1502/Belgique/article/detail/3479977/2018/09/26/Condamne-a-cause-de-la-taille-de-son-nez-il-conteste.dhtml"    data-gtm-zones="article|27|image">
+<img width="250" src="https://static0.7sur7.be/static/photo/2018/12/11/0/20180926154446/media_l_10606515.jpg" alt="Condamné à cause de la taille de son nez, il conteste" />
+</a>
+<ul class="art_extra clearfix">
+<li>
+<a data-gtm-zones="article|27|navigationLink" href="/7s7/fr/1502/belgique/index.dhtml">Belgique</a>
+</li>
+<li class="art_save">
+<a href="http://s.7s7.be/3479977" class="clip" id="clip2919305" data-gtm-zones="article|27|clipboard" data-title="Condamné à cause de la taille de son nez, il conteste"
+data-img="https://static0.7sur7.be/static/photo/2018/12/11/0/20180926154446/media_l_10606515.jpg"
+data-intro="
+Condamn&eacute; &agrave; une peine de deux ans de prison avec un sursis de deux ans pour ce qui exc&egrave;de la moiti&eacute; de la peine par le tribunal correctionnel de ...
+"
+data-date="26-09-2018 15:49"></a>
+</li>
+</ul>
+<p>
+<a href="/7s7/fr/1502/Belgique/article/detail/3479977/2018/09/26/Condamne-a-cause-de-la-taille-de-son-nez-il-conteste.dhtml"   data-gtm-zones="article|27|text">
+<span class="time">15h49</span>
+Condamn&eacute; &agrave; une peine de deux ans de prison avec un sursis de deux ans pour ce qui exc&egrave;de la moiti&eacute; de la peine par le tribunal correctionnel de ...
+</a>
+</p>
+</article>
+<hr class="r1">
+<article class="article" data-vr-contentbox="1.29">
+<h3><a href="/7s7/fr/1505/Monde/article/detail/3479994/2018/09/26/150-personnalites-de-France-lancent-un-manifeste-pour-l-accueil-des-migrants.dhtml"   data-gtm-zones="article|29|title">150 personnalités de France lancent un &quot;manifeste pour l'accueil des migrants&quot;</a></h3>
+<a href="/7s7/fr/1505/Monde/article/detail/3479994/2018/09/26/150-personnalites-de-France-lancent-un-manifeste-pour-l-accueil-des-migrants.dhtml"  class="tn_list_h_video_button_container"  data-gtm-zones="article|29|image">
+<img width="40" height="40" alt="Play" class="tn_list_h_video_button" src="https://static3.7sur7.be/images/general/bt_play.png?8.3.0.20180528.5">
+<img width="250" src="https://static0.7sur7.be/static/photo/2018/10/9/13/20180926152302/media_l_10606513.jpg" alt="150 personnalités de France lancent un &amp;quot;manifeste pour l&#039;accueil des migrants&amp;quot;" />
+</a>
+<ul class="art_extra clearfix">
+<li>
+<a data-gtm-zones="article|29|navigationLink" href="/7s7/fr/1505/monde/index.dhtml">Monde</a>
+</li>
+<li class="art_save">
+<a href="http://s.7s7.be/3479994" class="clip" id="clip2919294" data-gtm-zones="article|29|clipboard" data-title="150 personnalités de France lancent un &quot;manifeste pour l%27accueil des migrants&quot;"
+data-img="https://static0.7sur7.be/static/photo/2018/10/9/13/20180926152302/media_l_10606513.jpg"
+data-intro="
+Quelque 150 personnalit&eacute;s, intellectuels ou artistes en France ont lanc&eacute; mercredi un %27manifeste pour l%27accueil des migrants%27 refusant toute ...
+"
+data-date="26-09-2018 15:24"></a>
+</li>
+</ul>
+<p>
+<a href="/7s7/fr/1505/Monde/article/detail/3479994/2018/09/26/150-personnalites-de-France-lancent-un-manifeste-pour-l-accueil-des-migrants.dhtml"   data-gtm-zones="article|29|text">
+<span class="label l_video">vid&eacute;o</span>
+<span class="time">15h24</span>
+Quelque 150 personnalit&eacute;s, intellectuels ou artistes en France ont lanc&eacute; mercredi un "manifeste pour l'accueil des migrants" refusant toute ...
+</a>
+</p>
+</article>
+<hr class="r1">
+<article class="article" data-vr-contentbox="1.31">
+<h3><a href="/7s7/fr/1505/Monde/article/detail/3479951/2018/09/26/Un-vagabond-soupconne-d-un-double-meurtre-a-la-hache-en-France.dhtml"   data-gtm-zones="article|31|title">Un vagabond soupçonné d'un double meurtre à la hache en France</a></h3>
+<a href="/7s7/fr/1505/Monde/article/detail/3479951/2018/09/26/Un-vagabond-soupconne-d-un-double-meurtre-a-la-hache-en-France.dhtml"    data-gtm-zones="article|31|image">
+<img width="250" src="https://static3.7sur7.be/static/photo/2018/5/0/0/20180926144930/media_l_10606470.jpg" alt="Un vagabond soupçonné d&#039;un double meurtre à la hache en France" />
+</a>
+<ul class="art_extra clearfix">
+<li>
+<a data-gtm-zones="article|31|navigationLink" href="/7s7/fr/1505/monde/index.dhtml">Monde</a>
+</li>
+<li class="art_save">
+<a href="http://s.7s7.be/3479951" class="clip" id="clip2919291" data-gtm-zones="article|31|clipboard" data-title="Un vagabond soupçonné d%27un double meurtre à la hache en France"
+data-img="https://static3.7sur7.be/static/photo/2018/5/0/0/20180926144930/media_l_10606470.jpg"
+data-intro="
+Un vagabond espagnol, soup&ccedil;onn&eacute; d%27un double meurtre perp&eacute;tr&eacute; en juin dans le sud de la France, a &eacute;t&eacute; inculp&eacute; et &eacute;crou&eacute;, a-t-on appris mercredi ...
+"
+data-date="26-09-2018 14:51"></a>
+</li>
+</ul>
+<p>
+<a href="/7s7/fr/1505/Monde/article/detail/3479951/2018/09/26/Un-vagabond-soupconne-d-un-double-meurtre-a-la-hache-en-France.dhtml"   data-gtm-zones="article|31|text">
+<span class="time">14h51</span>
+Un vagabond espagnol, soup&ccedil;onn&eacute; d'un double meurtre perp&eacute;tr&eacute; en juin dans le sud de la France, a &eacute;t&eacute; inculp&eacute; et &eacute;crou&eacute;, a-t-on appris mercredi de ...
+</a>
+</p>
+</article>
+</div>
+<div class="article_list right">
+<article class="article" data-vr-contentbox="1.28">
+<h3><a href="/7s7/fr/1518/Sante/article/detail/3479995/2018/09/26/Comment-soulager-le-mal-de-dos-au-bureau.dhtml"   data-gtm-zones="article|28|title">Comment soulager le mal de dos au bureau?</a></h3>
+<a href="/7s7/fr/1518/Sante/article/detail/3479995/2018/09/26/Comment-soulager-le-mal-de-dos-au-bureau.dhtml"  class="tn_list_h_video_button_container"  data-gtm-zones="article|28|image">
+<img width="40" height="40" alt="Play" class="tn_list_h_video_button" src="https://static1.7sur7.be/images/general/bt_play.png?8.3.0.20180528.5">
+<img width="250" src="https://static1.7sur7.be/static/photo/2018/5/2/4/20180926152151/media_l_10606489.jpg" alt="Comment soulager le mal de dos au bureau?" />
+</a>
+<ul class="art_extra clearfix">
+<li>
+<a data-gtm-zones="article|28|navigationLink" href="/7s7/fr/1518/sante_1/index.dhtml">Santé</a>
+</li>
+<li class="art_save">
+<a href="http://s.7s7.be/3479995" class="clip" id="clip2919295" data-gtm-zones="article|28|clipboard" data-title="Comment soulager le mal de dos au bureau?"
+data-img="https://static1.7sur7.be/static/photo/2018/5/2/4/20180926152151/media_l_10606489.jpg"
+data-intro="
+Mary Ochsner, professeur de yoga, a partag&eacute; quatre positions efficaces &agrave; r&eacute;aliser au bureau pour soulager le mal de dos. On le sait d&eacute;j&agrave;: pour ...
+"
+data-date="26-09-2018 15:49"></a>
+</li>
+</ul>
+<p>
+<a href="/7s7/fr/1518/Sante/article/detail/3479995/2018/09/26/Comment-soulager-le-mal-de-dos-au-bureau.dhtml"   data-gtm-zones="article|28|text">
+<span class="label l_video">vid&eacute;o</span>
+<span class="time">15h49</span>
+Mary Ochsner, professeur de yoga, a partag&eacute; quatre positions efficaces &agrave; r&eacute;aliser au bureau pour soulager le mal de dos. On le sait d&eacute;j&agrave;: pour ...
+</a>
+</p>
+</article>
+<hr class="r1">
+<article class="article" data-vr-contentbox="1.30">
+<h3><a href="/7s7/fr/1527/People/article/detail/3479970/2018/09/26/Emmanuelle-Beart-a-epouse-Frederic-Chaudier.dhtml"   data-gtm-zones="article|30|title">Emmanuelle Béart a épousé Frédéric Chaudier</a></h3>
+<a href="/7s7/fr/1527/People/article/detail/3479970/2018/09/26/Emmanuelle-Beart-a-epouse-Frederic-Chaudier.dhtml"    data-gtm-zones="article|30|image">
+<img width="250" src="https://static3.7sur7.be/static/photo/2018/6/1/1/20180926145219/media_l_10606471.jpg" alt="Emmanuelle Béart a épousé Frédéric Chaudier" />
+</a>
+<ul class="art_extra clearfix">
+<li>
+<a data-gtm-zones="article|30|navigationLink" href="/7s7/fr/1527/people/index.dhtml">People</a>
+</li>
+<li class="art_save">
+<a href="http://s.7s7.be/3479970" class="clip" id="clip2919298" data-gtm-zones="article|30|clipboard" data-title="Emmanuelle Béart a épousé Frédéric Chaudier"
+data-img="https://static3.7sur7.be/static/photo/2018/6/1/1/20180926145219/media_l_10606471.jpg"
+data-intro="
+Les noces ont dur&eacute; trois jours entre Paris et Gassin, dans le Var. Ce vendredi 21 septembre, l%27actrice de %27Manon des sources%27 a &eacute;pous&eacute; son ...
+"
+data-date="26-09-2018 14:56"></a>
+</li>
+</ul>
+<p>
+<a href="/7s7/fr/1527/People/article/detail/3479970/2018/09/26/Emmanuelle-Beart-a-epouse-Frederic-Chaudier.dhtml"   data-gtm-zones="article|30|text">
+<span class="time">14h56</span>
+Les noces ont dur&eacute; trois jours entre Paris et Gassin, dans le Var. Ce vendredi 21 septembre, l'actrice de "Manon des sources" a &eacute;pous&eacute; son ...
+</a>
+</p>
+</article>
+<hr class="r1">
+<article class="article" data-vr-contentbox="1.32">
+<h3><a href="/7s7/fr/1510/Football-Etranger/article/detail/3479949/2018/09/26/Les-retrouvailles-glaciales-entre-Pogba-et-Mourinho.dhtml"   data-gtm-zones="article|32|title">Les retrouvailles glaciales entre Pogba et Mourinho</a></h3>
+<a href="/7s7/fr/1510/Football-Etranger/article/detail/3479949/2018/09/26/Les-retrouvailles-glaciales-entre-Pogba-et-Mourinho.dhtml"  class="tn_list_h_video_button_container"  data-gtm-zones="article|32|image">
+<img width="40" height="40" alt="Play" class="tn_list_h_video_button" src="https://static1.7sur7.be/images/general/bt_play.png?8.3.0.20180528.5">
+<img width="250" src="https://static2.7sur7.be/static/photo/2018/3/9/1/20180926142116/media_l_10606411.jpg" alt="Les retrouvailles glaciales entre Pogba et Mourinho" />
+</a>
+<ul class="art_extra clearfix">
+<li>
+<a data-gtm-zones="article|32|navigationLink" href="/7s7/fr/1510/football-etranger/index.dhtml">Football Etranger</a>
+</li>
+<li class="art_save">
+<a href="http://s.7s7.be/3479949" class="clip" id="clip2919289" data-gtm-zones="article|32|clipboard" data-title="Les retrouvailles glaciales entre Pogba et Mourinho"
+data-img="https://static2.7sur7.be/static/photo/2018/3/9/1/20180926142116/media_l_10606411.jpg"
+data-intro="
+Le point de non-retour a &eacute;t&eacute; atteint entre Paul Pogba et Jos&eacute; Mourinho. Apr&egrave;s le retrait du statut de vice-capitaine du joueur fran&ccedil;ais, les ...
+"
+data-date="26-09-2018 14:46"></a>
+</li>
+</ul>
+<p>
+<a href="/7s7/fr/1510/Football-Etranger/article/detail/3479949/2018/09/26/Les-retrouvailles-glaciales-entre-Pogba-et-Mourinho.dhtml"   data-gtm-zones="article|32|text">
+<span class="label l_video">vid&eacute;o</span>
+<span class="time">14h46</span>
+Le point de non-retour a &eacute;t&eacute; atteint entre Paul Pogba et Jos&eacute; Mourinho. Apr&egrave;s le retrait du statut de vice-capitaine du joueur fran&ccedil;ais, les ...
+</a>
+</p>
+</article>
+</div>
+<!-- BEGIN BELOW BOTTOM TEASER FIFTEEN - FOTOREEKS -->
+<!-- END BELOW BOTTOM TEASER FIFTEEN - FOTOREEKS -->
+</section>
+<div class="autodeploy__container autodeploy__container--nmc" data-autodeploy-info="name:nmcMid6;folder:nmc">
+<div id="netto" class="clear"></div>
+<script>
+(function(){
+$('#netto').load('/m24/7s7/', function(){});
+})();
+</script>
+</div>
+</section>
+<section class="str_aside_cntr">
+<div class="autodeploy__container autodeploy__container--nmc" data-autodeploy-info="name:nmcBoxright;folder:nmc">
+</div>
+<div class="autodeploy__container autodeploy__container--adv" data-autodeploy-info="name:advBoxright;folder:adv">
+</div>
+<!-- check if label VIDEO -->
+<section data-vr-zone="zone 6" class=' b1 invert mar10   clear'>
+<a data-vr-contentbox="6.19 groot" href="/7s7/fr/9098/Football/article/detail/3479937/2018/09/26/Des-ouvriers-du-Mondial-2022-non-payes-depuis-des-mois.dhtml"  data-gtm-zones="bakskes|19|image" >
+<img src="https://static1.7sur7.be/static/photo/2018/13/11/3/20180926175613/teaser_2_2_10606668.jpg" width="306" height="169" />
+<h3 data-gtm-zones="bakskes|19|title">Des ouvriers du Mondial 2022 non payés depuis des mois</h3>
+</a>
+</section>
+<!-- check if label VIDEO -->
+<section data-vr-zone="zone 6">
+<ul class="b2 mar5 clearfix">
+<li class=" ">
+<a data-vr-contentbox="6.20" href="/7s7/fr/1509/Football-Belge/article/detail/3479913/2018/09/26/La-defaite-de-trop-pour-Yannick-Ferrera.dhtml"  data-gtm-zones="bakskes|20|image" >
+<img src="https://static1.7sur7.be/static/photo/2018/18/10/3/20180926122725/teaser_2_2_10606293.jpg" width="150" height="83" />
+<h3 data-gtm-zones="bakskes|20|title">La défaite de trop pour Yannick Ferrera?</h3>
+</a>
+</li>
+<!-- check if label VIDEO -->
+<li class=" ">
+<a data-vr-contentbox="6.21" href="/7s7/fr/1527/People/article/detail/3479904/2018/09/26/Une-ancienne-musicienne-de-Beyonce-l-accuse-de-sorcellerie.dhtml"  data-gtm-zones="bakskes|21|image" >
+<img src="https://static0.7sur7.be/static/photo/2018/18/10/11/20180926170358/teaser_2_2_10606616.jpg" width="150" height="83" />
+<h3 data-gtm-zones="bakskes|21|title">Une ancienne musicienne de Beyoncé l'accuse de &quot;sorcellerie&quot;</h3>
+</a>
+</li>
+<!-- check if label VIDEO -->
+<li class=" ">
+<a data-vr-contentbox="6.22" href="/7s7/fr/1505/Monde/article/detail/3479920/2018/09/26/Trois-hommes-recherches-apres-avoir-torture-et-tue-des-kangourous.dhtml"  data-gtm-zones="bakskes|22|image" >
+<img src="https://static0.7sur7.be/static/photo/2018/16/8/1/20180926122527/teaser_2_2_10606291.jpg" width="150" height="83" />
+<h3 data-gtm-zones="bakskes|22|title">Recherchés après avoir torturé et tué des kangourous</h3>
+</a>
+</li>
+<!-- check if label VIDEO -->
+<li class=" ">
+<a data-vr-contentbox="6.23" href="/7s7/fr/1769/Britney-Spears/article/detail/3479916/2018/09/26/Britney-Spears-devra-verser-plusieurs-milliers-de-dollars-a-son-ex.dhtml"  data-gtm-zones="bakskes|23|image" >
+<img src="https://static3.7sur7.be/static/photo/2018/2/6/11/20180926140225/teaser_2_2_10606391.jpg" width="150" height="83" />
+<h3 data-gtm-zones="bakskes|23|title">Britney Spears devra verser &quot;plusieurs milliers de dollars&quot; à son ex</h3>
+</a>
+</li>
+<!-- check if label VIDEO -->
+<li class=" ">
+<a data-vr-contentbox="6.24" href="/7s7/fr/1502/Belgique/article/detail/3479923/2018/09/26/Une-peine-de-travail-pour-le-fils-de-Laurette-Onkelinx.dhtml"  data-gtm-zones="bakskes|24|image" >
+<img src="https://static3.7sur7.be/static/photo/2018/14/8/3/20180926125121/teaser_2_2_10606308.jpg" width="150" height="83" />
+<h3 data-gtm-zones="bakskes|24|title">Une peine de travail pour le fils de Laurette Onkelinx?</h3>
+</a>
+</li>
+</ul>
+</section>
+<div>
+</div>
+<div class="autodeploy__container autodeploy__container--nmc" data-autodeploy-info="name:nmcRp;folder:nmc">
+<!-- <div id="at-content"></div>
+<script>
+var AtConfig = {
+module: 'combo',
+style: 'vertical',
+css: true,
+locale : "fr_BE",
+utmparams : {
+"utm_source": "7sur7",
+"utm_campaign": "landelijk",
+"utm_medium": "partnermodule"
+},
+listingparams : {
+"minPrice": 2999,
+"limit" : 2,
+"sort": "random",
+"minPhotos" : 3,
+"buildYearFrom" : 2008,
+},
+placeholder : "at-content",
+};
+</script>
+<script id="at-integration" src="https://fr.autotrack.be/scripts/partner/searchlisting.js"></script>
+-->
+</div>
+<div class="autodeploy__container autodeploy__container--prm" data-autodeploy-info="name:prmBoxright;folder:prm">
+</div>
+<section class="emopoll mar10 clearfix">
+<h2><b>EmoPoll</b></h2>
+<h3 id="h3_emo_1" class="acc_trigger"><a href="">Le plus intéressant</a></h3>
+<div id="ul_emo_1" class="acc_container">
+<ul class="poll_content clear clearfix">
+<li>
+<a href="/7s7/fr/2668/Especes-Menacees/article/detail/3479976/2018/09/26/Le-Titan-de-Vorombe-le-plus-gros-oiseau-que-l-Homme-ait-connu.dhtml" class="clearfix">
+<span class="poll_pct">85%</span>
+<h4>Le Titan de Vorombe, le plus gros oiseau que l'Homme ait connu</h4>
+<span class="poll_votes">(17 votes)</span>
+<span style="width:85%" class="poll_bar"></span>
+</a>
+</li>
+<li>
+<a href="/7s7/fr/1528/Cinema/article/detail/3479136/2018/09/26/Que-cache-la-disparition-soudaine-d-Emily.dhtml" class="clearfix">
+<span class="poll_pct">83%</span>
+<h4>Que cache la disparition soudaine d'Emily?</h4>
+<span class="poll_votes">(10 votes)</span>
+<span style="width:83%" class="poll_bar"></span>
+</a>
+</li>
+<li>
+<a href="/7s7/fr/1502/Belgique/article/detail/3479986/2018/09/26/Le-steward-belge-n-a-pas-ete-licencie-pour-avoir-donne-une-interview-a-la-TV.dhtml" class="clearfix">
+<span class="poll_pct">77%</span>
+<h4>&quot;Le steward belge n'a pas été licencié pour avoir donné une interview à la TV&quot;</h4>
+<span class="poll_votes">(17 votes)</span>
+<span style="width:77%" class="poll_bar"></span>
+</a>
+</li>
+<li>
+<a href="/7s7/fr/1510/Football-Etranger/article/detail/3479996/2018/09/26/Rien-n-a-ete-convenu-Courtois-evoque-la-concurrence-avec-Navas.dhtml" class="clearfix">
+<span class="poll_pct">71%</span>
+<h4>&quot;Rien n'a été convenu&quot;: Courtois évoque la concurrence avec Navas</h4>
+<span class="poll_votes">(5 votes)</span>
+<span style="width:71%" class="poll_bar"></span>
+</a>
+</li>
+<li>
+<a href="/7s7/fr/1505/Monde/article/detail/3479985/2018/09/26/L-impopulaire-reforme-des-retraites-votee-en-Russie.dhtml" class="clearfix">
+<span class="poll_pct">67%</span>
+<h4>L'impopulaire réforme des retraites votée en Russie</h4>
+<span class="poll_votes">(4 votes)</span>
+<span style="width:67%" class="poll_bar"></span>
+</a>
+</li>
+</ul>
+</div>
+<h3 id="h3_emo_2" class="acc_trigger"><a href="">Le plus amusant</a></h3>
+<div id="ul_emo_2" class="acc_container">
+<ul class="poll_content clear clearfix">
+<li>
+<a href="/7s7/fr/1502/Belgique/article/detail/3479977/2018/09/26/Condamne-a-cause-de-la-taille-de-son-nez-il-conteste.dhtml" class="clearfix">
+<span class="poll_pct">91%</span>
+<h4>Condamné à cause de la taille de son nez, il conteste</h4>
+<span class="poll_votes">(29 votes)</span>
+<span style="width:91%" class="poll_bar"></span>
+</a>
+</li>
+<li>
+<a href="/7s7/fr/1510/Football-Etranger/article/detail/3479949/2018/09/26/Les-retrouvailles-glaciales-entre-Pogba-et-Mourinho.dhtml" class="clearfix">
+<span class="poll_pct">62%</span>
+<h4>Les retrouvailles glaciales entre Pogba et Mourinho</h4>
+<span class="poll_votes">(8 votes)</span>
+<span style="width:62%" class="poll_bar"></span>
+</a>
+</li>
+<li>
+<a href="/7s7/fr/1530/Tetes-Couronnees/article/detail/3479617/2018/09/26/Le-geste-banal-de-Meghan-Markle-mais-tres-rare-dans-la-monarchie.dhtml" class="clearfix">
+<span class="poll_pct">60%</span>
+<h4>Le geste banal de Meghan Markle mais très rare dans la monarchie</h4>
+<span class="poll_votes">(152 votes)</span>
+<span style="width:60%" class="poll_bar"></span>
+</a>
+</li>
+<li>
+<a href="/7s7/fr/1540/TV/article/detail/3479933/2018/09/26/Non-mais-on-est-ou-la-une-chroniqueuse-confond-Canteloup-et-Valls.dhtml" class="clearfix">
+<span class="poll_pct">52%</span>
+<h4>&quot;Non mais on est où là?&quot;: une chroniqueuse confond Canteloup et Valls</h4>
+<span class="poll_votes">(21 votes)</span>
+<span style="width:52%" class="poll_bar"></span>
+</a>
+</li>
+<li>
+<a href="/7s7/fr/1537/Consommation/article/detail/3479899/2018/09/26/Les-petits-boulots-dans-la-construction-doivent-disparaitre.dhtml" class="clearfix">
+<span class="poll_pct">47%</span>
+<h4>&quot;Les petits boulots dans la construction doivent disparaître&quot;</h4>
+<span class="poll_votes">(25 votes)</span>
+<span style="width:47%" class="poll_bar"></span>
+</a>
+</li>
+</ul>
+</div>
+<h3 id="h3_emo_3" class="acc_trigger"><a href="">Le plus réjouissant</a></h3>
+<div id="ul_emo_3" class="acc_container">
+<ul class="poll_content clear clearfix">
+<li>
+<a href="/7s7/fr/1516/Omnisports/article/detail/3479633/2018/09/25/L-exploit-des-Belgian-Cats-contre-l-Espagne.dhtml" class="clearfix">
+<span class="poll_pct">98%</span>
+<h4>L'exploit des &quot;Belgian Cats&quot; contre l'Espagne</h4>
+<span class="poll_votes">(47 votes)</span>
+<span style="width:98%" class="poll_bar"></span>
+</a>
+</li>
+<li>
+<a href="/7s7/fr/1505/Monde/article/detail/3479982/2018/09/26/Arrete-apres-avoir-perdu-un-portefeuille-rempli-de-faux-billets.dhtml" class="clearfix">
+<span class="poll_pct">94%</span>
+<h4>Arrêté après avoir perdu un portefeuille rempli de faux billets</h4>
+<span class="poll_votes">(15 votes)</span>
+<span style="width:94%" class="poll_bar"></span>
+</a>
+</li>
+<li>
+<a href="/7s7/fr/1502/Belgique/article/detail/3479616/2018/09/25/Un-violeur-en-serie-ostendais-arrete-en-Pologne-apres-six-ans-de-cavale.dhtml" class="clearfix">
+<span class="poll_pct">90%</span>
+<h4>Un violeur en série ostendais arrêté en Pologne après six ans de cavale</h4>
+<span class="poll_votes">(103 votes)</span>
+<span style="width:90%" class="poll_bar"></span>
+</a>
+</li>
+<li>
+<a href="/7s7/fr/1502/Belgique/article/detail/3479981/2018/09/26/Marianne-Thyssen-repete-a-O-Leary-qu-il-doit-avant-tout-respecter-la-loi.dhtml" class="clearfix">
+<span class="poll_pct">88%</span>
+<h4>Marianne Thyssen répète à O'Leary qu'il doit avant tout respecter la loi</h4>
+<span class="poll_votes">(7 votes)</span>
+<span style="width:88%" class="poll_bar"></span>
+</a>
+</li>
+<li>
+<a href="/7s7/fr/1517/You/article/detail/3479929/2018/09/26/Le-secret-du-bonheur-Avoir-un-animal-de-compagnie.dhtml" class="clearfix">
+<span class="poll_pct">82%</span>
+<h4>Le secret du bonheur? Avoir un animal de compagnie</h4>
+<span class="poll_votes">(28 votes)</span>
+<span style="width:82%" class="poll_bar"></span>
+</a>
+</li>
+</ul>
+</div>
+<h3 id="h3_emo_4" class="acc_trigger"><a href="">Le plus énervant</a></h3>
+<div id="ul_emo_4" class="acc_container">
+<ul class="poll_content clear clearfix">
+<li>
+<a href="/7s7/fr/1527/People/article/detail/3479911/2018/09/26/Kev-Adams-et-Jamel-Debbouze-troublent-le-plateau-de-RTL-Info.dhtml" class="clearfix">
+<span class="poll_pct">67%</span>
+<h4>Kev Adams et Jamel Debbouze troublent le plateau de RTL Info</h4>
+<span class="poll_votes">(63 votes)</span>
+<span style="width:67%" class="poll_bar"></span>
+</a>
+</li>
+<li>
+<a href="/7s7/fr/1505/Monde/article/detail/3479927/2018/09/26/Elle-verse-de-l-eau-de-Javel-sur-les-hommes-qui-prennent-trop-de-place.dhtml" class="clearfix">
+<span class="poll_pct">62%</span>
+<h4>Elle verse de l'eau de Javel sur les hommes qui prennent trop de place</h4>
+<span class="poll_votes">(93 votes)</span>
+<span style="width:62%" class="poll_bar"></span>
+</a>
+</li>
+<li>
+<a href="/7s7/fr/1505/Monde/article/detail/3479918/2018/09/26/La-Belgique-aurait-pu-empecher-quatre-meurtres.dhtml" class="clearfix">
+<span class="poll_pct">58%</span>
+<h4>&quot;La Belgique aurait pu empêcher quatre meurtres&quot;</h4>
+<span class="poll_votes">(45 votes)</span>
+<span style="width:58%" class="poll_bar"></span>
+</a>
+</li>
+<li>
+<a href="/7s7/fr/40422/Referendum-en-Catalogne/article/detail/3479909/2018/09/26/Les-Affaires-etrangeres-n-ont-rien-a-me-dire.dhtml" class="clearfix">
+<span class="poll_pct">58%</span>
+<h4>&quot;Les Affaires étrangères n'ont rien à me dire&quot;</h4>
+<span class="poll_votes">(55 votes)</span>
+<span style="width:58%" class="poll_bar"></span>
+</a>
+</li>
+<li>
+<a href="/7s7/fr/1502/Belgique/article/detail/3479930/2018/09/26/Proces-Jeff-Nyssen-l-armee-va-etre-sollicitee.dhtml" class="clearfix">
+<span class="poll_pct">57%</span>
+<h4>Procès Jeff Nyssen: l'armée va être sollicitée</h4>
+<span class="poll_votes">(8 votes)</span>
+<span style="width:57%" class="poll_bar"></span>
+</a>
+</li>
+</ul>
+</div>
+<h3 id="h3_emo_5" class="acc_trigger"><a href="">Le plus inquiétant</a></h3>
+<div id="ul_emo_5" class="acc_container">
+<ul class="poll_content clear clearfix">
+<li>
+<a href="/7s7/fr/2668/Especes-Menacees/article/detail/3479964/2018/09/26/Un-beluga-apercu-dans-la-Tamise-a-50km-de-Londres.dhtml" class="clearfix">
+<span class="poll_pct">83%</span>
+<h4>Un béluga aperçu dans la Tamise, à 50km de Londres</h4>
+<span class="poll_votes">(15 votes)</span>
+<span style="width:83%" class="poll_bar"></span>
+</a>
+</li>
+<li>
+<a href="/7s7/fr/1530/Tetes-Couronnees/article/detail/3479905/2018/09/26/La-reine-Paola-victime-d-un-AVC.dhtml" class="clearfix">
+<span class="poll_pct">81%</span>
+<h4>La reine Paola victime d'un AVC</h4>
+<span class="poll_votes">(117 votes)</span>
+<span style="width:81%" class="poll_bar"></span>
+</a>
+</li>
+<li>
+<a href="/7s7/fr/1502/Belgique/article/detail/3479934/2018/09/26/Un-15e-cas-de-contamination-d-un-sanglier-confirme.dhtml" class="clearfix">
+<span class="poll_pct">67%</span>
+<h4>Un 15e cas de contamination d'un sanglier confirmé</h4>
+<span class="poll_votes">(8 votes)</span>
+<span style="width:67%" class="poll_bar"></span>
+</a>
+</li>
+<li>
+<a href="/7s7/fr/1529/Musique/article/detail/3479987/2018/09/26/Un-rappeur-francais-appelle-a-pendre-les-Blancs.dhtml" class="clearfix">
+<span class="poll_pct">62%</span>
+<h4>Un rappeur français appelle à &quot;pendre les Blancs&quot;</h4>
+<span class="poll_votes">(45 votes)</span>
+<span style="width:62%" class="poll_bar"></span>
+</a>
+</li>
+<li>
+<a href="/7s7/fr/1502/Belgique/article/detail/3479960/2018/09/26/Le-nombre-de-Wallons-beneficiaires-du-RIS-explose.dhtml" class="clearfix">
+<span class="poll_pct">62%</span>
+<h4>Le nombre de Wallons bénéficiaires du RIS explose</h4>
+<span class="poll_votes">(24 votes)</span>
+<span style="width:62%" class="poll_bar"></span>
+</a>
+</li>
+</ul>
+</div>
+<h3 id="h3_emo_6" class="acc_trigger"><a href="">Le plus déprimant</a></h3>
+<div id="ul_emo_6" class="acc_container">
+<ul class="poll_content clear clearfix">
+<li>
+<a href="/7s7/fr/3007/Bruxelles/article/detail/3479943/2018/09/26/Peine-reduite-pour-la-mere-condamnee-pour-triple-infanticide.dhtml" class="clearfix">
+<span class="poll_pct">83%</span>
+<h4>Peine réduite pour la mère condamnée pour triple infanticide?</h4>
+<span class="poll_votes">(30 votes)</span>
+<span style="width:83%" class="poll_bar"></span>
+</a>
+</li>
+<li>
+<a href="/7s7/fr/1536/Economie/article/detail/3479971/2018/09/26/Ducarme-defend-l-abattage-massif-mais-rassure-les-eleveurs.dhtml" class="clearfix">
+<span class="poll_pct">75%</span>
+<h4>Ducarme défend l'abattage massif mais rassure les éleveurs</h4>
+<span class="poll_votes">(12 votes)</span>
+<span style="width:75%" class="poll_bar"></span>
+</a>
+</li>
+<li>
+<a href="/7s7/fr/15799/Le-pape/article/detail/3479889/2018/09/26/Si-un-seul-pretre-a-abuse-d-un-enfant-c-est-monstrueux.dhtml" class="clearfix">
+<span class="poll_pct">74%</span>
+<h4>&quot;Si un seul prêtre a abusé d'un enfant, c'est monstrueux&quot;</h4>
+<span class="poll_votes">(14 votes)</span>
+<span style="width:74%" class="poll_bar"></span>
+</a>
+</li>
+<li>
+<a href="/7s7/fr/1517/You/article/detail/3479587/2018/09/26/Il-tue-sa-maitresse-parce-qu-elle-refuse-d-avorter.dhtml" class="clearfix">
+<span class="poll_pct">73%</span>
+<h4>Il tue sa maîtresse parce qu'elle refuse d'avorter</h4>
+<span class="poll_votes">(33 votes)</span>
+<span style="width:73%" class="poll_bar"></span>
+</a>
+</li>
+<li>
+<a href="/7s7/fr/1527/People/article/detail/3479962/2018/09/26/Surpris-avec-une-autre-femme-Shia-LaBeouf-demande-le-divorce.dhtml" class="clearfix">
+<span class="poll_pct">72%</span>
+<h4>Surpris avec une autre femme, Shia LaBeouf demande le divorce</h4>
+<span class="poll_votes">(18 votes)</span>
+<span style="width:72%" class="poll_bar"></span>
+</a>
+</li>
+</ul>
+</div>
+</section>
+<script>emoPollTeaser("homepage");</script>
+<div class="autodeploy__container autodeploy__container--nmc" data-autodeploy-info="name:nmcBoxright;folder:nmc">
+</div>
+<div class="autodeploy__container autodeploy__container--adv" data-autodeploy-info="name:advBoxright;folder:adv">
+</div>
+<!-- check if label VIDEO -->
+<section data-vr-zone="zone 6" class=' b1 invert mar10   clear'>
+<a data-vr-contentbox="6.25 groot" href="/7s7/fr/1505/Monde/article/detail/3479918/2018/09/26/La-Belgique-aurait-pu-empecher-quatre-meurtres.dhtml"  data-gtm-zones="bakskes|25|image" >
+<img src="https://static3.7sur7.be/static/photo/2018/6/13/2/20180926122930/teaser_2_2_10606262.jpg" width="306" height="169" />
+<h3 data-gtm-zones="bakskes|25|title">&quot;La Belgique aurait pu empêcher quatre meurtres&quot;</h3>
+</a>
+</section>
+<!-- check if label VIDEO -->
+<section data-vr-zone="zone 6">
+<ul class="b2 mar5 clearfix">
+<li class=" article_video150">
+<a data-vr-contentbox="6.26" href="/7s7/fr/1510/Football-Etranger/article/detail/3479925/2018/09/26/Malgre-un-but-de-Fellaini-Man-U-se-fait-eliminer-par-une-D2-anglaise.dhtml"  data-gtm-zones="bakskes|26|image" >
+<img class="video_button" width="30" height="30" src="https://static2.7sur7.be/images/general/bt_play_small.png?8.3.0.20180528.5" />
+<img src="https://static3.7sur7.be/static/photo/2018/3/7/12/20180926140348/teaser_2_2_10606392.jpg" width="150" height="83" />
+<h3 data-gtm-zones="bakskes|26|title">Malgré un but de Fellaini, Man U se fait éliminer par une D2 anglaise</h3>
+</a>
+</li>
+<!-- check if label VIDEO -->
+<li class=" ">
+<a data-vr-contentbox="6.27" href="/7s7/fr/9102/Nouveaux-albums/article/detail/3479604/2018/09/26/On-va-tous-mourir-on-va-tous-aimer-quelqu-un-on-va-tous-se-faire-larguer.dhtml"  data-gtm-zones="bakskes|27|image" >
+<img src="https://static2.7sur7.be/static/photo/2018/3/14/7/20180926123526/teaser_2_2_10606297.jpg" width="150" height="83" />
+<span class="label l_musique">Interview</span>
+<h3 data-gtm-zones="bakskes|27|title">&quot;On va tous mourir, on va tous aimer quelqu'un, on va tous se faire larguer&quot;</h3>
+</a>
+</li>
+<!-- check if label VIDEO -->
+<li class=" ">
+<a data-vr-contentbox="6.28" href="/7s7/fr/1517/You/article/detail/3479929/2018/09/26/Le-secret-du-bonheur-Avoir-un-animal-de-compagnie.dhtml"  data-gtm-zones="bakskes|28|image" >
+<img src="https://static1.7sur7.be/static/photo/2018/1/5/10/20180926140140/teaser_2_2_10606390.jpg" width="150" height="83" />
+<h3 data-gtm-zones="bakskes|28|title">Le secret du bonheur? Avoir un animal de compagnie</h3>
+</a>
+</li>
+<!-- check if label VIDEO -->
+<li class=" ">
+<a data-vr-contentbox="6.29" href="/7s7/fr/1517/You/article/detail/3479953/2018/09/26/Comment-bien-preparer-votre-maison-a-l-arrivee-de-l-automne.dhtml"  data-gtm-zones="bakskes|29|image" >
+<img src="https://static2.7sur7.be/static/photo/2018/8/12/2/20180926141034/teaser_2_2_10606397.jpg" width="150" height="83" />
+<h3 data-gtm-zones="bakskes|29|title">Comment bien préparer votre maison à l'arrivée de l'automne</h3>
+</a>
+</li>
+<!-- check if label VIDEO -->
+<li class=" ">
+<a data-vr-contentbox="6.30" href="/7s7/fr/40422/Referendum-en-Catalogne/article/detail/3479909/2018/09/26/Les-Affaires-etrangeres-n-ont-rien-a-me-dire.dhtml"  data-gtm-zones="bakskes|30|image" >
+<img src="https://static1.7sur7.be/static/photo/2018/6/0/10/20180926123908/teaser_2_2_10606300.jpg" width="150" height="83" />
+<span class="label l_monde">Crise en Catalogne</span>
+<h3 data-gtm-zones="bakskes|30|title">&quot;Les Affaires étrangères n'ont rien à me dire&quot;</h3>
+</a>
+</li>
+</ul>
+</section>
+<div>
+</div>
+<div class="autodeploy__container autodeploy__container--nmc" data-autodeploy-info="name:nmcRp;folder:nmc">
+</div>
+<div class="autodeploy__container autodeploy__container--prm" data-autodeploy-info="name:prmBoxright;folder:prm">
+</div>
+<section class="teas_article_306 mar10 clear hln-hpfr_bg clearfix mostpopular">
+<h3><span>Populair</span></h3>
+<ul class="teas_article_306_hvdn clearfix">
+<li>
+<a href="/7s7/fr/1530/Tetes-Couronnees/article/detail/3479617/2018/09/26/Le-geste-banal-de-Meghan-Markle-mais-tres-rare-dans-la-monarchie.dhtml"  data-gtm-zones="mostReadContainerArticleDay|2|title">
+<span class="order">1</span>
+<img src="https://static1.7sur7.be/static/photo/2018/9/0/2/20180926000107/media_m_10605467.jpg" />
+<h3>
+Le geste banal de Meghan Markle mais très rare dans la monarchie
+</h3>
+<span class="views">(13169x views)</span>
+</a>
+</li>
+<li>
+<a href="/7s7/fr/1530/Tetes-Couronnees/article/detail/3479905/2018/09/26/La-reine-Paola-victime-d-un-AVC.dhtml"  data-gtm-zones="mostReadContainerArticleDay|3|title">
+<span class="order">2</span>
+<h3>
+La reine Paola victime d'un AVC
+</h3>
+<span class="views">(12624x views)</span>
+</a>
+</li>
+<li>
+<a href="/7s7/fr/1505/Monde/article/detail/3479927/2018/09/26/Elle-verse-de-l-eau-de-Javel-sur-les-hommes-qui-prennent-trop-de-place.dhtml"  data-gtm-zones="mostReadContainerArticleDay|4|title">
+<span class="order">3</span>
+<h3>
+Elle verse de l'eau de Javel sur les hommes qui prennent trop de place
+</h3>
+<span class="views">(8814x views)</span>
+</a>
+</li>
+<li>
+<a href="/7s7/fr/1502/Belgique/article/detail/3479923/2018/09/26/Une-peine-de-travail-pour-le-fils-de-Laurette-Onkelinx.dhtml"  data-gtm-zones="mostReadContainerArticleDay|5|title">
+<span class="order">4</span>
+<h3>
+Une peine de travail pour le fils de Laurette Onkelinx?
+</h3>
+<span class="views">(7179x views)</span>
+</a>
+</li>
+<li>
+<a href="/7s7/fr/1536/Economie/article/detail/3479906/2018/09/26/Quand-Engie-voulait-se-debarrasser-du-nid-a-emmerdes.dhtml"  data-gtm-zones="mostReadContainerArticleDay|6|title">
+<span class="order">5</span>
+<h3>
+Quand Engie voulait se débarrasser du &quot;nid à emmerdes&quot;
+</h3>
+<span class="views">(6539x views)</span>
+</a>
+</li>
+</ul>
+</section>
+<div class="autodeploy__container autodeploy__container--nmc" data-autodeploy-info="name:nmcBoxright;folder:nmc">
+</div>
+<div class="autodeploy__container autodeploy__container--adv" data-autodeploy-info="name:advBoxright;folder:adv">
+</div>
+<!-- check if label VIDEO -->
+<section data-vr-zone="zone 6" class=' b1 invert mar10   clear'>
+<a data-vr-contentbox="6.31 groot" href="/7s7/fr/39092/Dossier-Trump/article/detail/3479917/2018/09/26/L-impact-de-ce-scrutin-americain-pourrait-etre-monumental.dhtml"  data-gtm-zones="bakskes|31|image" >
+<img src="https://static2.7sur7.be/static/photo/2018/5/16/9/20180926123750/teaser_2_2_10606299.jpg" width="306" height="169" />
+<h3 data-gtm-zones="bakskes|31|title">L'impact de ce scrutin américain pourrait être &quot;monumental&quot;</h3>
+</a>
+</section>
+<!-- check if label VIDEO -->
+<section data-vr-zone="zone 6">
+<ul class="b2 mar5 clearfix">
+<li class=" ">
+<a data-vr-contentbox="6.32" href="/7s7/fr/1505/Monde/article/detail/3479928/2018/09/26/Demi-victoire-pour-le-Rassemblement-national.dhtml"  data-gtm-zones="bakskes|32|image" >
+<img src="https://static2.7sur7.be/static/photo/2018/10/0/6/20180926123714/teaser_2_2_10606266.jpg" width="150" height="83" />
+<span class="label l_update">MISE &Agrave; JOUR</span>
+<h3 data-gtm-zones="bakskes|32|title">Demi-victoire pour le Rassemblement national</h3>
+</a>
+</li>
+<!-- check if label VIDEO -->
+<li class=" article_video150">
+<a data-vr-contentbox="6.33" href="/7s7/fr/1512/Cyclisme/article/detail/3479921/2018/09/26/Ce-fan-de-Philippe-Gilbert-a-frole-l-accident.dhtml"  data-gtm-zones="bakskes|33|image" >
+<img class="video_button" width="30" height="30" src="https://static3.7sur7.be/images/general/bt_play_small.png?8.3.0.20180528.5" />
+<img src="https://static0.7sur7.be/static/photo/2018/4/15/8/20180926123610/teaser_2_2_10606298.jpg" width="150" height="83" />
+<h3 data-gtm-zones="bakskes|33|title">Ce fan de Philippe Gilbert a frôlé l'accident</h3>
+</a>
+</li>
+<!-- check if label VIDEO -->
+<li class=" article_video150">
+<a data-vr-contentbox="6.34" href="/7s7/fr/1528/Cinema/article/detail/3479136/2018/09/26/Que-cache-la-disparition-soudaine-d-Emily.dhtml"  data-gtm-zones="bakskes|34|image" >
+<img class="video_button" width="30" height="30" src="https://static2.7sur7.be/images/general/bt_play_small.png?8.3.0.20180528.5" />
+<img src="https://static3.7sur7.be/static/photo/2018/17/9/2/20180926122605/teaser_2_2_10606292.jpg" width="150" height="83" />
+<h3 data-gtm-zones="bakskes|34|title">Que cache la disparition soudaine d'Emily?</h3>
+</a>
+</li>
+<!-- check if label VIDEO -->
+<li class=" ">
+<a data-vr-contentbox="6.35" href="/7s7/fr/3007/Bruxelles/article/detail/3479900/2018/09/26/Ou-sont-les-femmes-au-top-de-la-Federation-Wallonie-Bruxelles.dhtml"  data-gtm-zones="bakskes|35|image" >
+<img src="https://static1.7sur7.be/static/photo/2018/2/13/6/20180926123436/teaser_2_2_10606296.jpg" width="150" height="83" />
+<h3 data-gtm-zones="bakskes|35|title">Où sont les femmes au top de la Fédération Wallonie-Bruxelles?</h3>
+</a>
+</li>
+<!-- check if label VIDEO -->
+<li class=" ">
+<a data-vr-contentbox="6.36" href="/7s7/fr/1502/Belgique/article/detail/3479534/2018/09/25/Luc-Anus-le-candidat-qui-ne-plait-pas-a-Facebook.dhtml"  data-gtm-zones="bakskes|36|image" >
+<img src="https://static3.7sur7.be/static/photo/2018/17/10/6/20180925195622/teaser_2_2_10605171.jpg" width="150" height="83" />
+<h3 data-gtm-zones="bakskes|36|title">Luc Anus, le candidat qui ne plaît pas à Facebook</h3>
+</a>
+</li>
+</ul>
+</section>
+<div class="autodeploy__container autodeploy__container--adv" data-autodeploy-info="name:advBoxright9;folder:adv">
+</div>
+<div>
+</div>
+<div class="autodeploy__container autodeploy__container--nmc" data-autodeploy-info="name:nmcRp;folder:nmc">
+<div class="s1 tn_volgonsop">
+<h3><b>Suivez-nous sur</b></h3>
+<ul class="clearfix">
+<li><a href="https://www.7sur7.be/facebook" class="fb" onclick="measureClick('rp','1','facebook')" target="_blank">facebook</a></li>
+<li><a href="https://twitter.com/7sur7" class="tw" onclick="measureClick('rp','1','twitter')" target="_blank">twitter</a></li>
+<li><a href="https://www.7s7.be/mobile" class="ip" onclick="measureClick('rp','1','iphone')">iphone</a></li>
+<li><a href="https://www.7s7.be/mobile" class="ad" onclick="measureClick('rp','1','android')">android</a></li>
+<li><a href="https://www.7s7.be/ipad" class="pa" onclick="measureClick('rp','1','ipad')">ipad</a></li>
+<li><a href="https://m.7s7.be" class="mo" onclick="measureClick('rp','1','m.7sur7.be')">m.7sur7.be</a></li>
+<li><a href="https://www.7s7.be/rss" class="rs" onclick="measureClick('rp','1','rss')">rss</a></li>
+<li><a href="https://www.7s7.be/archive" class="ar" onclick="measureClick('rp','1','archief')">archive</a></li>
+<li><a href="https://www.7s7.be/newsletter" class="nb" onclick="measureClick('rp','1','nieuws')">news</a></li>
+</ul>
+</div>
+</div>
+<div class="autodeploy__container autodeploy__container--prm" data-autodeploy-info="name:prmBoxright;folder:prm">
+</div>
+<div class="autodeploy__container autodeploy__container--nmc" data-autodeploy-info="name:nmcBoxright;folder:nmc">
+</div>
+<div class="autodeploy__container autodeploy__container--adv" data-autodeploy-info="name:advBoxright;folder:adv">
+</div>
+<!-- check if label VIDEO -->
+<section data-vr-zone="zone 6" class=' b1 invert mar10   clear'>
+<a data-vr-contentbox="6.37 groot" href="/7s7/fr/1502/Belgique/article/detail/3479887/2018/09/26/Conge-maladie-le-privilege-qui-enerve-le-PTB.dhtml"  data-gtm-zones="bakskes|37|image" >
+<img src="https://static2.7sur7.be/static/photo/2018/18/13/5/20180926103608/teaser_2_2_10606160.jpg" width="306" height="169" />
+<h3 data-gtm-zones="bakskes|37|title">Le privilège qui énerve le PTB</h3>
+</a>
+</section>
+<!-- check if label VIDEO -->
+<section data-vr-zone="zone 6">
+<ul class="b2 mar5 clearfix">
+<li class=" ">
+<a data-vr-contentbox="6.38" href="/7s7/fr/37462/Brexit/article/detail/3479888/2018/09/26/Jeremy-Corbyn-peut-il-sortir-son-pays-du-chaos-du-Brexit.dhtml"  data-gtm-zones="bakskes|38|image" >
+<img src="https://static0.7sur7.be/static/photo/2018/17/12/4/20180926103514/teaser_2_2_10606159.jpg" width="150" height="83" />
+<h3 data-gtm-zones="bakskes|38|title">Jeremy Corbyn peut-il sortir son pays du chaos du Brexit?</h3>
+</a>
+</li>
+<!-- check if label VIDEO -->
+<li class=" ">
+<a data-vr-contentbox="6.39" href="/7s7/fr/1516/Omnisports/article/detail/3479633/2018/09/25/L-exploit-des-Belgian-Cats-contre-l-Espagne.dhtml"  data-gtm-zones="bakskes|39|image" >
+<img src="https://static2.7sur7.be/static/photo/2018/13/13/6/20180926082738/teaser_2_2_10606041.jpg" width="150" height="83" />
+<h3 data-gtm-zones="bakskes|39|title">L'exploit des &quot;Belgian Cats&quot; contre l'Espagne</h3>
+</a>
+</li>
+<!-- check if label VIDEO -->
+<li class=" ">
+<a data-vr-contentbox="6.40" href="/7s7/fr/1540/TV/article/detail/3479632/2018/09/26/La-serie-qui-aime-nous-faire-pleurer-est-de-retour.dhtml"  data-gtm-zones="bakskes|40|image" >
+<img src="https://static2.7sur7.be/static/photo/2018/17/10/0/20180926103224/teaser_2_2_10606140.jpg" width="150" height="83" />
+<h3 data-gtm-zones="bakskes|40|title">La série qui aime nous faire pleurer est de retour</h3>
+</a>
+</li>
+<!-- check if label VIDEO -->
+<li class=" ">
+<a data-vr-contentbox="6.41" href="/7s7/fr/1536/Economie/article/detail/3479898/2018/09/26/Ikea-rappelle-une-serie-de-plafonniers-en-verre.dhtml"  data-gtm-zones="bakskes|41|image" >
+<img src="https://static0.7sur7.be/static/photo/2018/16/9/14/20180926103104/teaser_2_2_10606139.jpg" width="150" height="83" />
+<h3 data-gtm-zones="bakskes|41|title">Ikea rappelle une série de plafonniers en verre</h3>
+</a>
+</li>
+<!-- check if label VIDEO -->
+<li class=" ">
+<a data-vr-contentbox="6.42" href="/7s7/fr/1502/Belgique/article/detail/3479616/2018/09/25/Un-violeur-en-serie-ostendais-arrete-en-Pologne-apres-six-ans-de-cavale.dhtml"  data-gtm-zones="bakskes|42|image" >
+<img src="https://static2.7sur7.be/static/photo/2018/14/16/11/20180926083631/teaser_2_2_10606061.jpg" width="150" height="83" />
+<h3 data-gtm-zones="bakskes|42|title">Un violeur en série ostendais arrêté en Pologne après six ans de cavale</h3>
+</a>
+</li>
+</ul>
+</section>
+<div>
+</div>
+<div class="autodeploy__container autodeploy__container--nmc" data-autodeploy-info="name:nmcRp;folder:nmc">
+</div>
+<div class="autodeploy__container autodeploy__container--prm" data-autodeploy-info="name:prmBoxright;folder:prm">
+</div>
+<div class="autodeploy__container autodeploy__container--nmc" data-autodeploy-info="name:nmcBoxright;folder:nmc">
+</div>
+<div class="autodeploy__container autodeploy__container--adv" data-autodeploy-info="name:advBoxright;folder:adv">
+</div>
+<div>
+</div>
+<div class="autodeploy__container autodeploy__container--nmc" data-autodeploy-info="name:nmcRp;folder:nmc">
+</div>
+<div class="autodeploy__container autodeploy__container--prm" data-autodeploy-info="name:prmBoxright;folder:prm">
+</div>
+</section>
+<section class="str_aside_cntr">
+</section>
+<div class="clear"></div>
+<div class="fullWidthContainer">
+<iframe width="826" height="250" frameborder="0" scrolling="no" data-privacy-category="targetedadvertising" data-privacy-src="https://api.trackuity.com/forward?key=JSeDrHCuXxeXV9Eo5cyQcL"></iframe>
+</div>
+<div class="teas_newmedia tn_videoreeks clearfix width840 clear">
+<ul class="tn_nav clearfix clear">
+<img src="https://static1.7sur7.be/images/general/icon_video_small.png">
+<li ><a href="/7s7/fr/3408/video/index.dhtml"  data-gtm-zones="video|video|navigatie" >le plus récent</a></li>
+<li class="tn_nav-Belgique" ><a href="/7s7/fr/3844/Belgique/index.dhtml"  data-gtm-zones="video|navigatie|Belgique" >Belgique</a></li>
+<li class="tn_nav-Monde" ><a href="/7s7/fr/3845/Monde/index.dhtml"  data-gtm-zones="video|navigatie|Monde" >Monde</a></li>
+<li class="tn_nav-Sports" ><a href="/7s7/fr/3846/Sports/index.dhtml"  data-gtm-zones="video|navigatie|Sports" >Sports</a></li>
+<li class="tn_nav-Stars" ><a href="/7s7/fr/3847/Stars/index.dhtml"  data-gtm-zones="video|navigatie|Stars" >Stars</a></li>
+<li class="tn_nav-TV" ><a href="/7s7/fr/3848/TV/index.dhtml"  data-gtm-zones="video|navigatie|TV" >TV</a></li>
+<li class="tn_nav-Fun" ><a href="/7s7/fr/3849/Fun/index.dhtml"  data-gtm-zones="video|navigatie|Fun" >Fun</a></li>
+<li class="tn_nav-Bandes Annonces" ><a href="/7s7/fr/3945/Bandes-Annonces/index.dhtml"  data-gtm-zones="video|navigatie|Bandes-Annonces" >Bandes Annonces</a></li>
+<li class="tn_nav-Musique" ><a href="/7s7/fr/9103/Musique/index.dhtml"  data-gtm-zones="video|navigatie|Musique" >Musique</a></li>
+</ul>
+<div class="autodeploy__container autodeploy__container--nmc" data-autodeploy-info="name:autodeploy;folder:nmc">
+</div>
+<!-- todo: implement new layout -->
+<ul class="tn_video clear">
+<!-- Check if video is infomercial -> place video on position 3 top -->
+<!-- defaults -->
+<!-- Check for latest infomercial video -->
+<!-- Check position infomercial video (top/bottom) -->
+<li>
+<a href="/7s7/fr/3408/video/video/detail/3479615/Premieres-images-de-la-saison-3-de-This-is-Us.dhtml"  data-gtm-zones="mostRecentVideoContainer|2|image" class="tn_list_h_video_button_container">
+<img src="https://static3.7sur7.be/images/general/bt_play.png" class="tn_list_h_video_button" height="40" width="40" alt="Play" />
+<img src="https://static2.7sur7.be/static/photo/2018/14/1/14/20180925232640/media_l_10605434.jpg" height="190" alt="Premières images de la saison 3 de &quot;This is Us&quot;" />
+</a>
+<h3><a href="/7s7/fr/3408/video/video/detail/3479615/Premieres-images-de-la-saison-3-de-This-is-Us.dhtml"  data-gtm-zones="mostRecentVideoContainer|2|title">Premières images de la saison 3 de &quot;This is Us&quot;</a></h3>
+</li>
+<li>
+<a href="/7s7/fr/9103/Musique/video/detail/3479591/Boulevard-des-airs-Je-me-dis-que-toi-aussi.dhtml"  data-gtm-zones="mostRecentVideoContainer|3|image" class="tn_list_h_video_button_container">
+<img src="https://static3.7sur7.be/images/general/bt_play.png" class="tn_list_h_video_button" height="40" width="40" alt="Play" />
+<img src="https://static0.7sur7.be/static/photo/2018/13/16/7/20180925215016/media_l_10605262.jpg" height="190" alt="Boulevard des airs: &quot;Je me dis que toi aussi&quot;" />
+</a>
+<h3><a href="/7s7/fr/9103/Musique/video/detail/3479591/Boulevard-des-airs-Je-me-dis-que-toi-aussi.dhtml"  data-gtm-zones="mostRecentVideoContainer|3|title">Boulevard des airs: &quot;Je me dis que toi aussi&quot;</a></h3>
+</li>
+<li>
+<a href="/7s7/fr/3408/video/video/detail/3479137/L-ombre-d-Emily-bande-annonce.dhtml"  data-gtm-zones="mostRecentVideoContainer|4|image" class="tn_list_h_video_button_container">
+<img src="https://static3.7sur7.be/images/general/bt_play.png" class="tn_list_h_video_button" height="40" width="40" alt="Play" />
+<img src="https://static3.7sur7.be/static/photo/2018/15/1/14/20180924195906/media_l_10603649.jpg" height="190" alt="&quot;L'ombre d'Emily&quot;: bande-annonce" />
+</a>
+<h3><a href="/7s7/fr/3408/video/video/detail/3479137/L-ombre-d-Emily-bande-annonce.dhtml"  data-gtm-zones="mostRecentVideoContainer|4|title">&quot;L'ombre d'Emily&quot;: bande-annonce</a></h3>
+</li>
+</ul>
+<ul class="tn_v_smallv3 clearfix">
+<li>
+<a href="/7s7/fr/3408/video/video/detail/3477904/Hapsatou-Sy-ne-lache-rien-et-exige-des-excuses-d-Eric-Zemmour.dhtml"  data-gtm-zones="mostRecentVideoContainer|2|image" class="tn_list_h_video_button_container">
+<img src="https://static3.7sur7.be/images/general/bt_play_small.png" class="tn_list_h_video_button" alt="Play" />
+<img src="https://static0.7sur7.be/static/photo/2018/7/0/9/20180920212419/media_m_10599024.jpg" height="112" width="150" alt="Hapsatou Sy ne lâche rien et exige des excuses d'Eric Zemmour" />
+</a>
+<h4><a href="/7s7/fr/3408/video/video/detail/3477904/Hapsatou-Sy-ne-lache-rien-et-exige-des-excuses-d-Eric-Zemmour.dhtml"  data-gtm-zones="mostRecentVideoContainer|2|title">Hapsatou Sy ne lâche rien et exige des excuses d'Eric Zemmour</a></h4>
+</li>
+<li>
+<a href="/7s7/fr/3408/video/video/detail/3477885/Jane-Fonda-in-Five-Acts.dhtml"  data-gtm-zones="mostRecentVideoContainer|3|image" class="tn_list_h_video_button_container">
+<img src="https://static1.7sur7.be/images/general/bt_play_small.png" class="tn_list_h_video_button" alt="Play" />
+<img src="https://static2.7sur7.be/static/photo/2018/12/12/9/20180920191354/media_m_10598934.jpg" height="112" width="150" alt="Jane Fonda in Five Acts" />
+</a>
+<h4><a href="/7s7/fr/3408/video/video/detail/3477885/Jane-Fonda-in-Five-Acts.dhtml"  data-gtm-zones="mostRecentVideoContainer|3|title">Jane Fonda in Five Acts</a></h4>
+</li>
+<li>
+<a href="/7s7/fr/3408/video/video/detail/3477898/Jane-Fonda-in-Five-Acts.dhtml"  data-gtm-zones="mostRecentVideoContainer|4|image" class="tn_list_h_video_button_container">
+<img src="https://static0.7sur7.be/images/general/bt_play_small.png" class="tn_list_h_video_button" alt="Play" />
+<img src="https://static0.7sur7.be/static/photo/2018/8/10/9/20180920191349/media_m_10598949.jpg" height="112" width="150" alt="Jane Fonda in Five Acts" />
+</a>
+<h4><a href="/7s7/fr/3408/video/video/detail/3477898/Jane-Fonda-in-Five-Acts.dhtml"  data-gtm-zones="mostRecentVideoContainer|4|title">Jane Fonda in Five Acts</a></h4>
+</li>
+<li>
+<a href="/7s7/fr/3844/Belgique/video/detail/3477492/Arthur-Mitchell-a-l-oeuvre.dhtml"  data-gtm-zones="mostRecentVideoContainer|5|image" class="tn_list_h_video_button_container">
+<img src="https://static2.7sur7.be/images/general/bt_play_small.png" class="tn_list_h_video_button" alt="Play" />
+<img src="https://static3.7sur7.be/static/photo/2018/13/2/5/20180920001953/media_m_10597700.jpg" height="112" width="150" alt="Arthur Mitchell à l'oeuvre" />
+</a>
+<h4><a href="/7s7/fr/3844/Belgique/video/detail/3477492/Arthur-Mitchell-a-l-oeuvre.dhtml"  data-gtm-zones="mostRecentVideoContainer|5|title">Arthur Mitchell à l'oeuvre</a></h4>
+</li>
+<li>
+<a href="/7s7/fr/3408/video/video/detail/3477480/Yasminah-Hooyo.dhtml"  data-gtm-zones="mostRecentVideoContainer|6|image" class="tn_list_h_video_button_container">
+<img src="https://static1.7sur7.be/images/general/bt_play_small.png" class="tn_list_h_video_button" alt="Play" />
+<img src="https://static2.7sur7.be/static/photo/2018/0/4/10/20180919190322/media_m_10597345.jpg" height="112" width="150" alt="Yasminah: &quot;Hooyo&quot;" />
+</a>
+<h4><a href="/7s7/fr/3408/video/video/detail/3477480/Yasminah-Hooyo.dhtml"  data-gtm-zones="mostRecentVideoContainer|6|title">Yasminah: &quot;Hooyo&quot;</a></h4>
+</li>
+</ul>
+</div>
+<!-- end content-->
+<div class="autodeploy__container autodeploy__container--adv autodeploy__container--clear" data-autodeploy-info="name:advBottom;folder:adv">
+</div>
+<div class="autodeploy__container autodeploy__container--nmc autodeploy__container--clear" data-autodeploy-info="name:nmcBottom;folder:nmc">
+</div>
+<!-- footer -->
+<footer id="footer" class="ftr_hln-hpfr_bg clear clearfix">
+<aside>
+<ul class="ftr_box">
+<li><a href="/facebook" data-gtm-zones="footer|facebook|link">7sur7 sur Facebook</a></li>
+<li><a href="https://twitter.com/7sur7" data-gtm-zones="footer|twitter|link">7sur7 sur Twitter</a></li>
+<li><a href="/7s7/fr/1481/home/integration/prm/frameset/newsletter.dhtml" data-gtm-zones="footer|nieuwsbrief|link">7sur7 Newsletters</a></li>
+</ul>
+</aside>
+<aside>
+<ul class="ftr_box">
+<li><a href="http://www.7s7.be/rss.xml" data-gtm-zones="footer|RSS|link">RSS</a> <span style="font-size:9px;">(<a href="/7s7/fr/1539/rss/integration/nmc/frameset/7s7_footer/rssFeeds.dhtml" data-gtm-zones="footer|watIsRSS">Qu'est-ce que le rss?</a>)</span></li>
+<li><a class="bookmarkMeLink" href="#" onclick="return false;">Ajouter 7sur7 &agrave; vos favoris</a></li>
+</ul>
+</aside>
+<aside>
+<ul class="ftr_box">
+<li><a href="https://m.7sur7.be" data-gtm-zones="footer|mobiel|link">Surfez sur m.7sur7.be</a></li>
+<li>
+<a href="https://itunes.apple.com/be/app/7sur7.be-mobile/id403354213?l=fr&mt=8" target="_blank" data-gtm-zones="footer|iphone|link">
+Application iPhone
+</a>
+</li>
+<li>
+<a href="https://play.google.com/store/apps/details?id=be.persgroep.android.news.mobile7sur7&hl=fr" target="_blank" data-gtm-zones="footer|android|link">
+Application Android
+</a>
+</li>
+<li><a href="/7s7/fr/1481/archief/integration/nmc/frameset/archive/archiveYear.dhtml?archiveYear=2018" data-gtm-zones="footer|archief|link">Archive</a></li>
+</ul>
+</aside>
+<aside>
+<ul class="ftr_box">
+<li><a href="/7s7/contact.do?language=fr&navigationItemId=1539&layoutType=1col" data-gtm-zones="footer|contacteren">
+Contactez-nous
+</a></li>
+<li><a href="https://www.persgroepadvertising.be/fr"  data-gtm-zones="footer|publicité">Publicité</a></li>
+<li><a href="https://www.persgroep.be/fr/corporate/travailler-chez-de-persgroep" target="_blank" data-gtm-zones="footer|jobs|link">Vacatures</a></li>
+<li><a href="/7s7/fr/1539/sites-partenaires/integration/nmc/frameset/7s7_footer/partnersites.dhtml" data-gtm-zones="footer">
+Sites partenaires
+</a></li>
+</ul>
+</aside>
+<section id="ftr_disclaimer" class="clearfix">
+<a href="https://www.persgroep.be/" data-gtm-zones="footer|depersgroep|image" target="_blank"><img src="https://static1.7sur7.be/images/logos/logo_dpd.jpg" alt="" width="120" height="43" /></a>
+<aside class="left">
+<p>
+&copy; 2018 De Persgroep Digital - Tous les droits r&eacute;serv&eacute;s.<br />
+<a href="http://www.persgroep.be/fr/conditions-d-utilisation/" data-gtm-zones="footer|gebruiksvoorwaarden|link">
+Conditions d'utilisation
+</a> -
+<a href="http://www.persgroep.be/fr/politique-de-confidentialite/" data-gtm-zones="footer|privacy|link">
+Politique de confidentialit&eacute;
+</a> -
+<a href="http://www.persgroep.be/fr/politique-en-matiere-de-cookies/" data-gtm-zones="footer|cookiebeleid|link">
+Politique en mati&egrave;re de cookies
+</a> -
+<a href="https://myprivacy.persgroep.net/?siteKey=atXMVFeyFP1Ki09i&callbackUrl=https://www.7sur7.be/privacy/callback.do?redirectUri=https://www.7sur7.be" data-gtm-zones="footer|privacywall|link" target="_self">
+Param&egrave;tres des cookies
+</a>
+</p>
+</aside>
+</section>
+<section class="ftr_logo">
+<ul class="right">
+<li>
+<a href="http://www.jep.be/fr" data-gtm-zones="footer|jep|image" onclick="openExternalSite(this.href); return false;">
+<img src="https://static1.7sur7.be/7s7/images/logos/jep-logo.png"
+alt="Jury d'Ethique Publicitaire"
+align="absmiddle"
+width="74" />
+</a>
+</li>
+<li>
+<a href="http://lecdj.be/" data-gtm-zones="footer|cdj|image" onclick="openExternalSite(this.href); return false;">
+<img src="https://static2.7sur7.be/7s7/images/logos/cdj-logo.png"
+alt="le Conseil de dÃ©ontologie journalistique"
+align="absmiddle"
+width="58" />
+</a>
+</li>
+<li><a href="http://www.gopress.be/" data-gtm-zones="footer|gopress|image" onclick="openExternalSite(this.href); return false;"><img src="https://static1.7sur7.be/7s7/images/logos/gopress.png" alt="Gopress" align="absmiddle" width="64" height="35" /></a></li>
+<li><a href="http://www.license2publish.be/" data-gtm-zones="footer|license2publish|image" onclick="openExternalSite(this.href); return false;"><img src="https://static1.7sur7.be/7s7/images/logos/license2publish.png" alt="License2Publish" align="absmiddle" width="108" height="35" /></a></li>
+<li><a href="http://www.cim.be/fr/media/Internet/DisclaimerCIMInternet" data-gtm-zones="footer|cim|link" onclick="openExternalSite(this.href); return false;"><img src="https://static1.7sur7.be/7s7/images/logos/cim_internet.png?8.3.0.20180528.5" alt="Disclaimer CIM Internet" align="absmiddle" width="100" height="35" /></a></li>
+</ul>
+</section>
+</footer>
+<!-- end footer -->
+</div><!-- end body content -->
+</div><!-- end str_cntr1 -->
+<script src="https://static2.7sur7.be/7s7/js/7s7-www.body.min.js?8.3.0.20180528.5"></script>
+<script type='text/javascript'>
+var _sf_async_config = _sf_async_config || {};
+var secties;
+if (pe_navPathKeys.length > 1){
+secties = pe_navPathKeys[1];
+}
+else{
+secties = measureZone;
+}
+/** CONFIGURATION START **/
+_sf_async_config.sections = ''+ secties +'';  //CHANGE THIS
+_sf_async_config.authors = '';    //CHANGE THIS
+/** CONFIGURATION END **/
+(function(){
+function loadChartbeat() {
+window._sf_endpt=(new Date()).getTime();
+var e = document.createElement('script');
+e.setAttribute('language', 'javascript');
+e.setAttribute('type', 'text/javascript');
+e.setAttribute('src', '//static.chartbeat.com/js/chartbeat.js');
+document.body.appendChild(e);
+}
+var oldonload = window.onload;
+window.onload = (typeof window.onload != 'function') ?
+loadChartbeat : function() { oldonload(); loadChartbeat(); };
+})();
+</script>
+<div id="ad_outofpage1">
+<script type="text/javascript">
+gptSiteSlot('ad_outofpage1', 'outofpage1');
+</script>
+</div>
+</body>
+</html>
+<!-- MEDUSA -->

@@ -117,25 +117,21 @@ public class SeptSurSept extends BasicSupport {
 	}
 
 	@Override
-	protected List<Element> getFullArticleCommentPosts(Document doc, URL intUrl) {
-		return getSubCommentElements(doc.getElementsByClass("comment-list")
-				.first());
-	}
-
-	@Override
 	protected ElementProcessor getElementProcessorFullArticle() {
 		return new BasicElementProcessor() {
 			@Override
 			public boolean ignoreNode(Node node) {
-				return node.attr("class").contains("chapo");
+				return node.attr("class").equals("read_more")
+						|| "teas_emopoll".equals(node.attr("id"))
+						|| "teas_emopoll_facebook".equals(node.attr("id"))
+						|| "soc_tools".equals(node.attr("id"));
 			}
 
 			@Override
 			public String isSubtitle(Node node) {
 				if (node instanceof Element) {
 					Element element = (Element) node;
-					if (element.tagName().startsWith("h")
-							&& element.tagName().length() == 2) {
+					if (element.tagName().equals("strong")) {
 						return element.text();
 					}
 				}
@@ -145,88 +141,43 @@ public class SeptSurSept extends BasicSupport {
 	}
 
 	@Override
+	protected List<Element> getFullArticleCommentPosts(Document doc, URL intUrl) {
+		return null;
+	}
+
+	@Override
 	protected List<Element> getCommentCommentPosts(Document doc,
 			Element container) {
-		return getSubCommentElements(container.getElementsByClass("children")
-				.first());
+		return null;
 	}
 
 	@Override
 	protected String getCommentId(Element post) {
-		Element idE = post.getElementsByTag("a").first();
-		if (idE != null) {
-			return idE.attr("id");
-		}
-
-		return "";
+		return null;
 	}
 
 	@Override
 	protected String getCommentAuthor(Element post) {
-		// Since we have no title, we switch with author
-		return "";
+		return null;
 	}
 
 	@Override
 	protected String getCommentTitle(Element post) {
-		// Since we have no title, we switch with author
-		Element authorE = post.getElementsByTag("footer").first();
-		if (authorE != null) {
-			authorE = authorE.getElementsByTag("cite").first();
-		}
-		if (authorE != null) {
-			return authorE.text();
-		}
-
-		return "";
+		return null;
 	}
 
 	@Override
 	protected String getCommentDate(Element post) {
-		Element idE = post.getElementsByTag("a").first();
-		if (idE != null) {
-			Element dateE = idE.getElementsByTag("span").first();
-			if (dateE != null) {
-				return dateE.attr("data-epoch");
-			}
-		}
-
-		return "";
+		return null;
 	}
 
 	@Override
 	protected Element getCommentContentElement(Element post) {
-		Element contentE = post.getElementsByClass("comment-content").first();
-		return contentE;
+		return null;
 	}
 
 	@Override
 	protected ElementProcessor getElementProcessorComment() {
-		return new BasicElementProcessor() {
-			@Override
-			public boolean ignoreNode(Node node) {
-				if (node instanceof Element) {
-					Element el = (Element) node;
-					if ("h4".equals(el.tagName())) {
-						return true;
-					}
-				}
-
-				return false;
-			}
-		};
-	}
-
-	private List<Element> getSubCommentElements(Element posts) {
-		List<Element> commentElements = new ArrayList<Element>();
-		if (posts != null) {
-			for (Element possibleCommentElement : posts.children()) {
-				if (possibleCommentElement.hasClass("comment")) {
-					commentElements.add(possibleCommentElement);
-				}
-			}
-		}
-
-		return commentElements;
+		return null;
 	}
 }
