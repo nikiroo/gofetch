@@ -111,7 +111,7 @@ public class EreNumerique extends BasicSupport {
 		Element contentElement = article.getElementsByClass("td-excerpt")
 				.first();
 		if (contentElement != null) {
-			return contentElement.text();
+			return getArticleText(contentElement);
 		}
 
 		return "";

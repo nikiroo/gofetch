@@ -13,7 +13,7 @@
 	<div class='details'>([Kernel] Sep 6, 2018 15:59 UTC (Thu) (corbet))</div>
 	<br/>
 	<div class='content' style='text-align: justify'>
-		Network packet headers contain a great deal of information, but the kernel often only needs a subset of that information to be able to perform filtering or associate any given packet with a flow. The piece of code that follows the different layers of packet encapsulation to find the important data is called a flow dissector. In current Linux kernels, the flow dissector is written in C. A patch set has been proposed recently to implement it in BPF with the clear goal of improving security, flexibility, and maybe even performance.
+		Network packet headers contain a great deal of information, but the kernel often only needs a subset of that information to be able to perform filtering or associate any given packet with a flow. The piece of code that follows the different layers of packet encapsulation to find the important data is called a flow dissector. In current Linux kernels, the [1]flow dissector is written in C. A [2]patch set has been proposed recently to implement it in BPF with the clear goal of improving security, flexibility, and maybe even performance.<br/><br/><br/><br/>[1] https://elixir.bootlin.com/linux/v4.18.6/source/net/core/flow_dissector.c<br/><br/>[2] https://lwn.net/Articles/763938/
 	</div>
 <hr/>
 </div>

@@ -2,24 +2,33 @@
 i  Thursday September 06, 2018 @11:30PM (msmash)
 i  from the for-the-record dept.
 i
-i    The  Tor  Browser  has  rolled  out  a  new  interface with the
-i    release  of  v8. From a report: The Tor Browser has always been
-i    based  on  the  Firefox  codebase,  but  it lagged behind a few
-i    releases.  Mozilla  rolled  out a major overhaul of the Firefox
-i    codebase  in November 2017, with the release of Firefox 57, the
-i    first  release  in  the Firefox Quantum series. Firefox Quantum
-i    came  with  a new page rendering engine, a new add-ons API, and
-i    a  new  user interface called the Photon UI. Because these were
-i    major,  code-breaking  changes,  it  took  the smaller Tor team
-i    some  time  to  integrate  all  of  them  into  the Tor Browser
-i    codebase  and  make sure everything worked as intended. The new
-i    Tor  Browser  8,  released  yesterday,  is now in sync with the
-i    most  recent  version of Firefox, the Quantum release, and also
-i    supports  all  of  its features. This means the Tor Browser now
-i    uses  the  same  modern Photon UI that current Firefox versions
-i    use,  it  supports  the  same  speed-optimized  page  rendering
-i    engine  and  has  also  dropped  support  for the old XUL-based
-i    add-ons  system  for  the  new WebExtensions API system used by
-i    Chrome,  Opera,  Vivaldi,  Brave,  and the rest of the Chromium
-i    browsers.
+i    The  Tor  Browser  has  [1]rolled  out a new interface with the
+i    release of v8 . From a report:
+i    
+i    >  The  Tor  Browser  has  always  been  based  on  the Firefox
+i    codebase,  but  it lagged behind a few releases. Mozilla rolled
+i    out  a major overhaul of the Firefox codebase in November 2017,
+i    with  the  release  of  Firefox 57, [2]the first release in the
+i    Firefox  Quantum  series . Firefox Quantum came with a new page
+i    rendering  engine,  a new add-ons API, and a new user interface
+i    called  the  Photon UI. Because these were major, code-breaking
+i    changes,  it  took  the smaller Tor team some time to integrate
+i    all  of  them  into  the  Tor  Browser  codebase  and make sure
+i    everything  worked as intended. The new Tor Browser 8, released
+i    yesterday,  is  now  in  sync  with  the most recent version of
+i    Firefox,  the  Quantum  release,  and  also supports all of its
+i    features.  This  means the Tor Browser now uses the same modern
+i    Photon  UI  that  current Firefox versions use, it supports the
+i    same   speed-optimized  page  rendering  engine  and  has  also
+i    dropped  support  for  the old XUL-based add-ons system for the
+i    new  WebExtensions  API  system used by Chrome, Opera, Vivaldi,
+i    Brave, and the rest of the Chromium browsers.
+i    
+i    
+i    
+i    [1]  https://www.zdnet.com/article/tor-browser-gets-a-redesign-
+i    switches-to-new-firefox-quantum-engine/
+i    
+i    [2] https://news.slashdot.org/story/17/11/25/1938225/firefox-q-
+i    uantum-is-better-faster-smarter-than-chrome-says-wired
 i

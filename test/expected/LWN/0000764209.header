@@ -9,7 +9,12 @@ i    reasonably  well  protected  against this variant since shortly
 i    after  its  disclosure in January. It is, however, possible for
 i    user-space  processes  to  use Spectre v2 to attack each other;
 i    thus  far,  the  mainline  kernel has offered relatively little
-i    protection  against  such  attacks. A recent proposal from Jiri
-i    Kosina  may  change  that  situation,  but there are still some
-i    disagreements around the details.
+i    protection  against  such  attacks.  A  recent [1]proposal from
+i    Jiri  Kosina  may  change  that  situation, but there are still
+i    some disagreements around the details.
+i    
+i    
+i    
+i    [1] https://lwn.net/ml/linux-kernel/nycvar.YFH.7.76.1809041619-
+i    510.15880@cbobk.fhfr.pm/
 i

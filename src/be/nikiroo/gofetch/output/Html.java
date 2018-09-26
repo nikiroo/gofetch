@@ -159,8 +159,9 @@ public class Html extends Output {
 
 		builder.append("	<div class='content' style='text-align: justify'>\n");
 		if (resume) {
-			builder.append("		" + StringUtils.xmlEscape(story.getContent())
-					+ "\n");
+			builder.append("		"
+					+ StringUtils.xmlEscape(story.getContent()).replace("\n",
+							"<br/>") + "\n");
 		} else {
 			builder.append("		"
 					+ StringUtils.xmlEscape(story.getFullContent())

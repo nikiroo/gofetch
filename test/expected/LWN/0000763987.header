@@ -1,8 +1,12 @@
 0Kernel prepatch 4.19-rc2	null/LWN/0000763987		70
 i  [Kernel] Sep 2, 2018 22:29 UTC (Sun) (corbet)
 i
-i    The  4.19-rc2  kernel  prepatch  is out for testing. "As usual,
-i    the  rc2  release is pretty small. People are taking a breather
-i    after  the  merge  window,  and  it takes a bit of time for bug
-i    reports to start coming in and get identified."
+i    The  [1]4.19-rc2  kernel  prepatch  is  out  for  testing. " As
+i    usual,  the  rc2  release  is pretty small. People are taking a
+i    breather  after  the  merge  window, and it takes a bit of time
+i    for bug reports to start coming in and get identified. "
+i    
+i    
+i    
+i    [1] https://lwn.net/Articles/763988/
 i

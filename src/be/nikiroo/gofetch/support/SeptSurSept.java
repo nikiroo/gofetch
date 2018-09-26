@@ -189,6 +189,6 @@ public class SeptSurSept extends BasicSupport {
 
 	@Override
 	protected ElementProcessor getElementProcessorComment() {
-		return null;
+		return new BasicElementProcessor();
 	}
 }

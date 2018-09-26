@@ -9,28 +9,37 @@
   o Source link: https://www.cnbc.com/2018/09/06/companies-worry-more-about-access-to-software-developers-than-capital.html
 
 
-    An  anonymous  reader  quotes a report from CNBC: As our global
-    economy  increasingly  comes to run on technology-enabled rails
-    and   every   company   becomes  a  tech  company,  demand  for
-    high-quality  software  engineers  is  at  an  all-time high. A
-    recent  study from Stripe and Harris Poll found that 61 percent
-    of  C-suite  executives believe access to developer talent is a
-    threat   to   the  success  of  their  business.  Perhaps  more
-    surprisingly  -- as we mark a decade after the financial crisis
-    --  this  threat was even ranked above capital constraints. And
-    yet,  despite  being many corporations' most precious resource,
-    developer  talents  are all too often squandered. Collectively,
-    companies  today lose upward of $300 billion a year paying down
-    "technical  debt,"  as  developers  pour  time into maintaining
-    legacy  systems  or  dealing  with  the  ramifications  of  bad
-    software.  This  is  especially  worrisome,  given the outsized
-    impact  developers  have  on  companies'  chances  of  success.
-    Software  developers  don't  have a monopoly on good ideas, but
-    their   skill   set  makes  them  a  uniquely  deep  source  of
-    innovation,  productivity  and  new  economic connections. When
-    deployed  correctly,  developers can be economic multipliers --
-    coefficients  that  dramatically  ratchet  up the output of the
-    teams and companies of which they're a part.
+    An anonymous reader quotes a report from CNBC:
+    
+    >   As   our  global  economy  increasingly  comes  to  run  on
+    technology-enabled  rails  and  every  company  becomes  a tech
+    company,  demand  for  high-quality software engineers is at an
+    all-time  high.  A  recent study from [1]Stripe and Harris Poll
+    found  that  61 percent of C-suite executives believe access to
+    developer  talent is a threat to the success of their business.
+    Perhaps  more  surprisingly  --  as  we mark a decade after the
+    financial  crisis  --  [2]this  threat  was  even  ranked above
+    capital   constraints   .   And   yet,   despite   being   many
+    corporations'  most  precious  resource,  developer talents are
+    all  too  often  squandered. Collectively, companies today lose
+    upward  of $300 billion a year paying down "technical debt," as
+    developers   pour  time  into  maintaining  legacy  systems  or
+    dealing  with  the  ramifications  of  bad  software.  This  is
+    especially  worrisome,  given  the  outsized  impact developers
+    have  on  companies'  chances  of  success. Software developers
+    don't  have a monopoly on good ideas, but their skill set makes
+    them  a  uniquely  deep  source of innovation, productivity and
+    new  economic  connections. When deployed correctly, developers
+    can  be  economic multipliers -- coefficients that dramatically
+    ratchet  up  the  output  of  the  teams and companies of which
+    they're a part.
+    
+    
+    
+    [1] https://stripe.com/reports/developer-coefficient-2018
+    
+    [2] https://www.cnbc.com/2018/09/06/companies-worry-more-about-
+    access-to-software-developers-than-capital.html
 
 
   ** So why not treat them well? (Score:5, Insightful)

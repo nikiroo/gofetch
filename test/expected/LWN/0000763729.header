@@ -8,6 +8,12 @@ i    an  attacker; it's worse if it remains compromised even after a
 i    reboot.  Numerous  mechanisms  for  ensuring  the  integrity of
 i    installed  system files have been proposed and implemented over
 i    the  years.  But it seems there is always room for one more; to
-i    fill  that  space, the fs-verity mechanism is being proposed as
-i    a way to protect individual files from malicious modification.
+i    fill  that  space, the [1]fs-verity mechanism is being proposed
+i    as   a   way   to   protect  individual  files  from  malicious
+i    modification.
+i    
+i    
+i    
+i    [1] https://lwn.net/ml/linux-fsdevel/20180824161642.1144-1-ebi-
+i    ggers@kernel.org/
 i

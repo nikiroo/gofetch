@@ -1,14 +1,19 @@
 0[$] Learning about Go internals at GopherCon	null/LWN/0000764131		70
 i  [Front] Sep 5, 2018 19:20 UTC (Wed) (jake)
 i
-i    GopherCon   is  the  major  conference  for  the  Go  language,
+i    [1]GopherCon  is  the major conference for the [2]Go language ,
 i    attended  by  1600  dedicated  "gophers", as the members of its
 i    community  like  to  call  themselves.  Held  for the last five
 i    years   in   Denver,   it   attracts  programmers,  open-source
 i    contributors,  and  technical  managers  from  all  over  North
 i    America  and the world. GopherCon's highly-technical program is
 i    an  intense  mix  of  Go internals and programming tutorials, a
-i    few  of  which we will explore in this article. Subscribers can
-i    read  on  for  a  report  from  GopherCon  by guest author Josh
-i    Berkus.
+i    few of which we will explore in this article.
+i    
+i    
+i    
+i    [1] https://www.gophercon.com/
+i    
+i    [2]  https://golang.org/  Subscribers  can read on for a report
+i    from GopherCon by guest author Josh Berkus.
 i

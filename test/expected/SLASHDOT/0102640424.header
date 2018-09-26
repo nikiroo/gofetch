@@ -3,19 +3,20 @@ i  Thursday September 06, 2018 @11:30PM (BeauHD)
 i  from the leak-detecting dept.
 i
 i    A  28-year-old  MIT  graduate  named  You  Wu  spent  six years
-i    developing  a  low-cost  robot  designed to find leaks in pipes
-i    early,  both  to  save  water  and to avoid bigger damage later
+i    [1]developing  a low-cost robot designed to find leaks in pipes
+i    early  ,  both  to  save water and to avoid bigger damage later
 i    from  bursting water mains. "Called Lighthouse, the robot looks
 i    like  a  badminton  birdie,"  reports  Fast  Company.  "A  soft
 i    'skirt'  on  the  device is covered with sensors. As it travels
 i    through  pipes, propelled by the flowing water, suction tugs at
 i    the  device  when  there's a leak, and it records the location,
-i    making  a  map  of critical leaks to fix." From the report: MIT
-i    doctoral  student You Wu spent six years developing the design,
-i    building  on  research  that  earlier  students  began  under a
-i    project  sponsored  by a university in Saudi Arabia, where most
-i    drinking  water  comes  from  expensive desalination plants and
-i    around  a  third  of  it  is lost to leaks. It took three years
+i    making a map of critical leaks to fix." From the report:
+i    
+i    >  MIT  doctoral  student You Wu spent six years developing the
+i    design,  building on research that earlier students began under
+i    a  project  sponsored  by  a  university in Saudi Arabia, where
+i    most  drinking  water  comes from expensive desalination plants
+i    and  around a third of it is lost to leaks. It took three years
 i    before  he  had  a  working  prototype. Then Wu got inspiration
 i    from  an  unexpected  source:  At  a party with his partner, he
 i    accidentally  stepped  on  her  dress. She noticed immediately,
@@ -23,8 +24,15 @@ i    unsurprisingly,  and  Wu  realized  that he could use a similar
 i    skirt-like  design  on  a  robot so that the robot could detect
 i    subtle  tugs  from  the suction at each leak. Wu graduated from
 i    MIT  in  June,  and  is  now launching the technology through a
-i    startup  called  WatchTower  Robotics.  The  company  will soon
+i    startup  called  [2]WatchTower Robotics . The company will soon
 i    begin  pilots in Australia and in Cambridge, Massachusetts. One
 i    challenge  now, he says, is creating a guide so water companies
 i    can use the device on their own.
+i    
+i    
+i    
+i    [1] https://www.fastcompany.com/90232363/this-leak-seeking-rob-
+i    ot-just-won-the-u-s-james-dyson-award
+i    
+i    [2] http://watchtowerrobotics.com/
 i

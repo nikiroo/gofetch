@@ -4,22 +4,29 @@ i  from the security-woes dept.
 i
 i    Open  .git  directories are a bigger cybersecurity problem than
 i    many  might  imagine,  at  least  according to a Czech security
-i    researcher  who  discovered  almost  400,000  web pages with an
+i    researcher  who  [1]discovered almost 400,000 web pages with an
 i    open  .git  directory possibly exposing a wide variety of data.
-i    From  a  report:  Vladimir  Smitka  began  his  .git  directory
-i    odyssey  in  July  when  he  began looking at Czech websites to
-i    find  how  many  were improperly configured and allow access to
-i    their  .git  folders  within the file versions repository. Open
-i    .git  directories  are a particularly dangerous issue, he said,
-i    because   they   can   contain   a   great  deal  of  sensitive
-i    information.  "Information  about  the website's structure, and
-i    sometimes  you  can  get  very  sensitive data such as database
-i    passwords,  API  keys,  development  IDE  settings,  and so on.
-i    However,  this  data shouldn't be stored in the repository, but
-i    in  previous  scans  of  various  security issues, I have found
-i    many  developers  that  do  not  follow  these best practices,"
-i    Smitka  wrote.  Smitka queried 230 million websites to discover
-i    the  390,000  allowing  access  to  their .git directories. The
-i    vast  majority of the websites with open directories had a .com
-i    TLD with .net, .de, .org and uk comprising most of the others.
+i    From a report:
+i    
+i    >  Vladimir  Smitka  began  his  .git directory odyssey in July
+i    when  he  began looking at Czech websites to find how many were
+i    improperly  configured  and  allow access to their .git folders
+i    within  the file versions repository. Open .git directories are
+i    a  particularly  dangerous  issue,  he  said,  because they can
+i    contain  a  great  deal  of sensitive information. "Information
+i    about  the  website's structure, and sometimes you can get very
+i    sensitive   data   such   as   database  passwords,  API  keys,
+i    development  IDE  settings,  and  so  on.  However,  this  data
+i    shouldn't  be  stored  in the repository, but in previous scans
+i    of  various  security issues, I have found many developers that
+i    do  not  follow  these  best  practices,"  Smitka wrote. Smitka
+i    queried  230  million websites to discover the 390,000 allowing
+i    access  to  their  .git  directories.  The vast majority of the
+i    websites  with  open directories had a .com TLD with .net, .de,
+i    .org and uk comprising most of the others.
+i    
+i    
+i    
+i    [1] https://www.scmagazine.com/home/news/400000-websites-vulne-
+i    rable-through-exposed-git-directories/
 i

@@ -96,7 +96,7 @@ public class TooLinux extends BasicSupport {
 	protected String getArticleContent(Document doc, Element article) {
 		Element content = article.getElementsByClass("introduction").first();
 		if (content != null) {
-			return content.text();
+			return getArticleText(content);
 		}
 
 		return "";

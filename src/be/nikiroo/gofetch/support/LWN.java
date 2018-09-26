@@ -141,7 +141,7 @@ public class LWN extends BasicSupport {
 			// All but the first and two last children
 			for (int i = 1; i < listing.children().size() - 2; i++) {
 				Element e = listing.children().get(i);
-				content = content.trim() + " " + e.text().trim();
+				content = content.trim() + " " + getArticleText(e);
 			}
 
 			return content;

@@ -129,7 +129,7 @@ class Phoronix extends BasicSupport {
 	protected String getArticleContent(Document doc, Element article) {
 		Element p = article.getElementsByTag("p").first();
 		if (p != null) {
-			return p.text();
+			return getArticleText(p);
 		}
 
 		return "";

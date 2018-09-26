@@ -300,21 +300,7 @@ public abstract class BasicSupport {
 			Document doc = DataUtil.load(in, "UTF-8", url.toString());
 			Element article = getFullArticle(doc);
 			if (article != null) {
-				StringBuilder builder = new StringBuilder();
-				ElementProcessor eProc = getElementProcessorFullArticle();
-				if (eProc != null) {
-					for (String line : toLines(article, eProc)) {
-						builder.append(line + "\n");
-					}
-				} else {
-					builder.append(article.text());
-				}
-
-				// Content is too tight with a single break per line:
-				fullContent = builder.toString().replace("\n", "\n\n") //
-						.replace("\n\n\n\n", "\n\n") //
-						.replace("\n\n\n\n", "\n\n") //
-						.trim();
+				fullContent = getArticleText(article);
 			}
 
 			if (fullContent.isEmpty()) {
@@ -329,6 +315,33 @@ public abstract class BasicSupport {
 				in.close();
 			}
 		}
+	}
+
+	/**
+	 * Return the text from this {@link Element}, using the
+	 * {@link BasicSupport#getElementProcessorFullArticle()} processor logic.
+	 * 
+	 * @param article
+	 *            the element to extract the text from
+	 * 
+	 * @return the text
+	 */
+	protected String getArticleText(Element article) {
+		StringBuilder builder = new StringBuilder();
+		ElementProcessor eProc = getElementProcessorFullArticle();
+		if (eProc != null) {
+			for (String line : toLines(article, eProc)) {
+				builder.append(line + "\n");
+			}
+		} else {
+			builder.append(article.text());
+		}
+
+		// Content is too tight with a single break per line:
+		return builder.toString().replace("\n", "\n\n") //
+				.replace("\n\n\n\n", "\n\n") //
+				.replace("\n\n\n\n", "\n\n") //
+				.trim();
 	}
 
 	/**

@@ -11,24 +11,31 @@
 
     Open  .git  directories are a bigger cybersecurity problem than
     many  might  imagine,  at  least  according to a Czech security
-    researcher  who  discovered  almost  400,000  web pages with an
+    researcher  who  [1]discovered almost 400,000 web pages with an
     open  .git  directory possibly exposing a wide variety of data.
-    From  a  report:  Vladimir  Smitka  began  his  .git  directory
-    odyssey  in  July  when  he  began looking at Czech websites to
-    find  how  many  were improperly configured and allow access to
-    their  .git  folders  within the file versions repository. Open
-    .git  directories  are a particularly dangerous issue, he said,
-    because   they   can   contain   a   great  deal  of  sensitive
-    information.  "Information  about  the website's structure, and
-    sometimes  you  can  get  very  sensitive data such as database
-    passwords,  API  keys,  development  IDE  settings,  and so on.
-    However,  this  data shouldn't be stored in the repository, but
-    in  previous  scans  of  various  security issues, I have found
-    many  developers  that  do  not  follow  these best practices,"
-    Smitka  wrote.  Smitka queried 230 million websites to discover
-    the  390,000  allowing  access  to  their .git directories. The
-    vast  majority of the websites with open directories had a .com
-    TLD with .net, .de, .org and uk comprising most of the others.
+    From a report:
+    
+    >  Vladimir  Smitka  began  his  .git directory odyssey in July
+    when  he  began looking at Czech websites to find how many were
+    improperly  configured  and  allow access to their .git folders
+    within  the file versions repository. Open .git directories are
+    a  particularly  dangerous  issue,  he  said,  because they can
+    contain  a  great  deal  of sensitive information. "Information
+    about  the  website's structure, and sometimes you can get very
+    sensitive   data   such   as   database  passwords,  API  keys,
+    development  IDE  settings,  and  so  on.  However,  this  data
+    shouldn't  be  stored  in the repository, but in previous scans
+    of  various  security issues, I have found many developers that
+    do  not  follow  these  best  practices,"  Smitka wrote. Smitka
+    queried  230  million websites to discover the 390,000 allowing
+    access  to  their  .git  directories.  The vast majority of the
+    websites  with  open directories had a .com TLD with .net, .de,
+    .org and uk comprising most of the others.
+    
+    
+    
+    [1] https://www.scmagazine.com/home/news/400000-websites-vulne-
+    rable-through-exposed-git-directories/
 
 
   ** 
