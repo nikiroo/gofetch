@@ -13,6 +13,8 @@ import be.nikiroo.gofetch.output.Gopher;
 import be.nikiroo.gofetch.output.Html;
 import be.nikiroo.gofetch.output.Output;
 import be.nikiroo.gofetch.support.BasicSupport;
+import be.nikiroo.utils.Cache;
+import be.nikiroo.utils.Downloader;
 import be.nikiroo.utils.IOUtils;
 import be.nikiroo.utils.test.TestCase;
 
@@ -21,19 +23,32 @@ import be.nikiroo.utils.test.TestCase;
  * <p>
  * It will use the paths:
  * <ul>
- * <li><tt>test/XXX/source</tt>: the html source files</li>
- * <li><tt>test/XXX/expected</tt>: the expected output</li>
- * <li><tt>test/XXX/actual</tt>: the actual output of the last test</li>
+ * <li><tt>test/???/source</tt>: the html source files</li>
+ * <li><tt>test/???/expected</tt>: the expected output</li>
+ * <li><tt>test/???/actual</tt>: the actual output of the last test</li>
  * </ul>
  * 
  * @author niki
  */
 abstract class TestBase extends TestCase {
 	private BasicSupport support;
+	private Cache cache;
+	private Downloader downloader;
 
 	public TestBase(BasicSupport support, String[] args) {
 		super(support.getType().toString());
 		this.support = support;
+		try {
+			cache = new Cache(new File("test/source/" + support.getType()), -1,
+					-1);
+			downloader = new Downloader("gofetch", cache);
+		} catch (IOException e) {
+			throw new RuntimeException(e);
+		}
+	}
+
+	protected InputStream download(URL url) throws IOException {
+		return downloader.open(url);
 	}
 
 	static protected InputStream doOpen(BasicSupport support,
