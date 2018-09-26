@@ -2,6 +2,7 @@ package be.nikiroo.gofetch.output;
 
 import be.nikiroo.gofetch.data.Comment;
 import be.nikiroo.gofetch.data.Story;
+import be.nikiroo.gofetch.support.BasicSupport;
 import be.nikiroo.gofetch.support.Type;
 import be.nikiroo.utils.StringUtils;
 import be.nikiroo.utils.StringUtils.Alignment;
@@ -14,7 +15,7 @@ public class Gopher extends Output {
 	}
 
 	@Override
-	public String getIndexHeader() {
+	public String getMainIndexHeader() {
 		StringBuilder builder = new StringBuilder();
 
 		appendCenter(builder, true, "NEWS", "", true);
@@ -33,7 +34,22 @@ public class Gopher extends Output {
 	}
 
 	@Override
-	public String getIndexFooter() {
+	public String getMainIndexFooter() {
+		return "";
+	}
+
+	@Override
+	public String getIndexHeader(BasicSupport support) {
+		StringBuilder builder = new StringBuilder();
+		appendCenter(builder, true, support.getDescription(), "", true);
+		builder.append("\r\n");
+		builder.append("\r\n");
+		builder.append("\r\n");
+		return builder.toString();
+	}
+
+	@Override
+	public String getIndexFooter(BasicSupport support) {
 		return "";
 	}
 
@@ -112,6 +128,8 @@ public class Gopher extends Output {
 			appendJustified(builder, false, story.getDetails(), "  ");
 			builder.append("\r\n");
 
+			builder.append("  o Reference: ").append(story.getId())
+					.append("\r\n");
 			builder.append("  o News link: ").append(story.getUrlInternal())
 					.append("\r\n");
 			builder.append("  o Source link: ").append(story.getUrlExternal())

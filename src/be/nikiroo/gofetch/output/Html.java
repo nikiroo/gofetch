@@ -2,6 +2,7 @@ package be.nikiroo.gofetch.output;
 
 import be.nikiroo.gofetch.data.Comment;
 import be.nikiroo.gofetch.data.Story;
+import be.nikiroo.gofetch.support.BasicSupport;
 import be.nikiroo.gofetch.support.Type;
 import be.nikiroo.utils.StringUtils;
 
@@ -11,7 +12,7 @@ public class Html extends Output {
 	}
 
 	@Override
-	public String getIndexHeader() {
+	public String getMainIndexHeader() {
 		String sel = preselector;
 		if (!sel.isEmpty()) {
 			sel = "/1" + sel;
@@ -22,7 +23,7 @@ public class Html extends Output {
 		StringBuilder builder = new StringBuilder();
 		appendPre(builder);
 
-		builder.append("<h1>News</h1>\n"//
+		builder.append("<h2>News</h2>\n"//
 				+ "<p>You will find here a few pages full of news, mirroring <a href='"
 				+ gopherUrl + "'>"
 				+ gopherUrl
@@ -36,7 +37,17 @@ public class Html extends Output {
 	}
 
 	@Override
-	public String getIndexFooter() {
+	public String getMainIndexFooter() {
+		return "";
+	}
+
+	@Override
+	public String getIndexHeader(BasicSupport support) {
+		return "<h1>" + support.getDescription() + "</h1>\n<br/><br/>";
+	}
+
+	@Override
+	public String getIndexFooter(BasicSupport support) {
 		return "";
 	}
 
@@ -98,8 +109,8 @@ public class Html extends Output {
 	private void appendHtml(StringBuilder builder, Comment comment, String space) {
 		builder.append(space)
 				.append("<div class='comment' style='display: block; margin-left: 80px'>\n");
-		builder.append(space).append("  <h2>").append(comment.getTitle())
-				.append("</h2>\n");
+		builder.append(space).append("  <h3>").append(comment.getTitle())
+				.append("</h3>\n");
 		builder.append(space)
 				.append("  <div class='by' style='font-style: italic;'>")
 				.append(comment.getAuthor()).append("</div>\n");
@@ -117,10 +128,10 @@ public class Html extends Output {
 	private StringBuilder appendHtml(StringBuilder builder, Story story,
 			boolean resume) {
 		if (resume) {
-			builder.append("	<h1><a href='" + story.getId() + ".html'>"
-					+ story.getTitle() + "</a></h1>\n");
+			builder.append("	<h2><a href='" + story.getId() + ".html'>"
+					+ story.getTitle() + "</a></h2>\n");
 		} else {
-			builder.append("	<h1>" + story.getTitle() + "</h1>\n");
+			builder.append("	<h2>" + story.getTitle() + "</h2>\n");
 		}
 
 		builder.append("	<div class='details'>");
@@ -134,6 +145,8 @@ public class Html extends Output {
 
 		if (!resume) {
 			builder.append("    <ul>\n");
+			builder.append("    <li>Reference: <a href=''>" + story.getId()
+					+ "</a></li>\n");
 			builder.append("        <li>News link: <a href='"
 					+ story.getUrlInternal() + "'>" + story.getUrlInternal()
 					+ "</a></li>\n");
@@ -151,8 +164,8 @@ public class Html extends Output {
 		} else {
 			builder.append("		"
 					+ StringUtils.xmlEscape(story.getFullContent())
-							.replace("\n", "<br/>").replace("[ ", "<h2>")
-							.replace(" ]", "</h2>") + "\n");
+							.replace("\n", "<br/>").replace("[ ", "<h3>")
+							.replace(" ]", "</h3>") + "\n");
 		}
 		builder.append("	</div>\n");
 
