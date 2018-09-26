@@ -12,6 +12,7 @@ public class Test extends TestLauncher {
 		super("GoFetch", args);
 		addTest(new TestLWN(args));
 		addTest(new TestSlashdot(args));
+		addTest(new TestTooLinux(args));
 	}
 
 	public static void main(String[] args) {

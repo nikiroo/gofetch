@@ -1,0 +1,75 @@
+         CLIP OS, LE SYSTÈME D’EXPLOITATION "MADE IN FRANCE"       
+
+  2018/09/24
+
+  o News link: https://www.toolinux.com/?CLIP-OS-le-systeme-d-exploitation-made-in-France
+  o Source link: 
+
+
+    CLIP OS, le système d’exploitation "made in France"
+    
+    lundi 24 septembre 2018
+    
+    Maintenu  par  l’ANSSI,  CLIP  OS  est  un  projet  de  système
+    d’exploitation  open  source  basé  sur  un  noyau Linux et des
+    logiciels  libres.  C’était  une  idée  depuis  dix  ans, c’est
+    désormais un projet bien réel.
+    
+    Initialement   développé   pour   répondre   aux   besoins  des
+    administrations,  les précédentes versions de CLIP OS n’étaient
+    pas  disponibles  publiquement.  Elles le sont depuis septembre
+    2018   :   «  Le  projet  se  base  sur  plus  de  dix  ans  de
+    [1]développement  interne  à  l’ANSSI  pour  créer  un  système
+    d’exploitation durci. »
+    
+    Attention,   CLIP   OS   n’est   pas  "souverain"  :  «  Si  le
+    développement  du  projet  est initié et réalisé par des agents
+    de  l’ANSSI,  la  majeure  partie  du  code  source est issu de
+    projets  open  source  (noyau  Linux, suite de compilation GCC,
+    etc.).  Le  code  source  de  CLIP  OS est aujourd’hui ouvert à
+    tous.  Le  projet  est  basé  sur  Gentoo  Hardened et suit des
+    principes similaires à Chromium OS ou au projet Yocto. »
+    
+    Deux  versions  du  projet  sont  publiées le code source et la
+    documentation  (en français) de CLIP OS version 4, puis le code
+    source  et  la documentation (en anglais) de CLIP OS version 5.
+    Cette   version   est  en  cours  de  développement.  Elle  est
+    considérée comme étant au statut d’alpha.
+    
+    Les  sources  du  projet CLIP OS [2]sont hébergées sur GitHub ,
+    dans  l’organisation  CLIP OS. Les portions de code spécifiques
+    au  projet  CLIP  OS  sont  mises  à disposition en open source
+    (principalement sous licence LGPL 2.1+).
+    
+    Liens
+    
+    [3]Site web officiel
+    
+    [4]Présentation du projet CLIP OS
+    
+    [5]CLIP OS version 4
+    
+    [6]CLIP OS version 5
+    
+    [7]
+    
+    
+    
+    [1] https://www.ssi.gouv.fr/
+    
+    [2] https://github.com/CLIPOS/bugs
+    
+    [3] https://clip-os.org/fr/
+    
+    [4] https://www.ssi.gouv.fr/administration/services-securises/-
+    clip/
+    
+    [5] https://clip-os.org/fr/clipos4
+    
+    [6] https://clip-os.org/fr/clipos5/
+    
+    [7] https://www.toolinux.com/?CLIP-OS-le-systeme-d-exploitatio-
+    n-made-in-France#forum
+
+
+

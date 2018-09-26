@@ -1,0 +1,324 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--[if lt IE 7 ]> <html dir="ltr" lang="fr" xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" class="ltr fr no-js ie ie6"> <![endif]-->
+<!--[if IE 7 ]> <html dir="ltr" lang="fr" xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" class="ltr fr no-js ie ie7"> <![endif]-->
+<!--[if IE 8 ]> <html dir="ltr" lang="fr" xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" class="ltr fr no-js ie ie8"> <![endif]-->
+<!--[if IE 9 ]> <html dir="ltr" lang="fr" xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" class="ltr fr no-js ie ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html dir="ltr" lang="fr" xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" class="ltr fr no-js"> <!--<![endif]-->
+<head>
+	<script type='text/javascript'>/*<![CDATA[*/(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement);/*]]>*/</script>
+	<title>TOOLinux - Le journal du Libre</title>
+	<meta name="description" content="Votre quotidien d&#039;actualit&#233; sur Linux, le logiciel libre et l&#039;interop&#233;rabilit&#233; depuis mai 2000." />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+<link rel="alternate" type="application/rss+xml" title="Syndiquer tout le site" href="spip.php?page=backend" />
+
+   
+<link rel="stylesheet" href="squelettes-dist/css/reset.css" type="text/css" />
+<link rel="stylesheet" href="squelettes-dist/css/clear.css" type="text/css" />
+<link rel="stylesheet" href="squelettes-dist/css/font.css" type="text/css" />
+<link rel="stylesheet" href="squelettes-dist/css/links.css" type="text/css" />
+<link rel="stylesheet" href="squelettes-dist/css/typo.css" type="text/css" />
+<link rel="stylesheet" href="squelettes-dist/css/media.css" type="text/css" />
+<link rel="stylesheet" href="squelettes-dist/css/form.css" type="text/css" />
+
+<link rel="stylesheet" href="squelettes-dist/css/layout.css" type="text/css" />
+
+
+<link rel="stylesheet" href="squelettes-dist/css/spip.css" type="text/css" />
+<script type="text/javascript">/* <![CDATA[ */
+var box_settings = {tt_img:true,sel_g:"#documents_portfolio a[type='image/jpeg'],#documents_portfolio a[type='image/png'],#documents_portfolio a[type='image/gif']",sel_c:".mediabox",trans:"elastic",speed:"200",ssSpeed:"2500",maxW:"90%",maxH:"90%",minW:"400px",minH:"",opa:"0.9",str_ssStart:"Diaporama",str_ssStop:"Arrêter",str_cur:"{current}/{total}",str_prev:"Précédent",str_next:"Suivant",str_close:"Fermer",splash_url:""};
+var box_settings_splash_width = "600px";
+var box_settings_splash_height = "90%";
+var box_settings_iframe = true;
+/* ]]> */</script>
+<!-- insert_head_css --><link rel="stylesheet" href="plugins-dist/mediabox/colorbox/black-striped/colorbox.css" type="text/css" media="all" /><link rel='stylesheet' type='text/css' media='all' href='plugins-dist/porte_plume/css/barre_outils.css?1526891695' />
+<link rel='stylesheet' type='text/css' media='all' href='local/cache-css/cssdyn-css_barre_outils_icones_css-d05fb595.css?1537938249' />
+<link rel="stylesheet" type="text/css" href="plugins/auto/socialtags/v1.1.1/socialtags.css" media="all" />
+<link rel="stylesheet" href="plugins/auto/menuder/v2.4.0/css/menuder.css" type="text/css" media="projection, screen" /><link rel="stylesheet" type="text/css" href="plugins/auto/curalicious/v1.0.0/css/curalicious.css" />
+
+
+<link rel="stylesheet" href="squelettes-dist/css/theme.css" type="text/css" />
+
+
+
+
+
+<script src="prive/javascript/jquery.js?1526892170" type="text/javascript"></script>
+
+<script src="prive/javascript/jquery-migrate-3.0.1.js?1526892167" type="text/javascript"></script>
+
+<script src="prive/javascript/jquery.form.js?1526892171" type="text/javascript"></script>
+
+<script src="prive/javascript/jquery.autosave.js?1526892172" type="text/javascript"></script>
+
+<script src="prive/javascript/jquery.placeholder-label.js?1526892170" type="text/javascript"></script>
+
+<script src="prive/javascript/ajaxCallback.js?1526892173" type="text/javascript"></script>
+
+<script src="prive/javascript/js.cookie.js?1526892171" type="text/javascript"></script>
+
+<script src="prive/javascript/jquery.cookie.js?1526892172" type="text/javascript"></script>
+<!-- insert_head -->
+	<script src="plugins-dist/mediabox/javascript/jquery.colorbox.js?1526891953" type="text/javascript"></script>
+	<script src="plugins-dist/mediabox/javascript/spip.mediabox.js?1526891953" type="text/javascript"></script><script type='text/javascript' src='plugins-dist/porte_plume/javascript/jquery.markitup_pour_spip.js?1526891709'></script>
+<script type='text/javascript' src='plugins-dist/porte_plume/javascript/jquery.previsu_spip.js?1526891709'></script>
+<script type='text/javascript' src='local/cache-js/jsdyn-javascript_porte_plume_start_js-94cb54dd.js?1537938249'></script>
+<script src='local/cache-js/jsdyn-socialtags_js-3f4fad85.js?1537938249' type='text/javascript'></script>
+<script type='text/javascript' src='plugins/auto/menuder/v2.4.0/js/menuder.js'></script>
+
+
+
+
+
+
+<meta name="generator" content="SPIP 3.2.1" /><link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
+<link rel="icon" type="image/png" href="favicon.png" />
+</head>
+
+<body class="pas_surlignable page_sommaire">
+<div class="page">
+
+	<div class="clearfix header"> 
+<a href="https://toolinux.com/" title="Toolinux">Toolinux</a>
+<a href="https://linto.ai/" title="Linto.AI">Linto.AI</a>
+<a href="https://open-paas.org/" title="OpenPAAS">OpenPAAS</a>
+<a href="http://www.obm.org/" title="OBM">OBM</a>
+<a href="https://hubl.in/" title="OBM">Hubl.IN</a>
+<a href="https://www.linagora.com/" title="OBM">Linagora</a>
+</div>
+<div class="clearfix header">       
+<a href="http://toolinux.com/" title="Accueil"><img class="spip_logo spip_logos" alt="" src="IMG/siteon0.png?1521638935" width="320" height="76" /></a>
+</div>	<div id="nav-container">
+	<ul id="nav" class="menuder">
+	<ul>
+	<li><a href="http://www.toolinux.com/" class="intitule">Accueil</a></li>
+	<li><a href="http://toolinux.com/evenements-et-seminaires" class="intitule">Agenda</a></li>
+	<li><a href="http://toolinux.com/applications" class="intitule">APPS</a></li> 
+	<li><a href="http://toolinux.com/developpement" class="intitule">DEV</a></li>
+	<li><a href="http://toolinux.com/livres" class="intitule">Livres</a></li>
+	<li><a href="http://toolinux.com/materiel" class="intitule">MATERIEL</a></li>
+	<li><a href="http://toolinux.com/revue-de-presse-171" class="intitule">Revue/Tribunes</a></li>
+	</ul>
+</div>	
+	<div class="main">
+		<div class="wrapper hfeed">
+		<div class="content" id="content">
+			<div class="chapo"><p>Votre quotidien d&#8217;actualité sur Linux, le logiciel libre et l&#8217;interopérabilité depuis mai 2000.</p></div>
+			<div class='ajaxbloc' data-ajax-env='hgbAmU/HTBmt/N0Dpvy+ybb8+/07gCKd3y3uTXXZfrqeIsEKvwTi70bkiBFhyzWEiEunCx0qUGPktbEYOQUSEraJDjEb7K2m6+sO9VQPBB43LrA27kMsND3nIhcw4qhha2n6R+BwasIe+78f/smdt6MhA0iEqxoDyJ2FAZLSrZKMnz8qZ4ZgQ2L18gnr1+Q=' data-origin="./">
+
+<div class="menu menu_articles" id="articles_recents">
+	<h2 class="offscreen">Articles les plus récents</h2>
+	<a name='pagination_articles' id='pagination_articles'></a>
+	<ul>
+		
+		<li dir="ltr" class="hentry clearfix text-left">
+			<h3 class="h2 entry-title"><a href="./?ChromeOS-69-les-applications-Linux-sont-la" rel="bookmark">ChromeOS 69&nbsp;: les applications Linux sont là</a></h3>
+					
+					
+				
+			<img src='local/cache-gd2/72/353c22f1c385f9e245b85aa27d3582.jpg?1537938249' width='1000' height='562.5' />
+			<div class="introduction entry-content">C’était un privilège réservé aux développeurs. Désormais, avec Chrome OS 69, tout le monde peut profiter des applications Linux sur Chromebook, mais pas encore sur tous les modèles. 
+
+ C’était un navigateur amélioré. C’est désormais un système d’exploitation capable de faire tourner des applications progressives du web, les applications Android et désormais&nbsp;(...)</div>
+				<div class="infos">
+					<small>
+					<span class="origine"><a href=""></a></span>
+						<abbr class="published" title="2018-09-25T19:07:16Z"><a href="./?ChromeOS-69-les-applications-Linux-sont-la">25 septembre 2018</a>
+						<a href="./?ChromeOS-69-les-applications-Linux-sont-la"><img src="plugins/auto/curalicious/v1.0.0/img/share.png" alt="share" class="share"/></a></abbr>
+					</small>
+				</div>
+		</li>
+		
+		<li dir="ltr" class="hentry clearfix text-left">
+			<h3 class="h2 entry-title"><a href="./?Voici-le-programme-du-Forum-PHP-2018" rel="bookmark">Dans un mois aura lieu le Forum PHP 2018 à Paris</a></h3>
+					
+					
+				
+			<img src='local/cache-gd2/8b/340fca7675550cc0b7708b51694657.jpg?1537938249' width='640' height='360' />
+			<div class="introduction entry-content">Il se tiendra les jeudi 25 et vendredi 26 octobre dans la capitale française. L’événement n’a jamais été aussi séduisant sur affiche. Une trentaine de conférenciers, venus de tous les horizons, vont y partager leur savoir et vous faire profiter de leur expérience. 
+
+ C’est bon : après des semaines de travail, les organisateurs du Forum PHP ont accouché&nbsp;(...)</div>
+				<div class="infos">
+					<small>
+					<span class="origine"><a href=""></a></span>
+						<abbr class="published" title="2018-09-25T02:31:00Z"><a href="./?Voici-le-programme-du-Forum-PHP-2018">25 septembre 2018</a>
+						<a href="./?Voici-le-programme-du-Forum-PHP-2018"><img src="plugins/auto/curalicious/v1.0.0/img/share.png" alt="share" class="share"/></a></abbr>
+					</small>
+				</div>
+		</li>
+		
+		<li dir="ltr" class="hentry clearfix text-left">
+			<h3 class="h2 entry-title"><a href="./?CLIP-OS-le-systeme-d-exploitation-made-in-France" rel="bookmark">CLIP OS, le système d&#8217;exploitation "made in France"</a></h3>
+					
+					
+				
+			<img class='spip_logo spip_logos' alt="" src="local/cache-gd2/b8/88382a919cd27dc2b3bd4f8c5838d9.jpg?1537938249" width='1920' height='1080' />
+			<div class="introduction entry-content">Maintenu par l’ANSSI, CLIP OS est un projet de système d’exploitation open source basé sur un noyau Linux et des logiciels libres. C’était une idée depuis dix ans, c’est désormais un projet bien réel. 
+
+ Initialement développé pour répondre aux besoins des administrations, les précédentes versions de CLIP OS n’étaient pas disponibles publiquement. Elles le&nbsp;(...)</div>
+				<div class="infos">
+					<small>
+					<span class="origine"><a href=""></a></span>
+						<abbr class="published" title="2018-09-24T04:59:08Z"><a href="./?CLIP-OS-le-systeme-d-exploitation-made-in-France">24 septembre 2018</a>
+						<a href="./?CLIP-OS-le-systeme-d-exploitation-made-in-France"><img src="plugins/auto/curalicious/v1.0.0/img/share.png" alt="share" class="share"/></a></abbr>
+					</small>
+				</div>
+		</li>
+		
+		<li dir="ltr" class="hentry clearfix text-left">
+			<h3 class="h2 entry-title"><a href="./?Linagora-a-fete-ses-18-ans-cet-ete-la-video" rel="bookmark">Linagora a fêté ses 18 ans cet été&nbsp;: la vidéo  </a></h3>
+					
+					
+				
+			<img src='local/cache-gd2/dc/d596c019e9818266dcfe7ed8b38665.png?1537938249' width='560' height='315' />
+			<div class="introduction entry-content">Cet été, tout comme Toolinux.com, LINAGORA a soufflé sa 18ème bougie. Une vidéo a été publiée pour fêter cet événement. 
+
+ Ce 18e anniversaire a été l’occasion pour le groupe - devenu international ! - de publier une refonte de son site web autour de ses valeurs consolidées.  
+
+ Note aux lecteurs : Linagora finance toolinux.com depuis mai&nbsp;(...)</div>
+				<div class="infos">
+					<small>
+					<span class="origine"><a href=""></a></span>
+						<abbr class="published" title="2018-09-23T09:29:00Z"><a href="./?Linagora-a-fete-ses-18-ans-cet-ete-la-video">23 septembre 2018</a>
+						<a href="./?Linagora-a-fete-ses-18-ans-cet-ete-la-video"><img src="plugins/auto/curalicious/v1.0.0/img/share.png" alt="share" class="share"/></a></abbr>
+					</small>
+				</div>
+		</li>
+		
+		<li dir="ltr" class="hentry clearfix text-left">
+			<h3 class="h2 entry-title"><a href="./?Voici-le-programme-de-devops-REX-2018-a-Paris" rel="bookmark">Voici le programme de devops REX 2018 à Paris</a></h3>
+					
+					
+				
+			<img src='local/cache-gd2/78/6aece9a5d603edac3c8b9fd803bef3.png?1537938250' width='2069.3333333333' height='1164' />
+			<div class="introduction entry-content">La conférence "devopsé revient au Grand REX à Paris, pour une troisième édition, le mardi 16 octobre prochain. Le programme des conférences est publié et on y attend plus de 800 personnes. 
+
+ Le programme est exclusivement constitué d’interventions choisies par un comité de programme, pour la qualité de leur retour d’expérience. Les organisateurs&nbsp;(...)</div>
+				<div class="infos">
+					<small>
+					<span class="origine"><a href=""></a></span>
+						<abbr class="published" title="2018-09-22T18:19:00Z"><a href="./?Voici-le-programme-de-devops-REX-2018-a-Paris">22 septembre 2018</a>
+						<a href="./?Voici-le-programme-de-devops-REX-2018-a-Paris"><img src="plugins/auto/curalicious/v1.0.0/img/share.png" alt="share" class="share"/></a></abbr>
+					</small>
+				</div>
+		</li>
+		
+		<li dir="ltr" class="hentry clearfix text-left">
+			<h3 class="h2 entry-title"><a href="./?Acquisition-Adimeo-s-offre-la-societe-OpCoding" rel="bookmark">Acquisition&nbsp;: Adimeo s&#8217;offre la société OpCoding</a></h3>
+					
+					
+				
+			<img src='local/cache-gd2/d6/f53c5f2614e41813714d94e525cefc.png?1537938250' width='919.11111111111' height='517' />
+			<div class="introduction entry-content">OpCoding, expert PHP Javascript, entre dans le giron d’Adimeo, une entreprise fondée il y a 13 ans en France.  Sa présence se renforce en région : après Paris, place à Metz et au Luxembourg. 
+
+ Le rachat d’Opcoding va permettre à Adimeo de renforcer ses équipes techniques pour faire face au développement commercial de la société. Cette acquisition va&nbsp;(...)</div>
+				<div class="infos">
+					<small>
+					<span class="origine"><a href=""></a></span>
+						<abbr class="published" title="2018-09-21T09:22:00Z"><a href="./?Acquisition-Adimeo-s-offre-la-societe-OpCoding">21 septembre 2018</a>
+						<a href="./?Acquisition-Adimeo-s-offre-la-societe-OpCoding"><img src="plugins/auto/curalicious/v1.0.0/img/share.png" alt="share" class="share"/></a></abbr>
+					</small>
+				</div>
+		</li>
+		
+		<li dir="ltr" class="hentry clearfix text-left">
+			<h3 class="h2 entry-title"><a href="./?Lancement-de-DevoCloudBees-Suite-a-Jenkins-World" rel="bookmark">Lancement de CloudBees Suite à Jenkins World</a></h3>
+					
+					
+				
+			<img src='local/cache-gd2/58/7baa7da02d0e5bd38741933abe3a21.png?1537938251' width='1809.7777777778' height='1018' />
+			<div class="introduction entry-content">Dans le cadre « DevOps World | Jenkins World », CloudBees a annoncé cette semaine la disponibilité de CloudBees Suite, son "premier système de déploiement logiciel de bout en bout." 
+
+ La CloudBees Suite comprend plusieurs produits : CloudBees Core (gouvernance unifiée des opérations et processus de déploiement continu), CloudBees DevOptics (rapports&nbsp;(...)</div>
+				<div class="infos">
+					<small>
+					<span class="origine"><a href=""></a></span>
+						<abbr class="published" title="2018-09-20T10:57:00Z"><a href="./?Lancement-de-DevoCloudBees-Suite-a-Jenkins-World">20 septembre 2018</a>
+						<a href="./?Lancement-de-DevoCloudBees-Suite-a-Jenkins-World"><img src="plugins/auto/curalicious/v1.0.0/img/share.png" alt="share" class="share"/></a></abbr>
+					</small>
+				</div>
+		</li>
+		
+		<li dir="ltr" class="hentry clearfix text-left">
+			<h3 class="h2 entry-title"><a href="./?CloudBees-Jenkins-Support-se-presente-sur-abonnement" rel="bookmark">CloudBees Jenkins Support se présente sur abonnement</a></h3>
+					
+					
+				
+			<img src='local/cache-gd2/61/3a72d23451ca56af9e3d29024e9f9f.jpg?1537938251' width='689' height='387.5625' />
+			<div class="introduction entry-content">Dans le cadre de l’événement « DevOps World | Jenkins World », CloudBees annonce que son service CloudBees Jenkins Support est désormais disponible sous abonnement.  
+
+ Selon l’éditeur, il s’agit du « premier service mondial dédié exclusivement au support des utilisateurs Jenkins. » 
+
+ L’air de rien, les ingénieurs de CloudBees contribuent à environ 80% du&nbsp;(...)</div>
+				<div class="infos">
+					<small>
+					<span class="origine"><a href=""></a></span>
+						<abbr class="published" title="2018-09-19T12:51:05Z"><a href="./?CloudBees-Jenkins-Support-se-presente-sur-abonnement">19 septembre 2018</a>
+						<a href="./?CloudBees-Jenkins-Support-se-presente-sur-abonnement"><img src="plugins/auto/curalicious/v1.0.0/img/share.png" alt="share" class="share"/></a></abbr>
+					</small>
+				</div>
+		</li>
+		
+		<li dir="ltr" class="hentry clearfix text-left">
+			<h3 class="h2 entry-title"><a href="./?Quand-des-logiciels-utiles-se-revelent-dangereux" rel="bookmark">Quand des logiciels "utiles" se révèlent... dangereux</a></h3>
+					
+					
+				
+			<img src='local/cache-gd2/40/28b70fd615e1afb7ebeeff26a40f88.jpg?1537938251' width='2400' height='1350' />
+			<div class="introduction entry-content">Les internautes font face à de multiples menaces de logiciels malveillants en consultant des sites web soupçonnés de pirater des contenus numériques, selon une étude européenne. 
+
+ Dans le cadre d’un projet de recherche mené à l’échelle de l’Union par l’Office de l’Union européenne pour la propriété intellectuelle (EUIPO), plus de . 000 fichiers contenant&nbsp;(...)</div>
+				<div class="infos">
+					<small>
+					<span class="origine"><a href=""></a></span>
+						<abbr class="published" title="2018-09-19T12:45:06Z"><a href="./?Quand-des-logiciels-utiles-se-revelent-dangereux">19 septembre 2018</a>
+						<a href="./?Quand-des-logiciels-utiles-se-revelent-dangereux"><img src="plugins/auto/curalicious/v1.0.0/img/share.png" alt="share" class="share"/></a></abbr>
+					</small>
+				</div>
+		</li>
+		
+		<li dir="ltr" class="hentry clearfix text-left">
+			<h3 class="h2 entry-title"><a href="./?Vous-bossez-dans-PHP-Participez-au-barometre-2018" rel="bookmark">Vous bossez dans PHP&nbsp;? Participez au baromètre 2018</a></h3>
+					
+					
+				
+			<img src='local/cache-gd2/74/3a3f0790d0a59ba5cdbf66e28e45fb.png?1537938251' width='789.33333333333' height='444' />
+			<div class="introduction entry-content">Cela fait maintenant 5 années que l’AFUP diffuse une campagne pour récolter des informations sur les salaires et conditions de travail des développeuses et développeurs PHP en France. Vous êtes invité à répondre à l’enquête dès maintenant pour l’enquête 2018 : cela prend moins de 5 minutes. 
+
+ Le baromètre des salairesPHP permet aux développeuses et&nbsp;(...)</div>
+				<div class="infos">
+					<small>
+					<span class="origine"><a href=""></a></span>
+						<abbr class="published" title="2018-09-18T07:14:32Z"><a href="./?Vous-bossez-dans-PHP-Participez-au-barometre-2018">18 septembre 2018</a>
+						<a href="./?Vous-bossez-dans-PHP-Participez-au-barometre-2018"><img src="plugins/auto/curalicious/v1.0.0/img/share.png" alt="share" class="share"/></a></abbr>
+					</small>
+				</div>
+		</li>
+		
+	</ul>
+	<p class="pagination"><span
+	class="prev disabled"><strong class='on' rel='prev'>page précédente</strong><span  
+	class='sep'> | </span></span><span
+	class="next"><a href='./?debut_articles=10#pagination_articles' class='lien_pagination' rel='next'>page suivante</a></span></p>
+</div><!--#articles_recents-->
+
+
+
+
+
+</div><!--ajaxbloc-->		</div><!--.content-->
+		</div><!--.wrapper-->
+	</div><!--.main-->	
+	<div class="footer clearfix">
+	<p class="colophon">
+<a href="http://www.toolinux.com/A-propos" title="">A propos de TOOLinux.com</a> | <a rel="nofollow" href="spip.php?page=contact">Contactez-nous</a> | <a href="http://www.linagora.com/" title="CNIL/Vie privée">CNIL/Vie privée</a> | <a href="http://toolinux.com/article/conditions-de-reproduction-d-un" title="Conditions de reproduction d’un article">Conditions de reproduction d’un article</a> | <a href="http://www.linagora.com/" title="Groupe Linagora">Groupe Linagora</a> 
+<br />
+© Copyright 2000-2018 TooLinux.com. | <a rel="contents" href="spip.php?page=plan" class="first">Plan du site</a>
+| <a href="spip.php?page=backend" rel="alternate" title="Syndiquer tout le site" class="last">RSS&nbsp;2.0</a>
+</p>
+</div>	
+</div><!--.page-->
+</body>
+</html>
