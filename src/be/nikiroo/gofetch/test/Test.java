@@ -13,6 +13,7 @@ public class Test extends TestLauncher {
 		addTest(new TestLWN(args));
 		addTest(new TestSlashdot(args));
 		addTest(new TestTooLinux(args));
+		addTest(new TestSeptSurSept(args));
 	}
 
 	public static void main(String[] args) {

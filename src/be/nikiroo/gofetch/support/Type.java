@@ -22,4 +22,6 @@ public enum Type {
 	ERE_NUMERIQUE,
 	/** EN: IT */
 	PHORONIX,
+	/** FR: Any */
+	SEPT_SUR_SEPT,
 }

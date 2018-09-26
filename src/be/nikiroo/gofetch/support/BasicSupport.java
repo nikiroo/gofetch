@@ -8,7 +8,9 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Map.Entry;
 
 import org.jsoup.helper.DataUtil;
@@ -32,13 +34,30 @@ import be.nikiroo.utils.StringUtils;
  */
 public abstract class BasicSupport {
 	/**
-	 * The downloader to use for all websites via {@link BasicSupport#open(URL)}
+	 * The downloader to use for all web sites via
+	 * {@link BasicSupport#open(URL)}
 	 */
 	static private Downloader downloader = new Downloader("gofetcher");
 
 	static private String preselector;
 
+	/**
+	 * The optional cookies to use to get the site data.
+	 */
+	private Map<String, String> cookies = new HashMap<String, String>();
+
 	private Type type;
+
+	/**
+	 * Login on the web site (this method does nothing by default, but can be
+	 * overridden if needed).
+	 * 
+	 * @throws IOException
+	 *             in case of I/O error
+	 * 
+	 */
+	public void login() throws IOException {
+	}
 
 	/**
 	 * The website textual description, to add in the dispatcher page.
@@ -82,6 +101,7 @@ public abstract class BasicSupport {
 	public List<Story> list() throws IOException {
 		List<Story> list = new ArrayList<Story>();
 
+		login();
 		for (Entry<URL, String> entry : getUrls()) {
 			URL url = entry.getKey();
 			String defaultCateg = entry.getValue();
@@ -312,7 +332,8 @@ public abstract class BasicSupport {
 	}
 
 	/**
-	 * Return the full article if available.
+	 * Return the full article if available (this is the article to retrieve
+	 * from the newly downloaded page at {@link Story#getUrlInternal()}).
 	 * 
 	 * @param doc
 	 *            the (full article) document to work on
@@ -362,7 +383,7 @@ public abstract class BasicSupport {
 	 *             in case of I/O error
 	 */
 	protected InputStream open(URL url) throws IOException {
-		return downloader.open(url);
+		return downloader.open(url, url, cookies, null, null, null);
 	}
 
 	/**
@@ -504,6 +525,18 @@ public abstract class BasicSupport {
 	}
 
 	/**
+	 * Add a cookie for all site connections.
+	 * 
+	 * @param name
+	 *            the cookie name
+	 * @param value
+	 *            the value
+	 */
+	protected void addCookie(String name, String value) {
+		cookies.put(name, value);
+	}
+
+	/**
 	 * The {@link String} to append to the selector (the selector will be
 	 * constructed as "this string" then "/type/".
 	 * 
@@ -551,6 +584,9 @@ public abstract class BasicSupport {
 				break;
 			case PHORONIX:
 				support = new Phoronix();
+				break;
+			case SEPT_SUR_SEPT:
+				support = new SeptSurSept();
 				break;
 			}
 
