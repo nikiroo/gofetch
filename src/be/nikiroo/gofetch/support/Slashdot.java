@@ -145,7 +145,7 @@ public class Slashdot extends BasicSupport {
 		Element contentElement = doc //
 				.getElementById("text-" + getArticleId(doc, article));
 		if (contentElement != null) {
-			return contentElement.text();
+			return getArticleText(contentElement);
 		}
 
 		return "";
@@ -173,7 +173,18 @@ public class Slashdot extends BasicSupport {
 
 	@Override
 	protected ElementProcessor getElementProcessorFullArticle() {
-		return null;
+		return new BasicElementProcessor() {
+			@Override
+			public boolean detectQuote(Node node) {
+				if (node instanceof Element) {
+					Element element = (Element) node;
+					if (element.tagName().equals("i")) {
+						return true;
+					}
+				}
+				return false;
+			}
+		};
 	}
 
 	@Override

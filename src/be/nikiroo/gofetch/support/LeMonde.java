@@ -109,7 +109,7 @@ public class LeMonde extends BasicSupport {
 	protected String getArticleContent(Document doc, Element article) {
 		Element contentElement = article.getElementsByClass("txt3").first();
 		if (contentElement != null) {
-			return contentElement.text();
+			return getArticleText(contentElement);
 		}
 
 		return "";

@@ -14,6 +14,10 @@ i    some  I/O  streams  to allow others to meet their bandwidth and
 i    latency  requirements.  These mechanisms work, but they come at
 i    a  cost:  a  loss  of  as  much  as  80% of total available I/O
 i    bandwidth.  I  have run some tests to demonstrate this problem;
-i    some  upcoming improvements to the bfq I/O scheduler promise to
-i    improve the situation considerably.
+i    some  upcoming improvements to the [1]bfq I/O scheduler promise
+i    to improve the situation considerably.
+i    
+i    
+i    
+i    [1] https://lwn.net/Articles/601799/
 i

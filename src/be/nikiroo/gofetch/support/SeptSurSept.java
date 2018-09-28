@@ -1,7 +1,9 @@
 package be.nikiroo.gofetch.support;
 
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.net.URL;
+import java.net.URLDecoder;
 import java.util.AbstractMap;
 import java.util.ArrayList;
 import java.util.List;
@@ -64,7 +66,11 @@ public class SeptSurSept extends BasicSupport {
 
 	@Override
 	protected String getArticleTitle(Document doc, Element article) {
-		return article.attr("data-title");
+		try {
+			return URLDecoder.decode(article.attr("data-title"), "UTF-8");
+		} catch (UnsupportedEncodingException e) {
+			throw new RuntimeException("UTF-8 support mandatory in JVM");
+		}
 	}
 
 	@Override
@@ -108,7 +114,12 @@ public class SeptSurSept extends BasicSupport {
 
 	@Override
 	protected String getArticleContent(Document doc, Element article) {
-		return article.attr("data-intro").trim();
+		try {
+			return URLDecoder.decode(article.attr("data-intro"), "UTF-8")
+					.trim();
+		} catch (UnsupportedEncodingException e) {
+			throw new RuntimeException("UTF-8 support mandatory in JVM");
+		}
 	}
 
 	@Override
@@ -178,6 +189,6 @@ public class SeptSurSept extends BasicSupport {
 
 	@Override
 	protected ElementProcessor getElementProcessorComment() {
-		return null;
+		return new BasicElementProcessor();
 	}
 }

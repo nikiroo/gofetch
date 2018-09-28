@@ -1,6 +1,7 @@
 package be.nikiroo.gofetch.output;
 
 import be.nikiroo.gofetch.data.Story;
+import be.nikiroo.gofetch.support.BasicSupport;
 import be.nikiroo.gofetch.support.Type;
 
 /**
@@ -49,18 +50,42 @@ public abstract class Output {
 	}
 
 	/**
-	 * Get the header to use in the index file.
+	 * Get the header to use in the main index file (the one which will
+	 * reference all the supported web sites <tt>index</tt> files).
 	 * 
 	 * @return the header
 	 */
-	abstract public String getIndexHeader();
+	abstract public String getMainIndexHeader();
 
 	/**
-	 * Get the footer to use in the index file.
+	 * Get the footer to use in the index file (the one which will reference all
+	 * the supported web sites <tt>index</tt> files).
 	 * 
 	 * @return the footer
 	 */
-	abstract public String getIndexFooter();
+	abstract public String getMainIndexFooter();
+
+	/**
+	 * Get the header to use in the index file (the supported web site
+	 * <tt>index</tt> file this output is for).
+	 * 
+	 * @param support
+	 *            the supported web site
+	 * 
+	 * @return the header
+	 */
+	abstract public String getIndexHeader(BasicSupport support);
+
+	/**
+	 * Get the footer to use in the index file (the supported web site
+	 * <tt>index</tt> file this output is for).
+	 * 
+	 * @param support
+	 *            the supported web site
+	 * 
+	 * @return the footer
+	 */
+	abstract public String getIndexFooter(BasicSupport support);
 
 	/**
 	 * Export the header of a story (a <i>resume</i> mode).

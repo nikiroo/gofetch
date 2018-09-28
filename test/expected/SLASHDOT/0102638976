@@ -4,14 +4,17 @@
   Thursday September 06, 2018 @11:30PM (msmash)
   from the blurry-texts dept.
 
+  o Reference: 0102638976
   o News link: https://tech.slashdot.org/story/18/09/06/1839242/google-investigating-issue-with-blurry-fonts-on-new-chrome-69
   o Source link: https://www.zdnet.com/article/google-investigating-issue-with-blurry-fonts-on-new-chrome-69/
 
 
-    Since  the release of Chrome 69 earlier this week, countless of
-    users  have  gone  on social media and Google Product Forums to
-    complain  about  "blurry" or "fuzzy" text inside Chrome. ZDNet:
-    The  blurred  font  issue  isn't  only limited to text rendered
+    Since   the  [1]release  of  Chrome  69  earlier  this  week  ,
+    countless  of  users  have  gone  on  social  media  and Google
+    Product  Forums  to  [2]complain about "blurry" or "fuzzy" text
+    inside Chrome . ZDNet:
+    
+    >  The  blurred  font issue isn't only limited to text rendered
     inside   a  web  page,  users  said,  but  also  for  the  text
     suggestions  displayed inside the address bar search drop-down,
     and   Chrome's   Developer  Tools  panel.  [...]  According  to
@@ -21,10 +24,23 @@
     or  screen DPI settings didn't help. "Our team is investigating
     reports  of  this  behavior.  You  can find more information in
     this  public bug report," a Google spokesperson said last night
-    after  first  user  complaints  started  surfacing online. Some
-    users  have  also  expressed  concerns  over Chrome not showing
-    "trivial  subdomains" including www and secure lock sign in the
-    address bar.
+    after first user complaints started surfacing online.
+    
+    Some  users  have  also  expressed  concerns  over  Chrome  not
+    showing  [3]"trivial  subdomains" including www and secure lock
+    sign in the address bar.
+    
+    
+    
+    [1] https://tech.slashdot.org/story/18/09/04/1711250/chrome-69-
+    arrives-with-revamped-design-more-powerful-omnibox-and-better-
+    password-manager
+    
+    [2] https://www.zdnet.com/article/google-investigating-issue-w-
+    ith-blurry-fonts-on-new-chrome-69/
+    
+    [3] https://bugs.chromium.org/p/chromium/issues/detail?id=8814-
+    10
 
 
   ** Whats the deal (Score:2)

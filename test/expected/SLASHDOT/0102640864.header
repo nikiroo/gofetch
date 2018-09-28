@@ -3,47 +3,64 @@ i  Thursday September 06, 2018 @11:30PM (BeauHD)
 i  from the ensuring-the-integrity-of-elections dept.
 i
 i    The  National  Academies  Press has released a 156-page report,
-i    called  "Securing  the  Vote:  Protecting  American Democracy,"
-i    concluding  that blockchains are not safe for the U.S. election
-i    system.   "While  the  notion  of  using  a  blockchain  as  an
+i    called  "  [1]Securing  the Vote: Protecting American Democracy
+i    ,"  concluding  that  blockchains  are  not  safe  for the U.S.
+i    election  system. "While the notion of using a blockchain as an
 i    immutable  ballot box may seem promising, blockchain technology
 i    does  little  to  solve  the  fundamental  security  issues  of
 i    elections,   and   indeed,   blockchains  introduce  additional
-i    security  vulnerabilities,"  the report states. "In particular,
-i    if  malware  on  a  voter's device alters a vote before it ever
-i    reaches  a blockchain, the immutability of the blockchain fails
-i    to  provide the desired integrity, and the voter may never know
-i    of   the   alteration."   The   report  goes  on  to  say  that
-i    "Blockchains  do  not  provide  the anonymity often ascribed to
-i    them."  It  continues: "In the particular context of elections,
-i    voters  need  to  be  authorized as eligible to vote and as not
-i    having  cast  more  than one ballot in the particular election.
-i    Blockchains  do  not  offer  means  for providing the necessary
-i    authorization.  [...]  If  a  blockchain  is  used,  then  cast
-i    ballots  must  be  encrypted or otherwise anonymized to prevent
-i    coercion  and  vote-selling." The New York Times summarizes the
-i    findings:  The  cautiously  worded  report calls for conducting
-i    all  federal,  state  and  local  elections on paper ballots by
-i    2020.  Its  other  top  recommendation would require nationwide
-i    use  of a specific form of routine postelection audit to ensure
-i    votes  have  been accurately counted. The panel did not offer a
-i    price  tag  for its recommended overhaul. New York University's
+i    security   vulnerabilities,"   the   report   [2]states  .  "In
+i    particular,  if  malware  on  a  voter's  device  alters a vote
+i    before  it  ever  reaches a blockchain, the immutability of the
+i    blockchain  fails  to  provide  the  desired integrity, and the
+i    voter may never know of the alteration."
+i    
+i    The  report goes on to say that "Blockchains do not provide the
+i    anonymity  often  ascribed  to  them."  It  continues:  "In the
+i    particular  context  of elections, voters need to be authorized
+i    as  eligible  to  vote  and  as  not  having cast more than one
+i    ballot  in  the  particular  election. Blockchains do not offer
+i    means  for  providing  the  necessary authorization. [...] If a
+i    blockchain  is  used,  then  cast  ballots must be encrypted or
+i    otherwise  anonymized  to  prevent  coercion and vote-selling."
+i    The New York Times summarizes the findings:
+i    
+i    >  The  cautiously  worded  report  [3]calls for conducting all
+i    federal,  state  and local elections on paper ballots by 2020 .
+i    Its  other top recommendation would require nationwide use of a
+i    specific  form  of  routine  postelection audit to ensure votes
+i    have  been  accurately counted. The panel did not offer a price
+i    tag   for  its  recommended  overhaul.  New  York  University's
 i    Brennan  Center  has  estimated  that  replacing  aging  voting
 i    machines  over  the  next  few  years  could  cost well over $1
 i    billion.  The  156-page  report  [...] bemoans a rickety system
 i    compromised  by  insecure  voting  equipment and software whose
 i    vulnerabilities  were  exposed more than a decade ago and which
 i    are  too  often  managed  by  officials with little training in
-i    cybersecurity.   Among   its  specific  recommendations  was  a
-i    mainstay  of  election  reformers:  All  elections  should  use
-i    human-readable   paper   ballots  by  2020.  Such  systems  are
-i    intended   to  assure  voters  that  their  vote  was  recorded
-i    accurately.  They  also  create  a  lasting  record  of  "voter
-i    intent"  that  can be used for reliable recounts, which may not
-i    be  possible in systems that record votes electronically. [...]
-i    The  panel  also  calls  for  all  states  to  adopt  a type of
-i    post-election   audit  that  employs  statistical  analysis  of
-i    ballots  prior  to  results certification. Such "risk-limiting"
-i    audits  are  designed  to uncover miscounts and vote tampering.
-i    Currently only three states mandate them.
+i    cybersecurity.
+i    
+i    >
+i    
+i    >   Among  its  specific  recommendations  was  a  mainstay  of
+i    election  reformers:  All  elections  should use human-readable
+i    paper  ballots  by  2020.  Such  systems are intended to assure
+i    voters  that  their  vote  was  recorded  accurately. They also
+i    create  a lasting record of "voter intent" that can be used for
+i    reliable  recounts,  which  may not be possible in systems that
+i    record  votes  electronically.  [...]  The panel also calls for
+i    all  states to adopt a type of post-election audit that employs
+i    statistical    analysis    of    ballots   prior   to   results
+i    certification.  Such  "risk-limiting"  audits  are  designed to
+i    uncover  miscounts  and  vote  tampering.  Currently only three
+i    states mandate them.
+i    
+i    
+i    
+i    [1] https://www.nap.edu/catalog/25120/securing-the-vote-protec-
+i    ting-american-democracy
+i    
+i    [2] https://www.nap.edu/read/25120/chapter/7#103
+i    
+i    [3]  https://www.nytimes.com/aponline/2018/09/06/technology/ap-
+i    us-tec-election-security-reform-report.html
 i

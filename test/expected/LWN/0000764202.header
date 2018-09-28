@@ -8,5 +8,9 @@ i    those  using containers there is menu option to reopen a tab in
 i    a  different  container;  Firefox  63 will remove all trust for
 i    Symantec-issued  certificates,  and  it  is optional in Firefox
 i    62;  FreeBSD  support for WebAuthn was added; and more. See the
-i    release notes for details.
+i    [1]release notes for details.
+i    
+i    
+i    
+i    [1] https://www.mozilla.org/en-US/firefox/62.0/releasenotes/
 i

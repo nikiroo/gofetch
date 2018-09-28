@@ -3,7 +3,7 @@ i  [Kernel] Sep 4, 2018 0:15 UTC (Tue) (corbet)
 i
 i    It  is  common  for kernel code to generate unique integers for
 i    identifiers.  When  one plugs in a flash drive, it will show up
-i    as  /dev/sdN;  that  N (a letter derived from a number) must be
+i    as  /dev/sdN  ; that N (a letter derived from a number) must be
 i    generated  in  the  kernel, and it should not already be in use
 i    for  another  drive or unpleasant things will happen. One might
 i    think  that  generating  such  numbers would not be a difficult

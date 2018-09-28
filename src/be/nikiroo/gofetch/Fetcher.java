@@ -112,18 +112,18 @@ public class Fetcher {
 
 		FileWriter writer = new FileWriter(gopherCache);
 		try {
-			writer.append(gopher.getIndexHeader());
+			writer.append(gopher.getMainIndexHeader());
 			writer.append(gopherBuilder.toString());
-			writer.append(gopher.getIndexFooter());
+			writer.append(gopher.getMainIndexFooter());
 		} finally {
 			writer.close();
 		}
 
 		try {
 			writer = new FileWriter(htmlIndex);
-			writer.append(html.getIndexHeader());
+			writer.append(html.getMainIndexHeader());
 			writer.append(htmlBuilder.toString());
-			writer.append(html.getIndexFooter());
+			writer.append(html.getMainIndexFooter());
 		} finally {
 			writer.close();
 		}
@@ -196,10 +196,12 @@ public class Fetcher {
 		headers = tmp.toArray(new String[] {});
 		//
 
-		// Write the index (with "MORE" links if needed)
+		// Write the main index (with "MORE" links if needed)
 		int page = 0;
 		List<String> gopherLines = new ArrayList<String>();
 		List<String> htmlLines = new ArrayList<String>();
+		gopherLines.add(gopher.getIndexHeader(support));
+		htmlLines.add(html.getIndexHeader(support));
 		for (i = 0; i < headers.length; i++) {
 			File gopherFile = new File(varDir, headers[i]);
 			File htmlFile = new File(varDir, headers[i] + ".html");
@@ -220,6 +222,8 @@ public class Fetcher {
 							+ ".html", true, true));
 				}
 
+				gopherLines.add(gopher.getIndexFooter(support));
+				htmlLines.add(html.getIndexFooter(support));
 				write(gopherLines, varDir, "gophermap", "", page);
 				write(htmlLines, varDir, "index", ".html", page);
 				gopherLines = new ArrayList<String>();
@@ -229,6 +233,24 @@ public class Fetcher {
 		}
 	}
 
+	/**
+	 * Write an index/gophermap file with the given link content for the
+	 * selected supported web site.
+	 * 
+	 * @param lines
+	 *            the link content (the stories and a short description)
+	 * @param varDir
+	 *            the base directory to write into
+	 * @param basename
+	 *            the base file name
+	 * @param ext
+	 *            the file extension (for instance, ".html")
+	 * @param page
+	 *            the page number (0 = main index)
+	 * 
+	 * @throws IOException
+	 *             in case of I/O errors
+	 */
 	private void write(List<String> lines, File varDir, String basename,
 			String ext, int page) throws IOException {
 		File file = new File(varDir, basename + (page > 0 ? "_" + page : "")

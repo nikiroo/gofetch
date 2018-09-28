@@ -130,7 +130,7 @@ public class TheRegister extends BasicSupport {
 		Element detailsElement = article.getElementsByClass("standfirst")
 				.first();
 		if (detailsElement != null) {
-			return detailsElement.text();
+			return getArticleText(detailsElement);
 		}
 
 		return "";

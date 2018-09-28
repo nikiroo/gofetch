@@ -14,6 +14,9 @@ import org.jsoup.nodes.Element;
 import org.jsoup.nodes.Node;
 import org.jsoup.nodes.TextNode;
 
+import be.nikiroo.gofetch.data.Comment;
+import be.nikiroo.gofetch.data.Story;
+
 class Phoronix extends BasicSupport {
 	@Override
 	public String getDescription() {
@@ -126,7 +129,7 @@ class Phoronix extends BasicSupport {
 	protected String getArticleContent(Document doc, Element article) {
 		Element p = article.getElementsByTag("p").first();
 		if (p != null) {
-			return p.text();
+			return getArticleText(p);
 		}
 
 		return "";
@@ -236,4 +239,15 @@ class Phoronix extends BasicSupport {
 		};
 	}
 
+	@Override
+	public void fetch(Story story) throws IOException {
+		super.fetch(story);
+
+		// First comment is a copy of the article, discard it
+		List<Comment> comments = story.getComments();
+		if (comments != null && comments.size() > 1) {
+			comments = comments.subList(1, comments.size());
+		}
+		story.setComments(comments);
+	}
 }

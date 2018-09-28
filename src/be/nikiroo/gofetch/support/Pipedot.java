@@ -141,7 +141,7 @@ public class Pipedot extends BasicSupport {
 		for (Element elem : article.children()) {
 			String tag = elem.tagName();
 			if (!tag.equals("header") && !tag.equals("footer")) {
-				return elem.text();
+				return getArticleText(elem);
 			}
 		}
 

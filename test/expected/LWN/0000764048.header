@@ -4,10 +4,22 @@ i
 i    Security  and  convenience  rarely go hand-in-hand, but if your
 i    job  (or  life) requires extraordinary care against potentially
 i    targeted  attacks,  the  security side of that tradeoff may win
-i    out.  If  so, running a system like Qubes OS on your desktop or
-i    CopperheadOS  on  your  phone  might  make sense, which is just
-i    what  Konstantin  Ryabitsev,  Linux Foundation (LF) director of
-i    IT  security, has done. He reported on the experience in a talk
-i    [YouTube  video]  entitled "Life Behind the Tinfoil Curtain" at
-i    the 2018 Linux Security Summit North America.
+i    out.  If  so, running a system like [1]Qubes OS on your desktop
+i    or  [2]CopperheadOS  on  your  phone might make sense, which is
+i    just  what Konstantin Ryabitsev, Linux Foundation (LF) director
+i    of  IT  security,  has done. He reported on the experience in a
+i    [3]talk  [YouTube  video]  entitled  "Life  Behind  the Tinfoil
+i    Curtain" at the 2018 [4]Linux Security Summit North America .
+i    
+i    
+i    
+i    [1] https://www.qubes-os.org/
+i    
+i    [2] https://copperhead.co/
+i    
+i    [3] https://www.youtube.com/watch?v=8cU4hQg6GvU&index=6&list=P-
+i    LbzoR-pLrL6rOT6m50HdJFYUHyvA9lurI&t=0s
+i    
+i    [4] https://events.linuxfoundation.org/events/linux-security-s-
+i    ummit-north-america-2018/
 i
