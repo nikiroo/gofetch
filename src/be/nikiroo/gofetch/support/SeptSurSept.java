@@ -19,7 +19,7 @@ import org.jsoup.nodes.Node;
 public class SeptSurSept extends BasicSupport {
 	@Override
 	public String getDescription() {
-		return "7SUR7.be Info, sport et showbiz, 24/24, 7/7";
+		return "7sur7.be: Info, sport et showbiz, 24/24, 7/7";
 	}
 
 	@Override
