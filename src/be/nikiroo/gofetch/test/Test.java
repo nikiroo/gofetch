@@ -14,6 +14,7 @@ public class Test extends TestLauncher {
 		addTest(new TestSlashdot(args));
 		addTest(new TestTooLinux(args));
 		addTest(new TestSeptSurSept(args));
+		addTest(new TestReddit(args));
 	}
 
 	public static void main(String[] args) {

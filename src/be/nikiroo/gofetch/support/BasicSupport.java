@@ -601,6 +601,9 @@ public abstract class BasicSupport {
 			case SEPT_SUR_SEPT:
 				support = new SeptSurSept();
 				break;
+			case REDDIT:
+				support = new Reddit();
+				break;
 			}
 
 			if (support != null) {

@@ -24,4 +24,6 @@ public enum Type {
 	PHORONIX,
 	/** FR: Any */
 	SEPT_SUR_SEPT,
+	/** EN: IT */
+	REDDIT,
 }
