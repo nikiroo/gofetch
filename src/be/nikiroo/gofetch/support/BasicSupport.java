@@ -133,9 +133,9 @@ public abstract class BasicSupport {
 						id = "0" + id;
 					}
 				} else {
-					id = date.replace(":", "_").replace("+", "_");
+					id = date.replace(":", "_").replace("+", "_").replace("/", "-");
 				}
-
+				
 				date = date(date);
 
 				list.add(new Story(getType(), id, title, author, date, categ,
@@ -822,7 +822,7 @@ public abstract class BasicSupport {
 			Date dat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX")
 					.parse(date.trim());
 			return out.format(dat);
-		} catch (ParseException e) {
+		} catch (Exception e) {
 			return date;
 		}
 	}

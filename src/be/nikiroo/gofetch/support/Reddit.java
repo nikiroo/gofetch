@@ -15,6 +15,7 @@ import java.util.Map.Entry;
 import java.util.Map;
 import java.util.HashMap;
 import java.util.Date;
+import java.text.SimpleDateFormat;
 
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -45,7 +46,15 @@ public class Reddit extends BasicSupport {
 
 	@Override
 	protected List<Element> getArticles(Document doc) {
-		return doc.getElementsByClass("thing");
+		List<Element> list = doc.getElementsByClass("thing");
+		if (list.isEmpty()) {
+			list = doc.getElementsByClass("Post");
+		}
+		if (list.isEmpty()) {
+			list = doc.getElementsByClass("scrollerItem");
+		}
+		
+		return list;
 	}
 
 	@Override
@@ -56,8 +65,13 @@ public class Reddit extends BasicSupport {
 
 	@Override
 	protected String getArticleTitle(Document doc, Element article) {
-		return article.getElementsByAttributeValue(
-			"data-event-action", "title").first().text().trim();
+		Elements els = article.getElementsByAttributeValue(
+				"data-event-action", "title");
+		if (els == null || els.isEmpty()) {
+			els = article.getElementsByTag("h2");
+		}
+		
+		return els.first().text().trim();
 	}
 	
 	@Override
@@ -69,8 +83,32 @@ public class Reddit extends BasicSupport {
 
 	@Override
 	protected String getArticleDate(Document doc, Element article) {
-		return article.getElementsByClass("live-timestamp")
-			.attr("datetime").trim();
+		Element el = article.getElementsByClass("live-timestamp").first();
+		if (el == null) {
+			el = article.getElementsByAttributeValue(
+				"data-click-id", "timestamp").first();
+		}
+		
+		String dateAgo = el.text().trim();
+		int h = 0;
+		if (dateAgo.endsWith("hour ago")) {
+			h = 1;
+		} else if (dateAgo.endsWith("hours ago")) {
+			dateAgo = dateAgo.replace("hours ago", "").trim();
+			h = Integer.parseInt(dateAgo);
+		} else if (dateAgo.endsWith("day ago")) {
+			h = 24;
+		} else if (dateAgo.endsWith("days ago")) {
+			dateAgo = dateAgo.replace("days ago", "").trim();
+			h = Integer.parseInt(dateAgo) * 24;
+		}
+		
+		long now = new Date().getTime();   // in ms since 1970
+		now = now / (1000l * 60l * 60l);   // in hours
+		long then = now - h;               // in hours
+		then = then * (60l * 60l); // in seconds
+		
+		return Long.toString(then);
 	}
 
 	@Override
@@ -95,14 +133,25 @@ public class Reddit extends BasicSupport {
 
 	@Override
 	protected String getArticleIntUrl(Document doc, Element article) {
-		return article.getElementsByClass("thing").first()
-			.absUrl("data-permalink");
+		String url = article.absUrl("data-permalink");
+		if (url == null || url.isEmpty()) {
+			url = article.getElementsByAttributeValue(
+				"data-click-id", "timestamp").first().absUrl("href");
+		}
+		
+		return url;
 	}
 
 	@Override
 	protected String getArticleExtUrl(Document doc, Element article) {
-		Element url = article.getElementsByAttributeValue(
-			"data-event-action", "title").first();
+		Elements els = article.getElementsByAttributeValue(
+			"data-event-action", "title");
+		if (els == null || els.isEmpty()) {
+			els = article.getElementsByAttributeValue(
+					"data-click-id", "body");
+		}
+		
+		Element url = els.first();
 		if (!url.attr("href").trim().startsWith("/")) {
 			return url.absUrl("href");
 		}
@@ -112,6 +161,11 @@ public class Reddit extends BasicSupport {
 
 	@Override
 	protected String getArticleContent(Document doc, Element article) {
+		Elements els = article.getElementsByClass("md");
+		if (els != null && !els.isEmpty()) {
+			return els.first().text().trim();
+		}
+		
 		return "";
 	}
 

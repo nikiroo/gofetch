@@ -156,6 +156,7 @@ public class Fetcher {
 				fetchedStories.add(story);
 				System.err.println();
 			} catch (IOException e) {
+e.printStackTrace();
 				System.err.println(" Failed to get story!");
 			}
 			i++;
