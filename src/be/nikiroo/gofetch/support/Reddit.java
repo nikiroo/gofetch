@@ -90,25 +90,7 @@ public class Reddit extends BasicSupport {
 		}
 		
 		String dateAgo = el.text().trim();
-		int h = 0;
-		if (dateAgo.endsWith("hour ago")) {
-			h = 1;
-		} else if (dateAgo.endsWith("hours ago")) {
-			dateAgo = dateAgo.replace("hours ago", "").trim();
-			h = Integer.parseInt(dateAgo);
-		} else if (dateAgo.endsWith("day ago")) {
-			h = 24;
-		} else if (dateAgo.endsWith("days ago")) {
-			dateAgo = dateAgo.replace("days ago", "").trim();
-			h = Integer.parseInt(dateAgo) * 24;
-		}
-		
-		long now = new Date().getTime();   // in ms since 1970
-		now = now / (1000l * 60l * 60l);   // in hours
-		long then = now - h;               // in hours
-		then = then * (60l * 60l); // in seconds
-		
-		return Long.toString(then);
+		return new SimpleDateFormat("yyyy-MM-dd_HH-mm").format(getDate(dateAgo));
 	}
 
 	@Override
@@ -161,7 +143,7 @@ public class Reddit extends BasicSupport {
 
 	@Override
 	protected String getArticleContent(Document doc, Element article) {
-		Elements els = article.getElementsByClass("md");
+		Elements els = article.getElementsByClass("h2");
 		if (els != null && !els.isEmpty()) {
 			return els.first().text().trim();
 		}
@@ -171,7 +153,13 @@ public class Reddit extends BasicSupport {
 
 	@Override
 	protected Element getFullArticle(Document doc) {
-		return doc.getElementsByClass("ckueCN").first();
+		Element element = doc.getElementsByAttributeValue(
+			"data-click-id", "body").first();
+		if (element == null) {
+			element = doc.getElementsByClass("ckueCN").first();
+		}
+		
+		return element;
 	}
 
 	@Override
@@ -181,7 +169,12 @@ public class Reddit extends BasicSupport {
 
 	@Override
 	protected List<Element> getFullArticleCommentPosts(Document doc, URL intUrl) {
-		return doc.getElementsByClass("jHfOJm");
+		Elements posts = doc.getElementsByClass("jHfOJm");
+		if (posts.isEmpty()) {
+			posts = doc.getElementsByClass("eCeBkc");
+		}
+		
+		return posts;
 	}
 
 	@Override
@@ -235,8 +228,9 @@ public class Reddit extends BasicSupport {
 
 	@Override
 	protected String getCommentDate(Element post) {
-		return post.getElementsByClass("hJDlLH")
+		String dateAgo = post.getElementsByClass("hJDlLH")
 			.first().text().trim();
+		return new SimpleDateFormat("yyyy-MM-dd_HH-mm").format(getDate(dateAgo));
 	}
 
 	@Override
@@ -275,5 +269,28 @@ public class Reddit extends BasicSupport {
 		}
 		
 		story.setComments(comments);
+	}
+	
+	// 2 hours ago -> 18/10/2018 21:00
+	private Date getDate(String dateAgo) {
+		int h = 0;
+		if (dateAgo.endsWith("hour ago")) {
+			h = 1;
+		} else if (dateAgo.endsWith("hours ago")) {
+			dateAgo = dateAgo.replace("hours ago", "").trim();
+			h = Integer.parseInt(dateAgo);
+		} else if (dateAgo.endsWith("day ago")) {
+			h = 24;
+		} else if (dateAgo.endsWith("days ago")) {
+			dateAgo = dateAgo.replace("days ago", "").trim();
+			h = Integer.parseInt(dateAgo) * 24;
+		}
+		
+		long now = new Date().getTime();   // in ms since 1970
+		now = now / (1000l * 60l * 60l);   // in hours since 1970
+		long then = now - h;               // in hours since 1970
+		then = then * (1000l * 60l * 60l); // in ms since 1970
+		
+		return new Date(then);
 	}
 }
