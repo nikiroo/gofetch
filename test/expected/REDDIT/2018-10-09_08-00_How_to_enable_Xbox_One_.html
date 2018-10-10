@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv='content-type' content='text/html; charset=utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <style type='text/css'>
+    body { margin: 1em 15%; }
+  </style>
+</head>
+<body>
+<div class='story'>
+	<h2>How to enable Xbox One controller on Ubuntu 18.04?</h2>
+	<div class='details'>([linux_gaming] 2018-10-09_08-00)</div>
+	<br/>
+    <ul>
+    <li>Reference: <a href=''>2018-10-09_08-00_How_to_enable_Xbox_One_</a></li>
+        <li>News link: <a href='https://www.reddit.com/r/linux_gaming/comments/9l7qdn/how_to_enable_xbox_one_controller_on_ubuntu_1804/'>https://www.reddit.com/r/linux_gaming/comments/9l7qdn/how_to_enable_xbox_one_controller_on_ubuntu_1804/</a></li>
+        <li>Source link: <a href=''></a></li>
+    </ul>
+	<br/>
+	<div class='content' style='text-align: justify'>
+		I tried using the Xbox One controller on my Kubuntu 18.04 desktop both on native (i.e. Tomb Raider &amp; Life is Strange), and via Steam Play (i.e. Dragon Ball Xenoverse 2 and Tekken 7). Steam itself, however, was able to see it. And running lsusb shows that the system can see it.<br/><br/>I was looking into this problem, and I found out just now that the [1]Xbox One controller is in the kernel . This [2]guide from Make Tech Easier is outdated because xboxdrv doesn&#x27;t work unless it&#x27;s the Xbox 360 controller (I&#x27;m out of AA batteries, so I couldn&#x27;t test, but the software recognized it), and the [3]PPA they suggested to add aren&#x27;t up-to-date, unless I&#x27;m running Xenial or earlier.<br/><br/>What else am I supposed to do in order for me to enable it?<br/><br/>Edit: [4]Solved<br/><br/><br/><br/>[1] https://github.com/torvalds/linux/commit/1a48ff81b3912be5fadae3fafde6c2f632246a4c<br/><br/>[2] https://www.maketecheasier.com/set-up-xbox-one-controller-ubuntu/<br/><br/>[3] https://launchpad.net/%7Emdeslaur/+archive/ubuntu/steamos<br/><br/>[4] https://www.reddit.com/r/linux_gaming/comments/9l7qdn/how_to_enable_xbox_one_controller_on_ubuntu_1804/e74r1oz/
+	</div>
+<hr/>
+  <div class='comment' style='display: block; margin-left: 80px'>
+    <h3>cvei5t</h3>
+    <div class='by' style='font-style: italic;'></div>
+    <div class='comment_content'><p>When using wired, it should be plug and play. Turn off controller support in steam, it may be interfering. Games should be able to talk with the controller directly.</p></div>
+    <div class='comment' style='display: block; margin-left: 80px'>
+      <h3>NoXPhasma</h3>
+      <div class='by' style='font-style: italic;'></div>
+      <div class='comment_content'><p>Yes, the Steam Controller API breaks input with XBOX One S Controller. Had to remove the Controller form Steam, since then it works fine.</p><p>For wireless I can recommend [1]xpadneo .</p><p></p><p></p><p></p><p></p><p>[1] https://github.com/atar-axis/xpadneo</p></div>
+      <div class='comment' style='display: block; margin-left: 80px'>
+        <h3>iJONTY85</h3>
+        <div class='by' style='font-style: italic;'></div>
+        <div class='comment_content'><p>Thanks! Will give it a shot later.</p><p>Edjt: yes, that's the solution!</p></div>
+      </div>
+    </div>
+  </div>
+  <div class='comment' style='display: block; margin-left: 80px'>
+    <h3>fl_2017</h3>
+    <div class='by' style='font-style: italic;'></div>
+    <div class='comment_content'><p>I have a bluetooth xbox one controller and in order to pair it I had to add "bluetooth.disable_ertm=1" to the Grub command line.</p><p>USB though as others as stated it should work out of the box.</p></div>
+  </div>
+  <div class='comment' style='display: block; margin-left: 80px'>
+    <h3>Duckz0nQu4ck</h3>
+    <div class='by' style='font-style: italic;'></div>
+    <div class='comment_content'><p>Following</p></div>
+    <div class='comment' style='display: block; margin-left: 80px'>
+      <h3>iJONTY85</h3>
+      <div class='by' style='font-style: italic;'></div>
+      <div class='comment_content'><p>It's solved</p></div>
+    </div>
+  </div>
+</div>
+</body>

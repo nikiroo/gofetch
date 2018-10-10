@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv='content-type' content='text/html; charset=utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <style type='text/css'>
+    body { margin: 1em 15%; }
+  </style>
+</head>
+<body>
+<div class='story'>
+	<h2>I need help with Proton</h2>
+	<div class='details'>([linux_gaming] 2018-10-09_19-00)</div>
+	<br/>
+    <ul>
+    <li>Reference: <a href=''>2018-10-09_19-00_I_need_help_with_Proton</a></li>
+        <li>News link: <a href='https://www.reddit.com/r/linux_gaming/comments/9lguyj/i_need_help_with_proton/'>https://www.reddit.com/r/linux_gaming/comments/9lguyj/i_need_help_with_proton/</a></li>
+        <li>Source link: <a href=''></a></li>
+    </ul>
+	<br/>
+	<div class='content' style='text-align: justify'>
+		Hey guys, its been several days now that Im trying to play Elder Scrolls Online through proton but im getting some issues.<br/><br/>I am new to linux, and that may be the major reason.<br/><br/>I&#x27;m running steam in a debian 9, have updated to beta version and turned on steam play settings. At the first try after downloading ESO i&#x27;ve tried to just click play button and it showed &quot;running&quot; for a brief moment and then it was gone. So i&#x27;ve tried to build proton myself following [1]this instructions but ended up with an error [2]that i couldn&#x27;t solve yet . So i&#x27;ve tried to run it again with PROTON_NO_ESYNC=1 mesa_glthread=true vblank_mode=0 launch options and no success. I don&#x27;t know what to do now and thats why im posting here to see if anyone can help or knows what to do.<br/><br/>I appreciate any help and many thanks in advance.<br/><br/><br/><br/>[1] https://github.com/ValveSoftware/Proton/<br/><br/>[2] https://github.com/ValveSoftware/Proton/issues/494
+	</div>
+<hr/>
+  <div class='comment' style='display: block; margin-left: 80px'>
+    <h3>gamersonlinux</h3>
+    <div class='by' style='font-style: italic;'></div>
+    <div class='comment_content'><p>You might want to post in [1]SteamPlay</p><p>I'm not totally sure because I've never built proton</p><p>I wish there was a debug like in PlayOnLinux so we can see what is going on</p><p></p><p></p><p></p><p></p><p>[1] https://www.reddit.com/r/SteamPlay/</p></div>
+    <div class='comment' style='display: block; margin-left: 80px'>
+      <h3>Sylorak</h3>
+      <div class='by' style='font-style: italic;'></div>
+      <div class='comment_content'><p>I will, thanks</p></div>
+    </div>
+  </div>
+  <div class='comment' style='display: block; margin-left: 80px'>
+    <h3>grandmastermoth</h3>
+    <div class='by' style='font-style: italic;'></div>
+    <div class='comment_content'><p>Proton can produced debug logs if you turn them on:</p><p>[1]https://github.com/ValveSoftware/Proton/wiki/Proton-FAQ</p><p>Check this site for compatibility and tips:</p><p>[2]https://spcr.netlify.com/</p><p>For each entry on that list, there's usually a link to the Proton issues on GitHub which sometimes has posts regarding workarounds.</p><p>Make sure you have Vulkan installed! Type vulkaninfo to confirm</p><p></p><p></p><p></p><p></p><p>[1] https://github.com/ValveSoftware/Proton/wiki/Proton-FAQ</p><p>[2] https://spcr.netlify.com/</p></div>
+  </div>
+  <div class='comment' style='display: block; margin-left: 80px'>
+    <h3>coldpie1</h3>
+    <div class='by' style='font-style: italic;'></div>
+    <div class='comment_content'><p>Have you tried another game to confirm whether it's a problem with just ESO, or a problem with Proton in general? Bejeweled 2 Deluxe has a free trial that works well in Proton. Also try restarting the Steam client if you haven't.</p></div>
+  </div>
+  <div class='comment' style='display: block; margin-left: 80px'>
+    <h3>aaronfranke</h3>
+    <div class='by' style='font-style: italic;'></div>
+    <div class='comment_content'><p>What are your specs and what graphics drivers are you using?</p></div>
+    <div class='comment' style='display: block; margin-left: 80px'>
+      <h3>Sylorak</h3>
+      <div class='by' style='font-style: italic;'></div>
+      <div class='comment_content'><p>Geforce Gtx 1060</p><p>Driver: 396.54</p></div>
+      <div class='comment' style='display: block; margin-left: 80px'>
+        <h3>aaronfranke</h3>
+        <div class='by' style='font-style: italic;'></div>
+        <div class='comment_content'><p>Try installing Python 2.7.</p></div>
+        <div class='comment' style='display: block; margin-left: 80px'>
+          <h3>NoXPhasma</h3>
+          <div class='by' style='font-style: italic;'></div>
+          <div class='comment_content'><p>Python 2.7 isn't needed anymore. [1]That was fixed in Proton 3.7-5 .</p><p></p><p></p><p></p><p></p><p>[1] https://github.com/ValveSoftware/Proton/blob/proton_3.7/CHANGELOG.md</p></div>
+        </div>
+        <div class='comment' style='display: block; margin-left: 80px'>
+          <h3>Sylorak</h3>
+          <div class='by' style='font-style: italic;'></div>
+          <div class='comment_content'><p>Its installed :/</p></div>
+          <div class='comment' style='display: block; margin-left: 80px'>
+            <h3>aaronfranke</h3>
+            <div class='by' style='font-style: italic;'></div>
+            <div class='comment_content'><p>Then I'm not sure. You seem to have things set up correctly.</p><p>However, I'm using Xubuntu and not Debian. Valve recommends Ubuntu by the way.</p></div>
+            <div class='comment' style='display: block; margin-left: 80px'>
+              <h3>ImpersonalComputer</h3>
+              <div class='by' style='font-style: italic;'></div>
+              <div class='comment_content'><p>Ubuntu is based on Debian. Ubuntu derives its packages from Debian Unstable.</p></div>
+              <div class='comment' style='display: block; margin-left: 80px'>
+                <h3>aaronfranke</h3>
+                <div class='by' style='font-style: italic;'></div>
+                <div class='comment_content'><p>What's your point? Ubuntu may have things that Steam Play needs and isn't installed by default.</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>

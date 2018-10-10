@@ -1,0 +1,76 @@
+         HOW TO ENABLE XBOX ONE CONTROLLER ON UBUNTU 18.04?        
+
+  [linux_gaming] 2018-10-09_08-00
+
+  o Reference: 2018-10-09_08-00_How_to_enable_Xbox_One_
+  o News link: https://www.reddit.com/r/linux_gaming/comments/9l7qdn/how_to_enable_xbox_one_controller_on_ubuntu_1804/
+  o Source link: 
+
+
+    I  tried  using  the  Xbox  One  controller on my Kubuntu 18.04
+    desktop  both  on  native (i.e. Tomb Raider & Life is Strange),
+    and  via  Steam  Play  (i.e. Dragon Ball Xenoverse 2 and Tekken
+    7).  Steam  itself,  however,  was  able to see it. And running
+    lsusb shows that the system can see it.
+    
+    I  was looking into this problem, and I found out just now that
+    the  [1]Xbox  One  controller  is in the kernel . This [2]guide
+    from  Make Tech Easier is outdated because xboxdrv doesn't work
+    unless  it's  the Xbox 360 controller (I'm out of AA batteries,
+    so  I  couldn't  test, but the software recognized it), and the
+    [3]PPA  they  suggested  to  add  aren't up-to-date, unless I'm
+    running Xenial or earlier.
+    
+    What else am I supposed to do in order for me to enable it?
+    
+    Edit: [4]Solved
+    
+    
+    
+    [1] https://github.com/torvalds/linux/commit/1a48ff81b3912be5f-
+    adae3fafde6c2f632246a4c
+    
+    [2]  https://www.maketecheasier.com/set-up-xbox-one-controller-
+    ubuntu/
+    
+    [3] https://launchpad.net/%7Emdeslaur/+archive/ubuntu/steamos
+    
+    [4] https://www.reddit.com/r/linux_gaming/comments/9l7qdn/how_-
+    to_enable_xbox_one_controller_on_ubuntu_1804/e74r1oz/
+
+
+  ** cvei5t
+     When using wired, it should be plug and play. Turn off
+     controller support in steam, it may be interfering. Games should
+     be able to talk with the controller directly.
+
+     ** NoXPhasma
+        Yes, the Steam Controller API breaks input with XBOX One S
+        Controller. Had to remove the Controller form Steam, since
+        then it works fine.
+        For wireless I can recommend [1]xpadneo .
+        
+        
+        
+        
+        [1] https://github.com/atar-axis/xpadneo
+
+        ** iJONTY85
+           Thanks! Will give it a shot later.
+           Edjt: yes, that's the solution!
+
+
+
+  ** fl_2017
+     I have a bluetooth xbox one controller and in order to pair it I
+     had to add "bluetooth.disable_ertm=1" to the Grub command line.
+     USB though as others as stated it should work out of the box.
+
+  ** Duckz0nQu4ck
+     Following
+
+     ** iJONTY85
+        It's solved
+
+
+

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv='content-type' content='text/html; charset=utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <style type='text/css'>
+    body { margin: 1em 15%; }
+  </style>
+</head>
+<body>
+<div class='story'>
+	<h2>Lutris not launching on ubuntu</h2>
+	<div class='details'>([linux_gaming] 2018-10-09_08-00)</div>
+	<br/>
+    <ul>
+    <li>Reference: <a href=''>2018-10-09_08-00_Lutris_not_launching_on</a></li>
+        <li>News link: <a href='https://www.reddit.com/r/linux_gaming/comments/9lbly0/lutris_not_launching_on_ubuntu/'>https://www.reddit.com/r/linux_gaming/comments/9lbly0/lutris_not_launching_on_ubuntu/</a></li>
+        <li>Source link: <a href=''></a></li>
+    </ul>
+	<br/>
+	<div class='content' style='text-align: justify'>
+		Is anyone else having trouble getting lutris to launch in ubuntu after its latest update (earlier this week)?<br/><br/>Attempts to launch it in the terminal give me a cryptic error (to me, very much a non developer) about a problem on line 25.<br/><br/>A stab in the dark, but I&#x27;m thinking I either wait until someone else sees the problem and fixes it or try to find a way to install an earlier version. Any other suggestions? I don&#x27;t want to have to break down and *clutches pearles* boot Windows to play my game.<br/><br/>EB
+	</div>
+<hr/>
+  <div class='comment' style='display: block; margin-left: 80px'>
+    <h3>CMDR_Cotic</h3>
+    <div class='by' style='font-style: italic;'></div>
+    <div class='comment_content'><p>What if you download the tarball and try running lutris from the extracted folder?</p></div>
+    <div class='comment' style='display: block; margin-left: 80px'>
+      <h3>beyere5398</h3>
+      <div class='by' style='font-style: italic;'></div>
+      <div class='comment_content'><p>Joy! I wound up going to openSUSE's build service and downloading the .deb for lutris for my version of ubuntu. It's a slightly older version, but it runs my game now. I'm thinking the repo got borked up somehow and when I did my update that screwed something up.</p></div>
+    </div>
+  </div>
+  <div class='comment' style='display: block; margin-left: 80px'>
+    <h3>Leopard1907</h3>
+    <div class='by' style='font-style: italic;'></div>
+    <div class='comment_content'><p>Yes , somewhat similar problems occured for me.</p></div>
+  </div>
+  <div class='comment' style='display: block; margin-left: 80px'>
+    <h3>ErikDrakken</h3>
+    <div class='by' style='font-style: italic;'></div>
+    <div class='comment_content'><p>Would you be able to share the error message here?</p></div>
+    <div class='comment' style='display: block; margin-left: 80px'>
+      <h3>beyere5398</h3>
+      <div class='by' style='font-style: italic;'></div>
+      <div class='comment_content'><p>WS:~$ lutris</p><p>Traceback (most recent call last):</p><p>File "/usr/bin/lutris", line 25, in <module></p><p>from lutris.gui.application import Application</p><p>ModuleNotFoundError: No module named 'lutris'</p><p>WS:~$</p></div>
+      <div class='comment' style='display: block; margin-left: 80px'>
+        <h3>ErikDrakken</h3>
+        <div class='by' style='font-style: italic;'></div>
+        <div class='comment_content'><p>[1]I found this thread that mentions upgrading from Python 3.6 to Python 3.7 potentially breaking Lutris, as it installs some things into the versioned python directory in /usr/lib, which would likely be the "missing" modules. I know you've already fixed the situation on your machine, but I figured maybe the information would be useful if someone else runs into the same error.</p><p></p><p></p><p></p><p></p><p>[1] https://forums.lutris.net/t/modulenotfounderror-no-module-named-lutris/324</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>

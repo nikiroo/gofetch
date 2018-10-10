@@ -1,0 +1,139 @@
+                 NORTHGARD WON'T LAUNCH, ANY IDEAS?                
+
+  [linux_gaming] 2018-10-09_08-00
+
+  o Reference: 2018-10-09_08-00_Northgard_won_t_launch_
+  o News link: https://www.reddit.com/r/linux_gaming/comments/9l75cz/northgard_wont_launch_any_ideas/
+  o Source link: 
+
+
+    I  recently  bought Northgard, because the store page says that
+    it  supports Linux, I downloaded it, tried to launch it, and it
+    didn't  work.  Does anyone know what needs to be done to get it
+    to work?
+    
+    I  tried running the run.sh file from the CLI, but that did not
+    work.  The  output it gives me is ./run.sh: line 1: ./linux/hl:
+    No such file or directory
+    
+    ./run.sh: line 2: ./linux/hl: No such file or directory
+    
+    So,  I'm  not  sure  what to do at this point, I'd like to keep
+    it,  as  I got it on sale, but if it doesn't work, I guess I'll
+    have to refund it.
+    
+    EDIT:  There  was a patch, it seems to be good now. I didn't do
+    anything to fix it.
+
+
+  ** liamdawe
+     It was fixed in another patch.
+
+     ** T0RB1T
+        Good to know!
+
+
+  ** OnceInATre0n
+     I can only suggest the classic things to try, but maybe they'll
+     help:
+     
+     Try validating game files
+     
+     Try running steam in a terminal and see what gets printed out
+     when you try running the game. Maybe it'll give you a hint.
+     
+     Try rebooting, especially if you haven't rebooted since you did
+     a system update.
+     Maybe also check the game's Steam discussion forums, chances are
+     someone else is having the same issue.
+
+     ** T0RB1T
+        I've already done all the other things. Just checked the
+        community page... A LOT of people are having the same issue.
+        So, I guess it'll probably get fixed.
+
+
+  ** arijitlive
+     Wait, I followed this game for awhile before removing that from
+     my wishlist. That was long time back in windows-time. I didn't
+     know it's available in Linux. Thanks for the nudge.
+
+     ** T0RB1T
+        Heh, no problem! Hopefully this issue gets fixed soon.
+
+
+  ** Shished
+     Does this file presents there? If yes, make it executable.
+
+     ** T0RB1T
+        I'm not sure I totally understand your suggestion.
+
+        ** Shished
+           Open game folder and check if linux/hl file exists. If it
+           exists, make it executable (right click, properties,
+           permissions)
+
+           ** T0RB1T
+              AH! Thanks! I'll definitely try that when I get a
+              chance.
+              Edit: They do exist, and they are executable.
+
+
+
+
+  ** Nurgus
+     If you paid for it then you're entitled to tech support. Contact
+     the creator?
+     I can tell you that it works great for me in Ubuntu 18.04 with
+     Padoka PPA. You didn't describe your setup so it's hard to help
+     you.
+
+     ** T0RB1T
+        That's fair. My drivers are all up to date, just about every
+        other game works, and I'm on kubuntu 18.10
+
+        ** Nurgus
+           Kubuntu 18.10 isn't released yet so still a beta. Are you
+           using nvidia or amd hardware?
+           I can tell you that Northard works great in Ubuntu 18.04
+           and Mesa 18.1.
+           Are you able to try it in anything resembling that?
+           I do urge you to contact the official tech support.
+           They'll know better than anyone what logs the game can
+           kick out.
+
+           ** T0RB1T
+              Yeah, I'll talk to them later today. I'm currently at
+              work.
+              And I'm. On nvidia, most recent drivers, and I actually
+              did try it on 18.04 before. Not joy then either.
+
+              ** Nurgus
+                 Ok. I can't advise you on Nvidia related stuff. Good
+                 luck. It's a nice game. :)
+
+                 ** T0RB1T
+                    Yeah, I'm sure I'll figure it out eventually.
+
+
+
+
+
+
+  ** bitstoppa
+     You should try it from the Northgard folder instead from the
+     linux folder and run it with './linux/run.sh'.
+
+     ** T0RB1T
+        I think I tried that.
+
+
+  ** headless_cyborg
+     Works great for me on Arch Linux. What's your distribution,
+     drivers, hardware?
+
+     ** T0RB1T
+        Kubuntu, Nvidia gtx 1070, drivers are 396.54, intel 4790k.
+
+
+

@@ -1,0 +1,51 @@
+               WILL [K]UBUNTU 18.10 INCLUDE MESA 18.2?             
+
+  [linux_gaming] 2018-10-09_08-00
+
+  o Reference: 2018-10-09_08-00_Will__K_ubuntu_18_10_in
+  o News link: https://www.reddit.com/r/linux_gaming/comments/9l75jd/will_kubuntu_1810_include_mesa_182/
+  o Source link: 
+
+
+    I  ask  because the only way I know of to upgrade Mesa manually
+    is  to  install  xorg-edgers,  and  the last time I did that it
+    locked  me  out of doing a release upgrade. Nobody had any idea
+    how   to  fix  it  short  of  a  complete  reinstall,  which  I
+    reluctantly  did.  So ever since then I've been avoiding it. No
+    mention  of  any  Mesa  upgrade is made on Kubuntu's changelog,
+    and  Ubuntu's  team apparently [1]can't even be assed to post a
+    changelog  at  all  .  And  I  figured probably some of you are
+    already checking out the beta and would know.
+    
+    
+    
+    [1] https://wiki.ubuntu.com/CosmicCuttlefish/ReleaseNotes#Offi-
+    cial_flavours
+
+
+  ** mad_mesa
+     Last I'd heard Ubuntu 18.10 would be including Mesa 18.2 out of
+     the box.
+     For 18.04 the Padoka Stable PPA has had Mesa 18.2 since last
+     week.
+     [1]https://launchpad.net/~paulo-miguel-dias/+archive/ubuntu/pkppa
+     
+     
+     
+     
+     [1]
+     https://launchpad.net/~paulo-miguel-dias/+archive/ubuntu/pkppa
+
+  ** tgm4883
+     It would appear that 18.2.1 is in 18.10.
+     [1]https://packages.ubuntu.com/search?keywords=mesa&searchon=nam-
+     es&suite=cosmic&section=all
+     
+     
+     
+     
+     [1]
+     https://packages.ubuntu.com/search?keywords=mesa&searchon=names&-
+     suite=cosmic&section=all
+
+

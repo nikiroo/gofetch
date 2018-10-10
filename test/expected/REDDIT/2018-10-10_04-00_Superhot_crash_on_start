@@ -1,0 +1,73 @@
+                  SUPERHOT CRASH ON STARTUP (LINUX)                
+
+  [linux_gaming] 2018-10-10_04-00
+
+  o Reference: 2018-10-10_04-00_Superhot_crash_on_start
+  o News link: https://www.reddit.com/r/linux_gaming/comments/9lkc8d/superhot_crash_on_startup_linux/
+  o Source link: 
+
+
+    So  i  bought  Superhot  for  linux on steam , all my computers
+    specs  are  above the minimum requirements tried to start it up
+    (showed  a  black  screen)  and  crashed  seconds  after.  This
+    happens  every  time  i  start  the  game  i  even restarted my
+    computer  and  i see to be having the same problem as this post
+    ( [1]https://www.reddit.com/r/linux_gaming/comments/5zn46u/sup-
+    erhot_crashes_on_startup/ ) but i didnt find a fix on there.
+    
+    Also  when  i  run it from the terminal with this command i get
+    this  output  and  then  the  last line [Aborted (core dumped)]
+    after the game crashes
+    
+    /home/ayden/.steam/steam/steamapps/common/SUPERHOT/SUPERHOT.x8-
+    6_64
+    
+    Found                                                     path:
+    /home/ayden/.steam/steam/steamapps/common/SUPERHOT/SUPERHOT.x8-
+    6_64
+    
+    Mono                          path[0]                         =
+    '/home/ayden/.steam/steam/steamapps/common/SUPERHOT/SUPERHOT_D-
+    ata/Managed'
+    
+    Mono                          path[1]                         =
+    '/home/ayden/.steam/steam/steamapps/common/SUPERHOT/SUPERHOT_D-
+    ata/Mono'
+    
+    Mono                config                path                =
+    '/home/ayden/.steam/steam/steamapps/common/SUPERHOT/SUPERHOT_D-
+    ata/Mono/etc'
+    
+    displaymanager : xrandr version warning. 1.5
+    
+    displaymanager : trying .X11-unix
+    
+    No protocol specified
+    
+    client :0 has 1 screens
+    
+    displaymanager screen (0): 1600 x 900
+    
+    Using libudev for joystick management
+    
+    Importing game controller configs
+    
+    Aborted (core dumped)
+    
+    .......Im  not  investigating  this  matter i just want to play
+    the game, help would be greatly appreciated
+    
+    
+    
+    [1] https://www.reddit.com/r/linux_gaming/comments/5zn46u/supe-
+    rhot_crashes_on_startup/
+
+
+  ** Leopard1907
+     Can you try one of these as a game launch option? From Steam
+     library:
+     LC_ALL=C %command%
+     or
+     LANG=C %command%
+
+

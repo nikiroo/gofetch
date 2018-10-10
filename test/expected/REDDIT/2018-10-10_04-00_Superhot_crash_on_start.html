@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv='content-type' content='text/html; charset=utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <style type='text/css'>
+    body { margin: 1em 15%; }
+  </style>
+</head>
+<body>
+<div class='story'>
+	<h2>Superhot crash on startup (Linux)</h2>
+	<div class='details'>([linux_gaming] 2018-10-10_04-00)</div>
+	<br/>
+    <ul>
+    <li>Reference: <a href=''>2018-10-10_04-00_Superhot_crash_on_start</a></li>
+        <li>News link: <a href='https://www.reddit.com/r/linux_gaming/comments/9lkc8d/superhot_crash_on_startup_linux/'>https://www.reddit.com/r/linux_gaming/comments/9lkc8d/superhot_crash_on_startup_linux/</a></li>
+        <li>Source link: <a href=''></a></li>
+    </ul>
+	<br/>
+	<div class='content' style='text-align: justify'>
+		So i bought Superhot for linux on steam , all my computers specs are above the minimum requirements tried to start it up (showed a black screen) and crashed seconds after. This happens every time i start the game i even restarted my computer and i see to be having the same problem as this post ( [1]https://www.reddit.com/r/linux_gaming/comments/5zn46u/superhot_crashes_on_startup/ ) but i didnt find a fix on there.<br/><br/>Also when i run it from the terminal with this command i get this output and then the last line [Aborted (core dumped)] after the game crashes<br/><br/>/home/ayden/.steam/steam/steamapps/common/SUPERHOT/SUPERHOT.x86_64<br/><br/>Found path: /home/ayden/.steam/steam/steamapps/common/SUPERHOT/SUPERHOT.x86_64<br/><br/>Mono path[0] = &#x27;/home/ayden/.steam/steam/steamapps/common/SUPERHOT/SUPERHOT_Data/Managed&#x27;<br/><br/>Mono path[1] = &#x27;/home/ayden/.steam/steam/steamapps/common/SUPERHOT/SUPERHOT_Data/Mono&#x27;<br/><br/>Mono config path = &#x27;/home/ayden/.steam/steam/steamapps/common/SUPERHOT/SUPERHOT_Data/Mono/etc&#x27;<br/><br/>displaymanager : xrandr version warning. 1.5<br/><br/>displaymanager : trying .X11-unix<br/><br/>No protocol specified<br/><br/>client :0 has 1 screens<br/><br/>displaymanager screen (0): 1600 x 900<br/><br/>Using libudev for joystick management<br/><br/>Importing game controller configs<br/><br/>Aborted (core dumped)<br/><br/>.......Im not investigating this matter i just want to play the game, help would be greatly appreciated<br/><br/><br/><br/>[1] https://www.reddit.com/r/linux_gaming/comments/5zn46u/superhot_crashes_on_startup/
+	</div>
+<hr/>
+  <div class='comment' style='display: block; margin-left: 80px'>
+    <h3>Leopard1907</h3>
+    <div class='by' style='font-style: italic;'></div>
+    <div class='comment_content'><p>Can you try one of these as a game launch option? From Steam library:</p><p>LC_ALL=C %command%</p><p>or</p><p>LANG=C %command%</p></div>
+  </div>
+</div>
+</body>

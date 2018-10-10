@@ -1,0 +1,69 @@
+                   LUTRIS NOT LAUNCHING ON UBUNTU                  
+
+  [linux_gaming] 2018-10-09_08-00
+
+  o Reference: 2018-10-09_08-00_Lutris_not_launching_on
+  o News link: https://www.reddit.com/r/linux_gaming/comments/9lbly0/lutris_not_launching_on_ubuntu/
+  o Source link: 
+
+
+    Is  anyone  else  having  trouble  getting  lutris to launch in
+    ubuntu after its latest update (earlier this week)?
+    
+    Attempts  to  launch it in the terminal give me a cryptic error
+    (to me, very much a non developer) about a problem on line 25.
+    
+    A  stab  in  the  dark,  but  I'm  thinking I either wait until
+    someone  else  sees  the  problem and fixes it or try to find a
+    way  to  install  an  earlier version. Any other suggestions? I
+    don't  want  to  have to break down and *clutches pearles* boot
+    Windows to play my game.
+    
+    EB
+
+
+  ** CMDR_Cotic
+     What if you download the tarball and try running lutris from the
+     extracted folder?
+
+     ** beyere5398
+        Joy! I wound up going to openSUSE's build service and
+        downloading the .deb for lutris for my version of ubuntu.
+        It's a slightly older version, but it runs my game now. I'm
+        thinking the repo got borked up somehow and when I did my
+        update that screwed something up.
+
+
+  ** Leopard1907
+     Yes , somewhat similar problems occured for me.
+
+  ** ErikDrakken
+     Would you be able to share the error message here?
+
+     ** beyere5398
+        WS:~$ lutris
+        Traceback (most recent call last):
+        File "/usr/bin/lutris", line 25, in <module>
+        from lutris.gui.application import Application
+        ModuleNotFoundError: No module named 'lutris'
+        WS:~$
+
+        ** ErikDrakken
+           [1]I found this thread that mentions upgrading from Python
+           3.6 to Python 3.7 potentially breaking Lutris, as it
+           installs some things into the versioned python directory
+           in /usr/lib, which would likely be the "missing" modules.
+           I know you've already fixed the situation on your machine,
+           but I figured maybe the information would be useful if
+           someone else runs into the same error.
+           
+           
+           
+           
+           [1]
+           https://forums.lutris.net/t/modulenotfounderror-no-module-
+           named-lutris/324
+
+
+
+

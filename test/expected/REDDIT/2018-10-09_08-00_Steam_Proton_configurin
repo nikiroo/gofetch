@@ -1,0 +1,36 @@
+                 STEAM PROTON CONFIGURING GAME PATH                
+
+  [linux_gaming] 2018-10-09_08-00
+
+  o Reference: 2018-10-09_08-00_Steam_Proton_configurin
+  o News link: https://www.reddit.com/r/linux_gaming/comments/9l6vug/steam_proton_configuring_game_path/
+  o Source link: 
+
+
+    A  game  I've  been  eyeing  for  a  while  just  went on sale,
+    [1]Pharoah  Rebirth+  ,  and  the  game  runs  fine,  except it
+    doesn't  appear  to  be  able  to read or write to the joy1.ini
+    file  which  defines the controls. The launcher detects gamepad
+    and  keyboard  input,  but  the game does not. I have a feeling
+    that   the   game  binary  expects  a  hardcoded  path  to  the
+    configuration  file.  The Steam and Proton logs do not indicate
+    any files missing or unreadable.
+    
+    I'm  wondering, if anyone has encountered path issues with game
+    files while using Proton and if anyone has any fixes.
+    
+    For   now   I've   submitted   a  compatability  report  on  r/
+    [2]http://spcr.netlify.com . I'll continue to hack on this.
+    
+    Thanks,
+    
+    almonjr
+    
+    
+    
+    [1] https://store.steampowered.com/app/441280/Pharaoh_Rebirth/
+    
+    [2] http://spcr.netlify.com
+
+
+

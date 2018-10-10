@@ -1,0 +1,37 @@
+   RADV VS. AMDVLK VS. RADEON SOFTWARE VULKAN DRIVER PERFORMANCE - 
+                      OCTOBER 2018 LINUX GAMING                    
+
+  [linux_gaming] 2018-10-09_15-00
+
+  o Reference: 2018-10-09_15-00_RADV_vs__AMDVLK_vs__Rad
+  o News link: https://www.reddit.com/r/linux_gaming/comments/9lewod/radv_vs_amdvlk_vs_radeon_software_vulkan_driver/
+  o Source link: https://www.phoronix.com/scan.php?page=article&item=amdvlk-radv-okt18&num=1
+
+
+    The   fact   that   there   are  two  drivers  is  the  biggest
+    headscratcher  from  AMD really since they started really doing
+    a  good  job.  I  can't  see  why they are fragmenting that one
+    specific thing rather than just slowly merging it into RADV.
+
+
+  ** FlukyS
+     The fact that there are two drivers is the biggest headscratcher
+     from AMD really since they started really doing a good job. I
+     can't see why they are fragmenting that one specific thing
+     rather than just slowly merging it into RADV.
+
+     ** PolygonKiwii
+        Because radv isn't their driver and amdvlk shares its code
+        with the windows driver.
+        But it's not that bad, as the biggest performance gains will
+        likely come from optimizing llvm, which both drivers make use
+        of*.
+        Also it's not a problem to install two Vulkan drivers side by
+        side so users could always do that if they really need both.
+        * except for the pro stack, which uses a proprietary compiler
+        shared with windows. I think their plan was to improve llvm
+        and replace the proprietary compiler when llvm caught up in
+        performance, but don't quote me on that
+
+
+

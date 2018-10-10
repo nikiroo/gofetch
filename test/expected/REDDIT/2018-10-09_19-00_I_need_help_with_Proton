@@ -1,0 +1,120 @@
+                       I NEED HELP WITH PROTON                     
+
+  [linux_gaming] 2018-10-09_19-00
+
+  o Reference: 2018-10-09_19-00_I_need_help_with_Proton
+  o News link: https://www.reddit.com/r/linux_gaming/comments/9lguyj/i_need_help_with_proton/
+  o Source link: 
+
+
+    Hey  guys,  its  been  several  days now that Im trying to play
+    Elder  Scrolls  Online  through  proton  but  im  getting  some
+    issues.
+    
+    I am new to linux, and that may be the major reason.
+    
+    I'm  running  steam in a debian 9, have updated to beta version
+    and  turned  on  steam  play  settings.  At the first try after
+    downloading  ESO  i've  tried  to just click play button and it
+    showed  "running"  for  a brief moment and then it was gone. So
+    i've   tried   to   build   proton   myself  following  [1]this
+    instructions  but  ended  up  with  an error [2]that i couldn't
+    solve   yet   .   So   i've   tried   to   run  it  again  with
+    PROTON_NO_ESYNC=1   mesa_glthread=true   vblank_mode=0   launch
+    options  and  no success. I don't know what to do now and thats
+    why  im posting here to see if anyone can help or knows what to
+    do.
+    
+    I appreciate any help and many thanks in advance.
+    
+    
+    
+    [1] https://github.com/ValveSoftware/Proton/
+    
+    [2] https://github.com/ValveSoftware/Proton/issues/494
+
+
+  ** gamersonlinux
+     You might want to post in [1]SteamPlay
+     I'm not totally sure because I've never built proton
+     I wish there was a debug like in PlayOnLinux so we can see what
+     is going on
+     
+     
+     
+     
+     [1] https://www.reddit.com/r/SteamPlay/
+
+     ** Sylorak
+        I will, thanks
+
+
+  ** grandmastermoth
+     Proton can produced debug logs if you turn them on:
+     [1]https://github.com/ValveSoftware/Proton/wiki/Proton-FAQ
+     Check this site for compatibility and tips:
+     [2]https://spcr.netlify.com/
+     For each entry on that list, there's usually a link to the
+     Proton issues on GitHub which sometimes has posts regarding
+     workarounds.
+     Make sure you have Vulkan installed! Type vulkaninfo to confirm
+     
+     
+     
+     
+     [1] https://github.com/ValveSoftware/Proton/wiki/Proton-FAQ
+     [2] https://spcr.netlify.com/
+
+  ** coldpie1
+     Have you tried another game to confirm whether it's a problem
+     with just ESO, or a problem with Proton in general? Bejeweled 2
+     Deluxe has a free trial that works well in Proton. Also try
+     restarting the Steam client if you haven't.
+
+  ** aaronfranke
+     What are your specs and what graphics drivers are you using?
+
+     ** Sylorak
+        Geforce Gtx 1060
+        Driver: 396.54
+
+        ** aaronfranke
+           Try installing Python 2.7.
+
+           ** NoXPhasma
+              Python 2.7 isn't needed anymore. [1]That was fixed in
+              Proton 3.7-5 .
+              
+              
+              
+              
+              [1]
+              https://github.com/ValveSoftware/Proton/blob/proton_3.7-
+              /CHANGELOG.md
+
+
+           ** Sylorak
+              Its installed :/
+
+              ** aaronfranke
+                 Then I'm not sure. You seem to have things set up
+                 correctly.
+                 However, I'm using Xubuntu and not Debian. Valve
+                 recommends Ubuntu by the way.
+
+                 ** ImpersonalComputer
+                    Ubuntu is based on Debian. Ubuntu derives its
+                    packages from Debian Unstable.
+
+                    ** aaronfranke
+                       What's your point? Ubuntu may have things that
+                       Steam Play needs and isn't installed by
+                       default.
+
+
+
+
+
+
+
+

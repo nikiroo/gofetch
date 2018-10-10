@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv='content-type' content='text/html; charset=utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <style type='text/css'>
+    body { margin: 1em 15%; }
+  </style>
+</head>
+<body>
+<div class='story'>
+	<h2>Gallium9 vs VK9</h2>
+	<div class='details'>([linux_gaming] 2018-10-09_19-00)</div>
+	<br/>
+    <ul>
+    <li>Reference: <a href=''>2018-10-09_19-00_Gallium9_vs_VK9</a></li>
+        <li>News link: <a href='https://www.reddit.com/r/linux_gaming/comments/9lgn9p/gallium9_vs_vk9/'>https://www.reddit.com/r/linux_gaming/comments/9lgn9p/gallium9_vs_vk9/</a></li>
+        <li>Source link: <a href=''></a></li>
+    </ul>
+	<br/>
+	<div class='content' style='text-align: justify'>
+		So i read an interview that the DXVK dev was inspired by VK9 so i decided to check it out, and then remembered Gallium9.<br/><br/>I understand VK9 tries to translate the calls to Vulkan but what does Gallium9 do different from VK9?
+	</div>
+<hr/>
+  <div class='comment' style='display: block; margin-left: 80px'>
+    <h3>ezs1lly</h3>
+    <div class='by' style='font-style: italic;'></div>
+    <div class='comment_content'><p>One important difference not mentioned yet: Gallium is working. VK9 is still in development. Another is that gallium is for open source drivera only. vK9 a more generic translation layer similar to dxvk. Zink is a new project to do gallium over vulkan, would give similar solution as VK9. But even earlier in dev you could say.</p></div>
+    <div class='comment' style='display: block; margin-left: 80px'>
+      <h3>breell</h3>
+      <div class='by' style='font-style: italic;'></div>
+      <div class='comment_content'><p>Another is that gallium is for open source drivera only</p><p>Not even, only gallium drivers, so not the current Intel one because it's a classic Mesa one.</p></div>
+    </div>
+  </div>
+  <div class='comment' style='display: block; margin-left: 80px'>
+    <h3>breell</h3>
+    <div class='by' style='font-style: italic;'></div>
+    <div class='comment_content'><p>Gallium nine is a Gallium state tracker that takes D3D9 in.</p></div>
+  </div>
+  <div class='comment' style='display: block; margin-left: 80px'>
+    <h3>ComputerMystic</h3>
+    <div class='by' style='font-style: italic;'></div>
+    <div class='comment_content'><p>Gallium Nine, from what I understand, cuts out the middleman. It's implementing DX9 in the driver the same way GL or Vulkan would be, without translating the DX9 calls to another intermediate API before letting the driver do its thing with them.</p></div>
+    <div class='comment' style='display: block; margin-left: 80px'>
+      <h3>breell</h3>
+      <div class='by' style='font-style: italic;'></div>
+      <div class='comment_content'><p>Well technically it does translate D3D9 to another intermediate API: the Gallium API, but so does the OGL state tracker.</p></div>
+    </div>
+  </div>
+  <div class='comment' style='display: block; margin-left: 80px'>
+    <h3>rea987</h3>
+    <div class='by' style='font-style: italic;'></div>
+    <div class='comment_content'><p>Gallium Nine provides native Direct3D 9 rendering, VK9 translates Direct3D 9 calls into Vulkan.</p></div>
+  </div>
+  <div class='comment' style='display: block; margin-left: 80px'>
+    <h3>meeheecaan</h3>
+    <div class='by' style='font-style: italic;'></div>
+    <div class='comment_content'><p>iirc gallium would be better since its a linux native dx9 implementation if i understand. but nvidia wont use it :(</p></div>
+  </div>
+</div>
+</body>

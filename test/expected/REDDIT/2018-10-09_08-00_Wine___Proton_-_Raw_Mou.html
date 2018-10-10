@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv='content-type' content='text/html; charset=utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <style type='text/css'>
+    body { margin: 1em 15%; }
+  </style>
+</head>
+<body>
+<div class='story'>
+	<h2>Wine / Proton - Raw Mouse Input</h2>
+	<div class='details'>([linux_gaming] 2018-10-09_08-00)</div>
+	<br/>
+    <ul>
+    <li>Reference: <a href=''>2018-10-09_08-00_Wine___Proton_-_Raw_Mou</a></li>
+        <li>News link: <a href='https://www.reddit.com/r/linux_gaming/comments/9l4iyd/wine_proton_raw_mouse_input/'>https://www.reddit.com/r/linux_gaming/comments/9l4iyd/wine_proton_raw_mouse_input/</a></li>
+        <li>Source link: <a href=''></a></li>
+    </ul>
+	<br/>
+	<div class='content' style='text-align: justify'>
+		I am struggling to find 1:1 parity with mouse input between Linux and Windows for games run via Proton/Wine. For games with native builds, I am able to achieve perfect 1:1 mapping.<br/><br/>Native example:<br/><br/>ezquake 3.5<br/><br/>sensitivity 2.2 @ 800 dpi == ~23.7cm/360<br/><br/>ezquake uses &quot;Raw Input&quot; in Windows and &quot;EVDEV mouse&quot; in Linux. My sensitivity is exactly the same in both OS.<br/><br/>I was able to replicate this exact sensitivity in CS:GO, same settings<br/><br/>Wine example (via Steam Play (Proton 3.7-7))<br/><br/>quakelive<br/><br/>sensitivity 2.2 @ 800 dpi == way larger than my mousepad<br/><br/>I found that I could get close to 23.7cm/360 with a sensitivity 5<br/><br/>in_mouse 2  in_MouseMode win32(raw)<br/><br/>My hunch is that by default, Wine is not reading the raw input and is instead using X11 mouse in some way and then telling the windows game that it is raw (when it is in fact not). Is this a setting that can be changed?<br/><br/>Also worth nothing - I have disabled acceleration via xorg config: Section &quot;InputClass&quot;<br/><br/>Identifier &quot;My Mouse&quot;<br/><br/>MatchIsPointer &quot;yes&quot;<br/><br/>Option &quot;AccelerationProfile&quot; &quot;-1&quot;<br/><br/>Option &quot;AccelerationScheme&quot; &quot;none&quot;<br/><br/>Option &quot;AccelSpeed&quot; &quot;-1&quot;<br/><br/>EndSection
+	</div>
+<hr/>
+  <div class='comment' style='display: block; margin-left: 80px'>
+    <h3>some_random_guy_5345</h3>
+    <div class='by' style='font-style: italic;'></div>
+    <div class='comment_content'><p>I play Quake Live in WINE and I'm having no issues with this profile (1:1 parity with windows): /etc/X11/xorg.conf.d/50-mouse-acceleration.conf</p><p></p><p>Section "InputClass"</p><p>Identifier "My Mouse"</p><p>Driver "libinput"</p><p>MatchIsPointer "yes"</p><p>Option "AccelProfile" "flat"</p><p>EndSection</p><p></p><p>My hunch is that by default, Wine is not reading the raw input and is instead using X11 mouse in some way and then telling the windows game that it is raw (when it is in fact not). Is this a setting that can be changed?</p><p>Why would this matter? Doesn't your profile disable mouse acceleration (and presumably use 1:1 input)?</p></div>
+    <div class='comment' style='display: block; margin-left: 80px'>
+      <h3>PolygonKiwii</h3>
+      <div class='by' style='font-style: italic;'></div>
+      <div class='comment_content'><p>I don't think X11 pointer movement is identical to raw input even without acceleration. [1]libinput tries to do normalization for high dpi mice down to 1000 dpi. I'm not sure if "one mickey = one pixel" is even true for 1000 dpi mice either.</p><p>EDIT: The desktop environment might also override Xorg's libinput settings at runtime. For Plasma desktop, I had to enable the "flat" profile in the mouse settings gui because my xorg.conf.d file stopped working after some update. Of note here is that that mouse gui doesn't have a perfect middle setting for the sensitivity slider (called acceleration here), so I had to set XLbInptPointerAcceleration=0 in "~/.config/kcminputrc". The one left of the middle would result in a value of -0.11 and the one right of the middle is 0.11.</p><p></p><p></p><p></p><p></p><p>[1] https://wayland.freedesktop.org/libinput/doc/latest/normalization-of-relative-motion.html#motion-normalization</p></div>
+    </div>
+    <div class='comment' style='display: block; margin-left: 80px'>
+      <h3>ginzberg</h3>
+      <div class='by' style='font-style: italic;'></div>
+      <div class='comment_content'><p>I don't suspect it does matter - but I thought sharing it would cut off the default recommendation to disable acceleration.</p><p>This is why I am getting 1:1 for native apps - issue is that Wine seems to do something else with mouse input, and I cannot find any details on configuration options on that front.</p></div>
+      <div class='comment' style='display: block; margin-left: 80px'>
+        <h3>PolygonKiwii</h3>
+        <div class='by' style='font-style: italic;'></div>
+        <div class='comment_content'><p>Native apps that have raw input (CS:GO) will have 1:1 tracking even if you leave non-linear pointer acceleration on.</p></div>
+        <div class='comment' style='display: block; margin-left: 80px'>
+          <h3>some_random_guy_5345</h3>
+          <div class='by' style='font-style: italic;'></div>
+          <div class='comment_content'><p>This is what I suspect is happening. The profile in the OP probably isn't 1:1 tracking.</p><p>Native games use raw input whereas WINE probably doesn't support it.</p></div>
+          <div class='comment' style='display: block; margin-left: 80px'>
+            <h3>PolygonKiwii</h3>
+            <div class='by' style='font-style: italic;'></div>
+            <div class='comment_content'><p>I wonder why Wine doesn't support it.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='comment' style='display: block; margin-left: 80px'>
+      <h3>ginzberg</h3>
+      <div class='by' style='font-style: italic;'></div>
+      <div class='comment_content'><p>Just switched to your conf, and I now have perfect 1:1 mapping in QL</p><p>Thank you!</p></div>
+    </div>
+  </div>
+</div>
+</body>

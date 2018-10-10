@@ -1,0 +1,263 @@
+            CS:GO UPDATE HAS SOME IMPROVEMENTS FOR LINUX           
+
+  [linux_gaming] 2018-10-09_08-00
+
+  o Reference: 2018-10-09_08-00_CS_GO_update_has_some_i
+  o News link: https://www.reddit.com/r/linux_gaming/comments/9l7je9/csgo_update_has_some_improvements_for_linux/
+  o Source link: https://www.reddit.com/r/GlobalOffensive/comments/9l6fm7/counterstrike_global_offensive_update_for_10318/
+
+
+    [1]
+    
+    Counter-Strike: Global Offensive update for 10/3/18 (1.36.5.4)
+    
+    
+    
+    [1] https://www.reddit.com/r/GlobalOffensive/comments/9l6fm7/c-
+    ounterstrike_global_offensive_update_for_10318/
+
+
+  ** PM_MOAR_NUDES
+     They still didn’t fix fastdownload from community servers...
+
+     ** Firelfyyy
+        Yep still an issue for me as well... Hopefully they'll sort
+        it soon.
+
+        ** PM_MOAR_NUDES
+           You know the workaround? It’s easy to use, but it’s just
+           beyond me that valve hasn’t just spent five minutes fixing
+           this
+
+           ** Firelfyyy
+              I think so, care to share anyway.
+              Haven't actually bothered using it.
+
+              ** kkdarknight
+                 [1]https://github.com/ericek111/linux-csgo-downloadf-
+                 ixer
+                 
+                 
+                 
+                 
+                 [1]
+                 https://github.com/ericek111/linux-csgo-downloadfixer
+
+
+              ** PM_MOAR_NUDES
+                 It’s painless to use I am out and about so I’ll
+                 forget to find a link but it is shared in one of the
+                 github bug tracker page for that isseu
+
+                 ** klinch3R
+                    If you remind me in like 1 hour i can post a link
+                    to it.
+
+
+
+
+
+
+     ** whatyourereferringto
+        This update almost made me want to reinstall but I'll wait
+        until this is fixed
+
+        ** PM_MOAR_NUDES
+           Oddly there is a workaround created by a guy that makes
+           cheats for csgo
+
+           ** whatyourereferringto
+              I've used that before but it's a little bit pathetic
+              this bug hasn't been fixed after 4+ years
+
+              ** PM_MOAR_NUDES
+                 True
+
+
+
+           ** ericek111
+              Hey, my cheats are just a proof-of-concept! :)
+
+
+
+
+  ** TheSilentLink
+     This is great news! It finally fixes the bug where one core was
+     stuck at 100% all the time.
+
+     ** Firelfyyy
+        Fuck I have to check this out!
+
+
+  ** dirtkiller23
+     I had like 60 average fps(ulletical's benchmark map) on
+     Scaleform,and panorama was on 45 av.fps.After this patch,i'm
+     hitting constant 60 fps.
+
+     ** Firelfyyy
+        Good to know! I play c's pretty competitively so I have a
+        pretty beastly gaming pc yet having slightly less fps on
+        Linux than windows bothered me.
+
+        ** Nakrule18
+           I just switched from windows to Linux and have only 100FPS
+           (240 before) on CSGO. Any idea what I’m doing wrong ? I
+           use an Optimus laptop with the latest nvidia driver and
+           bumblebee.
+
+           ** Firelfyyy
+              Make sure compositing is turned off before launching
+              cs. Should do it automatically.
+              Make sure you have the latest driver.
+              Optimus shouldn't have such a large perf hit so maybe
+              not that.
+              Possibly your CPU isn't boosting as much under Linux.
+              Cs is very CPU based so having high individual core
+              counts can help heaps.
+
+              ** Nakrule18
+                 I will try this tonight, thank you. It is definitely
+                 not a CPU issue (Razer Blade 2018 with six physical
+                 cores).
+                 In fact I was wondering if my laptop was using the
+                 Nvidia card or the Intel IGP, as 100FPS when playing
+                 CS with the lowest settings in 1024x768 should not
+                 be possible with a GTX1060.
+
+                 ** Firelfyyy
+                    Individual core speeds are more important, but
+                    100fps is still pretty low so you're probably
+                    right there.
+                    But yeah if Optimus isn't working properly that
+                    sounds like a reasonable reason.
+
+                    ** Nakrule18
+                       Do you know any way to check which card is
+                       being used while playing ?
+
+                       ** Firelfyyy
+                          No clue, don't play on laptops. Sorry!
+
+
+
+
+
+
+
+
+  ** rebakis
+     I hope so, Performance really suffered with the Panorama update.
+
+  ** gandalfx
+     Is boosting possible in casual now? That sounds dope!
+
+     ** Firelfyyy
+        Yup!
+
+
+  ** jrwagh333
+     Any tips for improving performance in Linux?
+     I have Ryzen 1600 @3.75Ghz.
+     I used to get between 250-350fps in competitive. Using Linux
+     that drops down to 120-200fps
+     Currently using -high as a launch option and setting the CPU
+     Guvnor in Terminal to performance
+
+  ** TurnDownForTendies
+     Still getting less performance than windows but this is
+     significantly better than what it used to be for me. Maps used
+     to have big fps drops and now its a lot smoother.
+
+  ** Atexrs
+     What about the bug I've had for years on gnome where alt tabbing
+     causes the games aspect ratio and resolution to get fucked up.
+
+     ** jensreuterberg
+        Never had that problem myself, is it only on GNOME? And do
+        you set resolution in like launch options?
+
+
+     ** gandalfx
+        The comment symbolizes everything I hate about the CSGO
+        community: Always complaining. Valve could do nothing even a
+        fraction as horrible as the constant bitching of people who
+        want everything different but nothing changed.
+
+        ** headless_cyborg
+           I like every CSGO update, it always makes something
+           better. I don't think I ever had a reason to complain. The
+           best update was adding Linux support in 2014 of course :)
+
+
+        ** jensreuterberg
+           Or obsessing about gambling and pro teams or pro's doing
+           things you'd expect pro's would do instead of talking
+           about the game, tactics etc.
+
+
+        ** 5had0w5talk3r
+           Man, fuck you. You don't know me or my positions. All I've
+           ever wanted was for Valve to stop regressing tech used in
+           their games in the name of "competitive balance". Before
+           you know it the game is going to be nothing but a
+           glorified 1.6. Bring proper physics simulation back to
+           games!
+
+           ** Leopard1907
+              Positions?!
+              That is just a fucking game , what kind of position a
+              game can put you in?
+
+              ** 5had0w5talk3r
+                 Your position on aspects of the game (things you
+                 like/dislike about and why). He's the one who
+                 bundled me in with his strawman, anyway. I don't
+                 understand why I'm getting shat on for saying I
+                 don't like the direction GO took CS in. It's just an
+                 opinion.
+
+                 ** Leopard1907
+                    Of course it is an opinion and i respect it.
+                    However saying someone to fuck you because of a
+                    game is absurd.
+
+                    ** 5had0w5talk3r
+                       His attitude was completely abrasive. I don't
+                       like being shat on because I said I dislike
+                       his favourite game.
+
+
+
+
+
+           ** headless_cyborg
+              proper physics simulation
+              For trolls who want to cover the bomb with a barrel?
+
+              ** 5had0w5talk3r
+                 That was throwing the baby out with the bath water.
+                 There's a million and one was to fix the problem:
+                 make the bomb collideable with physics objects only,
+                 improve placement of physics objects, make the bomb
+                 LED glow through physics objects, etc. Instead Valve
+                 took the easy shitty path that makes the game less
+                 immersive.
+                 Besides, realistically, what are the chances that
+                 you can hide the bomb in a competitive match? You
+                 have 1:55min to take a site and plant the bomb, with
+                 40sec to try to hide the bomb while (likely) down on
+                 men and defend the site against enemies who are
+                 going to be rushing you very soon. It's just not a
+                 realistic scenario.
+                 Games in general barely have any physics simulation
+                 at all compared to games from 10-15 years ago, which
+                 is deeply saddening and really ruins the immersion
+                 into the game world. A more accurate simulation of
+                 the world makes the game more realistic, thus more
+                 immersive, thus more fun.
+
+
+
+
+
+

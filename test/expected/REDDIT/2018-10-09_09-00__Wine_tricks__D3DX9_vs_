@@ -1,0 +1,70 @@
+                  [WINE/TRICKS] D3DX9 VS DIRECTX9?                 
+
+  [linux_gaming] 2018-10-09_09-00
+
+  o Reference: 2018-10-09_09-00__Wine_tricks__D3DX9_vs_
+  o News link: https://www.reddit.com/r/linux_gaming/comments/9lc2je/winetricks_d3dx9_vs_directx9/
+  o Source link: 
+
+
+    Hi!  I  have  league  of  legends  all set up on my desktop pc,
+    running  arch with proprietary nvidia drivers, and all I had to
+    run  the  game  is winetricks d3dx9. Now I try to install it on
+    my  arch laptop as well, but this time the game crashes when it
+    tries  to  run (the launcher works as intended tho). So I tried
+    a  million  thing  to  eventually find that winetricks directx9
+    works.  Now  the  game  runs surprisingly well for a 13" laptop
+    with  only  intel integrated graphics. So my question is: whats
+    the  difference  between  the  d3dx9 winetricks package and the
+    directx9  one?  I  noticed d3dx9 never spawns any ui, while the
+    directx9  package  prompts  an  old  looking install wizard. My
+    theory  is  that  d3dx9 is just a part of the directx9 package,
+    tho  I  am  quite  confused as to why my tower needs only d3dx9
+    while the laptop needed another one. Thanks for any clue
+
+
+  ** _clement_
+     DirectX is a collection of API, the most common being Direct3D
+     (for 3D graphics). D3DX is an extension (the "x" in the name)
+     library for Direct3D.
+
+  ** ionlydosupport
+     league of legends need wine staging..
+     anti cheat stuff
+
+     ** SurelyNotAnOctopus
+        Both are using the exact same packages (pacman -S
+        wine-staging && pacman -S $(pactree -l wine-staging))
+
+
+  ** thedoogster
+     IIRC one of them installs a lot more ? I had a weird issue at
+     one point where I needed to install d3dx9 to play the Monkey
+     Island Special Editions.
+
+  ** breell
+     I'm not sure but look at the verbs in winetricks, there are
+     comments about that:
+     [1]https://github.com/Winetricks/winetricks/blob/master/src/wine-
+     tricks#L6514
+     
+     
+     
+     
+     [1]
+     https://github.com/Winetricks/winetricks/blob/master/src/winetri-
+     cks#L6514
+
+  ** Adam_Stambaugh0
+     Try sticking to d3dx9_36 if you need it. Otherwise, WINE's
+     builtin alternative should be fine. D3dx9 just extracks the
+     components needed from the directx9 installer. Directx9 installs
+     the whole thing, even the parts that tend to conflict with WINE.
+     The game on the intel laptop was probably trying to run a bit of
+     different code for the intel chipset, something that wasn't
+     properly handled by WINE's alternative.
+
+  ** DesertFroggo
+     Just play Dota 2...
+
+

@@ -1,0 +1,135 @@
+                   WINE / PROTON - RAW MOUSE INPUT                 
+
+  [linux_gaming] 2018-10-09_08-00
+
+  o Reference: 2018-10-09_08-00_Wine___Proton_-_Raw_Mou
+  o News link: https://www.reddit.com/r/linux_gaming/comments/9l4iyd/wine_proton_raw_mouse_input/
+  o Source link: 
+
+
+    I  am  struggling  to  find 1:1 parity with mouse input between
+    Linux  and  Windows  for  games  run via Proton/Wine. For games
+    with native builds, I am able to achieve perfect 1:1 mapping.
+    
+    Native example:
+    
+    ezquake 3.5
+    
+    sensitivity 2.2 @ 800 dpi == ~23.7cm/360
+    
+    ezquake  uses  "Raw  Input"  in  Windows  and  "EVDEV mouse" in
+    Linux. My sensitivity is exactly the same in both OS.
+    
+    I  was  able to replicate this exact sensitivity in CS:GO, same
+    settings
+    
+    Wine example (via Steam Play (Proton 3.7-7))
+    
+    quakelive
+    
+    sensitivity 2.2 @ 800 dpi == way larger than my mousepad
+    
+    I   found   that  I  could  get  close  to  23.7cm/360  with  a
+    sensitivity 5
+    
+    in_mouse 2  in_MouseMode win32(raw)
+    
+    My  hunch is that by default, Wine is not reading the raw input
+    and  is  instead  using  X11 mouse in some way and then telling
+    the  windows  game  that it is raw (when it is in fact not). Is
+    this a setting that can be changed?
+    
+    Also  worth  nothing  -  I  have disabled acceleration via xorg
+    config: Section "InputClass"
+    
+    Identifier "My Mouse"
+    
+    MatchIsPointer "yes"
+    
+    Option "AccelerationProfile" "-1"
+    
+    Option "AccelerationScheme" "none"
+    
+    Option "AccelSpeed" "-1"
+    
+    EndSection
+
+
+  ** some_random_guy_5345
+     I play Quake Live in WINE and I'm having no issues with this
+     profile (1:1 parity with windows):
+     /etc/X11/xorg.conf.d/50-mouse-acceleration.conf
+     
+     Section "InputClass"
+     Identifier "My Mouse"
+     Driver "libinput"
+     MatchIsPointer "yes"
+     Option "AccelProfile" "flat"
+     EndSection
+     
+     My hunch is that by default, Wine is not reading the raw input
+     and is instead using X11 mouse in some way and then telling the
+     windows game that it is raw (when it is in fact not). Is this a
+     setting that can be changed?
+     Why would this matter? Doesn't your profile disable mouse
+     acceleration (and presumably use 1:1 input)?
+
+     ** PolygonKiwii
+        I don't think X11 pointer movement is identical to raw input
+        even without acceleration. [1]libinput tries to do
+        normalization for high dpi mice down to 1000 dpi. I'm not
+        sure if "one mickey = one pixel" is even true for 1000 dpi
+        mice either.
+        EDIT: The desktop environment might also override Xorg's
+        libinput settings at runtime. For Plasma desktop, I had to
+        enable the "flat" profile in the mouse settings gui because
+        my xorg.conf.d file stopped working after some update. Of
+        note here is that that mouse gui doesn't have a perfect
+        middle setting for the sensitivity slider (called
+        acceleration here), so I had to set
+        XLbInptPointerAcceleration=0 in "~/.config/kcminputrc". The
+        one left of the middle would result in a value of -0.11 and
+        the one right of the middle is 0.11.
+        
+        
+        
+        
+        [1]
+        https://wayland.freedesktop.org/libinput/doc/latest/normaliza-
+        tion-of-relative-motion.html#motion-normalization
+
+
+     ** ginzberg
+        I don't suspect it does matter - but I thought sharing it
+        would cut off the default recommendation to disable
+        acceleration.
+        This is why I am getting 1:1 for native apps - issue is that
+        Wine seems to do something else with mouse input, and I
+        cannot find any details on configuration options on that
+        front.
+
+        ** PolygonKiwii
+           Native apps that have raw input (CS:GO) will have 1:1
+           tracking even if you leave non-linear pointer acceleration
+           on.
+
+           ** some_random_guy_5345
+              This is what I suspect is happening. The profile in the
+              OP probably isn't 1:1 tracking.
+              Native games use raw input whereas WINE probably
+              doesn't support it.
+
+              ** PolygonKiwii
+                 I wonder why Wine doesn't support it.
+
+
+
+
+
+     ** ginzberg
+        Just switched to your conf, and I now have perfect 1:1
+        mapping in QL
+        Thank you!
+
+
+

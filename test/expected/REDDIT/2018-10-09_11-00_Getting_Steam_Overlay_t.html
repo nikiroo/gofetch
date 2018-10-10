@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv='content-type' content='text/html; charset=utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <style type='text/css'>
+    body { margin: 1em 15%; }
+  </style>
+</head>
+<body>
+<div class='story'>
+	<h2>Getting Steam Overlay to work with Lutris Wine games (aka. easy Steam Controller for Overwatch)</h2>
+	<div class='details'>([linux_gaming] 2018-10-09_11-00)</div>
+	<br/>
+    <ul>
+    <li>Reference: <a href=''>2018-10-09_11-00_Getting_Steam_Overlay_t</a></li>
+        <li>News link: <a href='https://www.reddit.com/r/linux_gaming/comments/9lcoly/getting_steam_overlay_to_work_with_lutris_wine/'>https://www.reddit.com/r/linux_gaming/comments/9lcoly/getting_steam_overlay_to_work_with_lutris_wine/</a></li>
+        <li>Source link: <a href=''></a></li>
+    </ul>
+	<br/>
+	<div class='content' style='text-align: justify'>
+		So, after wasting countless hours unsuccessfully seeking for a way to execute Lutris Wine games with a Steam Overlay (as I was able to do with PlayOnLinux runners a long time ago) I finally got it working today after finding [1]this post . Following is the procedure using Overwatch as an example (assuming you have it already installed through Lutris).<br/><br/>First run lutris -d lutris:rungame/overwatch in a terminal, then exit the game asap and check the log trail. You&#x27;ll need retrieve a log like this (note this is only a partial stub): ...<br/><br/>INFO   2018-10-04 09:29:46,005 [dxvk]:Replacing /home/qchto/games/lutris/overwatch/drive_c/windows/syswow64/d3d10_1 with DXVK version<br/><br/>INFO   2018-10-04 09:29:46,006 [dxvk]:Replacing /home/qchto/games/lutris/overwatch/drive_c/windows/syswow64/d3d10 with DXVK version<br/><br/>DEBUG  2018-10-04 09:29:46,071 [game]:Launching Overwatch: {&#x27;env&#x27;: {&#x27;DXVK_CONFIG_FILE&#x27;: &#x27;/home/qchto/games/lutris/overwatch/dxvk.conf&#x27;, &#x27;DXVK_HUD&#x27;: &#x27;0&#x27;, &#x27;DXVK_STATE_CACHE_PATH&#x27;: &#x27;/home/qchto/games/lutris/overwatch&#x27;, &#x27;__GL_SHADER_DISK_CACHE&#x27;: &#x27;1&#x27;, &#x27;__GL_SHADER_DISK_CACHE_PATH&#x27;: &#x27;/home/qchto/games/lutris/overwatch&#x27;, &#x27;__GL_SHADER_DISK_CACHE_SKIP_CLEANUP&#x27;: &#x27;1&#x27;, &#x27;DRI_PRIME&#x27;: &#x27;0&#x27;, &#x27;STEAM_RUNTIME&#x27;: &#x27;/home/qchto/.local/share/lutris/runtime/steam&#x27;, &#x27;LD_LIBRARY_PATH&#x27;: &#x27;/home/qchto/.local/share/lutris/runners/wine/staging-3.17-x86_64/lib:/home/qchto/.local/share/lutris/runners/wine/staging-3.17-x86_64/lib64:/usr/lib:/usr/lib32:/lib/x86_64-linux-gnu:/lib/i386-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/i386-linux-gnu:/home/qchto/.local/share/lutris/runtime/lib32:/home/qchto/.local/share/lutris/runtime/steam/i386/lib/i386-linux-gnu:/home/qchto/.local/share/lutris/runtime/steam/i386/lib:/home/qchto/.local/share/lutris/runtime/steam/i386/usr/lib/i386-linux-gnu:/home/qchto/.local/share/lutris/runtime/steam/i386/usr/lib:/home/qchto/.local/share/lutris/runtime/lib64:/home/qchto/.local/share/lutris/runtime/steam/amd64/lib/x86_64-linux-gnu:/home/qchto/.local/share/lutris/runtime/steam/amd64/lib:/home/qchto/.local/share/lutris/runtime/steam/amd64/usr/lib/x86_64-linux-gnu:/home/qchto/.local/share/lutris/runtime/steam/amd64/usr/lib:$LD_LIBRARY_PATH&#x27;, &#x27;WINEDEBUG&#x27;: &#x27;-all&#x27;, &#x27;WINEARCH&#x27;: &#x27;win64&#x27;, &#x27;WINE&#x27;: &#x27;/home/qchto/.local/share/lutris/runners/wine/staging-3.17-x86_64/bin/wine&#x27;, &#x27;WINEPREFIX&#x27;: &#x27;/home/qchto/games/lutris/overwatch&#x27;, &#x27;WINEDLLOVERRIDES&#x27;: &#x27;d3d10,d3d10_1,d3d10core,d3d11,dxgi=n&#x27;}, &#x27;command&#x27;: [&#x27;/home/qchto/.local/share/lutris/runners/wine/staging-3.17-x86_64/bin/wine&#x27;, &#x27;/home/qchto/games/lutris/overwatch/drive_c/Program Files (x86)/Battle.net/Battle.net Launcher.exe&#x27;]}<br/><br/>DEBUG  2018-10-04 09:29:46,072 [thread]:Command env: SDL_VIDEO_FULLSCREEN_DISPLAY=&quot;off&quot; DXVK_CONFIG_FILE=&quot;/home/qchto/games/lutris/overwatch/dxvk.conf&quot; DXVK_HUD=&quot;0&quot; DXVK_STATE_CACHE_PATH=&quot;/home/qchto/games/lutris/overwatch&quot; __GL_SHADER_DISK_CACHE=&quot;1&quot; __GL_SHADER_DISK_CACHE_PATH=&quot;/home/qchto/games/lutris/overwatch&quot; __GL_SHADER_DISK_CACHE_SKIP_CLEANUP=&quot;1&quot; DRI_PRIME=&quot;0&quot; STEAM_RUNTIME=&quot;/home/qchto/.local/share/lutris/runtime/steam&quot; LD_LIBRARY_PATH=&quot;/home/qchto/.local/share/lutris/runners/wine/staging-3.17-x86_64/lib:/home/qchto/.local/share/lutris/runners/wine/staging-3.17-x86_64/lib64:/usr/lib:/usr/lib32:/lib/x86_64-linux-gnu:/lib/i386-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/i386-linux-gnu:/home/qchto/.local/share/lutris/runtime/lib32:/home/qchto/.local/share/lutris/runtime/steam/i386/lib/i386-linux-gnu:/home/qchto/.local/share/lutris/runtime/steam/i386/lib:/home/qchto/.local/share/lutris/runtime/steam/i386/usr/lib/i386-linux-gnu:/home/qchto/.local/share/lutris/runtime/steam/i386/usr/lib:/home/qchto/.local/share/lutris/runtime/lib64:/home/qchto/.local/share/lutris/runtime/steam/amd64/lib/x86_64-linux-gnu:/home/qchto/.local/share/lutris/runtime/steam/amd64/lib:/home/qchto/.local/share/lutris/runtime/steam/amd64/usr/lib/x86_64-linux-gnu:/home/qchto/.local/share/lutris/runtime/steam/amd64/usr/lib:$LD_LIBRARY_PATH&quot; WINEDEBUG=&quot;-all&quot; WINEARCH=&quot;win64&quot; WINE=&quot;/home/qchto/.local/share/lutris/runners/wine/staging-3.17-x86_64/bin/wine&quot; WINEPREFIX=&quot;/home/qchto/games/lutris/overwatch&quot; WINEDLLOVERRIDES=&quot;d3d10,d3d10_1,d3d10core,d3d11,dxgi=n&quot;<br/><br/>DEBUG  2018-10-04 09:29:46,073 [thread]:Running command: &quot;/home/qchto/.local/share/lutris/runners/wine/staging-3.17-x86_64/bin/wine&quot; &quot;/home/qchto/games/lutris/overwatch/drive_c/Program Files (x86)/Battle.net/Battle.net Launcher.exe&quot;<br/><br/>DEBUG  2018-10-04 09:29:46,073 [thread]:Storing environment variable SDL_VIDEO_FULLSCREEN_DISPLAY to off<br/><br/>DEBUG  2018-10-04 09:29:46,073 [thread]:Storing environment variable DXVK_CONFIG_FILE to /home/qchto/games/lutris/overwatch/dxvk.conf<br/><br/>...<br/><br/>Proceed by copying everything in the line after [thread]:Command env: , separate every variable in a line and preceed it by an export declaration. Then add the line [thread]:Running command: at the end of your script (or even better, add them to local variables and then execute it to end with a file like this (note that the LUTRIS_WINE and GAME_EXE variables are the &quot;Running command&quot; log line, and GAME_EXE can be replaced to reference another executable, in this case my local Overwatch.exe): #!/bin/bash<br/><br/># used &quot;lutris -d lutris:rungame/overwatch&quot; to retrieve env variables<br/><br/>export SDL_VIDEO_FULLSCREEN_DISPLAY=&quot;off&quot;<br/><br/>export DXVK_CONFIG_FILE=&quot;/home/qchto/games/lutris/overwatch/dxvk.conf&quot;<br/><br/>export DXVK_HUD=&quot;0&quot;<br/><br/>export DXVK_STATE_CACHE_PATH=&quot;/home/qchto/games/lutris/overwatch&quot;<br/><br/>export __GL_SHADER_DISK_CACHE=&quot;1&quot;<br/><br/>export __GL_SHADER_DISK_CACHE_PATH=&quot;/home/qchto/games/lutris/overwatch&quot;<br/><br/>export __GL_SHADER_DISK_CACHE_SKIP_CLEANUP=&quot;1&quot;<br/><br/>export DRI_PRIME=&quot;0&quot;<br/><br/>export STEAM_RUNTIME=&quot;/home/qchto/.local/share/lutris/runtime/steam&quot;<br/><br/>export LD_LIBRARY_PATH=&quot;/home/qchto/.local/share/lutris/runners/wine/staging-3.17-x86_64/lib:/home/qchto/.local/share/lutris/runners/wine/staging-3.17-x86_64/lib64:/usr/lib:/usr/lib32:/lib/x86_64-linux-gnu:/lib/i386-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/i386-linux-gnu:/home/qchto/.local/share/lutris/runtime/lib32:/home/qchto/.local/share/lutris/runtime/steam/i386/lib/i386-linux-gnu:/home/qchto/.local/share/lutris/runtime/steam/i386/lib:/home/qchto/.local/share/lutris/runtime/steam/i386/usr/lib/i386-linux-gnu:/home/qchto/.local/share/lutris/runtime/steam/i386/usr/lib:/home/qchto/.local/share/lutris/runtime/lib64:/home/qchto/.local/share/lutris/runtime/steam/amd64/lib/x86_64-linux-gnu:/home/qchto/.local/share/lutris/runtime/steam/amd64/lib:/home/qchto/.local/share/lutris/runtime/steam/amd64/usr/lib/x86_64-linux-gnu:/home/qchto/.local/share/lutris/runtime/steam/amd64/usr/lib:$LD_LIBRARY_PATH&quot;<br/><br/>export WINEDEBUG=&quot;-all&quot;<br/><br/>export WINEARCH=&quot;win64&quot;<br/><br/>export WINE=&quot;/home/qchto/.local/share/lutris/runners/wine/staging-3.17-x86_64/bin/wine&quot;<br/><br/>export WINEPREFIX=&quot;/home/qchto/games/lutris/overwatch&quot;<br/><br/>export WINEDLLOVERRIDES=&quot;d3d10,d3d10_1,d3d10core,d3d11,dxgi=n&quot;<br/><br/>LUTRIS_WINE=&quot;/home/qchto/.local/share/lutris/runners/wine/staging-3.17-x86_64/bin/wine&quot;<br/><br/>GAME_EXE=&quot;/home/qchto/games/cache/data/battlenet/Overwatch/Overwatch.exe&quot;<br/><br/>&quot;$LUTRIS_WINE&quot; &quot;$GAME_EXE&quot;<br/><br/>Save this file wherever you like (e.g. /home/qchto/games/launchers/overwatch.sh ), give it execution permission (e.g. chmod +x /home/qchto/games/launchers/overwatch.sh ). Now you should be able to execute it in order to test it (e.g. ./home/qchto/games/launchers/overwatch.sh ).<br/><br/>Finally, open Steam, add this script as a non-steam game shortcut (make sure to select &quot;All files&quot; in the file selector for the .sh files to appear), and it&#x27;s done. You can now execute this shortcut and get the Steam Overlay (even in Big Picture with Steam Controller custom controller mappings) working and ready to go.<br/><br/>As mentioned, this procedure should also work for any other Lutris Wine game (although be warned that some specific problems may arise depending on wine configuration). I have personally tested it not only with Overwatch but also with StarCraft II and it work perfectly on both.<br/><br/>Hope you find this helpful!<br/><br/><br/><br/>[1] https://forums.lutris.net/t/how-to-run-games-from-commandline-from-winesteam/95/5
+	</div>
+<hr/>
+  <div class='comment' style='display: block; margin-left: 80px'>
+    <h3>klinch3R</h3>
+    <div class='by' style='font-style: italic;'></div>
+    <div class='comment_content'><p>Nice effort</p></div>
+    <div class='comment' style='display: block; margin-left: 80px'>
+      <h3>qchto</h3>
+      <div class='by' style='font-style: italic;'></div>
+      <div class='comment_content'><p>Thanks. It's just that figuring out this took me far longer that I expected it would, so if someone is looking into achieving this luckily he/she will be able to just find this post, so imo any effort put is worth to be reported.</p></div>
+    </div>
+  </div>
+  <div class='comment' style='display: block; margin-left: 80px'>
+    <h3>UrbanFlash</h3>
+    <div class='by' style='font-style: italic;'></div>
+    <div class='comment_content'><p>Maybe i'm missing something, but i don't see the advantage over just adding the launcher Lutris creates as non-Steam game. Works well enough with Heroes of the Storm here...</p></div>
+    <div class='comment' style='display: block; margin-left: 80px'>
+      <h3>qchto</h3>
+      <div class='by' style='font-style: italic;'></div>
+      <div class='comment_content'><p>For once, the autogenerated launchers does not save environmental variables, so for games like Overwatch that require them (for things like DXVK) it doesn't even launch the game. And just to clear things up, using a .sh script with lutris lutris:rungame/overwatch makes the app not report properly for the Steam overlay to be recognized.</p><p>So by this method you're ensuring you're running the same wine environment launched by Lutris without depending on it to manage the process, therefore allowing for the Steam overlay to properly load.</p></div>
+      <div class='comment' style='display: block; margin-left: 80px'>
+        <h3>UrbanFlash</h3>
+        <div class='by' style='font-style: italic;'></div>
+        <div class='comment_content'><p>DKVK works fine for me. I notice no difference between launching the game from within Lutris, via the launcher in the menu or via the link in Steam.</p></div>
+        <div class='comment' style='display: block; margin-left: 80px'>
+          <h3>qchto</h3>
+          <div class='by' style='font-style: italic;'></div>
+          <div class='comment_content'><p>Do you have DXVK installed at system level? Having its variables exported to your session? Because after checking a couple .desktop files generated by Lutris (which tbh I was not even aware were created, as i3 makes a desktop seems redundant) I still don't see any declaration other than the WINE prefix, and none of them even launch the application they refer (tested for Overwatch and Battle.net automatically generated launchers).</p></div>
+          <div class='comment' style='display: block; margin-left: 80px'>
+            <h3>UrbanFlash</h3>
+            <div class='by' style='font-style: italic;'></div>
+            <div class='comment_content'><p>I don't have DXVK installed outside of Lutris and have done nothing apart from the things necessary to get the Blizzard app running.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='comment' style='display: block; margin-left: 80px'>
+    <h3>shmerl</h3>
+    <div class='by' style='font-style: italic;'></div>
+    <div class='comment_content'><p>Better figure out how to do it without Steam. That's the right method.</p></div>
+    <div class='comment' style='display: block; margin-left: 80px'>
+      <h3>qchto</h3>
+      <div class='by' style='font-style: italic;'></div>
+      <div class='comment_content'><p>While I agree, to provide some background on why I went this route:</p><p></p><p>I spent a lot of time trying to configure sc-controller to emulate a xbox-controller with gyro controlled right stick but it simply wouldn't allow for a duplicated RStick binding for the Steam Controller in both the right touchpad and the gyro (unlike Steam Overlay that does).</p><p></p><p>Even when I gave up on this and finally tried to test sc-controller in-game for Overwatch, it kept showing an erratic behavior with the game loaded (still not sure why, but when I tried to use the SC left tocuhpad it randomly started sending other outputs that made the game unplayable with it).</p><p></p><p>The Steam Overlay provide much more that just the ability to use the Steam Controller with decent xinput bindings, but also other features like ease to control the game with only a controller (for example allowing to exit the game if soft-locked without having to use kb&m), change the Controller configuration on the fly more easily (without depending on kb&m) and even have a more streamlined experience by using features like the Steam Chord button and Steam enabled screenshots, for example.</p><p>So it's not that I didn't tried to not use Steam..</p></div>
+      <div class='comment' style='display: block; margin-left: 80px'>
+        <h3>shmerl</h3>
+        <div class='by' style='font-style: italic;'></div>
+        <div class='comment_content'><p>Yeah, I agree sc-controller can still benefit from some improvements. It's still not using upstream kernel driver for instance.</p></div>
+        <div class='comment' style='display: block; margin-left: 80px'>
+          <h3>qchto</h3>
+          <div class='by' style='font-style: italic;'></div>
+          <div class='comment_content'><p>Gotta admit though, it's great to have alternatives available.</p></div>
+          <div class='comment' style='display: block; margin-left: 80px'>
+            <h3>shmerl</h3>
+            <div class='by' style='font-style: italic;'></div>
+            <div class='comment_content'><p>For sure, especially for those who aren't using Steam to begin with.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='comment' style='display: block; margin-left: 80px'>
+    <h3>Brunfunstudios</h3>
+    <div class='by' style='font-style: italic;'></div>
+    <div class='comment_content'><p>Nice work. Would be kinda nice to have a right click option just saying add_to_Steam and this being handled in the background. :) Just an idea</p></div>
+  </div>
+  <div class='comment' style='display: block; margin-left: 80px'>
+    <h3>Razdiel</h3>
+    <div class='by' style='font-style: italic;'></div>
+    <div class='comment_content'><p>Since you gave it a try why not post benchmarks or general feedback about it? was it worth it running it with proton?</p><p>GJ btw the linux comunity salutes you brave soldier!</p></div>
+  </div>
+</div>
+</body>

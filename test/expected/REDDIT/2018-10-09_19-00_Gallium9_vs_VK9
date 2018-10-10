@@ -1,0 +1,55 @@
+                           GALLIUM9 VS VK9                         
+
+  [linux_gaming] 2018-10-09_19-00
+
+  o Reference: 2018-10-09_19-00_Gallium9_vs_VK9
+  o News link: https://www.reddit.com/r/linux_gaming/comments/9lgn9p/gallium9_vs_vk9/
+  o Source link: 
+
+
+    So  i  read  an interview that the DXVK dev was inspired by VK9
+    so i decided to check it out, and then remembered Gallium9.
+    
+    I  understand  VK9  tries  to translate the calls to Vulkan but
+    what does Gallium9 do different from VK9?
+
+
+  ** ezs1lly
+     One important difference not mentioned yet: Gallium is working.
+     VK9 is still in development. Another is that gallium is for open
+     source drivera only. vK9 a more generic translation layer
+     similar to dxvk. Zink is a new project to do gallium over
+     vulkan, would give similar solution as VK9. But even earlier in
+     dev you could say.
+
+     ** breell
+        Another is that gallium is for open source drivera only
+        Not even, only gallium drivers, so not the current Intel one
+        because it's a classic Mesa one.
+
+
+  ** breell
+     Gallium nine is a Gallium state tracker that takes D3D9 in.
+
+  ** ComputerMystic
+     Gallium Nine, from what I understand, cuts out the middleman.
+     It's implementing DX9 in the driver the same way GL or Vulkan
+     would be, without translating the DX9 calls to another
+     intermediate API before letting the driver do its thing with
+     them.
+
+     ** breell
+        Well technically it does translate D3D9 to another
+        intermediate API: the Gallium API, but so does the OGL state
+        tracker.
+
+
+  ** rea987
+     Gallium Nine provides native Direct3D 9 rendering, VK9
+     translates Direct3D 9 calls into Vulkan.
+
+  ** meeheecaan
+     iirc gallium would be better since its a linux native dx9
+     implementation if i understand. but nvidia wont use it :(
+
+

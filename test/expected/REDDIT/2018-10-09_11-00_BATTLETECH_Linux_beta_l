@@ -1,0 +1,463 @@
+   BATTLETECH LINUX BETA LOADING TEN TIMES FASTER THAN ON WINDOWS  
+                        10? OH, THE IRONY...                       
+
+  [linux_gaming] 2018-10-09_11-00
+
+  o Reference: 2018-10-09_11-00_BATTLETECH_Linux_beta_l
+  o News link: https://www.reddit.com/r/linux_gaming/comments/9ld2i1/battletech_linux_beta_loading_ten_times_faster/
+  o Source link: https://steamcommunity.com/app/637090/discussions/0/1693788384146305062/?ctp=13#c2747650363470418004
+
+
+    ive  always  noticed  that  stuff  loads  much  faster on Linux
+    compared to windows, can someone explain why?
+
+
+  ** zee220
+     ive always noticed that stuff loads much faster on Linux
+     compared to windows, can someone explain why?
+
+     ** pwgen-sy100
+        Better filesystem's, better IO scheduling, better scheduling
+        in general, less chances of some stupid ass av to clog up all
+        the io is what I've found.
+
+        ** breakbeats573
+           Unless you open calculator on Ubuntu. It's comical
+           actually.
+
+
+        ** zebediah49
+           Also what appears to be more aggressive caching, and less
+           bloat to burn through memory that would otherwise be
+           cached.
+           I've note looked too carefully at it, but Windows machines
+           usually appear to have a whole lot of free memory, and
+           relatively little cached.
+           Meanwhile, my laptop has 10GB of "stuff" just floating
+           around in memory in case I happen to want it.
+
+
+
+     ** jhansonxi
+        Yesterday I updated a Win10 laptop that had been sitting on a
+        shelf for two years. I could have installed a dozens systems
+        with *buntu using a online install from a mini boot image,
+        with all major apps installed and updated, in the time it
+        took Win10 to finish its updates, update reattempts, and
+        dozen or so reboots. What's worse is that most of the Win10
+        updates were either for the OS or Office only. Any Linux
+        package manager updates nearly everything and Steam handles
+        most of the rest.
+
+
+     ** Batolemaeus
+        AV is the worst offender because it hooks into all I/O. But
+        there's also significant overhead in NTFS when dealing with
+        many small files. It's partially the cost of the much more
+        involved security model on NT (and ACL processing). That's
+        why compiling has an extreme performance penalty on Windows,
+        since it reads and writes many small files.
+
+
+     ** aaronfranke
+        In addition to what's already been said, EXT4 doesn't
+        fragment nearly as much as NTFS.
+
+
+     ** Craftkorb
+        Linux is pretty good when it comes to utilizing (otherwise)
+        free memory, using it to cache ("buffer") parts of your
+        drives. Just try to do an reading-intensive I/O task, like
+        find / -name stdio.h . The first may take a while, but then
+        just rerun the command. It's much quicker, because Linux
+        cached (in this case) the file structure the first time, and
+        now can just quickly grab it from there again for the second
+        time.
+        Want to see the caching of files (and not structures) in
+        action? Find any medium sized file (about a gigabyte in
+        size). Now, call md5sum path/to/the/file on it. Call it again
+        afterwards. It should be much faster.
+        Don't have such a file handy? You can generate a "large.file"
+        using dd if=/dev/zero of=large.file bs=4096 count=262144 . Do
+        note that by doing this, Linux will already have (all or
+        parts of) the file cached, the difference between both calls
+        should be much smaller.
+        A much more file-centric system basically requires a good I/O
+        cache to get good performance. Crucial for slow spinning
+        drives (or worse, magnetic drives), but still really
+        important for SSDs.
+
+
+     ** robot_rover
+        It’s because windows search and windows compatibility
+        telemetry are currently using 100% or ur hard disk time
+
+
+  ** JackCourtney
+     Not a game, but GIMP loads so much faster on linux than windows
+
+     ** 8bitcerberus
+        Pretty much all of them, GIMP, Krita, Inkscape, Scribus,
+        Kdenlive, Blender, etc. Faster than Windows and way faster
+        than OS X. Blender is probably the closest I've seen between
+        the 3 OSes, but it's still measurably faster on Linux, the
+        others though, there's no contest.
+
+
+     ** pooerh
+        Yeah that's probably mostly because you have gtk libs in
+        shared memory from either other open apps or even your entire
+        DE, while GIMP is the only thing that needs them on Windows.
+
+        ** one_is_the_loneliest
+           Don't Windows apps typically bundle their own deps, so
+           you'll end up with several of the same dep in memory at a
+           time?
+           However, libraries are typically pretty small, so I'm
+           guessing it doesn't explain most of the difference, but
+           it's certainly a contributor.
+
+           ** pooerh
+              Whole UI libraries like gtk or Qt are pretty big
+              actually, which is why they usually start slower on
+              Windows than on Linux. Most Windows apps are written
+              using either Win32 API or .net and these aren't bundled
+              with apps, these usually start up pretty quickly.
+
+              ** one_is_the_loneliest
+                 Huh, I just figured that Windows apps would bundle
+                 their UI libs, but I guess that makes sense.
+
+
+
+
+
+  ** Swiftpaw22
+     Now, maybe they're not comparing fresh load to fresh load, but
+     it wouldn't at all surprise me if it was true when comparing
+     second+ load to second+ load as Linux has always shined very
+     brightly when it came to caching games to RAM better than
+     Windows. Secondary loads in most of the games I've seen load
+     faster than on Windows.
+
+     ** pdp10
+        Both the Linux storage I/O subsystem and the Linux
+        filesystems themselves are known to be faster than Windows
+        NTFS.
+        On the majority of modern games you don't see much of a
+        difference, though, because the assets are packed into
+        ordered binary files and then memory-mapped. In a way, the
+        devs are working around something of a Windows weakness by
+        doing that (though it's a performance win in general).
+        That's a common pattern -- developers architect the game to
+        work around Windows weaknesses, and of course don't take
+        advantage of the strengths on Linux/POSIX. In principle
+        someone could go the other direction, and design for some of
+        POSIX/Linux strengths; I've pondered the topic in posts here
+        before but neither I nor anyone else has a coherent thesis on
+        the topic yet.
+
+        ** s0v3r1gn
+           The largest differences between EXT4 and NTFS that affects
+           the I/O are the maximum cluster size and the
+           “allocate-on-flush” method of allocating disk space.
+           The latest version of NTFS substantially increased the
+           maximum cluster size and both the cluster size and the
+           “allocate-on-flush” method are substantially less
+           impactful on loading times on SSDs than they were on HDDs.
+           The largest difference in load times is probably caused by
+           Windows memory management being far more zealous in
+           purging garbage.
+
+           ** piotrj3
+              This. On loading screen there is a lot of memory
+              allocation and thread creation and so on and this is
+              where linux is faster.
+
+
+
+        ** Tom2Die
+           I've pondered the topic in posts here before but neither I
+           nor anyone else has a coherent thesis on the topic yet.
+           I have faith that some day when you mature a bit more and
+           become a PDP-11 you'll find the answers you seek.
+
+           ** pdp10
+              And drop 20 bits from the word?
+
+              ** Tom2Die
+                 Wait, did they really? There must be a good reason,
+                 but I'm not too familiar with older tech.
+
+                 ** pdp10
+                    The short version is that the PDP-10 is a very
+                    large 36-bit mainframe, and the PDP-11 is a
+                    16-bit minicomputer that only took up a couple of
+                    racks originally -- a small fraction of the
+                    physical size. Even thought the model lines sound
+                    similar, they were very different product lines
+                    that were used for different purposes.
+                    PDP-11s were the second model of computer to run
+                    Unix, and the place where most of Unix was
+                    invented. Only PDP-11s ran Unix until the late
+                    1970s. Later, the most popular hardware to run
+                    Unix were VAXes, the 32-bit replacement for the
+                    venerable PDP-11s. DEC didn't really like it when
+                    customers bought their hardware but not their
+                    operating systems. Unix never ran on 36-bit
+                    machines. The big tens are rather unique in
+                    history.
+                    However, the command-line syntax was quite
+                    similar on all of the DEC operating systems.
+                    Kildall used much of it in CP/M, and through that
+                    path, much of it went into DOS. DOS also
+                    inherited a bit of syntax from Xenix, which
+                    Microsoft had licensed a year or two prior to the
+                    IBM PC project.
+                    Microsoft wanted to license Xenix to the
+                    different OEM computer manufacturers, and sell
+                    their apps for Xenix in addition to other
+                    operating systems, prior to the IBM PC
+                    opportunity falling into their laps. Microsoft
+                    did continue to make apps for other operating
+                    systems, most fervently MacOS, the home of Excel.
+                    Word was on Xenix first, and only much later came
+                    to the Mac and to the fledgling Windows.
+                    Unix was originally invented for gaming and word
+                    processing, and Microsoft Word was originally
+                    made for Unix. History is stranger than you
+                    think.
+
+                    ** Tom2Die
+                       The odd thing is that at one point in time I
+                       knew most of that, but it's the sort of trivia
+                       that if one doesn't engage with it it just
+                       vanishes from memory without notice.
+
+
+
+
+
+
+
+  ** ihjyuhgyhhg
+     Can confirm, witcher 3 and GTA sa loading on Linux is
+     unbelievably faster than windows.
+
+     ** sixsupersonic
+        Which is interesting considering those are windows games
+        running in wine.
+
+        ** ihjyuhgyhhg
+           Exactly and also w3 runs at 24fps compared to 29fps on
+           windows. It was already amazing that game was working but
+           this. Linux is future.
+
+
+
+  ** airspeedmph
+     Not surprised, I have an old X-Plane benchmark where you can see
+     also a striking difference in loading times (link at the
+     respective test):
+     [1]https://youtu.be/M5ygXe9fWR4?t=12
+     I also see very long loading times on Windows for Arma3, Rust
+     and a couple of others, so yeah, not surprised.
+     Edit TL;DW: X-Plane scenery and all loading in 00:56 min for
+     SteamOS and 02:33 min for Windows.
+     
+     
+     
+     
+     [1] https://youtu.be/M5ygXe9fWR4?t=12
+
+  ** Leopard1907
+     Well , that is a known perk of Linux
+     Once upon a time PenguinRecordings ( a Youtube channel ) was
+     doing Linux game benchmarks.
+     He was always comparing load times on Linux vs Windows. Let it
+     be Feral ports or something else , always Linux was faster one.
+
+     ** Two-Tone-
+        PenguinRecordings
+        I miss his benchmarks. :c
+
+        ** Leopard1907
+           Yeah , i also miss.
+           His enthusiasm was really something else.
+           Right after doing Doom 2016 via Wine video , he gone mute.
+
+           ** Swiftpaw22
+              Yep, sad, wonder what happened to him. Sounds like it
+              may have been a side project while he was in school.
+
+              ** Leopard1907
+                 I hope he is enjoying SteamPlay like we do and
+                 living his life. :)
+
+                 ** Swiftpaw22
+                    That doesn't mean we don't still need Linux game
+                    benchmarking. At least we have Phoronix and a few
+                    other youtube channels that do it somewhat.
+
+
+
+
+
+
+  ** mykro76
+     ITT - many apps and games do load faster on Linux.
+     This seems like something worth promoting to game devs as a
+     benefit of developing on Linux. How much time must they spend
+     staring at their own loading screen when tweaking and testing
+     their game?
+
+     ** Swiftpaw22
+        Good point!
+
+
+  ** ThenewLore
+     If it only would load the actual missions and not crash on the
+     mission title...
+
+  ** Atlas__risen
+     I noticed a big improvement in FFXV on Linux vs Windows as well.
+
+  ** Offensive_joke_lord
+     My windows-using friend is always so impressed by how fast my
+     games load. Well, it's happened twice, once with invisible inc
+     and once with crusader kings II. I'm pretty sure his computer is
+     better spec-wise as well
+
+     ** Swiftpaw22
+        On the first load, or subsequent loads, or all loads? Because
+        Linux generally seems faster to load all games on subsequent
+        loads at least, but also sometimes on first loads as well.
+
+        ** Offensive_joke_lord
+           Both first loads actually, we only play, and have only
+           played, those games together at my house
+           P.S. (yes, they're both singleplayer haha, we have fun
+           playing singleplayer games and exchanging the controls.)
+           P.P.S. (we even divide controls, one time we had 3 people
+           and we played the binding of isaac where one person moved,
+           one attacked, and the other used items)
+
+           ** Swiftpaw22
+              Cool, and sounds fun, playing together is always best!
+              :3
+
+
+
+        ** Greydmiyu
+           For me it is both. But that is because when I dumped Win10
+           off my gaming rig I purposely went the LVM route so I
+           could clear off my largely unused SSD and make it a
+           [1]cache for my HDD.
+           The problem I had before was that I would get a game, put
+           it on the SSD for fast loading, then move on to another
+           game and not swap the games out from the SSD. With LVM
+           using the SSD as a cache anything I use often gets loaded
+           onto the SSD. If it ever fills up stuff I've stopped using
+           gets removed from SSD. No need for me to manage it
+           manually.
+           Recently it has been Warframe and World of Warcraft that
+           take up the bulk of my time. From boot to shutdown about
+           80-90% of my file-system calls hit the SSD. I have a 120Gb
+           cache for a 2Tb drive and so far it's only about 60%
+           utilized.
+           A few months of that without touching the Win10 drive I
+           still have sitting there and I can drop the cache, add the
+           1Tb of space to my volume, expand my file system, put the
+           cache back on and have a 3Tb seamless logical volume to
+           play with. :)
+           
+           
+           
+           
+           [1]
+           https://rwmj.wordpress.com/2014/05/22/using-lvms-new-cache-
+           feature/
+
+           ** Swiftpaw22
+              The problem I had before was that I would get a game,
+              put it on the SSD for fast loading, then move on to
+              another game and not swap the games out from the SSD.
+              With LVM using the SSD as a cache anything I use often
+              gets loaded onto the SSD. If it ever fills up stuff
+              I've stopped using gets removed from SSD. No need for
+              me to manage it manually.
+              I was about to ask wtf the point of this would be, lol,
+              but that clears things up, thanks!
+              I guess since RAM is more expensive than a SSD, having
+              the SSD cache things makes sense as long as RAM is
+              still used first and foremost for file caching.
+              
+              have a 3Tb seamless logical volume to play with
+              As long as you have a backup somewhere of all your
+              important stuff! Since HDDs are big and cheap I prefer
+              just using one big one. Hell, there are 10TB ones out
+              now and higher.
+
+              ** Greydmiyu
+                 As long as you have a backup somewhere of all your
+                 important stuff! Since HDDs are big and cheap I
+                 prefer just using one big one. Hell, there are 10TB
+                 ones out now and higher.
+                 These are the two largest drives I have. I used to
+                 have Win10 on the 1TB and used the 2TB to record
+                 gaming videos. When I wanted to switch I realized I
+                 could just drop Linux on the 2TB drive and have the
+                 1TB Win10 to fall back to if my litmus test for
+                 Linux wasn't passed this time around (Warframe & WoW
+                 being playable).
+                 Being able to merge the 1TB into the file system is
+                 just an added bonus for when I'm ready to get rid of
+                 the safety blanket. Been a month and I think I've
+                 thought about booting to that drive... once? But the
+                 desire to try Destiny 2 again passed. :)
+
+
+
+
+
+  ** yoshi314
+     too bad this beta won't load its own saves. i am reluctant to
+     replay game from scratch again, because neither autosaves nor my
+     manual saves will load.
+
+     ** Dakkaface
+        Haven't have that issue myself, it's been working for me
+        aside from some graphical glitches. Hopefully they get it
+        working for everyone soon.
+
+
+  ** MJBrune
+     I will say while I do think there is some sort of faster load on
+     linux, one user randomly staying on a forum shouldn't really be
+     big news and certainly shouldn't be held as true to any real
+     means.
+
+     ** Swiftpaw22
+        Linux loading times being faster for many games, especially
+        during 2nd+ loads, is 100% confirmed. As for this particular
+        game, other users have confirmed the same thing within this
+        very post.
+        So, while wanting evidence is amiable, we already have it.
+
+        ** MJBrune
+           I mean sure. And there are plenty of benchmarks to show
+           it. I just think "10 times" is a bit excessive and random.
+           I dunno. Am not trying to crap on your joke either.
+
+           ** Swiftpaw22
+              I don't know how accurate "10" is hehe, but some of the
+              benchmark videos show huge differences, so I totally
+              get someone say "10 times faster". But we don't have to
+              be overly anal, they just mean it's "much faster" I'm
+              sure, and that much is confirmed.
+              Nothing against anal. :3
+
+
+
+
+
