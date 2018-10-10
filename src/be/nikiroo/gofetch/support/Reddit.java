@@ -59,8 +59,15 @@ public class Reddit extends BasicSupport {
 
 	@Override
 	protected String getArticleId(Document doc, Element article) {
-		// Use the date, Luke
-		return "";
+		String date = getArticleDate(doc, article);
+		String title = getArticleTitle(doc, article);
+		
+		String id = (date + "_" + title).replaceAll("[^a-zA-Z0-9_-]", "_");
+		if (id.length() > 40) {
+			id = id.substring(0, 40);
+		}
+		
+		return id;
 	}
 
 	@Override
