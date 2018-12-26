@@ -1,6 +1,6 @@
 # Gofetch
 
-## Version WIP
+## Version 1.3.0
 
 - Fix subtitles and too much content in EreNumerique
 - Fix content wrapping in LWN
@@ -8,6 +8,8 @@
 - Allow <pre> in all supports
 - Lot of other small fixes
 - New tests based upon static "example" content (not dynamic)
+- Remove dead website PipeDot
+- Fix Redit changing IDs
 
 ## Version 1.2.0
 
