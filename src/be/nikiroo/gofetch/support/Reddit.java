@@ -79,8 +79,12 @@ public class Reddit extends BasicSupport {
 
 	@Override
 	protected String getArticleAuthor(Document doc, Element article) {
-		return article.getElementsByAttributeValueStarting("href", "/user/")
-				.text().trim();
+		String user = article
+				.getElementsByAttributeValueStarting("href", "/user/").text()
+				.trim();
+		if (user.startsWith("/u"))
+			user = user.substring(3);
+		return user;
 	}
 
 	@Override
@@ -92,7 +96,7 @@ public class Reddit extends BasicSupport {
 		}
 
 		String dateAgo = el.text().trim();
-		return new SimpleDateFormat("yyyy-MM-dd_HH-mm")
+		return new SimpleDateFormat("yyyy-MM-dd") // _HH-mm
 				.format(getDate(dateAgo));
 	}
 
