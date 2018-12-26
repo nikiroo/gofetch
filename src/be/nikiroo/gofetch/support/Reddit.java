@@ -184,21 +184,11 @@ public class Reddit extends BasicSupport {
 	@Override
 	protected List<Element> getCommentCommentPosts(Document doc,
 			Element container) {
+
 		List<Element> elements = new LinkedList<Element>();
 		for (Element el : container.children()) {
-			elements.addAll(el.getElementsByClass("jHfOJm"));
-
-		}
-
-		if (elements.isEmpty()) {
-			for (Element el : container.children()) {
-				elements.addAll(el.getElementsByClass("s1ook3io-0"));
-				elements.addAll(el.getElementsByClass("s1ook3io-1"));
-				elements.addAll(el.getElementsByClass("s1ook3io-2"));
-				elements.addAll(el.getElementsByClass("s1ook3io-3"));
-				elements.addAll(el.getElementsByClass("s1ook3io-4"));
-				elements.addAll(el.getElementsByClass("s1ook3io-5"));
-			}
+			// elements.addAll(el.getElementsByClass("jHfOJm"));
+			elements.addAll(el.getElementsByClass("emJXdb"));
 		}
 
 		return elements;
@@ -208,8 +198,6 @@ public class Reddit extends BasicSupport {
 	protected String getCommentId(Element post) {
 		int level = 1;
 		Elements els = post.getElementsByClass("imyGpC");
-		if (els.isEmpty())
-			els.addAll(post.getElementsByClass("emJXdb"));
 
 		if (!els.isEmpty()) {
 			String l = els.first().text().trim().replace("level ", "");
@@ -276,18 +264,22 @@ public class Reddit extends BasicSupport {
 		List<Comment> comments = new LinkedList<Comment>();
 		Map<Integer, Comment> lastOfLevel = new HashMap<Integer, Comment>();
 
-		for (Comment c : story.getComments()) {
-			int level = Integer.parseInt(c.getId());
-			lastOfLevel.put(level, c);
-			if (level <= 1) {
-				comments.add(c);
-			} else {
-				Comment parent = lastOfLevel.get(level - 1);
-				if (parent != null) {
-					parent.add(c);
-				} else {
-					// bad data
+		if (!story.getComments().isEmpty()) {
+			// comments are saved under a main ID (which is a copy of comment 1)
+			// TODO: fix the cause instead of working around it here
+			for (Comment c : story.getComments().get(0)) {
+				int level = Integer.parseInt(c.getId());
+				lastOfLevel.put(level, c);
+				if (level <= 1) {
 					comments.add(c);
+				} else {
+					Comment parent = lastOfLevel.get(level - 1);
+					if (parent != null) {
+						parent.add(c);
+					} else {
+						// bad data
+						comments.add(c);
+					}
 				}
 			}
 		}
