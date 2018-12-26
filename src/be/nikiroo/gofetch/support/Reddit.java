@@ -1,26 +1,23 @@
 package be.nikiroo.gofetch.support;
 
-import be.nikiroo.gofetch.data.Story;
-import be.nikiroo.gofetch.data.Comment;
-
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 import java.net.URL;
-import java.net.URLDecoder;
+import java.text.SimpleDateFormat;
 import java.util.AbstractMap;
 import java.util.ArrayList;
-import java.util.List;
-import java.util.LinkedList;
-import java.util.Map.Entry;
-import java.util.Map;
-import java.util.HashMap;
 import java.util.Date;
-import java.text.SimpleDateFormat;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
-import org.jsoup.nodes.Node;
 import org.jsoup.select.Elements;
+
+import be.nikiroo.gofetch.data.Comment;
+import be.nikiroo.gofetch.data.Story;
 
 /**
  * Support <a href="https://www.reddit.com/">https://www.reddit.com/</a>.
@@ -37,9 +34,8 @@ public class Reddit extends BasicSupport {
 	protected List<Entry<URL, String>> getUrls() throws IOException {
 		List<Entry<URL, String>> urls = new ArrayList<Entry<URL, String>>();
 		String base = "https://www.reddit.com/r/";
-		urls.add(new AbstractMap.SimpleEntry<URL, String>(
-			new URL(base + "linux_gaming" + "/new/"), "linux_gaming"
-		));
+		urls.add(new AbstractMap.SimpleEntry<URL, String>(new URL(base
+				+ "linux_gaming" + "/new/"), "linux_gaming"));
 
 		return urls;
 	}
@@ -53,7 +49,7 @@ public class Reddit extends BasicSupport {
 		if (list.isEmpty()) {
 			list = doc.getElementsByClass("scrollerItem");
 		}
-		
+
 		return list;
 	}
 
@@ -61,57 +57,55 @@ public class Reddit extends BasicSupport {
 	protected String getArticleId(Document doc, Element article) {
 		String date = getArticleDate(doc, article);
 		String title = getArticleTitle(doc, article);
-		
+
 		String id = (date + "_" + title).replaceAll("[^a-zA-Z0-9_-]", "_");
 		if (id.length() > 40) {
 			id = id.substring(0, 40);
 		}
-		
+
 		return id;
 	}
 
 	@Override
 	protected String getArticleTitle(Document doc, Element article) {
-		Elements els = article.getElementsByAttributeValue(
-				"data-event-action", "title");
+		Elements els = article.getElementsByAttributeValue("data-event-action",
+				"title");
 		if (els == null || els.isEmpty()) {
 			els = article.getElementsByTag("h2");
 		}
-		
+
 		return els.first().text().trim();
 	}
-	
+
 	@Override
 	protected String getArticleAuthor(Document doc, Element article) {
-		return article.getElementsByAttributeValueStarting(
-			"href", "/user/"
-		).text().trim();
+		return article.getElementsByAttributeValueStarting("href", "/user/")
+				.text().trim();
 	}
 
 	@Override
 	protected String getArticleDate(Document doc, Element article) {
 		Element el = article.getElementsByClass("live-timestamp").first();
 		if (el == null) {
-			el = article.getElementsByAttributeValue(
-				"data-click-id", "timestamp").first();
+			el = article.getElementsByAttributeValue("data-click-id",
+					"timestamp").first();
 		}
-		
+
 		String dateAgo = el.text().trim();
-		return new SimpleDateFormat("yyyy-MM-dd_HH-mm").format(getDate(dateAgo));
+		return new SimpleDateFormat("yyyy-MM-dd_HH-mm")
+				.format(getDate(dateAgo));
 	}
 
 	@Override
 	protected String getArticleCategory(Document doc, Element article,
 			String currentCategory) {
-		Elements categEls = article.getElementsByAttributeValueStarting(
-			"href", "/r/" + currentCategory + "/search=?q=flair_name"
-		);
-		
+		Elements categEls = article.getElementsByAttributeValueStarting("href",
+				"/r/" + currentCategory + "/search=?q=flair_name");
+
 		if (categEls.size() > 0) {
-			return currentCategory + ", " 
-				+ categEls.first().text().trim();
+			return currentCategory + ", " + categEls.first().text().trim();
 		}
-		
+
 		return currentCategory;
 	}
 
@@ -124,27 +118,27 @@ public class Reddit extends BasicSupport {
 	protected String getArticleIntUrl(Document doc, Element article) {
 		String url = article.absUrl("data-permalink");
 		if (url == null || url.isEmpty()) {
-			url = article.getElementsByAttributeValue(
-				"data-click-id", "timestamp").first().absUrl("href");
+			url = article
+					.getElementsByAttributeValue("data-click-id", "timestamp")
+					.first().absUrl("href");
 		}
-		
+
 		return url;
 	}
 
 	@Override
 	protected String getArticleExtUrl(Document doc, Element article) {
-		Elements els = article.getElementsByAttributeValue(
-			"data-event-action", "title");
+		Elements els = article.getElementsByAttributeValue("data-event-action",
+				"title");
 		if (els == null || els.isEmpty()) {
-			els = article.getElementsByAttributeValue(
-					"data-click-id", "body");
+			els = article.getElementsByAttributeValue("data-click-id", "body");
 		}
-		
+
 		Element url = els.first();
 		if (!url.attr("href").trim().startsWith("/")) {
 			return url.absUrl("href");
 		}
-		
+
 		return "";
 	}
 
@@ -154,18 +148,18 @@ public class Reddit extends BasicSupport {
 		if (els != null && !els.isEmpty()) {
 			return els.first().text().trim();
 		}
-		
+
 		return "";
 	}
 
 	@Override
 	protected Element getFullArticle(Document doc) {
-		Element element = doc.getElementsByAttributeValue(
-			"data-click-id", "body").first();
+		Element element = doc.getElementsByAttributeValue("data-click-id",
+				"body").first();
 		if (element == null) {
 			element = doc.getElementsByClass("ckueCN").first();
 		}
-		
+
 		return element;
 	}
 
@@ -180,7 +174,10 @@ public class Reddit extends BasicSupport {
 		if (posts.isEmpty()) {
 			posts = doc.getElementsByClass("eCeBkc");
 		}
-		
+		if (posts.isEmpty()) {
+			posts = doc.getElementsByClass("gxtxxZ");
+		}
+
 		return posts;
 	}
 
@@ -190,8 +187,15 @@ public class Reddit extends BasicSupport {
 		List<Element> elements = new LinkedList<Element>();
 		for (Element el : container.children()) {
 			elements.addAll(el.getElementsByClass("jHfOJm"));
+
 		}
-		
+
+		if (elements.isEmpty()) {
+			for (Element el : container.children()) {
+				elements.addAll(el.getElementsByClass("Comment"));
+			}
+		}
+
 		return elements;
 	}
 
@@ -199,15 +203,17 @@ public class Reddit extends BasicSupport {
 	protected String getCommentId(Element post) {
 		int level = 1;
 		Elements els = post.getElementsByClass("imyGpC");
-		if (els.size() > 0) {
-			String l = els.first().text().trim()
-				.replace("level ", "");
+		if (els.isEmpty())
+			els.addAll(post.getElementsByClass("emJXdb"));
+
+		if (!els.isEmpty()) {
+			String l = els.first().text().trim().replace("level ", "");
 			try {
 				level = Integer.parseInt(l);
-			} catch(NumberFormatException e) {
+			} catch (NumberFormatException e) {
 			}
 		}
-		
+
 		return Integer.toString(level);
 	}
 
@@ -220,45 +226,51 @@ public class Reddit extends BasicSupport {
 	@Override
 	protected String getCommentTitle(Element post) {
 		// Since we have no title, we switch with author
-		Elements els = post.getElementsByClass("RVnoX");
-		if (els.size() > 0) {
-			return els.first().text().trim();
-		}
-		
-		els = post.getElementsByClass("kzePTH");
-		if (els.size() > 0) {
-			return els.first().text().trim();
-		}
-		
+
+		Element authorEl = post.getElementsByClass("RVnoX").first();
+		if (authorEl == null)
+			authorEl = post.getElementsByClass("kzePTH").first();
+		if (authorEl == null)
+			authorEl = post.getElementsByClass("jczTlv").first();
+
+		if (authorEl != null)
+			return authorEl.text().trim();
+
 		return "";
 	}
 
 	@Override
 	protected String getCommentDate(Element post) {
-		String dateAgo = post.getElementsByClass("hJDlLH")
-			.first().text().trim();
-		return new SimpleDateFormat("yyyy-MM-dd_HH-mm").format(getDate(dateAgo));
+		Element elAgo = post.getElementsByClass("hJDlLH").first();
+		if (elAgo == null)
+			elAgo = post.getElementsByClass("hDplaG").first();
+
+		if (elAgo != null) {
+			String dateAgo = elAgo.text().trim();
+			return new SimpleDateFormat("yyyy-MM-dd_HH-mm")
+					.format(getDate(dateAgo));
+		}
+
+		return "";
 	}
 
 	@Override
 	protected Element getCommentContentElement(Element post) {
-		return post.getElementsByClass("ckueCN")
-			.first();
+		return post.getElementsByClass("ckueCN").first();
 	}
 
 	@Override
 	protected ElementProcessor getElementProcessorComment() {
 		return new BasicElementProcessor();
 	}
-	
+
 	@Override
 	public void fetch(Story story) throws IOException {
 		super.fetch(story);
-		
+
 		List<Comment> comments = new LinkedList<Comment>();
-		Map<Integer, Comment> lastOfLevel = 
-			new HashMap<Integer, Comment>();
-		
+		Map<Integer, Comment> lastOfLevel = new HashMap<Integer, Comment>();
+
 		for (Comment c : story.getComments()) {
 			int level = Integer.parseInt(c.getId());
 			lastOfLevel.put(level, c);
@@ -266,7 +278,7 @@ public class Reddit extends BasicSupport {
 				comments.add(c);
 			} else {
 				Comment parent = lastOfLevel.get(level - 1);
-				if (parent != null ){
+				if (parent != null) {
 					parent.add(c);
 				} else {
 					// bad data
@@ -274,10 +286,10 @@ public class Reddit extends BasicSupport {
 				}
 			}
 		}
-		
+
 		story.setComments(comments);
 	}
-	
+
 	// 2 hours ago -> 18/10/2018 21:00
 	private Date getDate(String dateAgo) {
 		int h = 0;
@@ -292,12 +304,12 @@ public class Reddit extends BasicSupport {
 			dateAgo = dateAgo.replace("days ago", "").trim();
 			h = Integer.parseInt(dateAgo) * 24;
 		}
-		
-		long now = new Date().getTime();   // in ms since 1970
-		now = now / (1000l * 60l * 60l);   // in hours since 1970
-		long then = now - h;               // in hours since 1970
+
+		long now = new Date().getTime(); // in ms since 1970
+		now = now / (1000l * 60l * 60l); // in hours since 1970
+		long then = now - h; // in hours since 1970
 		then = then * (1000l * 60l * 60l); // in ms since 1970
-		
+
 		return new Date(then);
 	}
 }
