@@ -3,7 +3,6 @@ package be.nikiroo.gofetch.support;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -34,7 +33,7 @@ import be.nikiroo.utils.StringUtils;
  */
 public abstract class BasicSupport {
 	/**
-	 * The downloader to use for all web sites via
+	 * The {@link Downloader} to use for all web sites via
 	 * {@link BasicSupport#open(URL)}
 	 */
 	static private Downloader downloader = new Downloader("gofetcher");
@@ -56,6 +55,7 @@ public abstract class BasicSupport {
 	 *             in case of I/O error
 	 * 
 	 */
+	@SuppressWarnings("unused")
 	public void login() throws IOException {
 	}
 
@@ -133,9 +133,10 @@ public abstract class BasicSupport {
 						id = "0" + id;
 					}
 				} else {
-					id = date.replace(":", "_").replace("+", "_").replace("/", "-");
+					id = date.replace(":", "_").replace("+", "_")
+							.replace("/", "-");
 				}
-				
+
 				date = date(date);
 
 				list.add(new Story(getType(), id, title, author, date, categ,
@@ -576,9 +577,6 @@ public abstract class BasicSupport {
 			switch (type) {
 			case SLASHDOT:
 				support = new Slashdot();
-				break;
-			case PIPEDOT:
-				support = new Pipedot();
 				break;
 			case LWN:
 				support = new LWN();

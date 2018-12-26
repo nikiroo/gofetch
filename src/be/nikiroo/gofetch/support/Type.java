@@ -8,8 +8,6 @@ package be.nikiroo.gofetch.support;
 public enum Type {
 	/** EN: Any, but mostly IT/Sci */
 	SLASHDOT,
-	/** EN: Clone of Slashdot, mostly abandoned */
-	PIPEDOT,
 	/** EN: Linux */
 	LWN,
 	/** FR: Any */

@@ -15,7 +15,6 @@ The program will also helpfully create a ```gophermap``` and an ```index.html```
 ### Supported websites
 
 - Slashdot: News for nerds, stuff that matters!
-- Pipedot: News for nerds, without the corporate slant
 - LWN: Linux Weekly Newsletter
 - Le Monde: Actualités et Infos en France et dans le monde
 - The Register: Biting the hand that feeds IT
