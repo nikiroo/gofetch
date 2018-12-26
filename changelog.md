@@ -1,5 +1,9 @@
 # Gofetch
 
+## Version 1.3.1
+
+- Fix Redit changing IDs
+
 ## Version 1.3.0
 
 - Fix subtitles and too much content in EreNumerique
@@ -9,7 +13,6 @@
 - Lot of other small fixes
 - New tests based upon static "example" content (not dynamic)
 - Remove dead website PipeDot
-- Fix Redit changing IDs
 
 ## Version 1.2.0
 

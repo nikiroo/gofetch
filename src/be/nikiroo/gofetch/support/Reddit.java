@@ -192,7 +192,12 @@ public class Reddit extends BasicSupport {
 
 		if (elements.isEmpty()) {
 			for (Element el : container.children()) {
-				elements.addAll(el.getElementsByClass("Comment"));
+				elements.addAll(el.getElementsByClass("s1ook3io-0"));
+				elements.addAll(el.getElementsByClass("s1ook3io-1"));
+				elements.addAll(el.getElementsByClass("s1ook3io-2"));
+				elements.addAll(el.getElementsByClass("s1ook3io-3"));
+				elements.addAll(el.getElementsByClass("s1ook3io-4"));
+				elements.addAll(el.getElementsByClass("s1ook3io-5"));
 			}
 		}
 
