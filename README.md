@@ -21,6 +21,8 @@ The program will also helpfully create a ```gophermap``` and an ```index.html```
 - TooLinux: Actualité généraliste sur Linux et les logiciels libres
 - Ère Numérique.FR: faites le bon choix !
 - Phoronix: news regarding free and open-source software
+- Reddit: The front page of the internet
+- DaarDaar: Le meilleur de la presse flamande en français
 
 ### Supported platforms
 
