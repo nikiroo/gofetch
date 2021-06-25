@@ -118,6 +118,15 @@ public class Story {
 	public String getUrlExternal() {
 		return urlExternal;
 	}
+	
+	/**
+	 * The external URL (not the main website) this {@link Story} comes from.
+	 * 
+	 * @param urlExternal the new external URL
+	 */
+	public void setUrlExternal(String urlExternal) {
+		this.urlExternal = urlExternal;
+	}
 
 	/**
 	 * @return the body

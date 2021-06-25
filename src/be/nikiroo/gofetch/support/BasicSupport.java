@@ -1,5 +1,6 @@
 package be.nikiroo.gofetch.support;
 
+import java.awt.Stroke;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
@@ -55,7 +56,6 @@ public abstract class BasicSupport {
 	 *             in case of I/O error
 	 * 
 	 */
-	@SuppressWarnings("unused")
 	public void login() throws IOException {
 	}
 
@@ -311,6 +311,8 @@ public abstract class BasicSupport {
 			story.setFullContent(fullContent);
 			story.setComments(getComments(doc,
 					getFullArticleCommentPosts(doc, url)));
+			
+			ready(story, doc, article);
 		} finally {
 			if (in != null) {
 				in.close();
@@ -363,7 +365,7 @@ public abstract class BasicSupport {
 	 * @param doc
 	 *            the (full article) document to work on
 	 * @param intUrl
-	 *            the internal {@link URL} this article wa taken from (the
+	 *            the internal {@link URL} this article was taken from (the
 	 *            {@link URL} from the supported website)
 	 * 
 	 * @return the list of comment posts
@@ -551,6 +553,20 @@ public abstract class BasicSupport {
 	}
 
 	/**
+	 * This {@link Story} is ready, you can intercept this method if you need to
+	 * finalise something.
+	 * 
+	 * @param story
+	 *            the complete Story, comments included
+	 * @param doc
+	 *            the <b>article</b> document (not the main page)
+	 * @param el
+	 *            the article main element
+	 */
+	protected void ready(Story story, Document doc, Element el){
+	}
+
+	/**
 	 * The {@link String} to append to the selector (the selector will be
 	 * constructed as "this string" then "/type/".
 	 * 
@@ -601,6 +617,9 @@ public abstract class BasicSupport {
 				break;
 			case REDDIT:
 				support = new Reddit();
+				break;
+			case DAARDAAR:
+				support = new DaarDaar();
 				break;
 			}
 

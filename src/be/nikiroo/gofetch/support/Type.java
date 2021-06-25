@@ -24,4 +24,6 @@ public enum Type {
 	SEPT_SUR_SEPT,
 	/** EN: IT */
 	REDDIT,
+	/** FR: Actualité en Flandre */
+	DAARDAAR,
 }
