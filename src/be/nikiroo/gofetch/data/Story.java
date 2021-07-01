@@ -81,10 +81,68 @@ public class Story {
 	}
 
 	/**
-	 * @return the title
+	 * The id.
+	 * 
+	 * @param id
+	 *            the new id
+	 */
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	/**
+	 * @return the title of the article
 	 */
 	public String getTitle() {
 		return title;
+	}
+
+	/**
+	 * The title of the article
+	 * 
+	 * @param title
+	 *            the new title
+	 */
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	/**
+	 * The date of publication is used in {@link Story#getDetails()} by default.
+	 * 
+	 * @return the date of publication of this article
+	 */
+	private String getDate() {
+		return date;
+	}
+
+	/**
+	 * The date of publication of this article.
+	 * 
+	 * @param date
+	 *            the new date
+	 */
+	public void setDate(String date) {
+		this.date = date;
+	}
+
+	/**
+	 * The author is used in {@link Story#getDetails()} by default.
+	 * 
+	 * @return the author of this article
+	 */
+	private String getAuthor() {
+		return author;
+	}
+
+	/**
+	 * The author of this article.
+	 * 
+	 * @param author
+	 *            the new author
+	 */
+	public void setAuthor(String author) {
+		this.author = author;
 	}
 
 	/**
@@ -118,11 +176,12 @@ public class Story {
 	public String getUrlExternal() {
 		return urlExternal;
 	}
-	
+
 	/**
 	 * The external URL (not the main website) this {@link Story} comes from.
 	 * 
-	 * @param urlExternal the new external URL
+	 * @param urlExternal
+	 *            the new external URL
 	 */
 	public void setUrlExternal(String urlExternal) {
 		this.urlExternal = urlExternal;

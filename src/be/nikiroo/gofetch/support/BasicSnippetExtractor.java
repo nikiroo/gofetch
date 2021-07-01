@@ -39,6 +39,19 @@ abstract public class BasicSnippetExtractor {
 	abstract protected String getArticleId(Document doc, Element article);
 
 	/**
+	 * The (required) {@link URL} that points to the news page on the supported
+	 * website.
+	 * 
+	 * @param doc
+	 *            the main document for the current category
+	 * @param article
+	 *            the article to look into
+	 * 
+	 * @return the internal {@link URL}
+	 */
+	abstract String getArticleIntUrl(Document doc, Element article);
+
+	/**
 	 * The article title to display.
 	 * 
 	 * @param doc
@@ -48,7 +61,9 @@ abstract public class BasicSnippetExtractor {
 	 * 
 	 * @return the title
 	 */
-	abstract protected String getArticleTitle(Document doc, Element article);
+	protected String getArticleTitle(Document doc, Element article) {
+		return "";
+	}
 
 	/**
 	 * The optional article author.
@@ -60,7 +75,9 @@ abstract public class BasicSnippetExtractor {
 	 * 
 	 * @return the author
 	 */
-	abstract protected String getArticleAuthor(Document doc, Element article);
+	protected String getArticleAuthor(Document doc, Element article) {
+		return "";
+	}
 
 	/**
 	 * The optional article date.
@@ -72,7 +89,9 @@ abstract public class BasicSnippetExtractor {
 	 * 
 	 * @return the date
 	 */
-	abstract protected String getArticleDate(Document doc, Element article);
+	protected String getArticleDate(Document doc, Element article) {
+		return "";
+	}
 
 	/**
 	 * the optional article category.
@@ -86,8 +105,10 @@ abstract public class BasicSnippetExtractor {
 	 * 
 	 * @return the category
 	 */
-	abstract protected String getArticleCategory(Document doc, Element article,
-			String currentCategory);
+	protected String getArticleCategory(Document doc, Element article,
+			String currentCategory) {
+		return "";
+	}
 
 	/**
 	 * the optional details of the article (can replace the date, author and
@@ -100,20 +121,9 @@ abstract public class BasicSnippetExtractor {
 	 * 
 	 * @return the details
 	 */
-	abstract protected String getArticleDetails(Document doc, Element article);
-
-	/**
-	 * The (required) {@link URL} that points to the news page on the supported
-	 * website.
-	 * 
-	 * @param doc
-	 *            the main document for the current category
-	 * @param article
-	 *            the article to look into
-	 * 
-	 * @return the internal {@link URL}
-	 */
-	abstract protected String getArticleIntUrl(Document doc, Element article);
+	protected String getArticleDetails(Document doc, Element article) {
+		return "";
+	}
 
 	/**
 	 * the optional {@link URL} that points to an external website for more
@@ -126,7 +136,9 @@ abstract public class BasicSnippetExtractor {
 	 * 
 	 * @return the external {@link URL}
 	 */
-	abstract protected String getArticleExtUrl(Document doc, Element article);
+	protected String getArticleExtUrl(Document doc, Element article) {
+		return "";
+	}
 
 	/**
 	 * The optional article short-content (not the full content, that will be
@@ -139,7 +151,9 @@ abstract public class BasicSnippetExtractor {
 	 * 
 	 * @return the short content
 	 */
-	abstract protected String getArticleContent(Document doc, Element article);
+	protected String getArticleContent(Document doc, Element article) {
+		return "";
+	}
 
 	List<Story> fetchSnippets(Document doc, Type type, String defaultCateg) {
 		List<Story> list = new ArrayList<Story>();

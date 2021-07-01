@@ -1,17 +1,18 @@
 package be.nikiroo.gofetch.support;
 
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 import java.net.URL;
-import java.net.URLDecoder;
 import java.util.AbstractMap;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map.Entry;
+import java.util.function.Consumer;
 
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.nodes.Node;
+
+import be.nikiroo.gofetch.data.Story;
 
 /**
  * Support <a href="https://www.7sur7.be/">https://www.7sur7.be/</a>.
@@ -19,6 +20,8 @@ import org.jsoup.nodes.Node;
  * @author niki
  */
 public class SeptSurSept extends BasicSupport {
+	static final int MAX_ID_SIZE = 40;
+
 	@Override
 	public String getDescription() {
 		return "7sur7.be: Info, sport et showbiz, 24/24, 7/7";
@@ -54,76 +57,32 @@ public class SeptSurSept extends BasicSupport {
 		return new BasicSnippetExtractor() {
 			@Override
 			protected List<Element> getSnippets(Document doc) {
-				return doc.getElementsByClass("clip");
+				return doc.getElementsByTag("article");
 			}
 
 			@Override
 			protected String getArticleId(Document doc, Element article) {
-				String id = article.attr("id");
-				if (id != null && id.startsWith("clip")) {
-					return id.substring("clip".length());
+				Element el = article.getElementsByTag("a").first();
+				if (el != null) {
+					String href = el.absUrl("href");
+					if (href.endsWith("/"))
+						href = href.substring(0, href.length() - 1);
+					String tab[] = href.split("/");
+					String id = tab[tab.length - 1];
+					if (id.length() > MAX_ID_SIZE)
+						id = id.substring(0, MAX_ID_SIZE);
+					return id;
 				}
 
 				return null;
 			}
 
 			@Override
-			protected String getArticleTitle(Document doc, Element article) {
-				try {
-					return URLDecoder.decode(article.attr("data-title"),
-							"UTF-8");
-				} catch (UnsupportedEncodingException e) {
-					throw new RuntimeException("UTF-8 support mandatory in JVM");
-				}
-			}
-
-			@Override
-			protected String getArticleAuthor(Document doc, Element article) {
-				return "";
-			}
-
-			@Override
-			protected String getArticleDate(Document doc, Element article) {
-				return article.attr("data-date");
-			}
-
-			@Override
-			protected String getArticleCategory(Document doc, Element article,
-					String currentCategory) {
-				Element parent = article.parent();
-				if (parent != null) {
-					Element catElement = parent.previousElementSibling();
-					if (catElement != null) {
-						return catElement.text();
-					}
-				}
-
-				return "";
-			}
-
-			@Override
-			protected String getArticleDetails(Document doc, Element article) {
-				return "";
-			}
-
-			@Override
-			protected String getArticleIntUrl(Document doc, Element article) {
-				return article.absUrl("href");
-			}
-
-			@Override
-			protected String getArticleExtUrl(Document doc, Element article) {
-				return "";
-			}
-
-			@Override
-			protected String getArticleContent(Document doc, Element article) {
-				try {
-					return URLDecoder.decode(article.attr("data-intro"),
-							"UTF-8").trim();
-				} catch (UnsupportedEncodingException e) {
-					throw new RuntimeException("UTF-8 support mandatory in JVM");
-				}
+			String getArticleIntUrl(Document doc, Element article) {
+				Element el = article.getElementsByTag("a").first();
+				if (el != null)
+					return el.absUrl("href");
+				return null;
 			}
 		};
 	}
@@ -133,7 +92,7 @@ public class SeptSurSept extends BasicSupport {
 		return new BasicFullArticleExtractor() {
 			@Override
 			protected Element getFullArticle(Document doc) {
-				return doc.getElementById("detail_content");
+				return doc.getElementsByClass("article__wrapper").first();
 			}
 
 			@Override
@@ -141,24 +100,83 @@ public class SeptSurSept extends BasicSupport {
 				return new BasicElementProcessor() {
 					@Override
 					public boolean ignoreNode(Node node) {
-						return node.attr("class").equals("read_more")
-								|| "teas_emopoll".equals(node.attr("id"))
-								|| "teas_emopoll_facebook".equals(node
-										.attr("id"))
-								|| "soc_tools".equals(node.attr("id"));
+						String clazz = node.attr("class");
+
+						return clazz.contains("article__meta") //
+								|| clazz.contains("article__title") //
+								|| clazz.contains("sharing") //
+								|| clazz.contains("advertisement") //
+								|| clazz.contains("mail-a-friend") //
+								|| clazz.contains("article-login-gate") //
+								|| clazz.contains("snippet") //
+						;
 					}
 
 					@Override
 					public String isSubtitle(Node node) {
 						if (node instanceof Element) {
 							Element element = (Element) node;
-							if (element.tagName().equals("strong")) {
+
+							String tag = element.tagName();
+							if (tag.equals("strong") //
+									|| tag.equals("h2")) {
 								return element.text();
 							}
+
+							String clazz = element.attr("class");
+							if (clazz.contains("article__intro")) {
+								String text = element.text();
+								if (text.startsWith("Mise à jour")) {
+									text = text.substring("Mise à jour"
+											.length());
+								}
+								return text;
+							}
+
 						}
+
 						return null;
 					}
 				};
+			}
+
+			@Override
+			protected void ready(Story story, Document doc, Element el) {
+				String title = "";
+				String author = "";
+				final String date[] = new String[] { "" };
+
+				Element titleEl = doc.getElementsByClass("article__title")
+						.first();
+				if (titleEl != null)
+					title = titleEl.text();
+
+				doc.getElementsByTag("meta").forEach(new Consumer<Element>() {
+					@Override
+					public void accept(Element el) {
+						String item = el.attr("itemprop");
+						if (item != null && item.equals("datePublished")) {
+							String d = el.attr("content");
+							if (d.length() >= 18) {
+								d = d.substring(0, 10) + "_"
+										+ d.substring(11, 19);
+							}
+							date[0] = d;
+						}
+					}
+				});
+
+				Element authorEl = doc.getElementsByClass(
+						"article__credit-source").first();
+				if (authorEl != null)
+					author = authorEl.text();
+
+				story.setTitle(title);
+				story.setId(date[0] + "_" + story.getId());
+				story.setDate(date[0]);
+				story.setAuthor(author);
+
+				super.ready(story, doc, el);
 			}
 		};
 	}
