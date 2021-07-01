@@ -4,9 +4,9 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.AbstractMap;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map.Entry;
-import java.util.function.Consumer;
 
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -151,20 +151,20 @@ public class SeptSurSept extends BasicSupport {
 				if (titleEl != null)
 					title = titleEl.text();
 
-				doc.getElementsByTag("meta").forEach(new Consumer<Element>() {
-					@Override
-					public void accept(Element el) {
-						String item = el.attr("itemprop");
-						if (item != null && item.equals("datePublished")) {
-							String d = el.attr("content");
-							if (d.length() >= 18) {
-								d = d.substring(0, 10) + "_"
-										+ d.substring(11, 19);
-							}
-							date[0] = d;
+				Iterator<Element> iter = doc.getElementsByTag("meta")
+						.iterator();
+				while (iter.hasNext()) {
+					Element metaEl = iter.next();
+					String item = metaEl.attr("itemprop");
+					if (item != null && item.equals("datePublished")) {
+						String d = metaEl.attr("content");
+						if (d.length() >= 18) {
+							d = d.substring(0, 10) + "_" + d.substring(11, 19);
 						}
+						d = d.replace(":", "-");
+						date[0] = d;
 					}
-				});
+				}
 
 				Element authorEl = doc.getElementsByClass(
 						"article__credit-source").first();
