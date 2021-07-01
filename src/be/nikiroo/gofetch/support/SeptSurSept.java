@@ -109,6 +109,7 @@ public class SeptSurSept extends BasicSupport {
 								|| clazz.contains("mail-a-friend") //
 								|| clazz.contains("article-login-gate") //
 								|| clazz.contains("snippet") //
+								|| clazz.contains("slideshow-trigger") //
 						;
 					}
 
@@ -122,17 +123,6 @@ public class SeptSurSept extends BasicSupport {
 									|| tag.equals("h2")) {
 								return element.text();
 							}
-
-							String clazz = element.attr("class");
-							if (clazz.contains("article__intro")) {
-								String text = element.text();
-								if (text.startsWith("Mise à jour")) {
-									text = text.substring("Mise à jour"
-											.length());
-								}
-								return text;
-							}
-
 						}
 
 						return null;
@@ -144,6 +134,8 @@ public class SeptSurSept extends BasicSupport {
 			protected void ready(Story story, Document doc, Element el) {
 				String title = "";
 				String author = "";
+				String content = "";
+				String fullContent = story.getFullContent();
 				final String date[] = new String[] { "" };
 
 				Element titleEl = doc.getElementsByClass("article__title")
@@ -171,10 +163,25 @@ public class SeptSurSept extends BasicSupport {
 				if (authorEl != null)
 					author = authorEl.text();
 
+				Element introEl = doc.getElementsByClass("article__intro")
+						.first();
+				if (introEl != null) {
+					content = introEl.text();
+					if (content.startsWith("Mise à jour")) {
+						content = content.substring("Mise à jour".length());
+					}
+				}
+
+				if (fullContent.startsWith("Mise à jour")) {
+					fullContent = fullContent.substring("Mise à jour".length());
+				}
+
 				story.setTitle(title);
 				story.setId(date[0] + "_" + story.getId());
 				story.setDate(date[0]);
 				story.setAuthor(author);
+				story.setContent(content);
+				story.setFullContent(fullContent);
 
 				super.ready(story, doc, el);
 			}

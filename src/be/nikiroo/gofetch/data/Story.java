@@ -188,10 +188,20 @@ public class Story {
 	}
 
 	/**
-	 * @return the body
+	 * @return the article short content (for the preview)
 	 */
 	public String getContent() {
 		return content;
+	}
+
+	/**
+	 * The article short content (for the preview).
+	 * 
+	 * @param content
+	 *            the new short content
+	 */
+	public void setContent(String content) {
+		this.content = content;
 	}
 
 	/**
