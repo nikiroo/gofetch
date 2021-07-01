@@ -57,10 +57,10 @@ public class Html extends Output {
 
 		appendPre(builder);
 
-		builder.append("<div class='story-header'>\n");
+		builder.append("<article class='story-header'>\n");
 		appendHtml(builder, story, true);
 		builder.append("<hr/>\n");
-		builder.append("</div>\n");
+		builder.append("</article>\n");
 
 		appendPost(builder);
 
@@ -72,7 +72,7 @@ public class Html extends Output {
 		StringBuilder builder = new StringBuilder();
 		appendPre(builder);
 
-		builder.append("<div class='story'>\n");
+		builder.append("<article class='story'>\n");
 		appendHtml(builder, story, false);
 		builder.append("<hr/>\n");
 
@@ -82,7 +82,7 @@ public class Html extends Output {
 			}
 		}
 
-		builder.append("</div>\n");
+		builder.append("</article>\n");
 
 		appendPost(builder);
 
@@ -131,7 +131,7 @@ public class Html extends Output {
 			builder.append("	<h2><a href='" + story.getId() + ".html'>"
 					+ story.getTitle() + "</a></h2>\n");
 		} else {
-			builder.append("	<h2>" + story.getTitle() + "</h2>\n");
+			builder.append("	<h1>" + story.getTitle() + "</h1>\n");
 		}
 
 		builder.append("	<div class='details'>");
