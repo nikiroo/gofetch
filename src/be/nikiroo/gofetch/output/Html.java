@@ -59,7 +59,7 @@ public class Html extends Output {
 
 		builder.append("<article class='story-header'>\n");
 		appendHtml(builder, story, true);
-		builder.append("<hr/>\n");
+		builder.append("<br/></br><hr/>\n");
 		builder.append("</article>\n");
 
 		appendPost(builder);
@@ -74,7 +74,7 @@ public class Html extends Output {
 
 		builder.append("<article class='story'>\n");
 		appendHtml(builder, story, false);
-		builder.append("<hr/>\n");
+		builder.append("<br/><br/><hr/>\n");
 
 		if (story.getComments() != null) {
 			for (Comment comment : story.getComments()) {
