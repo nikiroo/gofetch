@@ -50,145 +50,116 @@ public class SeptSurSept extends BasicSupport {
 	}
 
 	@Override
-	protected List<Element> getArticles(Document doc) {
-		return doc.getElementsByClass("clip");
-	}
-
-	@Override
-	protected String getArticleId(Document doc, Element article) {
-		String id = article.attr("id");
-		if (id != null && id.startsWith("clip")) {
-			return id.substring("clip".length());
-		}
-
-		return null;
-	}
-
-	@Override
-	protected String getArticleTitle(Document doc, Element article) {
-		try {
-			return URLDecoder.decode(article.attr("data-title"), "UTF-8");
-		} catch (UnsupportedEncodingException e) {
-			throw new RuntimeException("UTF-8 support mandatory in JVM");
-		}
-	}
-
-	@Override
-	protected String getArticleAuthor(Document doc, Element article) {
-		return "";
-	}
-
-	@Override
-	protected String getArticleDate(Document doc, Element article) {
-		return article.attr("data-date");
-	}
-
-	@Override
-	protected String getArticleCategory(Document doc, Element article,
-			String currentCategory) {
-		Element parent = article.parent();
-		if (parent != null) {
-			Element catElement = parent.previousElementSibling();
-			if (catElement != null) {
-				return catElement.text();
-			}
-		}
-
-		return "";
-	}
-
-	@Override
-	protected String getArticleDetails(Document doc, Element article) {
-		return "";
-	}
-
-	@Override
-	protected String getArticleIntUrl(Document doc, Element article) {
-		return article.absUrl("href");
-	}
-
-	@Override
-	protected String getArticleExtUrl(Document doc, Element article) {
-		return "";
-	}
-
-	@Override
-	protected String getArticleContent(Document doc, Element article) {
-		try {
-			return URLDecoder.decode(article.attr("data-intro"), "UTF-8")
-					.trim();
-		} catch (UnsupportedEncodingException e) {
-			throw new RuntimeException("UTF-8 support mandatory in JVM");
-		}
-	}
-
-	@Override
-	protected Element getFullArticle(Document doc) {
-		return doc.getElementById("detail_content");
-	}
-
-	@Override
-	protected BasicElementProcessor getElementProcessorFullArticle() {
-		return new BasicElementProcessor() {
+	BasicSnippetExtractor getSnippetExtractor() {
+		return new BasicSnippetExtractor() {
 			@Override
-			public boolean ignoreNode(Node node) {
-				return node.attr("class").equals("read_more")
-						|| "teas_emopoll".equals(node.attr("id"))
-						|| "teas_emopoll_facebook".equals(node.attr("id"))
-						|| "soc_tools".equals(node.attr("id"));
+			protected List<Element> getSnippets(Document doc) {
+				return doc.getElementsByClass("clip");
 			}
 
 			@Override
-			public String isSubtitle(Node node) {
-				if (node instanceof Element) {
-					Element element = (Element) node;
-					if (element.tagName().equals("strong")) {
-						return element.text();
+			protected String getArticleId(Document doc, Element article) {
+				String id = article.attr("id");
+				if (id != null && id.startsWith("clip")) {
+					return id.substring("clip".length());
+				}
+
+				return null;
+			}
+
+			@Override
+			protected String getArticleTitle(Document doc, Element article) {
+				try {
+					return URLDecoder.decode(article.attr("data-title"),
+							"UTF-8");
+				} catch (UnsupportedEncodingException e) {
+					throw new RuntimeException("UTF-8 support mandatory in JVM");
+				}
+			}
+
+			@Override
+			protected String getArticleAuthor(Document doc, Element article) {
+				return "";
+			}
+
+			@Override
+			protected String getArticleDate(Document doc, Element article) {
+				return article.attr("data-date");
+			}
+
+			@Override
+			protected String getArticleCategory(Document doc, Element article,
+					String currentCategory) {
+				Element parent = article.parent();
+				if (parent != null) {
+					Element catElement = parent.previousElementSibling();
+					if (catElement != null) {
+						return catElement.text();
 					}
 				}
-				return null;
+
+				return "";
+			}
+
+			@Override
+			protected String getArticleDetails(Document doc, Element article) {
+				return "";
+			}
+
+			@Override
+			protected String getArticleIntUrl(Document doc, Element article) {
+				return article.absUrl("href");
+			}
+
+			@Override
+			protected String getArticleExtUrl(Document doc, Element article) {
+				return "";
+			}
+
+			@Override
+			protected String getArticleContent(Document doc, Element article) {
+				try {
+					return URLDecoder.decode(article.attr("data-intro"),
+							"UTF-8").trim();
+				} catch (UnsupportedEncodingException e) {
+					throw new RuntimeException("UTF-8 support mandatory in JVM");
+				}
 			}
 		};
 	}
 
 	@Override
-	protected List<Element> getFullArticleCommentPosts(Document doc, URL intUrl) {
-		return null;
-	}
+	BasicFullArticleExtractor getFullArticleExtractor() {
+		return new BasicFullArticleExtractor() {
+			@Override
+			protected Element getFullArticle(Document doc) {
+				return doc.getElementById("detail_content");
+			}
 
-	@Override
-	protected List<Element> getCommentCommentPosts(Document doc,
-			Element container) {
-		return null;
-	}
+			@Override
+			protected BasicElementProcessor getElementProcessorFullArticle() {
+				return new BasicElementProcessor() {
+					@Override
+					public boolean ignoreNode(Node node) {
+						return node.attr("class").equals("read_more")
+								|| "teas_emopoll".equals(node.attr("id"))
+								|| "teas_emopoll_facebook".equals(node
+										.attr("id"))
+								|| "soc_tools".equals(node.attr("id"));
+					}
 
-	@Override
-	protected String getCommentId(Element post) {
-		return null;
-	}
-
-	@Override
-	protected String getCommentAuthor(Element post) {
-		return null;
-	}
-
-	@Override
-	protected String getCommentTitle(Element post) {
-		return null;
-	}
-
-	@Override
-	protected String getCommentDate(Element post) {
-		return null;
-	}
-
-	@Override
-	protected Element getCommentContentElement(Element post) {
-		return null;
-	}
-
-	@Override
-	protected BasicElementProcessor getElementProcessorComment() {
-		return new BasicElementProcessor();
+					@Override
+					public String isSubtitle(Node node) {
+						if (node instanceof Element) {
+							Element element = (Element) node;
+							if (element.tagName().equals("strong")) {
+								return element.text();
+							}
+						}
+						return null;
+					}
+				};
+			}
+		};
 	}
 }

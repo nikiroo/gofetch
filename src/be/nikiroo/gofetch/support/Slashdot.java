@@ -32,275 +32,299 @@ public class Slashdot extends BasicSupport {
 	}
 
 	@Override
-	protected List<Element> getArticles(Document doc) {
-		return doc.getElementsByTag("header");
-	}
-
-	@Override
-	protected String getArticleId(Document doc, Element article) {
-		Element title = article.getElementsByClass("story-title").first();
-		if (title != null) {
-			String id = title.attr("id");
-			if (id.startsWith("title-")) {
-				id = id.substring("title-".length());
-			}
-
-			return id;
-		}
-
-		return "";
-	}
-
-	@Override
-	protected String getArticleTitle(Document doc, Element article) {
-		Element title = article.getElementsByClass("story-title").first();
-		if (title != null) {
-			return title.text();
-		}
-
-		return "";
-	}
-
-	@Override
-	protected String getArticleAuthor(Document doc, Element article) {
-		// details: "Posted by AUTHOR on DATE from the further-crackdown dept."
-		String details = getArticleDetailsReal(article);
-		int pos = details.indexOf(" on ");
-		if (details.startsWith("Posted by ") && pos >= 0) {
-			return details.substring("Posted by ".length(), pos).trim();
-		}
-
-		return "";
-	}
-
-	@Override
-	protected String getArticleDate(Document doc, Element article) {
-		// Do not try bad articles
-		if (getArticleId(doc, article).isEmpty()) {
-			return "";
-		}
-
-		Element dateElement = doc.getElementsByTag("time").first();
-		if (dateElement != null) {
-			String date = dateElement.text().trim();
-			if (date.startsWith("on ")) {
-				date = date.substring("on ".length());
-			}
-
-			return date;
-		}
-
-		return "";
-	}
-
-	@Override
-	protected String getArticleCategory(Document doc, Element article,
-			String currentCategory) {
-		Element categElement = doc.getElementsByClass("topic").first();
-		if (categElement != null) {
-			return categElement.text();
-		}
-
-		return "";
-	}
-
-	@Override
-	protected String getArticleDetails(Document doc, Element article) {
-		// details: "Posted by AUTHOR on DATE from the further-crackdown dept."
-		String details = getArticleDetailsReal(article);
-		int pos = details.indexOf(" from the ");
-		if (pos >= 0) {
-			return details.substring(pos).trim();
-		}
-
-		return "";
-	}
-
-	@Override
-	protected String getArticleIntUrl(Document doc, Element article) {
-		Element title = article.getElementsByClass("story-title").first();
-		if (title != null) {
-			Elements links = title.getElementsByTag("a");
-			if (links.size() > 0) {
-				return links.get(0).absUrl("href");
-			}
-		}
-		return "";
-	}
-
-	@Override
-	protected String getArticleExtUrl(Document doc, Element article) {
-		Element title = article.getElementsByClass("story-title").first();
-		if (title != null) {
-			Elements links = title.getElementsByTag("a");
-			if (links.size() > 1) {
-				return links.get(1).absUrl("href");
-			}
-		}
-		return "";
-	}
-
-	@Override
-	protected String getArticleContent(Document doc, Element article) {
-		Element contentElement = doc //
-				.getElementById("text-" + getArticleId(doc, article));
-		if (contentElement != null) {
-			return getArticleText(contentElement);
-		}
-
-		return "";
-	}
-
-	@Override
-	protected Element getFullArticle(Document doc) {
-		return null;
-	}
-
-	@Override
-	protected List<Element> getFullArticleCommentPosts(Document doc, URL intUrl) {
-		List<Element> commentElements = new ArrayList<Element>();
-		Element listing = doc.getElementById("commentlisting");
-		if (listing != null) {
-			for (Element commentElement : listing.children()) {
-				if (commentElement.hasClass("comment")) {
-					commentElements.add(commentElement);
-				}
-			}
-		}
-
-		return commentElements;
-	}
-
-	@Override
-	protected BasicElementProcessor getElementProcessorFullArticle() {
-		return new BasicElementProcessor() {
+	BasicSnippetExtractor getSnippetExtractor() {
+		return new BasicSnippetExtractor() {
 			@Override
-			public boolean detectQuote(Node node) {
-				if (node instanceof Element) {
-					Element element = (Element) node;
-					if (element.tagName().equals("i")) {
-						return true;
+			protected List<Element> getSnippets(Document doc) {
+				return doc.getElementsByTag("header");
+			}
+
+			@Override
+			protected String getArticleId(Document doc, Element article) {
+				Element title = article.getElementsByClass("story-title")
+						.first();
+				if (title != null) {
+					String id = title.attr("id");
+					if (id.startsWith("title-")) {
+						id = id.substring("title-".length());
+					}
+
+					return id;
+				}
+
+				return "";
+			}
+
+			@Override
+			protected String getArticleTitle(Document doc, Element article) {
+				Element title = article.getElementsByClass("story-title")
+						.first();
+				if (title != null) {
+					return title.text();
+				}
+
+				return "";
+			}
+
+			@Override
+			protected String getArticleAuthor(Document doc, Element article) {
+				// details:
+				// "Posted by AUTHOR on DATE from the further-crackdown dept."
+				String details = getArticleDetailsReal(article);
+				int pos = details.indexOf(" on ");
+				if (details.startsWith("Posted by ") && pos >= 0) {
+					return details.substring("Posted by ".length(), pos).trim();
+				}
+
+				return "";
+			}
+
+			@Override
+			protected String getArticleDate(Document doc, Element article) {
+				// Do not try bad articles
+				if (getArticleId(doc, article).isEmpty()) {
+					return "";
+				}
+
+				Element dateElement = doc.getElementsByTag("time").first();
+				if (dateElement != null) {
+					String date = dateElement.text().trim();
+					if (date.startsWith("on ")) {
+						date = date.substring("on ".length());
+					}
+
+					return date;
+				}
+
+				return "";
+			}
+
+			@Override
+			protected String getArticleCategory(Document doc, Element article,
+					String currentCategory) {
+				Element categElement = doc.getElementsByClass("topic").first();
+				if (categElement != null) {
+					return categElement.text();
+				}
+
+				return "";
+			}
+
+			@Override
+			protected String getArticleDetails(Document doc, Element article) {
+				// details:
+				// "Posted by AUTHOR on DATE from the further-crackdown dept."
+				String details = getArticleDetailsReal(article);
+				int pos = details.indexOf(" from the ");
+				if (pos >= 0) {
+					return details.substring(pos).trim();
+				}
+
+				return "";
+			}
+
+			@Override
+			protected String getArticleIntUrl(Document doc, Element article) {
+				Element title = article.getElementsByClass("story-title")
+						.first();
+				if (title != null) {
+					Elements links = title.getElementsByTag("a");
+					if (links.size() > 0) {
+						return links.get(0).absUrl("href");
 					}
 				}
-				return false;
+				return "";
+			}
+
+			@Override
+			protected String getArticleExtUrl(Document doc, Element article) {
+				Element title = article.getElementsByClass("story-title")
+						.first();
+				if (title != null) {
+					Elements links = title.getElementsByTag("a");
+					if (links.size() > 1) {
+						return links.get(1).absUrl("href");
+					}
+				}
+				return "";
+			}
+
+			@Override
+			protected String getArticleContent(Document doc, Element article) {
+				Element contentElement = doc //
+						.getElementById("text-" + getArticleId(doc, article));
+				if (contentElement != null) {
+					BasicFullArticleExtractor hack = getFullArticleExtractor();
+					return hack.getArticleText(contentElement);
+				}
+
+				return "";
+			}
+
+			private String getArticleDetailsReal(Element article) {
+				Element detailsElement = article.getElementsByClass("details")
+						.first();
+				if (detailsElement != null) {
+					return detailsElement.text();
+				}
+
+				return "";
 			}
 		};
 	}
 
 	@Override
-	protected List<Element> getCommentCommentPosts(Document doc,
-			Element container) {
-		List<Element> commentElements = new ArrayList<Element>();
-		for (Element child : container.children()) {
-			if (child.id().contains("commtree_")) {
-				for (Element sub : child.children()) {
-					if (sub.hasClass("comment")) {
-						commentElements.add(sub);
-					}
-				}
-			}
-		}
-
-		return commentElements;
-	}
-
-	@Override
-	protected String getCommentId(Element post) {
-		if (post.hasClass("hidden")) {
-			return "";
-		}
-
-		return post.id();
-	}
-
-	@Override
-	protected String getCommentAuthor(Element post) {
-		if (post.hasClass("hidden")) {
-			return "";
-		}
-
-		Element author = post.getElementsByClass("by").first();
-		if (author != null) {
-			return author.text();
-		}
-
-		return "";
-	}
-
-	@Override
-	protected String getCommentTitle(Element post) {
-		if (post.hasClass("hidden")) {
-			return "";
-		}
-
-		Element title = post.getElementsByClass("title").first();
-		if (title != null) {
-			return title.text();
-		}
-
-		return "";
-	}
-
-	@Override
-	protected String getCommentDate(Element post) {
-		if (post.hasClass("hidden")) {
-			return "";
-		}
-
-		Element date = post.getElementsByClass("otherdetails").first();
-		if (date != null) {
-			return date.text();
-		}
-
-		return "";
-	}
-
-	@Override
-	protected Element getCommentContentElement(Element post) {
-		if (post.hasClass("hidden")) {
-			return null;
-		}
-
-		return post.getElementsByClass("commentBody").first();
-	}
-
-	@Override
-	protected BasicElementProcessor getElementProcessorComment() {
-		return new BasicElementProcessor() {
+	BasicFullArticleExtractor getFullArticleExtractor() {
+		return new BasicFullArticleExtractor() {
 			@Override
-			public String processText(String text) {
-				while (text.startsWith(">")) { // comment in one-liners
-					text = text.substring(1).trim();
-				}
-
-				return text;
+			protected Element getFullArticle(Document doc) {
+				return null;
 			}
 
 			@Override
-			public boolean detectQuote(Node node) {
-				if (node instanceof Element) {
-					Element elementNode = (Element) node;
-					if (elementNode.tagName().equals("blockquote")
-							|| elementNode.hasClass("quote")
-							|| (elementNode.tagName().equals("p")
-									&& elementNode.textNodes().size() == 1 && elementNode
-									.textNodes().get(0).getWholeText()
-									.startsWith(">"))) {
-						return true;
+			protected BasicElementProcessor getElementProcessorFullArticle() {
+				return new BasicElementProcessor() {
+					@Override
+					public boolean detectQuote(Node node) {
+						if (node instanceof Element) {
+							Element element = (Element) node;
+							if (element.tagName().equals("i")) {
+								return true;
+							}
+						}
+						return false;
 					}
-				}
-
-				return false;
+				};
 			}
 		};
 	}
 
-	private String getArticleDetailsReal(Element article) {
-		Element detailsElement = article.getElementsByClass("details").first();
-		if (detailsElement != null) {
-			return detailsElement.text();
-		}
+	@Override
+	BasicCommentExtractor getCommentExtractor() {
+		return new BasicCommentExtractor() {
+			@Override
+			protected List<Element> getFullArticleCommentPosts(Document doc,
+					URL intUrl) {
+				List<Element> commentElements = new ArrayList<Element>();
+				Element listing = doc.getElementById("commentlisting");
+				if (listing != null) {
+					for (Element commentElement : listing.children()) {
+						if (commentElement.hasClass("comment")) {
+							commentElements.add(commentElement);
+						}
+					}
+				}
 
-		return "";
+				return commentElements;
+			}
+
+			@Override
+			protected List<Element> getCommentCommentPosts(Document doc,
+					Element container) {
+				List<Element> commentElements = new ArrayList<Element>();
+				for (Element child : container.children()) {
+					if (child.id().contains("commtree_")) {
+						for (Element sub : child.children()) {
+							if (sub.hasClass("comment")) {
+								commentElements.add(sub);
+							}
+						}
+					}
+				}
+
+				return commentElements;
+			}
+
+			@Override
+			protected String getCommentId(Element post) {
+				if (post.hasClass("hidden")) {
+					return "";
+				}
+
+				return post.id();
+			}
+
+			@Override
+			protected String getCommentAuthor(Element post) {
+				if (post.hasClass("hidden")) {
+					return "";
+				}
+
+				Element author = post.getElementsByClass("by").first();
+				if (author != null) {
+					return author.text();
+				}
+
+				return "";
+			}
+
+			@Override
+			protected String getCommentTitle(Element post) {
+				if (post.hasClass("hidden")) {
+					return "";
+				}
+
+				Element title = post.getElementsByClass("title").first();
+				if (title != null) {
+					return title.text();
+				}
+
+				return "";
+			}
+
+			@Override
+			protected String getCommentDate(Element post) {
+				if (post.hasClass("hidden")) {
+					return "";
+				}
+
+				Element date = post.getElementsByClass("otherdetails").first();
+				if (date != null) {
+					return date.text();
+				}
+
+				return "";
+			}
+
+			@Override
+			protected Element getCommentContentElement(Element post) {
+				if (post.hasClass("hidden")) {
+					return null;
+				}
+
+				return post.getElementsByClass("commentBody").first();
+			}
+
+			@Override
+			protected BasicElementProcessor getElementProcessorComment() {
+				return new BasicElementProcessor() {
+					@Override
+					public String processText(String text) {
+						while (text.startsWith(">")) { // comment in one-liners
+							text = text.substring(1).trim();
+						}
+
+						return text;
+					}
+
+					@Override
+					public boolean detectQuote(Node node) {
+						if (node instanceof Element) {
+							Element elementNode = (Element) node;
+							if (elementNode.tagName().equals("blockquote")
+									|| elementNode.hasClass("quote")
+									|| (elementNode.tagName().equals("p")
+											&& elementNode.textNodes().size() == 1 && elementNode
+											.textNodes().get(0).getWholeText()
+											.startsWith(">"))) {
+								return true;
+							}
+						}
+
+						return false;
+					}
+				};
+			}
+		};
 	}
 }

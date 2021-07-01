@@ -41,224 +41,245 @@ public class Reddit extends BasicSupport {
 	}
 
 	@Override
-	protected List<Element> getArticles(Document doc) {
-		List<Element> list = doc.getElementsByClass("thing");
-		if (list.isEmpty()) {
-			list = doc.getElementsByClass("Post");
-		}
-		if (list.isEmpty()) {
-			list = doc.getElementsByClass("scrollerItem");
-		}
+	BasicSnippetExtractor getSnippetExtractor() {
+		return new BasicSnippetExtractor() {
+			@Override
+			protected List<Element> getSnippets(Document doc) {
+				List<Element> list = doc.getElementsByClass("thing");
+				if (list.isEmpty()) {
+					list = doc.getElementsByClass("Post");
+				}
+				if (list.isEmpty()) {
+					list = doc.getElementsByClass("scrollerItem");
+				}
 
-		return list;
-	}
-
-	@Override
-	protected String getArticleId(Document doc, Element article) {
-		String date = getArticleDate(doc, article);
-		String title = getArticleTitle(doc, article);
-
-		String id = (date + "_" + title).replaceAll("[^a-zA-Z0-9_-]", "_");
-		if (id.length() > 40) {
-			id = id.substring(0, 40);
-		}
-
-		return id;
-	}
-
-	@Override
-	protected String getArticleTitle(Document doc, Element article) {
-		Elements els = article.getElementsByAttributeValue("data-event-action",
-				"title");
-		if (els == null || els.isEmpty()) {
-			els = article.getElementsByTag("h2");
-		}
-
-		return els.first().text().trim();
-	}
-
-	@Override
-	protected String getArticleAuthor(Document doc, Element article) {
-		String user = article
-				.getElementsByAttributeValueStarting("href", "/user/").text()
-				.trim();
-		if (user.startsWith("/u"))
-			user = user.substring(3);
-		return user;
-	}
-
-	@Override
-	protected String getArticleDate(Document doc, Element article) {
-		Element el = article.getElementsByClass("live-timestamp").first();
-		if (el == null) {
-			el = article.getElementsByAttributeValue("data-click-id",
-					"timestamp").first();
-		}
-
-		String dateAgo = el.text().trim();
-		return new SimpleDateFormat("yyyy-MM-dd") // _HH-mm
-				.format(getDate(dateAgo));
-	}
-
-	@Override
-	protected String getArticleCategory(Document doc, Element article,
-			String currentCategory) {
-		Elements categEls = article.getElementsByAttributeValueStarting("href",
-				"/r/" + currentCategory + "/search=?q=flair_name");
-
-		if (categEls.size() > 0) {
-			return currentCategory + ", " + categEls.first().text().trim();
-		}
-
-		return currentCategory;
-	}
-
-	@Override
-	protected String getArticleDetails(Document doc, Element article) {
-		return "";
-	}
-
-	@Override
-	protected String getArticleIntUrl(Document doc, Element article) {
-		String url = article.absUrl("data-permalink");
-		if (url == null || url.isEmpty()) {
-			url = article
-					.getElementsByAttributeValue("data-click-id", "timestamp")
-					.first().absUrl("href");
-		}
-
-		return url;
-	}
-
-	@Override
-	protected String getArticleExtUrl(Document doc, Element article) {
-		Elements els = article.getElementsByAttributeValue("data-event-action",
-				"title");
-		if (els == null || els.isEmpty()) {
-			els = article.getElementsByAttributeValue("data-click-id", "body");
-		}
-
-		Element url = els.first();
-		if (!url.attr("href").trim().startsWith("/")) {
-			return url.absUrl("href");
-		}
-
-		return "";
-	}
-
-	@Override
-	protected String getArticleContent(Document doc, Element article) {
-		Elements els = article.getElementsByClass("h2");
-		if (els != null && !els.isEmpty()) {
-			return els.first().text().trim();
-		}
-
-		return "";
-	}
-
-	@Override
-	protected Element getFullArticle(Document doc) {
-		Element element = doc.getElementsByAttributeValue("data-click-id",
-				"body").first();
-		if (element == null) {
-			element = doc.getElementsByClass("ckueCN").first();
-		}
-
-		return element;
-	}
-
-	@Override
-	protected BasicElementProcessor getElementProcessorFullArticle() {
-		return new BasicElementProcessor();
-	}
-
-	@Override
-	protected List<Element> getFullArticleCommentPosts(Document doc, URL intUrl) {
-		Elements posts = doc.getElementsByClass("jHfOJm");
-		if (posts.isEmpty()) {
-			posts = doc.getElementsByClass("eCeBkc");
-		}
-		if (posts.isEmpty()) {
-			posts = doc.getElementsByClass("gxtxxZ");
-		}
-
-		return posts;
-	}
-
-	@Override
-	protected List<Element> getCommentCommentPosts(Document doc,
-			Element container) {
-
-		List<Element> elements = new LinkedList<Element>();
-		for (Element el : container.children()) {
-			// elements.addAll(el.getElementsByClass("jHfOJm"));
-			elements.addAll(el.getElementsByClass("emJXdb"));
-		}
-
-		return elements;
-	}
-
-	@Override
-	protected String getCommentId(Element post) {
-		int level = 1;
-		Elements els = post.getElementsByClass("imyGpC");
-
-		if (!els.isEmpty()) {
-			String l = els.first().text().trim().replace("level ", "");
-			try {
-				level = Integer.parseInt(l);
-			} catch (NumberFormatException e) {
+				return list;
 			}
-		}
 
-		return Integer.toString(level);
+			@Override
+			protected String getArticleId(Document doc, Element article) {
+				String date = getArticleDate(doc, article);
+				String title = getArticleTitle(doc, article);
+
+				String id = (date + "_" + title).replaceAll("[^a-zA-Z0-9_-]",
+						"_");
+				if (id.length() > 40) {
+					id = id.substring(0, 40);
+				}
+
+				return id;
+			}
+
+			@Override
+			protected String getArticleTitle(Document doc, Element article) {
+				Elements els = article.getElementsByAttributeValue(
+						"data-event-action", "title");
+				if (els == null || els.isEmpty()) {
+					els = article.getElementsByTag("h2");
+				}
+
+				return els.first().text().trim();
+			}
+
+			@Override
+			protected String getArticleAuthor(Document doc, Element article) {
+				String user = article
+						.getElementsByAttributeValueStarting("href", "/user/")
+						.text().trim();
+				if (user.startsWith("/u"))
+					user = user.substring(3);
+				return user;
+			}
+
+			@Override
+			protected String getArticleDate(Document doc, Element article) {
+				Element el = article.getElementsByClass("live-timestamp")
+						.first();
+				if (el == null) {
+					el = article.getElementsByAttributeValue("data-click-id",
+							"timestamp").first();
+				}
+
+				String dateAgo = el.text().trim();
+				return new SimpleDateFormat("yyyy-MM-dd") // _HH-mm
+						.format(getDate(dateAgo));
+			}
+
+			@Override
+			protected String getArticleCategory(Document doc, Element article,
+					String currentCategory) {
+				Elements categEls = article
+						.getElementsByAttributeValueStarting("href", "/r/"
+								+ currentCategory + "/search=?q=flair_name");
+
+				if (categEls.size() > 0) {
+					return currentCategory + ", "
+							+ categEls.first().text().trim();
+				}
+
+				return currentCategory;
+			}
+
+			@Override
+			protected String getArticleDetails(Document doc, Element article) {
+				return "";
+			}
+
+			@Override
+			protected String getArticleIntUrl(Document doc, Element article) {
+				String url = article.absUrl("data-permalink");
+				if (url == null || url.isEmpty()) {
+					url = article
+							.getElementsByAttributeValue("data-click-id",
+									"timestamp").first().absUrl("href");
+				}
+
+				return url;
+			}
+
+			@Override
+			protected String getArticleExtUrl(Document doc, Element article) {
+				Elements els = article.getElementsByAttributeValue(
+						"data-event-action", "title");
+				if (els == null || els.isEmpty()) {
+					els = article.getElementsByAttributeValue("data-click-id",
+							"body");
+				}
+
+				Element url = els.first();
+				if (!url.attr("href").trim().startsWith("/")) {
+					return url.absUrl("href");
+				}
+
+				return "";
+			}
+
+			@Override
+			protected String getArticleContent(Document doc, Element article) {
+				Elements els = article.getElementsByClass("h2");
+				if (els != null && !els.isEmpty()) {
+					return els.first().text().trim();
+				}
+
+				return "";
+			}
+		};
 	}
 
 	@Override
-	protected String getCommentAuthor(Element post) {
-		// Since we have no title, we switch with author
-		return "";
+	BasicFullArticleExtractor getFullArticleExtractor() {
+		return new BasicFullArticleExtractor() {
+			@Override
+			protected Element getFullArticle(Document doc) {
+				Element element = doc.getElementsByAttributeValue(
+						"data-click-id", "body").first();
+				if (element == null) {
+					element = doc.getElementsByClass("ckueCN").first();
+				}
+
+				return element;
+			}
+
+			@Override
+			protected BasicElementProcessor getElementProcessorFullArticle() {
+				return new BasicElementProcessor();
+			}
+		};
 	}
 
 	@Override
-	protected String getCommentTitle(Element post) {
-		// Since we have no title, we switch with author
+	BasicCommentExtractor getCommentExtractor() {
+		return new BasicCommentExtractor() {
+			@Override
+			protected List<Element> getFullArticleCommentPosts(Document doc,
+					URL intUrl) {
+				Elements posts = doc.getElementsByClass("jHfOJm");
+				if (posts.isEmpty()) {
+					posts = doc.getElementsByClass("eCeBkc");
+				}
+				if (posts.isEmpty()) {
+					posts = doc.getElementsByClass("gxtxxZ");
+				}
 
-		Element authorEl = post.getElementsByClass("RVnoX").first();
-		if (authorEl == null)
-			authorEl = post.getElementsByClass("kzePTH").first();
-		if (authorEl == null)
-			authorEl = post.getElementsByClass("jczTlv").first();
+				return posts;
+			}
 
-		if (authorEl != null)
-			return authorEl.text().trim();
+			@Override
+			protected List<Element> getCommentCommentPosts(Document doc,
+					Element container) {
 
-		return "";
-	}
+				List<Element> elements = new LinkedList<Element>();
+				for (Element el : container.children()) {
+					// elements.addAll(el.getElementsByClass("jHfOJm"));
+					elements.addAll(el.getElementsByClass("emJXdb"));
+				}
 
-	@Override
-	protected String getCommentDate(Element post) {
-		Element elAgo = post.getElementsByClass("hJDlLH").first();
-		if (elAgo == null)
-			elAgo = post.getElementsByClass("hDplaG").first();
+				return elements;
+			}
 
-		if (elAgo != null) {
-			String dateAgo = elAgo.text().trim();
-			return new SimpleDateFormat("yyyy-MM-dd_HH-mm")
-					.format(getDate(dateAgo));
-		}
+			@Override
+			protected String getCommentId(Element post) {
+				int level = 1;
+				Elements els = post.getElementsByClass("imyGpC");
 
-		return "";
-	}
+				if (!els.isEmpty()) {
+					String l = els.first().text().trim().replace("level ", "");
+					try {
+						level = Integer.parseInt(l);
+					} catch (NumberFormatException e) {
+					}
+				}
 
-	@Override
-	protected Element getCommentContentElement(Element post) {
-		return post.getElementsByClass("ckueCN").first();
-	}
+				return Integer.toString(level);
+			}
 
-	@Override
-	protected BasicElementProcessor getElementProcessorComment() {
-		return new BasicElementProcessor();
+			@Override
+			protected String getCommentAuthor(Element post) {
+				// Since we have no title, we switch with author
+				return "";
+			}
+
+			@Override
+			protected String getCommentTitle(Element post) {
+				// Since we have no title, we switch with author
+
+				Element authorEl = post.getElementsByClass("RVnoX").first();
+				if (authorEl == null)
+					authorEl = post.getElementsByClass("kzePTH").first();
+				if (authorEl == null)
+					authorEl = post.getElementsByClass("jczTlv").first();
+
+				if (authorEl != null)
+					return authorEl.text().trim();
+
+				return "";
+			}
+
+			@Override
+			protected String getCommentDate(Element post) {
+				Element elAgo = post.getElementsByClass("hJDlLH").first();
+				if (elAgo == null)
+					elAgo = post.getElementsByClass("hDplaG").first();
+
+				if (elAgo != null) {
+					String dateAgo = elAgo.text().trim();
+					return new SimpleDateFormat("yyyy-MM-dd_HH-mm")
+							.format(getDate(dateAgo));
+				}
+
+				return "";
+			}
+
+			@Override
+			protected Element getCommentContentElement(Element post) {
+				return post.getElementsByClass("ckueCN").first();
+			}
+
+			@Override
+			protected BasicElementProcessor getElementProcessorComment() {
+				return new BasicElementProcessor();
+			}
+		};
 	}
 
 	@Override

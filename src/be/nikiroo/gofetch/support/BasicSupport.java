@@ -5,7 +5,6 @@ import java.io.InputStream;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -21,7 +20,6 @@ import org.jsoup.nodes.TextNode;
 import org.jsoup.select.NodeTraversor;
 import org.jsoup.select.NodeVisitor;
 
-import be.nikiroo.gofetch.data.Comment;
 import be.nikiroo.gofetch.data.Story;
 import be.nikiroo.utils.Downloader;
 import be.nikiroo.utils.StringUtils;
@@ -68,6 +66,49 @@ public abstract class BasicSupport {
 	abstract public String getDescription();
 
 	/**
+	 * The {@link URL}s to process for this website.
+	 * 
+	 * @return the list of {@link URL}s
+	 * 
+	 * @throws IOException
+	 *             in case of I/O error
+	 */
+	abstract protected List<Entry<URL, String>> getUrls() throws IOException;
+
+	/**
+	 * An extractor for the data present in the snippet article (the content
+	 * about the article that you can find on articles listing pages).
+	 * <p>
+	 * This one is mandatory.
+	 * 
+	 * @return the extractor
+	 */
+	abstract BasicSnippetExtractor getSnippetExtractor();
+
+	/**
+	 * An extractor for the data of the actual article (on a dedicated page).
+	 * <p>
+	 * If not present, no data will be extracted outside of what was found on
+	 * the snippet.
+	 * 
+	 * @return the extractor
+	 */
+	BasicFullArticleExtractor getFullArticleExtractor() {
+		return null;
+	}
+
+	/**
+	 * An extractor for the comments of the actual article.
+	 * <p>
+	 * If not present, no comments will be used.
+	 * 
+	 * @return the extractor
+	 */
+	BasicCommentExtractor getCommentExtractor() {
+		return null;
+	}
+
+	/**
 	 * The gopher "selector" to use for output.
 	 * <p>
 	 * A kind of "URL path", like "/news/" or "/misc/news/" or...
@@ -88,9 +129,12 @@ public abstract class BasicSupport {
 	}
 
 	/**
-	 * List all the recent items, but only assure the ID and internal URL to
-	 * fetch it later on (until it has been fetched, the rest of the
-	 * {@link Story} is not confirmed).
+	 * List all the recent items, but only assure the internal URL to fetch it
+	 * later on (until it has been fetched, the rest of the {@link Story} is not
+	 * confirmed).
+	 * <p>
+	 * Note: an id or a date is required, but is allowed to change later on
+	 * during the call to {@link BasicSupport#fetch(Story)}.
 	 * 
 	 * @return the list of new stories
 	 * 
@@ -99,6 +143,8 @@ public abstract class BasicSupport {
 	 */
 	public List<Story> list() throws IOException {
 		List<Story> list = new ArrayList<Story>();
+
+		BasicSnippetExtractor extractor = getSnippetExtractor();
 
 		login();
 		for (Entry<URL, String> entry : getUrls()) {
@@ -110,176 +156,12 @@ public abstract class BasicSupport {
 
 			InputStream in = open(url);
 			Document doc = DataUtil.load(in, "UTF-8", url.toString());
-			List<Element> articles = getArticles(doc);
-			for (Element article : articles) {
-				String id = getArticleId(doc, article).trim();
-				String title = getArticleTitle(doc, article).trim();
-				String author = getArticleAuthor(doc, article).trim();
-				String date = getArticleDate(doc, article).trim();
-				String categ = getArticleCategory(doc, article, defaultCateg)
-						.trim();
-				String details = getArticleDetails(doc, article).trim();
-				String intUrl = getArticleIntUrl(doc, article).trim();
-				String extUrl = getArticleExtUrl(doc, article).trim();
-				String content = getArticleContent(doc, article).trim();
 
-				if (id.isEmpty() && date.isEmpty()) {
-					continue;
-				}
-
-				if (!id.isEmpty()) {
-					while (id.length() < 10) {
-						id = "0" + id;
-					}
-				} else {
-					id = date.replace(":", "_").replace("+", "_")
-							.replace("/", "-");
-				}
-
-				date = date(date);
-
-				list.add(new Story(getType(), id, title, author, date, categ,
-						details, intUrl, extUrl, content));
-			}
+			list.addAll(extractor.fetchSnippets(doc, getType(), defaultCateg));
 		}
 
 		return list;
 	}
-
-	/**
-	 * The {@link URL}s to process for this website.
-	 * 
-	 * @return the list of {@link URL}s
-	 * 
-	 * @throws IOException
-	 *             in case of I/O error
-	 */
-	abstract protected List<Entry<URL, String>> getUrls() throws IOException;
-
-	/**
-	 * The article {@link Element}s of this document.
-	 * 
-	 * @param doc
-	 *            the main document for the current category
-	 * 
-	 * @return the articles
-	 */
-	abstract protected List<Element> getArticles(Document doc);
-
-	/**
-	 * The ID of the article (defaults to the date element if empty).
-	 * 
-	 * @param doc
-	 *            the main document for the current category
-	 * @param article
-	 *            the article to look into
-	 * 
-	 * @return the ID
-	 */
-	abstract protected String getArticleId(Document doc, Element article);
-
-	/**
-	 * The article title to display.
-	 * 
-	 * @param doc
-	 *            the main document for the current category
-	 * @param article
-	 *            the article to look into
-	 * 
-	 * @return the title
-	 */
-	abstract protected String getArticleTitle(Document doc, Element article);
-
-	/**
-	 * The optional article author.
-	 * 
-	 * @param doc
-	 *            the main document for the current category
-	 * @param article
-	 *            the article to look into
-	 * 
-	 * @return the author
-	 */
-	abstract protected String getArticleAuthor(Document doc, Element article);
-
-	/**
-	 * The optional article date.
-	 * 
-	 * @param doc
-	 *            the main document for the current category
-	 * @param article
-	 *            the article to look into
-	 * 
-	 * @return the date
-	 */
-	abstract protected String getArticleDate(Document doc, Element article);
-
-	/**
-	 * the optional article category.
-	 * 
-	 * @param doc
-	 *            the main document for the current category
-	 * @param article
-	 *            the article to look into
-	 * @param currentCategory
-	 *            the currently listed category if any (can be NULL)
-	 * 
-	 * @return the category
-	 */
-	abstract protected String getArticleCategory(Document doc, Element article,
-			String currentCategory);
-
-	/**
-	 * the optional details of the article (can replace the date, author and
-	 * category, for instance).
-	 * 
-	 * @param doc
-	 *            the main document for the current category
-	 * @param article
-	 *            the article to look into
-	 * 
-	 * @return the details
-	 */
-	abstract protected String getArticleDetails(Document doc, Element article);
-
-	/**
-	 * The (required) {@link URL} that points to the news page on the supported
-	 * website.
-	 * 
-	 * @param doc
-	 *            the main document for the current category
-	 * @param article
-	 *            the article to look into
-	 * 
-	 * @return the internal {@link URL}
-	 */
-	abstract protected String getArticleIntUrl(Document doc, Element article);
-
-	/**
-	 * the optional {@link URL} that points to an external website for more
-	 * information.
-	 * 
-	 * @param doc
-	 *            the main document for the current category
-	 * @param article
-	 *            the article to look into
-	 * 
-	 * @return the external {@link URL}
-	 */
-	abstract protected String getArticleExtUrl(Document doc, Element article);
-
-	/**
-	 * The optional article short-content (not the full content, that will be
-	 * fetched by {@link BasicSupport#fetch(Story)}).
-	 * 
-	 * @param doc
-	 *            the main document for the current category
-	 * @param article
-	 *            the article to look into
-	 * 
-	 * @return the short content
-	 */
-	abstract protected String getArticleContent(Document doc, Element article);
 
 	/**
 	 * Fetch the full article content as well as all the comments associated to
@@ -292,97 +174,23 @@ public abstract class BasicSupport {
 	 *             in case of I/O error
 	 */
 	public void fetch(Story story) throws IOException {
-		String fullContent = "";
-
 		URL url = new URL(story.getUrlInternal());
 		InputStream in = open(url);
 		try {
 			Document doc = DataUtil.load(in, "UTF-8", url.toString());
-			Element article = getFullArticle(doc);
-			if (article != null) {
-				fullContent = getArticleText(article);
-			}
+			BasicFullArticleExtractor extractorFA = getFullArticleExtractor();
+			if (extractorFA != null)
+				extractorFA.fetchFullArticle(url, doc, story);
 
-			if (fullContent.isEmpty()) {
-				fullContent = story.getContent();
-			}
-
-			story.setFullContent(fullContent);
-			story.setComments(getComments(doc,
-					getFullArticleCommentPosts(doc, url)));
-			
-			ready(story, doc, article);
+			BasicCommentExtractor extractorC = getCommentExtractor();
+			if (extractorC != null)
+				extractorC.fetchComments(url, doc, story);
 		} finally {
 			if (in != null) {
 				in.close();
 			}
 		}
 	}
-
-	/**
-	 * Return the text from this {@link Element}, using the
-	 * {@link BasicSupport#getElementProcessorFullArticle()} processor logic.
-	 * 
-	 * @param article
-	 *            the element to extract the text from
-	 * 
-	 * @return the text
-	 */
-	protected String getArticleText(Element article) {
-		StringBuilder builder = new StringBuilder();
-		BasicElementProcessor eProc = getElementProcessorFullArticle();
-		if (eProc != null) {
-			for (String line : toLines(article, eProc)) {
-				builder.append(line + "\n");
-			}
-		} else {
-			builder.append(article.text());
-		}
-
-		// Content is too tight with a single break per line:
-		return builder.toString().replace("\n", "\n\n") //
-				.replace("\n\n\n\n", "\n\n") //
-				.replace("\n\n\n\n", "\n\n") //
-				.trim();
-	}
-
-	/**
-	 * Return the full article if available (this is the article to retrieve
-	 * from the newly downloaded page at {@link Story#getUrlInternal()}).
-	 * 
-	 * @param doc
-	 *            the (full article) document to work on
-	 * 
-	 * @return the article or NULL
-	 */
-	abstract protected Element getFullArticle(Document doc);
-
-	/**
-	 * Return the list of comment {@link Element}s from this optional container
-	 * -- must <b>NOT</b> return the "container" as a comment {@link Element}.
-	 * 
-	 * @param doc
-	 *            the (full article) document to work on
-	 * @param intUrl
-	 *            the internal {@link URL} this article was taken from (the
-	 *            {@link URL} from the supported website)
-	 * 
-	 * @return the list of comment posts
-	 */
-	abstract protected List<Element> getFullArticleCommentPosts(Document doc,
-			URL intUrl);
-
-	/**
-	 * The {@link ElementProcessor} to use to convert the main article element
-	 * (see {@link BasicSupport#getFullArticle(Document)}) into text.
-	 * <p>
-	 * See {@link BasicElementProcessor} for a working, basic implementation.
-	 * <p>
-	 * Can be NULL to simply use {@link Element#text()}.
-	 * 
-	 * @return the processor, or NULL
-	 */
-	abstract protected BasicElementProcessor getElementProcessorFullArticle();
 
 	/**
 	 * Open a network resource.
@@ -400,134 +208,6 @@ public abstract class BasicSupport {
 	protected InputStream open(URL url) throws IOException {
 		return downloader.open(url, url, cookies, null, null, null);
 	}
-
-	/**
-	 * Convert the comment elements into {@link Comment}s
-	 * 
-	 * @param doc
-	 *            the document we work on
-	 * @param posts
-	 *            the comment elements
-	 * 
-	 * @return the converted {@link Comment}s
-	 */
-	private List<Comment> getComments(Document doc, List<Element> posts) {
-		List<Comment> comments = new ArrayList<Comment>();
-		if (posts != null) {
-			for (Element post : posts) {
-				String id = getCommentId(post).trim();
-				String author = getCommentAuthor(post).trim();
-				String title = getCommentTitle(post).trim();
-				String date = getCommentDate(post).trim();
-
-				List<String> content = new ArrayList<String>();
-
-				if (id.isEmpty()) {
-					id = date;
-				}
-
-				date = date(date);
-
-				Element contentE = getCommentContentElement(post);
-				if (contentE != null) {
-					BasicElementProcessor eProc = getElementProcessorComment();
-					if (eProc != null) {
-						for (String line : toLines(contentE, eProc)) {
-							content.add(line);
-						}
-					} else {
-						content = Arrays.asList(contentE.text().split("\n"));
-					}
-				}
-
-				Comment comment = new Comment(id, author, title, date, content);
-				comment.addAll(getComments(doc,
-						getCommentCommentPosts(doc, post)));
-
-				if (!comment.isEmpty()) {
-					comments.add(comment);
-				}
-			}
-		}
-
-		return comments;
-	}
-
-	/**
-	 * Return the list of subcomment {@link Element}s from this comment element
-	 * -- must <b>NOT</b> return the "container" as a comment {@link Element}.
-	 * 
-	 * @param doc
-	 *            the (full article) document to work on
-	 * @param container
-	 *            the container (a comment {@link Element})
-	 * 
-	 * @return the list of comment posts
-	 */
-	abstract protected List<Element> getCommentCommentPosts(Document doc,
-			Element container);
-
-	/**
-	 * Compute the ID of the given comment element.
-	 * 
-	 * @param post
-	 *            the comment element
-	 * 
-	 * @return the ID
-	 */
-	abstract protected String getCommentId(Element post);
-
-	/**
-	 * Compute the author of the given comment element.
-	 * 
-	 * @param post
-	 *            the comment element
-	 * 
-	 * @return the author
-	 */
-	abstract protected String getCommentAuthor(Element post);
-
-	/**
-	 * Compute the title of the given comment element.
-	 * 
-	 * @param post
-	 *            the comment element
-	 * 
-	 * @return the title
-	 */
-	abstract protected String getCommentTitle(Element post);
-
-	/**
-	 * Compute the date of the given comment element.
-	 * 
-	 * @param post
-	 *            the comment element
-	 * 
-	 * @return the date
-	 */
-	abstract protected String getCommentDate(Element post);
-
-	/**
-	 * Get the main of the given comment element, which can be NULL.
-	 * 
-	 * @param post
-	 *            the comment element
-	 * 
-	 * @return the element
-	 */
-	abstract protected Element getCommentContentElement(Element post);
-
-	/**
-	 * The {@link ElementProcessor} to use to convert the main comment element
-	 * (see {@link BasicSupport#getCommentContentElement(Element)}) into text.
-	 * <p>
-	 * See {@link BasicElementProcessor} for a working, basic implementation.
-	 * <p>
-	 * Can be NULL to simply use {@link Element#text()}.
-	 * 
-	 * @return the processor
-	 */
-	abstract protected BasicElementProcessor getElementProcessorComment();
 
 	/**
 	 * The support type.
@@ -549,20 +229,6 @@ public abstract class BasicSupport {
 	 */
 	protected void addCookie(String name, String value) {
 		cookies.put(name, value);
-	}
-
-	/**
-	 * This {@link Story} is ready, you can intercept this method if you need to
-	 * finalise something.
-	 * 
-	 * @param story
-	 *            the complete Story, comments included
-	 * @param doc
-	 *            the <b>article</b> document (not the main page)
-	 * @param el
-	 *            the article main element
-	 */
-	protected void ready(Story story, Document doc, Element el){
 	}
 
 	/**
@@ -657,7 +323,7 @@ public abstract class BasicSupport {
 	 * 
 	 * @return text lines, each line is a paragraph
 	 */
-	static protected List<String> toLines(Element element,
+	static List<String> toLines(Element element,
 			final BasicElementProcessor elementProcessor) {
 		final List<String> lines = new ArrayList<String>();
 		final StringBuilder currentLine = new StringBuilder();
@@ -820,7 +486,7 @@ public abstract class BasicSupport {
 	 * 
 	 * @return the reformated date, or the same value if it was not parsable
 	 */
-	static private String date(String date) {
+	static String date(String date) {
 		SimpleDateFormat out = new SimpleDateFormat("yyyy/MM/dd");
 
 		long epoch = 0;

@@ -36,158 +36,129 @@ public class LeMonde extends BasicSupport {
 	}
 
 	@Override
-	protected List<Element> getArticles(Document doc) {
-		return doc.getElementsByTag("article");
-	}
-
-	@Override
-	protected String getArticleId(Document doc, Element article) {
-		return ""; // will use the date
-	}
-
-	@Override
-	protected String getArticleTitle(Document doc, Element article) {
-		Element titleElement = article.getElementsByTag("h3").first();
-		if (titleElement != null) {
-			return titleElement.text();
-		}
-
-		return "";
-	}
-
-	@Override
-	protected String getArticleAuthor(Document doc, Element article) {
-		Element detailsElement = article.getElementsByClass("signature")
-				.first();
-		if (detailsElement != null) {
-			return detailsElement.text();
-		}
-
-		return "";
-	}
-
-	@Override
-	protected String getArticleDate(Document doc, Element article) {
-		Element timeElement = article.getElementsByTag("time").first();
-		if (timeElement != null) {
-			return timeElement.attr("datetime");
-		}
-
-		return "";
-	}
-
-	@Override
-	protected String getArticleCategory(Document doc, Element article,
-			String currentCategory) {
-		return currentCategory;
-	}
-
-	@Override
-	protected String getArticleDetails(Document doc, Element article) {
-		return "";
-	}
-
-	@Override
-	protected String getArticleIntUrl(Document doc, Element article) {
-		Element titleElement = article.getElementsByTag("h3").first();
-		if (titleElement != null) {
-			Element link = titleElement.getElementsByTag("a").first();
-			if (link != null) {
-				return link.absUrl("href");
-			}
-		}
-
-		return "";
-	}
-
-	@Override
-	protected String getArticleExtUrl(Document doc, Element article) {
-		return "";
-	}
-
-	@Override
-	protected String getArticleContent(Document doc, Element article) {
-		Element contentElement = article.getElementsByClass("txt3").first();
-		if (contentElement != null) {
-			return getArticleText(contentElement);
-		}
-
-		return "";
-	}
-
-	@Override
-	protected Element getFullArticle(Document doc) {
-		return doc.getElementById("articleBody");
-	}
-
-	@Override
-	protected List<Element> getFullArticleCommentPosts(Document doc, URL intUrl) {
-		return null;
-	}
-
-	@Override
-	protected BasicElementProcessor getElementProcessorFullArticle() {
-		return new BasicElementProcessor() {
+	BasicSnippetExtractor getSnippetExtractor() {
+		return new BasicSnippetExtractor() {
 			@Override
-			public boolean ignoreNode(Node node) {
-				if (node instanceof Element) {
-					Element element = (Element) node;
-					if (element.hasClass("lire")) {
-						return true;
-					}
-				}
-
-				return false;
+			protected List<Element> getSnippets(Document doc) {
+				return doc.getElementsByTag("article");
 			}
 
 			@Override
-			public String isSubtitle(Node node) {
-				if (node instanceof Element) {
-					Element element = (Element) node;
-					if (element.hasClass("intertitre")) {
-						return element.text();
+			protected String getArticleId(Document doc, Element article) {
+				return ""; // will use the date
+			}
+
+			@Override
+			protected String getArticleTitle(Document doc, Element article) {
+				Element titleElement = article.getElementsByTag("h3").first();
+				if (titleElement != null) {
+					return titleElement.text();
+				}
+
+				return "";
+			}
+
+			@Override
+			protected String getArticleAuthor(Document doc, Element article) {
+				Element detailsElement = article
+						.getElementsByClass("signature").first();
+				if (detailsElement != null) {
+					return detailsElement.text();
+				}
+
+				return "";
+			}
+
+			@Override
+			protected String getArticleDate(Document doc, Element article) {
+				Element timeElement = article.getElementsByTag("time").first();
+				if (timeElement != null) {
+					return timeElement.attr("datetime");
+				}
+
+				return "";
+			}
+
+			@Override
+			protected String getArticleCategory(Document doc, Element article,
+					String currentCategory) {
+				return currentCategory;
+			}
+
+			@Override
+			protected String getArticleDetails(Document doc, Element article) {
+				return "";
+			}
+
+			@Override
+			protected String getArticleIntUrl(Document doc, Element article) {
+				Element titleElement = article.getElementsByTag("h3").first();
+				if (titleElement != null) {
+					Element link = titleElement.getElementsByTag("a").first();
+					if (link != null) {
+						return link.absUrl("href");
 					}
 				}
-				return null;
+
+				return "";
+			}
+
+			@Override
+			protected String getArticleExtUrl(Document doc, Element article) {
+				return "";
+			}
+
+			@Override
+			protected String getArticleContent(Document doc, Element article) {
+				Element contentElement = article.getElementsByClass("txt3")
+						.first();
+				if (contentElement != null) {
+					BasicFullArticleExtractor hack = getFullArticleExtractor();
+					return hack.getArticleText(contentElement);
+				}
+
+				return "";
+			}
+		};
+	}
+
+	@Override
+	BasicFullArticleExtractor getFullArticleExtractor() {
+		return new BasicFullArticleExtractor() {
+			@Override
+			protected Element getFullArticle(Document doc) {
+				return doc.getElementById("articleBody");
+			}
+
+			@Override
+			protected BasicElementProcessor getElementProcessorFullArticle() {
+				return new BasicElementProcessor() {
+					@Override
+					public boolean ignoreNode(Node node) {
+						if (node instanceof Element) {
+							Element element = (Element) node;
+							if (element.hasClass("lire")) {
+								return true;
+							}
+						}
+
+						return false;
+					}
+
+					@Override
+					public String isSubtitle(Node node) {
+						if (node instanceof Element) {
+							Element element = (Element) node;
+							if (element.hasClass("intertitre")) {
+								return element.text();
+							}
+						}
+						return null;
+					}
+				};
 			}
 		};
 	}
 
 	// No comment on this site, horrible javascript system
-
-	@Override
-	protected List<Element> getCommentCommentPosts(Document doc,
-			Element container) {
-		return null;
-	}
-
-	@Override
-	protected String getCommentId(Element post) {
-		return null;
-	}
-
-	@Override
-	protected String getCommentAuthor(Element post) {
-		return null;
-	}
-
-	@Override
-	protected String getCommentTitle(Element post) {
-		return null;
-	}
-
-	@Override
-	protected String getCommentDate(Element post) {
-		return null;
-	}
-
-	@Override
-	protected Element getCommentContentElement(Element post) {
-		return null;
-	}
-
-	@Override
-	protected BasicElementProcessor getElementProcessorComment() {
-		return null;
-	}
 }
