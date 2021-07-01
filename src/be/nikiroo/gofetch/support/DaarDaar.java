@@ -139,7 +139,7 @@ public class DaarDaar extends BasicSupport {
 	}
 
 	@Override
-	protected ElementProcessor getElementProcessorFullArticle() {
+	protected BasicElementProcessor getElementProcessorFullArticle() {
 		return new BasicElementProcessor() {
 			@Override
 			public boolean ignoreNode(Node node) {
@@ -196,7 +196,7 @@ public class DaarDaar extends BasicSupport {
 	}
 
 	@Override
-	protected ElementProcessor getElementProcessorComment() {
+	protected BasicElementProcessor getElementProcessorComment() {
 		return null;
 	}
 

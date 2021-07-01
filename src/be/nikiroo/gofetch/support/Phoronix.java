@@ -165,7 +165,7 @@ class Phoronix extends BasicSupport {
 	}
 
 	@Override
-	protected ElementProcessor getElementProcessorFullArticle() {
+	protected BasicElementProcessor getElementProcessorFullArticle() {
 		return new BasicElementProcessor();
 	}
 
@@ -213,7 +213,7 @@ class Phoronix extends BasicSupport {
 	}
 
 	@Override
-	protected ElementProcessor getElementProcessorComment() {
+	protected BasicElementProcessor getElementProcessorComment() {
 		return new BasicElementProcessor() {
 			@Override
 			public boolean detectQuote(Node node) {

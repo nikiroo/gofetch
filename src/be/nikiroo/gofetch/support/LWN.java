@@ -161,7 +161,7 @@ public class LWN extends BasicSupport {
 	}
 
 	@Override
-	protected ElementProcessor getElementProcessorFullArticle() {
+	protected BasicElementProcessor getElementProcessorFullArticle() {
 		return new BasicElementProcessor() {
 			@Override
 			public boolean ignoreNode(Node node) {
@@ -255,7 +255,7 @@ public class LWN extends BasicSupport {
 	}
 
 	@Override
-	protected ElementProcessor getElementProcessorComment() {
+	protected BasicElementProcessor getElementProcessorComment() {
 		return new BasicElementProcessor() {
 			@Override
 			public String processText(String text) {

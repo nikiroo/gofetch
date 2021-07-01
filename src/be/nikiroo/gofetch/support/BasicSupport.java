@@ -330,7 +330,7 @@ public abstract class BasicSupport {
 	 */
 	protected String getArticleText(Element article) {
 		StringBuilder builder = new StringBuilder();
-		ElementProcessor eProc = getElementProcessorFullArticle();
+		BasicElementProcessor eProc = getElementProcessorFullArticle();
 		if (eProc != null) {
 			for (String line : toLines(article, eProc)) {
 				builder.append(line + "\n");
@@ -382,7 +382,7 @@ public abstract class BasicSupport {
 	 * 
 	 * @return the processor, or NULL
 	 */
-	abstract protected ElementProcessor getElementProcessorFullArticle();
+	abstract protected BasicElementProcessor getElementProcessorFullArticle();
 
 	/**
 	 * Open a network resource.
@@ -430,7 +430,7 @@ public abstract class BasicSupport {
 
 				Element contentE = getCommentContentElement(post);
 				if (contentE != null) {
-					ElementProcessor eProc = getElementProcessorComment();
+					BasicElementProcessor eProc = getElementProcessorComment();
 					if (eProc != null) {
 						for (String line : toLines(contentE, eProc)) {
 							content.add(line);
@@ -527,7 +527,7 @@ public abstract class BasicSupport {
 	 * 
 	 * @return the processor
 	 */
-	abstract protected ElementProcessor getElementProcessorComment();
+	abstract protected BasicElementProcessor getElementProcessorComment();
 
 	/**
 	 * The support type.
@@ -658,7 +658,7 @@ public abstract class BasicSupport {
 	 * @return text lines, each line is a paragraph
 	 */
 	static protected List<String> toLines(Element element,
-			final ElementProcessor elementProcessor) {
+			final BasicElementProcessor elementProcessor) {
 		final List<String> lines = new ArrayList<String>();
 		final StringBuilder currentLine = new StringBuilder();
 		final List<Integer> quoted = new ArrayList<Integer>();

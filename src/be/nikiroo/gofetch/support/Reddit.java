@@ -168,7 +168,7 @@ public class Reddit extends BasicSupport {
 	}
 
 	@Override
-	protected ElementProcessor getElementProcessorFullArticle() {
+	protected BasicElementProcessor getElementProcessorFullArticle() {
 		return new BasicElementProcessor();
 	}
 
@@ -257,7 +257,7 @@ public class Reddit extends BasicSupport {
 	}
 
 	@Override
-	protected ElementProcessor getElementProcessorComment() {
+	protected BasicElementProcessor getElementProcessorComment() {
 		return new BasicElementProcessor();
 	}
 
